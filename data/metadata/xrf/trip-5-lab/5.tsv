@@ -1,0 +1,42 @@
+Formula	Z	Concentration	Status	Line 1	Net int.	Calc. concentration	Stat. error	LLD	Analyzed layer	Foil correction	D.C. Factor	Line 2	Net int.	Calc. concentration	Stat. error	LLD	Analyzed layer	Foil correction	D.C. Factor	Line 3	Net int.	Calc. concentration	Stat. error	LLD	Analyzed layer	Foil correction	D.C. Factor
+Si	14	16.6	XRF 0	Si KA1-HR-Tr	15.53	16.6	0.0287		21.5 um	1.27	24.16	Si KB1-HR-Tr/Ox	0.4	13	0.179		24.7 um	1.23	24.16								
+Ca	20	5.97	XRF 0	Ca KA1-HR-Tr	11.51	5.97	0.0333		72 um	1.02	20	Ca KB1-HR-Tr	1.248	2.8	0.101		91 um	1.02	20								
+Al	13	2.4	XRF 0	Al KA1-HR-Tr	2.001	2.4	0.08		16.1 um	1.43	23.44	Al KB1-HR-Tr/Ox	0.07134	7.3	0.424		18.0 um	1.38	23.44								
+Fe	26	1.68	XRF 0	Fe KA1-HR-Tr	16.32	1.68	0.0282	39.2 PPM	217 um	1	21.51	Fe KB1-HR-Tr	2.62	0.61	0.075	248.4 PPM	283 um	1	21.51								
+K	19	0.76	XRF 0	K  KA1-HR-Tr	1.518	0.76	0.0918		57 um	1.03	19.06	K  KB1-HR-Tr	0.4713	1.1	0.165		70 um	1.02	19.06								
+Mg	12	0.58	XRF 0	Mg KA1-HR-Tr	0.4738	0.58	0.164		10.6 um	1.75	23.78																
+Ti	22	0.35	XRF 0	Ti KA1-HR-Tr	0.6941	0.35	0.136		87 um	1.01	21.32	Ti KB1-HR-Tr	0.2087	0.33	0.248		111 um	1.01	21.32								
+Na	11	0.25	XRF 0	Na KA1-HR-Tr	0.03661	0.25	0.591		6.6 um	2.5	32.61																
+Ba	56	0.19	XRF 0	Ba LA1-HR-Tr	0.08762	0.19	0.382		85 um	1.01	21.32	Ba LB1-HR-Tr	0.06096	0.08	1.15		105 um	1.01	21.32	Ba KA1-HR-Tr	0.8152	0.28	0.87	181.8 PPM	20.1 mm	1	11.39
+P	15	0.12	XRF 0	P  KA1-HR-Tr	0.1272	0.12	0.317		15.0 um	1.18	22.22																
+Nd	60	0.12	XRF 0	Nd LA1-HR-Tr	0.08985	0.12	0.944		128 um	1.01	21.23	Nd LB1-HR-Tr	0.1548	0.073	0.288		161 um	1.01	21.23	Nd MA1-HR-Tr	0	0			5.7 um	2.93	32.61
+La	57	0.11	XRF 0	La LA1-HR-Tr	0.04953	0.11	0.508		95 um	1.01	21.32	La LB1-HR-Tr	0.05583	0.062	1.2		116 um	1.01	21.32	La KA1-HR-Tr	0.1198	0.072	5.33	362.0 PPM	22.6 mm	1	11.39
+Zr	40	0.087	XRF 0	Zr KA1-HR-Tr	4.316	0.087	0.0698	15.0 PPM	2.46 mm	1	17.3	Zr KB1-HR-Tr	1.065	0.18	0.581	78.1 PPM	3.4 mm	1	17.3	Zr LA1-HR	0.04782	0.17	1.29		15.5 um	1.17	22.22
+Cr	24	0.05	XRF 0	Cr KA1-HR-Tr	0.2415	0.05	0.23		140 um	1.01	21.23	Cr KB1-HR-Tr	0.1181	0.059	0.823		179 um	1	21.23								
+Sr	38	0.041	XRF 0	Sr KA1-HR-Tr	1.352	0.041	0.157	13.8 PPM	1.79 mm	1	18.25	Sr KB1-HR-Tr	4.316	-0.76	0.0698	118.1 PPM	2.48 mm	1	17.3	Sr LA1-HR	0.04953	0.062	0.508		23.7 um	1.24	24.16
+Cl	17	0.036	XRF 0	Cl KA1-HR-Tr	0.04051	0.036	1.41		29.5 um	1.08	22.22																
+Mn	25	0.031	XRF 0	Mn KA1-HR-Tr	0.2347	0.031	0.234		175 um	1	21.23	Mn KB1-HR-Tr	-0.04104	-0.036		353.9 PPM	225 um	1	21.23								
+S	16	0.018	XRF 0	S  KA1-HR-Tr	0.03436	0.018	1.53		20.8 um	1.12	22.22																
+Sc	21	0.017	XRF 0	Sc KA1-HR-Tr	0.02675	0.017	1.73		67 um	1.02	21.32																
+Material		Oxides	Input																								
+Mode		He	Input																								
+Diameter		8mm	Input																								
+Method		Fast Screening-He8mm	Input																								
+																											
+Formula	Z	Concentration	Status	Line 1	Net int.	Calc. concentration	Stat. error	LLD	Analyzed layer	Foil correction	D.C. Factor	Line 2	Net int.	Calc. concentration	Stat. error	LLD	Analyzed layer	Foil correction	D.C. Factor	Line 3	Net int.	Calc. concentration	Stat. error	LLD	Analyzed layer	Foil correction	D.C. Factor
+SiO2	14	35.5	XRF 1	Si KA1-HR-Tr	15.53	35.5	0.0287		21.5 um	1.27	24.16	Si KB1-HR-Tr/Ox	0.4	27	0.179		24.7 um	1.23	24.16								
+CaO	20	8.35	XRF 1	Ca KA1-HR-Tr	11.51	8.35	0.0333		72 um	1.02	20	Ca KB1-HR-Tr	1.248	3.9	0.101		91 um	1.02	20								
+Al2O3	13	4.5	XRF 1	Al KA1-HR-Tr	2.001	4.5	0.08		16.1 um	1.43	23.44	Al KB1-HR-Tr/Ox	0.07134	14	0.424		18.0 um	1.38	23.44								
+Fe2O3	26	2.41	XRF 1	Fe KA1-HR-Tr	16.32	2.41	0.0282	56.1 PPM	217 um	1	21.51	Fe KB1-HR-Tr	2.62	0.87	0.075	355.2 PPM	283 um	1	21.51								
+MgO	12	0.96	XRF 1	Mg KA1-HR-Tr	0.4738	0.96	0.164		10.6 um	1.75	23.78																
+K2O	19	0.92	XRF 1	K  KA1-HR-Tr	1.518	0.92	0.0918		57 um	1.03	19.06	K  KB1-HR-Tr	0.4713	1.4	0.165		70 um	1.02	19.06								
+TiO2	22	0.59	XRF 1	Ti KA1-HR-Tr	0.6941	0.59	0.136		87 um	1.01	21.32	Ti KB1-HR-Tr	0.2087	0.54	0.248		111 um	1.01	21.32								
+P2O5	15	0.27	XRF 1	P  KA1-HR-Tr	0.1272	0.27	0.317		15.0 um	1.18	22.22																
+ZrO2	40	0.12	XRF 1	Zr KA1-HR-Tr	4.316	0.12	0.0698	20.3 PPM	2.46 mm	1	17.3	Zr KB1-HR-Tr	1.065	0.25	0.581	105.6 PPM	3.4 mm	1	17.3	Zr LA1-HR	0.04782	0.22	1.29		15.5 um	1.17	22.22
+Cr2O3	24	0.073	XRF 1	Cr KA1-HR-Tr	0.2415	0.073	0.23		140 um	1.01	21.23	Cr KB1-HR-Tr	0.1181	0.087	0.823		179 um	1	21.23								
+SrO	38	0.048	XRF 1	Sr KA1-HR-Tr	1.352	0.048	0.157	16.3 PPM	1.79 mm	1	18.25	Sr KB1-HR-Tr	4.316	-0.89	0.0698	139.7 PPM	2.48 mm	1	17.3	Sr LA1-HR	0.04953	0.074	0.508		23.7 um	1.24	24.16
+MnO	25	0.04	XRF 1	Mn KA1-HR-Tr	0.2347	0.04	0.234		175 um	1	21.23	Mn KB1-HR-Tr	-0.04104	-0.047		456.9 PPM	225 um	1	21.23								
+Material		Oxides	Input																								
+Mode		He	Input																								
+Diameter		8mm	Input																								
+Method		Fast Screening-He8mm	Input																								

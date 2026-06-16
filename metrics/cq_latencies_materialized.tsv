@@ -1,0 +1,14 @@
+# Competency-question latencies after OWL-Horst materialization on ws.
+# Queries run against the full graph (kb + taxonomy + ontology + inferred)
+# WITHOUT the backward-chaining rule set, so queries hit physically
+# materialized triples. N=10 runs after warm-up.
+id	description	rows	n	median_s	mean_s	p95_s	min_s	max_s	notes
+CQ1	Field XRF measurements for Site 10	100	10	0.0231	0.0230	0.0249	0.0218	0.0249
+CQ2	All sampling sites and GPS coordinates	70	10	0.0048	0.0049	0.0052	0.0046	0.0052
+CQ3	Biomes per site (OWL restriction inspection)	70	10	0.0054	0.0054	0.0056	0.0051	0.0056
+CQ4	Light Elements percentages across XRF runs	284	10	0.0084	0.0084	0.0088	0.0082	0.0088	was 0 rows pre-materialization
+CQ5	DNA extraction records and concentrations	18048	10	1.3423	1.3268	1.6803	0.9477	1.6803	was 1473 rows pre-materialization (12x gain)
+CQ6	Provenance: soil → DNA → library → run	25	10	0.2545	0.2556	0.2602	0.2532	0.2602
+CQ7	Taxonomic composition and abundance per run	NA	NA	NA	NA	NA	NA	NA	timed out (>300 s) — 1.4M-row taxonomy join
+CQ8	Pseudomonas at sites with temperature > 35 °C	0	10	0.1061	0.1062	0.1070	0.1059	0.1070	0 rows — data issue (no high-temp site on ws)
+CQ9	Sequencing QC metrics for sample 10Dr2	0	10	0.0276	0.0276	0.0283	0.0262	0.0283	0 rows — sample-specific data not on ws dev DB

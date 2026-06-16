@@ -1,0 +1,32 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rak: <https://rubalkhali.science/kb/>
+PREFIX rak_kb: <https://rubalkhali.science/kb/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+<#SamplingSiteShape> {
+    rdf:type [rak:RAK_0000002] ;
+    rdf:type . * ;
+    rdfs:label . ;
+    dcterms:description xsd:string ? ;
+    geo:asWKT . ? ;
+    
+    # Biome and Feature are modeled as OWL Restrictions (SubClassOf or Type)
+    # in the ABox, they appear as rdf:type [owl:onProperty ... owl:someValuesFrom ...]
+    # For ShEx validation against the raw graph, these appear as complex BNodes or just extra types.
+    # Since we added `rdf:type IRI *`, we don't need to explicitly validate the complex restriction structure here
+    # unless we want to enforce it. For now, let's just remove the direct property checks 
+    # as they don't exist as simple triples.
+}
+
+<#RegionShape> {
+    rdf:type [obo:ENVO_00000192] ;      # Desert
+    rdf:type . * ;
+    rdfs:label . ;
+    dcterms:description xsd:string ? ;
+    geo:asWKT . ;
+}

@@ -1,0 +1,322 @@
+\section{Technical validation}\label{valid}
+
+We validated the knowledge graph using four complementary approaches,
+each targeting a distinct aspect of data quality: competency question
+evaluation via SPARQL queries, structural validation using Shape
+Expressions (ShEx), logical consistency checking with the ELK
+reasoner, and usability assessment through a web portal.
+
+\subsection{Competency questions and SPARQL queries}
+
+To validate whether the full knowledge graph can be used to answer
+queries about the Rub' al-Khali, we defined competency questions
+expressed as SPARQL queries \cite{sparql} with known expected
+answers. We automated this validation process to enable regression
+testing during ontology updates. The validated competency questions
+include retrieving XRF measurements, listing sampling sites with
+coordinates, extracting DNA extraction data, tracing provenance from
+soil samples to sequencing runs, and querying taxonomic
+composition. The competency questions are designed to test questions
+that are needed for operating the website, and to support different
+types of queries within our dataset.
+
+We show several example SPARQL queries. Listing~\ref{lst:sparql_xrf}
+retrieves XRF measurements for a specific site, requiring traversal of
+the measurement process, quality, and value entities.
+
+\begin{lstlisting}[caption={SPARQL query to retrieve field XRF
+    measurements for Site 10. The query traverses from sample to
+    measurement process to individual analyte concentrations.},
+  label={lst:sparql_xrf}, basicstyle=\ttfamily\scriptsize,
+  frame=single]
+PREFIX rak: <https://rubalkhali.science/kb/RAK_>
+PREFIX sio: <http://semanticscience.org/resource/SIO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?processLabel ?analyte ?concentration ?unitLabel
+WHERE {
+  ?sample a rak:0000021 ;
+          rdfs:label ?sampleLabel .
+  FILTER(REGEX(?sampleLabel, "Site 10"))
+  ?value sio:000232 ?process .
+  ?process rdfs:label ?processLabel .
+  FILTER(REGEX(?processLabel, "Field", "i"))
+  ?sample sio:000008 ?quality .
+  ?quality sio:000215 ?value .
+  ?value rak:2000012 ?concentration .
+  ?value sio:000221 ?unit .
+  ?unit rdfs:label ?unitLabel .
+  ?quality a ?qualityClass .
+  ?qualityClass rdfs:label ?analyte .
+  FILTER(?qualityClass != rak:0000029)
+}
+ORDER BY ?processLabel ?analyte LIMIT 100
+\end{lstlisting}
+
+Read in prose, the query first selects every soil sample whose label
+matches \texttt{Site~10}, then walks back from each measurement value
+to its producing process and forwards from the sample through its
+quality and value to the recorded concentration and unit. The final
+filter excludes the Light Elements pseudo-analyte
+(\texttt{rak:0000029}) so that only individually quantified
+elements appear in the result, and the query returns one row per
+process and analyte combination.
+
+Listing~\ref{lst:sparql_taxon} retrieves taxonomic abundance profiles,
+joining across bioinformatic workflows, FASTQ datasets, and taxon
+observations.
+
+\begin{lstlisting}[caption={SPARQL query to retrieve taxonomic
+    composition and abundance for all samples.},
+  label={lst:sparql_taxon}, basicstyle=\ttfamily\scriptsize,
+  frame=single]
+PREFIX rak: <https://rubalkhali.science/kb/RAK_>
+PREFIX sio: <http://semanticscience.org/resource/SIO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?run ?taxonLabel ?count ?relativeAbundance
+WHERE {
+  ?proc a rak:0000071 ;
+        sio:000230 ?fastq ;
+        sio:000229 ?dsAbs , ?dsRel .
+  ?dsAbs a rak:0000074 .
+  ?dsRel a rak:0000075 .
+  ?fastq rdfs:label ?runLabel .
+  BIND(REPLACE(?runLabel, "FASTQ dataset for ", "") AS ?run)
+  ?dsAbs sio:000059 ?valAbs .
+  ?valAbs rak:2000021 ?count .
+  ?valAbs sio:000215 ?qualAbs .
+  ?qualAbs sio:000011 ?taxon .
+  ?taxon rdfs:label ?taxonLabel .
+  ?qualRel sio:000011 ?taxon ;
+           a rak:0000072 ;
+           sio:000214 ?valRel .
+  ?valRel rak:2000020 ?relativeAbundance .
+  FILTER(?taxon != ?fastq)
+}
+ORDER BY ?run DESC(?count) LIMIT 100
+\end{lstlisting}
+
+In words, the query identifies every bioinformatic workflow that
+produces both an absolute and a relative taxonomic dataset for the
+same FASTQ input, then for each absolute observation it retrieves the
+read count, the associated taxon label, and the matching relative
+abundance from the parallel relative dataset. Results are grouped by
+sequencing run and ordered by descending count, so the most abundant
+taxa per run appear first.
+
+We added an additional query (Listing~\ref{lst:sparql_env_tax}) to
+retrieve specific taxa abundances alongside environmental constraints,
+demonstrating the ability to cross-reference biological and
+environmental properties.
+
+\begin{lstlisting}[caption={SPARQL query to retrieve Pseudomonas relative abundance at sites with high temperature.}, label={lst:sparql_env_tax}, basicstyle=\ttfamily\scriptsize, frame=single]
+PREFIX rak: <https://rubalkhali.science/kb/RAK_>
+PREFIX sio: <http://semanticscience.org/resource/SIO_>
+PREFIX pato: <http://purl.obolibrary.org/obo/PATO_>
+PREFIX ncbitaxon: <http://purl.obolibrary.org/obo/NCBITaxon_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?siteLabel ?temp ?relAbundance
+WHERE {
+  ?site a rak:0000002 ;
+        rdfs:label ?siteLabel .
+  
+  # Environmental Temperature
+  ?tempProcess sio:000291 ?site ;
+               sio:000229 ?tempVal .
+  ?tempVal rak:2000012 ?temp ;
+           sio:000215 ?tempQual .
+  ?tempQual a pato:0000146 .
+  FILTER(?temp > 35.0)
+
+  # Derived Sample and Taxon Abundance
+  ?sample sio:000252 ?site .
+  ?ext sio:000230 ?sample ; a rak:0000041 ; sio:000229 ?dna .
+  ?libPrep sio:000230 ?dna ; a rak:0000062 ; sio:000229 ?lib .
+  ?seq sio:000230 ?lib ; a rak:0000064 ; sio:000229 ?fastq .
+  
+  ?bioinf a rak:0000071 ;
+          sio:000230 ?fastq ;
+          sio:000229 ?dsRel .
+  ?dsRel a rak:0000075 ;
+         sio:000059 ?valRel .
+  ?valRel rak:2000020 ?relAbundance ;
+          sio:000215 ?qualRel .
+  ?qualRel sio:000011 ncbitaxon:286 . # Pseudomonas
+}
+\end{lstlisting}
+
+In words, the query first selects every sampling site at which the
+recorded environmental temperature exceeds 35\,$^{\circ}$C, then for
+each such site it walks the full provenance chain --- soil sample,
+DNA extract, library preparation, sequencing run, FASTQ dataset,
+bioinformatic workflow, relative abundance dataset --- down to the
+relative abundance value of \emph{Pseudomonas}
+(\texttt{ncbitaxon:286}). Each row of the result therefore reports a
+single hot site together with its corresponding \emph{Pseudomonas}
+relative abundance, demonstrating a join that crosses the
+environmental, geochemical, and biological domains in a single SPARQL
+query.
+
+\subsection{ShEx schema validation}
+
+We validated the structural integrity of the knowledge graph using
+Shape Expressions (ShEx), as described in
+Section~\ref{subsec:schema_def}. We defined ShEx shapes for all core
+entity types: sampling sites, soil samples, environmental
+measurements, DNA extracts, sequencing datasets, quality control
+records, and taxonomy observations. We bound each shape to its
+corresponding class instances via a Shape Map.
+
+We implemented the validation using the Apache Jena ShEx library
+(version 4.10.0) invoked from Groovy scripts. We integrated ShEx
+validation into the automated deployment workflow: each time the
+workflow regenerates an ABox module, the validation step tests
+instances of the relevant class against their ShEx shape before
+loading the data into Virtuoso. The workflow terminates with an error
+if any instance violates the shape constraints (e.g., a sampling site
+lacking GPS coordinates or a DNA extract missing a concentration
+value). This mechanism functions as a regression test, ensuring that
+modifications to the ETL scripts do not introduce structural
+inconsistencies.
+
+We validated the following eight RDF modules against their respective
+ShEx schemas: \texttt{rubalkhali\_sites.owl},
+\texttt{rubalkhali\_samples.owl},
+\texttt{rubalkhali\_measurements.owl}, \texttt{rubalkhali\_dna.owl},
+\texttt{rubalkhali\_xrf.owl}, \texttt{rubalkhali\_taxonomy\_abox.ttl},
+\texttt{rubalkhali\_sra.owl}, and \texttt{rubalkhali\_qc.owl}. All
+eight modules passed validation without constraint violations.
+
+\subsection{Logical consistency}
+
+We verified the logical consistency of the knowledge graph using the
+ELK reasoner, as described in Section~\ref{methods}. We loaded the
+complete set of OWL modules (base ontology, all ABox files, and the
+taxonomy reference graph) into a single OWL ontology and ran ELK to
+check for unsatisfiable classes and contradictory axioms. The reasoner
+confirmed that no class was reduced to the empty set (i.e., no class
+became equivalent to \texttt{owl:Nothing}) and that no individual
+belonged to disjoint classes.
+
+We performed this consistency check as part of continuous integration
+during ontology development. Whenever we modified the TBox or
+introduced new ABox modules, we re-ran the ELK reasoner to detect
+regressions. We chose ELK over more expressive reasoners such as
+HermiT \cite{hermit} because the size of the knowledge graph
+(exceeding 37 million triples) made reasoning in the full OWL 2 DL
+profile computationally infeasible.
+
+We implemented the ELK consistency check via the OWL API (version
+4.5.26) with the ELK OWL API module (version 0.4.3) in a Groovy
+script. We ran the reasoner in two configurations: (1)~on the
+asserted knowledge graph prior to materialization, and (2)~on
+the union of the asserted knowledge graph and the OWL-Horst
+materialized graph described in
+Section~\ref{subsec:owl_rdf}. Table~\ref{tab:elk} reports the
+results. In both cases the reasoner confirmed that the ontology is
+consistent and reported zero unsatisfiable classes. The
+post-materialization run loaded 81.3~million axioms (of which
+78.1~million originate from the materialized ABox), discovered 74
+additional classes (7{,}202 $\rightarrow$ 7{,}276) from the
+materialized type assertions, and required 63~seconds for the
+consistency check on a server with 1~TB RAM (395~GB peak resident
+set). These results confirm that the OWL-Horst entailments
+introduced no disjointness violations despite adding 5.7~million
+new individual type assertions.
+
+\begin{table}[h]
+\centering
+\caption{ELK reasoning performance before and after OWL-Horst
+  materialization. All runs used OWL API 4.5.26 and ELK 0.4.3 on
+  a server with 1~TB RAM (Java heap 850~GB).}
+\label{tab:elk}
+\small
+\begin{tabular}{lrr}
+\toprule
+\textbf{Metric} & \textbf{Before} & \textbf{After} \\
+\midrule
+Modules loaded           & 8            & 10 \\
+Total axioms             & 224{,}775    & 81{,}273{,}368 \\
+Logical axioms           & 124{,}106    & 17{,}693{,}762 \\
+Classes                  & 7{,}202      & 7{,}276 \\
+Named individuals        & 30{,}680     & 5{,}712{,}603 \\
+\texttt{isConsistent}    & 0.84\,s      & 63.4\,s \\
+Class hierarchy          & 0.40\,s      & 0.73\,s \\
+Unsatisfiable classes    & 0            & 0 \\
+Load time                & 675\,s       & 7{,}585\,s \\
+Peak RSS                 & 203\,GB      & 395\,GB \\
+Wall time                & 688\,s       & 7{,}722\,s \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Compute-time metrics}\label{sec:compute_metrics}
+
+Table~\ref{tab:compute} summarizes the computational cost of
+the key deployment steps. OWL-Horst forward-chaining materialization
+(three rounds; see Section~\ref{subsec:owl_rdf}) runs in
+approximately 114~minutes and expands the knowledge graph from
+37.0~million asserted triples to 117.9~million
+(3.18$\times$). ELK consistency checking over the asserted
+TBox takes under 2~seconds; the post-materialization run that
+includes the full materialized ABox requires 63~seconds but
+confirms the same result (zero unsatisfiable classes). Competency
+question latency on the Virtuoso endpoint ranges from 5~ms for
+simple site look-ups (CQ2) to over 1~second for queries that
+traverse inverse properties across the entire DNA extraction
+workflow (CQ5).
+
+\begin{table}[h]
+\centering
+\caption{Compute-time metrics for key deployment and validation
+  steps.}
+\label{tab:compute}
+\small
+\begin{tabular}{lr}
+\toprule
+\textbf{Step} & \textbf{Time} \\
+\midrule
+RDF module loading (Virtuoso, 9 ABox files)  & 140\,s \\
+OWL-Horst materialization (3 rounds)         & 114\,min \\
+ELK classification (asserted only)           & 1.6\,s \\
+ELK classification (with materialized ABox)  & 64\,s \\
+CQ1 -- XRF measurements, Site 10            & 23\,ms \\
+CQ2 -- Sampling sites + GPS                 & 5\,ms \\
+CQ3 -- Biomes per site                      & 5\,ms \\
+CQ4 -- Light Elements percentages           & 8\,ms \\
+CQ5 -- DNA extraction records               & 1{,}342\,ms \\
+CQ6 -- Provenance chain                     & 255\,ms \\
+CQ7 -- Taxonomic composition                & $>$300\,s \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The taxonomy composition query (CQ7) exceeds a 5-minute timeout
+because it joins absolute and relative abundance datasets across
+1.4~million observations. This query is not used by the web portal;
+the portal retrieves taxonomic data per sample rather than across all
+runs, which completes in sub-second time.
+
+\subsection{Usability validation (web portal)}
+
+We developed a web portal (\url{https://rubalkhali.science/}) to
+provide user-friendly access to the data. The application architecture
+provides an end-to-end validation of the knowledge graph: the backend
+dynamically generates SPARQL queries to fetch content directly from
+the knowledge graph in real time without maintaining a separate
+relational database. Every page rendered constitutes a functional test
+of the underlying data. This architecture ensures that the website
+always reflects the current state of the knowledge graph, and any data
+integrity problem manifests as a visible error on the portal.
+
+\subsection{FAIR compliance}
+
+The design decisions described in the preceding sections collectively
+ensure that the dataset satisfies the FAIR Data Principles
+\cite{fair}:
+
+\begin{itemize}
+  \item \textbf{Findable}: We assigned globally unique IRIs under the \texttt{https://rubalkhali.science/kb/} namespace to all named individuals. We registered the dataset with ENA under accession PRJEB104209.
+  \item \textbf{Accessible}: We made data available via a standard SPARQL 1.1 endpoint and a web interface. We deposited raw sequences in ENA.
+  \item \textbf{Interoperable}: We employ established shared vocabularies (SIO, ENVO, ChEBI, PATO, UO, NCBI Taxonomy) and standard formats (OWL 2 DL, RDF/Turtle, SPARQL).
+  \item \textbf{Reusable}: We licensed the data under CC-BY 4.0 and described it with rich provenance metadata encoding the complete chain from physical sample to digital data product. We open-sourced all generation code.
+\end{itemize}

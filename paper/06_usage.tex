@@ -1,0 +1,82 @@
+\section{Usage notes}\label{usage}
+
+The knowledge graph is publicly accessible via the SPARQL endpoint at \url{https://rubalkhali.science/sparql}. Users can submit SPARQL 1.1 queries using standard clients (e.g., \texttt{curl}, Python's \texttt{SPARQLWrapper}, R's \texttt{SPARQL} package). The web portal at \url{https://rubalkhali.science/} provides a graphical interface for browsing sites, samples, and measurements without requiring SPARQL expertise.
+
+The semantic structure of the knowledge graph enables cross-domain queries. For example, researchers investigating the relationship between soil geochemistry and microbial diversity can construct a single query that retrieves calcium concentrations alongside Shannon diversity indices computed from taxon abundances. Executing this query in a relational database would necessitate joining at least four separate tables.
+
+The modular OWL architecture permits extending the knowledge graph with new data types, such as metabolomics or remote sensing data. Users can introduce new classes as subclasses of existing SIO entities and generate corresponding ABox modules. We automate the entire lifecycle---from data generation through validation to database loading---using the provided deployment workflow (\texttt{deploy\_onto.sh}).
+
+\subsection{Design rationale}
+
+We adopted the Semanticscience Integrated Ontology (SIO) as the
+upper-level framework because it offers a small set of relations
+(\texttt{hasInput}/\texttt{hasOutput}, \texttt{hasTarget},
+\texttt{hasMember}, \texttt{refersTo}, \texttt{hasValue}) that
+generalize across sampling, measurement, and provenance patterns.
+Sample collection, XRF analysis, DNA extraction, sequencing, and
+taxonomic classification are all instantiations of the same
+\texttt{Process--hasInput/hasOutput--Object} idiom; quantitative
+results are uniformly represented as \texttt{Quantity refersTo
+Quality} pairs with explicit units. This uniformity enables
+cross-domain SPARQL queries that traverse from a climate observation
+through a sampling site to a taxon abundance without per-domain
+join logic. Recent work on simplified upper-level ontologies, such as
+SULO \cite{sulo2025}, takes this argument further by strengthening
+fundamental relations and reducing reliance on specialized
+predicates; our patterns are compatible with this direction.
+
+We chose ShEx for ingest validation because the ETL is
+batch-oriented and the validator runs in the same Groovy/Jena
+toolchain that produces the RDF. SHACL is an obvious alternative
+supported in-database by several triple stores; a future port of the
+shapes from ShEx to SHACL would enable in-database validation at load
+time. We deployed Virtuoso as the triple store because it is
+available as free software under the GNU General Public License,
+supports OWL-Horst forward-chaining materialization, and has
+demonstrated operational maturity in large-scale linked-data
+deployments.
+
+Full OWL 2 DL reasoning over the combined TBox and the ABox is not
+computationally feasible with HermiT on commodity hardware. We
+therefore use ELK \cite{elk} to validate the logical consistency of
+the knowledge graph (confirming zero unsatisfiable classes both before
+and after materialization). For query answering, we rely on
+OWL-Horst forward-chaining materialization in Virtuoso, which
+physically expands the graph from 37~million asserted triples to
+approximately 118~million triples by applying subclass, subproperty,
+inverse, symmetric, equivalence, and transitivity rules. Two decades
+of work on scaling OWL reasoning---materialization-based approaches
+\cite{owlhorst}, query rewriting, modular reasoning, and
+consequence-based calculi such as ELK itself---provide several
+alternative points in the design space, and a more expressive reasoner
+could be applied to a sub-module of the TBox in future work.
+
+\subsection{Limitations and outstanding challenges}
+
+Several challenges remain open. First, more complex reasoning---for
+example over disjunctions arising from ENVO biome classifications or
+negative axioms about taxon absence---would require either a different
+reasoner or the extraction of a sub-module amenable to a more
+expressive calculus. Second, the resource depends on upstream
+ontologies (SIO, ChEBI, ENVO, NCBI Taxonomy) that evolve
+independently; keeping the deployed graph aligned with their releases
+is an ongoing maintenance task and a known reproducibility risk for any
+SPARQL query that bottoms out in a specific external IRI.
+
+\subsection{Sustainability and updates}
+
+The dataset is versioned and archived on Zenodo, and the deployment
+workflow is reproducible from the public repository. We intend to
+extend the resource as additional field expeditions are processed: new
+trips will be added as additional ABox modules without changes to the
+upper-level patterns. Upstream ontology updates will be tracked at
+scheduled intervals; re-materialization is scripted and runs as part of
+the deployment workflow, so an upstream release can be absorbed by
+re-running the workflow. Where an upstream change would alter the
+semantics of an existing query, we will record the affected competency
+questions in the changelog so that downstream users can audit the
+impact.
+
+\section{Code availability}\label{code}
+
+All source code for data processing, ontology engineering, RDF generation, validation, and the web portal is openly available at \url{https://github.com/bio-ontology-research-group/empty-quarter}. The repository includes Groovy scripts utilizing the OWL API 5 for OWL/RDF generation, Python scripts for data processing and statistical analysis, ShEx shape definitions for structural validation, SPARQL competency queries, React/FastAPI web application source code, and Docker Compose configurations for deployment.

@@ -1,0 +1,43 @@
+@prefix : <http://rubalkhali.science/kb#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix sra_biosample: <https://www.ncbi.nlm.nih.gov/biosample/> .
+
+<http://rubalkhali.science/kb/modules/samples> rdf:type owl:Ontology .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rubalkhali.science/kb#BioSampleRole
+:BioSampleRole rdf:type owl:Class ;
+               rdfs:subClassOf sio:SIO_000016 ;  # role
+               rdfs:label "Biosample Role" .
+
+###  http://rubalkhali.science/kb#DNAExtract
+:DNAExtract rdf:type owl:Class ;
+            rdfs:subClassOf sio:SIO_010008 ;  # gene
+            rdfs:label "DNA Extract" .
+
+###  http://rubalkhali.science/kb#ExtractionKit
+:ExtractionKit rdf:type owl:Class ;
+               rdfs:subClassOf sio:SIO_000094 ;  # chemical entity
+               rdfs:label "DNA Extraction Kit" .
+
+###  http://rubalkhali.science/kb#QiagenPowerSoilKit
+:QiagenPowerSoilKit rdf:type owl:Class ;
+                    rdfs:subClassOf :ExtractionKit ;
+                    rdfs:label "Qiagen DNeasy PowerLyzer PowerSoil Kit" .
+
+###  http://rubalkhali.science/kb#LibraryPrepKit
+:LibraryPrepKit rdf:type owl:Class ;
+                rdfs:subClassOf sio:SIO_000094 ;  # chemical entity
+                rdfs:label "Library Preparation Kit" .
+
+###  http://rubalkhali.science/kb#NEBNextUltraIIKit
+:NEBNextUltraIIKit rdf:type owl:Class ;
+                   rdfs:subClassOf :LibraryPrepKit ;
+                   rdfs:label "NEBNext Ultra II DNA Library Prep Kit for Illumina" .

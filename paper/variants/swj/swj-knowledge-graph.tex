@@ -1,0 +1,1760 @@
+% Semantic Web Journal: A formal knowledge graph for the Rub' al-Khali
+% desert ecosystem using the Semanticscience Integrated Ontology.
+%
+% This paper describes the KNOWLEDGE GRAPH ENGINEERING: ontology design
+% patterns, OWL-Horst materialization, ELK validation, SPARQL competency
+% questions, web portal, and design rationale. The underlying dataset
+% is described in a companion GigaScience Data Note.
+%
+% Target: SWJ "Descriptions of Datasets" track or regular paper.
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{gensymb}
+\usepackage{amsmath,amssymb}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{cite}
+
+\graphicspath{{../}}
+
+\title{A formal knowledge graph for integrating metagenomics and
+  geochemistry of the Rub' al-Khali desert using the Semanticscience
+  Integrated Ontology}
+
+\author{\textit{Author list to be completed}}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+Integrating multi-omic data with environmental metadata requires a
+unified data model that can harmonize heterogeneous observation types,
+enforce structural constraints at ingest, support logical consistency
+checking, and provide semantic query answering at scale. We present a
+formal knowledge graph that integrates 16S~rRNA gene amplicon
+profiles, X-ray fluorescence measurements, field observations, and
+climate records from a five-expedition sampling campaign across the
+Rub' al-Khali desert (the companion data paper reports the expedition
+and data acquisition in detail). The knowledge graph uses the
+Semanticscience Integrated Ontology (SIO) as the upper-level
+framework, with 302 domain classes grounded in ChEBI, ENVO, PATO, the
+Units Ontology, and NCBI Taxonomy. We formalize eight reusable
+ontology design patterns---for measurement, sampling, experimental
+protocol, taxonomic abundance, X-ray fluorescence geochemistry,
+sampling site with biome assignment, the sequencing workflow, and
+sequencing quality control---in description logic and align them
+explicitly with SIO's \textsc{Process--hasInput/hasOutput--Object},
+\textsc{Collection--hasMember--Thing}, and
+\textsc{Quantity--refersTo--Quality} idioms. A Shape Expressions
+(ShEx) validation step enforces structural shapes on every RDF batch
+before it is loaded into the triple store, and the ELK reasoner
+confirms logical consistency of the full knowledge graph (zero
+unsatisfiable classes) both before and after materialization. An
+OWL-Horst (pD*) forward-chaining materialization workflow in Virtuoso
+physically expands the graph from 37.0~million asserted triples to
+117.9~million total triples (a 3.18$\times$ expansion) in
+approximately 114~minutes. We evaluate the deployed resource through
+nine SPARQL competency questions with sub-second to second-range
+latencies, and we serve the knowledge graph through a public
+SPARQL~1.1 endpoint and a web portal with an autocomplete-aware query
+editor. We discuss the design rationale for every major choice,
+connect each choice to the underlying challenge, and identify
+limitations and directions for future work.
+
+\vspace{0.5em}
+\noindent\textbf{Keywords.} knowledge graph; SIO; OWL; ontology design
+patterns; OWL-Horst; materialization; ELK reasoner; ShEx;
+Virtuoso; SPARQL; desert microbiome; Rub' al-Khali
+\end{abstract}
+
+% ===================================================================
+\section{Introduction}
+% ===================================================================
+
+Characterizing a complex ecosystem requires integrating heterogeneous
+multi-scale data: microbial community profiles derived from DNA
+sequencing, elemental soil composition from geochemical analyses,
+spatiotemporal environmental variables, and provenance metadata that
+links physical samples to their digital
+representations~\cite{fierer2017}. Traditional approaches store these
+data types in separate, disconnected repositories, which limits
+cross-domain queries and reduces reproducibility. The emerging concept
+of an ecosystem \emph{digital twin}~\cite{digitaltwin2021,
+destinationearth,khan2025,iglesias2026} depends on precisely the kind
+of unified, machine-interpretable, interoperable data model that is
+missing for most natural environments; while biological systems and
+specific regions have semantic digital
+representations~\cite{biodigitaltwin}, no such resource exists for the
+Rub' al-Khali, the largest contiguous sand desert on
+Earth~\cite{mandaville_1986}, whose microbial communities and
+biogeochemistry remain poorly characterized~\cite{makhalanyane2015}.
+
+A companion data paper describes the underlying dataset: a
+five-expedition soil sampling campaign (2023--2025) across a
+1{,}043\,km transect of the Rub' al-Khali, yielding 16S~rRNA gene
+amplicon profiles from 2{,}535 soil samples at 70 sampling sites,
+X-ray fluorescence measurements for 91 chemical analytes from
+249 measurement sessions, GPS-tagged environmental measurements
+recorded at every site visit, and monthly and annual climate records
+retrieved from the Open-Meteo database~\cite{openmeteo,
+gigascience_companion}. This paper describes the \emph{semantic
+layer}: the ontology engineering, the modular OWL/RDF architecture,
+the reasoning workflow, and the evaluation of the deployed resource as
+a Semantic Web application.
+
+Constructing such a knowledge graph for an entire desert ecosystem
+requires addressing several interlocking challenges that have shaped
+the design of this work. First, the data are produced by heterogeneous
+instruments and protocols (16S amplicon sequencing, X-ray fluorescence,
+GPS-tagged field notes, gridded climate reanalysis), so a
+\emph{unified data model} is needed that can represent samples,
+processes, qualities, and quantities under a common upper-level
+vocabulary rather than as disconnected tables. Second, taxonomic
+labels are reported by multiple primer choices and classifier
+workflows and must be \emph{harmonized} against a single reference
+taxonomy without losing the original assertions. Third, because data
+are deposited in batches over five field expeditions, \emph{schema
+validation at ingest} is required to catch structural errors before
+they propagate into the graph. Fourth, the knowledge graph must
+support \emph{semantic query answering at scale}: with tens of
+millions of triples, expressive OWL~2~DL reasoning is computationally
+infeasible, so a tractable reasoning regime must be selected and its
+trade-offs made explicit. Fifth, a \emph{user-facing query and
+exploration interface} is required so that domain scientists who are
+not fluent in SPARQL can interact with the resource. We return to
+each of these challenges in Section~\ref{sec:discussion} and link
+them to the corresponding design choices in the later sections.
+
+This paper makes the following contributions to the Semantic Web
+community. We present an OWL~2~DL knowledge graph that integrates a
+desert ecosystem dataset under the Semanticscience Integrated
+Ontology (SIO)~\cite{sio} as the upper-level framework, with domain
+classes grounded in ChEBI~\cite{chebi}, ENVO~\cite{envo},
+PATO~\cite{pato}, the Units Ontology~\cite{uo}, and NCBI
+Taxonomy~\cite{ncbitaxon}. We formalize eight reusable ontology
+design patterns in description logic and align them explicitly with
+SIO's core relational idioms, accompanied by Turtle listings and
+prose verbalizations so that readers can reproduce and extend
+them. We integrate Shape Expressions (ShEx)~\cite{shex} validation
+into an automated deployment workflow as a regression test against
+structural drift. We implement OWL-Horst (pD*)~\cite{owlhorst}
+forward-chaining materialization as three rounds of SPARQL Update
+statements executed inside Virtuoso~\cite{virtuoso}, producing a
+3.18$\times$ expansion from 37~million asserted to 118~million
+total triples in approximately 114~minutes. We validate the logical
+consistency of the full graph with the ELK reasoner~\cite{elk}
+both before and after materialization and show that the
+materialization introduces no disjointness violations. We report
+compute-time metrics for the key deployment steps and per-query
+latencies for a suite of nine SPARQL competency questions, and we
+serve the resource through a public SPARQL~1.1 endpoint and a web
+portal with an autocomplete-aware query editor. Finally, we discuss
+the design rationale for every major choice, the current
+limitations, and a sustainability plan for future data increments
+and upstream ontology updates.
+
+% ===================================================================
+\section{Related work}\label{sec:related}
+% ===================================================================
+
+The Semantic Web community has produced a rich ecosystem of
+standards, vocabularies, and tools that collectively cover parts of
+the task of describing an ecological dataset. This section first
+surveys those standards, then reviews the reasoning and deployment
+literature that our work builds on, and finally articulates the gap
+that motivates our design: no single existing standard covers the
+full provenance chain from a physical soil sample to an integrated,
+materialized knowledge graph that supports cross-domain query
+answering, and combining them requires an integrative layer of the
+kind we provide.
+
+% -----------------------------------------------
+\subsection{Upper-level ontologies for scientific data integration}
+% -----------------------------------------------
+
+The Semanticscience Integrated Ontology (SIO)~\cite{sio} is a
+lightweight upper-level ontology that provides general-purpose classes
+and relations applicable across scientific domains, including entities
+(objects, processes, attributes), qualities, quantities, and
+collections. SIO has been used to describe biomedical datasets,
+laboratory experiments, and observational studies, and it is
+compatible with several community vocabularies (OBO Foundry,
+Units Ontology, ChEBI). We adopt SIO because its relational idioms
+(\textsc{Process--hasInput/hasOutput--Object},
+\textsc{Collection--hasMember--Thing}, and
+\textsc{Quantity--refersTo--Quality}) generalize uniformly across the
+sampling, laboratory, and computational processes that our dataset
+requires. Recent work on simplified upper-level ontologies, notably
+SULO~\cite{sulo2025}, takes this argument further: by strengthening a
+few fundamental relations and reducing reliance on specialized
+predicates, an upper-level ontology can lower the modelling effort
+for new domains while preserving interoperability. Our design
+patterns are compatible with this direction and could be re-grounded
+in SULO with limited refactoring.
+
+% -----------------------------------------------
+\subsection{Related standards for provenance, observations, and
+  sampling metadata}\label{subsec:related_standards}
+% -----------------------------------------------
+
+Several Semantic Web standards address subsets of the problem we
+solve. We briefly review the most relevant, grouped by concern, and
+explain in each case what the standard covers and what it leaves
+uncovered.
+
+\paragraph{Provenance: PROV-O.}
+The W3C PROV-O~\cite{provo} recommendation defines a small number of
+core classes (\texttt{Activity}, \texttt{Entity}, \texttt{Agent}) and
+relations (\texttt{used}, \texttt{wasGeneratedBy},
+\texttt{wasDerivedFrom}, \texttt{wasAssociatedWith}) that are
+sufficient to record \emph{that} one data item was derived from
+another, by whom, and when. PROV-O is deliberately domain-agnostic
+and does not model what the activity \emph{does} beyond
+``used input $X$, produced output $Y$.'' In our setting, every
+scientific process---sampling, DNA extraction, library preparation,
+sequencing, taxonomic classification, XRF analysis---is structurally
+similar at the PROV-O level but semantically distinct: a sampling
+process targets a site, an XRF process targets a sample and produces
+typed concentration quantities, a bioinformatic workflow produces a
+taxonomic dataset whose members are abundance observations. Encoding
+these domain semantics in pure PROV-O forces the modeller to introduce
+custom sub-classes of \texttt{Activity} and \texttt{Entity} for every
+distinct process and data type. Our SIO-based patterns give this
+structure directly in a single upper-level framework, and every
+instance can be projected onto PROV-O as needed because SIO's
+\textsc{Process--hasInput/hasOutput--Object} relations map
+one-to-one onto PROV-O.
+
+\paragraph{Observations and sensors: SOSA/SSN.}
+The W3C/OGC SOSA (Sensor, Observation, Sample, Actuator)
+vocabulary and the Semantic Sensor Network (SSN)
+ontology~\cite{sosa} define classes for \texttt{Observation},
+\texttt{Sensor}, \texttt{Sample}, \texttt{FeatureOfInterest}, and
+\texttt{ObservableProperty}. SOSA/SSN is oriented primarily toward
+Internet-of-Things deployments, continuous sensor streams, and the
+relationship between a physical sensor and the property it measures.
+It is well-suited for settings where the measurement process is a
+thin wrapper around a sensor reading. Our dataset does not fit that
+mould: we have one-off field measurements made with handheld
+instruments, batch laboratory workflows, and computational analyses
+whose ``observable property'' (for example, the relative abundance
+of a taxon in a 16S~rRNA dataset) is itself the output of a multi-step
+bioinformatics workflow. SOSA's \texttt{Sample} class is intentionally
+thin and does not capture the soil-compartment / replicate structure
+of our sampling design. Furthermore, SOSA does not model the
+provenance chain from sample to digital data product. Our design
+patterns could in principle be rephrased over SOSA by treating each
+laboratory and computational step as a \texttt{hosts} relation on a
+virtual sensor, but this mapping is unnatural and loses the
+process-centric semantics that make the ODPs re-usable across
+domains.
+
+\paragraph{Experimental protocols: OBI.}
+The Ontology for Biomedical Investigations (OBI)~\cite{obi} provides
+a rich vocabulary for laboratory workflows, protocols, agents,
+devices, and experimental designs in the biomedical
+domain. OBI's coverage includes many of the process patterns we
+need---material processing, library preparation, sequencing
+assays---and its alignment with BFO and IAO gives it a sound
+upper-level grounding. Two considerations kept us from adopting OBI
+as our sole upper-level framework. First, OBI is heavily oriented
+toward clinical and biomedical investigations; many of its classes
+assume a human subject or a clinical assay context that does not
+apply to environmental sampling. Second, OBI is large and has a
+steep onboarding cost for a focused dataset like ours. We therefore
+use OBI indirectly through SIO compatibility: several of our DNA
+extraction and sequencing classes could be re-aligned with OBI
+classes as a future extension, and we already import ChEBI and PATO
+which are in the OBO family OBI uses.
+
+\paragraph{Minimum metadata for sequencing: MIxS.}
+The Genomic Standards Consortium's MIxS checklist~\cite{mixs}
+specifies the minimum metadata fields required for sequence
+submissions (MIMARKS for marker genes, MIGS/MIMS for genomes and
+metagenomes). MIxS is a flat key-value checklist rather than an
+ontology: it prescribes \emph{which} fields must be reported and
+what controlled vocabularies to draw values from, but provides no
+formal semantics and no inference. It is sufficient for ENA
+submission but insufficient for cross-domain reasoning. A MIxS
+record can be projected into our knowledge graph as a set of
+triples about a sample, an environmental context, and an
+associated sequencing run, but the inverse projection from our
+knowledge graph to a MIxS record is trivial: every field the
+checklist requires corresponds to a SPARQL query against an instance
+of our sampling and sequencing patterns. In that sense we treat
+MIxS as a downstream consumer of our knowledge graph rather than an
+upstream data model.
+
+\paragraph{Ecological observations: OBOE.}
+The Extensible Observation Ontology (OBOE)~\cite{oboe} provides a
+general structure for ecological observations based on four core
+classes: \texttt{Observation}, \texttt{Entity}, \texttt{Measurement},
+and \texttt{Characteristic}. OBOE has influenced the design of
+SOSA/SSN and is conceptually close to the measurement pattern we
+use. Two reasons kept us from adopting OBOE directly: its
+community uptake has remained modest compared with SIO and SOSA,
+and the observation-centric framing does not extend naturally to
+the laboratory and computational processes that dominate our
+provenance chain. Where an observation in OBOE is a single event,
+our pipeline has many events---sampling, extraction, amplification,
+sequencing, bioinformatic analysis---each of which generates its
+own quantities and qualities. Modelling this as a chain of OBOE
+observations is possible but loses the
+\textsc{Process--hasInput/hasOutput--Object} abstraction that makes
+the patterns composable.
+
+\paragraph{Biodiversity records: Darwin Core.}
+Darwin Core~\cite{darwincore} is the dominant community standard for
+biodiversity occurrence records and underlies the Global
+Biodiversity Information Facility (GBIF). Darwin Core is primarily
+a flat record format with a controlled vocabulary (Darwin Core
+Terms) rather than a semantic ontology, though a
+Darwin-Core-in-RDF mapping exists. The scope of Darwin Core is the
+occurrence record---``this organism was observed at this place at
+this time''---and it does not model laboratory or computational
+processes. It can be linked in as a complementary vocabulary for
+the taxonomic component of our knowledge graph, and our per-sample
+taxon observations could be projected into Darwin Core records for
+GBIF deposit, but Darwin Core alone does not provide the integrative
+data model we need.
+
+\paragraph{Units of measurement: QUDT and OM.}
+Both QUDT~\cite{qudt} and OM~\cite{om_ontology} provide comprehensive
+RDF-based vocabularies for units of measurement, quantities, and
+dimensions. They are strong alternatives to the Units Ontology
+(UO)~\cite{uo}. We use UO because it is part of the OBO Foundry and
+therefore integrates cleanly with ChEBI and PATO in a single
+import closure. QUDT and OM could be swapped in without changing any
+of our ontology design patterns; the measurement pattern
+(Equation~\ref{eq:measurement}) is unit-vocabulary-agnostic.
+
+\paragraph{Information artefacts: IAO.}
+The Information Artifact Ontology (IAO)~\cite{iao} formalizes
+information content entities, documents, data items, and
+measurement data. IAO is widely used in OBO-family resources for
+distinguishing the digital artefact that records a measurement
+from the measurement process itself. Our knowledge graph makes this
+distinction implicitly through the SIO \texttt{Quantity} class and
+the data-property links back to literal values; a future alignment
+of our quantity classes with IAO would make the distinction
+explicit at the cost of an additional import.
+
+% -----------------------------------------------
+\subsection{What this work adds}\label{subsec:what_we_add}
+% -----------------------------------------------
+
+The preceding survey shows that each existing standard covers a
+proper subset of the integration task. PROV-O provides provenance
+relations but not process semantics. SOSA/SSN provides observations
+but is oriented toward sensor streams and thin samples. OBI provides
+biomedical laboratory workflows but is heavy and biomedical-focused.
+MIxS provides a reporting checklist but no formal semantics. OBOE
+provides ecological observations but has limited uptake and
+observation-centric framing. Darwin Core provides biodiversity
+records but no laboratory or computational provenance. None of these
+standards alone provides a unified data model that can represent
+sampling sites, field observations, laboratory processes, sequencing
+workflows, bioinformatic analyses, and taxonomic abundance
+observations under a common vocabulary, with full provenance, with
+in-workflow structural validation, and with logical consistency
+checking at deployment time. Four specific gaps drive our work:
+
+\begin{itemize}
+
+  \item \textbf{Heterogeneity of process types.} The ETL for a field
+    expedition touches at least six distinct process categories:
+    field sampling, field measurement, laboratory extraction,
+    laboratory measurement, sequencing, and computational analysis.
+    Each category is served by a different community standard in
+    the literature (OBOE/SOSA for field, OBI for laboratory, MIxS
+    for sequencing, PROV-O or OBOE for analysis). Combining them
+    requires either a Frankenstein import (every standard contributes
+    its own upper-level classes) or a thin integrative layer. We
+    chose the latter: a single SIO-based upper layer under which each
+    process category instantiates the same
+    \textsc{Process--hasInput/hasOutput--Object} idiom. Our
+    contribution is the specific set of eight design patterns
+    (Section~\ref{subsec:odps}) that show how this layering works in
+    practice, with formal DL and executable Turtle for every pattern.
+
+  \item \textbf{Full provenance chain with uniform IRIs.} Existing
+    resources that cover parts of this chain typically use different
+    identifier schemes at different stages: the physical sample is
+    identified by an institutional barcode, the DNA extract by a
+    laboratory accession, the sequencing run by an ENA accession,
+    the taxonomic classification by an OTU string, and the analysis
+    output by a file path. Cross-referencing these requires manual
+    joining. Our knowledge graph assigns every entity---site, visit,
+    sample, DNA extract, amplicon library, sequencing run, FASTQ
+    dataset, taxonomic observation, QC measurement---a single
+    persistent IRI under the \texttt{https://rubalkhali.science/kb/}
+    namespace, and connects them through SIO's
+    \texttt{hasInput}/\texttt{hasOutput} relations. As a result, a
+    single SPARQL traversal can walk from a taxon abundance back to
+    the soil sample and on to the sampling site and the environmental
+    measurements recorded at that visit, as demonstrated by
+    Listing~\ref{lst:sparql_env_tax}. No existing standard provides
+    this provenance chain out of the box; it has to be built by the
+    integrator. We provide it.
+
+  \item \textbf{Reasoning and validation as deployment steps.}
+    None of the standards reviewed above specify how to validate
+    data at ingest time or how to materialize entailments at
+    deployment time. Community practice is to treat validation and
+    reasoning as separate, optional, downstream tools. We make both
+    first-class steps in the deployment workflow: every ABox module
+    is validated against a ShEx shape before it reaches Virtuoso,
+    and the deployed graph is materialized via an explicit OWL-Horst
+    forward-chaining procedure that is scripted as SPARQL Update
+    statements inside the triple store. The materialization choice
+    reflects a specific engineering trade-off---ELK is used for
+    consistency checking (sound and complete for OWL~2~EL
+    classification), while OWL-Horst is used for forward-chaining
+    ABox expansion (a different, incomplete, but practically
+    sufficient semantics)---that existing standards do not prescribe.
+    Our contribution is the concrete recipe (Section~\ref{subsec:owl_rdf})
+    showing how to combine these two reasoners in a real Virtuoso
+    deployment.
+
+  \item \textbf{A reusable ontology design pattern library with
+    verbalized listings.} Our eight design patterns are designed to
+    be reused. Each is formalized in description logic, illustrated
+    with a concrete Turtle listing, verbalized in prose, and
+    documented in the deposited ontology with natural-language
+    annotations. This combination---formal, instance-level, and
+    prose---is uncommon in practice: community ontologies typically
+    provide either formal axioms without examples or example files
+    without formal patterns. The former is opaque to domain
+    scientists; the latter is under-specified. We provide both, and
+    we release the patterns as a standalone contribution so that
+    authors of future environmental knowledge graphs can adopt them
+    directly.
+
+\end{itemize}
+
+In short, SIO and the standards reviewed above give us the building
+blocks: SIO for the upper-level relations, ChEBI and ENVO and NCBI
+Taxonomy for the grounded domain terms, PROV-O for optional
+projection, MIxS for optional downstream export. What we add is the
+explicit, documented, reusable \emph{integration layer} that binds
+them together for a real-world environmental dataset and runs as a
+validated, materialized, queryable deployment.
+
+% -----------------------------------------------
+\subsection{Large-scale OWL reasoning}
+% -----------------------------------------------
+
+Reasoning over the combination of an expressive TBox and a
+large ABox has been a recurring challenge in the Semantic Web
+community for two decades. HermiT~\cite{hermit}, Pellet, and other
+full OWL~2~DL reasoners implement tableau algorithms that are sound
+and complete for the full profile but do not scale to the kind of
+37-million-triple ABox we have here on commodity hardware. Three
+broad strategies have been developed to address scale. The first is
+\emph{materialization} of entailments under a restricted
+semantics: ter~Horst's pD* / OWL-Horst rules~\cite{owlhorst} define a
+set of RDF inference rules that cover most of RDFS, subproperties,
+inverses, and transitivity, and can be applied forward-chaining to
+populate an inferred graph. Virtuoso implements OWL-Horst as a
+backward-chaining rule set that is activated at query time, but also
+supports forward-chaining materialization via SPARQL Update. The
+second strategy is \emph{query rewriting} under the OWL~2~QL profile,
+which allows the reasoner to rewrite the user's query to account for
+the TBox without materializing any new triples. The third strategy is
+\emph{consequence-based reasoning} for restricted profiles such as
+OWL~2~EL; the ELK reasoner~\cite{elk} is a polynomial-time
+consequence-based classifier for OWL~2~EL that scales to very large
+TBoxes with millions of named classes. In this work we combine two
+of these strategies: we use ELK for logical consistency checking
+and classification of the TBox (where its polynomial guarantees make
+the check tractable), and we use OWL-Horst forward-chaining
+materialization in Virtuoso to expand the ABox so that query
+answering against the deployed endpoint can be served from physical
+triples without paying a per-query reasoning cost. We report
+quantitative results for both components below.
+
+% -----------------------------------------------
+\subsection{Triple store deployment}
+% -----------------------------------------------
+
+Several triple stores provide inference support and SPARQL query
+answering at production scale. We deployed Virtuoso~\cite{virtuoso}
+because it is available as free software under the GNU General Public
+License, supports OWL-Horst forward-chaining materialization, and has
+demonstrated operational maturity in large-scale linked-data
+deployments.
+
+% -----------------------------------------------
+\subsection{Structural validation}
+% -----------------------------------------------
+
+Shape Expressions (ShEx)~\cite{shex} and the Shapes Constraint
+Language (SHACL) are the two main W3C-compatible languages for
+describing and validating RDF graph structures. We chose ShEx because
+the data-generation workflow is batch-oriented and can invoke the
+validator from the same Groovy/Jena toolchain that produces the
+RDF. SHACL is an obvious alternative and is supported in-database by
+several triple stores; a future port of the shapes from ShEx to
+SHACL would enable in-database validation at load time. We return
+to this point in the discussion.
+
+% -----------------------------------------------
+\subsection{Ecological and environmental knowledge graphs}
+% -----------------------------------------------
+
+Several groups have published linked-data resources for biodiversity,
+biogeography, and environmental data (for example GBIF, GloBI, and
+various OBI-aligned ecosystem studies). Compared with these
+resources, our work differs in two respects. First, it targets a
+single geographic region and a single coordinated sampling effort,
+allowing the knowledge graph to encode the full provenance chain
+from physical sample to digital data product with uniform IRIs
+throughout. Second, the dataset tightly couples microbiome sequencing
+with soil chemistry and environmental measurements, which is unusual
+at this scale and supports cross-domain queries that are difficult
+or impossible to express against the individual source
+repositories.
+
+% ===================================================================
+\section{Dataset overview}
+% ===================================================================
+
+The companion data paper~\cite{gigascience_companion} describes the
+expedition, sampling protocol, DNA extraction, sequencing workflow,
+taxonomy harmonization, and environmental data retrieval in detail.
+We summarize the relevant figures here so that this paper remains
+self-contained.
+
+The dataset is the product of five field expeditions conducted
+between early 2023 and late 2025 along a 1{,}043\,km transect of the
+Rub' al-Khali from the western escarpment (19.15\degree N,
+45.17\degree E) to the eastern border with Oman (20.71\degree N,
+54.73\degree E). At each of 70 sampling sites we collected bulk
+surface, bulk subsurface (``deep''), and rhizosphere soil samples in
+three biological replicates, for a total of 2{,}535 samples. We
+generated 16S~rRNA amplicon sequencing profiles for every sample on
+Illumina MiSeq, processed the reads with nf-core/Ampliseq +
+DADA2~\cite{nfcore,ampliseq,dada2}, classified ASVs against the
+Genome Taxonomy Database (GTDB)~\cite{gtdb}, and harmonized the
+resulting classifications across primer/classifier combinations
+against NCBI Taxonomy~\cite{ncbitaxon} and the iNaturalist taxonomy,
+yielding 1{,}401{,}008 taxon--sample abundance observations. For a
+subset of the sites we generated X-ray fluorescence measurements for
+91 chemical analytes in 249 measurement sessions, and at every site
+visit we recorded temperature, atmospheric pressure, and relative
+humidity with handheld field instruments. We additionally retrieved
+historical climate data from the Open-Meteo database for every site,
+yielding 12{,}936 monthly and 582 annual climate records.
+
+We distribute the integrated knowledge graph as nine modular OWL/RDF
+files listed in Table~\ref{tab:modules}. The modules together encode
+the full provenance chain from a physical sample to every digital
+data product derived from it.
+
+\begin{table}[h]
+  \centering
+  \caption{Distributed knowledge graph modules.}
+  \label{tab:modules}
+  \small
+  \begin{tabular}{lp{0.58\textwidth}}
+    \toprule
+    File & Contents \\
+    \midrule
+    \texttt{rubalkhali.owl} & Base ontology (TBox); 302 domain
+      classes grounded in SIO, ChEBI, ENVO, PATO, UO. \\
+    \texttt{rubalkhali\_sites.owl} & 70 sampling sites with
+      coordinates and ENVO biome annotations. \\
+    \texttt{rubalkhali\_samples.owl} & 2{,}535 soil samples with
+      compartment type and replicate identifier. \\
+    \texttt{rubalkhali\_measurements.owl} & Environmental measurements
+      and 12{,}936 monthly / 582 annual climate records. \\
+    \texttt{rubalkhali\_xrf.owl} & 6{,}674 XRF measurement values
+      across 91 analytes from 249 sessions. \\
+    \texttt{rubalkhali\_dna.owl} & 2{,}410 DNA extracts with
+      concentration measurements, agents, kits, protocols. \\
+    \texttt{rubalkhali\_sra.owl} & 1{,}242 sequencing run records
+      linked to ENA accessions. \\
+    \texttt{rubalkhali\_qc.owl} & Sequencing quality metrics (GC
+      content, duplicate rate, sequence counts). \\
+    \texttt{rubalkhali\_taxonomy\_abox.owl} & 1{,}401{,}008
+      taxon--sample abundance observations. \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% ===================================================================
+\section{Knowledge representation}\label{sec:kr}
+% ===================================================================
+
+We developed a formal knowledge base to integrate the different data
+types generated by the project. The semantic layer encodes the full
+provenance chain from physical sampling to digital data products,
+enabling cross-domain queries and ensuring data interoperability
+through shared vocabularies.
+
+% -----------------------------------------------
+\subsection{Architecture}
+% -----------------------------------------------
+
+The knowledge base is constructed in description
+logic~\cite{dlhandbook} using a modular architecture that strictly
+separates the terminology (Terminological Box, TBox, or ontology) from
+the observed facts (Assertion Box, ABox, or domain knowledge). The
+TBox defines the ontology of the knowledge graph using
+OWL~2~DL~\cite{owl2}, while the ABox contains the instance data
+generated from the expedition. We deployed the complete knowledge
+base across three named RDF graphs: an ontology graph (17{,}025
+triples) containing the TBox, a knowledge base graph containing the
+asserted instance data, and a taxonomy reference graph containing the
+aligned taxonomy module.
+
+% -----------------------------------------------
+\subsection{Prefix conventions}\label{subsec:prefixes}
+% -----------------------------------------------
+
+For brevity, the Turtle and SPARQL listings throughout this paper use
+the prefix declarations of Table~\ref{tab:prefixes}; these
+declarations should be prepended to any listing that the reader
+wishes to execute against the public endpoint. With these
+declarations in place, identifiers such as
+\texttt{https://rubalkhali.science/kb/RAK\_P100001} are abbreviated to
+\texttt{rak:P100001} and
+\texttt{http://semanticscience.org/resource/SIO\_000291} to
+\texttt{sio:000291} without loss of information.
+
+\begin{table}[h]
+\centering
+\caption{Prefix declarations used in all Turtle and SPARQL listings.}
+\label{tab:prefixes}
+\small
+\begin{tabular}{ll}
+\toprule
+\textbf{Prefix} & \textbf{Namespace} \\
+\midrule
+\texttt{rak:}       & \texttt{https://rubalkhali.science/kb/RAK\_} \\
+\texttt{sio:}       & \texttt{http://semanticscience.org/resource/SIO\_} \\
+\texttt{pato:}      & \texttt{http://purl.obolibrary.org/obo/PATO\_} \\
+\texttt{uo:}        & \texttt{http://purl.obolibrary.org/obo/UO\_} \\
+\texttt{envo:}      & \texttt{http://purl.obolibrary.org/obo/ENVO\_} \\
+\texttt{ncbitaxon:} & \texttt{http://purl.obolibrary.org/obo/NCBITaxon\_} \\
+\texttt{obo:}       & \texttt{http://purl.obolibrary.org/obo/} \\
+\texttt{rdf:}       & \texttt{http://www.w3.org/1999/02/22-rdf-syntax-ns\#} \\
+\texttt{rdfs:}      & \texttt{http://www.w3.org/2000/01/rdf-schema\#} \\
+\texttt{xsd:}       & \texttt{http://www.w3.org/2001/XMLSchema\#} \\
+\texttt{geo:}       & \texttt{http://www.opengis.net/ont/geosparql\#} \\
+\texttt{dcterms:}   & \texttt{http://purl.org/dc/terms/} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% -----------------------------------------------
+\subsection{Ontology engineering and design patterns}\label{subsec:odps}
+% -----------------------------------------------
+
+We use the Semanticscience Integrated Ontology (SIO)~\cite{sio} as
+the upper-level framework. SIO provides general-purpose classes and
+relations applicable across scientific domains, ensuring semantic
+interoperability with other SIO-based datasets. We defined all
+domain-specific classes as subclasses of SIO classes, and all
+introduced relations are sub-relations of SIO relations. We mapped
+classes to SIO and maintained full semantic mappings in our public
+repository (Section~\ref{sec:availability}).
+
+The core ontology comprises 302 distinct domain-specific classes
+integrated directly under the SIO framework. To accurately represent
+the complex relationships between environmental samples, laboratory
+processes, and bioinformatic workflows, we incorporated 4 object
+properties and 18 datatype properties. In total, the terminology
+model encapsulates 1{,}290 formal axioms. This compact semantic
+structure maintains precise alignment with our standardized schemas
+while minimizing redundant inferences.
+
+The following eight subsections present the ontology design patterns
+used in the knowledge graph. Each pattern is formalized in description
+logic, illustrated with a Turtle listing, and verbalized in prose
+so that readers unfamiliar with OWL or Turtle can follow the
+example. All patterns explicitly instantiate SIO's core relational
+idioms (\textsc{Process--hasInput/hasOutput--Object},
+\textsc{Collection--hasMember--Thing},
+\textsc{Quantity--refersTo--Quality}), and later patterns reuse the
+earlier ones as building blocks.
+
+% ...........................
+\subsubsection{Measurement pattern}
+
+We model a quantitative measurement using SIO's ontology design
+pattern for measurement processes: a measurement is a process that
+generates a value for a specific quality of a target entity.
+
+\begin{align}
+    \label{eq:measurement}
+    \text{MeasurementProcess} & \sqsubseteq \text{Process} \\
+    \text{Quality} & \sqsubseteq \text{Attribute} \\
+    \text{Quantity} & \sqsubseteq \text{InformationContentEntity} \\
+    \text{MeasurementProcess} & \sqsubseteq \exists \text{hasTarget}.\text{Entity} \sqcap \exists \text{hasOutput}.\text{Quantity} \\
+    \text{Quantity} & \sqsubseteq \exists \text{hasValue}.\text{xsd:double} \sqcap \exists \text{hasUnit}.\text{Unit}
+\end{align}
+
+We identify all units with classes from the Units Ontology (UO)~\cite{uo}.
+Qualities are expressed using the Phenotype and Trait Ontology
+(PATO)~\cite{pato} and linked to SIO as subclasses of the
+\emph{Quality} class. Listing~\ref{lst:ttl_temp} illustrates an
+environmental temperature measurement taken at a sampling site.
+
+\begin{lstlisting}[caption={Turtle representation of an environmental
+  temperature measurement.},
+  label={lst:ttl_temp}, basicstyle=\ttfamily\scriptsize, frame=single]
+rak:P000001 a rak:0000006 ; # Measurement Process
+  sio:000291 rak:1000001 ; # hasTarget
+  sio:000229 rak:4000001 . # hasOutput (Value)
+
+rak:4000001 a rak:0000010 ; # Quantity
+  sio:000221 uo:0000027 ; # hasUnit (degree Celsius)
+  rak:2000003 "20.7"^^xsd:double ; # hasValue
+  sio:000215 rak:5000001 . # refersTo (Quality)
+
+rak:5000001 a pato:0000146 ; # Temperature Quality
+  sio:000011 rak:1000001 . # isAttributeOf
+\end{lstlisting}
+
+In words, an instance \texttt{rak:P000001} of a measurement process
+has as its target the sampling site \texttt{rak:1000001} and produces
+as output the quantity \texttt{rak:4000001}. That quantity carries
+the literal value \texttt{20.7}, is reported in degrees Celsius
+(\texttt{uo:0000027}), and refers to a temperature quality
+\texttt{rak:5000001} which is in turn an attribute of the same
+site. Reading the chain in either direction therefore connects the
+numeric reading to both the measured site and the abstract quality
+that it quantifies.
+
+% ...........................
+\subsubsection{Sampling pattern}
+
+A sampling event is a process that derives a sample from a feature of
+interest (the site).
+
+\begin{align}
+    \label{eq:sampling}
+    \text{SamplingProcess} & \sqsubseteq \text{Process} \\
+    \text{Sample} & \sqsubseteq \text{MaterialEntity} \\
+    \text{SamplingProcess} & \sqsubseteq \exists
+                                 \text{hasTarget}.\text{Site} \sqcap
+                                 \exists
+                                 \text{hasOutput}.\text{Sample} \\
+    \text{Sample} & \sqsubseteq \exists \text{isDerivedFrom}.\text{Site}
+\end{align}
+
+Listing~\ref{lst:ttl_sampling} illustrates the semantic representation
+of a surface soil sample collected during Trip~1.
+
+\begin{lstlisting}[caption={Turtle representation of a sampling process.},
+  label={lst:ttl_sampling}, basicstyle=\ttfamily\scriptsize, frame=single]
+rak:P100001 a rak:0000024 ; # Sampling Process
+  sio:000291 rak:1000001 ; # hasTarget
+  sio:000229 rak:7000001 . # hasOutput (Collection)
+
+rak:6000001 a rak:0000021 ; # Deep Soil Sample
+  sio:000252 rak:1000001 . # isDerivedFrom
+\end{lstlisting}
+
+Read in prose, an instance \texttt{rak:P100001} of a sampling process
+targets the site \texttt{rak:1000001} and yields a collection
+\texttt{rak:7000001} as its output; the deep soil sample
+\texttt{rak:6000001} is in turn asserted to be derived from the same
+site. The redundancy between \texttt{hasTarget} on the process and
+\texttt{isDerivedFrom} on the sample is intentional: the former
+records the action, the latter records the resulting provenance edge
+directly on the material entity, so queries can traverse from sample
+to site without joining through the sampling event.
+
+% ...........................
+\subsubsection{Experimental protocol pattern}
+
+We model experimental protocols as processes specified by a protocol
+entity. Each process (for example DNA extraction, library preparation)
+consumes inputs and produces outputs, explicitly linking agents and
+devices. The pattern instantiates SIO's general
+\textsc{Process--hasInput/hasOutput--Object} idiom and adds a
+specification link to a reusable protocol description.
+
+\begin{align}
+    \label{eq:protocol}
+    \text{ProtocolExecution} & \sqsubseteq \text{Process} \\
+    \text{Protocol} & \sqsubseteq \text{InformationContentEntity} \\
+    \text{ProtocolExecution} & \sqsubseteq \exists
+        \text{isSpecifiedBy}.\text{Protocol} \\
+    \text{ProtocolExecution} & \sqsubseteq \exists
+        \text{hasInput}.\text{MaterialEntity} \sqcap \exists
+        \text{hasOutput}.\text{MaterialEntity}
+\end{align}
+
+Listing~\ref{lst:ttl_protocol} demonstrates the formalization of a
+DNA extraction process.
+
+\begin{lstlisting}[caption={Turtle representation of a DNA extraction protocol.},
+  label={lst:ttl_protocol}, basicstyle=\ttfamily\scriptsize, frame=single]
+rak:P200001 a sio:000994 ; # Scientific Protocol Execution
+  sio:000339 rak:DNA_ext_powersoil ; # isSpecifiedBy
+  sio:000230 rak:6000001 ; # hasInput (Soil Sample)
+  sio:000229 rak:6800001 . # hasOutput (DNA Extract)
+
+rak:6800001 a rak:0000040 ; # DNA Extract
+  sio:000008 rak:4900001 . # hasAttribute (Concentration Quality)
+\end{lstlisting}
+
+In words, the protocol-execution instance \texttt{rak:P200001} is
+specified by the named extraction protocol
+\texttt{rak:DNA\_ext\_powersoil}, takes the soil sample
+\texttt{rak:6000001} as input, and produces the DNA extract
+\texttt{rak:6800001} as output; the resulting extract carries a
+concentration quality (\texttt{rak:4900001}) which is itself
+quantified through a separate measurement process following the
+pattern of Equation~\ref{eq:measurement}.
+
+% ...........................
+\subsubsection{Taxonomic abundance pattern}
+
+Taxonomic profiles represent collections of taxon observations
+containing associated relative and absolute abundances. Instead of
+modeling the feature table as a flat matrix, we formalize the entire
+table as a bioinformatic workflow that produces a dataset containing
+individual taxonomic observations. We use the merged taxonomy (see
+the companion data paper~\cite{gigascience_companion}) to assign
+specific NCBI or GTDB classes as the target of each observation.
+For instance, the sequence analysis for a specific sample yields an
+absolute sequence count associated with a taxonomic class from NCBI
+Taxonomy. We construct an abundance quality that targets the explicit
+taxonomic identifier, binding the observational count back to the
+biological workflow. Formally, the pattern instantiates SIO's
+\textsc{Collection--hasMember--Thing} and
+\textsc{Quantity--refersTo--Quality} idioms:
+
+\begin{align}
+    \label{eq:taxabundance}
+    \text{BioinformaticWorkflow} & \sqsubseteq \text{Process} \\
+    \text{TaxonomicDataset} & \sqsubseteq \text{Collection} \\
+    \text{BioinformaticWorkflow} & \sqsubseteq \exists
+        \text{hasInput}.\text{SequenceDataset} \sqcap \exists
+        \text{hasOutput}.\text{TaxonomicDataset} \\
+    \text{TaxonomicDataset} & \sqsubseteq \forall
+        \text{hasMember}.\text{AbundanceObservation} \\
+    \text{AbundanceObservation} & \sqsubseteq \text{Quantity} \sqcap
+        \exists \text{refersTo}.\text{AbundanceQuality} \\
+    \text{AbundanceQuality} & \sqsubseteq \exists
+        \text{isAttributeOf}.\text{Taxon}
+\end{align}
+
+\begin{lstlisting}[caption={Turtle representation of taxonomic
+  abundance formalized from a feature table.},
+  label={lst:ttl_tax}, basicstyle=\ttfamily\scriptsize, frame=single]
+rak:P290001 a rak:0000071 ; # Bioinformatic Workflow
+  sio:000230 rak:7900001 ; # hasInput (FASTQ Dataset)
+  sio:000229 rak:7290001 . # hasOutput (Taxonomic Dataset)
+
+rak:7290001 a rak:0000074 ; # Taxonomic Dataset
+  sio:000059 rak:4400001 . # hasMember (Observation Value)
+
+rak:4400001 a sio:000070 ; # Quantity (Absolute Count)
+  sio:000215 rak:5400001 ; # refersTo
+  rak:2000021 "15"^^xsd:integer . # absolute read count
+
+rak:5400001 a rak:0000078 ; # Absolute Abundance Quality
+  sio:000011 ncbitaxon:286 . # isAttributeOf (Pseudomonas)
+\end{lstlisting}
+
+Verbalized, the bioinformatic-workflow instance \texttt{rak:P290001}
+consumes a FASTQ dataset (\texttt{rak:7900001}) and produces the
+taxonomic dataset \texttt{rak:7290001}; that dataset has as one of its
+members the quantity \texttt{rak:4400001}, which records an absolute
+read count of \texttt{15} and refers to an absolute abundance quality
+that is in turn an attribute of \emph{Pseudomonas}
+(\texttt{ncbitaxon:286}). One row of a feature table is therefore
+expanded into a four-node sub-graph that preserves both the classifier
+output and its provenance.
+
+% ...........................
+\subsubsection{XRF geochemistry pattern}
+
+We model XRF analysis as a process that targets a soil sample and
+produces multiple measurement values, each corresponding to the
+concentration of a specific chemical analyte. We map each analyte to
+the Chemical Entities of Biological Interest (ChEBI)
+ontology~\cite{chebi} and to the PubChem database~\cite{pubchem}. Out
+of 93 monitored geochemical parameters, we mapped 80 analytes directly
+to corresponding ChEBI classes and aligned 92 parameters to PubChem
+Compound Identifiers. The XRF pattern is a specialization of the
+measurement pattern (Equation~\ref{eq:measurement}), with the target
+restricted to a soil sample and the produced quantity bound to an
+analyte-specific quality:
+
+\begin{align}
+    \label{eq:xrf}
+    \text{XRFMeasurementProcess} & \sqsubseteq \text{MeasurementProcess} \\
+    \text{XRFMeasurementProcess} & \sqsubseteq \exists
+        \text{hasTarget}.\text{SoilSample} \sqcap \exists
+        \text{hasOutput}.\text{ConcentrationQuantity} \\
+    \text{ConcentrationQuantity} & \sqsubseteq \text{Quantity} \sqcap
+        \exists \text{refersTo}.\text{AnalyteQuality} \\
+    \text{AnalyteQuality} & \sqsubseteq \exists
+        \text{isAttributeOf}.\text{SoilSample}
+\end{align}
+
+\begin{lstlisting}[caption={Turtle representation of an XRF
+  geochemistry measurement.},
+  label={lst:ttl_xrf}, basicstyle=\ttfamily\scriptsize, frame=single]
+rak:P300001 a rak:0000080 ; # XRF Measuring Process
+  sio:000291 rak:6000001 ; # hasTarget
+  sio:000229 rak:4300001 . # hasOutput
+
+rak:4300001 a sio:000070 ; # Quantity
+  sio:000215 rak:5300001 ; # refersTo
+  sio:000221 uo:0000187 ; # Percent unit
+  rak:2000012 "58.2"^^xsd:double . # Concentration
+
+rak:5300001 a rak:0000167 ; # Analyte Quality Class
+  sio:000011 rak:6000001 . # isAttributeOf
+\end{lstlisting}
+
+In words, the XRF measurement process \texttt{rak:P300001} targets
+the soil sample \texttt{rak:6000001} and produces the quantity
+\texttt{rak:4300001}, which records a concentration of
+\texttt{58.2}~percent (\texttt{uo:0000187}) and refers to an
+analyte-specific quality \texttt{rak:5300001}. Because the analyte
+quality is typed with a dedicated subclass per element, the same
+pattern instance can be reused unchanged across all 91 geochemical
+analytes by varying only the quality class IRI.
+
+% ...........................
+\subsubsection{Sampling site and biome assignment pattern}
+
+Each physical sampling location is represented as a persistent
+individual that is grounded in the Environment Ontology (ENVO) by
+linking to a biome and to one or more environmental features. We use
+both an existential and a universal restriction so that the asserted
+biome both holds and is the only admissible value, which preserves
+the closed-world intent of the field record.
+
+\begin{align}
+    \label{eq:site}
+    \text{SamplingSite} & \sqsubseteq \text{Site} \\
+    \text{SamplingSite} & \sqsubseteq \exists
+        \text{hasBiome}.\text{ENVO:Biome} \sqcap \forall
+        \text{hasBiome}.\text{ENVO:Biome} \\
+    \text{SamplingSite} & \sqsubseteq \exists
+        \text{hasEnvironmentalFeature}.\text{ENVO:EnvironmentalFeature}
+\end{align}
+
+\begin{lstlisting}[caption={Turtle representation of a sampling site
+  grounded in ENVO.},
+  label={lst:ttl_site}, basicstyle=\ttfamily\scriptsize, frame=single]
+rak:1000001 a rak:0000002 ; # Sampling Site
+  rdfs:label "Site 11" ;
+  geo:asWKT "POINT(50.123 22.456)"^^geo:wktLiteral ;
+  rak:2000050 envo:01000219 ; # hasBiome (desert biome)
+  rak:2000051 envo:00000086 . # hasEnvironmentalFeature (sand dune)
+\end{lstlisting}
+
+In words, the sampling site \texttt{rak:1000001} carries a label, a
+WKT geometry, and is asserted both to belong to the ENVO desert biome
+and to exhibit a sand-dune environmental feature. The combined
+existential and universal restriction on \texttt{hasBiome}
+(Equation~\ref{eq:site}) ensures that any reasoner treats the
+asserted biome as the only admissible value for that site.
+
+% ...........................
+\subsubsection{Sequencing workflow pattern}
+
+Sequencing data are produced by a chain of laboratory and
+computational processes that the knowledge graph represents as a
+sequence of \textsc{Process--hasInput/hasOutput--Object} steps: a DNA
+extraction process consumes a soil sample and produces a DNA extract;
+a library preparation process consumes the DNA extract and produces
+an amplicon library; a sequencing process consumes the amplicon
+library and produces a FASTQ dataset whose members are sequence reads.
+Each process is specified by a protocol and may carry agents and
+device participants, reusing the experimental protocol pattern of
+Equation~\ref{eq:protocol}.
+
+\begin{align}
+    \label{eq:sequencing}
+    \text{DNAExtractionProcess} & \sqsubseteq \text{ProtocolExecution} \\
+    \text{DNAExtractionProcess} & \sqsubseteq \exists
+        \text{hasInput}.\text{SoilSample} \sqcap \exists
+        \text{hasOutput}.\text{DNAExtract} \\
+    \text{LibraryPreparationProcess} & \sqsubseteq \text{ProtocolExecution} \\
+    \text{LibraryPreparationProcess} & \sqsubseteq \exists
+        \text{hasInput}.\text{DNAExtract} \sqcap \exists
+        \text{hasOutput}.\text{AmpliconLibrary} \\
+    \text{SequencingProcess} & \sqsubseteq \text{ProtocolExecution} \\
+    \text{SequencingProcess} & \sqsubseteq \exists
+        \text{hasInput}.\text{AmpliconLibrary} \sqcap \exists
+        \text{hasOutput}.\text{FASTQDataset} \\
+    \text{FASTQDataset} & \sqsubseteq \text{Dataset} \sqcap \forall
+        \text{hasMember}.\text{SequenceRead}
+\end{align}
+
+\begin{lstlisting}[caption={Turtle representation of the sequencing
+  workflow from soil sample to FASTQ dataset.},
+  label={lst:ttl_sequencing}, basicstyle=\ttfamily\scriptsize, frame=single]
+rak:P200001 a rak:0000044 ; # DNA Extraction Process
+  sio:000339 rak:L000001 ; # isSpecifiedBy (PowerSoil protocol)
+  sio:000230 rak:6000001 ; # hasInput (Soil Sample)
+  sio:000229 rak:6800001 . # hasOutput (DNA Extract)
+
+rak:P250001 a rak:0000045 ; # Library Preparation Process
+  sio:000339 rak:L000010 ; # Illumina 16S Prep Guide
+  sio:000230 rak:6800001 ; # hasInput (DNA Extract)
+  sio:000229 rak:6900001 . # hasOutput (Amplicon Library)
+
+rak:P280001 a rak:0000046 ; # Sequencing Process
+  sio:000230 rak:6900001 ; # hasInput (Amplicon Library)
+  sio:000229 rak:7900001 . # hasOutput (FASTQ Dataset)
+
+rak:7900001 a rak:0000064 ; # FASTQ Dataset
+  rdfs:seeAlso <https://www.ebi.ac.uk/ena/browser/view/ERR1234567> .
+\end{lstlisting}
+
+Read as a chain, the DNA extraction process \texttt{rak:P200001}
+consumes the soil sample \texttt{rak:6000001} and produces the DNA
+extract \texttt{rak:6800001}; that extract is the input of the library
+preparation \texttt{rak:P250001}, which yields the amplicon library
+\texttt{rak:6900001}; finally the sequencing process
+\texttt{rak:P280001} consumes the library and produces the FASTQ
+dataset \texttt{rak:7900001}, which is cross-referenced to its ENA
+accession via \texttt{rdfs:seeAlso}. Each link in the chain is the
+same \texttt{hasInput}/\texttt{hasOutput} pattern, so a single SPARQL
+traversal can recover the full provenance from any node.
+
+% ...........................
+\subsubsection{Sequencing quality control pattern}
+
+Sequencing quality control is represented as an additional
+computational process that takes a FASTQ dataset as input and
+produces multiple measurement values, each instantiating the
+generic measurement pattern of Equation~\ref{eq:measurement}.
+Metrics (sequence count, GC content, duplicate rate, read length)
+are split into forward (R1) and reverse (R2) subclasses so that the
+provenance of paired-end runs is preserved.
+
+\begin{align}
+    \label{eq:qc}
+    \text{SequencingQCProcess} & \sqsubseteq \text{Process} \\
+    \text{SequencingQCProcess} & \sqsubseteq \exists
+        \text{hasInput}.\text{FASTQDataset} \sqcap \exists
+        \text{hasOutput}.\text{QCMeasurementValue} \\
+    \text{QCMeasurementValue} & \sqsubseteq \text{Quantity} \sqcap
+        \exists \text{refersTo}.\text{QCQuality} \\
+    \text{QCQuality} & \sqsubseteq \exists
+        \text{isAttributeOf}.\text{FASTQDataset}
+\end{align}
+
+\begin{lstlisting}[caption={Turtle representation of a sequencing QC
+  measurement (forward-read GC content).},
+  label={lst:ttl_qc}, basicstyle=\ttfamily\scriptsize, frame=single]
+rak:P350001 a rak:0000047 ; # Sequencing QC Process
+  sio:000230 rak:7900001 ; # hasInput (FASTQ Dataset)
+  sio:000229 rak:4500001 . # hasOutput (QC Value)
+
+rak:4500001 a rak:0000086 ; # GC Content Value
+  sio:000215 rak:5500001 ; # refersTo
+  sio:000221 uo:0000187 ; # Percent
+  rak:2000073 "54.2"^^xsd:double . # has GC content
+
+rak:5500001 a rak:0000074 ; # GC Content Quality (Forward)
+  sio:000011 rak:7900001 . # isAttributeOf (FASTQ Dataset)
+\end{lstlisting}
+
+In words, the QC process \texttt{rak:P350001} takes the FASTQ dataset
+\texttt{rak:7900001} as input and produces the measurement value
+\texttt{rak:4500001}, which records a GC content of
+\texttt{54.2}~percent and refers to a forward-read GC-content quality
+\texttt{rak:5500001} that is in turn an attribute of the same FASTQ
+dataset. Splitting the quality class into forward and reverse
+subclasses preserves the read direction, so that paired-end QC
+metrics can be queried independently per orientation.
+
+% -----------------------------------------------
+\subsection{OWL and RDF implementation}\label{subsec:owl_rdf}
+% -----------------------------------------------
+
+We generated the OWL/RDF implementation using custom Groovy scripts
+built on the OWL API~5~\cite{owlapi}. The knowledge base employs a
+modular design, separating the base ontology, sites, samples,
+measurements, XRF data, DNA extraction records, sequencing metadata,
+quality control metrics, and taxonomic abundances into individual
+ABox modules~\cite{hitzler_modularity}. Each module is generated by
+an independent script, validated against its ShEx shape, and loaded
+into Virtuoso as a separate transaction, so that a single data-type
+update can be rolled out without rebuilding the full graph.
+
+We use the OpenLink Virtuoso triple store~\cite{virtuoso} for data
+hosting and query answering because it is available as free software
+under the GNU General Public License, supports OWL-Horst
+forward-chaining materialization, and has demonstrated operational
+maturity in large-scale linked-data deployments. Virtuoso features an
+inference engine that can be configured with a custom rule set; we
+bind the project ontology graph as a rule set named
+\texttt{rubalkhali} that covers all three named graphs (knowledge
+base, ontology, taxonomy) and provides backward-chaining expansion
+for rdfs:subClassOf, rdfs:subPropertyOf, owl:inverseOf,
+owl:equivalentClass, and related OWL-Horst rules.
+
+Prior to OWL-Horst inference, the base knowledge graph comprised
+37{,}043{,}525 asserted triples across three named graphs (knowledge
+base 36{,}978{,}835; taxonomy 42{,}406; ontology 16{,}643), with
+taxonomy assertions accounting for approximately 36.5~million of the
+knowledge base graph. During deployment, the workflow applies
+OWL-Horst (pD*) forward-chaining materialization in three rounds.
+Round~1 applies the ground rules that pair a single asserted triple
+with a TBox axiom: \texttt{rdfs:subClassOf},
+\texttt{rdfs:subPropertyOf}, \texttt{rdfs:domain}, \texttt{rdfs:range},
+\texttt{owl:inverseOf}, \texttt{owl:SymmetricProperty},
+\texttt{owl:equivalentClass}, and
+\texttt{owl:equivalentProperty}. Round~2 re-applies
+\texttt{subPropertyOf} and \texttt{subClassOf} over the triples
+produced in round~1 so that subproperty chains propagate through the
+inferred graph. Round~3 applies one-hop transitive closure for all
+\texttt{owl:TransitiveProperty} instances. Each round is implemented
+as a single SPARQL \texttt{INSERT INTO GRAPH} statement wrapped in
+\texttt{DEFINE input:inference}, and executes with row-level logging
+temporarily disabled (\texttt{log\_enable(2,1)}) so that large
+transactions do not exceed Virtuoso's per-transaction log size limit.
+
+This process generates 80{,}907{,}421 materialized triples for a
+total of 117{,}950{,}946 triples (a 3.18$\times$
+expansion). Materialization completes in approximately 114~minutes
+on a server with 1~TB RAM and writes the materialized triples to a
+dedicated named graph (\texttt{<https://rubalkhali.science/inferred/>})
+so that query answering can be served from materialized facts
+without paying a per-query backward-chaining cost. The dominant
+inferred predicates are \texttt{sio:isRelatedTo} (22.6M),
+\texttt{rdf:type} (14.6M), \texttt{sio:hasAttribute} (11.3M),
+\texttt{sio:isAttributeOf} (5.7M), and \texttt{sio:hasMember} (5.6M),
+reflecting the propagation of SIO's property hierarchy and inverse
+properties across the ABox.
+
+% -----------------------------------------------
+\subsection{Schema definition with ShEx}\label{subsec:shex}
+% -----------------------------------------------
+
+We used Shape Expressions (ShEx)~\cite{shex} to define structural
+schemas for the core entity types. While OWL provides open-world
+reasoning and inference capabilities, it cannot readily enforce data
+completeness constraints. We developed ShEx schemas to explicitly
+validate the graph's structure, ensuring data quality and compliance
+before loading the data into the database.
+
+Our ShEx implementation defines shapes for sampling sites, soil
+samples, environmental measurements, DNA extracts, amplicon
+libraries, sequencing datasets, quality control records, and
+taxonomy observations. These shapes guarantee that essential
+attributes are invariably present. For instance,
+Listing~\ref{lst:shex_site} shows the shape for a sampling site,
+which requires an explicit type assertion and a label while
+permitting optional coordinates and a free-text description.
+
+\begin{lstlisting}[caption={ShEx shape for Sampling Site validation.},
+  label={lst:shex_site}, basicstyle=\ttfamily\scriptsize, frame=single]
+<#SamplingSiteShape> {
+    rdf:type [rak:0000002] ;  # Must be of type Sampling Site
+    rdf:type . * ;                # May have other inferred types
+    rdfs:label . ;                # Must have a label
+    dcterms:description xsd:string ? ; # Optional description
+    geo:asWKT . ? ;               # Optional geographic coordinates
+}
+\end{lstlisting}
+
+In words, \texttt{<\#SamplingSiteShape>} requires that every
+conforming node carry an explicit type assertion to
+\texttt{rak:0000002} (Sampling Site) and an \texttt{rdfs:label}; it
+permits any number of additional inferred types and optionally
+allows a free-text description and a WKT geometry. Records that
+omit the mandatory type or label are rejected before they reach the
+triple store.
+
+We integrate the ShEx validation into the automated deployment
+workflow so that every ABox module is tested against its shape
+immediately after generation and before loading into Virtuoso. We
+implement the validator with the Apache Jena ShEx library
+(version~4.10.0) invoked from Groovy. The workflow terminates with
+an explicit error if any instance violates its shape (for example a
+sampling site lacking GPS coordinates, or a DNA extract lacking a
+concentration value), which functions as a regression test
+guaranteeing that modifications to the ETL scripts cannot silently
+introduce structural errors.
+
+% ===================================================================
+\section{Evaluation}\label{sec:eval}
+% ===================================================================
+
+We evaluated the deployed knowledge graph using four complementary
+approaches: competency question evaluation via SPARQL queries with
+known expected answers; structural validation of every RDF module
+against ShEx shapes; logical consistency checking with the ELK
+reasoner, run both before and after OWL-Horst materialization; and
+usability assessment through a live web portal.
+
+% -----------------------------------------------
+\subsection{Competency questions and SPARQL queries}
+% -----------------------------------------------
+
+We defined nine competency questions expressed as SPARQL
+queries~\cite{sparql} with known expected answers and automated their
+execution against the deployed endpoint so that they serve both as
+documentation of the intended query workload and as regression tests
+during ontology updates. The questions cover retrieval of XRF
+measurements, listing sampling sites with coordinates, extraction of
+biome assignments via OWL restrictions, retrieval of Light Elements
+percentages, DNA extraction records, provenance tracing from soil
+samples to sequencing runs, taxonomic composition per run, a
+cross-domain join between environmental temperature and taxonomic
+abundance, and per-sample sequencing quality control metrics. We
+present three representative listings below; the full nine-query
+suite is distributed with the source
+code~\cite{gigadb_rak,zenodo_rak} and is pre-loaded as
+click-to-load examples in the web portal's SPARQL editor.
+
+Listing~\ref{lst:sparql_xrf} retrieves XRF measurements for a specific
+site, requiring traversal of the measurement process, quality, and
+value entities.
+
+\begin{lstlisting}[caption={SPARQL query to retrieve field XRF
+    measurements for Site 10.},
+  label={lst:sparql_xrf}, basicstyle=\ttfamily\scriptsize, frame=single]
+PREFIX rak: <https://rubalkhali.science/kb/RAK_>
+PREFIX sio: <http://semanticscience.org/resource/SIO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?processLabel ?analyte ?concentration ?unitLabel
+WHERE {
+  ?sample a rak:0000021 ;
+          rdfs:label ?sampleLabel .
+  FILTER(REGEX(?sampleLabel, "Site 10"))
+  ?value sio:000232 ?process .
+  ?process rdfs:label ?processLabel .
+  FILTER(REGEX(?processLabel, "Field", "i"))
+  ?sample sio:000008 ?quality .
+  ?quality sio:000215 ?value .
+  ?value rak:2000012 ?concentration .
+  ?value sio:000221 ?unit .
+  ?unit rdfs:label ?unitLabel .
+  ?quality a ?qualityClass .
+  ?qualityClass rdfs:label ?analyte .
+  FILTER(?qualityClass != rak:0000029)
+}
+ORDER BY ?processLabel ?analyte LIMIT 100
+\end{lstlisting}
+
+Read in prose, the query first selects every soil sample whose label
+matches \texttt{Site~10}, then walks back from each measurement value
+to its producing process and forwards from the sample through its
+quality and value to the recorded concentration and unit. The final
+filter excludes the Light Elements pseudo-analyte
+(\texttt{rak:0000029}) so that only individually quantified elements
+appear in the result.
+
+Listing~\ref{lst:sparql_taxon} retrieves taxonomic abundance
+profiles, joining across bioinformatic workflows, FASTQ datasets,
+and taxon observations.
+
+\begin{lstlisting}[caption={SPARQL query to retrieve taxonomic
+    composition and abundance for all samples.},
+  label={lst:sparql_taxon}, basicstyle=\ttfamily\scriptsize, frame=single]
+PREFIX rak: <https://rubalkhali.science/kb/RAK_>
+PREFIX sio: <http://semanticscience.org/resource/SIO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?run ?taxonLabel ?count ?relativeAbundance
+WHERE {
+  ?proc a rak:0000071 ;
+        sio:000230 ?fastq ;
+        sio:000229 ?dsAbs , ?dsRel .
+  ?dsAbs a rak:0000074 .
+  ?dsRel a rak:0000075 .
+  ?fastq rdfs:label ?runLabel .
+  BIND(REPLACE(?runLabel, "FASTQ dataset for ", "") AS ?run)
+  ?dsAbs sio:000059 ?valAbs .
+  ?valAbs rak:2000021 ?count .
+  ?valAbs sio:000215 ?qualAbs .
+  ?qualAbs sio:000011 ?taxon .
+  ?taxon rdfs:label ?taxonLabel .
+  ?qualRel sio:000011 ?taxon ;
+           a rak:0000072 ;
+           sio:000214 ?valRel .
+  ?valRel rak:2000020 ?relativeAbundance .
+  FILTER(?taxon != ?fastq)
+}
+ORDER BY ?run DESC(?count) LIMIT 100
+\end{lstlisting}
+
+The query identifies every bioinformatic workflow that produces both
+an absolute and a relative taxonomic dataset for the same FASTQ
+input, then retrieves, for each absolute observation, the read count,
+the associated taxon label, and the matching relative abundance from
+the parallel relative dataset. Results are grouped by sequencing run
+and ordered by descending count.
+
+Listing~\ref{lst:sparql_env_tax} shows a cross-domain query that
+joins environmental temperature with taxonomic abundance---a join
+that would require at least four separate tables in a relational
+database.
+
+\begin{lstlisting}[caption={SPARQL query joining environmental
+    temperature and \emph{Pseudomonas} relative abundance.},
+  label={lst:sparql_env_tax}, basicstyle=\ttfamily\scriptsize, frame=single]
+PREFIX rak: <https://rubalkhali.science/kb/RAK_>
+PREFIX sio: <http://semanticscience.org/resource/SIO_>
+PREFIX pato: <http://purl.obolibrary.org/obo/PATO_>
+PREFIX ncbitaxon: <http://purl.obolibrary.org/obo/NCBITaxon_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?siteLabel ?temp ?relAbundance
+WHERE {
+  ?site a rak:0000002 ;
+        rdfs:label ?siteLabel .
+  ?tempProcess sio:000291 ?site ;
+               sio:000229 ?tempVal .
+  ?tempVal rak:2000012 ?temp ;
+           sio:000215 ?tempQual .
+  ?tempQual a pato:0000146 .
+  FILTER(?temp > 35.0)
+  ?sample sio:000252 ?site .
+  ?ext sio:000230 ?sample ; a rak:0000041 ; sio:000229 ?dna .
+  ?libPrep sio:000230 ?dna ; a rak:0000062 ; sio:000229 ?lib .
+  ?seq sio:000230 ?lib ; a rak:0000064 ; sio:000229 ?fastq .
+  ?bioinf a rak:0000071 ;
+          sio:000230 ?fastq ;
+          sio:000229 ?dsRel .
+  ?dsRel a rak:0000075 ;
+         sio:000059 ?valRel .
+  ?valRel rak:2000020 ?relAbundance ;
+          sio:000215 ?qualRel .
+  ?qualRel sio:000011 ncbitaxon:286 . # Pseudomonas
+}
+\end{lstlisting}
+
+The query first selects every sampling site at which the recorded
+environmental temperature exceeds 35\,$^{\circ}$C, then for each such
+site it walks the full provenance chain---soil sample, DNA extract,
+library preparation, sequencing run, FASTQ dataset, bioinformatic
+workflow, relative abundance dataset---down to the relative abundance
+value of \emph{Pseudomonas} (\texttt{ncbitaxon:286}). Each row of the
+result therefore reports a single hot site together with its
+corresponding \emph{Pseudomonas} relative abundance.
+
+% -----------------------------------------------
+\subsection{ShEx validation results}
+% -----------------------------------------------
+
+We validated the structural integrity of every RDF module against
+its ShEx shape as described in Section~\ref{subsec:shex}. All eight
+shape-annotated modules (\texttt{rubalkhali\_sites.owl},
+\texttt{rubalkhali\_samples.owl},
+\texttt{rubalkhali\_measurements.owl}, \texttt{rubalkhali\_dna.owl},
+\texttt{rubalkhali\_xrf.owl},
+\texttt{rubalkhali\_taxonomy\_abox.owl},
+\texttt{rubalkhali\_sra.owl}, and \texttt{rubalkhali\_qc.owl}) passed
+validation without constraint violations. Because the validation
+step is part of the deployment workflow and the workflow aborts on
+any violation, any subsequent modification to the ETL scripts that
+introduces a structural error is caught before the data reaches
+Virtuoso.
+
+% -----------------------------------------------
+\subsection{Logical consistency with ELK}
+% -----------------------------------------------
+
+We verified the logical consistency of the knowledge graph using
+the ELK reasoner~\cite{elk}, an implementation of a
+consequence-based reasoning procedure for the OWL~2~EL profile. We
+loaded the complete set of OWL modules (base ontology, all ABox
+files, and the taxonomy reference graph) into a single OWL ontology
+and ran ELK to check for unsatisfiable classes and contradictory
+axioms. We ran the reasoner in two configurations: (1)~on the
+asserted knowledge graph prior to materialization, and (2)~on the
+union of the asserted knowledge graph and the OWL-Horst materialized
+graph from Section~\ref{subsec:owl_rdf}.
+Table~\ref{tab:elk} reports the results.
+
+In both cases the reasoner confirmed that the ontology is
+consistent and reported zero unsatisfiable classes. The
+post-materialization run loaded 81.3~million axioms (of which
+78.1~million originate from the materialized ABox), discovered 74
+additional classes (7{,}202 $\rightarrow$ 7{,}276) from the
+materialized type assertions, and required 63~seconds for the
+consistency check. These results confirm that the OWL-Horst
+entailments introduced no disjointness violations despite adding
+5.7~million new individual type assertions, a property that
+cannot be guaranteed by inspection alone: new ABox type triples of
+the form \(C(a)\) and \(D(a)\) where \(C \sqsubseteq \neg D\) would
+render the ontology inconsistent, so the reasoner must be run
+after materialization to rule this out.
+
+\begin{table}[h]
+\centering
+\caption{ELK reasoning performance before and after OWL-Horst
+  materialization. All runs used OWL API~4.5.26 and ELK~0.4.3 on a
+  server with 1~TB RAM (Java heap 850~GB).}
+\label{tab:elk}
+\small
+\begin{tabular}{lrr}
+\toprule
+\textbf{Metric} & \textbf{Before} & \textbf{After} \\
+\midrule
+Modules loaded            & 8             & 10 \\
+Total axioms              & 224{,}775     & 81{,}273{,}368 \\
+Logical axioms            & 124{,}106     & 17{,}693{,}762 \\
+Classes                   & 7{,}202       & 7{,}276 \\
+Named individuals         & 30{,}680      & 5{,}712{,}603 \\
+\texttt{isConsistent}     & 0.84\,s       & 63.4\,s \\
+Class hierarchy           & 0.40\,s       & 0.73\,s \\
+Unsatisfiable classes     & 0             & 0 \\
+Load time                 & 675\,s        & 7{,}585\,s \\
+Peak RSS                  & 203\,GB       & 395\,GB \\
+Wall time                 & 688\,s        & 7{,}722\,s \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+We chose ELK over more expressive reasoners such as HermiT~\cite{hermit}
+because the combination of TBox and 37-million-triple ABox
+renders full OWL~2~DL reasoning computationally infeasible on commodity
+hardware. The consequence-based calculus implemented by ELK
+produces class-hierarchy results in under two seconds on the asserted
+graph, and the post-materialization run confirms the same consistency
+result at the cost of a higher load time and increased memory.
+
+% -----------------------------------------------
+\subsection{Compute-time metrics}\label{sec:compute_metrics}
+% -----------------------------------------------
+
+Table~\ref{tab:compute} summarizes the computational cost of the
+key deployment steps. OWL-Horst forward-chaining materialization
+runs in approximately 114~minutes and expands the knowledge graph
+from 37.0~million asserted triples to 117.9~million
+(3.18$\times$). ELK consistency checking over the asserted TBox
+takes under two seconds; the post-materialization run that
+includes the full materialized ABox requires 63~seconds but
+confirms the same result (zero unsatisfiable classes). Competency
+question latency on the Virtuoso endpoint ranges from 5~ms for
+simple site look-ups (CQ2) to over one second for queries that
+traverse inverse properties across the entire DNA extraction
+workflow (CQ5).
+
+\begin{table}[h]
+\centering
+\caption{Compute-time metrics for key deployment and validation
+  steps.}
+\label{tab:compute}
+\small
+\begin{tabular}{lr}
+\toprule
+\textbf{Step} & \textbf{Time} \\
+\midrule
+RDF module loading (Virtuoso, 9 ABox files)  & 140\,s \\
+OWL-Horst materialization (3 rounds)         & 114\,min \\
+ELK classification (asserted only)           & 1.6\,s \\
+ELK classification (with materialized ABox)  & 64\,s \\
+CQ1 -- XRF measurements, Site 10             & 23\,ms \\
+CQ2 -- Sampling sites + GPS                  & 5\,ms \\
+CQ3 -- Biomes per site                       & 5\,ms \\
+CQ4 -- Light Elements percentages            & 8\,ms \\
+CQ5 -- DNA extraction records                & 1{,}342\,ms \\
+CQ6 -- Provenance chain                      & 255\,ms \\
+CQ7 -- Taxonomic composition                 & $>$300\,s \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The taxonomy composition query (CQ7) exceeds a 5-minute timeout
+because it joins absolute and relative abundance datasets across
+1.4~million observations and therefore touches a large fraction of
+the materialized graph. In practice this query is not used by the
+web portal; the portal retrieves taxonomic data per sample rather
+than across all runs, which completes in sub-second time. CQ7 is
+retained as a stress test for the deployment and as a marker of the
+frontier of what can be served interactively from the current
+hardware.
+
+% -----------------------------------------------
+\subsection{Web portal}
+% -----------------------------------------------
+
+We developed a web portal~(\url{https://rubalkhali.science/}) that
+provides user-friendly access to the knowledge graph. The portal is
+implemented as a React front-end backed by a FastAPI service and
+Virtuoso: the backend dynamically generates SPARQL queries to fetch
+content directly from the knowledge graph in real time, without
+maintaining a separate relational database. Every page rendered by
+the portal constitutes a functional test of the underlying data, so
+that any data integrity problem surfaces as a visible error. The
+portal provides an interactive map of the 70 sampling sites,
+per-site dashboards with environmental measurements, geochemistry,
+and taxonomic profiles, and a SPARQL query page built on
+YASGUI~\cite{yasgui} that provides an autocomplete-aware editor,
+prefix management, and a tabbed interface. The nine competency
+questions of Section~\ref{sec:eval} are exposed as click-to-load
+examples in the SPARQL page so that users can run them against the
+live endpoint without typing. The portal additionally offers a
+downloads page that serves the individual OWL/RDF modules, the ShEx
+shape definitions, and the competency questions as static files
+under the same free software licence as the rest of the resource.
+
+% ===================================================================
+\section{Discussion}\label{sec:discussion}
+% ===================================================================
+
+We revisit the challenges introduced in the introduction, link each
+to the design choices described in the preceding sections, and
+conclude with a discussion of limitations and sustainability.
+
+% -----------------------------------------------
+\subsection{Design rationale}
+% -----------------------------------------------
+
+\paragraph{Unified data model.}
+The first challenge was to represent heterogeneous observation types
+under a single vocabulary. We adopted SIO as the upper-level
+framework precisely because it offers a small set of relations
+(\texttt{hasInput}/\texttt{hasOutput}, \texttt{hasTarget},
+\texttt{hasMember}, \texttt{refersTo}, \texttt{hasValue}) that
+generalize across sampling, measurement, and provenance patterns.
+Sample collection, XRF analysis, DNA extraction, sequencing, and
+taxonomic classification are all instantiations of the same
+\textsc{Process--hasInput/hasOutput--Object} idiom; quantitative
+results are uniformly represented as
+\textsc{Quantity--refersTo--Quality} pairs with explicit units; and
+feature tables are represented as
+\textsc{Collection--hasMember--Thing} structures. This uniformity is
+what allows cross-domain SPARQL queries to traverse from a climate
+observation through a sampling site to a taxon abundance without any
+per-domain join logic, as demonstrated by the query in
+Listing~\ref{lst:sparql_env_tax}. Recent work on simplified
+upper-level ontologies, notably SULO~\cite{sulo2025}, takes this
+argument further: by strengthening a few fundamental relations and
+reducing reliance on specialized predicates, an upper-level ontology
+can lower the modelling effort for new domains while preserving
+interoperability. Our patterns are compatible with this direction
+and could be re-grounded in SULO with limited refactoring.
+
+\paragraph{Taxonomy harmonization.}
+The companion data paper~\cite{gigascience_companion} describes our
+mapping of operational taxonomic units from multiple
+primer/classifier combinations onto NCBI Taxonomy and GTDB. A key
+design choice is that we keep both the raw classifier output and the
+harmonized identifier in the knowledge graph, so that downstream
+consumers can re-use the mapping or substitute their own without
+losing the original assertions. This is important for
+reproducibility: because classifier outputs are sensitive to
+reference database version, a consumer that reruns the classification
+against a newer reference may legitimately produce a different
+taxon assignment for the same read, and the knowledge graph must
+allow both assignments to coexist.
+
+\paragraph{Schema validation at ingest.}
+We chose ShEx for ingest validation because the ETL is batch-oriented
+and the validator runs in the same Groovy/Jena toolchain that
+produces the RDF. SHACL is an obvious alternative and is supported
+in-database by several triple stores; a future port of the shapes
+from ShEx to SHACL would enable in-database validation at load time
+and is a natural extension of the current workflow. We deployed
+Virtuoso as the triple store because it is available as free
+software under the GNU General Public License, supports OWL-Horst
+forward-chaining materialization, and has demonstrated operational
+maturity in large-scale linked-data deployments.
+
+\paragraph{Semantic query answering at scale.}
+Full OWL~2~DL reasoning over the combined TBox and 37-million-triple
+ABox is not computationally feasible with HermiT on commodity
+hardware. We therefore split the reasoning task. We use
+ELK~\cite{elk} to \emph{validate} the logical consistency of the
+knowledge graph (confirming zero unsatisfiable classes both before
+and after materialization); we use Virtuoso's OWL-Horst
+implementation to \emph{materialize} entailments under pD* semantics
+so that query answering can be served from physical triples without
+a per-query backward-chaining cost. This split is deliberate: ELK
+is sound and complete for classification in OWL~2~EL and therefore
+gives us a trustworthy ``no contradiction'' result, but its
+consequence-based calculus does not directly produce the kind of
+ABox expansion (inverse properties, subproperty chains) that
+SPARQL traversal queries benefit from. OWL-Horst, conversely, covers
+the rules that matter for query answering---subclass, subproperty,
+domain, range, inverse, symmetry, equivalence, transitivity---but is
+incomplete with respect to full OWL~2~DL. Applying both reasoners
+gives us the best of both: a logically consistent graph whose
+materialized form exposes exactly the entailments that the
+competency questions need. Two decades of work on scaling OWL
+reasoning~\cite{owlhorst,owl2profiles,elk} provide additional
+alternative points in the design space, and a more expressive
+reasoner could be applied to a sub-module of the TBox in future work.
+
+\paragraph{User-facing interface.}
+The web portal addresses the challenge that domain scientists are
+typically not fluent in SPARQL. The interactive map and per-site
+dashboards cover the most common exploratory tasks; the YASGUI-based
+SPARQL editor exposes the underlying graph for power users,
+pre-populated with the competency questions as click-to-load
+examples, autocomplete for prefixes and predicates, and a tabbed
+query interface so that multiple queries can be developed in
+parallel.
+
+% -----------------------------------------------
+\subsection{Limitations and outstanding challenges}
+% -----------------------------------------------
+
+Several challenges remain open. First, although OWL-Horst
+materialization plus ELK classification is sufficient for the
+queries described in this paper, more complex reasoning---for
+example over disjunctions arising from ENVO biome classifications,
+or over negative axioms about taxon absence---would require either
+a different reasoner or the extraction of a sub-module amenable to
+a more expressive calculus such as HermiT. Second, the resource
+depends on upstream ontologies (SIO, ChEBI, ENVO, NCBI Taxonomy)
+that evolve independently; keeping the deployed graph aligned with
+their releases is an ongoing maintenance task and a known
+reproducibility risk for any SPARQL query that bottoms out in a
+specific external IRI. Third, the 11~GB materialized ABox dump
+exceeds the in-memory parsing capacity of the OWL API Turtle
+parser on a workstation with less than 128~GB of RAM, so the
+post-materialization ELK run currently requires a large-memory
+server; splitting the materialized graph into stream-parseable
+chunks would relax this requirement. Fourth, CQ7 (the taxonomy
+composition query that joins all 1.4~million absolute and relative
+abundance observations) still exceeds a five-minute timeout on
+commodity hardware; reducing its cost either by query rewriting or
+by additional materialization indexing remains future work.
+
+% -----------------------------------------------
+\subsection{Sustainability and updates}
+% -----------------------------------------------
+
+The dataset is versioned and archived on Zenodo and GigaDB, and the
+deployment workflow is reproducible from the public repository. We
+intend to extend the resource as additional field expeditions are
+processed: new trips will be added as additional ABox modules
+without changes to the upper-level patterns. Upstream ontology
+updates will be tracked at scheduled intervals; re-materialization
+is scripted as the three SPARQL Update statements of
+Section~\ref{subsec:owl_rdf} and runs as part of the deployment
+workflow, so an upstream release can be absorbed by re-running the
+workflow. Where an upstream change would alter the semantics of an
+existing competency question, we will record the affected query in
+the changelog so that downstream users can audit the impact.
+
+% ===================================================================
+\section{FAIR compliance}
+% ===================================================================
+
+The design decisions described in the preceding sections collectively
+ensure that the resource satisfies the FAIR Data
+Principles~\cite{fair}.
+\begin{itemize}
+  \item \textbf{Findable.} We assigned globally unique IRIs under
+    the \texttt{https://rubalkhali.science/kb/} namespace to all
+    named individuals, and we registered the dataset with ENA under
+    accession PRJEB104209.
+  \item \textbf{Accessible.} We serve the knowledge graph via a
+    standard SPARQL~1.1 endpoint and a web interface; raw sequencing
+    reads are deposited at ENA. Every file is dereferenceable and
+    every site and sample IRI resolves to a content-negotiated
+    representation.
+  \item \textbf{Interoperable.} We employ established shared
+    vocabularies (SIO, ENVO, ChEBI, PATO, UO, NCBI Taxonomy) and
+    standard formats (OWL~2~DL, RDF/Turtle, SPARQL), and every
+    identifier from external ontologies is used as-is so that
+    federated queries with other SIO- or OBO-based graphs are
+    straightforward.
+  \item \textbf{Reusable.} We licensed the data under CC~BY~4.0 and
+    described it with rich provenance metadata encoding the
+    complete chain from physical sample to digital data product. We
+    open-sourced all generation code.
+\end{itemize}
+
+% ===================================================================
+\section{Conclusion}\label{sec:conclusion}
+% ===================================================================
+
+We have presented a formal knowledge graph for the Rub' al-Khali
+desert ecosystem that integrates microbial sequencing, soil
+geochemistry, environmental observations, and climate records under
+a single SIO-based data model. We formalized eight reusable ontology
+design patterns---measurement, sampling, experimental protocol,
+taxonomic abundance, XRF geochemistry, sampling site with biome,
+sequencing workflow, and sequencing quality control---in description
+logic and aligned them explicitly with SIO's core relational idioms,
+accompanied by Turtle listings and prose verbalizations for every
+pattern. We implemented an automated deployment workflow that
+generates the modular OWL/RDF files, validates them against ShEx
+shapes as a regression test, loads them into Virtuoso, binds the
+OWL-Horst rule set, and forward-chains materialization via three
+SPARQL Update rounds. The materialization expands the graph from
+37.0~million asserted to 117.9~million total triples
+(3.18$\times$) in approximately 114~minutes, and the resulting
+graph is served through a public SPARQL endpoint and a web portal
+with an autocomplete-aware SPARQL editor. We validated the logical
+consistency of the full graph with the ELK reasoner both before and
+after materialization, confirming zero unsatisfiable classes in both
+cases. We evaluated nine competency questions covering per-sample
+retrievals, provenance tracing, and cross-domain joins, with
+latencies that range from 5~ms for simple site lookups to just over
+one second for queries that traverse the DNA extraction workflow.
+
+The resource contributes a reusable blueprint for integrating a
+multi-expedition ecological dataset into a Semantic Web
+deployment. The ontology design patterns are directly applicable to
+other sampling-based environmental studies; the OWL-Horst
+materialization workflow is a concrete recipe for any Virtuoso-based
+deployment that needs to serve inferred triples without a per-query
+reasoning cost; and the combination of ELK for consistency
+validation and OWL-Horst for query-time expansion is a practical
+template for scaling semantic query answering to tens of millions
+of triples on commodity hardware. The underlying dataset is
+described in a companion data paper~\cite{gigascience_companion},
+and the deployed knowledge graph is available at
+\url{https://rubalkhali.science/}.
+
+% ===================================================================
+\section{Availability of source code and requirements}\label{sec:availability}
+% ===================================================================
+
+All source code for data processing, ontology engineering, RDF
+generation, ShEx validation, the SPARQL competency questions, the
+React+FastAPI web portal, and the Docker Compose deployment is
+publicly available at
+\url{https://github.com/bio-ontology-research-group/empty-quarter}
+under the MIT licence. The ontology modules, ShEx shapes, competency
+questions, and full knowledge graph dump are archived on
+Zenodo~\cite{zenodo_rak} and GigaDB~\cite{gigadb_rak} under the
+Creative Commons Attribution 4.0 International licence
+(CC~BY~4.0). The public SPARQL endpoint is available at
+\url{https://rubalkhali.science/sparql}; the interactive web portal is
+at \url{https://rubalkhali.science/}.
+
+% ===================================================================
+\section*{Declarations}
+% ===================================================================
+
+\paragraph{Competing interests.}
+The authors declare no competing interests.
+
+\paragraph{Funding.}
+Funding statement to be completed.
+
+\paragraph{Author contributions.}
+Author contributions to be completed per CRediT.
+
+\paragraph{Acknowledgements.}
+Acknowledgements to be completed.
+
+% ===================================================================
+\bibliographystyle{plain}
+\bibliography{../sn-bibliography}
+
+\end{document}

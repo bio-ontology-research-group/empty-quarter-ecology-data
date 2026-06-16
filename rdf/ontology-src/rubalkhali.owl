@@ -1,0 +1,3807 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://rubalkhali.science/kb/"
+     xml:base="https://rubalkhali.science/kb/"
+     xmlns:cl="http://purl.obolibrary.org/obo/cl#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:go="http://purl.obolibrary.org/obo/go#"
+     xmlns:foo="http://geneontology.org/foo/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:cito="http://purl.org/spar/cito/"
+     xmlns:core="http://purl.obolibrary.org/obo/uberon/core#"
+     xmlns:doap="http://usefulinc.com/ns/doap#"
+     xmlns:envo="http://purl.obolibrary.org/obo/envo#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:pato="http://purl.obolibrary.org/obo/pato#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:void="http://rdfs.org/ns/void#"
+     xmlns:chebi="http://purl.obolibrary.org/obo/chebi#"
+     xmlns:terms="http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/terms/"
+     xmlns:chebi2="http://purl.obolibrary.org/obo/chebi#1"
+     xmlns:chebi3="http://purl.obolibrary.org/obo/chebi#3"
+     xmlns:chebi4="http://purl.obolibrary.org/obo/chebi#2"
+     xmlns:schema="http://schema.org/"
+     xmlns:terms1="http://purl.org/dc/terms/"
+     xmlns:ubprop="http://purl.obolibrary.org/obo/ubprop#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
+     xmlns:taxslim="http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.obo#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:resource="http://semanticscience.org/resource/"
+     xmlns:process_attribute="http://purl.obolibrary.org/obo/envo-p/patterns/process_attribute/">
+    <owl:Ontology rdf:about="https://rubalkhali.science/kb/">
+        <owl:versionIRI rdf:resource="https://rubalkhali.science/kb/1.0.0/"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/envo/releases/2025-10-20/envo.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/pato/releases/2025-05-14/pato.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/uo/releases/2023-05-25/uo.owl"/>
+        <owl:imports rdf:resource="http://semanticscience.org/ontology/sio/v1.59/sio-release.owl"/>
+        <owl:imports rdf:resource="https://rubalkhali.science/kb/rubalkhali_dna.owl"/>
+        <owl:imports rdf:resource="https://rubalkhali.science/kb/rubalkhali_measurements.owl"/>
+        <owl:imports rdf:resource="https://rubalkhali.science/kb/rubalkhali_samples.owl"/>
+        <owl:imports rdf:resource="https://rubalkhali.science/kb/rubalkhali_sites.owl"/>
+        <owl:imports rdf:resource="https://rubalkhali.science/kb/rubalkhali_sra.owl"/>
+        <owl:imports rdf:resource="https://rubalkhali.science/kb/rubalkhali_taxonomy_abox.owl"/>
+        <owl:imports rdf:resource="https://rubalkhali.science/kb/rubalkhali_xrf.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000011 -->
+
+
+    <rdf:Description rdf:about="http://semanticscience.org/resource/SIO_000011">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticscience.org/resource/SIO_000215"/>
+            <rdf:Description rdf:about="http://semanticscience.org/resource/SIO_000232"/>
+            <rdf:Description rdf:about="http://semanticscience.org/resource/SIO_000230"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticscience.org/resource/SIO_000215"/>
+            <rdf:Description rdf:about="http://semanticscience.org/resource/SIO_000232"/>
+            <rdf:Description rdf:about="http://semanticscience.org/resource/SIO_000291"/>
+        </owl:propertyChainAxiom>
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000068 -->
+
+
+    <rdf:Description rdf:about="http://semanticscience.org/resource/SIO_000068">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticscience.org/resource/SIO_000068"/>
+            <rdf:Description rdf:about="http://semanticscience.org/resource/SIO_000068"/>
+        </owl:propertyChainAxiom>
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000291 -->
+
+
+    <rdf:Description rdf:about="http://semanticscience.org/resource/SIO_000291">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticscience.org/resource/SIO_000068"/>
+            <rdf:Description rdf:about="http://semanticscience.org/resource/SIO_000291"/>
+        </owl:propertyChainAxiom>
+    </rdf:Description>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000014 -->
+
+
+    <owl:ObjectProperty rdf:about="https://rubalkhali.science/kb/RAK_2000014">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000132"/>
+        <terms1:description>A relation between an extraction process and a kit used.</terms1:description>
+        <rdfs:label>uses DNA extraction kit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000016 -->
+
+
+    <owl:ObjectProperty rdf:about="https://rubalkhali.science/kb/RAK_2000016">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000132"/>
+        <terms1:description>A relation between a process and a primer used in that process.</terms1:description>
+        <rdfs:label>uses primer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000018 -->
+
+
+    <owl:ObjectProperty rdf:about="https://rubalkhali.science/kb/RAK_2000018">
+        <rdfs:subPropertyOf rdf:resource="https://rubalkhali.science/kb/RAK_2000016"/>
+        <terms1:description>A relation between a process and a forward primer used.</terms1:description>
+        <rdfs:label>uses forward primer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000019 -->
+
+
+    <owl:ObjectProperty rdf:about="https://rubalkhali.science/kb/RAK_2000019">
+        <rdfs:subPropertyOf rdf:resource="https://rubalkhali.science/kb/RAK_2000016"/>
+        <terms1:description>A relation between a process and a reverse primer used.</terms1:description>
+        <rdfs:label>uses reverse primer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000003 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000003">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <terms1:description>The numerical value of a temperature measurement.</terms1:description>
+        <rdfs:label>has temperature value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000004 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000004">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <terms1:description>The numerical value of an atmospheric pressure measurement.</terms1:description>
+        <rdfs:label>has pressure value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000005 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000005">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <terms1:description>The numerical value of a relative humidity measurement.</terms1:description>
+        <rdfs:label>has humidity value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000006 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000006">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <terms1:description>The date and time value of a temporal measurement.</terms1:description>
+        <rdfs:label>has time value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000007 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000007">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <terms1:description>The numerical value of the annual mean temperature at a site.</terms1:description>
+        <rdfs:label>has annual mean temperature value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000008 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000008">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <terms1:description>The numerical value of the annual total precipitation at a site.</terms1:description>
+        <rdfs:label>has annual total precipitation value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000009 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000009">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <terms1:description>The numerical value of the annual total rain at a site.</terms1:description>
+        <rdfs:label>has annual total rain value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000010 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000010">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <terms1:description>The start date and time of a temporal interval.</terms1:description>
+        <rdfs:label>has start time value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000011 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000011">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <terms1:description>The end date and time of a temporal interval.</terms1:description>
+        <rdfs:label>has end time value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000012 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000012">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <terms1:description>The numerical value of a chemical analyte concentration.</terms1:description>
+        <rdfs:label>has concentration value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000013 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000013">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <terms1:description>The numerical value of the error in a concentration measurement.</terms1:description>
+        <rdfs:label>has concentration error</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000015 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000015">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <terms1:description>The numerical value of a DNA concentration measurement.</terms1:description>
+        <rdfs:label>has DNA concentration</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000017 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000017">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <terms1:description>The literal nucleotide sequence string.</terms1:description>
+        <rdfs:label>has sequence value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000020 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000020">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <terms1:description>The numerical value of a relative taxon abundance measurement.</terms1:description>
+        <rdfs:label>has relative abundance value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000021 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000021">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <terms1:description>The numerical value of the monthly mean temperature at a site.</terms1:description>
+        <rdfs:label>has monthly mean temperature value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000022 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000022">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <terms1:description>The numerical value of the monthly total precipitation at a site.</terms1:description>
+        <rdfs:label>has monthly total precipitation value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000023 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000023">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <terms1:description>The numerical value of the monthly total rain at a site.</terms1:description>
+        <rdfs:label>has monthly total rain value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000024 -->
+
+
+    <owl:DatatypeProperty rdf:about="https://rubalkhali.science/kb/RAK_2000024">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <terms1:description>The numerical value of the monthly mean relative humidity at a site.</terms1:description>
+        <rdfs:label>has monthly mean humidity value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_131422 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_131422"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_131423 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_131423"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_131424 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_131424"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_131425 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_131425"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_131426 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_131426"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_131427 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_131427"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_131428 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_131428"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_131433 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_131433"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_131435 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_131435"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_131437 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_131437"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_22567 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_22567"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_22694 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_22694"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_22872 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_22872"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_23053 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23053"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_23081 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23081"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_23153 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23153"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_23356 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23356"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_23883 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23883"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_23929 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23929"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_23992 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23992"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_24185 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24185"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_24467 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24467"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_24610 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24610"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_24859 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24859"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_24963 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24963"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_25112 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_25112"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_25202 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_25202"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_25490 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_25490"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_25557 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_25557"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_25712 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_25712"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26004 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26004"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26156 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26156"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26257 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26257"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26487 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26487"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26537 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26537"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26642 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26642"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26676 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26676"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26799 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26799"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26847 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26847"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26903 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26903"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26998 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26998"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_27008 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_27008"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_27051 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_27051"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_27197 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_27197"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_27250 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_27250"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_27266 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_27266"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_27303 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_27303"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_27306 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_27306"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_27335 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_27335"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_27511 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_27511"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_27521 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_27521"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_27531 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_27531"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_28984 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_28984"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_29324 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_29324"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_29840 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_29840"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_30188 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_30188"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_31344 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_31344"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_31673 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_31673"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_36560 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36560"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_37583 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_37583"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_50819 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50819"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_50822 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50822"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_50823 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50823"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_50824 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50824"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_50825 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50825"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_51050 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_51050"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_51052 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_51052"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_78659 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_78659"/>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000300 -->
+
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/SIO_000300"/>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000001 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000001">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000026"/>
+        <rdfs:label>site quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000002 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000002">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000019"/>
+        <rdfs:label>sampling site</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000003 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000003">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000747"/>
+        <rdfs:label>site visit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000004 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000004">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001236"/>
+        <rdfs:label>Mitsubishi Pajero Barometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000005 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000005">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001236"/>
+        <rdfs:label>Testo Thermometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000006 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000006">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001054"/>
+        <rdfs:label>temperature measuring</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000007 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000007">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001054"/>
+        <rdfs:label>atmospheric pressure measuring</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000008 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000008">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001054"/>
+        <rdfs:label>relative humidity measuring</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000009 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000009">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001054"/>
+        <rdfs:label>annual climate measuring</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000010 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000010">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <rdfs:label>temperature measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000011 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000011">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <rdfs:label>atmospheric pressure measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000012 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000012">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <rdfs:label>relative humidity measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000013 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000013">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <rdfs:label>annual mean temperature value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000014 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000014">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <rdfs:label>annual total precipitation value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000015 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000015">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <rdfs:label>annual total rain value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000016 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000016">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000620"/>
+        <rdfs:label>Rub al-Khali Expedition Team</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000017 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000017">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000017"/>
+        <rdfs:label>measuring function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000018 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000018">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000747"/>
+        <rdfs:label>expedition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000019 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000019">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000498"/>
+        <rdfs:label>person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000020 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000020">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001050"/>
+        <rdfs:label>surface soil sample</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000021 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000021">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001050"/>
+        <rdfs:label>deep soil sample</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000022 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000022">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001050"/>
+        <rdfs:label>rhizosphere sample</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000023 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000023">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001050"/>
+        <rdfs:label>plant matter sample</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000024 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000024">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000006"/>
+        <rdfs:label>sampling process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000025 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000025">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001054"/>
+        <rdfs:label>XRF measuring process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000026 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000026">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001236"/>
+        <rdfs:label>XRF device</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000027 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000027">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000091"/>
+        <rdfs:label>Field XRF protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000028 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000028">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000091"/>
+        <rdfs:label>Lab XRF protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000029 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000029">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000033"/>
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001088"/>
+        <rdfs:label>chemical analyte concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000030 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000030">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <rdfs:label>analyte concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000031 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000031">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000004"/>
+        <rdfs:label>Light Elements mixture</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000032 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000032">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:label>Light Elements concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000033 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000033">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Light Elements concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000034 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000034">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001054"/>
+        <rdfs:label>monthly climate measuring</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000035 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000035">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <rdfs:label>monthly mean temperature value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000036 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000036">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <rdfs:label>monthly total precipitation value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000037 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000037">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <rdfs:label>monthly total rain value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000038 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000038">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <rdfs:label>monthly mean humidity value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000040 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000040">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001173"/>
+        <rdfs:label>DNA extract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000041 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000041">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001054"/>
+        <rdfs:label>DNA concentration measurement process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000042 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000042">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001236"/>
+        <rdfs:label>Nanodrop device</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000050 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000050">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_010462"/>
+        <rdfs:label>DNA extraction kit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000051 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000051">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000050"/>
+        <rdfs:label>PowerSoil DNA Extraction Kit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000052 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000052">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000050"/>
+        <rdfs:label>PowerSoil Pro DNA Extraction Kit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000060 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000060">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000040"/>
+        <rdfs:label>16S Amplicon Library</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000061 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000061">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_010093"/>
+        <rdfs:label>Forward 16S Primer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000062 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000062">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_010093"/>
+        <rdfs:label>Reverse 16S Primer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000063 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000063">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000089"/>
+        <rdfs:label>FASTQ Dataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000064 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000064">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000069"/>
+        <rdfs:label>Sequence Read</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000070 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000070">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000127"/>
+        <rdfs:label>bioinformatic workflow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000071 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000071">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000070"/>
+        <rdfs:label>16S amplicon processing workflow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000072 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000072">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000651"/>
+        <rdfs:label>taxon relative abundance quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000073 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000073">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000070"/>
+        <rdfs:label>relative abundance measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000100 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000100">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27573"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Si concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000101 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000101">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_18248"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Fe concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000102 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000102">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22984"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Ca concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000103 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000103">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26216"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>K concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000104 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000104">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26833"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>S concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000105 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000105">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>P concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000106 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000106">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27008"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Ti concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000107 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000107">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_28984"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Al concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000108 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000108">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25107"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Mg concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000109 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000109">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26642"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Na concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000110 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000110">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23153"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Cl concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000111 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000111">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_18291"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Mn concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000112 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000112">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26799"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Sr concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000113 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000113">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27335"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Zr concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000114 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000114">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27266"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>V concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000115 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000115">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_28073"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Cr concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000116 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000116">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22694"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Ba concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000117 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000117">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25016"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Pb concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000118 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000118">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27363"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Zn concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000119 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000119">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_28694"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Cu concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000120 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000120">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_28112"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Ni concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000121 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000121">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23356"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Co concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000122 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000122">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27563"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>As concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000123 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000123">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27197"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>U concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000124 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000124">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26986"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Th concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000125 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000125">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26421"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Rb concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000126 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000126">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27306"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Y concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000127 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000127">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25557"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Nb concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000128 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000128">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_28685"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Mo concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000129 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000129">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26676"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Ag concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000130 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000130">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22977"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Cd concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000131 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000131">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27051"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Sn concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000132 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000132">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22567"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Sb concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000133 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000133">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24859"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>I concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000134 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000134">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23053"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Cs concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000135 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000135">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24963"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>La concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000136 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000136">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23081"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Ce concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000137 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000137">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26257"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Pr concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000138 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000138">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25490"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Nd concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000139 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000139">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26523"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Sm concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000140 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000140">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23992"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Eu concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000141 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000141">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24185"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Gd concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000142 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000142">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26903"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Tb concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000143 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000143">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23883"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Dy concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000144 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000144">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24610"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Ho concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000145 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000145">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23929"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Er concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000146 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000146">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26998"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Tm concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000147 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000147">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27303"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Yb concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000148 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000148">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25112"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Lu concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000149 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000149">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24467"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Hf concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000150 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000150">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26847"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Ta concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000151 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000151">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27250"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>W concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000152 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000152">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26487"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Re concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000153 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000153">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25712"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Os concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000154 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000154">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24873"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Ir concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000155 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000155">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26156"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Pt concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000156 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000156">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_29840"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Au concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000157 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000157">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25202"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Hg concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000158 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000158">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22872"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Bi concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000159 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000159">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26537"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Sc concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000160 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000160">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22927"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Br concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000161 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000161">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27531"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Ga concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000162 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000162">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27511"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Se concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000163 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000163">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27521"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Ge concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000164 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000164">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_30563"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>SiO2 concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000165 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000165">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50819"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Fe2O3 concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000166 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000166">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_30188"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Al2O3 concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000167 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000167">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_31344"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>CaO concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000168 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000168">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_31673"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>MgO concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000169 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000169">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_131422"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>K2O concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000170 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000170">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_78659"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Na2O concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000171 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000171">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_51050"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>TiO2 concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000172 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000172">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_131433"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>MnO concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000173 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000173">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_37583"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>P2O5 concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000174 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000174">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_29324"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>SO3 concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000175 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000175">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50812"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Cr2O3 concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000176 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000176">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50825"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>V2O5 concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000177 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000177">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36560"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>ZnO concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000178 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000178">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_131435"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>SrO concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000179 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000179">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_51052"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>ZrO2 concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000180 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000180">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_131437"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>BaO concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000181 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000181">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_131423"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>La2O3 concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000182 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000182">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_131424"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>CeO2 concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000183 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000183">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_131425"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>PrO2 concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000184 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000184">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_131426"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Nd2O3 concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000185 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000185">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_131427"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Sm2O3 concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000186 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000186">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50823"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>CuO concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000187 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000187">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50824"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>NiO concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000188 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000188">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50822"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>CoO concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000189 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000189">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000029"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000011"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_131428"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>PbO concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000500 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000500">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Si concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000501 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000501">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Fe concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000502 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000502">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Ca concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000503 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000503">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>K concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000504 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000504">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>S concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000505 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000505">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>P concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000506 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000506">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Ti concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000507 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000507">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Al concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000508 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000508">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Mg concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000509 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000509">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Na concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000510 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000510">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Cl concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000511 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000511">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Mn concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000512 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000512">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Sr concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000513 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000513">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Zr concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000514 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000514">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>V concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000515 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000515">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Cr concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000516 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000516">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Ba concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000517 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000517">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Pb concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000518 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000518">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Zn concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000519 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000519">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Cu concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000520 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000520">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Ni concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000521 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000521">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Co concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000522 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000522">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>As concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000523 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000523">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>U concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000524 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000524">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Th concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000525 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000525">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Rb concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000526 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000526">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Y concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000527 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000527">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Nb concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000528 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000528">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Mo concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000529 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000529">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Ag concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000530 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000530">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Cd concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000531 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000531">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Sn concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000532 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000532">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Sb concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000533 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000533">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>I concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000534 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000534">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Cs concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000535 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000535">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>La concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000536 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000536">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Ce concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000537 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000537">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Pr concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000538 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000538">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Nd concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000539 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000539">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Sm concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000540 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000540">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Eu concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000541 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000541">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Gd concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000542 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000542">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Tb concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000543 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000543">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Dy concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000544 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000544">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Ho concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000545 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000545">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Er concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000546 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000546">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Tm concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000547 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000547">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Yb concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000548 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000548">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Lu concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000549 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000549">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Hf concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000550 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000550">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Ta concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000551 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000551">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>W concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000552 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000552">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Re concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000553 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000553">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Os concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000554 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000554">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Ir concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000555 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000555">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Pt concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000556 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000556">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Au concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000557 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000557">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Hg concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000558 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000558">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Bi concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000559 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000559">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Sc concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000560 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000560">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Br concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000561 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000561">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Ga concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000562 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000562">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Se concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000563 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000563">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Ge concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000564 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000564">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>SiO2 concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000565 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000565">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Fe2O3 concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000566 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000566">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Al2O3 concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000567 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000567">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>CaO concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000568 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000568">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>MgO concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000569 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000569">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>K2O concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000570 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000570">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Na2O concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000571 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000571">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>TiO2 concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000572 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000572">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>MnO concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000573 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000573">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>P2O5 concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000574 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000574">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>SO3 concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000575 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000575">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Cr2O3 concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000576 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000576">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>V2O5 concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000577 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000577">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>ZnO concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000578 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000578">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>SrO concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000579 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000579">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>ZrO2 concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000580 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000580">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>BaO concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000581 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000581">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>La2O3 concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000582 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000582">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>CeO2 concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000583 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000583">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>PrO2 concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000584 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000584">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Nd2O3 concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000585 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000585">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>Sm2O3 concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000586 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000586">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>CuO concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000587 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000587">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>NiO concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000588 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000588">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>CoO concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000589 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000589">
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0000030"/>
+        <rdfs:label>PbO concentration measurement value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00000019">
+        <rdfs:label>saline lake</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00000064">
+        <rdfs:label>road</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00000170">
+        <rdfs:label>sand dune</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00000192">
+        <rdfs:label>desert</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00000279">
+        <rdfs:label>saline pan</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000018">
+        <rdfs:label>gravel</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000179">
+        <rdfs:label>desert biome</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000183">
+        <rdfs:label>tropical desert biome</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000935">
+        <rdfs:label>campground</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01001838">
+        <rdfs:label>arid biome</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000187">
+        <rdfs:label>percent</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://rubalkhali.science/kb/">
+        <dc:creator>Robert Hoehndorf (ORCID: https://orcid.org/0000-0001-8149-5890)</dc:creator>
+        <terms1:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <owl:versionInfo>1.0.0</owl:versionInfo>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_2000001">
+        <terms1:description>Associates a site with a biome type.</terms1:description>
+        <rdfs:label>has biome</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_2000002">
+        <terms1:description>Associates a site with a specific environmental feature.</terms1:description>
+        <rdfs:label>has environmental feature</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.20.2022-02-19T16:38:31Z) https://github.com/owlcs/owlapi/ -->
+
+

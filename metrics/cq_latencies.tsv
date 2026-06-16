@@ -1,0 +1,24 @@
+# Competency-question latencies against the live Virtuoso endpoint on `ws`
+# (http://localhost:8895/sparql), N=10 runs after one warm-up.
+# Two regimes: "asserted" = no inference pragma; "inference" = DEFINE input:inference 'rak'
+# where 'rak' is bound via DB.DBA.RDFS_RULE_SET('rak', 'https://rubalkhali.science/ontology/').
+# All times in seconds.
+regime	id	description	rows	n	median_s	mean_s	p95_s	min_s	max_s	notes
+asserted	CQ1	Field XRF measurements for Site 10	100	10	0.0196	0.0205	0.0236	0.0195	0.0236
+asserted	CQ2	All sampling sites and GPS coordinates	70	10	0.0056	0.0056	0.0059	0.0054	0.0059
+asserted	CQ3	Biomes per site (OWL restriction inspection)	70	10	0.0064	0.0062	0.0069	0.0055	0.0069
+asserted	CQ4	Light Elements percentages across XRF runs	0	10	0.0026	0.0026	0.0028	0.0025	0.0028	0 rows on dev DB; investigate IRIs
+asserted	CQ5	DNA extraction records and concentrations	1473	10	0.0877	0.0889	0.0983	0.0873	0.0983
+asserted	CQ6	Provenance: soil → DNA → library → run	25	10	0.0255	0.0255	0.0256	0.0254	0.0256
+asserted	CQ7	Taxonomic composition and abundance per run	NA	NA	NA	NA	NA	NA	NA	timed out (>300 s)
+asserted	CQ8	Pseudomonas at sites with temperature > 35 °C	0	10	0.1102	0.1144	0.1471	0.1056	0.1471	0 rows; depends on inference for property chain
+asserted	CQ9	Sequencing QC metrics for sample 10Dr2	0	10	0.0221	0.0222	0.0225	0.0220	0.0225	0 rows on dev DB
+inference	CQ1	Field XRF measurements for Site 10	100	10	0.2981	0.3043	0.3443	0.2960	0.3443
+inference	CQ2	All sampling sites and GPS coordinates	70	10	0.0071	0.0071	0.0074	0.0069	0.0074
+inference	CQ3	Biomes per site (OWL restriction inspection)	70	10	0.0288	0.0312	0.0414	0.0286	0.0414
+inference	CQ4	Light Elements percentages across XRF runs	0	10	0.0066	0.0066	0.0069	0.0064	0.0069	0 rows on dev DB
+inference	CQ5	DNA extraction records and concentrations	2437	10	0.8068	0.8063	0.8432	0.7870	0.8432	row count up from 1473 → inverse-property activation visible
+inference	CQ6	Provenance: soil → DNA → library → run	25	10	2.8598	2.8638	2.9007	2.8365	2.9007	~112× slower under backward chaining
+inference	CQ7	Taxonomic composition and abundance per run	NA	NA	NA	NA	NA	NA	NA	HTTP 500 (Virtuoso aborts under inference)
+inference	CQ8	Pseudomonas at sites with temperature > 35 °C	NA	NA	NA	NA	NA	NA	NA	HTTP 400 (query rejected under inference)
+inference	CQ9	Sequencing QC metrics for sample 10Dr2	0	10	0.1766	0.1777	0.1873	0.1744	0.1873	0 rows

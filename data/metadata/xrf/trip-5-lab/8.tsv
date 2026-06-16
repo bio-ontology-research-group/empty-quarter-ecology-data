@@ -1,0 +1,39 @@
+																											
+																											
+																											
+Formula	Z	Concentration	Status	Line 1	Net int.	Calc. concentration	Stat. error	LLD	Analyzed layer	Foil correction	D.C. Factor	Line 2	Net int.	Calc. concentration	Stat. error	LLD	Analyzed layer	Foil correction	D.C. Factor	Line 3	Net int.	Calc. concentration	Stat. error	LLD	Analyzed layer	Foil correction	D.C. Factor
+Si	14	22.8	XRF 0	Si KA1-HR-Tr	22.48	22.8	0.0239		29.8 um	1.27	24.16	Si KB1-HR-Tr/Ox	0.47	14	0.165		34 um	1.23	24.16								
+Ca	20	1.2	XRF 0	Ca KA1-HR-Tr	2.303	1.2	0.0745		77 um	1.02	20	Ca KB1-HR-Tr	0.2376	0.54	0.58		97 um	1.02	20								
+Al	13	0.99	XRF 0	Al KA1-HR-Tr	0.871	0.99	0.121		20.7 um	1.43	23.44	Al KB1-HR-Tr/Ox	0.05265	5.1	1.23		23.3 um	1.38	23.44								
+Fe	26	0.453	XRF 0	Fe KA1-HR-Tr	5.528	0.453	0.0481		0.33 mm	1	21.51	Fe KB1-HR-Tr	0.7153	0.11	0.394	157.5 PPM	0.43 mm	1	21.51								
+Na	11	0.42	XRF 0	Na KA1-HR-Tr	0.06632	0.42	0.439		8.4 um	2.5	32.61																
+K	19	0.36	XRF 0	K  KA1-HR-Tr	0.6828	0.36	0.342		59 um	1.03	19.06	K  KB1-HR-Tr	0.08888	0.23	0.949		73 um	1.02	19.06								
+Mg	12	0.29	XRF 0	Mg KA1-HR-Tr	0.2449	0.29	0.572		13.4 um	1.75	23.78																
+P	15	0.28	XRF 0	P  KA1-HR-Tr	0.2832	0.28	0.213		15.7 um	1.18	22.22																
+Ti	22	0.18	XRF 0	Ti KA1-HR-Tr	0.4043	0.18	0.445		124 um	1.01	21.32	Ti KB1-HR-Tr	0.2743	0.35	0.216		159 um	1.01	21.32								
+Nd	60	0.089	XRF 0	Nd LA1-HR-Tr	0.06635	0.089	1.1		185 um	1.01	21.23	Nd LB1-HR-Tr	0.1984	0.3	0.254		238 um	1.01	21.23	Nd MA1-HR-Tr	-0.00308	-0.18			7.2 um	2.93	32.61
+Sm	62	0.069	XRF 0	Sm LA1-HR-Tr	0.07642	0.069	1.02		228 um	1.01	21.23	Sm LB1-HR-Tr	0.09634	0.093	0.911		300 um	1	21.23								
+Eu	63	0.046	XRF 0	Eu LA1-HR-Tr	0.05882	0.046	0.467		253 um	1.01	21.23	Eu LB1-HR-Tr	0.1394	0.043	0.758		0.33 mm	1	21.51								
+Zr	40	0.035	XRF 0	Zr KA1-HR-Tr	1.338	0.035	0.17	8.3 PPM	4.2 mm	1	17.3	Zr KB1-HR-Tr	0.5929	0.094	0.996	54.2 PPM	6.0 mm	1	17.3	Zr LA1-HR	0	0			16.2 um	1.17	22.22
+S	16	0.03	XRF 0	S  KA1-HR-Tr	0.05205	0.03	1.24		21.5 um	1.12	22.22																
+V	23	0.023	XRF 0	V  KA1-HR-Tr	0.07793	0.023	1.01		161 um	1.01	21.32																
+Mn	25	0.018	XRF 0	Mn KA1-HR-Tr	0.1686	0.018	0.276		260 um	1	21.23	Mn KB1-HR-Tr	0.2055	0.045	0.624		0.34 mm	1	21.23								
+Cr	24	0.016	XRF 0	Cr KA1-HR-Tr	0.1193	0.016	0.819		204 um	1.01	21.23	Cr KB1-HR-Tr	0.09485	0.034	0.367		266 um	1	21.23								
+Cl	17	0.006	XRF 0	Cl KA1-HR-Tr	0.00681	0.006	3.43		30 um	1.08	22.22																
+Material		Oxides	Input																								
+Mode		He	Input																								
+Diameter		8mm	Input																								
+Method		Fast Screening-He8mm	Input																								
+																											
+Formula	Z	Concentration	Status	Line 1	Net int.	Calc. concentration	Stat. error	LLD	Analyzed layer	Foil correction	D.C. Factor	Line 2	Net int.	Calc. concentration	Stat. error	LLD	Analyzed layer	Foil correction	D.C. Factor	Line 3	Net int.	Calc. concentration	Stat. error	LLD	Analyzed layer	Foil correction	D.C. Factor
+SiO2	14	48.7	XRF 1	Si KA1-HR-Tr	22.48	48.7	0.0239		29.8 um	1.27	24.16	Si KB1-HR-Tr/Ox	0.47	29	0.165		34 um	1.23	24.16								
+Al2O3	13	1.9	XRF 1	Al KA1-HR-Tr	0.871	1.9	0.121		20.7 um	1.43	23.44	Al KB1-HR-Tr/Ox	0.05265	9.7	1.23		23.3 um	1.38	23.44								
+CaO	20	1.7	XRF 1	Ca KA1-HR-Tr	2.303	1.7	0.0745		77 um	1.02	20	Ca KB1-HR-Tr	0.2376	0.75	0.58		97 um	1.02	20								
+P2O5	15	0.65	XRF 1	P  KA1-HR-Tr	0.2832	0.65	0.213		15.7 um	1.18	22.22																
+Fe2O3	26	0.647	XRF 1	Fe KA1-HR-Tr	5.528	0.647	0.0481		0.33 mm	1	21.51	Fe KB1-HR-Tr	0.7153	0.16	0.394	225.2 PPM	0.43 mm	1	21.51								
+ZrO2	40	0.047	XRF 1	Zr KA1-HR-Tr	1.338	0.047	0.17	11.2 PPM	4.2 mm	1	17.3	Zr KB1-HR-Tr	0.5929	0.13	0.996	73.2 PPM	6.0 mm	1	17.3	Zr LA1-HR	0	0			16.2 um	1.17	22.22
+MnO	25	0.024	XRF 1	Mn KA1-HR-Tr	0.1686	0.024	0.276		260 um	1	21.23	Mn KB1-HR-Tr	0.2055	0.058	0.624		0.34 mm	1	21.23								
+Material		Oxides	Input																								
+Mode		He	Input																								
+Diameter		8mm	Input																								
+Method		Fast Screening-He8mm	Input																								

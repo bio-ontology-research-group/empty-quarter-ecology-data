@@ -1,0 +1,60 @@
+PREFIX rak: <https://rubalkhali.science/kb/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+# Validation for SRA Submission Data
+
+# 1. Library Preparation Process
+<#LibraryPrepProcessShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000065] ;                       # Library Prep Process
+    rdfs:label xsd:string ;
+    sio:SIO_000230 IRI ;                              # has input (External reference)
+    sio:SIO_000229 @<#AmpliconLibraryShape> ;        # has output
+    rak:RAK_2000018 @<#ForwardPrimerShape> ;          # uses fwd primer
+    rak:RAK_2000019 @<#ReversePrimerShape> ;          # uses rev primer
+    sio:SIO_000339 IRI ;                              # specified by Protocol (External)
+}
+
+# 2. Input DNA Extract (Minimal check)
+<#DNAExtractShape> IRI EXTRA rdf:type {
+    rdf:type [sio:SIO_001173] ;
+}
+
+# 3. 16S Amplicon Library (BioSample)
+<#AmpliconLibraryShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000060] ;                       # 16S Amplicon Library
+    rdfs:label xsd:string ;
+    rdfs:seeAlso IRI ;                                # Link to ENA/NCBI BioSample
+}
+
+# 4. Primers
+<#ForwardPrimerShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000061] ;
+    rdfs:label xsd:string ;
+}
+
+<#ReversePrimerShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000062] ;
+    rdfs:label xsd:string ;
+}
+
+# 5. Sequencing Process
+<#SequencingProcessShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000066] ;                       # Sequencing Process
+    rdfs:label xsd:string ;
+    sio:SIO_000230 @<#AmpliconLibraryShape> ;        # has input
+    sio:SIO_000229 @<#FASTQDatasetShape> ;           # has output
+    sio:SIO_000068 IRI ;                              # part of 16S Project (External)
+    sio:SIO_000139 IRI ;                              # has agent Corelabs (External)
+}
+
+# 6. FASTQ Dataset (Run)
+<#FASTQDatasetShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000063] ;                       # FASTQ Dataset
+    rdfs:label xsd:string ;
+    rdfs:seeAlso IRI ;                                # Link to ENA/NCBI Run
+}

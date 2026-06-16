@@ -1,0 +1,35 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rak: <https://rubalkhali.science/kb/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX uo: <http://purl.obolibrary.org/obo/UO_>
+
+<#XRFProcessShape> {
+    rdf:type [rak:RAK_0000025] ;
+    rdf:type IRI * ;
+    rdfs:label xsd:string ;
+    sio:SIO_000230 IRI ;                # hasInput -> Sample
+    sio:SIO_000339 IRI ;                # isSpecifiedBy -> Protocol
+    sio:SIO_000229 @<#XRFValueShape> + ; # hasOutput -> Values
+}
+
+<#XRFValueShape> {
+    # It must have a type from the element-specific value classes
+    rdf:type IRI + ; 
+    
+    rdfs:label xsd:string ;
+    sio:SIO_000232 @<#XRFProcessShape> ; # isOutputOf
+    sio:SIO_000221 [uo:0000187] ;       # hasUnit -> percent
+    
+    rak:RAK_2000012 xsd:double ;        # hasConcValue
+    rak:RAK_2000013 xsd:double ? ;      # hasConcError
+}
+
+<#XRFQualityShape> {
+    # It must have a type from the element-specific quality classes
+    rdf:type IRI + ;
+    
+    sio:SIO_000215 @<#XRFValueShape> ;  # isMeasurementValueOf
+    sio:SIO_000011 IRI ;                # isAttributeOf -> Sample
+}

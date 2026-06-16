@@ -1,0 +1,33 @@
+\begin{table}[h]
+	\centering
+	\caption{Mapping of domain classes to SIO upper-level ontology classes. All domain classes are defined under the \texttt{rak:} namespace.}
+	\label{tab:class_mapping}
+	\begin{tabular}{llll}
+		\toprule
+		Domain Concept        & RAK IRI          & SIO Superclass           & Instances \\
+		\midrule
+		\multicolumn{4}{l}{\textit{Material entities}} \\
+		Sampling Site         & RAK\_0000002     & sio:Site                 & 70        \\
+		Surface Soil Sample   & RAK\_0000020     & sio:Sample               & 744       \\
+		Deep Soil Sample      & RAK\_0000021     & sio:Sample               & 799       \\
+		Rhizosphere Sample    & RAK\_0000022     & sio:Sample               & 744       \\
+		Plant Matter Sample   & RAK\_0000023     & sio:Sample               & 248       \\
+		DNA Extract           & RAK\_0000040     & sio:BiopolymerEntity     & 2,410     \\
+		16S Amplicon Library  & RAK\_0000060     & sio:InformationEntity    & 1,242     \\
+		FASTQ Dataset         & RAK\_0000063     & sio:Dataset              & 1,242     \\
+		\midrule
+		\multicolumn{4}{l}{\textit{Processes}} \\
+		Expedition            & RAK\_0000018     & sio:Process              & 5         \\
+		Site Visit            & RAK\_0000003     & sio:Process              & 256       \\
+		Sampling Process      & RAK\_0000024     & sio:Process              & 992       \\
+		XRF Analysis          & RAK\_0000025     & sio:MeasuringProcess     & 249       \\
+		DNA Extraction        & RAK\_0000040     & sio:Process              & 2,410     \\
+		Bioinformatic Workflow & RAK\_0000071    & sio:ComputationalProcess & 1,236     \\
+		\midrule
+		\multicolumn{4}{l}{\textit{Qualities and values}} \\
+		Analyte Quality       & RAK\_0000029     & sio:Quality              & (91 subclasses) \\
+		XRF Measurement Value & RAK\_0000030     & sio:MeasurementValue     & 6,674     \\
+		Taxon Abundance       & RAK\_0000072     & sio:Quality              & 1,401,008 \\
+		\bottomrule
+	\end{tabular}
+\end{table}

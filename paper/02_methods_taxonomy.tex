@@ -1,0 +1,109 @@
+\subsection{Taxonomy mapping and alignment}
+\label{methods:taxonomy}
+
+To unify taxonomic classifications derived from different databases,
+we developed an algorithm to map and align the NCBI Taxonomy
+($O_{ncbi}$), the Genome Taxonomy Database ($O_{gtdb}$), and the
+iNaturalist taxonomy ($O_{inat}$). This alignment does not imply
+biological commitments but rather aims to integrate three different
+taxonomies for the purposes of the Rub' al-Khali knowledge graph,
+specifically to enable queries within this project.  The mapping
+process aligns the resolution of nomenclature divergence (e.g.,
+lineage-specific alphanumeric suffixes in GTDB) and structural rank
+conflicts into a consolidated taxonomic knowledge graph $O_{final}$.
+
+Let $O = (C, R, E)$ represent a taxonomy comprising a set of classes
+$C$, a set of taxonomic ranks $R$, and a set of subclass axioms
+$E$. We define a lexical normalization function
+$f_{norm}: C \to \Sigma^*$ that maps a class $c \in C$ to a canonical
+string by converting the primary label to lowercase, removing
+rank-specific prefixes (e.g., \texttt{d\_\_}), and stripping
+alphanumeric lineage suffixes. Furthermore, let $rank: C \to R$ denote
+a function that retrieves the normalized taxonomic rank of a class,
+and let $parent: C \to C$ denote a function that retrieves the direct
+superclass of $c$.
+
+The workflow initializes with a lexical alignment phase to generate a
+candidate seed set $S_{lex}$:
+\begin{equation}
+S_{lex} = \{ (c_{src}, c_{tgt}) \in C_{ncbi} \times C_{gtdb} \mid
+f_{norm}(c_{src}) = f_{norm}(c_{tgt}) \}
+\end{equation}
+This initial lexical matching between NCBI and GTDB taxonomies
+produced 27,487 seed pairs. We subsequently partitioned $S_{lex}$
+through a structural verification step evaluating rank compatibility
+and topological support. A seed pair $(c_{src}, c_{tgt}) \in S_{lex}$
+was classified as a strong anchor $A_{strong}$ if
+$rank(c_{src}) = rank(c_{tgt})$ and
+$f_{norm}(parent(c_{src})) = f_{norm}(parent(c_{tgt}))$. Instances
+where ranks were compatible but parent labels diverged were classified
+as weak anchors $A_{weak}$ ($|A_{weak}| = 4,347$), which signify
+potential nomenclature reclassifications.
+
+We resolved the weak anchors utilizing a bottom-up inference strategy:
+we used the biological heuristic that identical species-level
+designations refer to the homologous entity regardless of divergent
+higher-rank classifications. For each
+$(c_{src}, c_{tgt}) \in A_{weak}$, we generated a structural hint
+$h = (parent(c_{src}), parent(c_{tgt}))$. We aggregated these hints
+and applied an equivalence axiom to higher-level taxa if the vote
+count for a structural hint exceeded our predefined threshold. This
+resolution step generated 1,514 parent hints.
+
+Algorithm~\ref{alg:tax_align} details the formal procedure for merging
+the ontologies and subsequently grafting the iNaturalist taxonomy. 
+
+\begin{algorithm}
+\caption{Taxonomy Alignment and Integration Workflow}
+\label{alg:tax_align}
+\begin{algorithmic}[1]
+\State \textbf{Input:} $O_{ncbi}$, $O_{gtdb}$, $O_{inat}$
+\State \textbf{Output:} $O_{final}$
+\State $S_{lex} \gets \emptyset$, $A_{strong} \gets \emptyset$, $A_{weak} \gets \emptyset$
+\State \textit{// Phase 1: Lexical Anchoring}
+\For{$(c_{src}, c_{tgt}) \in C_{ncbi} \times C_{gtdb}$}
+    \If{$f_{norm}(c_{src}) = f_{norm}(c_{tgt})$}
+        \State $S_{lex} \gets S_{lex} \cup \{(c_{src}, c_{tgt})\}$
+    \EndIf
+\EndFor
+\State \textit{// Phase 2: Structural Verification}
+\For{$(c_{src}, c_{tgt}) \in S_{lex}$}
+    \If{$f_{norm}(parent(c_{src})) = f_{norm}(parent(c_{tgt}))$}
+        \State $A_{strong} \gets A_{strong} \cup \{(c_{src}, c_{tgt})\}$
+    \Else
+        \State $A_{weak} \gets A_{weak} \cup \{(c_{src}, c_{tgt})\}$
+    \EndIf
+\EndFor
+\State \textit{// Phase 3: Bottom-up Resolution}
+\State $H \gets \text{AggregateParentHints}(A_{weak})$
+\State $O_{merged} \gets O_{ncbi} \cup O_{gtdb}$
+\For{$(c_{src}, c_{tgt}) \in A_{strong} \cup H$}
+    \State $O_{merged} \gets O_{merged} \cup \{\text{EquivalentClasses}(c_{src}, c_{tgt})\}$
+\EndFor
+\State $O_{merged} \gets \text{DisambiguateHomonyms}(O_{merged})$
+\State \textit{// Phase 4: iNaturalist Grafting}
+\State $O_{final} \gets O_{merged} \cup O_{inat}$
+\For{$c_{inat} \in C_{inat}$}
+    \State $M \gets \{c \in C_{merged} \mid f_{norm}(c) = f_{norm}(c_{inat})\}$
+    \If{$|M| = 1$}
+        \State $O_{final} \gets O_{final} \cup \{\text{EquivalentClasses}(c_{inat}, m \in M)\}$
+    \ElsIf{$|M| > 1$}
+        \State $m^* \gets \text{DisambiguateByRank}(M, rank(c_{inat}))$
+        \State $O_{final} \gets O_{final} \cup \{\text{EquivalentClasses}(c_{inat}, m^*)\}$
+    \EndIf
+\EndFor
+\State \Return $O_{final}$
+\end{algorithmic}
+\end{algorithm}
+
+The alignment process successfully applied 27,487 verified anchors to
+bridge the NCBI and GTDB frameworks. Following the primary
+integration, we anchored the iNaturalist taxonomy ($O_{inat}$) into
+the merged taxonomy. We indexed the merged taxonomy (consisting of
+NCBI and GTDB taxonomies) utilizing the normalization function and
+iteratively matched iNaturalist classes. For singular matches, we
+directly appended equivalence axioms. When multiple candidate nodes
+shared a canonical label, we disambiguated the mapping using rank
+annotations. We explicitly copied all axioms from $O_{inat}$ into
+$O_{final}$, effectively grafting unanchored nodes while retaining
+their subclass topology.

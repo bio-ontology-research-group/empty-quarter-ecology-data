@@ -1,0 +1,74 @@
+site	date	time	coordinates	biome	feature	pressure	temperature	humidity	notes
+1	12/10/2025	07:32	19.149770555555556 N,45.166511388888885 E	desert biome	gravel	894	26.9	24.3	
+2	12/10/2025	08:05	19.203468333333333 N,45.2447675 E	desert biome	sand dune	902	27.8	23.4	First xrf reading
+3	12/10/2025	08:38	19.301079444444444 N,45.384414166666666 E	desert biome	sand dune	912	29	23	poo sample collected
+4	12/10/2025	09:20	19.379571666666667 N,45.55182694444444 E	desert biome	saline pan	922	32.4	18.8	
+5	12/10/2025	10:00	19.407155277777775 N,45.659501388888884 E	desert biome	saline pan	924	33.4	19.2	
+6	12/10/2025	10:50	19.405739166666667 N,45.8161425 E	desert biome	saline pan	916	36.7	14.1	
+7	12/10/2025	11:18	19.407005277777778 N,45.953943611111114 E	desert biome	sand dune	918	35	13.4	also camel sample nearby. 1129am. 13.7% hum. 35.5C. 916hPa. Labelled A3 and A4
+8	12/10/2025	11:55	19.393154166666665 N,46.110734722222226 E	desert biome	sand dune	918	34	12.9	also oil spill sample nearby. 1223pm. 12.5% hum. 34.1C. 920hPa. 19.40287N  46.26018E a5
+9	12/10/2025	12:33	19.411200277777777 N,46.30267361111111 E	desert biome	sand dune	918	35.5	12.5	
+10	12/10/2025	12:58	19.420469722222222 N,46.460795277777784 E	desert biome	sand dune	920	35.6	10.5	also oil spill or fire nearby. 1338pm. 10.9 hum. 35.5C. 922hpa. 19.42578N  46.52600E, a6,
+11	12/10/2025	13:30	19.44435222222222 N,46.6356325 E	desert biome	sand dune	926	35.6	10.7	
+12	12/10/2025	13:57	19.47793361111111 N,46.83437333333334 E	desert biome	sand dune	928	36.3	10.3	
+13	12/10/2025	15:25	19.52934611111111 N,47.053284444444444 E	desert biome	sand dune	934	36.5	10.1	
+14	12/10/2025	15:51	19.581338055555555 N,47.2920225 E	desert biome	sand dune	936	35	11.9	2 black and white birds spotted here
+15	12/10/2025	16:22	19.613749722222224 N,47.47587194444445 E	desert biome	sand dune	940	34.7	11.9	
+16	12/10/2025	16:42	19.644455833333332 N,47.62611861111111 E	desert biome	sand dune	942	33.9	13.2	
+17	13/10/2025	07:05	19.676460000000002 N,47.82730555555556 E	desert biome	sand dune	948	26.4	32.1	
+18	13/10/2025	07:42	19.732518055555555 N,48.046860555555554 E	desert biome	sand dune	950	26.6	27	
+19	13/10/2025	08:15	19.81231916666667 N,48.24049472222222 E	desert biome	sand dune	954	28.2	27.5	
+20	13/10/2025	09:04	19.869310833333333 N,48.42464444444444 E	desert biome	dune slack	958	32.9	23.5	
+21	13/10/2025	09:30	19.9011325 N,48.48646388888889 E	desert biome	oilspill	958	33	25	a7 and a8 samples
+22	13/10/2025	10:10	19.97866972222222 N,48.63943555555556 E	desert biome	saline pan	962	35.5	20.8	also took archeology samples nearby 
+23	13/10/2025	10:56	20.049265555555557 N,48.773331388888884 E	desert biome	sand dune	960	36.1	21.6	also took special spider website sample here
+24	13/10/2025	11:39	20.09273861111111 N,48.89939527777778 E	desert biome	sand dune	958	36.3	18.2	
+25	13/10/2025	11:55	20.100259722222223 N,48.95421972222223 E	desert biome	sand dune	960	35	18.4	
+26	13/10/2025	12:16	20.148753888888887 N,49.07873861111111 E	desert biome	sand dune	960	34.3	19.5	
+27	13/10/2025	12:42	20.2038574 N,49.1959834 E	desert biome	sand dune	960	36.4	16.6	
+28	13/10/2025	13:08	20.24376861111111 N,49.37088472222222 E	desert biome	sand dune	960	38.8	15.5	
+29	13/10/2025	13:56	20.2597976 N,49.5675445 E	desert biome	sand dune	966	37.5	14.9	
+30	13/10/2025	14:13	20.269303055555554 N,49.68367333333333 E	desert biome	sand dune	966	37.5	14.2	
+31	13/10/2025	14:46	20.294623333333334 N,49.891405 E	desert biome	sand dune	968	35.9	17.5	
+32	13/10/2025	15:38	20.310684166666668 N,50.09302138888889 E	desert biome	sand dune	970	39	12.8	
+33	13/10/2025	16:10	20.317507777777777 N,50.30307027777778 E	desert biome	sand dune	972	37.9	11.9	also took special spider website sample here. labelled special33 or sp33
+34	13/10/2025	16:58	20.344394444444443 N,50.5153725 E	desert biome	sand dune	974	34.3	17.9	camped around here. took bug sample in 2ml tube and 1 scorpion sample from here.
+35	14/10/2025	06:58	20.371795833333334 N,50.72999222222222 E	desert biome	sand dune	982	35.1	27.1	
+36	14/10/2025	08:36	20.42319 N, 51.14483 E	desert biome	sand dune	982	33.2	22.6	
+37	14/10/2025	09:01	20.454150277777778 N,51.344883333333335 E	desert biome	sand dune	984	32.3	23.7	
+38	14/10/2025	09:13	20.4610275 N,51.370224722222225 E	desert biome	sand dune	984	33.2	22.3	
+39	14/10/2025	09:50	20.51023 N, 51.59742 E	desert biome	sand dune	986	37.2	22.1	oil spill special sample 39.1
+40	14/10/2025	10:40	20.54718 N, 51.82559 E	desert biome	sand dune	984	39	194	
+41	14/10/2025	11:04	20.539777222222224 N,51.94610583333333 E	desert biome	saline pan	986	37.1	20.8	Chris sample taken, water level 1 raik showel deep
+42	14/10/2025	11:40	20.55516 N, 52.12403 E	desert biome	sand dune	984	36	22.6	
+43	14/10/2025	12:07	20.567575555555557 N,52.22413277777778 E	desert biome	sand dune	984	40.4	19.7	lake ved afterwards TOOK SPECIAL X sample from lake digging, water level similar as before
+44	14/10/2025	13:03	20.56783 N, 52.41036 E	desert biome	sand dune	984	37.1	19.3	
+45	14/10/2025	13:16	20.56346 N, 52.46776 E	desert biome	sand dune	984	39.5	17.6	
+46	14/10/2025	14:02	20.553746111111113 N,52.66920777777778 E	desert biome	sand dune	982	38.6	17.2	
+47	14/10/2025	14:41	20.54181555555556 N,52.868785833333334 E	desert biome	sand dune	984	36.2	23	
+48	14/10/2025	15:30	20.568648333333332 N,53.09404833333333 E	desert biome	desert oasis	986	36.7	19.2	3 special samples for Mark; 1 sample for Tiannyu; 3 special samples for Mark; 1 sample for Tiannyu; 1 biofilm for ont
+49	14/10/2025	16:20	20.644662222222223 N,53.28794 E	desert biome	sand dune	986	35.2	20.4	
+50	14/10/2025	17:00	20.71385 N, 53.41230 E	desert biome	sand dune	984	34.7	20.9	
+51	15/10/2025	06:41	20.79870 N, 53.48700 E	desert biome	saline pan	990	31.1	36.3	
+52	15/10/2025	07:09	20.82784 N,53.57835 E	desert biome	saline pan	990	33.5	34.1	no plant samples near here. went to nearby sand. got samples 52s and d instead of plant samples
+53	15/10/2025	07:59	20.851514166666668 N,53.75788444444444 E	desert biome	sand dune	990	33.7	32.4	Wood sample taken at 20.8901 53.7741
+54	15/10/2025	09:14	20.92017888888889 N,53.962204444444446 E	desert biome	aeolian lake	992	37.5	24.2	special samples taken. water sample from hose for abdulrahman. abdulrahman c1 same samples as sampling site 54. special 54 is green and orange biofilm near hose . Rob took two xrfs, one from the water with crust around it  and one from one from the standard sampling site. Mark took two samples for culturing. one directly from the hose water stream and from the surrounding environment around the hose outlet
+55	15/10/2025	09:59	20.9022725 N,54.0024376 E	desert biome	saline pan	988	39.3	21.4	abdulrahman c2 identical to site 55. magnus took soil sample next to the plant labeller mr55
+56	15/10/2025	10:38	20.821580833333332 N,54.22385916666667 E	desert biome	saline pan	988	42.8	19.8	normal sampling site did not have a soil sample. camp 4 abdulrahman sample taken at near dune here.  plant samples taken for c4 but could not find any soil / probably no proper rhizoshpere taken. c3 was taken later at the crust site. no plant sample for c3
+57	15/10/2025	11:18	20.7349775 N,54.41764333333333 E	desert biome	sand dune	986	39.4	20.3	special grass sample taken. probably mislabelled as '56 grass' instead of 57
+58	15/10/2025	11:41	20.66540111111111 N,54.59327444444445 E	desert biome	sand dune	986	41.8	18.3	
+59	15/10/2025	11:59	20.65626 N,54.635868055555555 E	desert biome	desert oasis	984	40.2	20.7	2 samples for abdulrahman. First is sp, one sample at moment temp, then from that 1 sample in glycerol frozen at -20 . also there's a negative control for that sample just with glycerol exposed to the environment and also frozen at minus 20. salt pond 2 neighboring pond sample sp2  consists of 1 sample in glycerol stock in minus 20 and 1 original sample at ambient temperature. magnus took some samples as prelabelled. Mark took 2 samples for his group. one from the first salt pond labelled 'by the road' and another from the read salt pond labelled 'away from the road'
+60	15/10/2025	13:55	20.706374444444442 N,54.732105555555556 E	desert biome	desert oasis	988	35.9	25.5	60a to d collected in glycerol (also all labeldd c5)). they are biofil,Ms of 3 colours and a negative control exposed to water.  negative control is labelled d. these were all biofilm large structures or nodules. there is also a negative control 2hich is just glycerol exposed to air labeled ncontrol6. c6w1 is lake water in room temperature. 10ml of this sample was transferred to glycerol and labelled c6water.  there is also a c6 sample exposed to water as n3gative these are all c6. Mark has a sample of different algae biofilm from lake called 60 algae. magnus samples are according to labels 
+oill spill	12/10/2025	10:20	19.40536 N, 45.72708 E	desert biome	oilspill	924	34.1	17.1	special 2 old cloth sample also collected here. special 3 tube contains oil sample. a1 and a2 are 2 samples from, oil sample,please directly for
+hot spring	14/10/2025	07:58	20.39723 N, 50.96553 E	desert biome	hot spring	984	32.7	22.8	also took special samples here. shower1 amd shower2 are roberts samples from the main shower outlet. shower3 is a sample from the main outlet for Barbara. shower 4 is scooped up algae biofilm from around shower area for barb. shower 5 is sample from the pool for barb
+
+
+
+
+
+
+
+
+
+
+

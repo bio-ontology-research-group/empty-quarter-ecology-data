@@ -1,0 +1,53 @@
+# ---- LaTeX build artifacts ----
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.synctex.gz
+*.toc
+*.nav
+*.snm
+*.vrb
+*.run.xml
+*-blx.bib
+texput.log
+indent.log
+
+# Overleaf / editor revision snapshots
+*.bak
+*.bak[0-9]*
+*~
+
+# latexdiff output
+sn-article-diff.*
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# ---- Large data (deposited on Zenodo, not in git) ----
+# Generated knowledge graph (OWL/TTL) and multi-GB taxon abundance tables
+# live in the Zenodo deposit — see data/README.md.
+*.owl
+*.ttl
+!rdf/ontology-src/*.ttl
+!rdf/ontology-src/*.owl
+!rdf/void.ttl
+data/metadata/taxonomy/feature*.tsv
+data/metadata/taxonomy/*.fasta
+data/processed/
+
+# ---- OS ----
+.DS_Store
+Thumbs.db

@@ -1,0 +1,31 @@
+# OWL-Horst forward-chaining materialization on ws (eq_virtuoso container).
+# Script: viz/load_data.sql steps 6 (rounds 1-3).
+# Virtuoso 07.20.3233, log_enable(2,1) to bypass 50MB transaction limit.
+metric	value	unit
+asserted_kb	36978835	triples
+asserted_taxonomy	42406	triples
+asserted_ontology	16643	triples
+asserted_total	37043525	triples
+inferred_after_round1	55630605	triples
+inferred_after_round2	77267351	triples
+inferred_after_round3	80907421	triples
+grand_total	117950946	triples
+expansion_factor	2.18	ratio
+materialization_wall_time	114.07	minutes
+inferred_dump_size	11	GB
+inferred_dump_format	N-Triples	format
+inferred_dump_time	407	seconds
+tbox_axioms_in_inferred	0	count
+# Notes:
+# - The inferred graph contains ZERO TBox-level axioms (no new subClassOf,
+#   subPropertyOf, equivalentClass, etc.). All 80.9M inferred triples are
+#   ABox: rdf:type (14.6M), sio:isRelatedTo (22.6M), sio:hasAttribute
+#   (11.3M), sio:isAttributeOf (5.7M), sio:hasMember (5.6M), etc.
+# - ELK classification is unchanged post-materialization: same TBox,
+#   same 4,819 classes, same ~1.6 s classification, 0 unsatisfiable.
+# - Top predicates in inferred graph:
+#     sio:SIO_000001 (isRelatedTo)   22,588,027
+#     rdf:type                        14,596,791
+#     sio:SIO_000008 (hasAttribute)  11,296,876
+#     sio:SIO_000011 (isAttributeOf)  5,695,108
+#     sio:SIO_000425 (hasMember)      5,601,768

@@ -1,0 +1,81 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rak: <https://rubalkhali.science/kb/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+<#ExpeditionShape> {
+    rdf:type [rak:RAK_0000018] ;
+    rdf:type IRI * ;
+    rdfs:label xsd:string ;
+    sio:SIO_000139 @<#TeamShape> ;      # hasAgent
+    sio:SIO_000687 @<#TimeShape> ? ;    # existsAt (Interval)
+}
+
+<#TeamShape> {
+    rdf:type [rak:RAK_0000016] ;
+    rdf:type IRI * ;
+    rdfs:label xsd:string ;
+}
+
+<#VisitShape> {
+    rdf:type [rak:RAK_0000003] ;
+    rdf:type IRI * ;
+    rdfs:label xsd:string ;
+    sio:SIO_000291 IRI ;                # hasTarget -> Site
+    sio:SIO_000068 @<#ExpeditionShape> ; # isPartOf
+    sio:SIO_000687 @<#TimeShape> ? ;    # existsAt (Point)
+}
+
+<#TimeShape> {
+    rdf:type [sio:SIO_000391] ;
+    rdf:type IRI * ;
+    # Start/End or Point Time properties
+    (rak:RAK_2000010 xsd:string | rak:RAK_2000011 xsd:string | rak:RAK_2000006 xsd:string) * ;
+}
+
+<#MeasurementProcessShape> {
+    rdf:type [
+        rak:RAK_0000006 # Temp
+        rak:RAK_0000007 # Press
+        rak:RAK_0000008 # Hum
+        rak:RAK_0000009 # Annual
+    ] ;
+    rdf:type IRI * ;
+    sio:SIO_000139 IRI ? ;              # hasAgent -> Team
+    sio:SIO_000132 IRI ? ;              # hasParticipant -> Device
+    sio:SIO_000068 @<#VisitShape> ? ;   # isPartOf -> Visit (Optional for annual)
+    sio:SIO_000291 IRI ? ;              # hasTarget -> Site (Optional redundant)
+    sio:SIO_000229 @<#MeasurementValueShape> ; # hasOutput
+}
+
+<#MeasurementValueShape> {
+    rdf:type [
+        rak:RAK_0000010 # Temp Val
+        rak:RAK_0000011 # Press Val
+        rak:RAK_0000012 # Hum Val
+        rak:RAK_0000013 # Annual Temp Val
+        rak:RAK_0000014 # Annual Precip Val
+        rak:RAK_0000015 # Annual Rain Val
+    ] ;
+    rdf:type IRI * ;
+    sio:SIO_000232 @<#MeasurementProcessShape> ; # isOutputOf
+    sio:SIO_000221 IRI ;                # hasUnit
+    dcterms:description xsd:string ? ;
+    
+    # One of the data values
+    (
+        rak:RAK_2000003 xsd:double |
+        rak:RAK_2000004 xsd:double |
+        rak:RAK_2000005 xsd:double |
+        rak:RAK_2000007 xsd:double |
+        rak:RAK_2000008 xsd:double |
+        rak:RAK_2000009 xsd:double
+    ) ;
+}
+
+<#QualityShape> {
+    rdf:type IRI ;
+    sio:SIO_000215 @<#MeasurementValueShape> ; # isMeasurementValueOf
+}

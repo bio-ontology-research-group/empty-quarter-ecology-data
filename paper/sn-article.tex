@@ -1,0 +1,58 @@
+%Version 3.1 December 2024
+\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+
+\usepackage{todonotes}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage[title]{appendix}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{manyfoot}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows.meta,positioning}
+
+\raggedbottom
+
+\begin{document}
+
+\title[Empty Quarter Knowledge Base]{A formal knowledge base for metagenomics and geochemistry of the Rub' al Khali desert}
+
+%TODO: Replace placeholder author names, affiliations, and emails below.
+\author*[1]{\fnm{First} \sur{Author}}\email{author@kaust.edu.sa}
+\affil*[1]{\orgdiv{Bio-Ontology Research Group}, \orgname{KAUST}, \orgaddress{\city{Thuwal}, \country{Saudi Arabia}}}
+
+\abstract{Integrating multi-omic data with environmental metadata remains a significant challenge due to the heterogeneity of data formats and a lack of standardized semantic representations. Building such an integrated resource requires addressing several interlocking challenges: defining a unified data model across instruments and observation types, harmonizing taxonomic identifiers across reference databases, validating incoming data against shared schemas, and supporting semantic query answering at scale under a tractable reasoning regime. Here, we present a high-resolution microbiome dataset comprising soil samples from 60 sampling sites across the Empty Quarter (Rub' al Khali) of Saudi Arabia. We augment these biological sequences with a formal knowledge base constructed using OWL 2 DL and the Semanticscience Integrated Ontology (SIO), with ShEx-based ingest validation and ELK-based materialization over the resulting graph. This semantic layer enables complex cross-domain queries and provides a comparative baseline for studying microbial adaptation in extreme environments.}
+
+\keywords{Knowledge Graph, Metagenomics, Rub' al Khali, SIO, Semantic Web}
+
+\maketitle
+
+\input{01_introduction.tex}
+\input{02_methods.tex}
+\input{03_knowledge_representation.tex}
+\input{04_data_records.tex}
+\input{05_validation.tex}
+\input{06_usage.tex}
+
+\section*{Acknowledgements}
+\todo[inline]{Add acknowledgements.}
+
+\section*{Author contributions}
+\todo[inline]{Add CRediT author contribution statements}
+
+\section*{Competing interests}
+The authors declare no competing interests.
+
+\bibliography{sn-bibliography}
+
+\end{document}

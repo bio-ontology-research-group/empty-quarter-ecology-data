@@ -1,0 +1,134 @@
+\section{Background and summary}\label{intro}
+
+The Rub' al-Khali (Empty Quarter) is the largest contiguous sand
+desert on Earth, and it covers approximately 650,000 km$^2$ across the
+southern Arabian Peninsula \cite{mandaville_1986}. Despite extreme
+aridity and surface temperatures that exceed 50\degree C, this
+environment harbors microbial communities whose composition,
+diversity, and ecological drivers remain poorly characterized
+\cite{makhalanyane2015}. To predict ecosystem responses to climate
+change and to inform conservation and land-use policy, researchers
+require deep knowledge of the biogeochemistry of such extreme
+environments \cite{fierer2017}.
+
+To characterize complex ecosystems, researchers must integrate
+heterogeneous and multi-scale data: microbial community profiles
+derived from DNA sequencing, elemental soil composition from
+geochemical analyses, spatiotemporal environmental variables, and
+provenance metadata that link physical samples to their digital
+representations. Traditional approaches store these data types in
+separate, disconnected repositories, which limits cross-domain queries
+and reduces reproducibility.
+
+Engineers originally developed the concept of a digital twin, and
+environmental scientists increasingly adopt this approach
+\cite{digitaltwin2021, destinationearth}. Recent frameworks, such as
+TwinEco, standardize the development of dynamic, data-driven digital
+twins in ecology to avoid fragmented software designs
+\cite{khan2025}. Additionally, regional natural resource management
+benefits from artificial intelligence-assisted digital twin
+architectures that unify heterogeneous environmental observations
+\cite{iglesias2026}. Such digital twins show strong predictive
+accuracy when they incorporate continuous data streams, such as
+citizen science observations for real-time biodiversity forecasts
+\cite{ovaskainen2026}. To guarantee that these models remain
+interoperable and reusable across domains, researchers emphasize the
+integration of datasets, models, and computational workflows through
+Findable, Accessible, Interoperable, and Reusable (FAIR) principles
+\cite{islam2026}. However, while biological systems and specific
+regions have digital representations \cite{biodigitaltwin},
+researchers have not yet developed semantic representations of entire
+desert ecosystems. Furthermore, ecosystem digital twins largely focus
+on macroscopic scale and do not go across levels of granularity.
+
+Constructing such a resource for an entire desert ecosystem requires
+addressing several interlocking challenges that have shaped the design
+of this work. First, the data are produced by heterogeneous
+instruments and protocols (16S amplicon sequencing, X-ray
+fluorescence, GPS-tagged field notes, gridded climate
+reanalysis), so a \emph{unified data model} is needed that can
+represent samples, processes, qualities, and quantities under a
+common upper-level vocabulary rather than as disconnected tables.
+Second, taxonomic labels are reported by multiple primer choices and
+classifier workflows and must be \emph{harmonized} against a single
+reference taxonomy without losing the original assertions. Third,
+because data are deposited in batches over five field expeditions,
+\emph{schema validation at ingest} is required to catch
+structural errors before they propagate into the graph. Fourth, the
+knowledge graph must support \emph{semantic query answering at
+scale}: with tens of millions of triples, expressive OWL 2 DL
+reasoning is computationally infeasible, so a tractable
+reasoning regime must be selected and its trade-offs made
+explicit. Fifth, a \emph{user-facing query and exploration
+interface} is required so that domain scientists who are not
+fluent in SPARQL can interact with the resource. We return to
+each of these challenges in the usage notes
+(Section~\ref{usage}) and link them to the corresponding design
+choices in the methods and knowledge representation sections.
+
+Here, we develop a knowledge graph of large parts of the Rub' al-Khali
+desert ecosystem to serve as the semantic foundation of the Rub'
+al-Khali digital twin. We present an OWL 2 DL knowledge graph
+\cite{owl2} that contains 37.4 million RDF triples \cite{rdf}. This
+knowledge graph integrates data from five field expeditions
+(2023--2025) across 70 sampling sites that span an over 1,000 km
+transect from the western to the east of the Rub' al-Khali. The
+dataset includes 16S rRNA gene amplicon profiles from 2,535 soil
+samples, which yield 1,401,008 taxon-sample abundance observations. We
+incorporated X-ray fluorescence (XRF) measurements of 91 chemical
+analytes from 249 measurement sessions. Furthermore, we integrated
+site-specific environmental metadata recorded at each visit and
+monthly climate records derived from the Open-Meteo database
+\cite{openmeteo}.
+
+We structured the knowledge graph with the Semanticscience Integrated
+Ontology (SIO) \cite{sio} as the upper-level framework. This design
+allows interoperability with other SIO-based datasets. We modeled
+domain-specific concepts as subclasses of SIO entities, and all
+measurements follow SIO's ontology design pattern for measurement
+processes. We grounded chemical entities in the Chemical Entities of
+Biological Interest (ChEBI) ontology \cite{chebi}, environmental
+contexts in the Environment Ontology (ENVO) \cite{envo}, and taxonomic
+identifiers in the NCBI Taxonomy \cite{ncbitaxon}.
+
+Because it encodes the full provenance chain from physical sample
+collection to digital data products, the knowledge graph is the key
+foundation for implementing the FAIR data principles for the Rub'
+al-Khali digital twin. This semantic integration eliminates the data
+fragmentation that typically limits ecological models, and it
+guarantees that observations, models, and workflows remain fully
+interoperable \cite{islam2026}. Consequently, the knowledge graph acts
+as the operational foundation for the Rub' al-Khali digital twin. It
+allows researchers to execute cross-domain queries that otherwise
+demand complex joins across multiple heterogeneous tables in a
+conventional database. Therefore, this resource serves as a
+foundational infrastructure for computational ecology, which
+facilitates hypothesis generation, intervention simulation, and
+evidence-based policy.
+
+This resource makes several contributions. On the scientific side,
+it provides a coordinated multi-trip desert microbiome and
+geochemistry dataset---16S rRNA amplicon profiles, XRF elemental
+measurements, GPS-tagged field metadata, and monthly climate
+records---for 2{,}535 soil samples from 70 sites across a
+1{,}000~km transect of the Rub' al-Khali, together with a
+harmonized taxonomic abundance table that maps operational taxonomic
+units from heterogeneous classifier outputs onto NCBI Taxonomy while
+preserving the original assertions. On the technical side, the
+resource comprises an OWL~2~DL knowledge graph (37~million asserted
+triples, expanded to approximately 118~million triples after
+OWL-Horst materialization) built on SIO with domain classes grounded
+in ChEBI, ENVO, and NCBI Taxonomy, modelling the full provenance
+chain from field sampling to digital data products. We formalize
+reusable ontology design patterns for sampling, measurement,
+taxonomic abundance, and provenance aligned with SIO's core idioms.
+A ShEx-based ingest validation workflow enforces structural shapes on
+every RDF batch before loading, and the ELK reasoner is used to
+validate logical consistency of the knowledge graph. OWL-Horst
+forward-chaining materialization in Virtuoso expands subclass,
+subproperty, inverse, and transitivity entailments so that query
+answering can be served from physically materialized triples. A set of
+competency questions documents the intended query workload and serves
+as regression tests, and a web portal with an interactive map, per-site
+dashboards, and a SPARQL editor exposes the knowledge graph to domain
+scientists without requiring SPARQL fluency.

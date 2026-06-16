@@ -1,0 +1,81 @@
+site	date	time	coordinates	biome	feature	pressure	temperature	humidity	notes
+1	17/02/2024	06:54	19.149770555555556 N,45.166511388888885 E	desert biome	gravel	898	21.9	55	
+2	17/02/2024	07:21	19.203468333333333 N,45.2447675 E	desert biome	sand dune	904	26.6	40.9	
+3	17/02/2024	08:05	19.301079444444444 N,45.384414166666666 E	desert biome	sand dune	914	28.3	38.5	
+4	17/02/2024	08:40	19.379571666666667 N,45.55182694444444 E	desert biome	saline pan	922	30.2	37.5	
+5	17/02/2024	09:51	19.407155277777775 N,45.659501388888884 E	desert biome	saline pan	926	35.2	19.5	Saline pan exp: pan and out, each location 2 samples D and 2 samples S (to compare biodiversity in and around Saline pan)
+6	17/02/2024	10:45	19.405739166666667 N,45.8161425 E	desert biome	saline pan	942	37.1	17.6	
+7	17/02/2024	11:28	19.407005277777778 N,45.953943611111114 E	desert biome	sand dune	926	37	19.6	
+8	17/02/2024	11:50	19.393154166666665 N,46.110734722222226 E	desert biome	sand dune	922	39	19	
+9	17/02/2024	12:31	19.411200277777777 N,46.30267361111111 E	desert biome	sand dune	924	36.4	21.5	
+10	17/02/2024	13:22	19.420469722222222 N,46.460795277777784 E	desert biome	sand dune	926	37.1	18	
+11	17/02/2024	13:46	19.44435222222222 N,46.6356325 E	desert biome	sand dune	930	41.2	21	spider with big white bulbed body
+12	17/02/2024	14:04	19.47793361111111 N,46.83437333333334 E	desert biome	sand dune	932	39.9	15	
+13	17/02/2024	15:20	19.52934611111111 N,47.053284444444444 E	desert biome	sand dune	940	40	13.5	
+14	17/02/2024	15:50	19.581338055555555 N,47.2920225 E	desert biome	sand dune	940	41.2	14.9	
+15	17/02/2024	16:13	19.613749722222224 N,47.47587194444445 E	desert biome	sand dune	944	38.8	13.5	
+16	17/02/2024	16:34	19.644455833333332 N,47.62611861111111 E	desert biome	sand dune	948	39.4	11.9	shaded dunes and a lot of green grass, some bedouins nearby
+17	18/02/2024	08:42	19.676460000000002 N,47.82730555555556 E	desert biome	sand dune	956	23	27	
+18	18/02/2024	09:54	19.732518055555555 N,48.046860555555554 E	desert biome	sand dune	960	29.2	18.7	very green area,camels a few km away
+19	18/02/2024	10:25	19.81231916666667 N,48.24049472222222 E	desert biome	sand dune	962	27.4	21.2	kind of green
+20	18/02/2024	11:05	19.869310833333333 N,48.42464444444444 E	desert biome	dune slack		32.9	17.7	
+21	18/02/2024	12:08	19.9011325 N,48.48646388888889 E	desert biome	oilspill	964	31.3	31.321	oil spill, plant very near
+22	18/02/2024	12:52	19.97866972222222 N,48.63943555555556 E	desert biome	saline pan	968	31.3	21.3	
+23	18/02/2024	13:35	20.049265555555557 N,48.773331388888884 E	desert biome	sand dune	966	24.4	30.3	very green
+24	18/02/2024	14:18	20.09273861111111 N,48.89939527777778 E	desert biome	sand dune	966	25.5	31.3	very green
+25	18/02/2024	14:38	20.100259722222223 N,48.95421972222223 E	desert biome	sand dune	966	31	24.3	
+26	18/02/2024	15:12	20.148753888888887 N,49.07873861111111 E	desert biome	sand dune	966	31.9	25.6	
+27	18/02/2024	15:45	20.2038574 N,49.1959834 E	desert biome	sand dune	968	32.4	23.7	
+28	18/02/2024	16:24	20.24376861111111 N,49.37088472222222 E	desert biome	sand dune	968	27.4	27.8	dead plants
+29	18/02/2024	16:56	20.2597976 N,49.5675445 E	desert biome	sand dune	968	27.3	27	
+30	19/02/2024	08:10	20.269303055555554 N,49.68367333333333 E	desert biome	sand dune	976	36.8	20.2	
+31	19/02/2024	08:43	20.294623333333334 N,49.891405 E	desert biome	sand dune	978	23.1	29.3	
+32	19/02/2024	09:20	20.310684166666668 N,50.09302138888889 E	desert biome	sand dune	982	26.7	23	
+33	19/02/2024	10:07	20.317507777777777 N,50.30307027777778 E	desert biome	sand dune	984	26.6	20.9	
+34	19/02/2024	10:52	20.344394444444443 N,50.5153725 E	desert biome	sand dune	982	29.9	17.7	
+35	19/02/2024	11:30	20.371795833333334 N,50.72999222222222 E	desert biome	sand dune	984	28.7	17.9	
+36	19/02/2024	13:58	20.42319 N, 51.14483 E	desert biome	sand dune	982	28.2	16.1	
+37	19/02/2024	14:52	20.454150277777778 N,51.344883333333335 E	desert biome	sand dune	984	29.1	15.5	
+38	19/02/2024	15:01	20.4610275 N,51.370224722222225 E	desert biome	sand dune	984	29.3	15.1	
+39	19/02/2024	15:56	20.51023 N, 51.59742 E	desert biome	sand dune	984	28.8	16	extra sample of plant, keeps meat from going bad and can release water
+40	19/02/2024	16:42	20.54718 N, 51.82559 E	desert biome	sand dune	986	28.2	17.3	dead plant
+41	19/02/2024	17:14	20.539777222222224 N,51.94610583333333 E	desert biome	saline pan	988	29.4	16.2	took some samples from outside Saline pan (s and d) and some water that we dug
+42	20/02/2024	08:15	20.55516 N, 52.12403 E	desert biome	sand dune	990	24.6	34.2	
+43	20/02/2024	08:38	20.567575555555557 N,52.22413277777778 E	desert biome	sand dune	992	27	27.8	desert miswak
+44	20/02/2024	09:22	20.56783 N, 52.41036 E	desert biome	sand dune	994	29.1	22	
+45	20/02/2024	09:44	20.56346 N, 52.46776 E	desert biome	sand dune	996	32.4	18.3	
+46	20/02/2024	10:44	20.553746111111113 N,52.66920777777778 E	desert biome	sand dune	994	32.3	17.4	
+47	20/02/2024	11:24	20.54181555555556 N,52.868785833333334 E	desert biome	sand dune	994	33.2	17.2	
+48	20/02/2024	12:54	20.568648333333332 N,53.09404833333333 E	desert biome	desert oasis	994	49.4	9.5	
+49	20/02/2024	14:21	20.644662222222223 N,53.28794 E	desert biome	sand dune	994	34	13.4	
+50	20/02/2024	14:51	20.71385 N, 53.41230 E	desert biome	sand dune	996	31.5	21.6	
+51	20/02/2024	16:11	20.79870 N, 53.48700 E	desert biome	saline pan	994	35.9	16.5	
+52	20/02/2024	06:57	20.851514166666668 N,53.75788444444444 E	desert biome	saline pan	994	34.3	17.5	
+53	21/02/2024	06:06	20.851514166666668 N,53.75788444444444 E	desert biome	sand dune	990	21.9	35	
+54	21/02/2024	15:58	20.92017888888889 N,53.962204444444446 E	desert biome	aeolian lake	998	32.2	23.5	
+55	21/02/2024	15:41	20.9022725 N,54.0024376 E	desert biome	saline pan	998	31.3	14.3	
+56	21/02/2024	15:10	20.821580833333332 N,54.22385916666667 E	desert biome	saline pan	998	31.6	13.5	
+57	21/02/2024	14:48	20.7349775 N,54.41764333333333 E	desert biome	sand dune	996	34.2	16.3	
+58	21/02/2024	14:29	20.66540111111111 N,54.59327444444445 E	desert biome	sand dune	992	35.6	16.4	
+59	21/02/2024	14:15	20.65626 N,54.635868055555555 E	desert biome	desert oasis	992	36.8	14.3	
+60	21/02/2024	13:20	20.706374444444442 N,54.732105555555556 E	desert biome	desert oasis	992	37.1	14.3	extra samples: 0.22 um filter (120 ml w syringe), 19 biofilms from aigers (data in a photo), 2 x 50 ml tubes with biofilm and sediment, 3 50 ml tubed with different colored biofilms
+oill spill	17/02/2024	10:25	19.40536 N, 45.72708 E	desert biome	oilspill		35.1	20	car engine oil dumped by bedouins
+water well	17/02/2024	14:23	19.50145 N, 46.90146 E	desert biome	water well		39.2	15.9	2 surface and 2 deep samples near well structure entrance 
+Camel1	17/02/2024	16:49	19.65401 N, 47.68826 E	desert biome	sand dune		37.6	25	green continues
+plant gradient	18/02/2024	09:25	19.70915 N, 47.95933 E	desert biome	sand dune	958	25	24	found gradient of plant growth, took samples from empty sand, sand with green plants, and samples from sand with brown/dead/dying plants. took surface and deep samples, took root and root soil samples for MR from brown and green plants
+hot spring	19/02/2024	12:25	20.39723 N, 50.96553 E	desert biome	hot spring	984	32.1	14.8	
+12.5+A	17/03/2024	14:22	19.501494166666667 N,46.90140722222222 E	desert biome	water well	934	33	30	Well water from rest station, syring filtered 100ml through 0.22
+19.5	18/03/2024	07:20	19.81927138888889 N,48.24023722222222 E	desert biome	dune slack	960	21.8	61.9	same site, valley, soil doesn't move as much as 19
+27+	18/03/2024	11:21	20.2038574 N,49.1959834 E	desert biome	sand dune	970	31.5	23.8	material: aerial root
+31urine	18/03/2024	15:14	20.294623333333334 N,49.891405 E	desert biome	sand dune	964	33.8	22.3	
+32+	18/03/2024	15:44	20.310684166666668 N,50.09302138888889 E	desert biome	sand dune	968	34	22	
+41+	19/03/2024	12:16	20.539777222222224 N,51.94610583333333 E	desert biome	saline pan	980	35.4	19.8	material: underground water. dug 1+ meter under sabkhah took large mud water sample
+47+	19/03/2024	15:00	20.54181555555556 N,52.868785833333334 E	desert biome	sand dune	986	37.3	20.3	
+47+grass	19/03/2024	15:00	20.54181555555556 N,52.868785833333334 E	desert biome	sand dune	986	37.3	20.3	
+48+	19/03/2024	17:00	20.568648333333332 N,53.09404833333333 E	desert biome	biofilm	984	35.3	23.7	biofilm between plants and running water
+48+	19/03/2024	17:00	20.568648333333332 N,53.09404833333333 E	desert biome	desert oasis	984	35.3	23.7	extra plant from same site
+52AD	20/03/2024	08:02	20.851514166666668 N,53.75788444444444 E	desert biome	saline pan	992	31.1	29.7	dug two holes, collected triplicate from every 10 cm in each hole, starting from surface (1). samples with AD(2) are f4om second hole
+54F	20/03/2024	10:16	20.92017888888889 N,53.962204444444446 E	desert biome	aerolian lake	990	34.8	26.9	2 0.22 filters 60 ml each. um fatimah
+35 + WaterWellRestStop	18/03/2024	18:48	20.397223055555553 N,50.96570472222223 E	desert biome	water well	976			water well, sulfuric water, no soil samples taken, filter size 0.22, 8750ml water filtered
+35 + hot spring filter1	19/03/2024	08:03	20.397223055555553 N,50.96570472222223 E	desert biome	water well	980	28.3	17.7	8350ml of water, 6.4ph,0.4g/100g salinity
+35 + hot spring filter 2	19/03/2024	08:11	20.397223055555553 N,50.96570472222223 E	desert biome	water well	980	28.3	17.7	10000ml of water,pH 6.4ph

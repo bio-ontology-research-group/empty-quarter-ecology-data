@@ -1,0 +1,41 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rak: <https://rubalkhali.science/kb/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX uo: <http://purl.obolibrary.org/obo/UO_>
+PREFIX pato: <http://purl.obolibrary.org/obo/PATO_>
+
+<#DNAExtractShape> {
+    rdf:type [rak:RAK_0000040] ;
+    rdf:type IRI * ;
+    rdfs:label xsd:string ;
+    sio:SIO_000008 @<#ConcentrationShape> ? ; # hasAttribute -> Concentration
+}
+
+<#ExtractionProcessShape> {
+    rdf:type [sio:SIO_000994] ;
+    rdf:type IRI * ;
+    sio:SIO_000230 IRI ;                # hasInput -> Soil Sample
+    sio:SIO_000229 @<#DNAExtractShape> ; # hasOutput
+    sio:SIO_000339 IRI ? ;              # isSpecifiedBy -> Protocol
+    rak:RAK_2000014 IRI ? ;             # usesDNAExtractionKit
+}
+
+<#MeasurementProcessShape> {
+    rdf:type [rak:RAK_0000041] ;
+    rdf:type IRI * ;
+    sio:SIO_000291 @<#DNAExtractShape> ; # hasTarget
+    sio:SIO_000229 @<#ConcentrationShape> ; # hasOutput
+    sio:SIO_000132 IRI ? ;              # hasParticipant -> Nanodrop
+}
+
+<#ConcentrationShape> {
+    rdf:type [pato:0000033] ;
+    rdf:type IRI * ;
+    sio:SIO_000232 @<#MeasurementProcessShape> ; # isOutputOf
+    sio:SIO_000011 @<#DNAExtractShape> ; # isAttributeOf
+    sio:SIO_000221 [uo:0000275] ;       # hasUnit -> ng/uL
+    
+    rak:RAK_2000015 xsd:double ;        # hasDNAConcentration
+}

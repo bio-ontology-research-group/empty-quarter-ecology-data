@@ -1,0 +1,38 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rak: <https://rubalkhali.science/kb/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+<#SamplingProcessShape> {
+    rdf:type [rak:RAK_0000024] ;
+    rdf:type IRI * ;
+    rdfs:label xsd:string ;
+    sio:SIO_000291 IRI ;                # hasTarget -> Site
+    sio:SIO_000068 IRI ? ;              # isPartOf -> Visit (Optional)
+    sio:SIO_000229 @<#CollectionShape> ; # hasOutput -> Collection
+}
+
+<#CollectionShape> {
+    rdf:type [sio:SIO_001419] ;
+    rdf:type IRI * ;
+    rdfs:label xsd:string ;
+    sio:SIO_000232 @<#SamplingProcessShape> ; # isOutputOf
+    sio:SIO_000059 @<#SampleShape> + ;  # hasMember -> Sample (1 or more)
+}
+
+<#SampleShape> {
+    rdf:type [sio:SIO_001418] ;         # Replicate
+    rdf:type IRI * ;
+    rdf:type [
+        rak:RAK_0000020 
+        rak:RAK_0000021 
+        rak:RAK_0000022 
+        rak:RAK_0000023 
+        sio:SIO_001050
+    ] * ;                               # Specific Material Types
+    rdfs:label xsd:string ;
+    dc:identifier xsd:string ;
+    sio:SIO_000244 IRI ;                # isDerivedFrom -> Site
+}

@@ -1,0 +1,149 @@
+\section{Methods}\label{methods}
+
+\subsection{Study area and sampling design}
+
+We conducted five sampling expeditions across the Rub' al-Khali along
+a transect from the western escarpment (19.15\degree N, 45.17\degree
+E) to the eastern border of Saudi Arabia with Oman (20.71\degree N,
+54.73\degree E), spanning 1,043 km. Figure~\ref{fig:transect}
+illustrates the altitude profile across this transect.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\textwidth]{transect_altitude.png}
+  \caption{Altitude profile along the sampling transect across the Rub'
+    al-Khali, from the western escarpment to the eastern border with
+    Oman.}
+  \label{fig:transect}
+\end{figure}
+
+The transect
+encompasses 60 primary sampling sites at predetermined geographic
+coordinates, alongside 10 sites of special interest (water wells, a
+hot spring, an oil spill site), totaling 70 sampling sites.
+
+To capture temporal variability, we conducted expeditions across
+different seasons: late winter 2023 (Trip 1, 64 sites visited), summer
+2023 (Trip 2, truncated to 8 sites due to extreme temperatures),
+winter 2024 (Trip 3, 65 sites visited), summer 2024 (Trip 4, 60 sites
+visited), and autumn 2025 (Trip 5, 62 sites visited). We summarize the
+observational coverage in Table~\ref{tab:env_summary}. We recorded
+temperature, atmospheric pressure, and relative humidity at each
+visited site. Furthermore, we gathered X-ray fluorescence (XRF)
+measurements during one expedition to determine geochemical soil
+properties.
+
+\begin{table}[h]
+  \centering
+  \caption{Summary of expedition coverage and environmental measurements.}
+  \label{tab:env_summary}
+  \begin{tabular}{lllc}
+    \toprule
+    Expedition & Season & Sites Visited & Environmental Measurements \\
+    \midrule
+    Trip 1 & Late Winter 2023 & 1--60, 4 special & Temp, Press, Hum. \\
+    Trip 2 & Summer 2023 & 1--8 & Temp, Press. \\
+    Trip 3 & Winter 2024 & 1--60, 5 special & Temp, Press, Hum. \\
+    Trip 4 & Summer 2024 & 1--60 & Temp, Hum. \\
+    Trip 5 & Autumn 2025 & 1--60, 2 special & Temp, Press, Hum. \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+At each site, we collected samples from three distinct soil
+compartments: bulk surface soil (0 cm depth), bulk subsurface soil
+(5--10 cm depth, hereafter ``deep''), and subsurface soil near plant
+roots (5--10 cm depth, hereafter ``rhizosphere''). We obtained three
+biological replicates per compartment by placing soil into sterile
+tubes, either by scooping soil directly into the tube or using sterile
+plastic spoons. We preserved samples at $-20$\degree C in the field
+using an Engel MR040F portable freezer. At the end of each expedition,
+we transferred samples to an $-80$\degree C freezer in the laboratory.
+
+We included positive and negative controls for each sampling campaign
+to mitigate and control for contamination artifacts. Positive controls
+comprised replicate tubes of Zymo Mock Community Standard
+(ZymoBIOMICS, cat \#D6305). Negative controls consisted of sterilized
+soil treated with UV light for 4 hours.
+
+\subsection{DNA extraction and sequencing}
+
+We utilized 0.9--1.2 g of soil for DNA extraction using the PowerLyzer
+PowerSoil Kit (QIAGEN, catalog \#12855-50) or the DNeasy PowerSoil Pro
+Kit (QIAGEN, catalog \#47014). We homogenized all samples with the
+PowerLyzer 24 Homogenizer and completed extraction either manually or
+via the automated QIACube Connect system. We quantified the eluted DNA
+using the Qubit HS dsDNA kit.
+
+We amplified bacterial DNA using the Bakt\_341F \cite{Fprimer} and
+806R \cite{Rprimer} primer set to target the V3--V4 region of the 16S
+rRNA gene. We performed amplification using the Multiplex PCR kit
+(QIAGEN) and sequenced the resulting pools on an Illumina NovaSeq~6000
+platform.
+We processed all samples in the PI's laboratory at KAUST.
+
+\subsection{Sequencing data processing}
+
+We processed raw amplicon reads employing nf-core/Ampliseq (v2.14.0)
+\cite{nfcore, ampliseq} and QIIME2 (v2024.10) \cite{qiime2}. We
+applied the DADA2 algorithm for error correction and denoising. We
+assigned taxonomy against the SILVA 138.2 reference database
+\cite{silva}. We retained amplicon sequence variants (ASVs) present in
+at least three samples with a total abundance greater than 50
+reads. We identified and removed contaminant reads using the QIIME2
+\textit{decontam} module based on our control samples, applying a
+prevalence threshold of 0.52.
+
+\input{02_methods_taxonomy}
+
+\subsection{Environmental and climate data}
+
+We retrieved historical climate data from the Open-Meteo database
+\cite{openmeteo} for each sampling site, yielding 12,936 monthly and
+582 annual records encompassing temperature, total precipitation,
+rainfall, and relative humidity. Furthermore, field researchers
+manually classified each site according to its biome (e.g., desert
+biome) and specific environmental features (e.g., sand dune, saline
+pan, gravel, desert oasis). We subsequently mapped these
+classifications to the Environment Ontology (ENVO) \cite{envo}.
+
+\subsection{Schema validation}
+
+To ensure structural integrity within the RDF graph, we used Shape
+Expressions (ShEx) \cite{shex}. ShEx provides a formal structural
+schema language that validates the presence, cardinality, and datatype
+of RDF properties. We defined specific ShEx shapes for all core entity
+types in the knowledge graph. These entity types include sampling
+sites, soil samples, DNA extracts, sequencing datasets, measurements,
+quality control records, and taxonomy mappings.
+
+We integrated this schema validation into our deployment workflow
+using a Shape Map. The Shape Map functions as a binding directive,
+explicitly linking node selectors (e.g., all instances of the sampling
+site class) to their respective ShEx shape definitions. The workflow
+tests each newly generated segment of instance data against the
+schema. It terminates the deployment if it detects missing mandatory
+properties (e.g., GPS coordinates for a sampling site) or invalid
+datatypes. This constraint application guarantees that all generated
+data conforms to the expected structural properties.
+We implemented this validation using the Apache Jena ShEx library (version 4.10.0) invoked from custom Groovy scripts.
+
+\subsection{Logical consistency (OWL reasoning)}
+
+We verified the logical consistency of the entire knowledge graph
+using the ELK reasoner \cite{elk}. The ELK reasoner operates on the
+OWL 2 EL profile and detects unsatisfiable classes and contradictory
+axioms within ontologies. ELK implements a polynomial-time algorithm,
+facilitating the consistency validation of large knowledge
+bases. However, this performance benefit necessitates a tradeoff in
+logical expressivity, as the OWL 2 EL profile does not support complex
+constraints such as universal quantification or inverse object
+properties found in ontologies like the Semanticscience Integrated
+Ontology (SIO). We checked the unified knowledge graph to ensure that
+no individual belonged to disjoint classes and that property
+constraints remained logically sound. We employed ELK instead of more
+expressive reasoners (e.g., HermiT \cite{hermit}) because verifying
+the large knowledge graph we created with a more expressive reasoners
+proved impossible due to computational complexity. This approach
+enabled rapid continuous integration during ontology development.
+

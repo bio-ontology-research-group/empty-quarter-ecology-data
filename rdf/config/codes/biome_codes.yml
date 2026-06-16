@@ -1,0 +1,49 @@
+biomes:
+  freshwater lake biome: ENVO_01000252
+  aquatic biome: ENVO_00002030
+  marine biome: ENVO_00000447
+  tropical savanna biome: ENVO_01000188
+  tropical shrubland biome: ENVO_01000214
+  arid biome: ENVO_01001838
+  desert biome: ENVO_01000179
+  tropical desert biome: ENVO_01000183
+  terretrial ecosystem: ENVO_01001206
+  marsh: ENVO_00000035
+  freshwater marsh: ENVO_00000053
+  saline marsh: ENVO_00000054
+  
+materials:
+  mud: ENVO_01000001
+  gravel: ENVO_01000018
+  pond water: ENVO_00002228
+  rain water: ENVO_01000600
+  lake water: ENVO_04000007
+  muddy water: ENVO_00005793
+  residual water in soil: ENVO_06105238
+  stagnant water: ENVO_03501370
+  salt material: ENVO_01000508
+  biomass: ENVO_01000155
+  biofilm material: ENVO_01000156
+  plant matter: ENVO_01001121
+  clay: ENVO_00002982
+  sandy clay: ENVO_06105279
+  desert sand: ENVO_00005800
+  rocky sand: ENVO_00005799
+  sediment: ENVO_00002007
+  soil: ENVO_00001998
+  fecal material: ENVO_00002003
+  carcas: ENVO_00002033
+
+features:
+  saline lake: ENVO_00000019
+  aeolian lake: ENVO_01001105
+  saline pan: ENVO_00000279
+  sand dune: ENVO_00000170
+  water well: ENVO_01000002
+  road: ENVO_00000064
+  campground: ENVO_01000935
+  desert oasis: ENVO_00000156
+  dune slack: ENVO_00000308
+  oilspill: ENVO_00002061
+  biofilm: ENVO_00002034
+  gravel: ENVO_01000018

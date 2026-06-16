@@ -1,0 +1,29 @@
+\section{Data records}\label{records}
+
+We deposited the raw sequencing data generated in this study in the
+European Nucleotide Archive (ENA) under the umbrella project accession
+{\tt PRJEB104209}. Amplicon sequencing data reside under project {\tt
+  PRJEB106069}.
+
+We made the knowledge graph accessible via a public SPARQL endpoint at
+\url{https://rubalkhali.science/sparql} and through a web interface at
+\url{https://rubalkhali.science/}. We maintain all source code for
+data processing, ontology generation, and validation at
+\url{https://github.com/bio-ontology-research-group/empty-quarter}.
+
+We distribute the knowledge graph data files as OWL/XML and Turtle
+(.ttl) formats, structured by data type:
+\begin{itemize}
+\item \texttt{rubalkhali.owl} --- Base ontology (TBox).
+\item \texttt{rubalkhali\_sites.owl} --- 70 sampling sites with coordinates and biome annotations.
+\item \texttt{rubalkhali\_samples.owl} --- 2,535 soil and plant samples with compartment types.
+\item \texttt{rubalkhali\_measurements.owl} --- Environmental measurements (temperature, pressure, humidity) and climate records (12,936 monthly, 582 annual).
+\item \texttt{rubalkhali\_xrf.owl} --- 6,674 XRF measurement values across 91 analytes from 249 measuring processes.
+\item \texttt{rubalkhali\_dna.owl} --- 2,410 DNA extracts with concentration data.
+\item \texttt{rubalkhali\_sra.owl} --- 1,242 sequencing run records linked to ENA accessions.
+\item \texttt{rubalkhali\_qc.owl} --- Sequencing quality metrics (GC content, duplicate rate, sequence counts).
+\item \texttt{rubalkhali\_taxonomy\_abox.ttl} --- 1,401,008 taxon abundance observations with relative and absolute counts.
+\end{itemize}
+
+The data and source code to generate the Rub' al-Khali knowledge graph
+is available at \todo{Add Zenodo DOI URL here}.

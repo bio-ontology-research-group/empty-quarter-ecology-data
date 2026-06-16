@@ -1,0 +1,49 @@
+@prefix : <http://rubalkhali.science/kb#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://rubalkhali.science/kb/modules/sites> rdf:type owl:Ontology .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rubalkhali.science/kb#EmptyQuarter
+:EmptyQuarter rdf:type owl:Class ;
+              rdfs:subClassOf obo:ENVO_01000179 ;  # desert
+              rdfs:label "Empty Quarter" .
+
+###  http://www.opengis.net/ont/sf#Point
+sf:Point rdf:type owl:Class .
+
+###  http://rubalkhali.science/kb#MeasurementProcess
+:MeasurementProcess rdf:type owl:Class ;
+                    rdfs:subClassOf sio:SIO_000006 ;  # process
+                    rdfs:label "Measurement Process" .
+
+#################################################################
+#    Properties
+#################################################################
+
+###  http://rubalkhali.science/kb#measuredAt
+:measuredAt rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf sio:SIO_000008 ;  # has attribute
+            rdfs:domain sio:SIO_000052 ;  # quantity
+            rdfs:range sio:SIO_000418 ;  # time instant
+            rdfs:label "measured at" .
+
+###  http://rubalkhali.science/kb#hasDate
+:hasDate rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:date ;
+         rdfs:label "has date" .
+
+###  http://rubalkhali.science/kb#hasTime
+:hasTime rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:time ;
+         rdfs:label "has time" .

@@ -1,0 +1,111 @@
+\section{Discussion}\label{sec:discussion}
+
+We close by revisiting the challenges introduced in
+Section~\ref{intro}, linking each to the design choices taken in
+the methods and knowledge representation sections, situating the
+work in the broader landscape of large-scale semantic resources,
+and noting outstanding limitations and a sustainability plan.
+
+\subsection{Design choices revisited}
+
+\paragraph{Unified data model.} The first challenge was to represent
+heterogeneous observation types under a single vocabulary. We adopted
+the Semanticscience Integrated Ontology (SIO) as the upper-level
+framework (Section~\ref{sec:knowledge_representation}) precisely
+because it offers a small set of relations
+(\texttt{hasInput}/\texttt{hasOutput}, \texttt{hasTarget},
+\texttt{hasMember}, \texttt{refersTo}, \texttt{hasValue}) that
+generalize across sampling, measurement, and provenance patterns.
+Sample collection, XRF analysis, DNA extraction, sequencing, and
+taxonomic classification are all instantiations of the same
+\texttt{Process--hasInput/hasOutput--Object} idiom; quantitative
+results are uniformly represented as \texttt{Quantity refersTo
+Quality} pairs with explicit units. This uniformity is what allows
+cross-domain SPARQL queries to traverse from a climate observation
+through a sampling site to a taxon abundance without per-domain
+join logic. Recent work on simplified upper-level ontologies, such as SULO
+\cite{sulo2025}, takes this argument further: by strengthening a few
+fundamental relations and reducing reliance on specialized
+predicates, an upper-level ontology can lower the modelling effort
+for new domains while preserving interoperability. Our patterns are
+compatible with this direction and could be re-grounded in SULO with
+limited refactoring.
+
+\paragraph{Taxonomy harmonization.} Section~\ref{sec:methods_taxonomy}
+describes our mapping of OTUs from multiple primer/classifier
+combinations onto NCBI Taxonomy. Rather than collapsing the
+original assertions, we keep both the raw classifier output and
+the harmonized identifier, so downstream consumers can re-use the
+mapping or substitute their own.
+
+\paragraph{Schema validation at ingest.} We chose ShEx
+(Section~\ref{sec:validation}) for ingest validation because the
+ETL is batch-oriented and the validator is run from the same
+Groovy/Jena toolchain that produces the RDF. SHACL is an obvious
+alternative and is supported in-database by several triple stores;
+a future port of the shapes from ShEx to SHACL would enable
+in-database validation at load time and is a natural extension of
+the current pipeline. We deployed Virtuoso as the triple store
+because it is available as free software under the GNU General
+Public License, supports OWL-Horst forward-chaining
+materialization, and has demonstrated operational maturity in
+large-scale linked-data deployments.
+
+\paragraph{Semantic query answering at scale.} As reported in
+Section~\ref{sec:validation}, full OWL 2 DL reasoning over the
+combined TBox and a 37.4M-triple ABox is not computationally
+feasible with HermiT on commodity hardware. We therefore restrict
+the deductive closure to OWL~2~EL using ELK \cite{elk}. This is a
+deliberate trade-off: ELK handles existential restrictions,
+conjunction, and role hierarchies, but does not support
+disjunction, negation, or inverse roles, so any axioms that rely
+on these constructs do not contribute to the materialized closure.
+The competency questions in Section~\ref{sec:validation} are
+formulated to remain answerable under EL semantics. Two decades of
+work on scaling OWL reasoning -- materialization-based approaches
+\cite{owlhorst}, query rewriting for the OWL~2~QL profile
+\cite{owl2profiles}, modular reasoning, and consequence-based
+calculi as implemented in ELK itself -- provide several alternative
+points in the design space, and a more expressive reasoner could
+be applied to a sub-module of the TBox in future work.
+
+\paragraph{User-facing interface.} The web portal
+(Section~\ref{sec:usage}) addresses the challenge that domain
+scientists are typically not fluent in SPARQL. The interactive map
+and per-site dashboards cover the most common exploratory tasks;
+the SPARQL editor exposes the underlying graph for power users,
+pre-populated with the competency questions of
+Section~\ref{sec:validation} as click-to-load examples.
+
+\subsection{Limitations and outstanding challenges}
+
+Several challenges remain open. First, although ELK closure is
+sufficient for the queries described in this paper, more complex
+reasoning -- for example over disjunctions arising from ENVO
+biome classifications or from negative axioms about taxon
+absence -- would require either a different reasoner or the
+extraction of a sub-module amenable to a more expressive
+calculus. Second, the resource depends on upstream ontologies
+(SIO, ChEBI, ENVO, NCBI Taxonomy) that evolve independently;
+keeping the deployed graph aligned with their releases is an
+ongoing maintenance task and a known reproducibility risk for any
+SPARQL query that bottoms out in a specific external IRI. Third,
+while the SPARQL editor lowers the barrier to ad-hoc querying,
+authoring queries against (alpha-)numeric IRIs is still
+demanding; integrating an autocomplete-aware editor such as
+YASGUI is a natural next step.
+
+\subsection{Sustainability and updates}
+
+The dataset is versioned and archived on Zenodo, and the
+deployment pipeline is reproducible from the public repository.
+We intend to extend the resource as additional field expeditions
+are processed: new trips will be added as additional ABox
+modules without changes to the upper-level patterns. Upstream
+ontology updates will be tracked at scheduled intervals;
+re-materialization is scripted and runs as part of the
+deployment workflow, so an upstream release can be absorbed by
+re-running the pipeline. Where an upstream change would alter
+the semantics of an existing query, we will record the affected
+competency questions in the changelog so that downstream users
+can audit the impact.
