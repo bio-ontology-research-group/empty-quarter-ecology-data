@@ -22,6 +22,7 @@ test: bootstrap
 	$(PYTHON) scripts/manuscript/test_manuscript_consistency.py
 	$(PYTHON) -m pytest -q \
 		workflow/tests/test_capture_source_snapshot.py \
+		workflow/tests/test_control_analysis_inputs.py \
 		workflow/tests/test_core_kg_wiring.py \
 		workflow/tests/test_data_paper_figure_wiring.py \
 		workflow/tests/test_ecology_workflow_wiring.py \

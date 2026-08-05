@@ -43,6 +43,18 @@ The control analysis follows three constraints:
 3. candidate removal is a bounded sensitivity analysis, not a replacement for
    the unfiltered canonical feature table.
 
+The assay-aware audit can be replayed from a fresh repository clone. The
+analysis-ready July 2025 feature table and matching taxonomy assignment are
+included under
+`source_snapshots/ibex_20250714_qiime2/extracted/`; their checksums and byte
+sizes are recorded in this directory's manifests. These two derivatives are
+the exact inputs used to evaluate the replicated positive-control libraries
+and the compatible negative controls. The corresponding QIIME 2 archives and
+representative-sequence FASTA remain in project custody; their identities are
+recorded in `../core-kg-regeneration/input_manifest.tsv`. Raw sequencing reads
+are referenced through the accession and samplesheet records and are not
+duplicated here.
+
 At the primary setting, 351 of 351,472 ASVs are blank-enriched. Removing them
 only from the 217 biological profiles mapped to Trip 5 EB1-EB17 removes
 2.19% of reads in aggregate (median 0.403%; maximum 56.6%). All 25 tracked

@@ -93,6 +93,10 @@ THIRD_PARTY_SOURCES: tuple[tuple[str, str], ...] = (
     ("ontology/ecosystem_module.", "the imported OBO Foundry and Unified Ecosystem ontologies"),
     ("metadata/taxonomy/taxonomy", "the SILVA reference database used by the classifier"),
     (
+        "evidence/controls/source_snapshots/ibex_20250714_qiime2/extracted/taxonomy.tsv",
+        "the SILVA reference database used by the classifier",
+    ),
+    (
         "metadata/comparators/atacama/",
         "the pinned public Atacama gradient and depth-profile datasets",
     ),
@@ -111,6 +115,16 @@ def license_disposition(relative: str) -> tuple[str, str]:
     return status, template.format(source=best[1])
 
 ADDITIONS = {
+    "evidence/controls/source_snapshots/ibex_20250714_qiime2/extracted/feature-table.biom": (
+        "control-source",
+        "canonical-candidate",
+        "analysis-ready July 2025 feature table used to evaluate replicated positive controls and compatible negative controls",
+    ),
+    "evidence/controls/source_snapshots/ibex_20250714_qiime2/extracted/taxonomy.tsv": (
+        "control-source",
+        "canonical-candidate",
+        "taxonomy assignments paired byte-for-byte with the July 2025 control-audit feature table",
+    ),
     "config/codes/xrf_chebi_mapping_validated.yml": (
         "xrf-mapping",
         "audit-evidence",
