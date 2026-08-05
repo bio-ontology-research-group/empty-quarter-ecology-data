@@ -23,9 +23,10 @@ bash scripts/release/bootstrap_package_layout.sh .
 python3 scripts/release/verify_repository.py .
 ```
 
-The downloader uses the pinned private pre-release `v0.6.0-rc32`, expands only
-the two plain-text compressed assets, and verifies every installed byte stream.
-It never accepts an existing file with the wrong size or digest.
+The downloader uses the pinned private pre-release `v0.6.0-rc32`, expands the
+compressed tables, sequence file and ontology snapshots, and verifies every
+installed byte stream. It never accepts an existing file with the wrong size
+or digest.
 
 ## 2. Recreate the software environment
 
@@ -36,10 +37,17 @@ uv venv --python 3.11 .venv
 uv pip sync --python .venv/bin/python environment/requirements.lock.txt
 ```
 
-`environment/environment.yml` additionally pins Java, Groovy, R, Raptor,
-MAFFT and FastTree for the full knowledge-graph and cross-paper workflow. An
-executed workflow records the actual tool versions and container identity; the
-environment file alone is not treated as proof of execution.
+`environment/environment.yml` additionally pins Java, Groovy, R, MAFFT and
+FastTree for the full knowledge-graph and cross-paper workflow. Raptor
+`rapper` `2.0.16` is built separately from its checksum-pinned upstream source:
+
+```bash
+bash workflow/bin/bootstrap_raptor.sh
+export PATH="$PWD/workflow/.raptor-bin/bin:$PATH"
+```
+
+An executed workflow records the actual tool versions and container identity;
+the environment files alone are not treated as proof of execution.
 
 ## 3. Run fast regression tests
 
@@ -71,6 +79,8 @@ git clone git@github.com:bio-ontology-research-group/empty-quarter-data-paper.gi
 cd empty-quarter-data-paper
 bash scripts/release/download_bulk_artifacts.sh
 bash scripts/release/bootstrap_package_layout.sh .
+bash workflow/bin/bootstrap_raptor.sh
+export PATH="$PWD/workflow/.raptor-bin/bin:$PATH"
 .venv/bin/python -m pytest -q tests workflow/tests
 workflow/bin/bootstrap_nextflow.sh run workflow/main.nf \
   -profile bare \

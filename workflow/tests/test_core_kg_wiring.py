@@ -12,6 +12,9 @@ KG_VALIDATOR = (
 ENVIRONMENT = (
     ROOT / "workflow/environment.yml"
 ).read_text(encoding="utf-8")
+RAPTOR_BOOTSTRAP = (
+    ROOT / "workflow/bin/bootstrap_raptor.sh"
+).read_text(encoding="utf-8")
 
 
 def test_core_modules_are_generated_before_release_and_query() -> None:
@@ -70,7 +73,13 @@ def test_curated_ontology_declarations_are_machine_audited() -> None:
 
 
 def test_fail_closed_turtle_parser_is_pinned_and_checked_early() -> None:
-    assert "raptor2=2.0.16" in ENVIRONMENT
+    assert "raptor2=2.0.16" not in ENVIRONMENT
+    assert "raptor2-2.0.16.tar.gz" in RAPTOR_BOOTSTRAP
+    assert (
+        "089db78d7ac982354bdbf39d973baf09581e6904ac4c92a98c5caadb3de44680"
+        in RAPTOR_BOOTSTRAP
+    )
+    assert "--enable-parsers=turtle" in RAPTOR_BOOTSTRAP
     assert "command -v rapper" in KG_VALIDATOR
     assert 'rapper_version=$(rapper -v 2>&1 | head -1)' in KG_VALIDATOR
     assert '"$rapper_version" != "2.0.16"' in KG_VALIDATOR

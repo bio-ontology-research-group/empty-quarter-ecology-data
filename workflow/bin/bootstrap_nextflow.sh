@@ -13,6 +13,10 @@ launcher="$cache_dir/nextflow"
 if [[ -x "$project_root/.venv/bin/python3" ]]; then
   export PATH="$project_root/.venv/bin:$PATH"
 fi
+raptor_dir=${RAPTOR_BOOTSTRAP_DIR:-"$workflow_dir/.raptor-bin"}
+if [[ -x "$raptor_dir/bin/rapper" ]]; then
+  export PATH="$raptor_dir/bin:$PATH"
+fi
 
 if [[ ${NXF_BOOTSTRAP_USE_SYSTEM:-0} == 1 ]]; then
   launcher=$(command -v nextflow)

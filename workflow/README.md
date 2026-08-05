@@ -88,11 +88,12 @@ read-only values rather than staged file inputs, so a clean release run must
 omit `-resume`; this prevents Nextflow from reusing a task whose external
 source changed without changing its path.
 
-The analysis container for a KG/full run must also provide the Raptor
-`rapper` executable (tested with Raptor 2.0.16, supplied as
-`raptor2-utils` on Debian-family images). This is intentionally independent of
+The analysis environment for a KG/full run must also provide Raptor `rapper`
+`2.0.16`. Run `workflow/bin/bootstrap_raptor.sh` to build the exact version
+from its checksum-pinned upstream source archive; the Nextflow bootstrap adds
+that cached executable to `PATH`. This parser is intentionally independent of
 the Python streaming scanner. `environment.yml` pins Java 21 and Groovy 4 for
-the generator; the container build must pre-populate the Groovy `@Grab`
+the generator; a container build must pre-populate the Groovy `@Grab`
 dependencies pinned in the project scripts so an IBEX task does not depend on
 an interactive download.
 
