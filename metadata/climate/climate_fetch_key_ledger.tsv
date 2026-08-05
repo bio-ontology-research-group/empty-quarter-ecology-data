@@ -1,0 +1,82 @@
+fetch_key	disposition	resolved_site_iri	resolved_site_label	rationale	monthly_rows	daily_rows	geodata_rows
+1	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000001	Site 1	resolves to numbered site individual labelled 'Site 1'	49	1493	5
+10	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000010	Site 10	resolves to numbered site individual labelled 'Site 10'	49	1493	4
+11	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000011	Site 11	resolves to numbered site individual labelled 'Site 11'	49	1493	4
+12	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000012	Site 12	resolves to numbered site individual labelled 'Site 12'	49	1493	4
+12.5+A	near_site_annotation			does not resolve; numeric stem 12 recorded as provenance only, the offset is unrecorded	49	1493	1
+13	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000013	Site 13	resolves to numbered site individual labelled 'Site 13'	49	1493	4
+14	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000014	Site 14	resolves to numbered site individual labelled 'Site 14'	49	1493	4
+15	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000015	Site 15	resolves to numbered site individual labelled 'Site 15'	49	1493	4
+16	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000016	Site 16	resolves to numbered site individual labelled 'Site 16'	49	1493	4
+17	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000017	Site 17	resolves to numbered site individual labelled 'Site 17'	49	1493	4
+18	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000018	Site 18	resolves to numbered site individual labelled 'Site 18'	49	1493	4
+19	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000019	Site 19	resolves to numbered site individual labelled 'Site 19'	49	1493	4
+19.5	canonical_named_site	https://rubalkhali.science/kb/RAK_1000066	Site 19.5	resolves to named site individual labelled 'Site 19.5'	49	1493	1
+2	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000002	Site 2	resolves to numbered site individual labelled 'Site 2'	49	1493	5
+20	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000020	Site 20	resolves to numbered site individual labelled 'Site 20'	49	1493	4
+21	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000021	Site 21	resolves to numbered site individual labelled 'Site 21'	49	1493	4
+22	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000022	Site 22	resolves to numbered site individual labelled 'Site 22'	49	1493	4
+23	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000023	Site 23	resolves to numbered site individual labelled 'Site 23'	49	1493	4
+24	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000024	Site 24	resolves to numbered site individual labelled 'Site 24'	49	1493	4
+25	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000025	Site 25	resolves to numbered site individual labelled 'Site 25'	49	1493	4
+26	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000026	Site 26	resolves to numbered site individual labelled 'Site 26'	49	1493	4
+27	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000027	Site 27	resolves to numbered site individual labelled 'Site 27'	49	1493	4
+27+	near_site_annotation			does not resolve; numeric stem 27 recorded as provenance only, the offset is unrecorded	49	1493	1
+28	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000028	Site 28	resolves to numbered site individual labelled 'Site 28'	49	1493	4
+29	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000029	Site 29	resolves to numbered site individual labelled 'Site 29'	49	1493	4
+3	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000003	Site 3	resolves to numbered site individual labelled 'Site 3'	49	1493	5
+30	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000030	Site 30	resolves to numbered site individual labelled 'Site 30'	49	1493	4
+31	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000031	Site 31	resolves to numbered site individual labelled 'Site 31'	49	1493	4
+31urine	near_site_annotation			does not resolve; numeric stem 31 recorded as provenance only, the offset is unrecorded	49	1493	1
+32	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000032	Site 32	resolves to numbered site individual labelled 'Site 32'	49	1493	4
+32+	near_site_annotation			does not resolve; numeric stem 32 recorded as provenance only, the offset is unrecorded	49	1493	1
+33	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000033	Site 33	resolves to numbered site individual labelled 'Site 33'	49	1493	4
+34	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000034	Site 34	resolves to numbered site individual labelled 'Site 34'	49	1493	4
+35	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000035	Site 35	resolves to numbered site individual labelled 'Site 35'	49	1493	4
+35 + WaterWellRestStop	near_site_annotation			does not resolve; numeric stem 35 recorded as provenance only, the offset is unrecorded	49	1493	1
+35 + hot spring filter 2	near_site_annotation			does not resolve; numeric stem 35 recorded as provenance only, the offset is unrecorded	49	1493	1
+35 + hot spring filter1	near_site_annotation			does not resolve; numeric stem 35 recorded as provenance only, the offset is unrecorded	49	1493	1
+36	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000036	Site 36	resolves to numbered site individual labelled 'Site 36'	49	1493	4
+37	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000037	Site 37	resolves to numbered site individual labelled 'Site 37'	49	1493	4
+38	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000038	Site 38	resolves to numbered site individual labelled 'Site 38'	49	1493	4
+39	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000039	Site 39	resolves to numbered site individual labelled 'Site 39'	49	1493	4
+4	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000004	Site 4	resolves to numbered site individual labelled 'Site 4'	49	1493	5
+40	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000040	Site 40	resolves to numbered site individual labelled 'Site 40'	49	1493	4
+41	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000041	Site 41	resolves to numbered site individual labelled 'Site 41'	49	1493	4
+41+	near_site_annotation			does not resolve; numeric stem 41 recorded as provenance only, the offset is unrecorded	49	1493	1
+42	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000042	Site 42	resolves to numbered site individual labelled 'Site 42'	49	1493	4
+43	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000043	Site 43	resolves to numbered site individual labelled 'Site 43'	49	1493	4
+44	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000044	Site 44	resolves to numbered site individual labelled 'Site 44'	49	1493	4
+45	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000045	Site 45	resolves to numbered site individual labelled 'Site 45'	49	1493	4
+46	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000046	Site 46	resolves to numbered site individual labelled 'Site 46'	49	1493	4
+47	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000047	Site 47	resolves to numbered site individual labelled 'Site 47'	49	1493	4
+47+	near_site_annotation			does not resolve; numeric stem 47 recorded as provenance only, the offset is unrecorded	49	1493	1
+47+grass	near_site_annotation			does not resolve; numeric stem 47 recorded as provenance only, the offset is unrecorded	49	1493	1
+48	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000048	Site 48	resolves to numbered site individual labelled 'Site 48'	49	1493	4
+48+	near_site_annotation			does not resolve; numeric stem 48 recorded as provenance only, the offset is unrecorded	49	1493	2
+49	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000049	Site 49	resolves to numbered site individual labelled 'Site 49'	49	1493	4
+5	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000005	Site 5	resolves to numbered site individual labelled 'Site 5'	49	1493	5
+50	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000050	Site 50	resolves to numbered site individual labelled 'Site 50'	49	1493	4
+51	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000051	Site 51	resolves to numbered site individual labelled 'Site 51'	49	1493	4
+52	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000052	Site 52	resolves to numbered site individual labelled 'Site 52'	49	1493	4
+52AD	near_site_annotation			does not resolve; numeric stem 52 recorded as provenance only, the offset is unrecorded	49	1493	1
+53	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000053	Site 53	resolves to numbered site individual labelled 'Site 53'	49	1493	4
+54	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000054	Site 54	resolves to numbered site individual labelled 'Site 54'	49	1493	4
+54F	near_site_annotation			does not resolve; numeric stem 54 recorded as provenance only, the offset is unrecorded	49	1493	1
+55	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000055	Site 55	resolves to numbered site individual labelled 'Site 55'	49	1493	4
+56	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000056	Site 56	resolves to numbered site individual labelled 'Site 56'	49	1493	4
+57	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000057	Site 57	resolves to numbered site individual labelled 'Site 57'	49	1493	4
+58	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000058	Site 58	resolves to numbered site individual labelled 'Site 58'	49	1493	4
+59	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000059	Site 59	resolves to numbered site individual labelled 'Site 59'	49	1493	4
+6	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000006	Site 6	resolves to numbered site individual labelled 'Site 6'	49	1493	5
+60	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000060	Site 60	resolves to numbered site individual labelled 'Site 60'	49	1493	4
+7	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000007	Site 7	resolves to numbered site individual labelled 'Site 7'	49	1493	5
+8	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000008	Site 8	resolves to numbered site individual labelled 'Site 8'	49	1493	5
+9	canonical_numeric_site	https://rubalkhali.science/kb/RAK_1000009	Site 9	resolves to numbered site individual labelled 'Site 9'	49	1493	4
+Camel1	canonical_named_site	https://rubalkhali.science/kb/RAK_1000064	Site Camel1	resolves to named site individual labelled 'Site Camel1'	49	1493	1
+camground	canonical_named_site	https://rubalkhali.science/kb/RAK_1000070	Site camground	resolves to named site individual labelled 'Site camground'	49	1493	1
+hot spring	canonical_named_site	https://rubalkhali.science/kb/RAK_1000062	Site hot spring	resolves to named site individual labelled 'Site hot spring'	49	1493	2
+oill spill	canonical_named_site	https://rubalkhali.science/kb/RAK_1000061	Site oill spill	resolves to named site individual labelled 'Site oill spill'	49	1493	2
+plant gradient	canonical_named_site	https://rubalkhali.science/kb/RAK_1000065	Site plant gradient	resolves to named site individual labelled 'Site plant gradient'	49	1493	1
+road	free_text_location			does not resolve to any site individual	49	1493	2
+water well	free_text_location			does not resolve to any site individual	49	1493	2

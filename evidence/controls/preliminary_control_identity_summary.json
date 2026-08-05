@@ -1,0 +1,47 @@
+{
+  "author_confirmations": {
+    "file": "author_control_confirmation_20260729.tsv",
+    "positive_control_composition_confirmed": false,
+    "records": 9,
+    "sha256": "610874a89769da14901e3865a25e87d98de850140c6435c409d6521717a8108a",
+    "status_counts": {
+      "AMBIGUOUS": 1,
+      "CONFIRMED": 7,
+      "PARTIALLY_CONFIRMED": 1
+    },
+    "two_mock_community_compositions_pending": true
+  },
+  "checksummed_products": [
+    "author_control_confirmation_20260729.md",
+    "author_control_confirmation_20260729.tsv",
+    "control_inventory.tsv",
+    "control_profile_dominant_taxa.tsv",
+    "control_provenance.json",
+    "control_read_and_asv_load.tsv",
+    "preliminary_control_identity.tsv",
+    "preliminary_control_identity_summary.json"
+  ],
+  "control_identifiers": 40,
+  "families": [
+    "extraction_blank_eb",
+    "extraction_blank_named",
+    "negative_numbered",
+    "negative_numbered_replicate",
+    "negative_pcr",
+    "negative_sampling_trip",
+    "negative_trip_prefixed",
+    "positive_numbered_replicate",
+    "positive_pcr",
+    "positive_sampling_trip"
+  ],
+  "ground_truth_table_present": false,
+  "known_collisions": [
+    "EB1-EB5 appear both in a July-era MultiQC run (M-25-0770 to M-25-0774) and in the Trip-5-era submission block EB1-EB18. One EB was included per extraction day and extraction days could include samples from multiple trips, so a single-trip assignment is not applicable. Sequence indices may adjudicate each library-label collision, but the extraction-day/batch and library-identity mappings remain pending",
+    "Negative3 is absent from the submissions and the feature table with no recorded reason"
+  ],
+  "multiqc_candidate_only_rows": 13,
+  "promoted": 0,
+  "unknown_stage": 6,
+  "with_a_canonical_profile": 24,
+  "with_an_index_and_lane": 5
+}

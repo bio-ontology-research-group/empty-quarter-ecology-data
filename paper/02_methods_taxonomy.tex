@@ -1,109 +1,84 @@
-\subsection{Taxonomy mapping and alignment}
-\label{methods:taxonomy}
+\subsection{Taxonomy normalization and mapping}\label{methods:taxonomy}
 
-To unify taxonomic classifications derived from different databases,
-we developed an algorithm to map and align the NCBI Taxonomy
-($O_{ncbi}$), the Genome Taxonomy Database ($O_{gtdb}$), and the
-iNaturalist taxonomy ($O_{inat}$). This alignment does not imply
-biological commitments but rather aims to integrate three different
-taxonomies for the purposes of the Rub' al-Khali knowledge graph,
-specifically to enable queries within this project.  The mapping
-process aligns the resolution of nomenclature divergence (e.g.,
-lineage-specific alphanumeric suffixes in GTDB) and structural rank
-conflicts into a consolidated taxonomic knowledge graph $O_{final}$.
+Amplicon classifications were assigned against SILVA 138.2. We retain
+the original classifier lineage and ASV identifier as the primary
+evidence. The combined Trips~1--5 export contains two source encodings:
+the seven SILVA rank fields alone, or those seven fields followed by a
+separate species-assignment field and a numeric confidence. QIIME
+artifact provenance identifies the latter as an appended species
+assignment rather than an eighth rank. We therefore normalize only the
+ordered domain--species fields. Rank prefixes are removed, empty and
+unclassified values are represented explicitly, and the separate
+species assignment is retained in a provenance ledger but is never
+promoted into the asserted lineage. This rule also preserves, without
+silently adjudicating, supplementary species calls that conflict with
+the classifier's species field.
 
-Let $O = (C, R, E)$ represent a taxonomy comprising a set of classes
-$C$, a set of taxonomic ranks $R$, and a set of subclass axioms
-$E$. We define a lexical normalization function
-$f_{norm}: C \to \Sigma^*$ that maps a class $c \in C$ to a canonical
-string by converting the primary label to lowercase, removing
-rank-specific prefixes (e.g., \texttt{d\_\_}), and stripping
-alphanumeric lineage suffixes. Furthermore, let $rank: C \to R$ denote
-a function that retrieves the normalized taxonomic rank of a class,
-and let $parent: C \to C$ denote a function that retrieves the direct
-superclass of $c$.
+A fail-closed normalization step evaluates the historical
+SILVA-to-NCBI candidates against a pinned NCBI Taxonomy release: the OBO
+Foundry NCBITaxon release \texttt{2025-03-13}
+(\path{http://purl.obolibrary.org/obo/ncbitaxon/2025-03-13/ncbitaxon.owl}),
+which is built from NCBI organismal taxonomy version 2025-03-01. The
+exact artifact consumed is 1,646,833,334 bytes with SHA-256
+\texttt{5238897945e50ceb9007a1f96f40d1e8774456c3a0d691292fe7e8e9b5b1287d};
+the checksum identifies the file and the release identifier states which
+version it is. The source ontology IRI, version IRI,
+\texttt{owl:versionInfo}, NCBI source date, source checksum and derived-subset
+checksum are bound machine-readably in
+\path{ontology/ncbitaxon_release_identity.json}; the historical retrieval
+date was not recorded and remains an explicit null. An NCBI
+identifier is retained only when it resolves, has a compatible rank and
+label or documented synonym, and its ancestor chain is compatible with
+all retained higher-rank identifiers in that source lineage. A missing,
+ambiguous or incompatible candidate is replaced by a deterministic
+project class scoped to the complete truncated source lineage and rank.
+It is not replaced by the nearest ancestor's identifier: doing so would
+conflate a named child with its broader ancestor. Each decision records
+the source lineage and rank, candidate identifier, validation outcome,
+final identifier and reason. The output mapping must cover every
+canonical lineage represented in both the Trips~1--5 taxonomy export and
+feature table; otherwise generation stops.
 
-The workflow initializes with a lexical alignment phase to generate a
-candidate seed set $S_{lex}$:
-\begin{equation}
-S_{lex} = \{ (c_{src}, c_{tgt}) \in C_{ncbi} \times C_{gtdb} \mid
-f_{norm}(c_{src}) = f_{norm}(c_{tgt}) \}
-\end{equation}
-This initial lexical matching between NCBI and GTDB taxonomies
-produced 27,487 seed pairs. We subsequently partitioned $S_{lex}$
-through a structural verification step evaluating rank compatibility
-and topological support. A seed pair $(c_{src}, c_{tgt}) \in S_{lex}$
-was classified as a strong anchor $A_{strong}$ if
-$rank(c_{src}) = rank(c_{tgt})$ and
-$f_{norm}(parent(c_{src})) = f_{norm}(parent(c_{tgt}))$. Instances
-where ranks were compatible but parent labels diverged were classified
-as weak anchors $A_{weak}$ ($|A_{weak}| = 4,347$), which signify
-potential nomenclature reclassifications.
+Existing project identifiers are retained only when all explicit
+historical uses share one normalized rank, label and nearest explicit
+parent context. The audit is repeated against the corrected parent IRIs
+to a fixed point; a reused identifier that acquires more than one
+corrected context is replaced in every affected use by contextual
+classes. Finally, every occurrence of the same rank-truncated source
+lineage must have one final IRI, label and mapping status regardless of
+which lower-rank descendants occur beneath it. Conflicting historical
+evidence is therefore contextualized rather than resolved according to
+file order.
 
-We resolved the weak anchors utilizing a bottom-up inference strategy:
-we used the biological heuristic that identical species-level
-designations refer to the homologous entity regardless of divergent
-higher-rank classifications. For each
-$(c_{src}, c_{tgt}) \in A_{weak}$, we generated a structural hint
-$h = (parent(c_{src}), parent(c_{tgt}))$. We aggregated these hints
-and applied an equivalence axiom to higher-level taxa if the vote
-count for a structural hint exceeded our predefined threshold. This
-resolution step generated 1,514 parent hints.
+The mapping builder emits corrected JSON and tabular mappings, a
+decision ledger, a clean project taxonomy module, an audit report and a
+manifest containing input and output byte counts and SHA-256 checksums.
+The abundance-ABox generator accepts only a passing, checksum-matched
+manifest. It aggregates independently by profile, rank, final
+identifier and truncated source lineage, thereby preserving distinct
+classifier contexts even when they share an accepted NCBI identifier.
+No global label or parent is inferred by overwriting one source
+lineage with another.
 
-Algorithm~\ref{alg:tax_align} details the formal procedure for merging
-the ontologies and subsequently grafting the iNaturalist taxonomy. 
+Cross-resource alignment to GTDB \cite{gtdb} and iNaturalist was
+evaluated separately from this SILVA-to-NCBI layer, in an earlier
+exploration whose candidate and discordance tables are not part of the
+release and were not regenerated for it; the counts they reported are
+therefore not restated here. The conclusion that the exploration
+supports is a negative one and does not depend on those counts.
+Homonyms,
+\emph{Candidatus} names, placeholder taxa, GTDB split taxa, rank
+conflicts and database-version drift can all produce identical labels
+for non-identical concepts. Label agreement and the former
+parent-voting heuristic therefore do not establish extensional
+identity.
 
-\begin{algorithm}
-\caption{Taxonomy Alignment and Integration Workflow}
-\label{alg:tax_align}
-\begin{algorithmic}[1]
-\State \textbf{Input:} $O_{ncbi}$, $O_{gtdb}$, $O_{inat}$
-\State \textbf{Output:} $O_{final}$
-\State $S_{lex} \gets \emptyset$, $A_{strong} \gets \emptyset$, $A_{weak} \gets \emptyset$
-\State \textit{// Phase 1: Lexical Anchoring}
-\For{$(c_{src}, c_{tgt}) \in C_{ncbi} \times C_{gtdb}$}
-    \If{$f_{norm}(c_{src}) = f_{norm}(c_{tgt})$}
-        \State $S_{lex} \gets S_{lex} \cup \{(c_{src}, c_{tgt})\}$
-    \EndIf
-\EndFor
-\State \textit{// Phase 2: Structural Verification}
-\For{$(c_{src}, c_{tgt}) \in S_{lex}$}
-    \If{$f_{norm}(parent(c_{src})) = f_{norm}(parent(c_{tgt}))$}
-        \State $A_{strong} \gets A_{strong} \cup \{(c_{src}, c_{tgt})\}$
-    \Else
-        \State $A_{weak} \gets A_{weak} \cup \{(c_{src}, c_{tgt})\}$
-    \EndIf
-\EndFor
-\State \textit{// Phase 3: Bottom-up Resolution}
-\State $H \gets \text{AggregateParentHints}(A_{weak})$
-\State $O_{merged} \gets O_{ncbi} \cup O_{gtdb}$
-\For{$(c_{src}, c_{tgt}) \in A_{strong} \cup H$}
-    \State $O_{merged} \gets O_{merged} \cup \{\text{EquivalentClasses}(c_{src}, c_{tgt})\}$
-\EndFor
-\State $O_{merged} \gets \text{DisambiguateHomonyms}(O_{merged})$
-\State \textit{// Phase 4: iNaturalist Grafting}
-\State $O_{final} \gets O_{merged} \cup O_{inat}$
-\For{$c_{inat} \in C_{inat}$}
-    \State $M \gets \{c \in C_{merged} \mid f_{norm}(c) = f_{norm}(c_{inat})\}$
-    \If{$|M| = 1$}
-        \State $O_{final} \gets O_{final} \cup \{\text{EquivalentClasses}(c_{inat}, m \in M)\}$
-    \ElsIf{$|M| > 1$}
-        \State $m^* \gets \text{DisambiguateByRank}(M, rank(c_{inat}))$
-        \State $O_{final} \gets O_{final} \cup \{\text{EquivalentClasses}(c_{inat}, m^*)\}$
-    \EndIf
-\EndFor
-\State \Return $O_{final}$
-\end{algorithmic}
-\end{algorithm}
-
-The alignment process successfully applied 27,487 verified anchors to
-bridge the NCBI and GTDB frameworks. Following the primary
-integration, we anchored the iNaturalist taxonomy ($O_{inat}$) into
-the merged taxonomy. We indexed the merged taxonomy (consisting of
-NCBI and GTDB taxonomies) utilizing the normalization function and
-iteratively matched iNaturalist classes. For singular matches, we
-directly appended equivalence axioms. When multiple candidate nodes
-shared a canonical label, we disambiguated the mapping using rank
-annotations. We explicitly copied all axioms from $O_{inat}$ into
-$O_{final}$, effectively grafting unanchored nodes while retaining
-their subclass topology.
+The canonical release modules contain no
+\texttt{owl:equivalentClass} assertions generated from those lexical
+candidates. Unreviewed GTDB and iNaturalist candidates are excluded
+from the asserted crosswalk, and no mapping precision or recall is
+claimed because a stratified manual gold standard has not been
+completed. This conservative representation permits queries over the
+original SILVA lineage and validated NCBI classes without turning
+lexical similarity, a shared label or a supplementary species call into
+unsupported taxonomic identity.

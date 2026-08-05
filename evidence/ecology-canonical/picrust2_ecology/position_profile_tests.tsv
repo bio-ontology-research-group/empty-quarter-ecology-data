@@ -1,0 +1,45 @@
+analysis	omitted_campaign	pathway_count	pseudocount	contrast	n_sites	n_complete_blocks	displacement	ci_low	ci_high	standardized_displacement	pseudo_f	permutation_p	q_primary_three
+pathway_or_zero_sensitivity		100	0.5	omnibus_three_positions	60	172					7.584810433	0.0001	
+pathway_or_zero_sensitivity		100	0.5	Deep-Surface	60	172	0.4422498882	0.3195525941	0.7813684748	0.4709213685		0.0001	
+pathway_or_zero_sensitivity		100	0.5	Rhizosphere-Surface	60	172	0.3072519315	0.2314616452	0.5229518169	0.3811314294		0.0001	
+pathway_or_zero_sensitivity		100	0.5	Rhizosphere-Deep	60	172	0.5361142448	0.4143753592	0.828660138	0.526671052		0.0001	
+pathway_or_zero_sensitivity		100	1	omnibus_three_positions	60	172					7.918084551	0.0001	
+pathway_or_zero_sensitivity		100	1	Deep-Surface	60	172	0.4368771982	0.3207745725	0.744962844	0.4713315852		0.0001	
+pathway_or_zero_sensitivity		100	1	Rhizosphere-Surface	60	172	0.303810946	0.232032266	0.4895578696	0.3797943955		0.0001	
+pathway_or_zero_sensitivity		100	1	Rhizosphere-Deep	60	172	0.5324330535	0.4149681078	0.7939531969	0.5263618495		0.0001	
+primary		200	0.5	omnibus_three_positions	60	172					6.370000998	0.0001	
+primary		200	0.5	Deep-Surface	60	172	1.278652357	1.020289591	2.128354852	0.3300330041		0.0194	0.0194
+primary		200	0.5	Rhizosphere-Surface	60	172	1.463343917	0.976277002	2.484475227	0.4290215075		0.0001	0.00015
+primary		200	0.5	Rhizosphere-Deep	60	172	1.792018335	1.417426547	2.639224059	0.4526355928		0.0001	0.00015
+pathway_or_zero_sensitivity		200	1	omnibus_three_positions	60	172					6.690733873	0.0001	
+pathway_or_zero_sensitivity		200	1	Deep-Surface	60	172	1.26319352	1.023222127	2.038045845	0.3351975189		0.0135	
+pathway_or_zero_sensitivity		200	1	Rhizosphere-Surface	60	172	1.426717361	0.9547844087	2.389325201	0.4264793723		0.0001	
+pathway_or_zero_sensitivity		200	1	Rhizosphere-Deep	60	172	1.761560176	1.421848604	2.56004633	0.453557993		0.0001	
+pathway_or_zero_sensitivity		416	0.5	omnibus_three_positions	60	172					7.476965708	0.0001	
+pathway_or_zero_sensitivity		416	0.5	Deep-Surface	60	172	6.003910647	5.410179187	8.253638842	0.2783745718		0.0001	
+pathway_or_zero_sensitivity		416	0.5	Rhizosphere-Surface	60	172	6.378691083	5.86515731	8.505286391	0.2913103791		0.0001	
+pathway_or_zero_sensitivity		416	0.5	Rhizosphere-Deep	60	172	8.210084841	7.533748563	10.20387882	0.3452549171		0.0001	
+pathway_or_zero_sensitivity		416	1	omnibus_three_positions	60	172					7.795594293	0.0001	
+pathway_or_zero_sensitivity		416	1	Deep-Surface	60	172	5.673402526	5.096622423	7.633767239	0.2833035445		0.0001	
+pathway_or_zero_sensitivity		416	1	Rhizosphere-Surface	60	172	6.058649292	5.582777098	7.824389854	0.2972273594		0.0001	
+pathway_or_zero_sensitivity		416	1	Rhizosphere-Deep	60	172	7.792605714	7.144996104	9.58902582	0.3512643044		0.0001	
+leave_one_campaign_out	1	200	0.5	omnibus_three_positions	60	129					4.893648261	0.0001	
+leave_one_campaign_out	1	200	0.5	Deep-Surface	60	129	1.506676763	1.099502468	2.805098054	0.3274149758		0.0305	
+leave_one_campaign_out	1	200	0.5	Rhizosphere-Surface	60	129	1.746488233	1.016508369	3.333471321	0.4138546404		0.0002	
+leave_one_campaign_out	1	200	0.5	Rhizosphere-Deep	60	129	1.841238712	1.43023499	2.730153505	0.4014664411		0.0001	
+leave_one_campaign_out	2	200	0.5	omnibus_three_positions	60	170					6.258511709	0.0001	
+leave_one_campaign_out	2	200	0.5	Deep-Surface	60	170	1.272465522	1.010313312	2.180604113	0.331039445		0.0188	
+leave_one_campaign_out	2	200	0.5	Rhizosphere-Surface	60	170	1.45513878	0.9797738186	2.448234867	0.4273136271		0.0001	
+leave_one_campaign_out	2	200	0.5	Rhizosphere-Deep	60	170	1.760248708	1.391854445	2.607113401	0.4507348994		0.0001	
+leave_one_campaign_out	3	200	0.5	omnibus_three_positions	60	119					4.274656727	0.0005	
+leave_one_campaign_out	3	200	0.5	Deep-Surface	60	119	1.517365651	1.104355426	3.352755441	0.3141692706		0.136	
+leave_one_campaign_out	3	200	0.5	Rhizosphere-Surface	60	119	1.559607043	1.038438832	2.742520052	0.3968456168		0.0001	
+leave_one_campaign_out	3	200	0.5	Rhizosphere-Deep	60	119	2.291593491	1.547470188	4.065475853	0.4588048852		0.0001	
+leave_one_campaign_out	4	200	0.5	omnibus_three_positions	56	115					12.54332526	0.0001	
+leave_one_campaign_out	4	200	0.5	Deep-Surface	56	115	1.054922696	0.8146915621	1.451101696	0.4162415755		0.0001	
+leave_one_campaign_out	4	200	0.5	Rhizosphere-Surface	56	115	0.8405147793	0.6258071157	1.256741154	0.3346440908		0.0005	
+leave_one_campaign_out	4	200	0.5	Rhizosphere-Deep	56	115	1.333342489	1.103977808	1.685497602	0.4524664981		0.0001	
+leave_one_campaign_out	5	200	0.5	omnibus_three_positions	60	155					6.44840573	0.0001	
+leave_one_campaign_out	5	200	0.5	Deep-Surface	60	155	1.247013613	1.004483374	2.142156044	0.3185375316		0.0254	
+leave_one_campaign_out	5	200	0.5	Rhizosphere-Surface	60	155	1.502645139	1.010874556	2.521183342	0.4293625643		0.0001	
+leave_one_campaign_out	5	200	0.5	Rhizosphere-Deep	60	155	1.837542441	1.475190593	2.71936328	0.455444906		0.0001	

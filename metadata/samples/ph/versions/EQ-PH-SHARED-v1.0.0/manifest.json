@@ -1,0 +1,47 @@
+{
+  "dataset_version": "EQ-PH-SHARED-v1.0.0",
+  "purpose": "shared-manuscripts",
+  "status": "FROZEN",
+  "frozen_on": "2026-08-03",
+  "measurement_cutoff": "2026-08-03",
+  "source_complete": false,
+  "collection_status": "COMPLETE_AS_AVAILABLE",
+  "measurement_campaign_closed": true,
+  "source": {
+    "path": "data/metadata/samples/ph/versions/EQ-PH-SHARED-v1.0.0/ph_measurements.xlsx",
+    "sha256": "701db2a771b257da09bb276c8ca29df4408ba5986bd515821ccea275a8c692c1",
+    "bytes": 179809
+  },
+  "known_unavailable_trip4_specimens": [
+    {
+      "sample_id": "S28Sr1",
+      "disposition": "PENDING_MEASUREMENT",
+      "source_note": "Missed to prepare"
+    },
+    {
+      "sample_id": "S57Dr1",
+      "disposition": "NOT_MEASURED_DEPLETED",
+      "source_note": "Depleted"
+    }
+  ],
+  "admission_policy": {
+    "version": "ph-measurement-v1",
+    "requires_exact_specimen_reconciliation": true,
+    "requires_numeric_ph_in_declared_column": true,
+    "requires_range_0_to_14": true,
+    "requires_calibration_yes": true,
+    "requires_slope_percent_95_to_102": true,
+    "requires_ph10_check_9_9_to_10_1": true,
+    "requires_unambiguous_measurement_date_by_cutoff": true,
+    "imputation_allowed": false,
+    "silent_source_correction_allowed": false
+  },
+  "version_policy": {
+    "ecology_analysis_may_change": false,
+    "both_manuscripts_use_this_exact_version": true,
+    "successor_may_overwrite_this_source": false,
+    "future_corrections_require_a_new_version": true,
+    "cross_version_consistency_audit_required": true
+  },
+  "supersedes": "EQ-PH-ECOLOGY-v1.0.0"
+}

@@ -1,0 +1,48 @@
+{
+  "batch_stratification": {
+    "available_fields": [
+      "campaign (from identifier prefix)",
+      "compartment (from identifier suffix)"
+    ],
+    "controls_assignable_to_a_campaign": 0,
+    "limitation": "Extraction, plate and sequencing-run batch identifiers are not present in any local artifact. One EB was included per extraction day, and an extraction day could include samples from multiple trips, so assigning an EB to one campaign would be scientifically wrong. A batch-stratified screen in the strict sense could not be run. Stratification is reported over campaign and compartment for the biological profiles only."
+  },
+  "biological_profiles": 1247,
+  "control_profile_names": [
+    "EB10",
+    "EB11",
+    "EB12",
+    "EB13",
+    "EB14",
+    "EB15",
+    "EB16",
+    "EB17",
+    "EB18",
+    "EB1",
+    "EB2",
+    "EB3",
+    "EB4",
+    "EB5",
+    "EB6",
+    "EB7",
+    "EB8",
+    "EB9",
+    "Negative1",
+    "Negative2",
+    "Negative4",
+    "Negative5",
+    "Negative6",
+    "Negative7"
+  ],
+  "control_profiles": 24,
+  "features_called_contaminant": 14822,
+  "features_scored": 351472,
+  "interpretation_limit": "Author confirmation identifies the EB and numbered Negative profiles in this table as extraction blanks. One EB was included per extraction day, which could contain samples from multiple trips, so an EB campaign assignment is not applicable. Exact extraction-day/batch membership, PCR-blank identifiers, and the two mock-community compositions and trip assignments remain unresolved (revision/controls/author_control_confirmation_20260729.tsv). Positive controls are absent from this table, so the screen has no recovery check and its sensitivity remains uncalibrated.",
+  "method": "decontam prevalence (Fisher exact, one-sided for control enrichment)",
+  "removed_read_fraction_overall": 0.028684094218270794,
+  "removed_reads": 14766218.0,
+  "table": "data/processed/taxonomy/taxon-tables/feature-table-trips1-5.tsv",
+  "table_sha256": "129f47d8f0db8d9afd6f8c67b8d80b5bead90155d8c91d2f43ea6a4139b0cb12",
+  "threshold": 0.1,
+  "total_reads": 514787669.0
+}

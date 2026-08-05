@@ -1,0 +1,35 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  repository-and-paper:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install test dependencies
+        run: python -m pip install pytest pandas numpy rdflib openpyxl pyyaml
+      - name: Create package compatibility paths
+        run: bash scripts/release/bootstrap_package_layout.sh .
+      - name: Verify committed package
+        run: python scripts/release/verify_repository.py .
+      - name: Check manuscript and package consistency
+        run: python scripts/manuscript/test_manuscript_consistency.py
+      - name: Check workflow wiring without generating the KG
+        run: |
+          python -m pytest -q \
+            workflow/tests/test_capture_source_snapshot.py \
+            workflow/tests/test_core_kg_wiring.py \
+            workflow/tests/test_data_paper_figure_wiring.py \
+            workflow/tests/test_ecology_workflow_wiring.py \
+            workflow/tests/test_environment_lock_alignment.py \
+            workflow/tests/test_release_dictionary.py
+      - name: Install TeX
+        run: sudo apt-get update && sudo apt-get install -y latexmk texlive-latex-extra texlive-science
+      - name: Build manuscript and supplement
+        run: make paper

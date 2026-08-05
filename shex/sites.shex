@@ -1,0 +1,30 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rak: <https://rubalkhali.science/kb/>
+PREFIX rak_kb: <https://rubalkhali.science/kb/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+# Biome and environmental feature are encoded as OWL restrictions on the
+# individual (rdf:type [ owl:onProperty ... ; owl:someValuesFrom ... ]), not as
+# simple triples, so they are not constrained here; `rdf:type . *` admits them.
+# Their completeness is enforced separately by
+# scripts/validation/validate_site_biome_completeness.py.
+<#SamplingSiteShape> {
+    rdf:type [rak_kb:RAK_0000002] ;
+    rdf:type . * ;
+    rdfs:label . ;
+    dcterms:description xsd:string ? ;
+    geo:asWKT . ;
+}
+
+<#RegionShape> {
+    rdf:type [obo:ENVO_00000192] ;      # Desert
+    rdf:type . * ;
+    rdfs:label . ;
+    dcterms:description xsd:string ? ;
+    geo:asWKT . ;
+}

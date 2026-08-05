@@ -1,15 +1,43 @@
 \section{Background and summary}\label{intro}
 
-The Rub' al-Khali (Empty Quarter) is the largest contiguous sand
-desert on Earth, and it covers approximately 650,000 km$^2$ across the
-southern Arabian Peninsula \cite{mandaville_1986}. Despite extreme
-aridity and surface temperatures that exceed 50\degree C, this
-environment harbors microbial communities whose composition,
-diversity, and ecological drivers remain poorly characterized
-\cite{makhalanyane2015}. To predict ecosystem responses to climate
-change and to inform conservation and land-use policy, researchers
-require deep knowledge of the biogeochemistry of such extreme
-environments \cite{fierer2017}.
+The Rub' al-Khali (Empty Quarter) is a hyper-arid sand sea of
+approximately 500,000 km$^2$ across the southern Arabian Peninsula
+\cite{mandaville_1986}. Air temperatures recorded during these
+expeditions span 20.0--49.4\degree C across 273 field observations,
+and the region receives negligible and highly irregular rainfall. Its
+microbial communities remain poorly characterized relative to other
+drylands \cite{makhalanyane2015}. To predict ecosystem responses to
+climate change and to inform conservation and land-use policy,
+researchers require deep knowledge of the biogeochemistry of such
+extreme environments \cite{fierer2017}.
+
+Saudi Arabia already has a substantial arid-soil microbiome
+literature. Previous studies examined elevation gradients
+\cite{yasir2015saudi}, rainfall responses across soil compartments
+\cite{aslam2016rainfall}, open and rhizosphere soils across three
+regions \cite{khan2020saudi}, rhizosphere bacteria of pioneer sand
+plants near Jizan \cite{osman2016jizan}, and bacteria associated with
+native desert plants \cite{eida2018plants}. More recent surveys characterized
+fertility islands and plant-associated networks
+\cite{maurice2023fertility,maurice2024}, sandy soils near natural and
+artificial water points \cite{alawthan2024reserve}, rhizosphere and
+endosphere communities across northern reserves
+\cite{alhasani2026reserve}, and Red Sea coastal sabkhas
+\cite{gopi2026sabkha}. Fungal studies progressed from four
+western-coastal composite samples and four Saudi open-sand samples
+\cite{moussa2017fungi,murgia2019sandfungi} to a standardized
+single-visit survey of 85 locations across Saudi Arabia
+\cite{mani2026mycobiome}. A recent synthesis likewise identifies
+substantial geographic and taxonomic gaps in Arabian biological-soil-crust
+research \cite{blancosacristan2025biocrust}. In the United Arab Emirates,
+related studies
+profiled a Rub' al-Khali interdune microbial mat \cite{mckay2016} and
+desert-plant rhizosphere and endosphere communities \cite{mousa2024}.
+This resource does not claim the first Saudi, national-scale or
+arid-soil survey. It connects a repeated five-expedition bacterial
+transect to joined provenance across locations, physical specimens,
+molecular products, environmental observations, climate, and distinct
+field and laboratory geochemistry workflows.
 
 To characterize complex ecosystems, researchers must integrate
 heterogeneous and multi-scale data: microbial community profiles
@@ -20,115 +48,115 @@ representations. Traditional approaches store these data types in
 separate, disconnected repositories, which limits cross-domain queries
 and reduces reproducibility.
 
-Engineers originally developed the concept of a digital twin, and
-environmental scientists increasingly adopt this approach
-\cite{digitaltwin2021, destinationearth}. Recent frameworks, such as
-TwinEco, standardize the development of dynamic, data-driven digital
-twins in ecology to avoid fragmented software designs
-\cite{khan2025}. Additionally, regional natural resource management
-benefits from artificial intelligence-assisted digital twin
-architectures that unify heterogeneous environmental observations
-\cite{iglesias2026}. Such digital twins show strong predictive
-accuracy when they incorporate continuous data streams, such as
-citizen science observations for real-time biodiversity forecasts
-\cite{ovaskainen2026}. To guarantee that these models remain
-interoperable and reusable across domains, researchers emphasize the
-integration of datasets, models, and computational workflows through
-Findable, Accessible, Interoperable, and Reusable (FAIR) principles
-\cite{islam2026}. However, while biological systems and specific
-regions have digital representations \cite{biodigitaltwin},
-researchers have not yet developed semantic representations of entire
-desert ecosystems. Furthermore, ecosystem digital twins largely focus
-on macroscopic scale and do not go across levels of granularity.
+Community reporting and infrastructure efforts provide important
+precedents. The FAIR principles set the reuse target that a deposited
+resource is judged against \cite{fair}. MIxS/MIMARKS define contextual
+fields for marker-gene and
+environmental sequence data \cite{mixs}, and the 67-item STREAMS
+guideline extends reporting practice to environmental and
+non-human-associated microbiomes \cite{streams2025}. The National
+Microbiome Data Collaborative (NMDC) demonstrates how persistent
+identifiers, standardized metadata, linked-data schemas, and
+reproducible workflows can support reuse across environmental
+microbiome studies \cite{nmdc2026}. Three vocabularies cover parts of
+what an expedition resource must express: PROV-O models derivation and
+activity \cite{provo}, OBI models investigations and assays
+\cite{obi}, and SOSA/SSN models observations and their procedures
+\cite{sosa}. None of them, on its own, carries a field specimen
+through extraction, library preparation, sequencing, quality control
+and taxon observation while keeping the geochemical and climate
+measurements attached to the same site individual. The residual gap
+after MIxS, STREAMS and NMDC is therefore not vocabulary coverage but
+the joined instantiation: a single graph in which every one of those
+records resolves to the same specimen and the same location.
 
-Constructing such a resource for an entire desert ecosystem requires
-addressing several interlocking challenges that have shaped the design
-of this work. First, the data are produced by heterogeneous
-instruments and protocols (16S amplicon sequencing, X-ray
-fluorescence, GPS-tagged field notes, gridded climate
-reanalysis), so a \emph{unified data model} is needed that can
-represent samples, processes, qualities, and quantities under a
-common upper-level vocabulary rather than as disconnected tables.
-Second, taxonomic labels are reported by multiple primer choices and
-classifier workflows and must be \emph{harmonized} against a single
-reference taxonomy without losing the original assertions. Third,
-because data are deposited in batches over five field expeditions,
-\emph{schema validation at ingest} is required to catch
-structural errors before they propagate into the graph. Fourth, the
-knowledge graph must support \emph{semantic query answering at
-scale}: with tens of millions of triples, expressive OWL 2 DL
-reasoning is computationally infeasible, so a tractable
-reasoning regime must be selected and its trade-offs made
-explicit. Fifth, a \emph{user-facing query and exploration
-interface} is required so that domain scientists who are not
-fluent in SPARQL can interact with the resource. We return to
-each of these challenges in the usage notes
-(Section~\ref{usage}) and link them to the corresponding design
-choices in the methods and knowledge representation sections.
+Knowledge graphs address a complementary integration problem.
+KG-Microbe builds modular graphs that connect microbial taxa with
+traits, environments, and growth preferences
+\cite{kgmicrobe2026}. MetagenomicKG integrates seven taxonomic,
+functional, pathogen, and biomedical sources for metagenomic
+applications \cite{metagenomickg2026}. These resources establish that
+the existence of a microbiome knowledge graph is not itself novel.
+The contribution of the present resource is instead the joined,
+expedition-level provenance of locations, physical specimens,
+laboratory processes, geochemistry, climate, sequence runs, quality
+control, and taxon observations from a single landscape survey.
 
-Here, we develop a knowledge graph of large parts of the Rub' al-Khali
-desert ecosystem to serve as the semantic foundation of the Rub'
-al-Khali digital twin. We present an OWL 2 DL knowledge graph
-\cite{owl2} that contains 37.4 million RDF triples \cite{rdf}. This
-knowledge graph integrates data from five field expeditions
-(2023--2025) across 70 sampling sites that span an over 1,000 km
-transect from the western to the east of the Rub' al-Khali. The
-dataset includes 16S rRNA gene amplicon profiles from 2,535 soil
-samples, which yield 1,401,008 taxon-sample abundance observations. We
-incorporated X-ray fluorescence (XRF) measurements of 91 chemical
-analytes from 249 measurement sessions. Furthermore, we integrated
-site-specific environmental metadata recorded at each visit and
-monthly climate records derived from the Open-Meteo database
-\cite{openmeteo}.
+Constructing that resource requires a unified representation of
+heterogeneous instruments and protocols, preservation of original
+taxonomic assertions alongside harmonized identifiers, structural
+validation at ingest, and an explicit account of which entailments
+and queries are actually supported. We use persistent nodes for
+samples, processes, qualities, quantities, and digital records so that
+data users can traverse the recorded provenance chain instead of
+reconstructing it from unrelated tables. The chain is documented where
+the source identifiers permit it: the field XRF log carries no physical
+specimen identifier, and the duplicated export columns described in
+Section~\ref{records} have no recorded upstream relationship, so those
+links are absent rather than inferred.
 
-We structured the knowledge graph with the Semanticscience Integrated
-Ontology (SIO) \cite{sio} as the upper-level framework. This design
-allows interoperability with other SIO-based datasets. We modeled
-domain-specific concepts as subclasses of SIO entities, and all
-measurements follow SIO's ontology design pattern for measurement
-processes. We grounded chemical entities in the Chemical Entities of
-Biological Interest (ChEBI) ontology \cite{chebi}, environmental
-contexts in the Environment Ontology (ENVO) \cite{envo}, and taxonomic
-identifiers in the NCBI Taxonomy \cite{ncbitaxon}.
+The dataset covers five field expeditions (2023--2025) along a
+transect of more than 1,000~km across the Saudi Rub' al-Khali. The
+intended repeated frame comprises numeric sites~1--60; four additional
+numeric identifiers were used only on Trip~1, and the site catalogue
+contains named special-interest locations. Coordinate matching,
+confirmed against the field records, establishes that numeric
+identifiers 61--64 denote four of those named catalogue locations.
+We retain the numeric identifiers as source provenance but do not
+count them as four additional physical locations. The current source
+ledger contains 2,550 rows: 2,302 master-sheet rows (2,268 non-control
+and 34 control rows) plus 248 plant rows. These are source records
+rather than a claim that 2,550
+distinct specimens have entered every downstream product. Sequence
+records, quality-controlled community profiles, and derived taxonomic
+observations are distinguished from physical specimens throughout
+this descriptor. The generated graph contains 2,516 sample
+individuals. Ecological filtering retains 1,237 profiles across 64
+numeric site labels, four of which are Trip-1-only aliases of named
+catalogue locations rather than additional physical sites: 1,227 from the primary repeated-campaign frame of
+sites~1--60 and 10 Trip-1-only profiles from sites~61--64. Site measurements and
+Open-Meteo climate records \cite{openmeteo} are linked at the
+site--expedition level.
 
-Because it encodes the full provenance chain from physical sample
-collection to digital data products, the knowledge graph is the key
-foundation for implementing the FAIR data principles for the Rub'
-al-Khali digital twin. This semantic integration eliminates the data
-fragmentation that typically limits ecological models, and it
-guarantees that observations, models, and workflows remain fully
-interoperable \cite{islam2026}. Consequently, the knowledge graph acts
-as the operational foundation for the Rub' al-Khali digital twin. It
-allows researchers to execute cross-domain queries that otherwise
-demand complex joins across multiple heterogeneous tables in a
-conventional database. Therefore, this resource serves as a
-foundational infrastructure for computational ecology, which
-facilitates hypothesis generation, intervention simulation, and
-evidence-based policy.
+The geochemistry comprises two complementary X-ray fluorescence
+(XRF) workflows. During Trip~5, the field log contains 106 in-situ
+handheld entries across 59 sites; 71 complete sessions at 58 sites
+were retained, including nine sites with repeated complete sessions.
+The log has no physical-sample identifier. In the laboratory, archived
+material from all five trips was represented by 725 processed records:
+547 from Trips~1--4 and 178 from Trip~5. All 725 enter the canonical
+laboratory analysis. A former 158-row Trip~5 table and the resulting
+705-row cross-trip table are retired legacy artifacts and are not
+analytical inputs.
 
-This resource makes several contributions. On the scientific side,
-it provides a coordinated multi-trip desert microbiome and
-geochemistry dataset---16S rRNA amplicon profiles, XRF elemental
-measurements, GPS-tagged field metadata, and monthly climate
-records---for 2{,}535 soil samples from 70 sites across a
-1{,}000~km transect of the Rub' al-Khali, together with a
-harmonized taxonomic abundance table that maps operational taxonomic
-units from heterogeneous classifier outputs onto NCBI Taxonomy while
-preserving the original assertions. On the technical side, the
-resource comprises an OWL~2~DL knowledge graph (37~million asserted
-triples, expanded to approximately 118~million triples after
-OWL-Horst materialization) built on SIO with domain classes grounded
-in ChEBI, ENVO, and NCBI Taxonomy, modelling the full provenance
-chain from field sampling to digital data products. We formalize
-reusable ontology design patterns for sampling, measurement,
-taxonomic abundance, and provenance aligned with SIO's core idioms.
-A ShEx-based ingest validation workflow enforces structural shapes on
-every RDF batch before loading, and the ELK reasoner is used to
-validate logical consistency of the knowledge graph. OWL-Horst
-forward-chaining materialization in Virtuoso expands subclass,
-subproperty, inverse, and transitivity entailments so that query
-answering can be served from physically materialized triples. A set of
-competency questions documents the intended query workload and serves
-as regression tests, and a web portal with an interactive map, per-site
-dashboards, and a SPARQL editor exposes the knowledge graph to domain
-scientists without requiring SPARQL fluency.
+The knowledge graph uses the Semanticscience Integrated Ontology
+(SIO) \cite{sio} as its upper-level framework. Domain-specific
+concepts are represented as subclasses of SIO entities, and
+measurements follow SIO's process--quantity--quality pattern.
+Chemical entities are grounded where supported in ChEBI
+\cite{chebi}, environmental context in ENVO \cite{envo}, and
+taxonomic identifiers in NCBI Taxonomy \cite{ncbitaxon}. Shape
+Expressions test the structural contract of generated RDF. ELK tests
+the OWL~2~EL portion of the terminology; it is not presented as a
+complete OWL~2~DL consistency check. A selected forward-rule
+materialization supports common query paths, and its coverage is
+reported separately from standard OWL-Horst closure.
+
+The companion ecological analysis reports the inferential results for
+the quality-controlled community profiles, laboratory-XRF gradient,
+rainfall, spatial turnover, PMA experiment, association networks and
+genome-encoded functional potential \cite{ecology_companion}. The
+present paper describes the reusable data products, provenance model,
+identifier mappings and their executable validation.
+
+Environmental digital twins are normally dynamic systems that
+assimilate observations and support state estimation, simulation, or
+forecasting \cite{khan2025,islam2026,ovaskainen2026}. The artifact
+described here does not yet have those capabilities. It is a
+versioned dataset and semantic backbone on which such a future system
+could be built; the deposited version becomes immutable only once it is
+archived under a persistent identifier. Its immediate purposes are data
+discovery, provenance inspection, and reproducible reuse. It is
+designed to support cross-domain querying; the executed and archived
+query evidence at present is the bounded field-XRF retrieval of
+Section~\ref{valid}.

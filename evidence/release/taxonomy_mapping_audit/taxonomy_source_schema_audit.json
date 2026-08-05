@@ -1,0 +1,52 @@
+{
+  "artifact": {
+    "bytes": 33034,
+    "file": "taxonomy_source_supplementary_species.tsv",
+    "sha256": "229b6bddd01b7391c9dffe92f1b385d1e65338578160b1342d6f78e76403c5d3"
+  },
+  "counts": {
+    "encodings": {
+      "seven_ranks": 70288,
+      "seven_ranks_plus_species_assignment_and_confidence": 283963
+    },
+    "feature_table_features_missing_taxonomy": 0,
+    "feature_table_profiles": 1271,
+    "feature_table_rows": 351472,
+    "source_features_absent_from_feature_table": 2779,
+    "source_rows": 354251,
+    "source_taxon_strings": 4305,
+    "supplementary_dispositions": {
+      "conflict_preserved_not_promoted": 21,
+      "extra_only_preserved_not_promoted": 98
+    },
+    "supplementary_nonidentical_species_calls": 119
+  },
+  "inputs": {
+    "feature_table": {
+      "bytes": 1801512613,
+      "path": "data/processed/taxonomy/taxon-tables/feature-table-trips1-5.tsv",
+      "sha256": "129f47d8f0db8d9afd6f8c67b8d80b5bead90155d8c91d2f43ea6a4139b0cb12"
+    },
+    "source_taxonomy": {
+      "bytes": 39741062,
+      "path": "data/processed/taxonomy/taxon-tables/taxonomy-trips1-5.tsv",
+      "sha256": "fcf0a3ea0ca8ed956532fb4d7bffa0c20249e3048779a219155cc1bb7e483d35"
+    }
+  },
+  "policy": {
+    "canonical_assertion": "first seven ordered SILVA ranks",
+    "qiime_provenance": {
+      "interpretation": "the appended field is a separate species assignment, not an eighth taxonomic rank",
+      "legacy_import_uuid": "09e2524d",
+      "merge_action": "qiime2 feature-table merge_taxa",
+      "merged_taxonomy_uuid": "642c0001-64af-4ff5-86ea-a9f75df0d133",
+      "source_components": [
+        "ASV_tax.silva_138_2.tsv",
+        "ASV_tax_species.silva_138_2.tsv"
+      ],
+      "trip5_fixed_import_uuid": "6e85df16"
+    },
+    "supplementary_species": "provenance only; never promoted"
+  },
+  "status": "passed"
+}

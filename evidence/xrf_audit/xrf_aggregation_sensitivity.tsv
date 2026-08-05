@@ -1,0 +1,142 @@
+workflow	analyte	formula_class	expected_primary_status	observed_statuses	sample_analyte_groups	groups_with_multiple_rows	groups_missing_primary_status	groups_current_differs_from_primary	current_rule	spearman_current_vs_primary	median_relative_difference	q95_absolute_relative_difference	median_relative_difference_among_changed	maximum_absolute_relative_difference	paired_groups
+lab_t1_4	Al	element	XRF 0	XRF 0	547	0	0	0	max_positive	1	0	0		0	547
+lab_t1_4	Al2O3	compound	XRF 1	XRF 1	540	0	0	0	max_positive	1	0	0		0	540
+lab_t1_4	As	element	XRF 0	XRF 0	1	0	0	0	max_positive		0	0		0	1
+lab_t1_4	As2O3	compound	XRF 1	XRF 1	1	0	0	0	max_positive		0	0		0	1
+lab_t1_4	Ba	element	XRF 0	XRF 0	182	0	0	0	max_positive	1	0	0		0	182
+lab_t1_4	BaO	compound	XRF 1	XRF 1,XRF 2,XRF 3	27	0	6	0	max_positive	1	0	0		0	21
+lab_t1_4	Br	element	XRF 0	XRF 0,XRF 1	6	6	0	0	max_positive	1	0	0		0	6
+lab_t1_4	Ca	element	XRF 0	XRF 0	547	0	0	0	max_positive	1	0	0		0	547
+lab_t1_4	CaO	compound	XRF 1	XRF 1	541	0	0	0	max_positive	1	0	0		0	541
+lab_t1_4	Ce	element	XRF 0	XRF 0	140	0	0	0	max_positive	1	0	0		0	140
+lab_t1_4	CeO2	compound	XRF 1	XRF 1,XRF 2	34	0	12	0	max_positive	1	0	0		0	22
+lab_t1_4	Cl	element	XRF 0	XRF 0,XRF 1	474	126	0	0	max_positive	1	0	0		0	474
+lab_t1_4	Co	element	XRF 0	XRF 0	2	0	0	0	max_positive	1	0	0		0	2
+lab_t1_4	CoO	compound	XRF 1	XRF 1	2	0	0	0	max_positive	1	0	0		0	2
+lab_t1_4	Cr	element	XRF 0	XRF 0	295	0	0	0	max_positive	1	0	0		0	295
+lab_t1_4	Cr2O3	compound	XRF 1	XRF 1,XRF 2	176	0	10	0	max_positive	1	0	0		0	166
+lab_t1_4	Cs	element	XRF 0	XRF 0	3	0	0	0	max_positive	1	0	0		0	3
+lab_t1_4	Cs2O	compound	XRF 1	XRF 1	1	0	0	0	max_positive		0	0		0	1
+lab_t1_4	Cu	element	XRF 0	XRF 0	23	0	0	0	max_positive	1	0	0		0	23
+lab_t1_4	CuO	compound	XRF 1	XRF 1	23	0	0	0	max_positive	1	0	0		0	23
+lab_t1_4	Dy	element	XRF 0	XRF 0	1	0	0	0	max_positive		0	0		0	1
+lab_t1_4	Eu	element	XRF 0	XRF 0	21	0	0	0	max_positive	1	0	0		0	21
+lab_t1_4	Eu2O3	compound	XRF 1	XRF 1	8	0	0	0	max_positive	1	0	0		0	8
+lab_t1_4	Fe	element	XRF 0	XRF 0	547	0	0	0	max_positive	1	0	0		0	547
+lab_t1_4	Fe2O3	compound	XRF 1	XRF 1,XRF 2	547	0	3	0	max_positive	1	0	0		0	544
+lab_t1_4	Ga	element	XRF 0	XRF 0	1	0	0	0	max_positive		0	0		0	1
+lab_t1_4	Ga2O3	compound	XRF 1	XRF 1	1	0	0	0	max_positive		0	0		0	1
+lab_t1_4	Gd	element	XRF 0	XRF 0	14	0	0	0	max_positive	1	0	0		0	14
+lab_t1_4	Gd2O3	compound	XRF 1	XRF 1	3	0	0	0	max_positive	1	0	0		0	3
+lab_t1_4	I	element	XRF 0	XRF 0,XRF 1	1	1	0	0	max_positive		0	0		0	1
+lab_t1_4	K	element	XRF 0	XRF 0	546	0	0	0	max_positive	1	0	0		0	546
+lab_t1_4	K2O	compound	XRF 1	XRF 1	536	0	0	0	max_positive	1	0	0		0	536
+lab_t1_4	La	element	XRF 0	XRF 0	213	0	0	0	max_positive	1	0	0		0	213
+lab_t1_4	La2O3	compound	XRF 1	XRF 1	15	0	0	0	max_positive	1	0	0		0	15
+lab_t1_4	Mg	element	XRF 0	XRF 0	547	0	0	0	max_positive	1	0	0		0	547
+lab_t1_4	MgO	compound	XRF 1	XRF 1	492	0	0	0	max_positive	1	0	0		0	492
+lab_t1_4	Mn	element	XRF 0	XRF 0	121	0	0	0	max_positive	1	0	0		0	121
+lab_t1_4	MnO	compound	XRF 1	XRF 1	102	0	0	0	max_positive	1	0	0		0	102
+lab_t1_4	Mo	element	XRF 0	XRF 0	4	0	0	0	max_positive	1	0	0		0	4
+lab_t1_4	MoO3	compound	XRF 1	XRF 1	4	0	0	0	max_positive	1	0	0		0	4
+lab_t1_4	Na	element	XRF 0	XRF 0	530	0	0	0	max_positive	1	0	0		0	530
+lab_t1_4	Na2O	compound	XRF 1	XRF 1	131	0	0	0	max_positive	1	0	0		0	131
+lab_t1_4	Nb	element	XRF 0	XRF 0	2	0	0	0	max_positive	1	0	0		0	2
+lab_t1_4	Nb2O5	compound	XRF 1	XRF 1	2	0	0	0	max_positive	1	0	0		0	2
+lab_t1_4	Nd	element	XRF 0	XRF 0	208	0	0	0	max_positive	1	0	0		0	208
+lab_t1_4	Nd2O3	compound	XRF 1	XRF 1,XRF 2	53	0	9	0	max_positive	1	0	0		0	44
+lab_t1_4	Ni	element	XRF 0	XRF 0	5	0	0	0	max_positive	1	0	0		0	5
+lab_t1_4	NiO	compound	XRF 1	XRF 1	5	0	0	0	max_positive	1	0	0		0	5
+lab_t1_4	P	element	XRF 0	XRF 0	445	0	0	0	max_positive	1	0	0		0	445
+lab_t1_4	P2O5	compound	XRF 1	XRF 1	97	0	0	0	max_positive	1	0	0		0	97
+lab_t1_4	Pr	element	XRF 0	XRF 0	182	0	0	0	max_positive	1	0	0		0	182
+lab_t1_4	Pr6O11	compound	XRF 1	XRF 1,XRF 2	11	0	1	0	max_positive	1	0	0		0	10
+lab_t1_4	Rb	element	XRF 0	XRF 0	2	0	0	0	max_positive	1	0	0		0	2
+lab_t1_4	Rb2O	compound	XRF 1	XRF 1	2	0	0	0	max_positive	1	0	0		0	2
+lab_t1_4	S	element	XRF 0	XRF 0	488	0	0	0	max_positive	1	0	0		0	488
+lab_t1_4	SO3	compound	XRF 1	XRF 1	187	0	0	0	max_positive	1	0	0		0	187
+lab_t1_4	Sb	element	XRF 0	XRF 0	1	0	0	0	max_positive		0	0		0	1
+lab_t1_4	Sb2O3	compound	XRF 1	XRF 1	1	0	0	0	max_positive		0	0		0	1
+lab_t1_4	Sc	element	XRF 0	XRF 0	298	0	0	0	max_positive	1	0	0		0	298
+lab_t1_4	Sc2O3	compound	XRF 1	XRF 1	4	0	0	0	max_positive	1	0	0		0	4
+lab_t1_4	Si	element	XRF 0	XRF 0	547	0	0	0	max_positive	1	0	0		0	547
+lab_t1_4	SiO2	compound	XRF 1	XRF 1	547	0	0	0	max_positive	1	0	0		0	547
+lab_t1_4	Sm	element	XRF 0	XRF 0	73	0	0	0	max_positive	1	0	0		0	73
+lab_t1_4	Sm2O3	compound	XRF 1	XRF 1	13	0	0	0	max_positive	1	0	0		0	13
+lab_t1_4	Sn	element	XRF 0	XRF 0	3	0	0	0	max_positive	1	0	0		0	3
+lab_t1_4	SnO2	compound	XRF 1	XRF 1	3	0	0	0	max_positive	1	0	0		0	3
+lab_t1_4	Sr	element	XRF 0	XRF 0	316	0	0	0	max_positive	1	0	0		0	316
+lab_t1_4	SrO	compound	XRF 1	XRF 1	308	0	0	0	max_positive	1	0	0		0	308
+lab_t1_4	Tb	element	XRF 0	XRF 0	6	0	0	0	max_positive	1	0	0		0	6
+lab_t1_4	Tb4O7	compound	XRF 1	XRF 1	2	0	0	0	max_positive	1	0	0		0	2
+lab_t1_4	Ti	element	XRF 0	XRF 0	539	0	0	0	max_positive	1	0	0		0	539
+lab_t1_4	TiO2	compound	XRF 1	XRF 1	284	0	0	0	max_positive	1	0	0		0	284
+lab_t1_4	V	element	XRF 0	XRF 0	369	0	0	0	max_positive	1	0	0		0	369
+lab_t1_4	V2O5	compound	XRF 1	XRF 1	26	0	0	0	max_positive	1	0	0		0	26
+lab_t1_4	Zn	element	XRF 0	XRF 0	11	0	0	0	max_positive	1	0	0		0	11
+lab_t1_4	ZnO	compound	XRF 1	XRF 1	11	0	0	0	max_positive	1	0	0		0	11
+lab_t1_4	Zr	element	XRF 0	XRF 0	209	0	0	0	max_positive	1	0	0		0	209
+lab_t1_4	ZrO2	compound	XRF 1	XRF 1,XRF 2	209	0	1	0	max_positive	1	0	0		0	208
+lab_t5	Al	element	XRF 0	XRF 0	178	1	0	1	last_reported	0.9999647983	0	0	-0.04761904762	0.04761904762	178
+lab_t5	Al2O3	compound	XRF 1	XRF 1	173	0	0	0	last_reported	1	0	0		0	173
+lab_t5	Ba	element	XRF 0	XRF 0	61	1	0	1	last_reported	0.9983190609	0	0	0.7405582923	0.7405582923	61
+lab_t5	BaO	compound	XRF 1	XRF 1,XRF 2,XRF 3	9	0	3	0	last_reported	1	0	0		0	6
+lab_t5	Br	element	XRF 0	XRF 0,XRF 1	3	3	0	0	last_reported	1	0	0		0	3
+lab_t5	Ca	element	XRF 0	XRF 0	178	1	0	1	last_reported	0.9998600502	0	0	0.1851851852	0.1851851852	178
+lab_t5	CaO	compound	XRF 1	XRF 1	172	0	0	0	last_reported	1	0	0		0	172
+lab_t5	Ce	element	XRF 0	XRF 0	49	0	0	0	last_reported	1	0	0		0	49
+lab_t5	CeO2	compound	XRF 1	XRF 1,XRF 2	16	0	2	0	last_reported	1	0	0		0	14
+lab_t5	Cl	element	XRF 0	XRF 0,XRF 1	160	45	0	0	last_reported	1	0	0		0	160
+lab_t5	Co	element	XRF 0	XRF 0	2	0	0	0	last_reported	1	0	0		0	2
+lab_t5	CoO	compound	XRF 1	XRF 1	2	0	0	0	last_reported	1	0	0		0	2
+lab_t5	Cr	element	XRF 0	XRF 0	103	0	0	0	last_reported	1	0	0		0	103
+lab_t5	Cr2O3	compound	XRF 1	XRF 1	57	0	0	0	last_reported	1	0	0		0	57
+lab_t5	Cs	element	XRF 0	XRF 0	2	0	0	0	last_reported	1	0	0		0	2
+lab_t5	Cu	element	XRF 0	XRF 0	5	0	0	0	last_reported	1	0	0		0	5
+lab_t5	CuO	compound	XRF 1	XRF 1	5	0	0	0	last_reported	1	0	0		0	5
+lab_t5	Eu	element	XRF 0	XRF 0	6	0	0	0	last_reported	1	0	0		0	6
+lab_t5	Eu2O3	compound	XRF 1	XRF 1	1	0	0	0	last_reported		0	0		0	1
+lab_t5	Fe	element	XRF 0	XRF 0	178	1	0	1	last_reported	0.9980331769	0	0	0.2875318066	0.2875318066	178
+lab_t5	Fe2O3	compound	XRF 1	XRF 1	177	0	0	0	last_reported	1	0	0		0	177
+lab_t5	Ga	element	XRF 0	XRF 0	1	0	0	0	last_reported		0	0		0	1
+lab_t5	Ga2O3	compound	XRF 1	XRF 1	1	0	0	0	last_reported		0	0		0	1
+lab_t5	Gd	element	XRF 0	XRF 0	3	0	0	0	last_reported	1	0	0		0	3
+lab_t5	Gd2O3	compound	XRF 1	XRF 1	1	0	0	0	last_reported		0	0		0	1
+lab_t5	K	element	XRF 0	XRF 0	178	1	0	1	last_reported	0.9976488653	0	0	0.2356687898	0.2356687898	178
+lab_t5	K2O	compound	XRF 1	XRF 1	172	0	0	0	last_reported	1	0	0		0	172
+lab_t5	La	element	XRF 0	XRF 0	67	0	0	0	last_reported	1	0	0		0	67
+lab_t5	La2O3	compound	XRF 1	XRF 1	4	0	0	0	last_reported	1	0	0		0	4
+lab_t5	Mg	element	XRF 0	XRF 0	178	1	0	1	last_reported	0.9997109336	0	0	0.1212121212	0.1212121212	178
+lab_t5	MgO	compound	XRF 1	XRF 1	156	0	0	0	last_reported	1	0	0		0	156
+lab_t5	Mn	element	XRF 0	XRF 0	36	0	0	0	last_reported	1	0	0		0	36
+lab_t5	MnO	compound	XRF 1	XRF 1	30	0	0	0	last_reported	1	0	0		0	30
+lab_t5	Mo	element	XRF 0	XRF 0	1	0	0	0	last_reported		0	0		0	1
+lab_t5	MoO3	compound	XRF 1	XRF 1	1	0	0	0	last_reported		0	0		0	1
+lab_t5	Na	element	XRF 0	XRF 0	172	1	0	1	last_reported	0.9999587034	0	0	-0.07692307692	0.07692307692	172
+lab_t5	Na2O	compound	XRF 1	XRF 1	39	0	0	0	last_reported	1	0	0		0	39
+lab_t5	Nd	element	XRF 0	XRF 0	66	0	0	0	last_reported	1	0	0		0	66
+lab_t5	Nd2O3	compound	XRF 1	XRF 1,XRF 2	8	0	3	0	last_reported	1	0	0		0	5
+lab_t5	Ni	element	XRF 0	XRF 0	1	0	0	0	last_reported		0	0		0	1
+lab_t5	NiO	compound	XRF 1	XRF 1	1	0	0	0	last_reported		0	0		0	1
+lab_t5	P	element	XRF 0	XRF 0	132	1	0	1	last_reported	0.9994142045	0	0	0.2258064516	0.2258064516	132
+lab_t5	P2O5	compound	XRF 1	XRF 1	29	0	0	0	last_reported	1	0	0		0	29
+lab_t5	Pr	element	XRF 0	XRF 0	66	1	0	1	last_reported	0.9946816891	0	0	0.5306122449	0.5306122449	66
+lab_t5	Pr6O11	compound	XRF 1	XRF 1	3	0	0	0	last_reported	1	0	0		0	3
+lab_t5	S	element	XRF 0	XRF 0	148	0	0	0	last_reported	1	0	0		0	148
+lab_t5	SO3	compound	XRF 1	XRF 1	51	0	0	0	last_reported	1	0	0		0	51
+lab_t5	Sc	element	XRF 0	XRF 0	84	0	0	0	last_reported	1	0	0		0	84
+lab_t5	Sc2O3	compound	XRF 1	XRF 1	1	0	0	0	last_reported		0	0		0	1
+lab_t5	Si	element	XRF 0	XRF 0	178	1	0	1	last_reported	0.999487041	0	0	-0.03117505995	0.03117505995	178
+lab_t5	SiO2	compound	XRF 1	XRF 1	177	0	0	0	last_reported	1	0	0		0	177
+lab_t5	Sm	element	XRF 0	XRF 0	27	0	0	0	last_reported	1	0	0		0	27
+lab_t5	Sm2O3	compound	XRF 1	XRF 1	12	0	0	0	last_reported	1	0	0		0	12
+lab_t5	Sr	element	XRF 0	XRF 0	102	1	0	1	last_reported	0.9991986976	0	0	0.09090909091	0.09090909091	102
+lab_t5	SrO	compound	XRF 1	XRF 1	100	0	0	0	last_reported	1	0	0		0	100
+lab_t5	Ti	element	XRF 0	XRF 0	176	0	0	0	last_reported	1	0	0		0	176
+lab_t5	TiO2	compound	XRF 1	XRF 1	93	0	0	0	last_reported	1	0	0		0	93
+lab_t5	V	element	XRF 0	XRF 0	113	0	0	0	last_reported	1	0	0		0	113
+lab_t5	V2O5	compound	XRF 1	XRF 1	12	0	0	0	last_reported	1	0	0		0	12
+lab_t5	Zn	element	XRF 0	XRF 0	3	0	0	0	last_reported	1	0	0		0	3
+lab_t5	ZnO	compound	XRF 1	XRF 1	3	0	0	0	last_reported	1	0	0		0	3
+lab_t5	Zr	element	XRF 0	XRF 0	65	0	0	0	last_reported	1	0	0		0	65
+lab_t5	ZrO2	compound	XRF 1	XRF 1	65	0	0	0	last_reported	1	0	0		0	65

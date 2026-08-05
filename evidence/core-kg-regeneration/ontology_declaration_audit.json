@@ -1,0 +1,46 @@
+{
+  "counting_rule": "Distinct rdf:about IRIs on serialized owl:Class, owl:ObjectProperty, and owl:DatatypeProperty declarations in the curated base module; imported ontology contents are not counted.",
+  "declarations": {
+    "classes": {
+      "pato_referenced": 4,
+      "project_local": 297,
+      "sio_referenced": 32,
+      "total": 333
+    },
+    "datatype_properties": {
+      "project_local": 34,
+      "sio_referenced": 1,
+      "total": 35
+    },
+    "object_properties": {
+      "project_local": 11,
+      "sio_referenced": 9,
+      "total": 20
+    }
+  },
+  "expected_manuscript_values": {
+    "classes": {
+      "pato_referenced": 4,
+      "project_local": 297,
+      "sio_referenced": 32,
+      "total": 333
+    },
+    "datatype_properties": {
+      "project_local": 34,
+      "sio_referenced": 1,
+      "total": 35
+    },
+    "object_properties": {
+      "project_local": 11,
+      "sio_referenced": 9,
+      "total": 20
+    }
+  },
+  "input": {
+    "bytes": 128996,
+    "file": "rubalkhali.owl",
+    "sha256": "9c9a435c98c815dfd755ac7787f5f25bab0514a0457e4d3ea03e37fde486b98e"
+  },
+  "schema_version": "1.0",
+  "status": "passed"
+}

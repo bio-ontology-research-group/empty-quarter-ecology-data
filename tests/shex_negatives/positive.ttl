@@ -1,0 +1,23 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix obo:  <http://purl.obolibrary.org/obo/> .
+@prefix sio:  <http://semanticscience.org/resource/> .
+@prefix rak:  <https://rubalkhali.science/kb/> .
+
+# Minimal, well-formed instance of the canonical measurement pattern, written
+# against the released shapes in data/processed/semantics/shex/measurements.shex.
+# Each negative fixture in this directory is this graph with exactly one defect.
+
+rak:P000001 a rak:RAK_0000006 , owl:NamedIndividual ;
+    sio:SIO_000229 rak:V4000001 .
+
+rak:V4000001 a rak:RAK_0000010 , owl:NamedIndividual ;
+    sio:SIO_000232 rak:P000001 ;
+    sio:SIO_000215 rak:Q5000001 ;
+    sio:SIO_000221 obo:UO_0000027 ;
+    rak:RAK_2000003 "23.5"^^xsd:double .
+
+rak:Q5000001 a obo:PATO_0000146 , owl:NamedIndividual ;
+    sio:SIO_000216 rak:V4000001 .

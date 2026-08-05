@@ -1,0 +1,31 @@
+{
+  "contrast_max_t_supported": {
+    "Deep-Rhizosphere": true,
+    "Surface-Rhizosphere": false
+  },
+  "input": {
+    "counts_path": "analysis/v2/review/cache/genus_counts.tsv",
+    "counts_sha256": "324d19da3669d489a42b60e0bdd6ca7f3238308bbadc72b8a28ae6098ddc8481",
+    "input_genera": 1604,
+    "input_sample_columns": 1237,
+    "minimum_group_reads": 2000,
+    "parsed_core_sample_columns": 1227,
+    "prevalence_threshold": 0.2,
+    "pseudocount": 0.5,
+    "retained_site_campaign_compartment_groups": 630,
+    "retained_sites": 60,
+    "seed": 20260728,
+    "taxon_count": 200
+  },
+  "matched_sites": 60,
+  "omnibus_p": 0.0053,
+  "omnibus_statistic": 12.110479175979153,
+  "permitted_wording": "Aitchison dissimilarity increased with geographic distance in every soil position. Paired distance contrasts, tested with whole-site permutations and family-wise maximum-statistic control, supported a difference between compartment decay slopes (omnibus p = 0.0053). After coverage standardisation to 12865 reads, Simpson replacement accounted for the majority of Sorensen dissimilarity in every compartment.",
+  "permutations": 9999,
+  "prohibited_wording": "Do not treat site pairs as independent observations, do not report a p-value from permuting the pairwise distance vector, and do not read compartment slope differences as a plant or root process. The abundance-gradient component of Bray-Curtis is reported only with its library-size diagnostic and supports no claim, because it is identically zero under coverage standardisation.",
+  "schema_version": "1.0",
+  "site_pairs": 1770,
+  "standardised_depth": 12865,
+  "status": "compartment_slopes_differ",
+  "turnover_dominates_sorensen_in_every_compartment": true
+}

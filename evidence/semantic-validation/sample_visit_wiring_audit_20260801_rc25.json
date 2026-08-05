@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "status": "passed_after_regeneration",
+  "issue": "The rc24 sample module retained visit targets from the pre-correction measurement numbering: 32 links targeted absent visits and 480 links targeted resolving visits assigned to a different catalogue site.",
+  "scope": {
+    "predicate": "http://semanticscience.org/resource/SIO_000068",
+    "rc24_archive": "dist/empty-quarter-kg-0.6.0-rc24.tar.gz",
+    "rc24_member": "ontology/rubalkhali_samples.owl",
+    "corrected_module": "data/processed/semantics/ontology/rubalkhali_samples.owl",
+    "measurement_module": "data/processed/semantics/ontology/rubalkhali_measurements.owl"
+  },
+  "rc24": {
+    "sample_module_sha256": "3dd759df9e379e01632e7fa135f47a2ac4361d2a1794e41f9f3584cb31bf2ab4",
+    "sample_module_triples": 27983,
+    "sample_process_visit_links": 1004,
+    "distinct_visit_targets": 252,
+    "visit_targets_absent_from_current_measurement_module": 8,
+    "links_to_absent_visit_targets": 32,
+    "resolved_links_with_site_target_mismatch": 480,
+    "semantically_incorrect_links": 512,
+    "links_with_resolving_and_site_congruent_target": 492
+  },
+  "corrected": {
+    "sample_module_sha256": "ab9339969a861920ca8d734294d2a61f1e60e5f291314066f7f6b995987e937f",
+    "sample_module_triples": 27983,
+    "sample_process_visit_links": 1004,
+    "distinct_visit_targets": 252,
+    "visit_targets_absent_from_current_measurement_module": 0,
+    "links_to_absent_visit_targets": 0,
+    "resolved_links_with_site_target_mismatch": 0,
+    "semantically_incorrect_links": 0,
+    "links_with_resolving_and_site_congruent_target": 1004
+  },
+  "graph_diff": {
+    "sample_subjects_with_changed_visit_target": 512,
+    "rc24_only_visit_links": 512,
+    "corrected_only_visit_links": 512,
+    "rc24_only_triples": 522,
+    "corrected_only_triples": 522,
+    "note": "Each graph has the same number of sample triples and process-to-visit links. All 512 changed process links were semantically incorrect in rc24: 32 targeted absent visits and 480 targeted a resolving visit whose SIO_000291 target differed from the process target. The change rewires identifiers; it does not remove samples or observations. The merged semantic counts fall by eight because the rc24 sample graph alone declared eight visit individuals absent from the current measurement graph."
+  },
+  "regression_guards": [
+    "tests/test_sample_visit_wiring.py",
+    "workflow/tests/test_package_sample_visit_wiring.py",
+    "data-paper/zenodo/workflow/tests/test_package_sample_visit_wiring.py"
+  ],
+  "validation": {
+    "fresh_core_regeneration": "revision/evidence/core_kg_regeneration_20260801_rc25/core_kg_manifest.json",
+    "semantic_validation": "revision/evidence/semantic_validation_20260801.json",
+    "all_sample_visit_targets_resolve": true,
+    "all_linked_visits_target_the_sample_process_site": true,
+    "root_and_staged_sample_modules_byte_identical": true
+  }
+}

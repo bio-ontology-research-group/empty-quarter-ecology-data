@@ -1,0 +1,12 @@
+analysis	omitted_campaign	pathway_count	pseudocount	n_sites	n_grouped_profiles	quadratic_transect_r2	pseudo_f	permutation_p
+pathway_or_zero_sensitivity		100	0.5	60	633	0.2558547811	9.798976163	0.0001
+pathway_or_zero_sensitivity		100	1	60	633	0.2617449268	10.10454338	0.0001
+primary		200	0.5	60	633	0.2342468112	8.718258333	0.0001
+pathway_or_zero_sensitivity		200	1	60	633	0.236211925	8.814015408	0.0001
+pathway_or_zero_sensitivity		416	0.5	60	633	0.3626286622	16.21490685	0.0001
+pathway_or_zero_sensitivity		416	1	60	633	0.3611305734	16.11005459	0.0001
+leave_one_campaign_out	1	200	0.5	60	473	0.213941734	7.756854272	0.0001
+leave_one_campaign_out	2	200	0.5	60	616	0.240070559	9.003481854	0.0001
+leave_one_campaign_out	3	200	0.5	60	464	0.2329774793	8.6566665	0.0001
+leave_one_campaign_out	4	200	0.5	60	456	0.2396646613	8.983460981	0.0001
+leave_one_campaign_out	5	200	0.5	60	523	0.2286297989	8.447240067	0.0001

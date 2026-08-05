@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "status": "bounded_elemental_axis_association",
+  "permitted_wording": "In Aitchison geometry the laboratory-XRF elemental axis remained associated with community composition after campaign, position and site adjustment in every prespecified taxon set and zero treatment (primary partial R2 = 0.0036, p = 0.01). The axis accounts for well under one percent of adjusted compositional variation, so report it as a bounded association with an elemental axis only. Do not infer salinity, soluble ions, osmotic stress or causality. Composition remained spatially autocorrelated after campaign, position and the elemental axis (site-level multivariate Moran I = 0.304, p = 0.001), so the axis is not a spatially controlled explanation and geography remains an unmodelled alternative.",
+  "prohibited_wording": "Do not call the axis salinity, and do not infer soluble ions, osmotic stress, or causality; no EC, pH or soluble-ion measurement supports that reading. Field XRF is not pooled with laboratory XRF.",
+  "primary": {
+    "n_observations": 621,
+    "n_sites": 60,
+    "taxon_count": 200,
+    "zero_treatment": "pseudocount_0.5",
+    "pseudo_f": 1.992151666163434,
+    "partial_r2": 0.0035830571712091174,
+    "bootstrap_median_partial_r2": 0.005434339267381396,
+    "bootstrap_mean_distinct_sites": 38.082,
+    "no_confidence_interval_reported": "Partial R2 is upward biased when site clusters are resampled with replacement (about 38 of 60 sites remain distinct), so no percentile interval is reported; inference is the within-site permutation test.",
+    "permutation_p": 0.01,
+    "residual_moran_i": 0.30420792185244966,
+    "residual_moran_p": 0.001
+  },
+  "all_sensitivities_supported": true,
+  "all_partial_r2_below_0_01": true,
+  "residual_spatial_structure_present": true,
+  "input": {
+    "counts_path": "analysis/v2/review/cache/genus_counts.tsv",
+    "counts_sha256": "324d19da3669d489a42b60e0bdd6ca7f3238308bbadc72b8a28ae6098ddc8481",
+    "alpha_path": "analysis/v2/review/cache/alpha.tsv",
+    "alpha_sha256": "e6083716b713a36a5e6984826b20107613a1fd65359172a1e9cf10a7b3161c2c",
+    "elemental_axis_path": "analysis/v3/xrf_community_rescue/laboratory_xrf_axis.tsv",
+    "elemental_axis_sha256": "5cc9008bcd24b6c284339d684d05ee55bacc4f12d44b77549d5a9286d4718d6a",
+    "axis_provenance": "Canonical 11-element within-campaign-standardized laboratory-XRF PC1 as emitted by xrf_community_rescue.py; not re-derived here.",
+    "field_xrf_role": "Excluded; laboratory records only.",
+    "minimum_group_reads": 2000,
+    "prevalence_threshold": 0.2,
+    "eligible_genera": 383,
+    "taxon_sets": [
+      80,
+      200,
+      383
+    ],
+    "zero_treatments": [
+      "pseudocount_0.5",
+      "pseudocount_1.0",
+      "multiplicative_0.65"
+    ],
+    "primary_taxon_count": 200,
+    "primary_zero_treatment": "pseudocount_0.5",
+    "permutations": 999,
+    "bootstrap_resamples": 2000,
+    "seed": 20260725
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "status": "broad_geographic_structure_supported",
+  "permitted_wording": "Community composition varied along the transect after campaign/compartment centring, and the result persisted in leave-one-campaign and taxon-set sensitivities. This supports broad geographic structure, not dispersal limitation or a specific environmental mechanism. Residual spatial autocorrelation remained, so the quadratic transect trend is a summary rather than a complete spatial model.",
+  "primary_partial_r2": 0.4016095009554631,
+  "primary_permutation_p": 0.001,
+  "primary_residual_moran_i": 0.06448623868731743,
+  "primary_residual_moran_p": 0.001,
+  "all_leave_one_campaign_p_below_0_05": true,
+  "all_primary_sensitivity_p_below_0_05": true,
+  "residual_spatial_autocorrelation_cleared": false,
+  "mechanisms_not_identified": [
+    "dispersal limitation",
+    "environmental selection",
+    "wind homogenisation",
+    "plant buffering"
+  ],
+  "input": {
+    "input_genera": 1604,
+    "input_sample_columns": 1237,
+    "parsed_core_sample_columns": 1227,
+    "retained_site_campaign_compartment_groups": 630,
+    "retained_sites": 60,
+    "minimum_group_reads": 2000,
+    "eligible_genera": 384,
+    "counts_path": "analysis/v2/review/cache/genus_counts.tsv",
+    "counts_sha256": "324d19da3669d489a42b60e0bdd6ca7f3238308bbadc72b8a28ae6098ddc8481",
+    "prevalence_threshold": 0.2,
+    "pseudocount": 0.5,
+    "permutations": 999,
+    "seed": 20260723
+  }
+}

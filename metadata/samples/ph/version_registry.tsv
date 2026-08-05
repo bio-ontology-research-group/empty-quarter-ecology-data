@@ -1,0 +1,3 @@
+dataset_version	purpose	status	source_path	sha256	bytes	frozen_on	source_complete	supersedes	superseded_by
+EQ-PH-ECOLOGY-v1.0.0	ecology-manuscript	FROZEN	data/metadata/samples/ph/versions/EQ-PH-ECOLOGY-v1.0.0/ph_measurements.xlsx	0986fdde4af4635252ead8f601e8725749228c0adf4f906e08b364801ab08398	178875	2026-08-03	False		EQ-PH-SHARED-v1.0.0
+EQ-PH-SHARED-v1.0.0	shared-manuscripts	FROZEN	data/metadata/samples/ph/versions/EQ-PH-SHARED-v1.0.0/ph_measurements.xlsx	701db2a771b257da09bb276c8ca29df4408ba5986bd515821ccea275a8c692c1	179809	2026-08-03	False	EQ-PH-ECOLOGY-v1.0.0	

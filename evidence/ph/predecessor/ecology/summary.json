@@ -1,0 +1,76 @@
+{
+  "alpha_primary": {
+    "ci_high": 0.5360177004312912,
+    "ci_low": -0.4580418595396145,
+    "estimate_per_ph_unit": 0.03898792044583835,
+    "formula": "shannon ~ ph + log_sequencing_depth + C(trip) + C(compartment) + C(site)",
+    "n_observations": 503,
+    "n_sites": 60,
+    "p": 0.8778122669751656,
+    "std_error": 0.25359128224087807
+  },
+  "composition_primary": {
+    "configuration": "top_200_pseudocount_0.5",
+    "feature_count": 200,
+    "n_observations": 500,
+    "n_sites": 60,
+    "p": 0.056,
+    "partial_r2": 0.003131060576527176,
+    "permutations": 999,
+    "pseudo_f": 1.3600074954891748,
+    "representation": "Aitchison CLR",
+    "residual_df": 433,
+    "retained_axes": null,
+    "retained_variance_fraction": null
+  },
+  "counts": {
+    "accepted_ph_specimens": 653,
+    "accepted_specimens_with_ecology_profile": 643,
+    "composition_groups": 500,
+    "eligible_genera": 352,
+    "minimum_group_reads": 2000,
+    "retained_groups": 500,
+    "retained_sites": 60,
+    "selected_profile_columns": 656,
+    "selected_unique_specimens": 643,
+    "site_campaign_position_groups": 503,
+    "sites": 60
+  },
+  "dataset_version": "EQ-PH-ECOLOGY-v1.0.0",
+  "geographic_same_cohort": {
+    "descriptive_relative_change": -0.40750829133039307,
+    "with_ph_adjustment_p": 0.001,
+    "with_ph_adjustment_partial_r2": 0.1761021858355064,
+    "without_ph_adjustment_p": 0.001,
+    "without_ph_adjustment_partial_r2": 0.2972230383289749
+  },
+  "ingest_dispositions": {
+    "ADMITTED_MEASUREMENT": 653,
+    "NOT_MEASURED_DEPLETED": 51,
+    "PENDING_MEASUREMENT": 421,
+    "QUARANTINED_COLUMN_SHIFT_CANDIDATE": 7,
+    "QUARANTINED_DATE": 36
+  },
+  "interpretation_boundary": "pH availability is incomplete and non-random across trips and specimens. These estimates describe the immutable ecology-paper cohort and do not represent a complete pH survey. Later pH measurements belong to successor data-paper versions.",
+  "paired_position_omnibus": {
+    "complete_three_position_site_campaign_blocks": 125,
+    "complete_three_position_sites": 54,
+    "friedman_chi_square": 18.037209302325575,
+    "friedman_p": 0.00012113503399761646
+  },
+  "ph_distribution_group_means": {
+    "max": 8.53,
+    "mean": 7.952779986746189,
+    "min": 7.29,
+    "sd": 0.21257201413238125
+  },
+  "release_gate": {
+    "canonical_kg_import_allowed": false,
+    "ecology_analysis_frozen": true,
+    "ecology_manuscript_claim_allowed": true,
+    "future_data_paper_may_use_superset": true
+  },
+  "schema_version": "ph-ecology-v1.0.0",
+  "source_workbook_sha256": "0986fdde4af4635252ead8f601e8725749228c0adf4f906e08b364801ab08398",
+  "status": "FROZEN_ECOLOGY_ANALYSIS"
+}

@@ -1,0 +1,46 @@
+{
+  "candidate_features": 351,
+  "genus_assigned_removed_reads": 3151160,
+  "input_sha256": {
+    "analysis/v2/review/cache/alpha.tsv": "e6083716b713a36a5e6984826b20107613a1fd65359172a1e9cf10a7b3161c2c",
+    "analysis/v2/review/cache/asv_filt_counts.tsv": "6b5a98d4d59566dea26f25e0412a7ad5d7663de3d8a672a476813b62e8e78750",
+    "analysis/v2/review/cache/genus_counts.tsv": "324d19da3669d489a42b60e0bdd6ca7f3238308bbadc72b8a28ae6098ddc8481",
+    "analysis/v2/review/cache/meta.json": "60af40cadc7d9cc956e4dc0b5b282906f2ca7b28ebe51771544b0805c1566d2e",
+    "analysis/v3/control_audit/trip5_mapped_feature_table_control_filtered.tsv.gz": "b7916acba11df3c1ae78b6ef0a430a730634e63e05801a3b99072ad3275cdf37",
+    "analysis/v3/control_audit/trip5_primary_contaminant_calls.tsv": "cee9ba8db4c91bc6c1b3e73e1e8c5541676ee165c92c323ef0074d5903d7149f",
+    "analysis/v3/control_audit/trip5_removal_fraction_by_profile.tsv": "515b008f9c8e1887aa4e1aa80911e6679f0c4fa96f687c5ae668fa703d6df736",
+    "data/processed/taxonomy/taxon-tables/taxonomy-trips1-5.tsv": "fcf0a3ea0ca8ed956532fb4d7bffa0c20249e3048779a219155cc1bb7e483d35"
+  },
+  "mapped_profiles": 217,
+  "output_sha256": {
+    "analysis/v3/control_audit/sensitivity_inputs/alpha.tsv": "4c7078ced219b5b08488c6ba7d25f7387f928b8c26cb47e67722b01ed4a87705",
+    "analysis/v3/control_audit/sensitivity_inputs/asv_filt_counts.tsv.gz": "19abb89cb50921fb48e95783be03e7a05e9263198f22ee5dcc28a8a902a4c230",
+    "analysis/v3/control_audit/sensitivity_inputs/genus_counts.tsv.gz": "05d1056349b07a48171f161b22d84bdff52a9bd913949d723e83d1804ab7b73a"
+  },
+  "outputs": {
+    "alpha": "analysis/v3/control_audit/sensitivity_inputs/alpha.tsv",
+    "asv": "analysis/v3/control_audit/sensitivity_inputs/asv_filt_counts.tsv.gz",
+    "genus": "analysis/v3/control_audit/sensitivity_inputs/genus_counts.tsv.gz"
+  },
+  "profiles_below_rarefaction_depth_after_filter": 0,
+  "rarefaction_depth": 25000,
+  "raw_richness": {
+    "maximum_absolute_change": 81.0,
+    "median_change": -11.0,
+    "spearman_before_after": 0.9999471524107811,
+    "spearman_p": 0.0
+  },
+  "removed_read_fraction": {
+    "maximum": 0.5659508027771022,
+    "median": 0.004027353747150651,
+    "pooled": 0.02186632117803215
+  },
+  "scope": "candidate ASVs removed only from 217 Trip-5 profiles with frozen EB1-EB17 extraction-batch mappings; all other ecology profiles unchanged",
+  "shannon": {
+    "maximum_absolute_change": 0.6780482957373168,
+    "median_change": -0.0034000182780129506,
+    "spearman_before_after": 0.994959530620969,
+    "spearman_p": 9.90684141481782e-217
+  },
+  "spatial_cache_candidate_features_removed": 30
+}

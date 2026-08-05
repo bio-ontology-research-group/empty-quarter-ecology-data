@@ -1,34 +1,43 @@
-\section{Knowledge representation}\label{ontology}
+\subsection{Knowledge representation}\label{ontology}
 
 We developed a formal knowledge base to integrate the different types
-of data generated in this project. The semantic layer encodes the full
-provenance chain from physical sampling to digital data products,
-enabling cross-domain queries and ensuring data interoperability
-through shared vocabularies.
+of data generated in this project. The semantic layer encodes the
+recorded provenance chain from physical sampling to digital data products,
+supporting cross-domain queries and interoperability through shared
+vocabularies.
 
-\subsection{Architecture}
+\subsubsection{Architecture}
 
 The knowledge base is constructed in Description Logic
 \cite{dlhandbook} using a modular architecture that strictly separates
 the terminology (Terminological Box, TBox, or ontology) from the
 observed facts (Assertion Box, ABox, or domain knowledge). The TBox
-defines the ontology of the knowledge graph using OWL 2 DL
-\cite{owl2}, while the ABox contains the instance data generated from
-the expedition. We deployed the complete knowledge base across three
-named RDF graphs: an ontology graph (17,025 triples) containing the
-TBox, a knowledge base graph containing the asserted instance data,
-and a taxonomy reference graph containing the aligned taxonomy module.
+uses OWL~2 \cite{owl2}, while the ABox contains the instance data
+generated from the expeditions. The deployment uses separate named
+graphs for the terminology, asserted expedition data, taxonomy
+references and derived assertions. The current module-level entity
+counts are reported in Section~\ref{records}; no historical
+whole-graph count is used as a proxy for the regenerated package.
 
-\subsection{Prefixes used in listings}\label{subsec:prefixes}
+\subsubsection{Prefixes used in listings}\label{subsec:prefixes}
 
 For brevity, the Turtle and SPARQL listings throughout the paper use
 the prefix declarations of Table~\ref{tab:prefixes}; these
 declarations should be prepended to any listing that the reader
-wishes to execute against the public endpoint. With these
-declarations in place, identifiers such as \texttt{rak:P100001}
-are abbreviated to \texttt{rak:P100001} and
-\texttt{sio:SIO\_000291} to \texttt{sio:000291} without loss of
-information.
+wishes to execute against a local or deployed graph. For example, the full
+IRI \texttt{https://rubalkhali.science/kb/RAK\_P100001} is written
+\texttt{rak:P100001}, and
+\texttt{http://semanticscience.org/resource/SIO\_000291} is written
+\texttt{sio:000291}. The separate \texttt{rak\_kb:} prefix covers the same
+knowledge-base namespace without the \texttt{RAK\_} local-name prefix. It is
+needed for one legacy individual, the PowerSoil extraction protocol
+\texttt{rak\_kb:DNA\_ext\_powersoil}, which is the only individual in the
+released graph minted without the \texttt{RAK\_} prefix; every other protocol
+individual (for example \texttt{rak:L000010},
+\texttt{rak:L\_Surface\_Lab}) follows the prefixed convention. The
+inconsistency is recorded here rather than silently corrected because
+changing the IRI would break the checksums of the already-validated
+modules.
 
 \begin{table}[h]
 \centering
@@ -40,7 +49,9 @@ information.
 \textbf{Prefix} & \textbf{Namespace} \\
 \midrule
 \texttt{rak:}      & \texttt{https://rubalkhali.science/kb/RAK\_} \\
+\texttt{rak\_kb:}  & \texttt{https://rubalkhali.science/kb/} \\
 \texttt{sio:}      & \texttt{http://semanticscience.org/resource/SIO\_} \\
+\texttt{owl:}      & \texttt{http://www.w3.org/2002/07/owl\#} \\
 \texttt{pato:}     & \texttt{http://purl.obolibrary.org/obo/PATO\_} \\
 \texttt{uo:}       & \texttt{http://purl.obolibrary.org/obo/UO\_} \\
 \texttt{envo:}     & \texttt{http://purl.obolibrary.org/obo/ENVO\_} \\
@@ -55,20 +66,29 @@ information.
 \end{tabular}
 \end{table}
 
-\subsection{Ontology engineering and design patterns}
+\subsubsection{Ontology engineering and design patterns}
 
 We use the Semanticscience Integrated Ontology (SIO) \cite{sio} as the
 upper-level framework. SIO provides general-purpose classes and
-relations applicable across scientific domains, ensuring semantic
+relations applicable across scientific domains, supporting semantic
 interoperability with other SIO-based datasets. We defined all
 domain-specific classes as subclasses of SIO classes, and all
 introduced relations are sub-relations of SIO relations. We mapped
 classes to SIO and maintained full semantic mappings in our public
 repository (see Section~\ref{code}).
 
-The core ontology comprises 302 distinct domain-specific classes integrated directly under the SIO framework. To accurately represent the complex relationships between environmental samples, laboratory processes, and bioinformatic workflows, we incorporated 4 object properties and 18 datatype properties. In total, the terminology model encapsulates 1,290 formal axioms. This compact semantic structure maintains precise alignment with our standardized schemas while minimizing redundant inferences.
-
-\subsubsection{Measurement pattern}
+The canonical terminology module
+(\path{ontology/rubalkhali.owl}) declares 333 classes: 297
+project-local \texttt{RAK\_} classes and 36 referenced classes (32 SIO
+and four PATO). It also declares 20 object properties (11
+project-local and nine SIO properties) and 35 datatype properties
+(34 project-local and one SIO property). These figures are declaration
+counts from the staged canonical module; they are not counts of the
+imported ontologies or of whole-graph OWL axioms. The release workflow
+recounts the distinct serialized declaration IRIs, fails if they differ from
+these values and records the result in
+\path{evidence/semantic-validation/ontology_declaration_audit.json}.
+\paragraph{Measurement pattern}
 
 We model a quantitative measurement using SIO's ontology design
 pattern for measurement processes: a measurement is a process that
@@ -79,237 +99,91 @@ generates a value for a specific quality of a target entity.
 	\text{MeasurementProcess} & \sqsubseteq \text{Process} \\
 	\text{Quality} & \sqsubseteq \text{Attribute} \\
 	\text{Quantity} & \sqsubseteq \text{InformationContentEntity} \\
-	\text{MeasurementProcess} & \sqsubseteq \exists \text{hasTarget}.\text{Entity} \sqcap \exists \text{hasOutput}.\text{Quantity} \\
-	\text{Quantity} & \sqsubseteq \exists \text{hasValue}.\text{xsd:double} \sqcap \exists \text{hasUnit}.\text{Unit}
+\text{MeasurementProcess} & \sqsubseteq \exists \text{hasTarget}.\text{Entity} \sqcap \exists \text{hasOutput}.\text{Quantity} \\
+\text{Quantity} & \sqsubseteq \exists \text{hasValue}.\text{xsd:double} \sqcap \exists \text{hasUnit}.\text{Unit} \\
+\text{Quantity} & \sqsubseteq \exists \text{isMeasurementValueOf}.\text{Quality}
 \end{align}
 
 We identified all units with classes from the Units Ontology (UO)
 \cite{uo}. Qualities are expressed using the Phenotype and Trait
 Ontology (PATO) \cite{pato} and linked to SIO as subclasses of the
 {\em Quality} class. To illustrate this pattern, we provide an
-examples represented in Turtle format. The example
+example represented in Turtle format. The example
 (Listing~\ref{lst:ttl_temp}) demonstrates an environmental temperature
 measurement taken at a sampling site.
 
 \begin{lstlisting}[caption={Turtle representation of an environmental temperature measurement.}, label={lst:ttl_temp}, basicstyle=\ttfamily\scriptsize, frame=single]
 rak:P000001 a rak:0000006 ; # Measurement Process
-  sio:000291 rak:1000001 ; # hasTarget
+  sio:000068 rak:3000001 ; # isPartOf (site visit)
+  sio:000139 rak:A000001 ; # hasAgent
+  sio:000132 rak:D000002 ; # hasParticipant (device)
   sio:000229 rak:4000001 . # hasOutput (Value)
+
+rak:3000001 a rak:0000003 ; # Site Visit
+  sio:000291 rak:1000001 . # hasTarget (Sampling Site)
 
 rak:4000001 a rak:0000010 ; # Quantity
   sio:000221 uo:0000027 ; # hasUnit (degree Celsius)
   rak:2000003 "20.7"^^xsd:double ; # hasValue
-  sio:000215 rak:5000001 . # refersTo (Quality)
+  sio:000215 rak:5000001 . # isMeasurementValueOf (Quality)
 
 rak:5000001 a pato:0000146 ; # Temperature Quality
-  sio:000011 rak:1000001 . # isAttributeOf
+  sio:000011 rak:1000001 ; # isAttributeOf
+  sio:000216 rak:4000001 . # hasMeasurementValue
 \end{lstlisting}
 
 In words, an instance \texttt{rak:P000001} of a measurement
-process has as its target the sampling site \texttt{rak:1000001}
-and produces as output the quantity \texttt{rak:4000001}. That
+process is part of the site visit \texttt{rak:3000001}, which in turn has
+the sampling site \texttt{rak:1000001} as its target, and the process
+produces as output the quantity \texttt{rak:4000001}. The target edge on
+the process itself is not asserted: the terminology declares the property
+chain $\text{isPartOf} \circ \text{hasTarget} \sqsubseteq
+\text{hasTarget}$, so \texttt{rak:P000001 sio:000291 rak:1000001} is
+entailed rather than stored. A query that must run without reasoning
+should therefore traverse the visit explicitly. The visit individual is
+not redundant bookkeeping: it carries the campaign and the exact
+date-time at which the reading was taken, so repeated visits to one site
+across campaigns remain distinguishable. That
 quantity carries the literal value \texttt{20.7}, is reported in
-degrees Celsius (\texttt{uo:UO\_0000027}), and refers to a temperature
-quality \texttt{rak:5000001} which is in turn an attribute of the
-same site. Reading the chain in either direction therefore connects
+degrees Celsius (\texttt{uo:0000027}), and is the measurement
+value of a temperature quality \texttt{rak:5000001}, which is in turn
+an attribute of the
+same site. In SIO, \texttt{sio:000215} is the value-to-quality
+relation and \texttt{sio:000216} is its quality-to-value inverse.
+Reading the chain in either direction therefore connects
 the numeric reading to both the measured site and the abstract quality
 that it quantifies.
 
-\subsubsection{Sampling pattern}
-
-A sampling event is a process that derives a sample from a feature of
-interest (the site).
-
-\begin{align}
-	\label{eq:sampling}
-	\text{SamplingProcess} & \sqsubseteq \text{Process} \\
-	\text{Sample} & \sqsubseteq \text{MaterialEntity} \\
-	\text{SamplingProcess} & \sqsubseteq \exists
-                                 \text{hasTarget}.\text{Site} \sqcap
-                                 \exists
-                                 \text{hasOutput}.\text{Sample} \\
-	\text{Sample} & \sqsubseteq \exists \text{isDerivedFrom}.\text{Site}
-\end{align}
-
-Listing~\ref{lst:ttl_sampling} illustrates the semantic representation
-of a surface soil sample collected during Trip 1.
-
-\begin{lstlisting}[caption={Turtle representation of a sampling process.}, label={lst:ttl_sampling}, basicstyle=\ttfamily\scriptsize, frame=single]
-rak:P100001 a rak:0000024 ; # Sampling Process
-  sio:000291 rak:1000001 ; # hasTarget
-  sio:000229 rak:7000001 . # hasOutput (Collection)
-
-rak:6000001 a rak:0000021 ; # Deep Soil Sample
-  sio:000252 rak:1000001 . # isDerivedFrom
-\end{lstlisting}
-
-Read in prose, an instance \texttt{rak:P100001} of a sampling
-process targets the site \texttt{rak:1000001} and yields a
-collection \texttt{rak:7000001} as its output; the deep soil
-sample \texttt{rak:6000001} is in turn asserted to be derived
-from the same site. The redundancy between \texttt{hasTarget} on the
-process and \texttt{isDerivedFrom} on the sample is intentional: the
-former records the action, the latter records the resulting
-provenance edge directly on the material entity, so queries can
-traverse from sample to site without joining through the sampling
-event.
-
-\subsubsection{Experimental protocol pattern}
-
-We model experimental protocols as processes specified by a protocol
-entity. Each process (e.g., DNA extraction, library preparation)
-consumes inputs and produces outputs, explicitly linking agents and
-devices. The pattern instantiates SIO's general
-\emph{Process--hasInput/hasOutput--Object} idiom and adds a
-specification link to a reusable protocol description.
-
-\begin{align}
-	\label{eq:protocol}
-	\text{ProtocolExecution} & \sqsubseteq \text{Process} \\
-	\text{Protocol} & \sqsubseteq \text{InformationContentEntity} \\
-	\text{ProtocolExecution} & \sqsubseteq \exists
-	    \text{isSpecifiedBy}.\text{Protocol} \\
-	\text{ProtocolExecution} & \sqsubseteq \exists
-	    \text{hasInput}.\text{MaterialEntity} \sqcap \exists
-	    \text{hasOutput}.\text{MaterialEntity}
-\end{align}
-
-Listing~\ref{lst:ttl_protocol} demonstrates the formalization
-of a DNA extraction process.
-
-\begin{lstlisting}[caption={Turtle representation of a DNA extraction protocol.}, label={lst:ttl_protocol}, basicstyle=\ttfamily\scriptsize, frame=single]
-rak:P200001 a sio:000994 ; # Scientific Protocol Execution
-  sio:000339 rak:DNA_ext_powersoil ; # isSpecifiedBy
-  sio:000230 rak:6000001 ; # hasInput (Soil Sample)
-  sio:000229 rak:6800001 . # hasOutput (DNA Extract)
-
-rak:6800001 a rak:0000040 ; # DNA Extract
-  sio:000008 rak:4900001 . # hasAttribute (Concentration Quality)
-\end{lstlisting}
-
-In words, the protocol-execution instance \texttt{rak:P200001}
-is specified by the named extraction protocol
-\texttt{rak:DNA\_ext\_powersoil}, takes the soil sample
-\texttt{rak:6000001} as input, and produces the DNA extract
-\texttt{rak:6800001} as output; the resulting extract carries a
-concentration quality (\texttt{rak:4900001}) which is itself
-quantified through a separate measurement process following the
-pattern of Equation~\ref{eq:measurement}.
-
-\subsubsection{Taxonomic abundance pattern}
-
-Taxonomic profiles represent collections of taxon observations
-containing associated relative and absolute abundances. Instead of
-modeling the feature table as a flat matrix, we formalize the entire
-table as a bioinformatic workflow that produces a dataset containing
-individual taxonomic observations. Here, we use the merged taxonomy
-(see Section~\ref{methods}) to assign specific NCBI or GTDB classes as
-the target of each observation. Listing~\ref{lst:ttl_tax} shows how we
-map an entire sample's feature table row into the knowledge graph.
-
-For instance, the sequence analysis for a specific sample yields an absolute sequence count associated with a taxonomic class from the NCBI Taxonomy. We construct an abundance quality that targets the explicit taxonomic identifier, binding the observational count back to the biological workflow. Formally, the pattern instantiates SIO's
-\emph{Collection--hasMember--Thing} and \emph{Quantity--refersTo--Quality}
-idioms:
-
-\begin{align}
-	\label{eq:taxabundance}
-	\text{BioinformaticWorkflow} & \sqsubseteq \text{Process} \\
-	\text{TaxonomicDataset} & \sqsubseteq \text{Collection} \\
-	\text{BioinformaticWorkflow} & \sqsubseteq \exists
-	    \text{hasInput}.\text{SequenceDataset} \sqcap \exists
-	    \text{hasOutput}.\text{TaxonomicDataset} \\
-	\text{TaxonomicDataset} & \sqsubseteq \forall
-	    \text{hasMember}.\text{AbundanceObservation} \\
-	\text{AbundanceObservation} & \sqsubseteq \text{Quantity} \sqcap
-	    \exists \text{refersTo}.\text{AbundanceQuality} \\
-	\text{AbundanceQuality} & \sqsubseteq \exists
-	    \text{isAttributeOf}.\text{Taxon}
-\end{align}
-
-\begin{lstlisting}[caption={Turtle representation of taxonomic abundance formalized from a feature table.}, label={lst:ttl_tax}, basicstyle=\ttfamily\scriptsize, frame=single]
-rak:P290001 a rak:0000071 ; # Bioinformatic Workflow
-  sio:000230 rak:7900001 ; # hasInput (FASTQ Dataset)
-  sio:000229 rak:7290001 . # hasOutput (Taxonomic Dataset)
-
-rak:7290001 a rak:0000074 ; # Taxonomic Dataset
-  sio:000059 rak:4400001 . # hasMember (Observation Value)
-
-rak:4400001 a sio:000070 ; # Quantity (Absolute Count)
-  sio:000215 rak:5400001 ; # refersTo
-  rak:2000021 "15"^^xsd:integer . # absolute read count
-
-rak:5400001 a rak:0000078 ; # Absolute Abundance Quality
-  sio:000011 ncbitaxon:286 . # isAttributeOf (Pseudomonas)
-\end{lstlisting}
-
-Verbalized, the bioinformatic-workflow instance
-\texttt{rak:P290001} consumes a FASTQ dataset
-(\texttt{rak:7900001}) and produces the taxonomic dataset
-\texttt{rak:7290001}; that dataset has as one of its members the
-quantity \texttt{rak:4400001}, which records an absolute read
-count of \texttt{15} and refers to an absolute abundance quality
-that is in turn an attribute of \emph{Pseudomonas}
-(\texttt{obo:NCBITaxon\_286}). One row of a feature table is therefore
-expanded into a four-node sub-graph that preserves both the
-classifier output and its provenance.
-
-\subsubsection{XRF geochemistry pattern}
-
-We model XRF analysis as a process that targets a soil sample and
-produces multiple measurement values, each corresponding to the
-concentration of a specific chemical analyte. We map each analyte to
-the Chemical Entities of Biological Interest (ChEBI) ontology
-\cite{chebi} as well as to the PubChem database \cite{pubchem}. Out of 93 monitored geochemical parameters, we mapped 80 analytes directly to corresponding ChEBI classes and aligned 92 parameters to PubChem Compound Identifiers. The XRF pattern is a specialization of
-the measurement pattern (Equation~\ref{eq:measurement}), with the
-target restricted to a soil sample and the produced quantity bound to
-an analyte-specific quality:
-
-\begin{align}
-	\label{eq:xrf}
-	\text{XRFMeasurementProcess} & \sqsubseteq \text{MeasurementProcess} \\
-	\text{XRFMeasurementProcess} & \sqsubseteq \exists
-	    \text{hasTarget}.\text{SoilSample} \sqcap \exists
-	    \text{hasOutput}.\text{ConcentrationQuantity} \\
-	\text{ConcentrationQuantity} & \sqsubseteq \text{Quantity} \sqcap
-	    \exists \text{refersTo}.\text{AnalyteQuality} \\
-	\text{AnalyteQuality} & \sqsubseteq \exists
-	    \text{isAttributeOf}.\text{SoilSample}
-\end{align}
-
-Listing~\ref{lst:ttl_xrf} illustrates an XRF measurement
-for a specific analyte.
-
-\begin{lstlisting}[caption={Turtle representation of an XRF geochemistry measurement.}, label={lst:ttl_xrf}, basicstyle=\ttfamily\scriptsize, frame=single]
-rak:P300001 a rak:0000080 ; # XRF Measuring Process
-  sio:000291 rak:6000001 ; # hasTarget
-  sio:000229 rak:4300001 . # hasOutput
-
-rak:4300001 a sio:000070 ; # Quantity
-  sio:000215 rak:5300001 ; # refersTo
-  sio:000221 uo:0000187 ; # Percent unit
-  rak:2000012 "58.2"^^xsd:double . # Concentration
-
-rak:5300001 a rak:0000167 ; # Analyte Quality Class
-  sio:000011 rak:6000001 . # isAttributeOf
-\end{lstlisting}
-
-In words, the XRF measurement process \texttt{rak:P300001}
-targets the soil sample \texttt{rak:6000001} and produces the
-quantity \texttt{rak:4300001}, which records a concentration of
-\texttt{58.2}~percent (\texttt{uo:UO\_0000187}) and refers to an
-analyte-specific quality \texttt{rak:5300001}. Because the
-analyte quality is typed with a dedicated subclass per element, the
-same pattern instance can be reused unchanged across all 91
-geochemical analytes by varying only the quality class IRI.
-
-\subsubsection{Sampling site and biome assignment pattern}
+Archived-soil pH uses the same four-individual measurement pattern without
+treating an archived-soil assay as a field-site observation. The existing
+specimen bears an acidity quality (PATO:0001842) through
+\texttt{sio:000008}. A value individual is typed as both SIO measurement value
+(SIO:000070) and pH (SIO:001089), carries its numeric literal through
+\texttt{sio:000300}, and has unit UO:0000196. The value points to the quality
+with \texttt{sio:000215} and to the measuring process with
+\texttt{sio:000232}; the quality points back with \texttt{sio:000216}. The
+SIO measuring process (SIO:001054) consumes and targets the specimen, outputs
+the value, is specified by the CaCl$_2$ protocol, has the instrument as a
+participant, and is part of a dated measurement session. Source-workbook and
+session provenance remain connected to the process. Rows that fail source,
+date, specimen or quality-control admission remain in the audit table and are
+not asserted as measurements.
+\paragraph{Sampling site and biome assignment pattern}
 
 Each physical sampling location is represented as a persistent
 individual that is grounded in the Environment Ontology (ENVO) by
-linking to a biome and to one or more environmental features. We use
-both an existential and a universal restriction so that the asserted
-biome both holds and is the only admissible value, which preserves
-the closed-world intent of the field record.
+linking to a biome and to one or more environmental features. An
+existential restriction requires a biome filler, while a universal
+restriction constrains every such filler to the ENVO biome class.
+Under OWL's open-world semantics this does not make the asserted ENVO
+biome class the unique possible filler. Because ShEx
+shapes match triple patterns and the biome and feature assignments are
+encoded as class restrictions rather than as simple triples, no shipped
+shape tests biome completeness. Closed-world completeness is instead
+enforced by a separate query gate,
+\path{scripts/validation/validate_site_biome_completeness.py}, which
+fails if any \texttt{rak:0000002} individual lacks a
+\texttt{rak:2000001} or \texttt{rak:2000002} restriction.
 
 \begin{align}
 	\label{eq:site}
@@ -317,205 +191,234 @@ the closed-world intent of the field record.
 	\text{SamplingSite} & \sqsubseteq \exists
 	    \text{hasBiome}.\text{ENVO:Biome} \sqcap \forall
 	    \text{hasBiome}.\text{ENVO:Biome} \\
-	\text{SamplingSite} & \sqsubseteq \exists
-	    \text{hasEnvironmentalFeature}.\text{ENVO:EnvironmentalFeature}
+	\text{SamplingSite} & \sqsubseteq
+	    \begin{aligned}[t]
+	    &\exists \text{hasEnvironmentalFeature}.{}\\[-0.25ex]
+	    &\text{ENVO:EnvironmentalFeature}
+	    \end{aligned}
 \end{align}
 
 \begin{lstlisting}[caption={Turtle representation of a sampling site grounded in ENVO.}, label={lst:ttl_site}, basicstyle=\ttfamily\scriptsize, frame=single]
 rak:1000001 a rak:0000002 ; # Sampling Site
-  rdfs:label "Site 11" ;
-  geo:asWKT "POINT(50.123 22.456)"^^geo:wktLiteral ;
-  rak:2000050 envo:01000219 ; # hasBiome (desert biome)
-  rak:2000051 envo:00000086 . # hasEnvironmentalFeature (sand dune)
+  rdfs:label "Site 1" ;
+  geo:asWKT
+    "POINT(45.166511388888885 19.149770555555556)"^^geo:wktLiteral ;
+  a [ a owl:Restriction ;
+      owl:onProperty rak:2000001 ;        # hasBiome
+      owl:someValuesFrom envo:01000179 ], # desert biome
+    [ a owl:Restriction ;
+      owl:onProperty rak:2000002 ;        # hasEnvironmentalFeature
+      owl:someValuesFrom envo:01000018 ]. # gravel
 \end{lstlisting}
 
-In words, the sampling site \texttt{rak:1000001} carries a label,
-a WKT geometry, and is asserted both to belong to the ENVO desert
-biome and to exhibit a sand-dune environmental feature. The combined
-existential and universal restriction on \texttt{hasBiome} (Equation~\ref{eq:site})
-ensures that any reasoner treats the asserted biome as the only
-admissible value for that site.
+In words, the sampling site \texttt{rak:1000001} carries a label and a
+WKT geometry as ordinary data properties, and its biome and
+environmental feature are encoded as OWL class restrictions on the
+individual rather than as direct object-property assertions. This
+matters for reuse: a query of the form \texttt{?s rak:2000001 ?biome}
+returns no rows against the asserted graph. A reader must either match
+the restriction structure, as in
 
-\subsubsection{Sequencing workflow pattern}
-
-Sequencing data are produced by a chain of laboratory and
-computational processes that the knowledge graph represents as a
-sequence of \emph{Process--hasInput/hasOutput--Object} steps: a DNA
-extraction process consumes a soil sample and produces a DNA extract;
-a library preparation process consumes the DNA extract and produces
-an amplicon library; a sequencing process consumes the amplicon
-library and produces a FASTQ dataset whose members are sequence reads.
-Each process is specified by a protocol and may carry agents and
-device participants, reusing the experimental protocol pattern of
-Equation~\ref{eq:protocol}.
-
-\begin{align}
-	\label{eq:sequencing}
-	\text{DNAExtractionProcess} & \sqsubseteq \text{ProtocolExecution} \\
-	\text{DNAExtractionProcess} & \sqsubseteq \exists
-	    \text{hasInput}.\text{SoilSample} \sqcap \exists
-	    \text{hasOutput}.\text{DNAExtract} \\
-	\text{LibraryPreparationProcess} & \sqsubseteq \text{ProtocolExecution} \\
-	\text{LibraryPreparationProcess} & \sqsubseteq \exists
-	    \text{hasInput}.\text{DNAExtract} \sqcap \exists
-	    \text{hasOutput}.\text{AmpliconLibrary} \\
-	\text{SequencingProcess} & \sqsubseteq \text{ProtocolExecution} \\
-	\text{SequencingProcess} & \sqsubseteq \exists
-	    \text{hasInput}.\text{AmpliconLibrary} \sqcap \exists
-	    \text{hasOutput}.\text{FASTQDataset} \\
-	\text{FASTQDataset} & \sqsubseteq \text{Dataset} \sqcap \forall
-	    \text{hasMember}.\text{SequenceRead}
-\end{align}
-
-\begin{lstlisting}[caption={Turtle representation of the sequencing workflow from soil sample to FASTQ dataset.}, label={lst:ttl_sequencing}, basicstyle=\ttfamily\scriptsize, frame=single]
-rak:P200001 a rak:0000044 ; # DNA Extraction Process
-  sio:000339 rak:L000001 ; # isSpecifiedBy (PowerSoil protocol)
-  sio:000230 rak:6000001 ; # hasInput (Soil Sample)
-  sio:000229 rak:6800001 . # hasOutput (DNA Extract)
-
-rak:P250001 a rak:0000045 ; # Library Preparation Process
-  sio:000339 rak:L000010 ; # Illumina 16S Prep Guide
-  sio:000230 rak:6800001 ; # hasInput (DNA Extract)
-  sio:000229 rak:6900001 . # hasOutput (Amplicon Library)
-
-rak:P280001 a rak:0000046 ; # Sequencing Process
-  sio:000230 rak:6900001 ; # hasInput (Amplicon Library)
-  sio:000229 rak:7900001 . # hasOutput (FASTQ Dataset)
-
-rak:7900001 a rak:0000064 ; # FASTQ Dataset
-  rdfs:seeAlso <https://www.ebi.ac.uk/ena/browser/view/ERR1234567> .
+\begin{lstlisting}[caption={SPARQL pattern that recovers the biome of a sampling site from the asserted restriction structure.}, label={lst:sparql_biome}, basicstyle=\ttfamily\scriptsize, frame=single]
+?site a rak:0000002 ;
+      a [ owl:onProperty rak:2000001 ;
+          owl:someValuesFrom ?biome ] .
 \end{lstlisting}
 
-Read as a chain, the DNA extraction process
-\texttt{rak:P200001} consumes the soil sample
-\texttt{rak:6000001} and produces the DNA extract
-\texttt{rak:6800001}; that extract is the input of the library
-preparation \texttt{rak:P250001}, which yields the amplicon
-library \texttt{rak:6900001}; finally the sequencing process
-\texttt{rak:P280001} consumes the library and produces the FASTQ
-dataset \texttt{rak:7900001}, which is cross-referenced to its
-ENA accession via \texttt{rdfs:seeAlso}. Each link in the chain is
-the same \texttt{hasInput}/\texttt{hasOutput} pattern, so a single
-SPARQL traversal can recover the full provenance from any node.
+\noindent or query a materialized graph in which the restriction has
+been expanded. The combined existential and universal restriction on
+\texttt{hasBiome} (Equation~\ref{eq:site}) does not identify a unique
+biome filler. Under OWL's open-world semantics it requires at least one
+\texttt{hasBiome} value in the named ENVO class and constrains every
+such value to that class; it does not entail that the site has only one
+biome filler. The recorded environmental feature for Site~1 is the ENVO
+material \emph{gravel} (\texttt{envo:01000018}); features are drawn
+from the project's own code table, which maps free-text field
+descriptors to ENVO identifiers, and a feature is therefore a recorded
+surface descriptor rather than a curated landform classification.
 
-\subsubsection{Sequencing quality control pattern}
+\paragraph{Laboratory-control pattern}
 
-Sequencing quality control is represented as an additional
-computational process that takes a FASTQ dataset as input and
-produces multiple measurement values, each instantiating the
-generic measurement pattern of Equation~\ref{eq:measurement}.
-Metrics (sequence count, GC content, duplicate rate, read length)
-are split into forward (R1) and reverse (R2) subclasses so that the
-provenance of paired-end runs is preserved.
+A laboratory control is represented as an occurrence-specific material
+entity, not as a property of an expedition and not as the string used to
+label a library. The material bears its own instance of a positive,
+negative, extraction-blank or PCR-blank role through
+\texttt{sio:000228} (\emph{has role}); the inverse
+\texttt{sio:000227} is asserted explicitly. A laboratory process takes
+the material as input and target through \texttt{sio:000230} and
+\texttt{sio:000291}, produces the derived material or dataset through
+\texttt{sio:000229}, and realizes the role through
+\texttt{sio:000355}. The inverse input, target, output and realization
+directions are also asserted because the deployed validation and query
+paths do not assume complete inverse-property materialization.
 
-\begin{align}
-	\label{eq:qc}
-	\text{SequencingQCProcess} & \sqsubseteq \text{Process} \\
-	\text{SequencingQCProcess} & \sqsubseteq \exists
-	    \text{hasInput}.\text{FASTQDataset} \sqcap \exists
-	    \text{hasOutput}.\text{QCMeasurementValue} \\
-	\text{QCMeasurementValue} & \sqsubseteq \text{Quantity} \sqcap
-	    \exists \text{refersTo}.\text{QCQuality} \\
-	\text{QCQuality} & \sqsubseteq \exists
-	    \text{isAttributeOf}.\text{FASTQDataset}
-\end{align}
+An extraction or PCR process is linked by \texttt{sio:000068}
+(\emph{is part of}) to its processing batch. Biological materials
+processed in the same batch retain their own expedition provenance;
+neither the blank nor the batch receives a direct trip link. This is
+essential here because an extraction day could contain samples from
+several trips. Whole-cell D6300 and purified-DNA D6322 controls enter
+the workflow at different processes, so the graph can distinguish
+extraction and lysis evaluation from PCR, library and sequencing
+evaluation. A product is linked to its manufacturer composition
+specification by \texttt{sio:000339} (\emph{is specified by}), with
+\texttt{sio:000338} asserted in the reverse direction. Each expected taxon
+is both a promoted specification-to-taxon fact and a reified,
+evidence-bearing expected-taxon assertion. Manufacturer genomic-DNA
+percentages, their unit IRIs and composition basis remain in the normalized
+table rather than being represented as expected 16S read fractions in RDF.
 
-\begin{lstlisting}[caption={Turtle representation of a sequencing QC measurement (forward-read GC content).}, label={lst:ttl_qc}, basicstyle=\ttfamily\scriptsize, frame=single]
-rak:P350001 a rak:0000047 ; # Sequencing QC Process
-  sio:000230 rak:7900001 ; # hasInput (FASTQ Dataset)
-  sio:000229 rak:4500001 . # hasOutput (QC Value)
+Uncertain identity, batch membership and assay applicability are
+represented as SIO statements linked to source evidence with
+\texttt{sio:000772}; they carry an explicit confirmed, provisional,
+unresolved or inapplicable status. Each material occurrence has a
+separate role individual, and reused labels are represented as aliases,
+preventing functional role relations from merging physical controls.
+No sterile-bag role class or material instance is asserted. An unresolved
+inventory disposition records that bag identifiers and sequence occurrences
+were unavailable; the model can be extended if an inventory is recovered.
+A machine-checked D6300 composition and expected-taxon example is provided in
+Supplementary Section~S1.
 
-rak:4500001 a rak:0000086 ; # GC Content Value
-  sio:000215 rak:5500001 ; # refersTo
-  sio:000221 uo:0000187 ; # Percent
-  rak:2000073 "54.2"^^xsd:double . # has GC content
+\paragraph{Patterns specified in the supplement}
 
-rak:5500001 a rak:0000074 ; # GC Content Quality (Forward)
-  sio:000011 rak:7900001 . # isAttributeOf (FASTQ Dataset)
-\end{lstlisting}
+The measurement, sampling-site and laboratory-control patterns above are
+reproduced here because they carry contracts a reuser must know: the
+value--quality direction, the restriction encoding of biome and environmental
+feature, and the separation of control material, role, process and evidence.
+The remaining six patterns (sampling, protocol execution, taxonomic
+abundance, XRF geochemistry, the sequencing chain and sequencing quality control) are
+specified with their axioms and machine-checked worked examples in
+Supplementary Section~S1. Full generator sources, the complete class and
+property mappings and the shape files are distributed with the package
+(Section~\ref{records:files}).
 
-In words, the QC process \texttt{rak:P350001} takes the FASTQ
-dataset \texttt{rak:7900001} as input and produces the
-measurement value \texttt{rak:4500001}, which records a GC
-content of \texttt{54.2}~percent and refers to a forward-read
-GC-content quality \texttt{rak:5500001} that is in turn an
-attribute of the same FASTQ dataset. Splitting the quality class into
-forward and reverse subclasses preserves the read direction, so that
-paired-end QC metrics can be queried independently per orientation.
+\subsubsection{OWL and RDF implementation}\label{subsec:owl_rdf}
 
-\subsection{OWL and RDF implementation}\label{subsec:owl_rdf}
-
-We generated the OWL/RDF implementation using custom Groovy scripts
+Figure~\ref{fig:provenance_architecture} summarizes how the modules connect
+field context, specimens, molecular products, digital observations and
+laboratory controls. We generated the OWL/RDF implementation using custom Groovy scripts
 utilizing the OWL API 5 \cite{owlapi}. The knowledge base employs a
 modular design, separating the base ontology, sites, samples,
 measurements, XRF data, DNA extraction records, sequencing metadata,
-quality control metrics, and taxonomic abundances into individual ABox
-modules \cite{hitzler_modularity}. 
+quality control metrics, laboratory controls, archived-soil pH, and taxonomic
+abundances into individual ABox
+modules \cite{hitzler_modularity}.
 
-We utilize the OpenLink Virtuoso triple store \cite{virtuoso} for data
-hosting and query answering. Virtuoso features an inference engine
-configured with an OWL-Horst~\cite{owlhorst} rule set. This
-configuration enables the on-the-fly materialization of inverse
-properties, transitive closures, and property chains defined within
-the SIO ontology framework.
+\begin{figure*}[!t]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  node distance=7mm and 9mm,
+  box/.style={draw, rounded corners, align=center, font=\scriptsize,
+    minimum height=8mm, text width=22mm},
+  data/.style={box, fill=blue!7},
+  process/.style={box, fill=orange!10},
+  context/.style={box, fill=green!9},
+  control/.style={box, fill=purple!8},
+  link/.style={-{Latex[length=2mm]}, thick}
+]
+\node[context] (site) {Sampling site\\and visit};
+\node[process, right=of site] (collection) {Sample\\collection};
+\node[data, right=of collection] (specimen) {Soil\\specimen};
+\node[process, right=of specimen] (extraction) {DNA\\extraction};
+\node[data, right=of extraction] (dna) {DNA\\extract};
+\node[process, below=of dna] (library) {PCR and library\\preparation};
+\node[data, left=of library] (fastq) {Sequence run,\\FASTQ and QC};
+\node[data, left=of fastq] (profile) {Community profile\\and taxon values};
 
-Prior to OWL-Horst inference, the base knowledge graph comprised
-37,043,525 asserted triples across three named graphs (knowledge base
-36,978,835; taxonomy 42,406; ontology 16,643), with taxonomy
-assertions accounting for approximately 36.5 million of the knowledge
-base graph. During deployment, the workflow applies OWL-Horst (pD*)
-forward-chaining materialization in three rounds: (1)~ground rules
-that pair a single asserted triple with a TBox axiom
-(\texttt{rdfs:subClassOf}, \texttt{rdfs:subPropertyOf},
-\texttt{rdfs:domain}, \texttt{rdfs:range},
-\texttt{owl:inverseOf}, \texttt{owl:SymmetricProperty},
-\texttt{owl:equivalentClass}, \texttt{owl:equivalentProperty});
-(2)~re-application of \texttt{subPropertyOf} and
-\texttt{subClassOf} over the triples produced in round~1; and
-(3)~one-hop transitive closure for all
-\texttt{owl:TransitiveProperty} instances. This process generates
-80,907,421 materialized triples, resulting in a total of
-117,950,946 triples (a 3.18$\times$ expansion). The materialization
-completes in approximately 114~minutes on a single server.
-The materialized triples are written to a dedicated named graph
-(\texttt{<https://rubalkhali.science/inferred/>}) so that they can be
-queried without per-query backward-chaining cost. Logging is
-temporarily disabled (\texttt{log\_enable(2,1)}) during
-materialization to avoid exceeding Virtuoso's per-transaction log size
-limit. The dominant inferred predicates are
-\texttt{sio:isRelatedTo} (22.6M), \texttt{rdf:type} (14.6M),
-\texttt{sio:hasAttribute} (11.3M), and \texttt{sio:isAttributeOf}
-(5.7M), reflecting the propagation of SIO's property hierarchy and
-inverse properties across the ABox.
+\node[context, below=of site] (environment) {Field environment,\\climate and field XRF};
+\node[process, below=of specimen] (labxrf) {Laboratory XRF};
+\node[process, below=of labxrf] (ph) {Archived-soil pH\\process and value};
+\node[control, below=of extraction] (controlmat) {Control material\\bearing a role};
+\node[control, right=of controlmat] (batch) {Extraction, PCR or\\sequencing batch};
 
-\subsection{Schema definition}\label{subsec:schema_def}
+\draw[link] (site) -- node[above, font=\tiny]{target} (collection);
+\draw[link] (collection) -- node[above, font=\tiny]{output} (specimen);
+\draw[link] (specimen) -- node[above, font=\tiny]{input} (extraction);
+\draw[link] (extraction) -- node[above, font=\tiny]{output} (dna);
+\draw[link] (dna) -- (library);
+\draw[link] (library) -- (fastq);
+\draw[link] (fastq) -- (profile);
+\draw[link] (environment) -- node[left, font=\tiny]{target} (site);
+\draw[link] (specimen) -- node[right, font=\tiny]{input} (labxrf);
+\draw[link] (specimen) to[bend right=18]
+  node[left, font=\tiny]{input and target} (ph);
+\draw[link] (controlmat) -- node[left, font=\tiny]{input; role realized} (extraction);
+\draw[link] (extraction) -- node[right, font=\tiny]{part of} (batch);
+\end{tikzpicture}
+}
+\caption{Provenance and module architecture. SIO input, output, target,
+role-realization and part-of relations connect field context to specimens,
+molecular products and digital observations. Field environment, climate and
+field XRF target a site; laboratory XRF consumes a specimen. Control materials
+bear occurrence-specific roles realized in laboratory processes and connect to
+processing batches rather than directly to expeditions. Archived-soil pH
+consumes and targets the specimen and produces a protocol-bound value.
+Separate ABox modules
+serialize these domains while retaining the same site, specimen and process
+identifiers.}
+\label{fig:provenance_architecture}
+\end{figure*}
+
+We use OpenLink Virtuoso \cite{virtuoso} for RDF storage and query
+answering. In a development benchmark, a project-specific
+forward-rule program applied selected RDFS/OWL rules for subclass,
+subproperty, domain, range, inverse, symmetric, equivalence and
+transitive-property assertions. The program used three scheduled
+passes, including only a one-hop transitive pass. It did not
+demonstrate convergence to a fixed point and did not implement
+arbitrary OWL property chains. We therefore describe this output as a
+\emph{selected rule expansion}, not as complete OWL-Horst
+\cite{owlhorst} closure.
+
+The current staged package contains the regenerated asserted modules
+but no validated materialized whole-graph artifact. We consequently
+report exact module-level entity counts rather than historical
+asserted or inferred triple counts. The selected rule expansion has
+not been demonstrated to reach a zero-delta fixed point and does not
+implement arbitrary property chains; neither complete OWL-Horst
+coverage nor a complete inferred-graph count is claimed.
+\subsubsection{Schema definition}\label{subsec:schema_def}
 
 We used Shape Expressions (ShEx) \cite{shex} to define structural
 schemas for the core entity types. While OWL provides open-world
 reasoning and inference capabilities, it cannot readily enforce data
 completeness constraints. We developed ShEx schemas to explicitly
-validate the graph's structure, ensuring data quality and compliance
+validate the graph's structure, supporting data-quality and conformance checks
 before loading it into the database.
 
 Our ShEx implementation defines shapes for Sampling Sites, Soil
 Samples, Environmental Measurements, DNA Extracts, and Sequencing
-Datasets. These shapes guarantee that essential attributes are invariably present. For instance, Listing~\ref{lst:shex_site} demonstrates how the schema enforces that every Sampling Site is explicitly typed and labeled, while optionally capturing geographic coordinates and textual descriptions.
+Datasets. These shapes require the declared attributes on conforming nodes.
+For instance, Listing~\ref{lst:shex_site} shows how the schema requires every
+conforming Sampling Site to be explicitly typed, labelled and georeferenced,
+while optionally capturing a textual description.
 
 \begin{lstlisting}[caption={ShEx shape for Sampling Site validation.}, label={lst:shex_site}, basicstyle=\ttfamily\scriptsize, frame=single]
 <#SamplingSiteShape> {
-    rdf:type [rak:0000002] ;  # Must be of type Sampling Site
-    rdf:type . * ;                # May have other inferred types
-    rdfs:label . ;                # Must have a label
+    rdf:type [rak_kb:RAK_0000002] ; # Must be a Sampling Site
+    rdf:type . * ;                  # May have other inferred types
+    rdfs:label . ;                  # Must have a label
     dcterms:description xsd:string ? ; # Optional description
-    geo:asWKT . ? ;               # Optional geographic coordinates
+    geo:asWKT . ;                   # Must have coordinates
 }
 \end{lstlisting}
 
 In words, the shape \texttt{<\#SamplingSiteShape>} requires that
 every conforming node carry an explicit type assertion to
-\texttt{rak:0000002} (Sampling Site) and an \texttt{rdfs:label};
-it permits any number of additional inferred types and optionally
-allows a free-text description and a WKT geometry. Records that omit
-the mandatory type or label are rejected before they reach the triple
-store.
-
+\texttt{rak:0000002} (Sampling Site), an \texttt{rdfs:label} and a WKT
+geometry; it permits any number of additional inferred types and
+optionally allows a free-text description. Coordinates are mandatory in
+the shape, in the Methods contract of
+Section~\ref{methods} and in the staged copy of the shape;
+all 70 sampling-site individuals in the released module satisfy it. A
+site record that omits the mandatory type, label or geometry is
+rejected before it reaches the triple store, and a deliberately
+coordinate-free fixture is included in the negative fixture suite
+(Section~\ref{valid}) to prove that the rejection actually
+fires. Note that the shape file declares
+\texttt{rak\_kb:} for the bare knowledge-base namespace, so the
+sampling-site class is written \texttt{rak\_kb:RAK\_0000002} there and
+\texttt{rak:0000002} in the Turtle listings above; the two forms denote
+the same IRI.

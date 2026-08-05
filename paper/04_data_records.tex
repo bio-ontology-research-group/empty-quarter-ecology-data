@@ -1,29 +1,444 @@
 \section{Data records}\label{records}
 
-We deposited the raw sequencing data generated in this study in the
-European Nucleotide Archive (ENA) under the umbrella project accession
-{\tt PRJEB104209}. Amplicon sequencing data reside under project {\tt
-  PRJEB106069}.
+\subsection{Record types and accounting}
 
-We made the knowledge graph accessible via a public SPARQL endpoint at
-\url{https://rubalkhali.science/sparql} and through a web interface at
-\url{https://rubalkhali.science/}. We maintain all source code for
-data processing, ontology generation, and validation at
-\url{https://github.com/bio-ontology-research-group/empty-quarter}.
+The resource distinguishes a field specimen from an extraction,
+library, sequence run, quality-controlled community profile and
+derived observation. The resource includes a machine-readable ledger
+linking
+\begin{center}
+\small
+site and trip $\rightarrow$ specimen $\rightarrow$ extraction
+$\rightarrow$ library\\
+$\rightarrow$ sequence run $\rightarrow$ QC decision
+$\rightarrow$ derived community.
+\end{center}
+The versioned ledger contains 2,550 source rows: 2,302 master-sheet
+rows (2,268 non-control and 34 control rows) plus 248 plant rows. Of these, 2,540
+pass the metadata-completeness audit, and all 2,516 non-control rows
+currently satisfy the knowledge-graph sample-ingest rule. The ten rows
+that fail the completeness audit are all Trip~1 master-sheet laboratory
+controls (\texttt{Sample\_Mastersheet.xlsx}, sheet \texttt{Trip1}, rows
+578--587): six reagent controls, two PCR controls and two extraction
+controls. They fail because a control carries no site and no
+compartment, not because a field record is damaged, and their ledger
+exclusion reason is \texttt{control\_requires\_explicit\_control\_model}.
+They are retained in the ledger with their source identifiers and sheet
+row numbers. They are not promoted to field specimens; the separate
+control ABox represents evidence-supported control materials, roles,
+processing batches, sequence occurrences, assertions and unresolved
+dispositions. The generated field-specimen
+graph contains 2,516 sample individuals, 1,647 DNA-extract individuals, 1,242 amplicon
+libraries and 1,242 FASTQ datasets. The canonical Trips~1--5 feature
+table contains 1,271 profiles (1,242 unique field identifiers),
+whereas the ecological analysis retains 1,237 profiles (1,209 unique
+field identifiers) across 64 numeric sites. Ten of those retained
+profiles belong to Trip-1-only sites~61--64; the primary
+repeated-campaign analysis therefore contains 1,227 profiles from
+sites~1--60.
+The 29 extra profiles in the canonical feature table arise from 29
+normalized identifiers that each occur in two export columns. A
+count-vector audit found that none of those 29 pairs is identical. After
+ecological filtering, both profiles remain for 28 of the identifiers.
+Because the available provenance does not establish whether these are
+technical reruns, separate aliquots or another export mechanism, the
+profiles remain distinct and are not silently averaged or deduplicated.
+An older 1,013-profile table remains in the archive staging tree for
+provenance, but the package manifest marks it and its companion
+taxonomy table as legacy artifacts excluded from the canonical
+dataset. The canonical Trips~1--5 feature table is staged separately
+and checksum-verified.
 
-We distribute the knowledge graph data files as OWL/XML and Turtle
-(.ttl) formats, structured by data type:
-\begin{itemize}
-\item \texttt{rubalkhali.owl} --- Base ontology (TBox).
-\item \texttt{rubalkhali\_sites.owl} --- 70 sampling sites with coordinates and biome annotations.
-\item \texttt{rubalkhali\_samples.owl} --- 2,535 soil and plant samples with compartment types.
-\item \texttt{rubalkhali\_measurements.owl} --- Environmental measurements (temperature, pressure, humidity) and climate records (12,936 monthly, 582 annual).
-\item \texttt{rubalkhali\_xrf.owl} --- 6,674 XRF measurement values across 91 analytes from 249 measuring processes.
-\item \texttt{rubalkhali\_dna.owl} --- 2,410 DNA extracts with concentration data.
-\item \texttt{rubalkhali\_sra.owl} --- 1,242 sequencing run records linked to ENA accessions.
-\item \texttt{rubalkhali\_qc.owl} --- Sequencing quality metrics (GC content, duplicate rate, sequence counts).
-\item \texttt{rubalkhali\_taxonomy\_abox.ttl} --- 1,401,008 taxon abundance observations with relative and absolute counts.
-\end{itemize}
+The 34 rows not ingested as specimens are all laboratory controls and
+are referenced by the separate control model rather than forced through
+the field-specimen shape. The 36 genuine Trip-1-only
+records from numeric sites 61--64 are ingested through the
+coordinate-confirmed alias ledger: their source identifiers are
+preserved while their specimens and visits link to the four existing
+named site individuals. These rows contribute 11 profiles to the canonical feature table and,
+after ecological filtering, 10 profiles to the ecological table; the two
+numbers refer to the two different tables and are not a discrepancy.
+They remain excluded from
+repeated-campaign inference because the sites could not be revisited.
+After applying the confirmed metadata corrections and aliases and
+regenerating the sample and DNA modules, eligible-source/sample and
+expected/generated-DNA counts reconcile exactly. The remaining 26
+SRA rows outside the field-specimen lineage are all control-labelled
+records (18
+\texttt{EB}, six \texttt{Negative} and two \texttt{T\_Neg} records)
+and are represented, where evidence permits, as control sequence
+occurrences rather than specimen-linked runs. The 34 feature-table
+profiles absent from the ecological table comprise 24 controls, nine
+biological-profile identifiers below the declared 1,000-read ecological
+threshold and one additional \texttt{T1Dr1} run with 934 reads, also below
+that threshold.
 
-The data and source code to generate the Rub' al-Khali knowledge graph
-is available at \todo{Add Zenodo DOI URL here}.
+\subsection{Companion-analysis derived records}
+
+The release candidate stages four derived input products used by the
+companion ecology analyses (Table~\ref{tab:companion_inputs}). They are
+distributed records rather than knowledge-graph ABox modules.
+
+\begin{table}[h]
+\centering
+\caption{Derived companion-analysis inputs in the staged release
+  candidate. Counts refer to the analytical unit identified in the
+  third column.}
+\label{tab:companion_inputs}
+\small
+\begin{tabular}{@{}p{0.42\textwidth}r p{0.41\textwidth}@{}}
+\toprule
+\textbf{Staged record} & \textbf{Count} & \textbf{Analytical scope} \\
+\midrule
+\texttt{PMA\_ASV\_table.tsv} & 18 &
+  Analytical sample columns forming nine treated--untreated aliquot pairs \\
+\texttt{coverm\_profiles.tar.gz} & 150 &
+  Sample-level genome-abundance profiles \\
+\texttt{eq.emapper.annotations.gz} & 990 &
+  Genomes matched between the annotation table and the CoverM profiles.
+  The count is matched genomes, not annotation rows: the file has one
+  row per annotated protein \\
+\texttt{measured\_function\_inputs.tar.gz} & 6 &
+  Exact source tables used by the measured-function analysis \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The PMA matrix retains control columns in addition to the 18 paired
+analytical columns. The measured-function archive includes the
+genome-derived and PICRUSt2 KO inputs, sample mappings, marker records
+and denominator-audit table used by the reported comparisons. Together,
+the four products permit downstream statistical re-execution. They do
+not include the raw shotgun or PMA reads, a full
+metagenome-assembled-genome catalogue, or the inputs needed to
+reproduce upstream assembly, binning, dereplication, annotation and
+profile generation.
+
+\subsection{Taxonomy mapping records}
+
+The combined taxonomy source contains 354,251 feature assignments in
+4,305 distinct seven-rank lineages; 351,472 of those features occur in
+the canonical 1,271-profile feature table. Coverage is complete in the
+direction that matters for reuse: every one of the 351,472 canonical
+features carries a lineage, and none is unclassified. The remaining
+2,779 assignments describe features that have no column entry in the
+canonical table and no entry in the retired legacy table either, so they
+contribute no counts to any analysis. The pipeline step that dropped
+them is not recorded in the exported artifacts, so they are retained as
+classified-but-uncounted provenance rather than explained away. Expanding each lineage over
+the seven ranks yields 30,135 mapping-row occurrences but only 8,133
+distinct rank-truncated source contexts. Of those occurrences, 20,045
+use validated NCBI identifiers, 2,509 use one of 592 unambiguous
+historical project identifiers, and 7,581 use deterministic contextual
+identifiers. The latter correspond to 5,030 unique contextual classes.
+Four historical project identifiers reused across incompatible
+contexts (36 explicit historical rows) are not retained; all their
+affected contexts receive lineage-scoped identifiers. No additional
+project identifier required demotion after the corrected-parent
+fixed-point audit.
+
+The clean taxonomy module declares the 5,622 local classes (592
+retained and 5,030 contextual) plus 2,666 NCBI classes needed for the
+complete native ancestor closure. Its RDF/XML and Turtle
+serializations are graph-equivalent at 55,628 triples. The 119
+non-identical supplementary species calls comprise 98 calls where the
+seventh rank was empty and 21 that conflicted with a populated
+seventh-rank value; all remain in the provenance ledger and none is
+promoted into the asserted lineage.
+
+The checksum-frozen abundance ABox is 6,722,670,815 bytes and contains
+44,528,482 triples in 5,953,690 contiguous subject blocks. It
+represents 1,236 feature profiles with resolvable FASTQ individuals as
+1,236 processing individuals and 17,304 absolute or relative datasets
+(14 per process). Across seven ranks it records 2,962,918 abundance
+qualities and 2,962,918 corresponding value individuals, divided
+evenly between absolute and relative representations (1,481,459 of
+each quality and value type). The ABox has 1,236 FASTQ bearer subjects
+and 8,056 taxon bearer subjects. Controls and the 11 Trip-1-only
+feature-table profiles from sites~61--64, for which no SRA run is
+recorded, are not
+silently assigned to taxonomy processes or FASTQ bearers. Control
+sequence occurrences and unresolved mappings are encoded in the
+separate control ABox; the Trip-1-only sample and site individuals are
+encoded in the field modules. Their source observations remain in the
+release ledger and taxonomy source tables.
+
+\subsection{XRF data layers}
+
+The XRF distribution contains separate files for the two acquisition
+workflows and for each processing stage (Table~\ref{tab:xrf_inventory}):
+
+\begin{table}[h]
+\centering
+\caption{Current XRF record inventory. Row counts are independently
+  checked from the processed tables by
+  \texttt{scripts/validation/audit\_xrf\_inventory.py}; provenance
+  and discrepancy fields are generated by
+  \texttt{scripts/xrf/audit\_xrf\_provenance.py}.}
+\label{tab:xrf_inventory}
+\small
+\begin{tabular}{p{0.31\textwidth}r p{0.50\textwidth}}
+\toprule
+\textbf{Data layer} & \textbf{Rows} & \textbf{Meaning} \\
+\midrule
+Field-XRF table & 71 & Complete in-situ handheld sessions at 58 Trip~5 sites \\
+Laboratory-XRF, Trips~1--4 & 547 & Processed selected-sample records \\
+Laboratory-XRF, Trip~5 & 178 & Processed selected-sample records \\
+Laboratory-XRF, canonical cross-trip input & 725 &
+  All 547 Trips~1--4 and 178 Trip~5 processed records \\
+Laboratory-XRF, retired Trip~5 table & 158 &
+  Legacy table retained only for provenance; not used analytically \\
+Laboratory-XRF, retired cross-trip table & 705 &
+  Legacy 547-plus-158 table; not used analytically \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The current OWL module was generated from all 71 field
+sessions and all 725 laboratory processed rows, yielding 796 XRF
+process individuals and 19,763 measurement-value individuals, each
+with a value-to-quality link. That module and the independently
+generated XRF audit are synchronized into the archive staging
+directory with their SHA-256 checksums. The audit reports source,
+processed, analytical-subset, ecology-joined and KG-ingested counts
+separately. The canonical input is the 725-record union; regression
+tests reject the retired 158- and 705-record tables as analytical
+dependencies.
+The distribution also includes the canonical 93-row chemical mapping,
+its pinned PubChem property snapshot, and a row-level ledger recording
+the resolved labels, formulae, charges, entity types and audited null
+dispositions. The supplementary chemical-mapping table (label
+\texttt{tab:chebi\_mapping} in the separate supplement) is generated
+from that ledger and
+fails closed if any row is not verified.
+
+\subsection{Environmental field records}
+
+The five immutable field sheets and the original supporting workbook
+are distributed with a 24-row exact-cell correction ledger. The
+generated canonical table contains 274 nonblank field records. Its
+dispositions comprise eight Trip~2 column shifts, 15 workbook-supported
+campaign-date restorations and one quarantined out-of-range Trip~5
+humidity observation. The machine-readable audit records the input
+hashes, applied ledger entries, record roles, measurement counts,
+physical ranges and generated-output hashes. The supplementary
+environmental table and the environmental RDF module consume the same
+ledger; neither contains the invalid 194\% humidity assertion.
+The table retains all 274 records, while the RDF module links 260
+visits to catalogue sites. Fourteen auxiliary/revisit rows with
+non-catalogue labels remain table-only rather than being assigned by
+coordinate coincidence. The graph-linked coverage is 260 temperature,
+187 pressure and 251 humidity values.
+
+\subsection{Archived-soil pH records}
+
+The pH distribution is versioned as \texttt{EQ-PH-SHARED-v1.0.0}. The frozen
+source workbook, manifest, version registry and retained predecessor are under
+\path{metadata/samples/ph/}. The row-level audit, admitted-measurement table,
+29 reconstructed-session table and stable entity registry are under
+\path{metadata/ph/}.
+Together they account for 1,168 source rows: 712 admitted measurements, 356
+pending rows, 45 depleted specimens, 36 date quarantines and 19 numeric rows
+quarantined for incomplete recorded quality control. The source notes identify
+\texttt{S28Sr1} as missed during preparation and \texttt{S57Dr1} as depleted;
+neither receives an imputed value.
+
+The canonical pH module is distributed as graph-equivalent RDF/XML and Turtle
+files named \path{ontology/rubalkhali_ph_eq_ph_shared_v1_0_0.owl} and
+\path{ontology/rubalkhali_ph_eq_ph_shared_v1_0_0.ttl}. It contains 712
+measuring processes, 712 acidity qualities, 712 pH value individuals and 29
+sessions. The corresponding source reconciliation, complete ecology
+sensitivity, predecessor comparison, Shape Map result and output checksums are
+under \path{evidence/ph/}. In particular,
+\path{evidence/ph/ecology/ph_sample_profile_join.tsv} records the 702 exact
+specimen--profile joins,
+\path{evidence/ph/ecology/ph_group_analysis_table.tsv} records the 562
+site--campaign--position means,
+\path{evidence/ph/ecology/ph_geographic_adjustment.tsv} records the
+same-cohort spatial comparison, and
+\path{evidence/ph/ecology/ph_influence_sensitivity.tsv} records the singleton
+maximum and whole-site exclusions. The composition analysis uses the 558
+groups reported in \path{evidence/ph/ecology/ph_composition_models.tsv}. Of
+the predecessor's 653 admitted observations, all 653 are unchanged and retain
+their IRIs; the shared version adds 59 admitted observations.
+
+\subsection{Knowledge-graph modules}
+
+The distribution is organized into reusable modules for the base
+terminology, sites, specimens, environmental and climate
+measurements, XRF, DNA extractions, sequence records, sequence QC and
+taxonomic observations, plus separate laboratory-control and archived-soil pH
+modules.
+The staging package contains the generated
+modules, the source metadata included in the ledger, RDF generators,
+ShEx schemas, validation scripts, and the generated release and XRF
+evidence.
+
+\subsection{Deposited files, formats and checksums}\label{records:files}
+
+The deposit is a single directory tree. Every payload file is declared;
+the package builder adds \path{PRE_RELEASE_MANIFEST.tsv} itself explicitly
+rather than making the manifest recursively list its own checksum.
+Table~\ref{tab:package_layout} gives the top-level layout, the format
+of each part and what a reuser can do with it. Paths in this section
+and in every listing are relative to the root of that tree.
+
+\begin{longtable}{@{}p{0.26\textwidth}p{0.16\textwidth}p{0.50\textwidth}@{}}
+\caption{Layout of the deposited package. Every file under these paths
+  appears in \texttt{PRE\_RELEASE\_MANIFEST.tsv} with its byte size,
+  SHA-256 checksum, category, release status and licence gate.}
+\label{tab:package_layout}\\
+\toprule
+\textbf{Path} & \textbf{Format} & \textbf{Content and reuse} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Path} & \textbf{Format} & \textbf{Content and reuse} \\
+\midrule
+\endhead
+\path{ontology/} & RDF/XML, Turtle &
+  Terminology and the ten ABox modules; loadable into any RDF store.
+  The taxonomy ABox is a single 6.72\,GB Turtle file \\
+\path{ontology-src/} & Turtle &
+  Modular source terminology used to build the knowledge graph \\
+\path{void.ttl} & Turtle &
+  Candidate dataset description without unresolved licence or live-service
+  assertions \\
+\path{metadata/DATA_DICTIONARY.tsv} & TSV &
+  Machine-readable field names, data types, units, missing-value
+  conventions and reuse definitions for curated canonical tabular records;
+  raw instrument exports retain their source headers \\
+\path{shex/} & ShEx &
+  One shape per entity family; the structural contract the modules
+  satisfy \\
+\path{sparql/} & SPARQL, Markdown &
+  The validated competency query and query/schema notes \\
+\path{metadata/samples/} & XLSX, TSV &
+  Source master sheet, plant sheet, correction and alias ledgers \\
+\path{metadata/samples/ph/} & XLSX, JSON, TSV &
+  Frozen pH source versions, manifests, registry and version policy \\
+\path{metadata/ph/} & TSV &
+  Complete pH row audit, 712 admitted observations, 29 sessions and stable
+  entity registry \\
+\path{metadata/controls/} & TSV, JSON &
+  Normalized control entity, alias, role, process, sequence-occurrence,
+  composition, assertion and disposition records \\
+\path{metadata/samplesheets/} & TSV &
+  Five immutable per-campaign field sheets \\
+\path{metadata/environmental/} & TSV &
+  274 range-checked environmental records derived from those sheets \\
+\path{metadata/climate/} & TSV &
+  Open-Meteo daily and monthly tables, the fetch-key ledger with each
+  key's resolved site IRI, and the site-resolved projections \\
+\path{metadata/geodata/} & TSV, JSON &
+  Per-campaign coordinates, altitudes and the site-to-campaign map \\
+\path{metadata/geochemistry/}, \path{metadata/xrf/} & TSV, XLSX &
+  Field log, processed laboratory tables and the raw instrument exports \\
+\path{metadata/taxonomy/} & TSV, FASTA &
+  Canonical feature table, taxonomy table and ASV sequences, plus the
+  legacy tables marked \texttt{legacy-excluded} \\
+\path{metadata/protocols/} & Markdown &
+  Extraction, library-preparation, sequencing and measurement protocols
+  with YAML front matter \\
+\path{metadata/QC_reads/} & TXT &
+  MultiQC per-run FastQC statistics \\
+\path{metadata/amplicon/} & CSV, TSV, config, Markdown &
+  Portable 1,268-row run sheet, accessions, canonical command and resources \\
+\path{metadata/functional/} & Markdown &
+  PICRUSt2 execution and reference manifest with stated input limits \\
+\path{metadata/sra-submissions/} & TSV &
+  Two source submission sheets from which run-level metadata are reconciled \\
+\path{metadata/metagenome/}, \path{metadata/relic-dna/} & TAR/GZ, TSV &
+  The four companion-analysis inputs of
+  Table~\ref{tab:companion_inputs} \\
+\path{evidence/} & JSON, TSV, MD &
+  Machine-readable audit outputs and \texttt{SHA256SUMS} files for the
+  release, XRF, environmental, taxonomy, controls, competency-query and
+  companion-input gates \\
+\path{evidence/ph/} & JSON, TSV, MD &
+  pH source reconciliation, ecology analysis, cross-version comparison,
+  ShEx result and checksums \\
+\path{evidence/ecology-canonical/} & TSV, JSON &
+  Exact baseline cache and canonical verdict files consumed by the
+  package-only control-sensitivity replay \\
+\path{evidence/xrf-community/}, \path{evidence/primer-identity/} & TSV, MD &
+  Laboratory-XRF axis inputs and the raw-read primer-identity audit,
+  including its source-path ledger \\
+\path{scripts/}, \path{config/} & Groovy, Python, YAML &
+  The generators, validators and code tables that produce the modules \\
+\path{workflow/}, \path{environment/} & Nextflow, shell, YAML, TXT &
+  Orchestration, task wrappers, workflow tests, a pinned Conda recipe and
+  a hash-locked Python environment \\
+\path{tests/} & Python, Groovy, Turtle &
+  Unit tests and positive/negative structural fixtures distributed with the
+  candidate \\
+\path{manage.sh}, \path{deploy_onto.sh} & shell &
+  Operational graph-management and loading references; deployment is not
+  required for local reuse \\
+\bottomrule
+\end{longtable}
+
+Tabular records are tab-separated with a header row and no index
+column, except for the explicitly named portable CSV samplesheet; RDF
+modules use the prefixes of Table~\ref{tab:prefixes}.
+\path{metadata/DATA_DICTIONARY.tsv} records the field or field pattern,
+data type, unit, missing-value convention and definition for curated
+canonical tabular records; raw instrument exports retain their source
+headers. Quantities carry units only where a unit is
+documented at the source. Environmental source tables retain degrees
+Celsius, hectopascals (millibars) and percent relative humidity. In
+\path{ontology/rubalkhali_measurements.owl}, pressure magnitudes are
+multiplied by 100 and asserted in pascals
+(\texttt{obo:UO\_0000110}); climate records use degrees Celsius and
+millimetres; DNA concentrations are in nanograms per microlitre. Archived-soil
+pH values use UO:0000196 and are bound to the specified CaCl$_2$ protocol. XRF
+concentrations carry no documented unit or unit assertion and must not
+be treated as percentages.
+
+The package-level manifest \path{PRE_RELEASE_MANIFEST.tsv} is
+exhaustive over payload files: it has one row for each candidate payload
+file, and the
+builder fails if a declared file is absent or a present file is
+unclassified, so the manifest cannot drift from the tree. Each row
+carries the relative path, a category, a release status
+(\texttt{canonical-candidate}, \texttt{audit-evidence},
+\texttt{legacy-excluded}, \texttt{derived-review-required} or
+\texttt{operational-reference}), a one-line record scope, the byte
+size, the SHA-256 checksum, and a licence status. Licences are recorded
+as open gates rather than asserted: project-produced files await the
+depositor's licence selection, while redistributed content derived from
+NCBI Taxonomy, the imported OBO ontologies or the SILVA reference
+database retains a separate third-party licence gate tied to the pinned
+upstream release. Legacy taxonomy and XRF
+tables remain available for provenance but are explicitly excluded
+from canonical analytical dependencies.
+
+Scope boundaries of the deposit, stated once: it contains no raw
+sequencing reads (these are in the sequence archives, see
+Section~\ref{data_availability}), no metagenome-assembled-genome
+catalogue, and no assembly or binning intermediates. The canonical
+feature table contains 24 extraction-blank community profiles. The
+package records the author-confirmed product, stage and assay facts in
+\path{evidence/controls/control_ground_truth.tsv}; normalized control
+registries and process tables in \path{metadata/controls/}; the
+generated SIO-patterned control graph in
+\path{ontology/rubalkhali_controls.ttl}; the candidate-ASV,
+expected-recovery and exact-ASV-overlap records in
+\path{evidence/control-audit/}; and all 25 before/after headline
+metrics across 11 claims in
+\path{evidence/control-sensitivity/headline_result_sensitivity.tsv}.
+The control graph contains 489 entities and 3,800 triples, including 51
+material-specific role individuals and 47 sequence occurrences. It
+represents a control as a material bearing a role realized in a
+laboratory process, links extraction processes to batches rather than
+trips, and expresses uncertain identities or mappings as
+evidence-bearing dispositions instead of ground truth.
+
+The downloadable reviewer archive omits three payloads above its
+256-MiB threshold and lists them with byte size and SHA-256 checksum in its
+separate bulk manifest:
+\path{metadata/metagenome/eq.emapper.annotations.gz},
+\path{metadata/taxonomy/feature-table-trips1-5.tsv}, and
+\path{ontology/rubalkhali_taxonomy_abox.ttl}. A complete deposit must supply
+those three byte-identical files; their omission is only a reviewer-download
+packaging choice.

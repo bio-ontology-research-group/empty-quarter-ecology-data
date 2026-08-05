@@ -1,109 +1,122 @@
-# Reproducing the Rub' al-Khali knowledge graph
+# Reproducing the data descriptor
 
-This document describes how to regenerate the Empty Quarter knowledge graph from
-source metadata, validate it, and reproduce the figures/tables/benchmarks in the
-paper. It is self-contained: everything except the multi-GB source tables and
-generated artifacts (which are on Zenodo) lives in this repository.
+This repository identifies every manuscript input, generator, environment and
+validation rule needed to reproduce the submitted data descriptor. Small and
+medium inputs are committed directly. Files that exceed normal Git limits are
+listed in `BULK_ARTIFACTS.tsv` with their uncompressed byte count and SHA-256.
 
-## 1. What you need
+The repository is a private pre-release candidate. It does not claim a DOI,
+immutable public deposit, or public raw-read availability. The reported tables,
+knowledge-graph modules and manuscript can nevertheless be reproduced from the
+frozen derived inputs. Rebuilding those inputs from raw sequencing reads remains
+blocked until the run records named in the manuscript become publicly usable.
 
-### Software
+## 1. Checkout and install the bulk inputs
 
-| Tool | Version | Used for |
-|------|---------|----------|
-| Java | 11+ | runs Groovy |
-| Groovy | 4.x (`@Grab` for deps) | RDF generators, validators, alignment |
-| OWL API | 5.1.20 | OWL/RDF generation |
-| ELK reasoner | 0.4.3 | consistency + classification |
-| Apache Jena | 4.10.0 | ShEx validation |
-| OpenLink Virtuoso | 7.x | triple-store deployment + SPARQL |
-| Python | 3.10+ (`uv` recommended) | table generators, benchmarks |
-| Docker + Docker Compose | recent | local Virtuoso + portal (via `manage.sh`) |
-| TeX Live | 2023+ | compiling the manuscript |
-
-Groovy scripts resolve their own dependencies via `@Grab`, so no manual Maven
-setup is required.
-
-### Data
-
-Small source metadata is vendored in [`data/metadata/`](data/metadata/). The
-large inputs and the generated knowledge graph are archived on Zenodo (DOI
-pending — see [`data/README.md`](data/README.md)). Download and place them as:
-
-```
-data/metadata/taxonomy/feature-table-trips1-5.tsv   # ~1.7 GB, from Zenodo
-data/metadata/taxonomy/ASV_seqs-trips1-5.fasta      # ~155 MB, from Zenodo
-data/metadata/taxonomy/feature-table*.tsv           # from Zenodo
-```
-
-The pre-generated OWL/TTL modules (`rubalkhali_*.owl`, the 1.1 GB
-`rubalkhali_taxonomy_abox.ttl`, etc.) are also on Zenodo if you prefer to load
-the KG directly without regenerating.
-
-## 2. Regenerate the OWL modules
-
-The Groovy generators in [`rdf/generators/`](rdf/generators/) transform source
-metadata into OWL/RDF. Run them in dependency order (this is exactly what
-`rdf/manage.sh update` orchestrates):
-
-1. `update_rubalkhali_ontology.groovy` — base ontology (TBox)
-2. `generate_site_ontology.groovy` — sites
-3. `generate_samples_abox.groovy` — samples
-4. `generate_measurements_abox.groovy` — environmental + climate measurements
-5. `generate_xrf_abox.groovy` — XRF analyte concentrations
-6. `generate_dna_abox.groovy` — DNA extracts
-7. `generate_sra_abox.groovy` — sequencing runs / ENA accessions
-8. `generate_qc_abox.groovy` — sequencing QC metrics
-9. `generate_taxonomy_abox.groovy` — taxon abundance ABox
-10. `MapToEcosystem.groovy` — unified ecosystem ontology mapping
-
-> **Convention checks:** the XRF generator and the TBox script both iterate
-> `rdf/config/codes/xrf_chemical_mapping.yml` and **must** skip the `LE`
-> (Light Elements) entry, or all analyte labels shift by one (Si↔Fe). The
-> measurement reification follows the SIO four-individual split. See
-> [`CLAUDE.md`](CLAUDE.md) for the full set of invariants.
-
-## 3. Load + validate
+Authenticate `gh` for the BORG private repository, then run:
 
 ```bash
-cd rdf
-./manage.sh reset        # wipe DB, regenerate every module, rebuild, reload
-./manage.sh validate     # full validation suite
+git clone git@github.com:bio-ontology-research-group/empty-quarter-data-paper.git
+cd empty-quarter-data-paper
+bash scripts/release/download_bulk_artifacts.sh
+bash scripts/release/bootstrap_package_layout.sh .
+python3 scripts/release/verify_repository.py .
 ```
 
-The validation suite ([`rdf/validation/`](rdf/validation/)):
+The downloader uses the pinned private pre-release `v0.6.0-rc32`, expands only
+the two plain-text compressed assets, and verifies every installed byte stream.
+It never accepts an existing file with the wrong size or digest.
 
-- `validate_rdf.groovy` — ShEx structural validation against [`rdf/shex/`](rdf/shex/)
-- `validate_consistency.groovy` — OWL consistency (ELK)
-- `verify_xrf_integrity.groovy`, `validate_xrf_*` — XRF data integrity
-- `validate_taxonomy_*` — taxon abundance value/abundance checks
-- `test_sparql_queries.groovy` — competency-question regression tests
+## 2. Recreate the software environment
 
-## 4. Reproduce paper tables, benchmarks, and stats
+The Python environment is hash-locked for CPython 3.11 on Linux/x86-64:
 
 ```bash
-# LaTeX tables (write into paper/)
-python scripts/generate_env_table.py      # -> paper/env_table.tex
-python scripts/generate_xrf_table.py      # -> paper/xrf_table.tex (run from repo root)
-
-# Live statistics from a running SPARQL endpoint (localhost:8895)
-python scripts/get_stats.py
-
-# Benchmarks reported in metrics/
-python scripts/benchmark_cqs.py           # competency-question latencies
-groovy scripts/benchmark_elk.groovy       # ELK classification timing
+uv venv --python 3.11 .venv
+uv pip sync --python .venv/bin/python environment/requirements.lock.txt
 ```
 
-Benchmark outputs in [`metrics/`](metrics/) are the exact values cited in the
-paper.
+`environment/environment.yml` additionally pins Java, Groovy, R, Raptor,
+MAFFT and FastTree for the full knowledge-graph and cross-paper workflow. An
+executed workflow records the actual tool versions and container identity; the
+environment file alone is not treated as proof of execution.
 
-## 5. Compile the manuscript
+## 3. Run fast regression tests
 
 ```bash
-cd paper
-pdflatex sn-article.tex && bibtex sn-article && pdflatex sn-article.tex && pdflatex sn-article.tex
-pdflatex supplement.tex
+make bootstrap
+make test
+make paper
 ```
 
-Journal variants live under `paper/variants/` (GigaScience data note, SWJ
-knowledge-graph article).
+`make paper` builds both `paper/sn-article.tex` and `paper/supplement.tex`.
+The manuscript roots are explicit; retired drafts and local TeX products are
+not inputs. `make test` runs manuscript, package, and workflow-wiring checks
+that do not generate a KG. The complete generator and semantic-validation suite
+runs on `ws` or Ontolinator in the next step.
+
+## 4. Rebuild the data and knowledge graph remotely
+
+Every real knowledge-graph build must run on `ws` or Ontolinator, not on a local
+workstation. Clone the exact repository revision on the selected host, install
+the checksum-pinned bulk inputs, recreate the environment, and run the workflow
+there. The evidence stage regenerates the environmental table, figure,
+tractable RDF modules, release ledger, XRF audit and archived competency query:
+
+```bash
+# Run this complete block in a shell on ws or Ontolinator.
+git clone git@github.com:bio-ontology-research-group/empty-quarter-data-paper.git
+cd empty-quarter-data-paper
+bash scripts/release/download_bulk_artifacts.sh
+bash scripts/release/bootstrap_package_layout.sh .
+.venv/bin/python -m pytest -q tests workflow/tests
+workflow/bin/bootstrap_nextflow.sh run workflow/main.nf \
+  -profile bare \
+  --project_root "$PWD" \
+  --ecology_paper /absolute/path/to/empty-quarter-ecology-reproducibility/empty-quarter-amplicon \
+  --stage evidence \
+  --outdir "$PWD/results/data-evidence-$(date -u +%Y%m%dT%H%M%SZ)"
+```
+
+Add `--run_kg true` on the same remote host to rebuild the corrected taxonomy mapping and the full
+taxonomy ABox and to run the non-live validation suite. That path requires the
+bulk feature table and NCBI Taxonomy snapshot and is designed for a machine
+with at least 32 GB of Java heap plus scratch space for the multi-gigabyte ABox:
+
+```bash
+workflow/bin/bootstrap_nextflow.sh run workflow/main.nf \
+  -profile bare \
+  --project_root "$PWD" \
+  --ecology_paper /absolute/path/to/empty-quarter-ecology-reproducibility/empty-quarter-amplicon \
+  --stage evidence \
+  --run_kg true \
+  --taxonomy_source_taxonomy "$PWD/metadata/taxonomy/taxonomy-trips1-5.tsv" \
+  --taxonomy_feature_table "$PWD/metadata/taxonomy/feature-table-trips1-5.tsv" \
+  --taxonomy_canonical_mapping "$PWD/ontology/mapped_taxonomy.tsv" \
+  --taxonomy_ncbi_owl "$PWD/data/ontologies/ncbitaxon.owl" \
+  --taxonomy_sra_sheet "$PWD/metadata/sra-submissions/submission-sheet.tsv" \
+  --outdir "$PWD/results/full-kg-$(date -u +%Y%m%dT%H%M%SZ)"
+```
+
+The workflow writes isolated outputs, checksums, source snapshots, execution
+records, Nextflow trace/report/timeline files and validation reports. Do not use
+`-resume` after changing any source, input or manuscript byte stream.
+
+Copy the completed remote report directory back without changing it, then
+verify its manifest before archiving it as release evidence. A local
+`-stub-run` is permitted only to check workflow wiring; it is not KG validation.
+
+## 5. Scope of reproducibility
+
+The package supports:
+
+- deterministic regeneration and byte comparison of every tractable RDF module;
+- fresh taxonomy mapping and taxonomy-ABox generation from the canonical table;
+- ShEx/OWL/project-invariant checks, a streaming full-ABox audit and archived
+  competency-query replay;
+- recreation of the manuscript figure and tables; and
+- clean builds of the data descriptor and supplement.
+
+It does not yet support an unauthenticated public download or reconstruction of
+the canonical amplicon, shotgun and PMA inputs from raw reads. Those are release
+and accession gates, not silently filled provenance steps.

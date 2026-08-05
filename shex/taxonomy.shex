@@ -1,0 +1,58 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rak: <https://rubalkhali.science/kb/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX pato: <http://purl.obolibrary.org/obo/PATO_>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+<#BioinformaticWorkflowShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000071] ;
+    rdfs:label xsd:string ;
+    sio:SIO_000230 IRI ;                # hasInput -> FASTQ Dataset
+    sio:SIO_000339 [rak:RAK_L000012] ;  # isSpecifiedBy -> Protocol
+    sio:SIO_000229 @<#AbsoluteAbundanceDatasetShape> ;
+    sio:SIO_000229 @<#RelativeAbundanceDatasetShape> ;
+}
+
+<#AbsoluteAbundanceDatasetShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000074] ;
+    rdfs:label xsd:string ;
+    sio:SIO_000059 @<#AbsoluteAbundanceValueShape> * ; # hasMember
+}
+
+<#RelativeAbundanceDatasetShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000075] ;
+    rdfs:label xsd:string ;
+    sio:SIO_000059 @<#RelativeAbundanceValueShape> * ; # hasMember
+}
+
+<#AbsoluteAbundanceValueShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000076] ;
+    rdfs:label xsd:string ;
+    sio:SIO_000215 @<#AbsoluteAbundanceQualityShape> ; # isMeasurementValueOf
+    rak:RAK_2000026 xsd:double ;        # hasAbsoluteAbundanceValue
+    rak:RAK_2000025 xsd:string ;        # hasLineageString
+}
+
+<#RelativeAbundanceValueShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000073] ;
+    rdfs:label xsd:string ;
+    sio:SIO_000215 @<#RelativeAbundanceQualityShape> ; # isMeasurementValueOf
+    rak:RAK_2000020 xsd:double ;        # hasRelativeAbundanceValue
+    rak:RAK_2000025 xsd:string ;        # hasLineageString
+}
+
+<#AbsoluteAbundanceQualityShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000078] ;
+    rdf:type [pato:0000070] ;           # amount quality
+    sio:SIO_000216 @<#AbsoluteAbundanceValueShape> ; # hasMeasurementValue (was 000214 — that's "is concretization of"; SIO-canonical inverse of 215 is 216)
+    sio:SIO_000011 IRI {2} ;            # isAttributeOf -> Dataset AND Taxon
+}
+
+<#RelativeAbundanceQualityShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000072] ;
+    rdf:type [pato:0000033] ;           # concentration quality
+    sio:SIO_000216 @<#RelativeAbundanceValueShape> ; # hasMeasurementValue (was 000214 — that's "is concretization of"; SIO-canonical inverse of 215 is 216)
+    sio:SIO_000011 IRI {2} ;            # isAttributeOf -> Dataset AND Taxon
+}

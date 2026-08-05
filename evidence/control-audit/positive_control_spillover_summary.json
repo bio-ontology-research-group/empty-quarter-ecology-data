@@ -1,0 +1,14 @@
+{
+  "biological_profiles": 1025,
+  "input_sha256": {
+    "data/metadata/samples/controls/source_snapshots/ibex_20250714_16s_samplesheet.tsv": "007a06c18466314b956b3a66508b627244288ed1a750a298b2c7076f825fd57f",
+    "data/metadata/samples/controls/source_snapshots/ibex_20250714_qiime2/controls-metadata.tsv": "c221f162e1a75c43a9b5faa1e58d78c154d93793ef2cd0c1d1bf4c320f7ccd1f",
+    "data/metadata/samples/controls/source_snapshots/ibex_20250714_qiime2/extracted/feature-table.biom": "fe172ba5e5ef3ceb5dfc22b9b78146459915b1ecbd40972b852f26ae81f17568",
+    "data/metadata/samples/controls/source_snapshots/ibex_20250714_qiime2/extracted/taxonomy.tsv": "5cbca6e9904ffe395fe2e4215f6005622e47a9af71528c209398a22669c3b5db"
+  },
+  "interpretation_limit": "Exact-ASV overlap does not distinguish natural occurrence, cross-contamination, index hopping, or a mislabelled source library.",
+  "method": "exact ASVs assigned to an expected bacterial genus and represented by at least 5 reads in each positive profile",
+  "negative_profiles": 9,
+  "occurrence_rows": 118,
+  "positive_profiles": 7
+}

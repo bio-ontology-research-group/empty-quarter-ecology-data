@@ -1,0 +1,119 @@
+{
+  "campaign_date_audit": {
+    "evidence": "Trip_Metadata.xlsx sheet Trip3 rows 67--81 records March 2023; commit ffc330ee changed only the year to 2024.",
+    "trip1_auxiliary_end": "2023-03-20",
+    "trip1_auxiliary_records_from_legacy_trip3_sheet": 15,
+    "trip1_auxiliary_start": "2023-03-17",
+    "trip3_end": "2024-02-21",
+    "trip3_records": 65,
+    "trip3_start": "2024-02-17"
+  },
+  "correction_ledger": {
+    "applied": 24,
+    "entries": 24,
+    "path": "data/metadata/samples/environmental_measurement_corrections.tsv",
+    "sha256": "cf3ef3b4627daeab6185c8ab2a7bb1d3e6ef8ad4530ff3859979a95388ae27d5",
+    "status_counts": {
+      "confirmed_shifted_column": 8,
+      "confirmed_source_workbook": 15,
+      "quarantined_out_of_range": 1
+    }
+  },
+  "curated_records": 274,
+  "generated_outputs": {
+    "curated_tsv_sha256": "1b8cb5c71fa05f6d15cee34c489105d755a0c42b900ec36fe4007f7cd19c5559",
+    "latex_sha256": "90fb40aee9b20b7d5533b5830a2c02079e81b22cf8ffb9da94cdb64d4acf9380"
+  },
+  "method": "Raw field sheets are retained unchanged; exact-cell correction ledger entries are verified before use; curated temperature, pressure and relative-humidity values must pass declared ranges.",
+  "range_checks": {
+    "humidity": {
+      "maximum": 100.0,
+      "minimum": 0.0
+    },
+    "pressure": {
+      "maximum": 1100.0,
+      "minimum": 800.0
+    },
+    "temperature": {
+      "maximum": 60.0,
+      "minimum": -50.0
+    }
+  },
+  "row_qc_status_counts": {
+    "confirmed_shifted_column": 8,
+    "confirmed_source_workbook": 15,
+    "quarantined_out_of_range": 1,
+    "source_as_recorded": 250
+  },
+  "source_files": [
+    {
+      "measurements_retained": {
+        "humidity": 64,
+        "pressure": 63,
+        "temperature": 64
+      },
+      "nonblank_records": 64,
+      "path": "data/metadata/samplesheets/trip1-2023.tsv",
+      "record_roles": {
+        "named_special_record": 4,
+        "primary_transect_site": 60
+      },
+      "sha256": "b8589609285fb7f4f443ae3926b14dad1e2dade8912dea03724d017d8b620fb6"
+    },
+    {
+      "measurements_retained": {
+        "temperature": 8
+      },
+      "nonblank_records": 8,
+      "path": "data/metadata/samplesheets/trip2-2023.tsv",
+      "record_roles": {
+        "primary_transect_site": 8
+      },
+      "sha256": "ef8669ed00262aa7a82005f343dea27f394be2f0a6b2768cdff71f7cc41be960"
+    },
+    {
+      "measurements_retained": {
+        "humidity": 79,
+        "pressure": 76,
+        "temperature": 79
+      },
+      "nonblank_records": 80,
+      "path": "data/metadata/samplesheets/trip3-2024.tsv",
+      "record_roles": {
+        "named_special_record": 5,
+        "primary_transect_site": 60,
+        "trip1_auxiliary_or_revisit_record": 15
+      },
+      "sha256": "1e4f72e4a15b7e2779bbe8f6a6d30aaa99ef3cb987836fc2e85ac39141a72ccd"
+    },
+    {
+      "measurements_retained": {
+        "humidity": 60,
+        "temperature": 60
+      },
+      "nonblank_records": 60,
+      "path": "data/metadata/samplesheets/trip4-2024.tsv",
+      "record_roles": {
+        "primary_transect_site": 60
+      },
+      "sha256": "7c0496c356a46e60363ce6ae9397c656cb3f2f023364a388b4e72d68f3d92639"
+    },
+    {
+      "measurements_retained": {
+        "humidity": 61,
+        "pressure": 62,
+        "temperature": 62
+      },
+      "nonblank_records": 62,
+      "path": "data/metadata/samplesheets/trip5-2025.tsv",
+      "record_roles": {
+        "named_special_record": 2,
+        "primary_transect_site": 60
+      },
+      "sha256": "57a9274dab7edb8426fc238dc065c2274a5bec3df2ba22d43c7ab1517ea511d8"
+    }
+  ],
+  "status": "passed",
+  "trip3_site21_humidity_pct": "31.321",
+  "trip3_site21_primary_source_corroboration": "data/metadata/obsolete/Trip_Metadata.xlsx stores 0.31321; the current percent representation is therefore 31.321."
+}

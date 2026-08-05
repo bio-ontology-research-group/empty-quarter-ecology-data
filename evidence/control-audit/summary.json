@@ -1,0 +1,77 @@
+{
+  "batch_method": "pooled prevalence inference across EB1-EB17; a single candidate set is applied uniformly to the union of their mapped extraction-batch samples, and removal is summarized per batch",
+  "canonical_features": 351472,
+  "canonical_profiles": 1271,
+  "canonical_table_provenance_line": "# Constructed from biom file",
+  "characterization_only_negative_profiles": [
+    "EB18",
+    "Negative1",
+    "Negative2",
+    "Negative4",
+    "Negative5",
+    "Negative6",
+    "Negative7"
+  ],
+  "filtered_sensitivity_table": "analysis/v3/control_audit/trip5_mapped_feature_table_control_filtered.tsv.gz",
+  "filtered_sensitivity_table_profiles": 217,
+  "filtered_sensitivity_table_retained_features": 301311,
+  "filtered_sensitivity_table_sha256": "b7916acba11df3c1ae78b6ef0a430a730634e63e05801a3b99072ad3275cdf37",
+  "frequency_method": "not_run; DNA concentration data unavailable for these controls",
+  "generated_at": "2026-07-30T12:17:45.541362+00:00",
+  "input_sha256": {
+    "analysis/v3/figure_inputs/cache/alpha.tsv": "e6083716b713a36a5e6984826b20107613a1fd65359172a1e9cf10a7b3161c2c",
+    "data/metadata/samples/Sequenced_Samples_by_EB_FifthTrip.xlsx": "15bb92fc8a7c6389a74663718fffea207a2a030bf2f7b12f5955c57022671708",
+    "data/metadata/samples/controls/source_snapshots/ibex_20250714_qiime2/extracted/feature-table.biom": "fe172ba5e5ef3ceb5dfc22b9b78146459915b1ecbd40972b852f26ae81f17568",
+    "data/metadata/samples/controls/source_snapshots/ibex_20250714_qiime2/extracted/taxonomy.tsv": "5cbca6e9904ffe395fe2e4215f6005622e47a9af71528c209398a22669c3b5db",
+    "data/processed/taxonomy/taxon-tables/feature-table-trips1-5.tsv": "129f47d8f0db8d9afd6f8c67b8d80b5bead90155d8c91d2f43ea6a4139b0cb12",
+    "data/processed/taxonomy/taxon-tables/taxonomy-trips1-5.tsv": "fcf0a3ea0ca8ed956532fb4d7bffa0c20249e3048779a219155cc1bb7e483d35"
+  },
+  "limitations": [
+    "one extraction blank per extraction day prevents within-batch prevalence estimation",
+    "EB18 and Negative1/2/4-7 lack extraction-day mappings and are characterization-only",
+    "Trip-4 blank FASTQs are not present in the canonical denoising table",
+    "Trip-5 D6300 positive control is shotgun-only and cannot validate the 16S assay",
+    "candidate calls are a sensitivity analysis and do not replace the unfiltered canonical table"
+  ],
+  "mapped_biological_profiles_absent_from_canonical_table": [
+    "V16Dr1",
+    "V16Sr1",
+    "V7Dr1"
+  ],
+  "mapped_biological_profiles_in_canonical_table": 217,
+  "mapped_biological_profiles_in_workbook": 220,
+  "method_reference": "Fierer et al. 2025, doi:10.1038/s41564-025-02035-2",
+  "positive_control_profiles": 7,
+  "positive_controls_in_training": 0,
+  "positive_expected_taxon_evaluations": 62,
+  "positive_library_product_assignment": "provisional_from_positive_label_and_trip_design",
+  "primary_candidate_contaminant_features": 351,
+  "primary_method": "one-sided Fisher prevalence enrichment",
+  "primary_minimum_blank_prevalence_count": 2,
+  "primary_prevalence_score_threshold": 0.1,
+  "removal_summary_dimensions": [
+    "profile",
+    "campaign",
+    "compartment",
+    "extraction_batch"
+  ],
+  "training_extraction_blanks": [
+    "EB1",
+    "EB2",
+    "EB3",
+    "EB4",
+    "EB5",
+    "EB6",
+    "EB7",
+    "EB8",
+    "EB9",
+    "EB10",
+    "EB11",
+    "EB12",
+    "EB13",
+    "EB14",
+    "EB15",
+    "EB16",
+    "EB17"
+  ]
+}

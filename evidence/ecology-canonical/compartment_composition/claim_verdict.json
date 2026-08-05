@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "status": "compartment_composition_supported",
+  "permitted_wording": "Paired compositional comparisons with the site as the permutation unit supported a multivariate location difference for shallow subsurface versus surface; root-adjacent versus surface; root-adjacent versus shallow subsurface, and the direction and location result persisted across taxon-set, zero-treatment and leave-one-campaign fits. Within-position dispersion also differed for shallow subsurface versus surface; root-adjacent versus surface; root-adjacent versus shallow subsurface, so the compartments differ in spread as well as in location; the location result itself is a paired sign-flip test of the mean within-block difference vector and is exact under the paired-symmetry null irrespective of that dispersion heterogeneity. A retained compartment effect describes composition only. Plant identity, root activity, root distance and local moisture were not measured, so it must not be interpreted as a plant selective filter.",
+  "prohibited_wording": "Do not describe any compartment difference as a plant selective filter, rhizosphere effect mechanism, or moisture-driven selection; none of those variables were measured.",
+  "omnibus": {
+    "n_sites": 60,
+    "n_blocks": 170,
+    "pseudo_f": 17.279659890137943,
+    "permutation_p": 0.001,
+    "caveat": "The omnibus statistic permutes position labels within site and, like any pseudo-F, responds to both location and dispersion. Interpretation relies on the paired sign-flip location tests and the dispersion diagnostics reported separately below."
+  },
+  "location_test_dispersion_note": "Each pairwise location test sign-flips the mean within-block difference vector across sites. It is exact under the paired-symmetry null even when within-position dispersion differs, so a dispersion difference does not by itself create a location result.",
+  "contrasts": {
+    "Deep-Surface": {
+      "label": "shallow subsurface versus surface",
+      "status": "supported",
+      "n_sites": 60,
+      "n_blocks": 183,
+      "centroid_displacement": 7.583207127099798,
+      "centroid_displacement_ci": [
+        6.86424941703011,
+        9.404180816421
+      ],
+      "standardized_displacement": 0.3311512087626922,
+      "permutation_p": 0.001,
+      "q_within_primary_family": 0.001,
+      "taxon_and_zero_sensitivities_supported": true,
+      "leave_one_campaign_supported": true,
+      "direction_stable": true,
+      "dispersion_difference": 1.3775934815697621,
+      "dispersion_difference_ci": [
+        0.44114880731850187,
+        2.3747608353479515
+      ],
+      "dispersion_differs": true
+    },
+    "Rhizosphere-Surface": {
+      "label": "root-adjacent versus surface",
+      "status": "supported",
+      "n_sites": 60,
+      "n_blocks": 182,
+      "centroid_displacement": 11.336161518800655,
+      "centroid_displacement_ci": [
+        9.973826721051987,
+        13.66426936374395
+      ],
+      "standardized_displacement": 0.4327815103955024,
+      "permutation_p": 0.001,
+      "q_within_primary_family": 0.001,
+      "taxon_and_zero_sensitivities_supported": true,
+      "leave_one_campaign_supported": true,
+      "direction_stable": true,
+      "dispersion_difference": 2.3866241026106056,
+      "dispersion_difference_ci": [
+        1.5501865324786996,
+        3.2123285870524922
+      ],
+      "dispersion_differs": true
+    },
+    "Rhizosphere-Deep": {
+      "label": "root-adjacent versus shallow subsurface",
+      "status": "supported",
+      "n_sites": 60,
+      "n_blocks": 191,
+      "centroid_displacement": 12.867460016471883,
+      "centroid_displacement_ci": [
+        11.06937736910529,
+        15.296958923010695
+      ],
+      "standardized_displacement": 0.4780294798714601,
+      "permutation_p": 0.001,
+      "q_within_primary_family": 0.001,
+      "taxon_and_zero_sensitivities_supported": true,
+      "leave_one_campaign_supported": true,
+      "direction_stable": true,
+      "dispersion_difference": 1.0090306210408437,
+      "dispersion_difference_ci": [
+        0.05563271838498836,
+        2.055012313411498
+      ],
+      "dispersion_differs": true
+    }
+  },
+  "multiplicity_family": "The three primary pairwise position contrasts form one Benjamini-Hochberg family. Dispersion diagnostics are corrected in their own declared family and are not location tests.",
+  "input": {
+    "input_genera": 1604,
+    "input_profile_columns": 1237,
+    "parsed_core_profile_columns": 1227,
+    "campaign_site_position_groups": 633,
+    "retained_groups": 630,
+    "excluded_low_read_groups": 3,
+    "minimum_group_reads": 2000,
+    "retained_sites": 60,
+    "eligible_genera": 384,
+    "counts_path": "analysis/v2/review/cache/genus_counts.tsv",
+    "counts_sha256": "324d19da3669d489a42b60e0bdd6ca7f3238308bbadc72b8a28ae6098ddc8481",
+    "prevalence_threshold": 0.2,
+    "primary_taxon_count": 200,
+    "taxon_sets": [
+      80,
+      200,
+      384
+    ],
+    "zero_treatments": [
+      "pseudocount_0.5",
+      "pseudocount_1.0",
+      "multiplicative_0.65"
+    ],
+    "primary_zero_treatment": "pseudocount_0.5",
+    "permutations": 999,
+    "bootstrap_resamples": 2000,
+    "seed": 20260725
+  }
+}

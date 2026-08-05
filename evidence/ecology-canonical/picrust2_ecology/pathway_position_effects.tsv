@@ -1,0 +1,601 @@
+contrast	pathway	description	n_sites	mean_clr_difference	p_value	q_global_600	supported_q_lt_0_05
+Deep-Surface	PWY-3781	aerobic respiration I (cytochrome c)	60	0.04921372998	0.0149	0.03478599222	True
+Deep-Surface	PWY-7111	pyruvate fermentation to isobutanol (engineered)	60	-0.01842423736	0.5681	0.6670450098	False
+Deep-Surface	PWY-5101	L-isoleucine biosynthesis II	60	0.02766459876	0.3176	0.4244097996	False
+Deep-Surface	ILEUSYN-PWY	L-isoleucine biosynthesis I (from threonine)	60	0.02302410823	0.5145	0.6198396794	False
+Deep-Surface	VALSYN-PWY	L-valine biosynthesis	60	0.02302410823	0.5145	0.6198396794	False
+Deep-Surface	BRANCHED-CHAIN-AA-SYN-PWY	superpathway of branched amino acid biosynthesis	60	0.04735692784	0.019	0.04318181818	True
+Deep-Surface	PWY-5973	cis-vaccenate biosynthesis	60	0.02373087449	0.4587	0.5639754098	False
+Deep-Surface	PWY-7663	gondoate biosynthesis (anaerobic)	60	0.02014534577	0.5651	0.6655294118	False
+Deep-Surface	FASYN-ELONG-PWY	fatty acid elongation -- saturated	60	0.01365558305	0.699	0.7835820896	False
+Deep-Surface	TCA	TCA cycle I (prokaryotic)	60	0.03073059766	0.2078	0.304097561	False
+Deep-Surface	PWY-6969	TCA cycle V (2-oxoglutarate:ferredoxin oxidoreductase)	60	0.04237119745	0.0436	0.08493506494	False
+Deep-Surface	PWY-5103	L-isoleucine biosynthesis III	60	0.04264638929	0.0444	0.08621359223	False
+Deep-Surface	PWY-7094	fatty acid salvage	60	-0.011210644	0.7388	0.8163535912	False
+Deep-Surface	PWY-5667	CDP-diacylglycerol biosynthesis I	60	0.05591149416	0.0004	0.001481481481	True
+Deep-Surface	PWY0-1319	CDP-diacylglycerol biosynthesis II	60	0.05591149416	0.0004	0.001481481481	True
+Deep-Surface	FAO-PWY	fatty acid &beta;-oxidation I	60	-0.04045104494	0.1779	0.2629064039	False
+Deep-Surface	NONOXIPENT-PWY	pentose phosphate pathway (non-oxidative branch)	60	0.06717178565	0.0002	0.0008333333333	True
+Deep-Surface	PWY-7208	superpathway of pyrimidine nucleobases salvage	60	0.05007574446	0.0031	0.008732394366	True
+Deep-Surface	PWY-7229	superpathway of adenosine nucleotides de novo biosynthesis I	60	0.06046165536	0.0002	0.0008333333333	True
+Deep-Surface	PHOSLIPSYN-PWY	superpathway of phospholipid biosynthesis I (bacteria)	60	0.06502501781	0.0002	0.0008333333333	True
+Deep-Surface	PWY-3001	superpathway of L-isoleucine biosynthesis I	60	0.04969350635	0.0147	0.034453125	True
+Deep-Surface	PWY-5695	urate biosynthesis/inosine 5'-phosphate degradation	60	-0.0339689257	0.152	0.2320610687	False
+Deep-Surface	PWY-2942	L-lysine biosynthesis III	60	0.04229908278	0.0447	0.08643086817	False
+Deep-Surface	REDCITCYC	TCA cycle VIII (helicobacter)	60	-0.03767203363	0.1478	0.2279691517	False
+Deep-Surface	PWY-7219	adenosine ribonucleotides de novo biosynthesis	60	0.06642178588	0.0002	0.0008333333333	True
+Deep-Surface	SER-GLYSYN-PWY	superpathway of L-serine and glycine biosynthesis I	60	0.03776222583	0.1008	0.1732951289	False
+Deep-Surface	PWY-6126	superpathway of adenosine nucleotides de novo biosynthesis II	60	0.06093788226	0.0002	0.0008333333333	True
+Deep-Surface	PWY-7220	adenosine deoxyribonucleotides de novo biosynthesis II	60	0.05429180537	0.0011	0.003567567568	True
+Deep-Surface	PWY-7222	guanosine deoxyribonucleotides de novo biosynthesis II	60	0.05429180537	0.0011	0.003567567568	True
+Deep-Surface	P105-PWY	TCA cycle IV (2-oxoglutarate decarboxylase)	60	-0.01215862343	0.6565	0.7446124764	False
+Deep-Surface	PWY0-162	superpathway of pyrimidine ribonucleotides de novo biosynthesis	60	0.05863846402	0.0005	0.001775147929	True
+Deep-Surface	PWY-6122	5-aminoimidazole ribonucleotide biosynthesis II	60	0.04991412587	0.0062	0.01631578947	True
+Deep-Surface	PWY-6277	superpathway of 5-aminoimidazole ribonucleotide biosynthesis	60	0.04991412587	0.0062	0.01631578947	True
+Deep-Surface	PWY-6121	5-aminoimidazole ribonucleotide biosynthesis I	60	0.03965726282	0.0385	0.07694352159	False
+Deep-Surface	PWY-5686	UMP biosynthesis	60	0.05600394899	0.0019	0.005816326531	True
+Deep-Surface	PWY4FS-7	phosphatidylglycerol biosynthesis I (plastidic)	60	0.07520071159	0.0001	0.0005042016807	True
+Deep-Surface	PWY4FS-8	phosphatidylglycerol biosynthesis II (non-plastidic)	60	0.07520071159	0.0001	0.0005042016807	True
+Deep-Surface	PWY-7228	superpathway of guanosine nucleotides de novo biosynthesis I	60	0.04957606444	0.0023	0.006764705882	True
+Deep-Surface	PWY-5097	L-lysine biosynthesis VI	60	0.03904262756	0.0898	0.156173913	False
+Deep-Surface	PWY-841	superpathway of purine nucleotides de novo biosynthesis I	60	0.05126760345	0.0028	0.007924528302	True
+Deep-Surface	COMPLETE-ARO-PWY	superpathway of aromatic amino acid biosynthesis	60	0.0632698419	0.0002	0.0008333333333	True
+Deep-Surface	PWY-6125	superpathway of guanosine nucleotides de novo biosynthesis II	60	0.05136828566	0.001	0.003351955307	True
+Deep-Surface	ANAGLYCOLYSIS-PWY	glycolysis III (from glucose)	60	0.05016429255	0.0021	0.006331658291	True
+Deep-Surface	THRESYN-PWY	superpathway of L-threonine biosynthesis	60	0.05637805499	0.0054	0.01452914798	True
+Deep-Surface	CALVIN-PWY	Calvin-Benson-Bassham cycle	60	0.05671053458	0.0003	0.001161290323	True
+Deep-Surface	TRPSYN-PWY	L-tryptophan biosynthesis	60	0.05106885874	0.0032	0.008971962617	True
+Deep-Surface	PWY-7221	guanosine ribonucleotides de novo biosynthesis	60	0.0504486667	0.0009	0.003068181818	True
+Deep-Surface	P108-PWY	pyruvate fermentation to propanoate I	60	0.07516990067	0.0002	0.0008333333333	True
+Deep-Surface	PWY-5659	GDP-mannose biosynthesis	60	0.08874224121	0.0001	0.0005042016807	True
+Deep-Surface	PWY-5188	tetrapyrrole biosynthesis I (from glutamate)	60	0.03814577886	0.1205	0.1943548387	False
+Deep-Surface	ARGSYNBSUB-PWY	L-arginine biosynthesis II (acetyl cycle)	60	0.06692250286	0.0003	0.001161290323	True
+Deep-Surface	ARO-PWY	chorismate biosynthesis I	60	0.06436874241	0.0002	0.0008333333333	True
+Deep-Surface	PWY-5189	tetrapyrrole biosynthesis II (from glycine)	60	0.03345813915	0.1589	0.2407575758	False
+Deep-Surface	GLYCOLYSIS	glycolysis I (from glucose 6-phosphate)	60	-0.02312776102	0.8183	0.87675	False
+Deep-Surface	DTDPRHAMSYN-PWY	dTDP-L-rhamnose biosynthesis I	60	0.05368138806	0.0024	0.007024390244	True
+Deep-Surface	PWY-6387	UDP-N-acetylmuramoyl-pentapeptide biosynthesis I (meso-diaminopimelate containing)	60	0.05333602523	0.002	0.006091370558	True
+Deep-Surface	SALVADEHYPOX-PWY	adenosine nucleotides degradation II	60	-0.08223486648	0.0046	0.01248868778	True
+Deep-Surface	GLUCONEO-PWY	gluconeogenesis I	60	0.02249104379	0.4822	0.5868559838	False
+Deep-Surface	PWY-6163	chorismate biosynthesis from 3-dehydroquinate	60	0.06605934849	0.0002	0.0008333333333	True
+Deep-Surface	PEPTIDOGLYCANSYN-PWY	peptidoglycan biosynthesis I (meso-diaminopimelate containing)	60	0.05465339299	0.0013	0.004083769634	True
+Deep-Surface	COA-PWY	coenzyme A biosynthesis I	60	0.05698499287	0.0005	0.001775147929	True
+Deep-Surface	SULFATE-CYS-PWY	superpathway of sulfate assimilation and cysteine biosynthesis	60	-0.01680238333	0.6063	0.6983493282	False
+Deep-Surface	RIBOSYN2-PWY	flavin biosynthesis I (bacteria and plants)	60	0.05151795101	0.0067	0.01732758621	True
+Deep-Surface	PWY-6386	UDP-N-acetylmuramoyl-pentapeptide biosynthesis II (lysine-containing)	60	0.05347454633	0.0005	0.001775147929	True
+Deep-Surface	GLUTORN-PWY	L-ornithine biosynthesis	60	0.05741588008	0.0028	0.007924528302	True
+Deep-Surface	PWY-6608	guanosine nucleotides degradation III	60	-0.03373229269	0.2707	0.3794859813	False
+Deep-Surface	PANTO-PWY	phosphopantothenate biosynthesis I	60	0.04717731597	0.0316	0.06537931034	False
+Deep-Surface	PWY-6385	peptidoglycan biosynthesis III (mycobacteria)	60	0.0556377926	0.0002	0.0008333333333	True
+Deep-Surface	UDPNAGSYN-PWY	UDP-N-acetyl-D-glucosamine biosynthesis I	60	0.08259471715	0.0001	0.0005042016807	True
+Deep-Surface	PWY-6123	inosine-5'-phosphate biosynthesis I	60	0.05449520509	0.0025	0.007211538462	True
+Deep-Surface	HISTSYN-PWY	L-histidine biosynthesis	60	0.05816963366	0.0013	0.004083769634	True
+Deep-Surface	PENTOSE-P-PWY	pentose phosphate pathway	60	0.02155998106	0.4417	0.5486956522	False
+Deep-Surface	PWY-7197	pyrimidine deoxyribonucleotide phosphorylation	60	0.07008411689	0.0001	0.0005042016807	True
+Deep-Surface	DAPLYSINESYN-PWY	L-lysine biosynthesis I	60	0.03007871743	0.2628	0.370117096	False
+Deep-Surface	PWY0-1261	anhydromuropeptides recycling	60	-0.04245306833	0.1149	0.1883606557	False
+Deep-Surface	PANTOSYN-PWY	pantothenate and coenzyme A biosynthesis I	60	0.03939986734	0.0619	0.1122054381	False
+Deep-Surface	ARGSYN-PWY	L-arginine biosynthesis I (via L-ornithine)	60	0.08457491094	0.0001	0.0005042016807	True
+Deep-Surface	HEMESYN2-PWY	heme biosynthesis II (anaerobic)	60	0.006084694994	0.8523	0.9067021277	False
+Deep-Surface	PWY0-1586	peptidoglycan maturation (meso-diaminopimelate containing)	60	-0.03491395673	0.6318	0.7220571429	False
+Deep-Surface	PWY-7400	L-arginine biosynthesis IV (archaebacteria)	60	0.08405972881	0.0001	0.0005042016807	True
+Deep-Surface	PWY-7539	6-hydroxymethyl-dihydropterin diphosphate biosynthesis III (Chlamydia)	60	0.01222823237	0.693	0.7786516854	False
+Deep-Surface	PWY-5484	glycolysis II (from fructose 6-phosphate)	60	-0.04770437085	0.4525	0.5586419753	False
+Deep-Surface	TRNA-CHARGING-PWY	tRNA charging	60	0.03484573511	0.1301	0.2048818898	False
+Deep-Surface	PWY-7211	superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis	60	0.003559355225	0.9293	0.9620654045	False
+Deep-Surface	OANTIGEN-PWY	O-antigen building blocks biosynthesis (E. coli)	60	0.06451477491	0.0001	0.0005042016807	True
+Deep-Surface	PWY-5121	superpathway of geranylgeranyl diphosphate biosynthesis II (via MEP)	60	0.1210893694	0.0002	0.0008333333333	True
+Deep-Surface	NONMEVIPP-PWY	methylerythritol phosphate pathway I	60	0.03923438353	0.1019	0.1741880342	False
+Deep-Surface	PWY-7560	methylerythritol phosphate pathway II	60	0.03923438353	0.1019	0.1741880342	False
+Deep-Surface	PWY-6147	6-hydroxymethyl-dihydropterin diphosphate biosynthesis I	60	0.01440675329	0.6143	0.706091954	False
+Deep-Surface	PWY-7234	inosine-5'-phosphate biosynthesis III	60	0.01728507572	0.5529	0.6569108911	False
+Deep-Surface	PWY-6609	adenine and adenosine salvage III	60	0.1434151397	0.0005	0.001775147929	True
+Deep-Surface	SO4ASSIM-PWY	sulfate reduction I (assimilatory)	60	-0.03420594455	0.3509	0.4617105263	False
+Deep-Surface	GLYCOLYSIS-TCA-GLYOX-BYPASS	superpathway of glycolysis, pyruvate dehydrogenase, TCA, and glyoxylate bypass	60	-0.134070077	0.0012	0.003829787234	True
+Deep-Surface	PWY-6897	thiamin salvage II	60	0.02437749395	0.4288	0.5348856549	False
+Deep-Surface	POLYISOPRENSYN-PWY	polyisoprenoid biosynthesis (E. coli)	60	0.0418217455	0.0393	0.0780794702	False
+Deep-Surface	PWY-5345	superpathway of L-methionine biosynthesis (by sulfhydrylation)	60	-0.01985001004	0.5636	0.6655294118	False
+Deep-Surface	PWY-6353	purine nucleotides degradation II (aerobic)	60	-0.007439364526	0.9737	0.9868581081	False
+Deep-Surface	PWY-7184	pyrimidine deoxyribonucleotides de novo biosynthesis I	60	-0.001840298832	0.9592	0.9778983051	False
+Deep-Surface	P42-PWY	incomplete reductive TCA cycle	60	0.1454941441	0.0001	0.0005042016807	True
+Deep-Surface	ANAEROFRUCAT-PWY	homolactic fermentation	60	-0.1035736214	0.1735	0.2584615385	False
+Deep-Surface	FOLSYN-PWY	superpathway of tetrahydrofolate biosynthesis and salvage	60	-0.07769697822	0.0001	0.0005042016807	True
+Deep-Surface	P4-PWY	superpathway of L-lysine, L-threonine and L-methionine biosynthesis I	60	0.03485064753	0.1611	0.2434760705	False
+Deep-Surface	PWY-5154	L-arginine biosynthesis III (via N-acetyl-L-citrulline)	60	0.01834234706	0.5946	0.6900580271	False
+Deep-Surface	PYRIDNUCSYN-PWY	NAD biosynthesis I (from aspartate)	60	0.06779322792	0.0002	0.0008333333333	True
+Deep-Surface	TCA-GLYOX-BYPASS	superpathway of glyoxylate bypass and TCA	60	-0.0895237762	0.0052	0.01405405405	True
+Deep-Surface	PWY-5347	superpathway of L-methionine biosynthesis (transsulfuration)	60	0.04730891808	0.0456	0.08741214058	False
+Deep-Surface	GLYCOLYSIS-E-D	superpathway of glycolysis and Entner-Doudoroff	60	-0.04341335106	0.1752	0.2601980198	False
+Deep-Surface	PWY0-166	superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis (E. coli)	60	0.008661268112	0.8168	0.8767084079	False
+Deep-Surface	HSERMETANA-PWY	L-methionine biosynthesis III	60	-0.04165107543	0.2837	0.3958604651	False
+Deep-Surface	PWY-5918	superpathay of heme biosynthesis from glutamate	60	-0.03286108677	0.5143	0.6198396794	False
+Deep-Surface	1CMET2-PWY	N10-formyl-tetrahydrofolate biosynthesis	60	-0.0246279651	0.4386	0.5459751037	False
+Deep-Surface	MET-SAM-PWY	superpathway of S-adenosyl-L-methionine biosynthesis	60	0.03939348566	0.1293	0.2041578947	False
+Deep-Surface	PWY0-781	aspartate superpathway	60	0.03424090962	0.1172	0.1910869565	False
+Deep-Surface	PWY-6612	superpathway of tetrahydrofolate biosynthesis	60	-0.1004040526	0.0001	0.0005042016807	True
+Deep-Surface	PWY-5913	TCA cycle VI (obligate autotrophs)	60	-0.05308810603	0.1075	0.1791666667	False
+Deep-Surface	PWY-6700	queuosine biosynthesis	60	0.02873521527	0.3582	0.4692576419	False
+Deep-Surface	PWY-7200	superpathway of pyrimidine deoxyribonucleoside salvage	60	0.05487396782	0.5027	0.6093333333	False
+Deep-Surface	P23-PWY	reductive TCA cycle I	60	0.1636762185	0.2201	0.3180288462	False
+Deep-Surface	PWY-7196	superpathway of pyrimidine ribonucleosides salvage	60	-0.001483311503	0.9799	0.9886386555	False
+Deep-Surface	PWY-7323	superpathway of GDP-mannose-derived O-antigen building blocks biosynthesis	60	0.02005068107	0.4544	0.559835729	False
+Deep-Surface	GLYOXYLATE-BYPASS	glyoxylate cycle	60	-0.07118559391	0.0282	0.06021352313	False
+Deep-Surface	GLYCOGENSYNTH-PWY	glycogen biosynthesis I (from ADP-D-Glucose)	60	-0.009051984427	0.9312	0.9620654045	False
+Deep-Surface	PWY-7392	taxadiene biosynthesis (engineered)	60	-0.03939186068	0.5228	0.6248605578	False
+Deep-Surface	PWY-6703	preQ0 biosynthesis	60	0.003305330321	0.9251	0.9619757366	False
+Deep-Surface	HOMOSER-METSYN-PWY	L-methionine biosynthesis I	60	0.03527669966	0.2966	0.4053758542	False
+Deep-Surface	PWY-6317	galactose degradation I (Leloir pathway)	60	0.05244342859	0.5858	0.6824854369	False
+Deep-Surface	HEME-BIOSYNTHESIS-II	heme biosynthesis I (aerobic)	60	0.01107448083	0.7719	0.8420727273	False
+Deep-Surface	PWY-7199	pyrimidine deoxyribonucleosides salvage	60	0.006422271774	0.9423	0.9697770154	False
+Deep-Surface	PWY-6628	superpathway of L-phenylalanine biosynthesis	60	-0.05794553324	0.3612	0.4711304348	False
+Deep-Surface	PWY-6630	superpathway of L-tyrosine biosynthesis	60	-0.05675380309	0.3719	0.4780728051	False
+Deep-Surface	PWY-5104	L-isoleucine biosynthesis IV	60	0.221287717	0.0001	0.0005042016807	True
+Deep-Surface	PWY-4984	urea cycle	60	0.03088132972	0.3661	0.4744276458	False
+Deep-Surface	HISDEG-PWY	L-histidine degradation I	60	-0.08159293168	0.2238	0.3220143885	False
+Deep-Surface	PWY0-1296	purine ribonucleosides degradation	60	0.07335021333	0.2876	0.3994444444	False
+Deep-Surface	PWY-7254	TCA cycle VII (acetate-producers)	60	-0.2440290286	0.0001	0.0005042016807	True
+Deep-Surface	PWYG-321	mycolate biosynthesis	60	-0.1441828192	0.0057	0.01526785714	True
+Deep-Surface	COBALSYN-PWY	adenosylcobalamin salvage from cobinamide I	60	-0.001773564294	0.9616	0.9778983051	False
+Deep-Surface	COLANSYN-PWY	colanic acid building blocks biosynthesis	60	-0.01860973942	0.598	0.6913294798	False
+Deep-Surface	GLYCOCAT-PWY	glycogen degradation I (bacterial)	60	0.0361186307	0.2382	0.3394774347	False
+Deep-Surface	PWY-6901	superpathway of glucose and xylose degradation	60	-0.1225612595	0.1065	0.177994429	False
+Deep-Surface	PWY-5920	superpathway of heme biosynthesis from glycine	60	-0.04645035928	0.1582	0.2407575758	False
+Deep-Surface	PWY-7664	oleate biosynthesis IV (anaerobic)	60	-0.1436707885	0.0059	0.01573333333	True
+Deep-Surface	LEU-DEG2-PWY	L-leucine degradation I	60	-0.06231128453	0.1404	0.218238342	False
+Deep-Surface	PYRIDNUCSAL-PWY	NAD salvage pathway I	60	-0.03891035549	0.2505	0.3536470588	False
+Deep-Surface	PWY-5989	stearate biosynthesis II (bacteria and plants)	60	-0.1578009184	0.004	0.01100917431	True
+Deep-Surface	PWY-6737	starch degradation V	60	0.01253572253	0.7232	0.8020702403	False
+Deep-Surface	PWY0-1297	superpathway of purine deoxyribonucleosides degradation	60	0.06022040789	0.4094	0.5171368421	False
+Deep-Surface	PWY-6282	palmitoleate biosynthesis I (from (5Z)-dodec-5-enoate)	60	-0.1532326116	0.0046	0.01248868778	True
+Deep-Surface	FERMENTATION-PWY	mixed acid fermentation	60	-0.03828313016	0.2092	0.3054014599	False
+Deep-Surface	PWY0-862	(5Z)-dodec-5-enoate biosynthesis	60	-0.1519049006	0.0063	0.01643478261	True
+Deep-Surface	PWY-5505	L-glutamate and L-glutamine biosynthesis	60	0.01977096857	0.7266	0.8043542435	False
+Deep-Surface	PWY-5022	4-aminobutanoate degradation V	60	0.01387463854	0.8654	0.9182332155	False
+Deep-Surface	DENOVOPURINE2-PWY	superpathway of purine nucleotides de novo biosynthesis II	60	0.07201935478	0.1992	0.2922249389	False
+Deep-Surface	PWY0-1415	superpathway of heme biosynthesis from uroporphyrinogen-III	60	-0.1106539545	0.2196	0.3180288462	False
+Deep-Surface	PWY-6151	S-adenosyl-L-methionine cycle I	60	-0.1307762142	0.0025	0.007211538462	True
+Deep-Surface	ARG+POLYAMINE-SYN	superpathway of arginine and polyamine biosynthesis	60	-0.06338531291	0.4908	0.5961133603	False
+Deep-Surface	PWY-6895	superpathway of thiamin diphosphate biosynthesis II	60	-0.05312401956	0.6064	0.6983493282	False
+Deep-Surface	PWY-5840	superpathway of menaquinol-7 biosynthesis	60	0.1148627699	0.3102	0.4191891892	False
+Deep-Surface	THISYN-PWY	superpathway of thiamin diphosphate biosynthesis I	60	-0.04668493318	0.669	0.7545112782	False
+Deep-Surface	PRPP-PWY	superpathway of histidine, purine, and pyrimidine biosynthesis	60	0.1085417514	0.2147	0.3119128329	False
+Deep-Surface	PWY-6545	pyrimidine deoxyribonucleotides de novo biosynthesis III	60	0.03594992696	0.9088	0.9516230366	False
+Deep-Surface	PWY-5838	superpathway of menaquinol-8 biosynthesis I	60	0.1181396308	0.294	0.4047247706	False
+Deep-Surface	PWY-5855	ubiquinol-7 biosynthesis (prokaryotic)	60	-0.1076628021	0.0096	0.0237037037	True
+Deep-Surface	PWY-5856	ubiquinol-9 biosynthesis (prokaryotic)	60	-0.1076628021	0.0096	0.0237037037	True
+Deep-Surface	PWY-5857	ubiquinol-10 biosynthesis (prokaryotic)	60	-0.1076628021	0.0096	0.0237037037	True
+Deep-Surface	PWY-6708	ubiquinol-8 biosynthesis (prokaryotic)	60	-0.1076628021	0.0096	0.0237037037	True
+Deep-Surface	PWY-5897	superpathway of menaquinol-11 biosynthesis	60	0.1129520327	0.3132	0.4204026846	False
+Deep-Surface	PWY-5898	superpathway of menaquinol-12 biosynthesis	60	0.1129520327	0.3132	0.4204026846	False
+Deep-Surface	PWY-5899	superpathway of menaquinol-13 biosynthesis	60	0.1129520327	0.3132	0.4204026846	False
+Deep-Surface	PWY-6269	adenosylcobalamin salvage from cobinamide II	60	-0.03130454276	0.2964	0.4053758542	False
+Deep-Surface	PWY-5509	adenosylcobalamin biosynthesis from cobyrinate a,c-diamide I	60	-0.02613222845	0.4	0.5063291139	False
+Deep-Surface	FASYN-INITIAL-PWY	superpathway of fatty acid biosynthesis initiation (E. coli)	60	-0.1661234758	0.0014	0.004352331606	True
+Deep-Surface	UBISYN-PWY	superpathway of ubiquinol-8 biosynthesis (prokaryotic)	60	-0.1831200927	0.0001	0.0005042016807	True
+Deep-Surface	PWY0-1061	superpathway of L-alanine biosynthesis	60	-0.3610912322	0.0001	0.0005042016807	True
+Deep-Surface	PWY0-1298	superpathway of pyrimidine deoxyribonucleosides degradation	60	0.03009317044	0.6313	0.7220571429	False
+Deep-Surface	PWY-6467	Kdo transfer to lipid IVA III (Chlamydia)	60	0.01654814965	0.7407	0.8169485294	False
+Deep-Surface	NAGLIPASYN-PWY	lipid IVA biosynthesis	60	0.004345691859	0.913	0.9543554007	False
+Deep-Surface	PWY0-1479	tRNA processing	60	-0.3499539377	0.0001	0.0005042016807	True
+Deep-Surface	PWY-2941	L-lysine biosynthesis II	60	-0.08118117094	0.4112	0.5178616352	False
+Deep-Surface	PWY-1269	CMP-3-deoxy-D-manno-octulosonate biosynthesis I	60	-0.00218018355	0.956	0.9778983051	False
+Deep-Surface	PROTOCATECHUATE-ORTHO-CLEAVAGE-PWY	protocatechuate degradation II (ortho-cleavage pathway)	60	-0.07259445063	0.1627	0.2452763819	False
+Deep-Surface	PWY-5100	pyruvate fermentation to acetate and lactate II	60	0.1573609049	0.1047	0.1769577465	False
+Deep-Surface	PWY-5971	palmitate biosynthesis II (bacteria and plants)	60	-0.03640320925	0.9211	0.9594791667	False
+Deep-Surface	PWY-5861	superpathway of demethylmenaquinol-8 biosynthesis	60	0.115110146	0.2859	0.3980046404	False
+Deep-Surface	PWY-7187	pyrimidine deoxyribonucleotides de novo biosynthesis II	60	0.04491805566	0.3989	0.5060042283	False
+Deep-Surface	P161-PWY	acetylene degradation	60	0.1273854117	0.0399	0.07875	False
+Deep-Surface	PWY-7328	superpathway of UDP-glucose-derived O-antigen building blocks biosynthesis	60	-0.2676691162	0.0366	0.07369127517	False
+Deep-Surface	BIOTIN-BIOSYNTHESIS-PWY	biotin biosynthesis I	60	-0.307118242	0.0001	0.0005042016807	True
+Deep-Surface	PWY-7242	D-fructuronate degradation	60	-0.1575725666	0.0006	0.002093023256	True
+Deep-Surface	PWY-181	photorespiration	60	-0.1504740719	0.2246	0.3223923445	False
+Deep-Surface	PWY-6519	8-amino-7-oxononanoate biosynthesis I	60	-0.3294405846	0.0001	0.0005042016807	True
+Deep-Surface	POLYAMSYN-PWY	superpathway of polyamine biosynthesis I	60	-0.09919345153	0.3014	0.4091402715	False
+Deep-Surface	PWY-7431	aromatic biogenic amine degradation (bacteria)	60	-0.1154071046	0.0803	0.1404664723	False
+Deep-Surface	PWY-6263	superpathway of menaquinol-8 biosynthesis II	60	0.01945200247	0.8922	0.9375131349	False
+Deep-Surface	PWY-5863	superpathway of phylloquinol biosynthesis	60	0.107632921	0.2941	0.4047247706	False
+Deep-Surface	PWY-1861	formaldehyde assimilation II (RuMP Cycle)	60	-0.02007618074	0.8523	0.9067021277	False
+Deep-Surface	P124-PWY	Bifidobacterium shunt	60	-0.1684940846	0.1503	0.2306393862	False
+Deep-Surface	ASPASN-PWY	superpathway of L-aspartate and L-asparagine biosynthesis	60	-0.08875202192	0.116	0.1896457766	False
+Deep-Surface	PWY-5837	1,4-dihydroxy-2-naphthoate biosynthesis I	60	0.1044852093	0.3008	0.4091402715	False
+Deep-Surface	PWY-7237	myo-, chiro- and scillo-inositol degradation	60	-0.07989470499	0.3654	0.4744276458	False
+Rhizosphere-Surface	PWY-3781	aerobic respiration I (cytochrome c)	60	-0.03825085597	0.0307	0.06440559441	False
+Rhizosphere-Surface	PWY-7111	pyruvate fermentation to isobutanol (engineered)	60	-0.02912473384	0.2987	0.4073181818	False
+Rhizosphere-Surface	PWY-5101	L-isoleucine biosynthesis II	60	-0.03775157921	0.0589	0.1074164134	False
+Rhizosphere-Surface	ILEUSYN-PWY	L-isoleucine biosynthesis I (from threonine)	60	-0.03928373508	0.0724	0.1285207101	False
+Rhizosphere-Surface	VALSYN-PWY	L-valine biosynthesis	60	-0.03928373508	0.0724	0.1285207101	False
+Rhizosphere-Surface	BRANCHED-CHAIN-AA-SYN-PWY	superpathway of branched amino acid biosynthesis	60	-0.04309328088	0.0214	0.04755555556	True
+Rhizosphere-Surface	PWY-5973	cis-vaccenate biosynthesis	60	-0.006751922913	0.8144	0.8767084079	False
+Rhizosphere-Surface	PWY-7663	gondoate biosynthesis (anaerobic)	60	-0.009801467176	0.7448	0.8187912088	False
+Rhizosphere-Surface	FASYN-ELONG-PWY	fatty acid elongation -- saturated	60	-0.0176721455	0.5373	0.6409145129	False
+Rhizosphere-Surface	TCA	TCA cycle I (prokaryotic)	60	-0.03474188702	0.0723	0.1285207101	False
+Rhizosphere-Surface	PWY-6969	TCA cycle V (2-oxoglutarate:ferredoxin oxidoreductase)	60	-0.03917506594	0.0293	0.06168421053	False
+Rhizosphere-Surface	PWY-5103	L-isoleucine biosynthesis III	60	-0.03478300794	0.0714	0.127880597	False
+Rhizosphere-Surface	PWY-7094	fatty acid salvage	60	-0.08263715323	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY-5667	CDP-diacylglycerol biosynthesis I	60	-0.03659831414	0.0211	0.04723880597	True
+Rhizosphere-Surface	PWY0-1319	CDP-diacylglycerol biosynthesis II	60	-0.03659831414	0.0211	0.04723880597	True
+Rhizosphere-Surface	FAO-PWY	fatty acid &beta;-oxidation I	60	-0.05844419952	0.0004	0.001481481481	True
+Rhizosphere-Surface	NONOXIPENT-PWY	pentose phosphate pathway (non-oxidative branch)	60	-0.003223754612	0.8828	0.9308963093	False
+Rhizosphere-Surface	PWY-7208	superpathway of pyrimidine nucleobases salvage	60	-0.03230128714	0.0576	0.1056880734	False
+Rhizosphere-Surface	PWY-7229	superpathway of adenosine nucleotides de novo biosynthesis I	60	-0.03104773889	0.0789	0.1384210526	False
+Rhizosphere-Surface	PHOSLIPSYN-PWY	superpathway of phospholipid biosynthesis I (bacteria)	60	-0.04724599624	0.0014	0.004352331606	True
+Rhizosphere-Surface	PWY-3001	superpathway of L-isoleucine biosynthesis I	60	-0.02720858406	0.1726	0.2582543641	False
+Rhizosphere-Surface	PWY-5695	urate biosynthesis/inosine 5'-phosphate degradation	60	-0.04220749989	0.041	0.0806557377	False
+Rhizosphere-Surface	PWY-2942	L-lysine biosynthesis III	60	-0.0183122064	0.3709	0.4780728051	False
+Rhizosphere-Surface	REDCITCYC	TCA cycle VIII (helicobacter)	60	-0.03595040056	0.1462	0.2260824742	False
+Rhizosphere-Surface	PWY-7219	adenosine ribonucleotides de novo biosynthesis	60	-0.03664503479	0.0326	0.06653061224	False
+Rhizosphere-Surface	SER-GLYSYN-PWY	superpathway of L-serine and glycine biosynthesis I	60	-0.003099948765	0.8886	0.9353684211	False
+Rhizosphere-Surface	PWY-6126	superpathway of adenosine nucleotides de novo biosynthesis II	60	-0.03252160489	0.0615	0.1118181818	False
+Rhizosphere-Surface	PWY-7220	adenosine deoxyribonucleotides de novo biosynthesis II	60	-0.02517088201	0.18	0.2647058824	False
+Rhizosphere-Surface	PWY-7222	guanosine deoxyribonucleotides de novo biosynthesis II	60	-0.02517088201	0.18	0.2647058824	False
+Rhizosphere-Surface	P105-PWY	TCA cycle IV (2-oxoglutarate decarboxylase)	60	-0.01345510062	0.5187	0.6211976048	False
+Rhizosphere-Surface	PWY0-162	superpathway of pyrimidine ribonucleotides de novo biosynthesis	60	-0.03845842051	0.0162	0.03738461538	True
+Rhizosphere-Surface	PWY-6122	5-aminoimidazole ribonucleotide biosynthesis II	60	-0.02796993617	0.1241	0.1975066313	False
+Rhizosphere-Surface	PWY-6277	superpathway of 5-aminoimidazole ribonucleotide biosynthesis	60	-0.02796993617	0.1241	0.1975066313	False
+Rhizosphere-Surface	PWY-6121	5-aminoimidazole ribonucleotide biosynthesis I	60	-0.03297157487	0.0492	0.09312302839	False
+Rhizosphere-Surface	PWY-5686	UMP biosynthesis	60	-0.03744364689	0.0186	0.04243346008	True
+Rhizosphere-Surface	PWY4FS-7	phosphatidylglycerol biosynthesis I (plastidic)	60	-0.04695850404	0.0012	0.003829787234	True
+Rhizosphere-Surface	PWY4FS-8	phosphatidylglycerol biosynthesis II (non-plastidic)	60	-0.04695850404	0.0012	0.003829787234	True
+Rhizosphere-Surface	PWY-7228	superpathway of guanosine nucleotides de novo biosynthesis I	60	-0.03336952323	0.0508	0.0954375	False
+Rhizosphere-Surface	PWY-5097	L-lysine biosynthesis VI	60	-0.01653783146	0.4608	0.565398773	False
+Rhizosphere-Surface	PWY-841	superpathway of purine nucleotides de novo biosynthesis I	60	-0.03397968615	0.0456	0.08741214058	False
+Rhizosphere-Surface	COMPLETE-ARO-PWY	superpathway of aromatic amino acid biosynthesis	60	-0.02690483008	0.0964	0.166685879	False
+Rhizosphere-Surface	PWY-6125	superpathway of guanosine nucleotides de novo biosynthesis II	60	-0.03445137946	0.0398	0.07875	False
+Rhizosphere-Surface	ANAGLYCOLYSIS-PWY	glycolysis III (from glucose)	60	-0.01413883009	0.5155	0.6198396794	False
+Rhizosphere-Surface	THRESYN-PWY	superpathway of L-threonine biosynthesis	60	-0.01935533888	0.3737	0.478336887	False
+Rhizosphere-Surface	CALVIN-PWY	Calvin-Benson-Bassham cycle	60	-0.02780137975	0.1427	0.2212403101	False
+Rhizosphere-Surface	TRPSYN-PWY	L-tryptophan biosynthesis	60	-0.02353721679	0.2147	0.3119128329	False
+Rhizosphere-Surface	PWY-7221	guanosine ribonucleotides de novo biosynthesis	60	-0.03622508077	0.029	0.06148409894	False
+Rhizosphere-Surface	P108-PWY	pyruvate fermentation to propanoate I	60	-0.02792291778	0.1585	0.2407575758	False
+Rhizosphere-Surface	PWY-5659	GDP-mannose biosynthesis	60	-0.1017212218	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY-5188	tetrapyrrole biosynthesis I (from glutamate)	60	-0.03197272853	0.0877	0.1529651163	False
+Rhizosphere-Surface	ARGSYNBSUB-PWY	L-arginine biosynthesis II (acetyl cycle)	60	-0.03885449442	0.036	0.07272727273	False
+Rhizosphere-Surface	ARO-PWY	chorismate biosynthesis I	60	-0.02820287511	0.0761	0.1339002933	False
+Rhizosphere-Surface	PWY-5189	tetrapyrrole biosynthesis II (from glycine)	60	-0.03607078333	0.0386	0.07694352159	False
+Rhizosphere-Surface	GLYCOLYSIS	glycolysis I (from glucose 6-phosphate)	60	-0.007545555564	0.8082	0.8721582734	False
+Rhizosphere-Surface	DTDPRHAMSYN-PWY	dTDP-L-rhamnose biosynthesis I	60	-0.09110382289	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY-6387	UDP-N-acetylmuramoyl-pentapeptide biosynthesis I (meso-diaminopimelate containing)	60	-0.03590954599	0.0315	0.06537931034	False
+Rhizosphere-Surface	SALVADEHYPOX-PWY	adenosine nucleotides degradation II	60	-0.01440609892	0.5762	0.674502924	False
+Rhizosphere-Surface	GLUCONEO-PWY	gluconeogenesis I	60	-0.02863611834	0.2439	0.3459574468	False
+Rhizosphere-Surface	PWY-6163	chorismate biosynthesis from 3-dehydroquinate	60	-0.02278246744	0.1724	0.2582543641	False
+Rhizosphere-Surface	PEPTIDOGLYCANSYN-PWY	peptidoglycan biosynthesis I (meso-diaminopimelate containing)	60	-0.03685824604	0.0265	0.0571942446	False
+Rhizosphere-Surface	COA-PWY	coenzyme A biosynthesis I	60	-0.03625991351	0.0309	0.06458333333	False
+Rhizosphere-Surface	SULFATE-CYS-PWY	superpathway of sulfate assimilation and cysteine biosynthesis	60	-0.01200504785	0.6618	0.7477966102	False
+Rhizosphere-Surface	RIBOSYN2-PWY	flavin biosynthesis I (bacteria and plants)	60	-0.03549556545	0.0551	0.1014110429	False
+Rhizosphere-Surface	PWY-6386	UDP-N-acetylmuramoyl-pentapeptide biosynthesis II (lysine-containing)	60	-0.03003284874	0.0584	0.1068292683	False
+Rhizosphere-Surface	GLUTORN-PWY	L-ornithine biosynthesis	60	-0.04783016814	0.0035	0.00976744186	True
+Rhizosphere-Surface	PWY-6608	guanosine nucleotides degradation III	60	0.01789660159	0.3315	0.4405752212	False
+Rhizosphere-Surface	PANTO-PWY	phosphopantothenate biosynthesis I	60	-0.03155466832	0.1219	0.1960857909	False
+Rhizosphere-Surface	PWY-6385	peptidoglycan biosynthesis III (mycobacteria)	60	-0.03162168368	0.0381	0.0764548495	False
+Rhizosphere-Surface	UDPNAGSYN-PWY	UDP-N-acetyl-D-glucosamine biosynthesis I	60	-0.04456485952	0.0229	0.05043478261	False
+Rhizosphere-Surface	PWY-6123	inosine-5'-phosphate biosynthesis I	60	-0.03384547968	0.0548	0.1011692308	False
+Rhizosphere-Surface	HISTSYN-PWY	L-histidine biosynthesis	60	-0.03923523295	0.0322	0.06616438356	False
+Rhizosphere-Surface	PENTOSE-P-PWY	pentose phosphate pathway	60	0.004255113376	0.8692	0.9197883598	False
+Rhizosphere-Surface	PWY-7197	pyrimidine deoxyribonucleotide phosphorylation	60	-0.03455495967	0.0448	0.08643086817	False
+Rhizosphere-Surface	DAPLYSINESYN-PWY	L-lysine biosynthesis I	60	-0.0720054811	0.0003	0.001161290323	True
+Rhizosphere-Surface	PWY0-1261	anhydromuropeptides recycling	60	0.02867856446	0.1779	0.2629064039	False
+Rhizosphere-Surface	PANTOSYN-PWY	pantothenate and coenzyme A biosynthesis I	60	-0.02884649895	0.1354	0.211012987	False
+Rhizosphere-Surface	ARGSYN-PWY	L-arginine biosynthesis I (via L-ornithine)	60	-0.009709920937	0.5979	0.6913294798	False
+Rhizosphere-Surface	HEMESYN2-PWY	heme biosynthesis II (anaerobic)	60	-0.01008653729	0.6605	0.7477358491	False
+Rhizosphere-Surface	PWY0-1586	peptidoglycan maturation (meso-diaminopimelate containing)	60	0.07065638571	0.0214	0.04755555556	True
+Rhizosphere-Surface	PWY-7400	L-arginine biosynthesis IV (archaebacteria)	60	-0.01029688026	0.5767	0.674502924	False
+Rhizosphere-Surface	PWY-7539	6-hydroxymethyl-dihydropterin diphosphate biosynthesis III (Chlamydia)	60	-0.01980330255	0.3721	0.4780728051	False
+Rhizosphere-Surface	PWY-5484	glycolysis II (from fructose 6-phosphate)	60	-0.007111248386	0.8217	0.8788235294	False
+Rhizosphere-Surface	TRNA-CHARGING-PWY	tRNA charging	60	-0.0408533067	0.031	0.06458333333	False
+Rhizosphere-Surface	PWY-7211	superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis	60	-0.03928715869	0.0157	0.03651162791	True
+Rhizosphere-Surface	OANTIGEN-PWY	O-antigen building blocks biosynthesis (E. coli)	60	-0.08784280939	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY-5121	superpathway of geranylgeranyl diphosphate biosynthesis II (via MEP)	60	0.07104682248	0.0232	0.05043478261	False
+Rhizosphere-Surface	NONMEVIPP-PWY	methylerythritol phosphate pathway I	60	-0.0213776496	0.3471	0.4581098901	False
+Rhizosphere-Surface	PWY-7560	methylerythritol phosphate pathway II	60	-0.0213776496	0.3471	0.4581098901	False
+Rhizosphere-Surface	PWY-6147	6-hydroxymethyl-dihydropterin diphosphate biosynthesis I	60	-0.02924579749	0.1519	0.2320610687	False
+Rhizosphere-Surface	PWY-7234	inosine-5'-phosphate biosynthesis III	60	-0.01448077028	0.5425	0.6458333333	False
+Rhizosphere-Surface	PWY-6609	adenine and adenosine salvage III	60	0.1107719022	0.0001	0.0005042016807	True
+Rhizosphere-Surface	SO4ASSIM-PWY	sulfate reduction I (assimilatory)	60	0.01139088276	0.7232	0.8020702403	False
+Rhizosphere-Surface	GLYCOLYSIS-TCA-GLYOX-BYPASS	superpathway of glycolysis, pyruvate dehydrogenase, TCA, and glyoxylate bypass	60	0.01303829182	0.5174	0.62088	False
+Rhizosphere-Surface	PWY-6897	thiamin salvage II	60	-0.0745104769	0.0006	0.002093023256	True
+Rhizosphere-Surface	POLYISOPRENSYN-PWY	polyisoprenoid biosynthesis (E. coli)	60	-0.03301266045	0.1125	0.1849315068	False
+Rhizosphere-Surface	PWY-5345	superpathway of L-methionine biosynthesis (by sulfhydrylation)	60	-0.0228845286	0.4134	0.5189121339	False
+Rhizosphere-Surface	PWY-6353	purine nucleotides degradation II (aerobic)	60	0.02015340841	0.9706	0.9853807107	False
+Rhizosphere-Surface	PWY-7184	pyrimidine deoxyribonucleotides de novo biosynthesis I	60	-0.03963288972	0.0196	0.04437735849	True
+Rhizosphere-Surface	P42-PWY	incomplete reductive TCA cycle	60	0.0853462653	0.001	0.003351955307	True
+Rhizosphere-Surface	ANAEROFRUCAT-PWY	homolactic fermentation	60	-0.04150568612	0.0112	0.02709677419	True
+Rhizosphere-Surface	FOLSYN-PWY	superpathway of tetrahydrofolate biosynthesis and salvage	60	0.01234056688	0.3739	0.478336887	False
+Rhizosphere-Surface	P4-PWY	superpathway of L-lysine, L-threonine and L-methionine biosynthesis I	60	-0.02951669236	0.0478	0.09133757962	False
+Rhizosphere-Surface	PWY-5154	L-arginine biosynthesis III (via N-acetyl-L-citrulline)	60	-0.009065297156	0.6889	0.7754971857	False
+Rhizosphere-Surface	PYRIDNUCSYN-PWY	NAD biosynthesis I (from aspartate)	60	-0.04979816928	0.0139	0.03283464567	True
+Rhizosphere-Surface	TCA-GLYOX-BYPASS	superpathway of glyoxylate bypass and TCA	60	0.02660370389	0.3048	0.4128216704	False
+Rhizosphere-Surface	PWY-5347	superpathway of L-methionine biosynthesis (transsulfuration)	60	0.005264326071	0.762	0.8343065693	False
+Rhizosphere-Surface	GLYCOLYSIS-E-D	superpathway of glycolysis and Entner-Doudoroff	60	-0.04681208476	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY0-166	superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis (E. coli)	60	-0.04092736731	0.0098	0.02409836066	True
+Rhizosphere-Surface	HSERMETANA-PWY	L-methionine biosynthesis III	60	-0.09965341453	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY-5918	superpathay of heme biosynthesis from glutamate	60	-0.002221119256	0.9316	0.9620654045	False
+Rhizosphere-Surface	1CMET2-PWY	N10-formyl-tetrahydrofolate biosynthesis	60	0.005893930694	0.8163	0.8767084079	False
+Rhizosphere-Surface	MET-SAM-PWY	superpathway of S-adenosyl-L-methionine biosynthesis	60	-7.983334243e-05	0.9974	0.9974	False
+Rhizosphere-Surface	PWY0-781	aspartate superpathway	60	-0.0145488901	0.3162	0.4234821429	False
+Rhizosphere-Surface	PWY-6612	superpathway of tetrahydrofolate biosynthesis	60	0.03169158427	0.0424	0.0831372549	False
+Rhizosphere-Surface	PWY-5913	TCA cycle VI (obligate autotrophs)	60	-0.07463710535	0.0063	0.01643478261	True
+Rhizosphere-Surface	PWY-6700	queuosine biosynthesis	60	-0.01709703499	0.5553	0.658458498	False
+Rhizosphere-Surface	PWY-7200	superpathway of pyrimidine deoxyribonucleoside salvage	60	0.05976214606	0.1027	0.1745609065	False
+Rhizosphere-Surface	P23-PWY	reductive TCA cycle I	60	0.04845153496	0.7229	0.8020702403	False
+Rhizosphere-Surface	PWY-7196	superpathway of pyrimidine ribonucleosides salvage	60	0.1128093823	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY-7323	superpathway of GDP-mannose-derived O-antigen building blocks biosynthesis	60	-0.1406738428	0.0001	0.0005042016807	True
+Rhizosphere-Surface	GLYOXYLATE-BYPASS	glyoxylate cycle	60	0.002451496072	0.9288	0.9620654045	False
+Rhizosphere-Surface	GLYCOGENSYNTH-PWY	glycogen biosynthesis I (from ADP-D-Glucose)	60	0.07484846961	0.5657	0.6655294118	False
+Rhizosphere-Surface	PWY-7392	taxadiene biosynthesis (engineered)	60	0.09125423428	0.0005	0.001775147929	True
+Rhizosphere-Surface	PWY-6703	preQ0 biosynthesis	60	-0.0217048243	0.4732	0.5782484725	False
+Rhizosphere-Surface	HOMOSER-METSYN-PWY	L-methionine biosynthesis I	60	0.006026391973	0.8268	0.8827046263	False
+Rhizosphere-Surface	PWY-6317	galactose degradation I (Leloir pathway)	60	0.1482968751	0.0529	0.09826625387	False
+Rhizosphere-Surface	HEME-BIOSYNTHESIS-II	heme biosynthesis I (aerobic)	60	0.01629259976	0.6226	0.7142638623	False
+Rhizosphere-Surface	PWY-7199	pyrimidine deoxyribonucleosides salvage	60	0.09311311019	0.0004	0.001481481481	True
+Rhizosphere-Surface	PWY-6628	superpathway of L-phenylalanine biosynthesis	60	0.0006386606141	0.9937	0.9974	False
+Rhizosphere-Surface	PWY-6630	superpathway of L-tyrosine biosynthesis	60	-0.001131244237	0.9904	0.9970469799	False
+Rhizosphere-Surface	PWY-5104	L-isoleucine biosynthesis IV	60	-0.1627259666	0.0002	0.0008333333333	True
+Rhizosphere-Surface	PWY-4984	urea cycle	60	0.003507666537	0.9154	0.9552	False
+Rhizosphere-Surface	HISDEG-PWY	L-histidine degradation I	60	0.09064133882	0.0231	0.05043478261	False
+Rhizosphere-Surface	PWY0-1296	purine ribonucleosides degradation	60	0.1205657335	0.0021	0.006331658291	True
+Rhizosphere-Surface	PWY-7254	TCA cycle VII (acetate-producers)	60	0.1029224147	0.0138	0.03272727273	True
+Rhizosphere-Surface	PWYG-321	mycolate biosynthesis	60	-0.06571551133	0.1311	0.2059162304	False
+Rhizosphere-Surface	COBALSYN-PWY	adenosylcobalamin salvage from cobinamide I	60	-0.065156602	0.0111	0.02707317073	True
+Rhizosphere-Surface	COLANSYN-PWY	colanic acid building blocks biosynthesis	60	-0.1198445765	0.0001	0.0005042016807	True
+Rhizosphere-Surface	GLYCOCAT-PWY	glycogen degradation I (bacterial)	60	-0.1356353713	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY-6901	superpathway of glucose and xylose degradation	60	0.1374697946	0.0002	0.0008333333333	True
+Rhizosphere-Surface	PWY-5920	superpathway of heme biosynthesis from glycine	60	-0.03506970657	0.1736	0.2584615385	False
+Rhizosphere-Surface	PWY-7664	oleate biosynthesis IV (anaerobic)	60	-0.06637948076	0.127	0.201055409	False
+Rhizosphere-Surface	LEU-DEG2-PWY	L-leucine degradation I	60	-0.1377321905	0.001	0.003351955307	True
+Rhizosphere-Surface	PYRIDNUCSAL-PWY	NAD salvage pathway I	60	-0.08856420293	0.0019	0.005816326531	True
+Rhizosphere-Surface	PWY-5989	stearate biosynthesis II (bacteria and plants)	60	-0.07377151054	0.1041	0.176440678	False
+Rhizosphere-Surface	PWY-6737	starch degradation V	60	-0.1561253401	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY0-1297	superpathway of purine deoxyribonucleosides degradation	60	0.09068410432	0.023	0.05043478261	False
+Rhizosphere-Surface	PWY-6282	palmitoleate biosynthesis I (from (5Z)-dodec-5-enoate)	60	-0.06828490006	0.1259	0.1998412698	False
+Rhizosphere-Surface	FERMENTATION-PWY	mixed acid fermentation	60	0.0005640774319	0.9804	0.9886386555	False
+Rhizosphere-Surface	PWY0-862	(5Z)-dodec-5-enoate biosynthesis	60	-0.07479279888	0.1055	0.1778089888	False
+Rhizosphere-Surface	PWY-5505	L-glutamate and L-glutamine biosynthesis	60	0.150340136	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY-5022	4-aminobutanoate degradation V	60	0.1809762226	0.0003	0.001161290323	True
+Rhizosphere-Surface	DENOVOPURINE2-PWY	superpathway of purine nucleotides de novo biosynthesis II	60	-0.09856837872	0.066	0.1192771084	False
+Rhizosphere-Surface	PWY0-1415	superpathway of heme biosynthesis from uroporphyrinogen-III	60	0.08461458798	0.07	0.1261261261	False
+Rhizosphere-Surface	PWY-6151	S-adenosyl-L-methionine cycle I	60	0.101954464	0.0003	0.001161290323	True
+Rhizosphere-Surface	ARG+POLYAMINE-SYN	superpathway of arginine and polyamine biosynthesis	60	0.1024832415	0.0026	0.007464114833	True
+Rhizosphere-Surface	PWY-6895	superpathway of thiamin diphosphate biosynthesis II	60	0.1634654612	0.0061	0.01619469027	True
+Rhizosphere-Surface	PWY-5840	superpathway of menaquinol-7 biosynthesis	60	0.2647659001	0.0001	0.0005042016807	True
+Rhizosphere-Surface	THISYN-PWY	superpathway of thiamin diphosphate biosynthesis I	60	0.08893019116	0.4439	0.5502892562	False
+Rhizosphere-Surface	PRPP-PWY	superpathway of histidine, purine, and pyrimidine biosynthesis	60	-0.0317183198	0.7753	0.844	False
+Rhizosphere-Surface	PWY-6545	pyrimidine deoxyribonucleotides de novo biosynthesis III	60	-0.093429699	0.4489	0.5553402062	False
+Rhizosphere-Surface	PWY-5838	superpathway of menaquinol-8 biosynthesis I	60	0.2421399546	0.0002	0.0008333333333	True
+Rhizosphere-Surface	PWY-5855	ubiquinol-7 biosynthesis (prokaryotic)	60	-0.1176150874	0.0011	0.003567567568	True
+Rhizosphere-Surface	PWY-5856	ubiquinol-9 biosynthesis (prokaryotic)	60	-0.1176150874	0.0011	0.003567567568	True
+Rhizosphere-Surface	PWY-5857	ubiquinol-10 biosynthesis (prokaryotic)	60	-0.1176150874	0.0011	0.003567567568	True
+Rhizosphere-Surface	PWY-6708	ubiquinol-8 biosynthesis (prokaryotic)	60	-0.1176150874	0.0011	0.003567567568	True
+Rhizosphere-Surface	PWY-5897	superpathway of menaquinol-11 biosynthesis	60	0.266617616	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY-5898	superpathway of menaquinol-12 biosynthesis	60	0.266617616	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY-5899	superpathway of menaquinol-13 biosynthesis	60	0.266617616	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY-6269	adenosylcobalamin salvage from cobinamide II	60	-0.05779328757	0.0106	0.02595918367	True
+Rhizosphere-Surface	PWY-5509	adenosylcobalamin biosynthesis from cobyrinate a,c-diamide I	60	-0.05269995858	0.0177	0.04053435115	True
+Rhizosphere-Surface	FASYN-INITIAL-PWY	superpathway of fatty acid biosynthesis initiation (E. coli)	60	-0.06942001804	0.0949	0.164566474	False
+Rhizosphere-Surface	UBISYN-PWY	superpathway of ubiquinol-8 biosynthesis (prokaryotic)	60	-0.1192226541	0.0005	0.001775147929	True
+Rhizosphere-Surface	PWY0-1061	superpathway of L-alanine biosynthesis	60	-0.05038150734	0.2399	0.3410900474	False
+Rhizosphere-Surface	PWY0-1298	superpathway of pyrimidine deoxyribonucleosides degradation	60	0.1418801705	0.0003	0.001161290323	True
+Rhizosphere-Surface	PWY-6467	Kdo transfer to lipid IVA III (Chlamydia)	60	-0.169872405	0.0002	0.0008333333333	True
+Rhizosphere-Surface	NAGLIPASYN-PWY	lipid IVA biosynthesis	60	-0.1407489205	0.0003	0.001161290323	True
+Rhizosphere-Surface	PWY0-1479	tRNA processing	60	-0.1430351135	0.0025	0.007211538462	True
+Rhizosphere-Surface	PWY-2941	L-lysine biosynthesis II	60	0.2846008259	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY-1269	CMP-3-deoxy-D-manno-octulosonate biosynthesis I	60	-0.1530365395	0.0002	0.0008333333333	True
+Rhizosphere-Surface	PROTOCATECHUATE-ORTHO-CLEAVAGE-PWY	protocatechuate degradation II (ortho-cleavage pathway)	60	-0.1104561656	0.0492	0.09312302839	False
+Rhizosphere-Surface	PWY-5100	pyruvate fermentation to acetate and lactate II	60	0.1103314638	0.0509	0.0954375	False
+Rhizosphere-Surface	PWY-5971	palmitate biosynthesis II (bacteria and plants)	60	0.4583967431	0.0979	0.1687931034	False
+Rhizosphere-Surface	PWY-5861	superpathway of demethylmenaquinol-8 biosynthesis	60	0.2611465111	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY-7187	pyrimidine deoxyribonucleotides de novo biosynthesis II	60	-0.1067543074	0.0321	0.06616438356	False
+Rhizosphere-Surface	P161-PWY	acetylene degradation	60	0.1252785491	0.028	0.06	False
+Rhizosphere-Surface	PWY-7328	superpathway of UDP-glucose-derived O-antigen building blocks biosynthesis	60	0.0299874237	0.6565	0.7446124764	False
+Rhizosphere-Surface	BIOTIN-BIOSYNTHESIS-PWY	biotin biosynthesis I	60	-0.107558496	0.0206	0.04646616541	True
+Rhizosphere-Surface	PWY-7242	D-fructuronate degradation	60	0.1323596932	0.0041	0.01123287671	True
+Rhizosphere-Surface	PWY-181	photorespiration	60	0.05306197837	0.6408	0.7309505703	False
+Rhizosphere-Surface	PWY-6519	8-amino-7-oxononanoate biosynthesis I	60	-0.1276037981	0.0125	0.02988047809	True
+Rhizosphere-Surface	POLYAMSYN-PWY	superpathway of polyamine biosynthesis I	60	0.1321537965	0.0003	0.001161290323	True
+Rhizosphere-Surface	PWY-7431	aromatic biogenic amine degradation (bacteria)	60	0.01683164536	0.7702	0.8417486339	False
+Rhizosphere-Surface	PWY-6263	superpathway of menaquinol-8 biosynthesis II	60	0.03060288969	0.7211	0.8020702403	False
+Rhizosphere-Surface	PWY-5863	superpathway of phylloquinol biosynthesis	60	0.3043532622	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY-1861	formaldehyde assimilation II (RuMP Cycle)	60	0.5108458389	0.0001	0.0005042016807	True
+Rhizosphere-Surface	P124-PWY	Bifidobacterium shunt	60	-0.1770736413	0.0277	0.05956989247	False
+Rhizosphere-Surface	ASPASN-PWY	superpathway of L-aspartate and L-asparagine biosynthesis	60	0.1710109078	0.0027	0.007714285714	True
+Rhizosphere-Surface	PWY-5837	1,4-dihydroxy-2-naphthoate biosynthesis I	60	0.3073657682	0.0001	0.0005042016807	True
+Rhizosphere-Surface	PWY-7237	myo-, chiro- and scillo-inositol degradation	60	0.0978822764	0.3594	0.4698039216	False
+Rhizosphere-Deep	PWY-3781	aerobic respiration I (cytochrome c)	60	-0.08746458596	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-7111	pyruvate fermentation to isobutanol (engineered)	60	-0.01070049648	0.7176	0.8017877095	False
+Rhizosphere-Deep	PWY-5101	L-isoleucine biosynthesis II	60	-0.06541617797	0.0004	0.001481481481	True
+Rhizosphere-Deep	ILEUSYN-PWY	L-isoleucine biosynthesis I (from threonine)	60	-0.06230784331	0.0022	0.006502463054	True
+Rhizosphere-Deep	VALSYN-PWY	L-valine biosynthesis	60	-0.06230784331	0.0022	0.006502463054	True
+Rhizosphere-Deep	BRANCHED-CHAIN-AA-SYN-PWY	superpathway of branched amino acid biosynthesis	60	-0.09045020872	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-5973	cis-vaccenate biosynthesis	60	-0.0304827974	0.2795	0.3909090909	False
+Rhizosphere-Deep	PWY-7663	gondoate biosynthesis (anaerobic)	60	-0.02994681295	0.3641	0.4738828633	False
+Rhizosphere-Deep	FASYN-ELONG-PWY	fatty acid elongation -- saturated	60	-0.03132772854	0.3474	0.4581098901	False
+Rhizosphere-Deep	TCA	TCA cycle I (prokaryotic)	60	-0.06547248468	0.0002	0.0008333333333	True
+Rhizosphere-Deep	PWY-6969	TCA cycle V (2-oxoglutarate:ferredoxin oxidoreductase)	60	-0.08154626339	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-5103	L-isoleucine biosynthesis III	60	-0.07742939723	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-7094	fatty acid salvage	60	-0.07142650922	0.0002	0.0008333333333	True
+Rhizosphere-Deep	PWY-5667	CDP-diacylglycerol biosynthesis I	60	-0.0925098083	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY0-1319	CDP-diacylglycerol biosynthesis II	60	-0.0925098083	0.0001	0.0005042016807	True
+Rhizosphere-Deep	FAO-PWY	fatty acid &beta;-oxidation I	60	-0.01799315458	0.2911	0.4024423963	False
+Rhizosphere-Deep	NONOXIPENT-PWY	pentose phosphate pathway (non-oxidative branch)	60	-0.07039554026	0.0002	0.0008333333333	True
+Rhizosphere-Deep	PWY-7208	superpathway of pyrimidine nucleobases salvage	60	-0.08237703159	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-7229	superpathway of adenosine nucleotides de novo biosynthesis I	60	-0.09150939425	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PHOSLIPSYN-PWY	superpathway of phospholipid biosynthesis I (bacteria)	60	-0.1122710141	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-3001	superpathway of L-isoleucine biosynthesis I	60	-0.07690209041	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-5695	urate biosynthesis/inosine 5'-phosphate degradation	60	-0.008238574194	0.7487	0.8212431444	False
+Rhizosphere-Deep	PWY-2942	L-lysine biosynthesis III	60	-0.06061128918	0.0001	0.0005042016807	True
+Rhizosphere-Deep	REDCITCYC	TCA cycle VIII (helicobacter)	60	0.001721633067	0.9559	0.9778983051	False
+Rhizosphere-Deep	PWY-7219	adenosine ribonucleotides de novo biosynthesis	60	-0.1030668207	0.0001	0.0005042016807	True
+Rhizosphere-Deep	SER-GLYSYN-PWY	superpathway of L-serine and glycine biosynthesis I	60	-0.0408621746	0.0499	0.0941509434	False
+Rhizosphere-Deep	PWY-6126	superpathway of adenosine nucleotides de novo biosynthesis II	60	-0.09345948714	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-7220	adenosine deoxyribonucleotides de novo biosynthesis II	60	-0.07946268738	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-7222	guanosine deoxyribonucleotides de novo biosynthesis II	60	-0.07946268738	0.0001	0.0005042016807	True
+Rhizosphere-Deep	P105-PWY	TCA cycle IV (2-oxoglutarate decarboxylase)	60	-0.001296477184	0.9586	0.9778983051	False
+Rhizosphere-Deep	PWY0-162	superpathway of pyrimidine ribonucleotides de novo biosynthesis	60	-0.09709688453	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-6122	5-aminoimidazole ribonucleotide biosynthesis II	60	-0.07788406203	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-6277	superpathway of 5-aminoimidazole ribonucleotide biosynthesis	60	-0.07788406203	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-6121	5-aminoimidazole ribonucleotide biosynthesis I	60	-0.0726288377	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-5686	UMP biosynthesis	60	-0.09344759587	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY4FS-7	phosphatidylglycerol biosynthesis I (plastidic)	60	-0.1221592156	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY4FS-8	phosphatidylglycerol biosynthesis II (non-plastidic)	60	-0.1221592156	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-7228	superpathway of guanosine nucleotides de novo biosynthesis I	60	-0.08294558767	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-5097	L-lysine biosynthesis VI	60	-0.05558045903	0.0002	0.0008333333333	True
+Rhizosphere-Deep	PWY-841	superpathway of purine nucleotides de novo biosynthesis I	60	-0.0852472896	0.0001	0.0005042016807	True
+Rhizosphere-Deep	COMPLETE-ARO-PWY	superpathway of aromatic amino acid biosynthesis	60	-0.09017467197	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-6125	superpathway of guanosine nucleotides de novo biosynthesis II	60	-0.08581966512	0.0001	0.0005042016807	True
+Rhizosphere-Deep	ANAGLYCOLYSIS-PWY	glycolysis III (from glucose)	60	-0.06430312264	0.0001	0.0005042016807	True
+Rhizosphere-Deep	THRESYN-PWY	superpathway of L-threonine biosynthesis	60	-0.07573339387	0.0001	0.0005042016807	True
+Rhizosphere-Deep	CALVIN-PWY	Calvin-Benson-Bassham cycle	60	-0.08451191433	0.0001	0.0005042016807	True
+Rhizosphere-Deep	TRPSYN-PWY	L-tryptophan biosynthesis	60	-0.07460607553	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-7221	guanosine ribonucleotides de novo biosynthesis	60	-0.08667374747	0.0001	0.0005042016807	True
+Rhizosphere-Deep	P108-PWY	pyruvate fermentation to propanoate I	60	-0.1030928185	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-5659	GDP-mannose biosynthesis	60	-0.190463463	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-5188	tetrapyrrole biosynthesis I (from glutamate)	60	-0.0701185074	0.0001	0.0005042016807	True
+Rhizosphere-Deep	ARGSYNBSUB-PWY	L-arginine biosynthesis II (acetyl cycle)	60	-0.1057769973	0.0001	0.0005042016807	True
+Rhizosphere-Deep	ARO-PWY	chorismate biosynthesis I	60	-0.09257161753	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-5189	tetrapyrrole biosynthesis II (from glycine)	60	-0.06952892248	0.0001	0.0005042016807	True
+Rhizosphere-Deep	GLYCOLYSIS	glycolysis I (from glucose 6-phosphate)	60	0.01558220546	0.9947	0.9974	False
+Rhizosphere-Deep	DTDPRHAMSYN-PWY	dTDP-L-rhamnose biosynthesis I	60	-0.144785211	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-6387	UDP-N-acetylmuramoyl-pentapeptide biosynthesis I (meso-diaminopimelate containing)	60	-0.08924557122	0.0001	0.0005042016807	True
+Rhizosphere-Deep	SALVADEHYPOX-PWY	adenosine nucleotides degradation II	60	0.06782876755	0.0324	0.06634812287	False
+Rhizosphere-Deep	GLUCONEO-PWY	gluconeogenesis I	60	-0.05112716213	0.0292	0.06168421053	False
+Rhizosphere-Deep	PWY-6163	chorismate biosynthesis from 3-dehydroquinate	60	-0.08884181593	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PEPTIDOGLYCANSYN-PWY	peptidoglycan biosynthesis I (meso-diaminopimelate containing)	60	-0.09151163903	0.0001	0.0005042016807	True
+Rhizosphere-Deep	COA-PWY	coenzyme A biosynthesis I	60	-0.09324490638	0.0001	0.0005042016807	True
+Rhizosphere-Deep	SULFATE-CYS-PWY	superpathway of sulfate assimilation and cysteine biosynthesis	60	0.004797335479	0.9036	0.9478321678	False
+Rhizosphere-Deep	RIBOSYN2-PWY	flavin biosynthesis I (bacteria and plants)	60	-0.08701351646	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-6386	UDP-N-acetylmuramoyl-pentapeptide biosynthesis II (lysine-containing)	60	-0.08350739507	0.0001	0.0005042016807	True
+Rhizosphere-Deep	GLUTORN-PWY	L-ornithine biosynthesis	60	-0.1052460482	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-6608	guanosine nucleotides degradation III	60	0.05162889428	0.054	0.1	False
+Rhizosphere-Deep	PANTO-PWY	phosphopantothenate biosynthesis I	60	-0.07873198429	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-6385	peptidoglycan biosynthesis III (mycobacteria)	60	-0.08725947628	0.0001	0.0005042016807	True
+Rhizosphere-Deep	UDPNAGSYN-PWY	UDP-N-acetyl-D-glucosamine biosynthesis I	60	-0.1271595767	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-6123	inosine-5'-phosphate biosynthesis I	60	-0.08834068477	0.0001	0.0005042016807	True
+Rhizosphere-Deep	HISTSYN-PWY	L-histidine biosynthesis	60	-0.09740486661	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PENTOSE-P-PWY	pentose phosphate pathway	60	-0.01730486768	0.2961	0.4053758542	False
+Rhizosphere-Deep	PWY-7197	pyrimidine deoxyribonucleotide phosphorylation	60	-0.1046390766	0.0001	0.0005042016807	True
+Rhizosphere-Deep	DAPLYSINESYN-PWY	L-lysine biosynthesis I	60	-0.1020841985	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY0-1261	anhydromuropeptides recycling	60	0.0711316328	0.0066	0.01714285714	True
+Rhizosphere-Deep	PANTOSYN-PWY	pantothenate and coenzyme A biosynthesis I	60	-0.06824636629	0.0001	0.0005042016807	True
+Rhizosphere-Deep	ARGSYN-PWY	L-arginine biosynthesis I (via L-ornithine)	60	-0.09428483188	0.0001	0.0005042016807	True
+Rhizosphere-Deep	HEMESYN2-PWY	heme biosynthesis II (anaerobic)	60	-0.01617123228	0.5649	0.6655294118	False
+Rhizosphere-Deep	PWY0-1586	peptidoglycan maturation (meso-diaminopimelate containing)	60	0.1055703424	0.0232	0.05043478261	False
+Rhizosphere-Deep	PWY-7400	L-arginine biosynthesis IV (archaebacteria)	60	-0.09435660907	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-7539	6-hydroxymethyl-dihydropterin diphosphate biosynthesis III (Chlamydia)	60	-0.03203153491	0.106	0.1779888268	False
+Rhizosphere-Deep	PWY-5484	glycolysis II (from fructose 6-phosphate)	60	0.04059312246	0.5831	0.6806614786	False
+Rhizosphere-Deep	TRNA-CHARGING-PWY	tRNA charging	60	-0.07569904181	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-7211	superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis	60	-0.04284651392	0.0252	0.05458483755	False
+Rhizosphere-Deep	OANTIGEN-PWY	O-antigen building blocks biosynthesis (E. coli)	60	-0.1523575843	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-5121	superpathway of geranylgeranyl diphosphate biosynthesis II (via MEP)	60	-0.05004254692	0.0131	0.03119047619	True
+Rhizosphere-Deep	NONMEVIPP-PWY	methylerythritol phosphate pathway I	60	-0.06061203313	0.0004	0.001481481481	True
+Rhizosphere-Deep	PWY-7560	methylerythritol phosphate pathway II	60	-0.06061203313	0.0004	0.001481481481	True
+Rhizosphere-Deep	PWY-6147	6-hydroxymethyl-dihydropterin diphosphate biosynthesis I	60	-0.04365255077	0.0094	0.02369747899	True
+Rhizosphere-Deep	PWY-7234	inosine-5'-phosphate biosynthesis III	60	-0.031765846	0.1089	0.1809972299	False
+Rhizosphere-Deep	PWY-6609	adenine and adenosine salvage III	60	-0.03264323757	0.2454	0.3472641509	False
+Rhizosphere-Deep	SO4ASSIM-PWY	sulfate reduction I (assimilatory)	60	0.04559682732	0.1062	0.1779888268	False
+Rhizosphere-Deep	GLYCOLYSIS-TCA-GLYOX-BYPASS	superpathway of glycolysis, pyruvate dehydrogenase, TCA, and glyoxylate bypass	60	0.1471083688	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-6897	thiamin salvage II	60	-0.09888797085	0.0001	0.0005042016807	True
+Rhizosphere-Deep	POLYISOPRENSYN-PWY	polyisoprenoid biosynthesis (E. coli)	60	-0.07483440594	0.0006	0.002093023256	True
+Rhizosphere-Deep	PWY-5345	superpathway of L-methionine biosynthesis (by sulfhydrylation)	60	-0.003034518562	0.9605	0.9778983051	False
+Rhizosphere-Deep	PWY-6353	purine nucleotides degradation II (aerobic)	60	0.02759277293	0.3763	0.4803829787	False
+Rhizosphere-Deep	PWY-7184	pyrimidine deoxyribonucleotides de novo biosynthesis I	60	-0.03779259089	0.1102	0.1826519337	False
+Rhizosphere-Deep	P42-PWY	incomplete reductive TCA cycle	60	-0.0601478788	0.1113	0.1834615385	False
+Rhizosphere-Deep	ANAEROFRUCAT-PWY	homolactic fermentation	60	0.0620679353	0.7	0.7835820896	False
+Rhizosphere-Deep	FOLSYN-PWY	superpathway of tetrahydrofolate biosynthesis and salvage	60	0.09003754509	0.0001	0.0005042016807	True
+Rhizosphere-Deep	P4-PWY	superpathway of L-lysine, L-threonine and L-methionine biosynthesis I	60	-0.06436733989	0.0002	0.0008333333333	True
+Rhizosphere-Deep	PWY-5154	L-arginine biosynthesis III (via N-acetyl-L-citrulline)	60	-0.02740764421	0.3319	0.4405752212	False
+Rhizosphere-Deep	PYRIDNUCSYN-PWY	NAD biosynthesis I (from aspartate)	60	-0.1175913972	0.0001	0.0005042016807	True
+Rhizosphere-Deep	TCA-GLYOX-BYPASS	superpathway of glyoxylate bypass and TCA	60	0.1161274801	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-5347	superpathway of L-methionine biosynthesis (transsulfuration)	60	-0.04204459201	0.0709	0.1273652695	False
+Rhizosphere-Deep	GLYCOLYSIS-E-D	superpathway of glycolysis and Entner-Doudoroff	60	-0.0033987337	0.9965	0.9974	False
+Rhizosphere-Deep	PWY0-166	superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis (E. coli)	60	-0.04958863542	0.0118	0.02832	True
+Rhizosphere-Deep	HSERMETANA-PWY	L-methionine biosynthesis III	60	-0.05800233911	0.0285	0.06063829787	False
+Rhizosphere-Deep	PWY-5918	superpathay of heme biosynthesis from glutamate	60	0.03063996752	0.6534	0.7439089184	False
+Rhizosphere-Deep	1CMET2-PWY	N10-formyl-tetrahydrofolate biosynthesis	60	0.03052189579	0.2634	0.370117096	False
+Rhizosphere-Deep	MET-SAM-PWY	superpathway of S-adenosyl-L-methionine biosynthesis	60	-0.03947331901	0.1236	0.1975066313	False
+Rhizosphere-Deep	PWY0-781	aspartate superpathway	60	-0.04878979972	0.0008	0.00275862069	True
+Rhizosphere-Deep	PWY-6612	superpathway of tetrahydrofolate biosynthesis	60	0.1320956369	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-5913	TCA cycle VI (obligate autotrophs)	60	-0.02154899932	0.3685	0.4765086207	False
+Rhizosphere-Deep	PWY-6700	queuosine biosynthesis	60	-0.04583225026	0.1351	0.211012987	False
+Rhizosphere-Deep	PWY-7200	superpathway of pyrimidine deoxyribonucleoside salvage	60	0.004888178239	0.8662	0.9182332155	False
+Rhizosphere-Deep	P23-PWY	reductive TCA cycle I	60	-0.1152246836	0.3196	0.4261333333	False
+Rhizosphere-Deep	PWY-7196	superpathway of pyrimidine ribonucleosides salvage	60	0.1142926938	0.0112	0.02709677419	True
+Rhizosphere-Deep	PWY-7323	superpathway of GDP-mannose-derived O-antigen building blocks biosynthesis	60	-0.1607245239	0.0001	0.0005042016807	True
+Rhizosphere-Deep	GLYOXYLATE-BYPASS	glyoxylate cycle	60	0.07363708998	0.0169	0.03885057471	True
+Rhizosphere-Deep	GLYCOGENSYNTH-PWY	glycogen biosynthesis I (from ADP-D-Glucose)	60	0.08390045404	0.2905	0.4024423963	False
+Rhizosphere-Deep	PWY-7392	taxadiene biosynthesis (engineered)	60	0.130646095	0.0003	0.001161290323	True
+Rhizosphere-Deep	PWY-6703	preQ0 biosynthesis	60	-0.02501015462	0.4117	0.5178616352	False
+Rhizosphere-Deep	HOMOSER-METSYN-PWY	L-methionine biosynthesis I	60	-0.02925030768	0.3896	0.4958898305	False
+Rhizosphere-Deep	PWY-6317	galactose degradation I (Leloir pathway)	60	0.09585344651	0.1177	0.1913821138	False
+Rhizosphere-Deep	HEME-BIOSYNTHESIS-II	heme biosynthesis I (aerobic)	60	0.005218118931	0.8826	0.9308963093	False
+Rhizosphere-Deep	PWY-7199	pyrimidine deoxyribonucleosides salvage	60	0.08669083842	0.0095	0.0237037037	True
+Rhizosphere-Deep	PWY-6628	superpathway of L-phenylalanine biosynthesis	60	0.05858419385	0.1501	0.2306393862	False
+Rhizosphere-Deep	PWY-6630	superpathway of L-tyrosine biosynthesis	60	0.05562255886	0.1681	0.2527819549	False
+Rhizosphere-Deep	PWY-5104	L-isoleucine biosynthesis IV	60	-0.3840136835	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-4984	urea cycle	60	-0.02737366318	0.4665	0.5712244898	False
+Rhizosphere-Deep	HISDEG-PWY	L-histidine degradation I	60	0.1722342705	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY0-1296	purine ribonucleosides degradation	60	0.04721552017	0.2205	0.3180288462	False
+Rhizosphere-Deep	PWY-7254	TCA cycle VII (acetate-producers)	60	0.3469514433	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWYG-321	mycolate biosynthesis	60	0.07846730787	0.1196	0.1934231806	False
+Rhizosphere-Deep	COBALSYN-PWY	adenosylcobalamin salvage from cobinamide I	60	-0.06338303771	0.0492	0.09312302839	False
+Rhizosphere-Deep	COLANSYN-PWY	colanic acid building blocks biosynthesis	60	-0.1012348371	0.0013	0.004083769634	True
+Rhizosphere-Deep	GLYCOCAT-PWY	glycogen degradation I (bacterial)	60	-0.171754002	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-6901	superpathway of glucose and xylose degradation	60	0.2600310541	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-5920	superpathway of heme biosynthesis from glycine	60	0.0113806527	0.7451	0.8187912088	False
+Rhizosphere-Deep	PWY-7664	oleate biosynthesis IV (anaerobic)	60	0.07729130773	0.1237	0.1975066313	False
+Rhizosphere-Deep	LEU-DEG2-PWY	L-leucine degradation I	60	-0.07542090594	0.0436	0.08493506494	False
+Rhizosphere-Deep	PYRIDNUCSAL-PWY	NAD salvage pathway I	60	-0.04965384744	0.1189	0.1928108108	False
+Rhizosphere-Deep	PWY-5989	stearate biosynthesis II (bacteria and plants)	60	0.08402940782	0.1109	0.1833057851	False
+Rhizosphere-Deep	PWY-6737	starch degradation V	60	-0.1686610626	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY0-1297	superpathway of purine deoxyribonucleosides degradation	60	0.03046369643	0.3525	0.4628008753	False
+Rhizosphere-Deep	PWY-6282	palmitoleate biosynthesis I (from (5Z)-dodec-5-enoate)	60	0.08494771152	0.1022	0.1742045455	False
+Rhizosphere-Deep	FERMENTATION-PWY	mixed acid fermentation	60	0.03884720759	0.0746	0.1320353982	False
+Rhizosphere-Deep	PWY0-862	(5Z)-dodec-5-enoate biosynthesis	60	0.07711210176	0.1337	0.2094516971	False
+Rhizosphere-Deep	PWY-5505	L-glutamate and L-glutamine biosynthesis	60	0.1305691675	0.0007	0.002427745665	True
+Rhizosphere-Deep	PWY-5022	4-aminobutanoate degradation V	60	0.1671015841	0.0001	0.0005042016807	True
+Rhizosphere-Deep	DENOVOPURINE2-PWY	superpathway of purine nucleotides de novo biosynthesis II	60	-0.1705877335	0.0022	0.006502463054	True
+Rhizosphere-Deep	PWY0-1415	superpathway of heme biosynthesis from uroporphyrinogen-III	60	0.1952685424	0.0002	0.0008333333333	True
+Rhizosphere-Deep	PWY-6151	S-adenosyl-L-methionine cycle I	60	0.2327306782	0.0001	0.0005042016807	True
+Rhizosphere-Deep	ARG+POLYAMINE-SYN	superpathway of arginine and polyamine biosynthesis	60	0.1658685544	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-6895	superpathway of thiamin diphosphate biosynthesis II	60	0.2165894808	0.0002	0.0008333333333	True
+Rhizosphere-Deep	PWY-5840	superpathway of menaquinol-7 biosynthesis	60	0.1499031302	0.009	0.02278481013	True
+Rhizosphere-Deep	THISYN-PWY	superpathway of thiamin diphosphate biosynthesis I	60	0.1356151243	0.2322	0.3325059666	False
+Rhizosphere-Deep	PRPP-PWY	superpathway of histidine, purine, and pyrimidine biosynthesis	60	-0.1402600712	0.004	0.01100917431	True
+Rhizosphere-Deep	PWY-6545	pyrimidine deoxyribonucleotides de novo biosynthesis III	60	-0.129379626	0.3901	0.4958898305	False
+Rhizosphere-Deep	PWY-5838	superpathway of menaquinol-8 biosynthesis I	60	0.1240003239	0.0518	0.09682242991	False
+Rhizosphere-Deep	PWY-5855	ubiquinol-7 biosynthesis (prokaryotic)	60	-0.009952285285	0.7807	0.844	False
+Rhizosphere-Deep	PWY-5856	ubiquinol-9 biosynthesis (prokaryotic)	60	-0.009952285285	0.7807	0.844	False
+Rhizosphere-Deep	PWY-5857	ubiquinol-10 biosynthesis (prokaryotic)	60	-0.009952285285	0.7807	0.844	False
+Rhizosphere-Deep	PWY-6708	ubiquinol-8 biosynthesis (prokaryotic)	60	-0.009952285285	0.7807	0.844	False
+Rhizosphere-Deep	PWY-5897	superpathway of menaquinol-11 biosynthesis	60	0.1536655833	0.0068	0.01736170213	True
+Rhizosphere-Deep	PWY-5898	superpathway of menaquinol-12 biosynthesis	60	0.1536655833	0.0068	0.01736170213	True
+Rhizosphere-Deep	PWY-5899	superpathway of menaquinol-13 biosynthesis	60	0.1536655833	0.0068	0.01736170213	True
+Rhizosphere-Deep	PWY-6269	adenosylcobalamin salvage from cobinamide II	60	-0.02648874482	0.4161	0.520125	False
+Rhizosphere-Deep	PWY-5509	adenosylcobalamin biosynthesis from cobyrinate a,c-diamide I	60	-0.02656773013	0.4153	0.520125	False
+Rhizosphere-Deep	FASYN-INITIAL-PWY	superpathway of fatty acid biosynthesis initiation (E. coli)	60	0.09670345773	0.052	0.09689440994	False
+Rhizosphere-Deep	UBISYN-PWY	superpathway of ubiquinol-8 biosynthesis (prokaryotic)	60	0.06389743857	0.2353	0.3361428571	False
+Rhizosphere-Deep	PWY0-1061	superpathway of L-alanine biosynthesis	60	0.3107097249	0.0002	0.0008333333333	True
+Rhizosphere-Deep	PWY0-1298	superpathway of pyrimidine deoxyribonucleosides degradation	60	0.111787	0.0086	0.02186440678	True
+Rhizosphere-Deep	PWY-6467	Kdo transfer to lipid IVA III (Chlamydia)	60	-0.1864205547	0.0001	0.0005042016807	True
+Rhizosphere-Deep	NAGLIPASYN-PWY	lipid IVA biosynthesis	60	-0.1450946123	0.0003	0.001161290323	True
+Rhizosphere-Deep	PWY0-1479	tRNA processing	60	0.2069188242	0.0761	0.1339002933	False
+Rhizosphere-Deep	PWY-2941	L-lysine biosynthesis II	60	0.3657819968	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-1269	CMP-3-deoxy-D-manno-octulosonate biosynthesis I	60	-0.150856356	0.0003	0.001161290323	True
+Rhizosphere-Deep	PROTOCATECHUATE-ORTHO-CLEAVAGE-PWY	protocatechuate degradation II (ortho-cleavage pathway)	60	-0.03786171495	0.478	0.5829268293	False
+Rhizosphere-Deep	PWY-5100	pyruvate fermentation to acetate and lactate II	60	-0.04702944109	0.5944	0.6900580271	False
+Rhizosphere-Deep	PWY-5971	palmitate biosynthesis II (bacteria and plants)	60	0.4947999523	0.0113	0.02722891566	True
+Rhizosphere-Deep	PWY-5861	superpathway of demethylmenaquinol-8 biosynthesis	60	0.1460363652	0.0146	0.03435294118	True
+Rhizosphere-Deep	PWY-7187	pyrimidine deoxyribonucleotides de novo biosynthesis II	60	-0.1516723631	0.004	0.01100917431	True
+Rhizosphere-Deep	P161-PWY	acetylene degradation	60	-0.002106862584	0.9754	0.9869139966	False
+Rhizosphere-Deep	PWY-7328	superpathway of UDP-glucose-derived O-antigen building blocks biosynthesis	60	0.2976565399	0.0022	0.006502463054	True
+Rhizosphere-Deep	BIOTIN-BIOSYNTHESIS-PWY	biotin biosynthesis I	60	0.1995597461	0.0335	0.06790540541	False
+Rhizosphere-Deep	PWY-7242	D-fructuronate degradation	60	0.2899322597	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-181	photorespiration	60	0.2035360503	0.0226	0.05003690037	False
+Rhizosphere-Deep	PWY-6519	8-amino-7-oxononanoate biosynthesis I	60	0.2018367865	0.0334	0.06790540541	False
+Rhizosphere-Deep	POLYAMSYN-PWY	superpathway of polyamine biosynthesis I	60	0.231347248	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-7431	aromatic biogenic amine degradation (bacteria)	60	0.13223875	0.0018	0.005567010309	True
+Rhizosphere-Deep	PWY-6263	superpathway of menaquinol-8 biosynthesis II	60	0.01115088723	0.9394	0.9684536082	False
+Rhizosphere-Deep	PWY-5863	superpathway of phylloquinol biosynthesis	60	0.1967203412	0.0009	0.003068181818	True
+Rhizosphere-Deep	PWY-1861	formaldehyde assimilation II (RuMP Cycle)	60	0.5309220197	0.0001	0.0005042016807	True
+Rhizosphere-Deep	P124-PWY	Bifidobacterium shunt	60	-0.00857955668	0.9526	0.9778983051	False
+Rhizosphere-Deep	ASPASN-PWY	superpathway of L-aspartate and L-asparagine biosynthesis	60	0.2597629298	0.0001	0.0005042016807	True
+Rhizosphere-Deep	PWY-5837	1,4-dihydroxy-2-naphthoate biosynthesis I	60	0.2028805589	0.0005	0.001775147929	True
+Rhizosphere-Deep	PWY-7237	myo-, chiro- and scillo-inositol degradation	60	0.1777769814	0.0161	0.0372972973	True

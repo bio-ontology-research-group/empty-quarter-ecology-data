@@ -1,0 +1,55 @@
+{
+  "checks": {
+    "elk_lite_consistency": "passed",
+    "field_laboratory_xrf_semantics": "passed",
+    "iri_registry": "passed",
+    "label_uniqueness": "passed",
+    "laboratory_controls": "passed",
+    "shex_tractable_modules": "passed",
+    "xrf_integrity": "passed"
+  },
+  "command": "VALIDATE_LIVE=0 bash scripts/validation/validate_original.sh",
+  "elk_lite": {
+    "axioms": 781293,
+    "class_hierarchy_precomputed": false,
+    "consistent": true,
+    "distinct_ontology_iris": 10
+  },
+  "executed_at": "2026-08-01T11:42:21+03:00",
+  "label_gate": {
+    "files": 11,
+    "labelled_rak_subjects": 104697,
+    "multiple_distinct_label_violations": 0,
+    "shex_nonconformant_subjects": 0,
+    "triples": 782229
+  },
+  "log": {
+    "path": "evidence/semantic-validation/semantic_validation_20260801.log",
+    "sha256": "ac78bfe223ff2199a691363bce780aab622dd464e2c06cc0aaa37696c3947a97"
+  },
+  "module_sha256": {
+    "ontology/ecosystem_module.owl": "ff5e8e88975504130438fdcd1e7c867a581f1a43883a325e028a5157a0a0a457",
+    "ontology/rubalkhali.owl": "9c9a435c98c815dfd755ac7787f5f25bab0514a0457e4d3ea03e37fde486b98e",
+    "ontology/rubalkhali_controls.owl": "de8d99575800b8a1109627861f0df895545bbc54b69724ca2ea8758cb5dcdb2c",
+    "ontology/rubalkhali_dna.owl": "44a5c549800299e5de1ea4cf725a92224624068210391693c54a3376ea82a608",
+    "ontology/rubalkhali_kb.owl": "e529f0e8e3171a48fa04ec1136129b84d773c552e6f0405c7f3eb702a4ed4cb1",
+    "ontology/rubalkhali_measurements.owl": "29391e4b91d441b1dacb19767e04c8a79c9031ec9290ca3e6fa7d975f4a079a1",
+    "ontology/rubalkhali_qc.owl": "bc858f728e2541f745f4e0107139f79f7e4077fce5d3fd628b803e52d0bc67e0",
+    "ontology/rubalkhali_samples.owl": "ab9339969a861920ca8d734294d2a61f1e60e5f291314066f7f6b995987e937f",
+    "ontology/rubalkhali_sites.owl": "87db62ce596d20562525c9f93ee752e7d6fb0f425ff6ea5f67dfa37e820f8ea4",
+    "ontology/rubalkhali_sra.owl": "b33687d3a5c0a2a740e087d431af7ebf723e9e1514af212983ebe9a2ba94617a",
+    "ontology/rubalkhali_xrf.owl": "5c9a7df5fdc53ed221d4a55c005ded8776d6615523a5546de910c7d9415fae5f"
+  },
+  "schema_version": "1.1",
+  "scope_limit": "The multi-gigabyte taxonomy ABox is excluded from ELK, ShEx and label-uniqueness loading here; its full-file streaming and Raptor validations remain those of the checksum-identified workflow snapshot. The generated laboratory-control module is included in this run.",
+  "script_sha256": {
+    "scripts/validation/check_iri_registry.py": "3faf90292da6fcd03c7e6c8619583115da59f404714337fb185a24e197e33c85",
+    "scripts/validation/validate_consistency.groovy": "d692c4ad2bf2ea8e2e7de157ac1d8090ce5b1ff45d988e9b63190420cd820570",
+    "scripts/validation/validate_controls.py": "7c9d942f6c1eb6719746acbf8b704f788b6d1e345de4541456b21e08f2de7746",
+    "scripts/validation/validate_labels.groovy": "7e1f6afd0928227ac5ef34bdfc43d979c84660d3a98a20ed0a968c3b89195859",
+    "scripts/validation/validate_original.sh": "24bc88af3499ba2e5b22c38e7f9485b701c921bc376d1cfa80ee4843cf38046f",
+    "scripts/validation/validate_rdf.groovy": "db60b5b9fa7daf7b3dd5e19f68b674fb00cf7eb5d9b7935a59b0e390d4d5d358"
+  },
+  "status": "passed",
+  "wall_time_seconds": 107.68
+}

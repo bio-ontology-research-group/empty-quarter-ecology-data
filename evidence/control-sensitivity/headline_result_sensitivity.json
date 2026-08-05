@@ -1,0 +1,32 @@
+{
+  "all_headline_verdicts_stable": true,
+  "comparison_table": "analysis/v3/control_sensitivity/headline_result_sensitivity.tsv",
+  "conclusion": "No headline scientific verdict changed under the bounded Trip-5 control filter.",
+  "headline_metrics_compared": 25,
+  "input_sha256": {
+    "claims_after": "804f48184142f4348512fba774a03248f5e75fd09470a3cd26fa180d1152d5fe",
+    "claims_before": "5ad7fd0b791d5d3340cd89c46c8c3660cfdbe55d485e03122ec60ad9800eb9d3",
+    "composition_after": "8a85929beac0f5f79dfc529d73d3c09e7c0cc68d97999b52b682d2a431c3910c",
+    "composition_before": "2c0d58e8ab043f012d452959393113647a410108b76574c1cd723ce1c271be85",
+    "depth_after": "93b6de2f1b632b282e2ed13d8dc672f3c893236e4a15b3480e1bc6a159142370",
+    "depth_before": "a2f1a32a54bc848dd8f7fb97bd8e563e22e8f60f0b750fee7e8bc869530d9de1",
+    "distance_after": "7f50d027744ce5b4e003702fcebb659b2541482788bdaa1f209dba581269f88e",
+    "distance_before": "af12997b8feaae60801914ff9cf793da88ee36ab3abf89f9965631108ce2f5b1",
+    "evenness_after": "0948850838503e824e50ba5de70273b547e4568247a0bfe2f927e601fde19af4",
+    "evenness_before": "ee9ce73ead4d4c0f08306c981b42d5e6375184aa40b93d8b288f68fa57687efc",
+    "paired_after": "2901d377a8eae9aab84c822fba92e7ca1b56570200b780363d968d912cd15b37",
+    "paired_before": "5841c45fe8c6c5d79f018814100dfa0455b817bb6a41201df2d693cec86b0d65",
+    "prediction_after": "7379838aae5b0395ba013848ef27a786cfbca0e374ed2bdd6f941dbb6d546fff",
+    "prediction_before": "4d63a9f383745f0c6812bed8d5c65aec09586b9a952bcb300d4556e7f3ebd9a2",
+    "rain_after": "0daa988fc311862bf17f52ecdbba0ebf22c5d5ff1c93117e6b177ca50eef819f",
+    "rain_before": "8f6fb83143cec463ebf96f11b94a5e3637e21090537f5679fbd5c02dd102bd43",
+    "resolution_after": "6edba5c793e95a426aa9ef4ca50e3d618f76d44b27363fa0a9356a3de708da92",
+    "resolution_before": "c3f386f2e412e0c50f9adec43ec0cc7e40462b356780a02a145c8c8d1073f268",
+    "spatial_after": "9060b99af4ddbca7f68e73a201fec618cb0e6c38ee98c24197bfc52badad5adf",
+    "spatial_before": "1df97532883204877ce299fd89f4d26b87671a9624af1a1a2eca58aa008bb64f",
+    "xrf_after": "9b3d7caac14a3843592b3379f521782a5ffbb5c435bfce7c82e14257a92dcb5e",
+    "xrf_before": "d5193c298cbc598d22e79b86f99a69d440b823d7adffae0d22941760863f6c85"
+  },
+  "scope": "The primary 351-ASV candidate set is removed only from 217 Trip-5 profiles with frozen extraction-batch mappings. The remaining 1,020 ecological profiles are unchanged.",
+  "verdict_changes": []
+}

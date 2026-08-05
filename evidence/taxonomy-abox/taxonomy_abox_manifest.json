@@ -1,0 +1,61 @@
+{
+  "generator": {
+    "bytes": 42889,
+    "file": "generate_taxonomy_abox.groovy",
+    "sha256": "48142606a8684e54b89ffb1d2ebcfd74769fb444c5dd8c6b8d44c82100ce54f9"
+  },
+  "inputs": {
+    "corrected_mapping_json": {
+      "bytes": 19886830,
+      "file": "mapped_taxonomy_corrected.json",
+      "sha256": "ad9899dea09c10688bc45b93349c542958234f3e9d7ac0480b1f1cb242c18aae"
+    },
+    "corrected_mapping_manifest": {
+      "bytes": 4204,
+      "file": "mapped_taxonomy_corrected.manifest.json",
+      "sha256": "c853f26e8f27b1300552828e8bd0d96e802960f9cb89c7a6c9d3572730b46a1d"
+    },
+    "feature_table": {
+      "bytes": 1801512613,
+      "file": "feature-table-trips1-5.tsv",
+      "sha256": "129f47d8f0db8d9afd6f8c67b8d80b5bead90155d8c91d2f43ea6a4139b0cb12"
+    },
+    "import_module": {
+      "bytes": 4852434,
+      "file": "ecosystem_module.owl",
+      "sha256": "ff5e8e88975504130438fdcd1e7c867a581f1a43883a325e028a5157a0a0a457"
+    },
+    "sra_ontology": {
+      "bytes": 3971140,
+      "file": "rubalkhali_sra.owl",
+      "sha256": "b33687d3a5c0a2a740e087d431af7ebf723e9e1514af212983ebe9a2ba94617a"
+    },
+    "sra_sheet": {
+      "bytes": 162154,
+      "file": "submission-sheet.tsv",
+      "sha256": "3813e534e69ff7e8e475eca5db7d94a5a827d70c3b42c4a69dd984eafe40fbde"
+    },
+    "taxonomy_tsv": {
+      "bytes": 39741062,
+      "file": "taxonomy-trips1-5.tsv",
+      "sha256": "fcf0a3ea0ca8ed956532fb4d7bffa0c20249e3048779a219155cc1bb7e483d35"
+    }
+  },
+  "output": {
+    "bytes": 6722670815,
+    "file": "rubalkhali_taxonomy_abox.ttl",
+    "sha256": "d78be36a0fb3f91a28bec4c6489ca1a34d97c576e10cd2c92fc59e4dfd0eb808"
+  },
+  "schema_version": 1,
+  "scope": {
+    "campaigns": "Trips 1-5",
+    "mapping_policy": "Only the fail-closed corrected mapping manifest is accepted; invalid or ambiguous external mappings use lineage-and-rank-scoped project identifiers.",
+    "validation": "Generation and checksum gate only. Full-file Turtle syntax and project structural invariants are checked downstream against this exact output."
+  },
+  "status": "passed",
+  "workflow_wrapper": {
+    "bytes": 3763,
+    "file": "run_taxonomy_abox_generation.sh",
+    "sha256": "eee32a3d0fcce0d93e9cbc9a4d2794faba6f4f0f2f3ba9d485b5a326dda218ae"
+  }
+}

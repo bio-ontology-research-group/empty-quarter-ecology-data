@@ -1,0 +1,11 @@
+analysis	axis	taxon_count	zero_treatment	n_observations	n_sites	pseudo_f	partial_r2	bootstrap_median_partial_r2	bootstrap_mean_distinct_sites	permutation_p	residual_moran_i	residual_moran_p
+taxon_or_zero_sensitivity	elemental_pc1	80	pseudocount_0.5	621	60	2.993696779	0.005374740857	0.007263898945	38.0955	0.002	0.3212918529	0.001
+taxon_or_zero_sensitivity	elemental_pc1	80	pseudocount_1.0	621	60	3.025552212	0.005431621944	0.007250795916	38.1265	0.006	0.3256302186	0.001
+taxon_or_zero_sensitivity	elemental_pc1	80	multiplicative_0.65	621	60	3.002190859	0.005389908528	0.007348026409	38.1455	0.004	0.3230927495	0.001
+primary	elemental_pc1	200	pseudocount_0.5	621	60	1.992151666	0.003583057171	0.005434339267	38.082	0.01	0.3042079219	0.001
+taxon_or_zero_sensitivity	elemental_pc1	200	pseudocount_1.0	621	60	2.0448617	0.003677512088	0.005475366865	38.072	0.015	0.307485089	0.001
+taxon_or_zero_sensitivity	elemental_pc1	200	multiplicative_0.65	621	60	2.009555491	0.003614246322	0.005378983034	38.213	0.012	0.3056974552	0.001
+taxon_or_zero_sensitivity	elemental_pc1	383	pseudocount_0.5	621	60	1.729273863	0.00311171994	0.004927085269	38.1065	0.007	0.2923998744	0.001
+taxon_or_zero_sensitivity	elemental_pc1	383	pseudocount_1.0	621	60	1.784459678	0.003210704521	0.004997437902	38.0935	0.007	0.296376111	0.001
+taxon_or_zero_sensitivity	elemental_pc1	383	multiplicative_0.65	621	60	1.749237471	0.003147530133	0.004972134613	38.073	0.011	0.2941965096	0.001
+global_standardisation_sensitivity	elemental_pc1_global_sensitivity	200	pseudocount_0.5	621	60	2.124894131	0.003820893748	0.005741944224	38.0815	0.008	0.3013084891	0.001

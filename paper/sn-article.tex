@@ -1,39 +1,54 @@
 %Version 3.1 December 2024
 \documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
 
-\usepackage{todonotes}
 \usepackage{gensymb}
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{amsthm}
-\usepackage{mathrsfs}
 \usepackage[title]{appendix}
 \usepackage{xcolor}
 \usepackage{textcomp}
 \usepackage{manyfoot}
 \usepackage{booktabs}
 \usepackage{longtable}
-\usepackage{algorithm}
-\usepackage{algorithmicx}
-\usepackage{algpseudocode}
 \usepackage{listings}
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows.meta,positioning}
+\hypersetup{hypertexnames=false}
+\lstset{breaklines=true,breakatwhitespace=false,columns=fullflexible}
 
 \raggedbottom
 
 \begin{document}
 
-\title[Empty Quarter Knowledge Base]{A formal knowledge base for metagenomics and geochemistry of the Rub' al Khali desert}
+\title[Rub' al-Khali microbiome data and knowledge graph]{A multimodal field dataset and semantic knowledge graph for the Rub' al-Khali desert microbiome}
 
-%TODO: Replace placeholder author names, affiliations, and emails below.
-\author*[1]{\fnm{First} \sur{Author}}\email{author@kaust.edu.sa}
-\affil*[1]{\orgdiv{Bio-Ontology Research Group}, \orgname{KAUST}, \orgaddress{\city{Thuwal}, \country{Saudi Arabia}}}
+\author[1]{\fnm{Rund} \sur{Tawfiq}}
+\author[1]{\fnm{Marwa} \sur{Abdelhakim}}
+\author[3]{\fnm{Sulaiman M.} \sur{Alajel}}
+\author[1]{\fnm{Mohammed} \sur{Alarawi}}
+\author[1]{\fnm{Abderahmane} \sur{Derouiche}}
+\author[4]{\fnm{Daniela I.} \sur{Drautz-Moses}}
+\author[6]{\fnm{Raik} \sur{Gr\"unberg}}
+\author[1]{\fnm{Maxat} \sur{Kulmanov}}
+\author[1]{\fnm{Alejandra} \sur{Lopez Velazquez}}
+\author[2]{\fnm{Susana} \sur{Martinez Arbas}}
+\author[1]{\fnm{Kexin} \sur{Niu}}
+\author[5]{\fnm{Tiannyu} \sur{Wang}}
+\author[4]{\fnm{Xiang} \sur{Zhao}}
+\author[5]{\fnm{Magnus} \sur{Rueping}}
+\author*[1]{\fnm{Robert} \sur{Hoehndorf}}\email{robert.hoehndorf@kaust.edu.sa}
+\affil[1]{\orgdiv{Bio-Ontology Research Group (BORG), Computer, Electrical and Mathematical Sciences and Engineering (CEMSE) Division}, \orgname{King Abdullah University of Science and Technology (KAUST)}, \orgaddress{\city{Thuwal}, \country{Saudi Arabia}}}
+\affil[2]{\orgdiv{Luxembourg Centre for Systems Biomedicine (LCSB)}, \orgname{University of Luxembourg}, \orgaddress{\city{Esch-sur-Alzette}, \country{Luxembourg}}}
+\affil[3]{\orgname{Ministry of Environment, Water and Agriculture}, \country{Saudi Arabia}}
+\affil[4]{\orgdiv{Bioscience Core Lab}, \orgname{King Abdullah University of Science and Technology}, \orgaddress{\city{Thuwal}, \country{Saudi Arabia}}}
+\affil[5]{\orgdiv{Physical Science and Engineering (PSE) Division}, \orgname{King Abdullah University of Science and Technology (KAUST)}, \orgaddress{\city{Thuwal}, \country{Saudi Arabia}}}
+\affil[6]{\orgdiv{Biological and Environmental Science and Engineering (BESE) Division}, \orgname{King Abdullah University of Science and Technology (KAUST)}, \orgaddress{\city{Thuwal}, \country{Saudi Arabia}}}
 
-\abstract{Integrating multi-omic data with environmental metadata remains a significant challenge due to the heterogeneity of data formats and a lack of standardized semantic representations. Building such an integrated resource requires addressing several interlocking challenges: defining a unified data model across instruments and observation types, harmonizing taxonomic identifiers across reference databases, validating incoming data against shared schemas, and supporting semantic query answering at scale under a tractable reasoning regime. Here, we present a high-resolution microbiome dataset comprising soil samples from 60 sampling sites across the Empty Quarter (Rub' al Khali) of Saudi Arabia. We augment these biological sequences with a formal knowledge base constructed using OWL 2 DL and the Semanticscience Integrated Ontology (SIO), with ShEx-based ingest validation and ELK-based materialization over the resulting graph. This semantic layer enables complex cross-domain queries and provides a comparative baseline for studying microbial adaptation in extreme environments.}
+\abstract{Environmental microbiome reuse requires field, molecular and laboratory data to remain connected to provenance. We describe a multimodal resource from five expeditions across a 1,043~km cumulative path (1,015~km end to end) in the Rub' al-Khali from March 2023 to October 2025. A 2,550-row source ledger connects specimens, DNA extractions, libraries, runs and quality-controlled community profiles; 2,516 non-control records are sample individuals in an SIO-based OWL graph. The canonical feature table contains 1,271 profiles; 1,237 pass ecological filtering across 64 numeric site labels. Additional records comprise 274 environmental logs, 12,936 monthly climate measurements, 712 admitted archived-soil pH observations, and two uncalibrated X-ray fluorescence workflows (71 field sessions at 58 sites and 725 laboratory records). Shape Expressions, bounded consistency checks and an executable query validate stated structural coverage. The package supports provenance-aware reuse, not an operational digital twin.}
 
-\keywords{Knowledge Graph, Metagenomics, Rub' al Khali, SIO, Semantic Web}
+\keywords{Knowledge Graph, Microbiome, Rub' al Khali, SIO, Semantic Web}
 
 \maketitle
 
@@ -44,15 +59,8 @@
 \input{05_validation.tex}
 \input{06_usage.tex}
 
-\section*{Acknowledgements}
-\todo[inline]{Add acknowledgements.}
-
-\section*{Author contributions}
-\todo[inline]{Add CRediT author contribution statements}
-
-\section*{Competing interests}
-The authors declare no competing interests.
-
 \bibliography{sn-bibliography}
+
+\enlargethispage{2.5\baselineskip}
 
 \end{document}

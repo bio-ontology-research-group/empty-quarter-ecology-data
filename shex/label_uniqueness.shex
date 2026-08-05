@@ -1,0 +1,19 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Label-uniqueness contract for the Rub al-Khali ontology.
+#
+# Every RAK_ entity must have:
+#   - exactly one rdfs:label (the canonical, human-readable name)
+#   - zero or more skos:altLabel synonyms.
+#
+# The shape is open (no CLOSED), so other unrelated triples
+# (sio:isAttributeOf, rdf:type, etc.) on the same subject are fine.
+# Cardinality `{1}` on rdfs:label is the load-bearing constraint:
+# any second label triple causes the shape to fail.
+
+<#RAKLabeledEntityShape> {
+    rdfs:label LITERAL {1} ;
+    skos:altLabel LITERAL * ;
+}

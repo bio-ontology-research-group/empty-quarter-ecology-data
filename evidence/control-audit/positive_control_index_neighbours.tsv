@@ -1,0 +1,15 @@
+positive_profile_id	index_family	positive_index_number	lane	neighbour_profile_id	neighbour_index_number	absolute_numeric_index_distance	neighbour_control_class
+e0553_Ctrl_2	UDP	372	002	e0554_Ctrl_3	373	1	positive
+e0553_Ctrl_2	UDP	372	002	e0536_64PRr3	370	2	biological
+e0554_Ctrl_3	UDP	373	002	e0553_Ctrl_2	372	1	positive
+e0554_Ctrl_3	UDP	373	002	e0555_PCR_Ctrl_Trip1	374	1	negative
+e0872_TMC1	SU	359	002	e0866_T6PRr2	358	1	biological
+e0872_TMC1	SU	359	002	e0861_61Sr2	357	2	biological
+e0874_Positive	SU	300	002	e0868_T8Dr1	299	1	biological
+e0874_Positive	SU	300	002	e0806_1Sr2	301	1	biological
+e8294_FPosCtrl1	xGen-10nt-UDI-Index-Pair	374	001	e8302_F2PRr1	375	1	biological
+e8294_FPosCtrl1	xGen-10nt-UDI-Index-Pair	374	001	e8310_F3Sr3	375	1	biological
+e8661_FPosCtrl2	xGen-10nt-UDI-Index-Pair	704	001	e8660_F60Sr3	703	1	biological
+e8661_FPosCtrl2	xGen-10nt-UDI-Index-Pair	704	001	e705_T5PRr1	705	1	biological
+e8665_FPosCtrl3	xGen-10nt-UDI-Index-Pair	716	001	e8664_F60PRr1	715	1	biological
+e8665_FPosCtrl3	xGen-10nt-UDI-Index-Pair	716	001	e717_T6PRr3	717	1	biological

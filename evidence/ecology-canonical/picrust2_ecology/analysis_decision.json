@@ -1,0 +1,111 @@
+{
+  "cohort": {
+    "ecology_profiles": 1227,
+    "ecology_sites": 60,
+    "grouped_profiles": 633,
+    "pathways": 462,
+    "picrust2_columns": 1270
+  },
+  "input_sha256": {
+    "alpha": "e6083716b713a36a5e6984826b20107613a1fd65359172a1e9cf10a7b3161c2c",
+    "descriptions": "cf7d23ac7d03d6174f5ee3cd919cfedc6f827927a0df0b1ac977a18aa6f7bdc3",
+    "measured_function": "d3d1931e95f45da73ca74c4f9a803e78e85c53129af83dd1c2c7f9594531d602",
+    "metadata": "4f6b4f67a54bd06f66a74e566e463ae5225116b53a23aa6f7b08002f6e2cb082",
+    "nsti": "2a3468f5239627d8c22e1c3e9abeb7b8ddd0088e0676932c4e9f4e7913eb67e0",
+    "pathways": "41bf98b763fa4b7dc392fcf25e2d4ccd37c5f7d351f7ce87002dea0ab3c6fa1d"
+  },
+  "interpretation_boundary": "PICRUSt2 estimates gene-family and pathway potential from 16S ASVs. It does not measure gene expression, metabolic activity or process rates.",
+  "multiplicity": {
+    "pathway_geography": "Benjamini-Hochberg across 200 pathway-transect correlations",
+    "pathway_position": "Benjamini-Hochberg across 600 pathway-by-position tests",
+    "position_profiles": "Benjamini-Hochberg across three primary paired contrasts"
+  },
+  "omnibus_position_sensitivities_all_p_lt_0_05": true,
+  "pathway_level": {
+    "geographic_tests": 200,
+    "geographic_tests_q_lt_0_05": 92,
+    "position_tests": 600,
+    "position_tests_q_lt_0_05": 270
+  },
+  "position_contrast_sensitivity": {
+    "Deep-Surface": {
+      "all_p_lt_0_05": false,
+      "maximum_p": 0.136,
+      "tests": 10
+    },
+    "Rhizosphere-Deep": {
+      "all_p_lt_0_05": true,
+      "maximum_p": 0.0001,
+      "tests": 10
+    },
+    "Rhizosphere-Surface": {
+      "all_p_lt_0_05": true,
+      "maximum_p": 0.0005,
+      "tests": 10
+    }
+  },
+  "prediction_quality": {
+    "community_mean_ko_spearman": 0.806207191166,
+    "median_per_sample_ko_spearman": 0.742527620976,
+    "shared_kos": 3471,
+    "shotgun_matched_samples": 125,
+    "weighted_nsti": {
+      "maximum": 0.7818885388477383,
+      "mean": 0.17740208338326177,
+      "median": 0.1648089040812849,
+      "minimum": 0.005325,
+      "n_profiles": 1227
+    }
+  },
+  "primary_geography": {
+    "all_sensitivities_p_lt_0_05": true,
+    "n_sites": 60,
+    "permutation_p": 0.0001,
+    "quadratic_transect_r2": 0.23424681119179114
+  },
+  "primary_position": {
+    "Deep-Surface": {
+      "n_complete_blocks": 172,
+      "n_sites": 60,
+      "permutation_p": 0.0194,
+      "q_primary_three": 0.0194,
+      "standardized_displacement": 0.33003300412201897
+    },
+    "Rhizosphere-Deep": {
+      "n_complete_blocks": 172,
+      "n_sites": 60,
+      "permutation_p": 0.0001,
+      "q_primary_three": 0.00015000000000000001,
+      "standardized_displacement": 0.45263559276097903
+    },
+    "Rhizosphere-Surface": {
+      "n_complete_blocks": 172,
+      "n_sites": 60,
+      "permutation_p": 0.0001,
+      "q_primary_three": 0.00015000000000000001,
+      "standardized_displacement": 0.4290215075218419
+    },
+    "omnibus_three_positions": {
+      "n_complete_blocks": 172,
+      "n_sites": 60,
+      "permutation_p": 0.0001,
+      "q_primary_three": null,
+      "standardized_displacement": null
+    }
+  },
+  "provenance": {
+    "bootstrap": 2000,
+    "permutations": 9999,
+    "script": "analysis/v3/picrust2_ecology.py",
+    "script_sha256": "52f44796d79090378f4cefdde2c0dd7ea5e4401b29d43059a00b357fa9897d9d",
+    "seed": 20260804,
+    "software": {
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "python": "3.11.14",
+      "scipy": "1.14.1"
+    }
+  },
+  "schema_version": "1.0",
+  "status": "predicted_functional_structure_supported"
+}

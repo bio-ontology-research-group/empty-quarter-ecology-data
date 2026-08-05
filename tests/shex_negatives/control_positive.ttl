@@ -1,0 +1,61 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ncbitaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix rak: <https://rubalkhali.science/kb/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+
+rak:fixture_material
+    a rak:RAK_0000300, rak:RAK_0000302 ;
+    rdfs:label "fixture extraction blank" ;
+    dcterms:identifier "fixture-material" ;
+    sio:SIO_000228 rak:fixture_extraction_role .
+
+rak:fixture_extraction_role
+    a rak:RAK_0000306 ;
+    rdfs:label "fixture extraction blank role" ;
+    dcterms:identifier "fixture-extraction-role" ;
+    sio:SIO_000227 rak:fixture_material ;
+    sio:SIO_000356 rak:fixture_extraction_process .
+
+rak:fixture_extraction_process
+    a rak:RAK_0000309, sio:SIO_000006 ;
+    rdfs:label "fixture extraction process" ;
+    dcterms:identifier "fixture-extraction-process" ;
+    sio:SIO_000230 rak:fixture_material ;
+    sio:SIO_000291 rak:fixture_material ;
+    sio:SIO_000229 rak:fixture_extract ;
+    sio:SIO_000355 rak:fixture_extraction_role ;
+    sio:SIO_000068 rak:fixture_batch .
+
+rak:fixture_batch
+    a rak:RAK_0000308 ;
+    rdfs:label "fixture extraction batch" ;
+    dcterms:identifier "fixture-batch" ;
+    sio:SIO_000028 rak:fixture_extraction_process .
+
+rak:fixture_fastq
+    a rak:RAK_0000318, rak:RAK_0000063 ;
+    rdfs:label "fixture paired FASTQ dataset" ;
+    dcterms:identifier "fixture-fastq" ;
+    dc:source "fixture_R1.fastq.gz", "fixture_R2.fastq.gz" ;
+    sio:SIO_000232 rak:fixture_run .
+
+rak:fixture_specification
+    a rak:RAK_0000316 ;
+    rdfs:label "fixture composition specification" ;
+    dcterms:identifier "fixture-specification" ;
+    dcterms:source <https://example.org/fixture-manufacturer-source> ;
+    sio:SIO_000338 rak:fixture_product ;
+    rak:RAK_2000092 ncbitaxon:287 .
+
+rak:fixture_expected_taxon_assertion
+    a rak:RAK_0000313, rak:RAK_0000317 ;
+    rdfs:label "fixture expected-taxon assertion" ;
+    dcterms:identifier "fixture-assertion" ;
+    rak:RAK_2000093 rak:fixture_specification ;
+    rak:RAK_2000094 rak:fixture_relation_descriptor ;
+    rak:RAK_2000095 ncbitaxon:287 ;
+    rak:RAK_2000090 rak:fixture_confirmed_status ;
+    sio:SIO_000772 rak:fixture_evidence .

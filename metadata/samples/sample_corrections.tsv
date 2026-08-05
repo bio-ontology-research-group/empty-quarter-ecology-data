@@ -1,0 +1,7 @@
+sample_id	field	original_value	corrected_value	status	rationale
+F46Dr2	site	NEBNext	46	confirmed	The sample identifier and the other Site 46 replicates establish the site; Robert Hoehndorf confirmed on 2026-07-23 that NEBNext was shifted into the Site column.
+F46Dr2	wgs_library_kit		NEBNext	confirmed	NEBNext is a library-preparation kit value, not a site identifier; restored from the displaced Site cell. This repair does not by itself establish that WGS was performed.
+S46Dr2	site	NEBNext	46	confirmed	The sample identifier and the other Site 46 replicates establish the site; Robert Hoehndorf confirmed on 2026-07-23 that NEBNext was shifted into the Site column.
+S46Dr2	wgs_library_kit		NEBNext	confirmed	NEBNext is a library-preparation kit value, not a site identifier; restored from the displaced Site cell. This repair does not by itself establish that WGS was performed.
+V46Dr2	site	NEBNext	46	confirmed	The sample identifier and the other Site 46 replicates establish the site; Robert Hoehndorf confirmed on 2026-07-23 that NEBNext was shifted into the Site column.
+V46Dr2	wgs_library_kit		NEBNext	confirmed	NEBNext is a library-preparation kit value, not a site identifier; restored from the displaced Site cell. This repair does not by itself establish that WGS was performed.

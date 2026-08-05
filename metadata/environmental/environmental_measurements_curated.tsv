@@ -1,0 +1,275 @@
+expedition	source_file	source_row	record_role	site	date	time	coordinates	temperature_c	pressure_mbar	relative_humidity_pct	qc_status	qc_action	notes
+Trip 1 (2023)	trip1-2023.tsv	2	primary_transect_site	1	17/03/2023	07:58	19.149770555555556 N,45.166511388888885 E	20.7	928	62.5	source_as_recorded		gravel, second plant was eaten by bug
+Trip 1 (2023)	trip1-2023.tsv	3	primary_transect_site	2	17/03/2023	08:21	19.203468333333333 N,45.2447675 E	21.3	928	60.4	source_as_recorded		large tree, soil for magnus m1
+Trip 1 (2023)	trip1-2023.tsv	4	primary_transect_site	3	17/03/2023	08:50	19.301079444444444 N,45.384414166666666 E	22.6	928	55.4	source_as_recorded		termite structure
+Trip 1 (2023)	trip1-2023.tsv	5	primary_transect_site	4	17/03/2023	09:20	19.379571666666667 N,45.55182694444444 E	24	928	51.0	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	6	primary_transect_site	5	17/03/2023	10:29	19.407155277777775 N,45.659501388888884 E	28.8	928	40.6	source_as_recorded		some deep rocky extra samples
+Trip 1 (2023)	trip1-2023.tsv	7	primary_transect_site	6	17/03/2023	11:07	19.405739166666667 N,45.8161425 E	29	928	42.9	source_as_recorded		m sample from herbal medicine plant
+Trip 1 (2023)	trip1-2023.tsv	8	primary_transect_site	7	17/03/2023	11:35	19.407005277777778 N,45.953943611111114 E	28.7	928	49.4	source_as_recorded		dead tree plant sample
+Trip 1 (2023)	trip1-2023.tsv	9	primary_transect_site	8	17/03/2023	12:05	19.393154166666665 N,46.110734722222226 E	30.6	928	41.5	source_as_recorded		dead tree plant
+Trip 1 (2023)	trip1-2023.tsv	10	primary_transect_site	9	17/03/2023	12:44	19.411200277777777 N,46.30267361111111 E	35.9	928	36.3	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	11	primary_transect_site	10	17/03/2023	13:12	19.420469722222222 N,46.460795277777784 E	32.5	928	39.0	source_as_recorded		First site with white sand
+Trip 1 (2023)	trip1-2023.tsv	12	primary_transect_site	11	17/03/2023	13:39	19.44435222222222 N,46.6356325 E	31.1	930	37.5	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	13	primary_transect_site	12	17/03/2023	14:04	19.47793361111111 N,46.83437333333334 E	34.6	932	30.0	source_as_recorded		mubarak says rabbits like that plant
+Trip 1 (2023)	trip1-2023.tsv	14	primary_transect_site	13	17/03/2023	15:42	19.52934611111111 N,47.053284444444444 E	28.9	936	29.2	source_as_recorded		no plant
+Trip 1 (2023)	trip1-2023.tsv	15	primary_transect_site	14	17/03/2023	16:09	19.581338055555555 N,47.2920225 E	30.2	938	37.8	source_as_recorded		diarrhoea  plant
+Trip 1 (2023)	trip1-2023.tsv	16	primary_transect_site	15	17/03/2023	16:33	19.613749722222224 N,47.47587194444445 E	31.6	946	33.0	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	17	primary_transect_site	16	17/03/2023	16:55	19.644455833333332 N,47.62611861111111 E	20.7	948	33.3	source_as_recorded		possible error on temperature measurement
+Trip 1 (2023)	trip1-2023.tsv	18	primary_transect_site	17	17/03/2023	17:23	19.676460000000002 N,47.82730555555556 E	20.5	952	32.7	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	19	primary_transect_site	18	18/03/2023	06:49	19.732518055555555 N,48.046860555555554 E	20	954	50.0	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	20	primary_transect_site	19	18/03/2023	07:15	19.81231916666667 N,48.24049472222222 E	22.9	960	51.4	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	21	primary_transect_site	20	18/03/2023	07:55	19.869310833333333 N,48.42464444444444 E	24.3	964	39.6	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	22	primary_transect_site	21	18/03/2023	08:20	19.9011325 N,48.48646388888889 E	29.4	962	30.9	source_as_recorded		material: oilspill; O(green) is oil spill, OD samples are deep oil spill
+Trip 1 (2023)	trip1-2023.tsv	23	primary_transect_site	22	18/03/2023	08:45	19.97866972222222 N,48.63943555555556 E	29		25.9	source_as_recorded		Big bottle of paleo lake rock
+Trip 1 (2023)	trip1-2023.tsv	24	primary_transect_site	23	18/03/2023	09:25	20.049265555555557 N,48.773331388888884 E	26.8	966	25.2	source_as_recorded		Lizard in -20
+Trip 1 (2023)	trip1-2023.tsv	25	primary_transect_site	24	18/03/2023	09:48	20.09273861111111 N,48.89939527777778 E	29.5	966	25.9	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	26	primary_transect_site	25	18/03/2023	10:15	20.100259722222223 N,48.95421972222223 E	27.8	968	27.6	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	27	primary_transect_site	26	18/03/2023	10:40	20.148753888888887 N,49.07873861111111 E	31.7	968	23.1	source_as_recorded		took some plant surface samples bc the soil at the surface of the plants in this area is considerably lighter than sand away from the radius of the plant
+Trip 1 (2023)	trip1-2023.tsv	28	primary_transect_site	27	18/03/2023	11:18	20.2038574 N,49.1959834 E	31.5	970	23.8	source_as_recorded		took some plant surface samples bc the soil at the surface of the plants in this area is considerably lighter than sand away from the radius of the plant
+Trip 1 (2023)	trip1-2023.tsv	29	primary_transect_site	28	18/03/2023	11:47	20.24376861111111 N,49.37088472222222 E	31.9	970	24.9	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	30	primary_transect_site	29	18/03/2023	12:15	20.2597976 N,49.5675445 E	31.7	968	25.7	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	31	primary_transect_site	30	18/03/2023	14:39	20.269303055555554 N,49.68367333333333 E	34.1	964	22.4	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	32	primary_transect_site	31	18/03/2023	15:11	20.294623333333334 N,49.891405 E	33.8	964	22.3	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	33	primary_transect_site	32	18/03/2023	15:44	20.310684166666668 N,50.09302138888889 E	34	968	22.0	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	34	primary_transect_site	33	18/03/2023	16:15	20.317507777777777 N,50.30307027777778 E	34.8	968	20.1	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	35	primary_transect_site	34	18/03/2023	16:46	20.344394444444443 N,50.5153725 E	34.1	970	21.1	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	36	primary_transect_site	35	18/03/2023	17:24	20.371795833333334 N,50.72999222222222 E	33.7	976	20.8	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	37	primary_transect_site	36	19/03/2023	09:40	20.42319 N, 51.14483 E	29.8	982	15.9	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	38	primary_transect_site	37	19/03/2023	10:10	20.454150277777778 N,51.344883333333335 E	33.5	984	14.4	source_as_recorded		near 2 female camels and a baby camep
+Trip 1 (2023)	trip1-2023.tsv	39	primary_transect_site	38	19/03/2023	10:30	20.4610275 N,51.370224722222225 E	31.9	984	15.1	source_as_recorded		plant with extra root and miswak
+Trip 1 (2023)	trip1-2023.tsv	40	primary_transect_site	39	19/03/2023	11:05	20.51023 N, 51.59742 E	36.4	984	16.0	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	41	primary_transect_site	40	19/03/2023	11:40	20.54718 N, 51.82559 E	30.5	980	30.4	source_as_recorded		camel heard nearby
+Trip 1 (2023)	trip1-2023.tsv	42	primary_transect_site	41	19/03/2023	12:16	20.539777222222224 N,51.94610583333333 E	35.4	980	19.8	source_as_recorded		concentrated salts, dug down and found water
+Trip 1 (2023)	trip1-2023.tsv	43	primary_transect_site	42	19/03/2023	12:41	20.55516 N, 52.12403 E	35.4	984	20.5	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	44	primary_transect_site	43	19/03/2023	13:05	20.567575555555557 N,52.22413277777778 E	35.2	984	22.8	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	45	primary_transect_site	44	19/03/2023	13:40	20.56783 N, 52.41036 E	38.4	984	19.6	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	46	primary_transect_site	45	19/03/2023	13:59	20.56346 N, 52.46776 E	37.1	986	20.1	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	47	primary_transect_site	46	19/03/2023	14:29	20.553746111111113 N,52.66920777777778 E	35.7	987	21.1	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	48	primary_transect_site	47	19/03/2023	15:00	20.54181555555556 N,52.868785833333334 E	37.3	986	20.3	source_as_recorded		field where all plants are dead, except of the 2 types we sampled
+Trip 1 (2023)	trip1-2023.tsv	49	primary_transect_site	48	19/03/2023	17:00	20.568648333333332 N,53.09404833333333 E	35.3	984	23.7	source_as_recorded		oasis with running water and palm trees
+Trip 1 (2023)	trip1-2023.tsv	50	primary_transect_site	49	19/03/2023	17:30	20.644662222222223 N,53.28794 E	35	986	21.7	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	51	primary_transect_site	50	20/03/2023	07:14	20.71385 N, 53.41230 E	29.8	988	31.3	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	52	primary_transect_site	51	20/03/2023	07:37	20.79870 N, 53.48700 E	30.2	992	32.5	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	53	primary_transect_site	52	20/03/2023	08:02	20.851514166666668 N,53.75788444444444 E	31.1	992	29.7	source_as_recorded		no plants
+Trip 1 (2023)	trip1-2023.tsv	54	primary_transect_site	53	20/03/2023	09:03	20.851514166666668 N,53.75788444444444 E	34.8	992	26.0	source_as_recorded		dune beside sabkhah
+Trip 1 (2023)	trip1-2023.tsv	55	primary_transect_site	54	20/03/2023	10:03	20.92017888888889 N,53.962204444444446 E	32.1	992	26.7	source_as_recorded		sample 2 from air root,sample 3 from actual root near water, water salinity 0.5, pH 5.5
+Trip 1 (2023)	trip1-2023.tsv	56	primary_transect_site	55	20/03/2023	10:24	20.9022725 N,54.0024376 E	33.2	990	27.9	source_as_recorded		glumat althhayf. now dry sabkhah most plants dead sampled alive one
+Trip 1 (2023)	trip1-2023.tsv	57	primary_transect_site	56	20/03/2023	11:05	20.821580833333332 N,54.22385916666667 E	30	988	35.5	source_as_recorded		no plant
+Trip 1 (2023)	trip1-2023.tsv	58	primary_transect_site	57	20/03/2023	11:28	20.7349775 N,54.41764333333333 E	31.3	988	38.1	source_as_recorded		dune foothill
+Trip 1 (2023)	trip1-2023.tsv	59	primary_transect_site	58	20/03/2023	11:50	20.66540111111111 N,54.59327444444445 E	33.4	986	39.4	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	60	primary_transect_site	59	20/03/2023	12:04	20.65626 N,54.635868055555555 E	37.1	986	43.1	source_as_recorded		First picture from pond, 6.7ph , then normal order of pictures, then pond 2. pond2 is MR sample. many dead insects around   locustsscorpions
+Trip 1 (2023)	trip1-2023.tsv	61	primary_transect_site	60	20/03/2023	12:49	20.706374444444442 N,54.732105555555556 E	37.1	986	34.5	source_as_recorded		4 biolfilm samples from areas across the oasis,1 mud from bottom pit, 1 pink
+Trip 1 (2023)	trip1-2023.tsv	62	named_special_record	water well	20/03/2023	13:16	20.7158697 N,54.7996974 E	35.6	984	31.4	source_as_recorded		near well and tent and road
+Trip 1 (2023)	trip1-2023.tsv	63	named_special_record	road	20/03/2023	13:53	20.82577583333333 N,54.988932500000004 E	35.1	982	32.2	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	64	named_special_record	road	20/03/2023	14:20	20.93405111111111 N,55.12609 E	36	982	26.3	source_as_recorded		
+Trip 1 (2023)	trip1-2023.tsv	65	named_special_record	camground	20/03/2023	14:45	21.031050555555556 N,55.159842777777776 E	37	984	26.0	source_as_recorded		2 people living in a camp
+Trip 2 (2023)	trip2-2023.tsv	2	primary_transect_site	1	14/07/2023	06:10	19.149770555555556 N,45.166511388888885 E	34.5			confirmed_shifted_column	confirmed_shifted_column:humidity->temperature	
+Trip 2 (2023)	trip2-2023.tsv	3	primary_transect_site	2	14/07/2023	07:12	19.203468333333333 N,45.2447675 E	36.7			confirmed_shifted_column	confirmed_shifted_column:humidity->temperature	
+Trip 2 (2023)	trip2-2023.tsv	4	primary_transect_site	3	14/07/2023	07:16	19.301079444444444 N,45.384414166666666 E	37.0			confirmed_shifted_column	confirmed_shifted_column:humidity->temperature	
+Trip 2 (2023)	trip2-2023.tsv	5	primary_transect_site	4	14/07/2023	07:36	19.379571666666667 N,45.55182694444444 E	38.6			confirmed_shifted_column	confirmed_shifted_column:humidity->temperature	
+Trip 2 (2023)	trip2-2023.tsv	6	primary_transect_site	5	14/07/2023	07:43	19.407155277777775 N,45.659501388888884 E	39.2			confirmed_shifted_column	confirmed_shifted_column:humidity->temperature	
+Trip 2 (2023)	trip2-2023.tsv	7	primary_transect_site	6	14/07/2023	08:58	19.405739166666667 N,45.8161425 E	41.2			confirmed_shifted_column	confirmed_shifted_column:humidity->temperature	
+Trip 2 (2023)	trip2-2023.tsv	8	primary_transect_site	7	14/07/2023	09:20	19.407005277777778 N,45.953943611111114 E	41.3			confirmed_shifted_column	confirmed_shifted_column:humidity->temperature	
+Trip 2 (2023)	trip2-2023.tsv	9	primary_transect_site	8	14/07/2023	10:20	19.393154166666665 N,46.110734722222226 E	41.9			confirmed_shifted_column	confirmed_shifted_column:humidity->temperature	trip terminated due to extreme temperature
+Trip 3 (2024)	trip3-2024.tsv	2	primary_transect_site	1	17/02/2024	06:54	19.149770555555556 N,45.166511388888885 E	21.9	898	55	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	3	primary_transect_site	2	17/02/2024	07:21	19.203468333333333 N,45.2447675 E	26.6	904	40.9	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	4	primary_transect_site	3	17/02/2024	08:05	19.301079444444444 N,45.384414166666666 E	28.3	914	38.5	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	5	primary_transect_site	4	17/02/2024	08:40	19.379571666666667 N,45.55182694444444 E	30.2	922	37.5	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	6	primary_transect_site	5	17/02/2024	09:51	19.407155277777775 N,45.659501388888884 E	35.2	926	19.5	source_as_recorded		Saline pan exp: pan and out, each location 2 samples D and 2 samples S (to compare biodiversity in and around Saline pan)
+Trip 3 (2024)	trip3-2024.tsv	7	primary_transect_site	6	17/02/2024	10:45	19.405739166666667 N,45.8161425 E	37.1	942	17.6	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	8	primary_transect_site	7	17/02/2024	11:28	19.407005277777778 N,45.953943611111114 E	37	926	19.6	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	9	primary_transect_site	8	17/02/2024	11:50	19.393154166666665 N,46.110734722222226 E	39	922	19	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	10	primary_transect_site	9	17/02/2024	12:31	19.411200277777777 N,46.30267361111111 E	36.4	924	21.5	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	11	primary_transect_site	10	17/02/2024	13:22	19.420469722222222 N,46.460795277777784 E	37.1	926	18	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	12	primary_transect_site	11	17/02/2024	13:46	19.44435222222222 N,46.6356325 E	41.2	930	21	source_as_recorded		spider with big white bulbed body
+Trip 3 (2024)	trip3-2024.tsv	13	primary_transect_site	12	17/02/2024	14:04	19.47793361111111 N,46.83437333333334 E	39.9	932	15	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	14	primary_transect_site	13	17/02/2024	15:20	19.52934611111111 N,47.053284444444444 E	40	940	13.5	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	15	primary_transect_site	14	17/02/2024	15:50	19.581338055555555 N,47.2920225 E	41.2	940	14.9	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	16	primary_transect_site	15	17/02/2024	16:13	19.613749722222224 N,47.47587194444445 E	38.8	944	13.5	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	17	primary_transect_site	16	17/02/2024	16:34	19.644455833333332 N,47.62611861111111 E	39.4	948	11.9	source_as_recorded		shaded dunes and a lot of green grass, some bedouins nearby
+Trip 3 (2024)	trip3-2024.tsv	18	primary_transect_site	17	18/02/2024	08:42	19.676460000000002 N,47.82730555555556 E	23	956	27	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	19	primary_transect_site	18	18/02/2024	09:54	19.732518055555555 N,48.046860555555554 E	29.2	960	18.7	source_as_recorded		very green area,camels a few km away
+Trip 3 (2024)	trip3-2024.tsv	20	primary_transect_site	19	18/02/2024	10:25	19.81231916666667 N,48.24049472222222 E	27.4	962	21.2	source_as_recorded		kind of green
+Trip 3 (2024)	trip3-2024.tsv	21	primary_transect_site	20	18/02/2024	11:05	19.869310833333333 N,48.42464444444444 E	32.9		17.7	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	22	primary_transect_site	21	18/02/2024	12:08	19.9011325 N,48.48646388888889 E	31.3	964	31.321	source_as_recorded		oil spill, plant very near
+Trip 3 (2024)	trip3-2024.tsv	23	primary_transect_site	22	18/02/2024	12:52	19.97866972222222 N,48.63943555555556 E	31.3	968	21.3	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	24	primary_transect_site	23	18/02/2024	13:35	20.049265555555557 N,48.773331388888884 E	24.4	966	30.3	source_as_recorded		very green
+Trip 3 (2024)	trip3-2024.tsv	25	primary_transect_site	24	18/02/2024	14:18	20.09273861111111 N,48.89939527777778 E	25.5	966	31.3	source_as_recorded		very green
+Trip 3 (2024)	trip3-2024.tsv	26	primary_transect_site	25	18/02/2024	14:38	20.100259722222223 N,48.95421972222223 E	31	966	24.3	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	27	primary_transect_site	26	18/02/2024	15:12	20.148753888888887 N,49.07873861111111 E	31.9	966	25.6	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	28	primary_transect_site	27	18/02/2024	15:45	20.2038574 N,49.1959834 E	32.4	968	23.7	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	29	primary_transect_site	28	18/02/2024	16:24	20.24376861111111 N,49.37088472222222 E	27.4	968	27.8	source_as_recorded		dead plants
+Trip 3 (2024)	trip3-2024.tsv	30	primary_transect_site	29	18/02/2024	16:56	20.2597976 N,49.5675445 E	27.3	968	27	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	31	primary_transect_site	30	19/02/2024	08:10	20.269303055555554 N,49.68367333333333 E	36.8	976	20.2	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	32	primary_transect_site	31	19/02/2024	08:43	20.294623333333334 N,49.891405 E	23.1	978	29.3	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	33	primary_transect_site	32	19/02/2024	09:20	20.310684166666668 N,50.09302138888889 E	26.7	982	23	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	34	primary_transect_site	33	19/02/2024	10:07	20.317507777777777 N,50.30307027777778 E	26.6	984	20.9	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	35	primary_transect_site	34	19/02/2024	10:52	20.344394444444443 N,50.5153725 E	29.9	982	17.7	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	36	primary_transect_site	35	19/02/2024	11:30	20.371795833333334 N,50.72999222222222 E	28.7	984	17.9	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	37	primary_transect_site	36	19/02/2024	13:58	20.42319 N, 51.14483 E	28.2	982	16.1	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	38	primary_transect_site	37	19/02/2024	14:52	20.454150277777778 N,51.344883333333335 E	29.1	984	15.5	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	39	primary_transect_site	38	19/02/2024	15:01	20.4610275 N,51.370224722222225 E	29.3	984	15.1	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	40	primary_transect_site	39	19/02/2024	15:56	20.51023 N, 51.59742 E	28.8	984	16	source_as_recorded		extra sample of plant, keeps meat from going bad and can release water
+Trip 3 (2024)	trip3-2024.tsv	41	primary_transect_site	40	19/02/2024	16:42	20.54718 N, 51.82559 E	28.2	986	17.3	source_as_recorded		dead plant
+Trip 3 (2024)	trip3-2024.tsv	42	primary_transect_site	41	19/02/2024	17:14	20.539777222222224 N,51.94610583333333 E	29.4	988	16.2	source_as_recorded		took some samples from outside Saline pan (s and d) and some water that we dug
+Trip 3 (2024)	trip3-2024.tsv	43	primary_transect_site	42	20/02/2024	08:15	20.55516 N, 52.12403 E	24.6	990	34.2	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	44	primary_transect_site	43	20/02/2024	08:38	20.567575555555557 N,52.22413277777778 E	27	992	27.8	source_as_recorded		desert miswak
+Trip 3 (2024)	trip3-2024.tsv	45	primary_transect_site	44	20/02/2024	09:22	20.56783 N, 52.41036 E	29.1	994	22	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	46	primary_transect_site	45	20/02/2024	09:44	20.56346 N, 52.46776 E	32.4	996	18.3	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	47	primary_transect_site	46	20/02/2024	10:44	20.553746111111113 N,52.66920777777778 E	32.3	994	17.4	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	48	primary_transect_site	47	20/02/2024	11:24	20.54181555555556 N,52.868785833333334 E	33.2	994	17.2	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	49	primary_transect_site	48	20/02/2024	12:54	20.568648333333332 N,53.09404833333333 E	49.4	994	9.5	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	50	primary_transect_site	49	20/02/2024	14:21	20.644662222222223 N,53.28794 E	34	994	13.4	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	51	primary_transect_site	50	20/02/2024	14:51	20.71385 N, 53.41230 E	31.5	996	21.6	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	52	primary_transect_site	51	20/02/2024	16:11	20.79870 N, 53.48700 E	35.9	994	16.5	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	53	primary_transect_site	52	20/02/2024	06:57	20.851514166666668 N,53.75788444444444 E	34.3	994	17.5	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	54	primary_transect_site	53	21/02/2024	06:06	20.851514166666668 N,53.75788444444444 E	21.9	990	35	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	55	primary_transect_site	54	21/02/2024	15:58	20.92017888888889 N,53.962204444444446 E	32.2	998	23.5	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	56	primary_transect_site	55	21/02/2024	15:41	20.9022725 N,54.0024376 E	31.3	998	14.3	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	57	primary_transect_site	56	21/02/2024	15:10	20.821580833333332 N,54.22385916666667 E	31.6	998	13.5	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	58	primary_transect_site	57	21/02/2024	14:48	20.7349775 N,54.41764333333333 E	34.2	996	16.3	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	59	primary_transect_site	58	21/02/2024	14:29	20.66540111111111 N,54.59327444444445 E	35.6	992	16.4	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	60	primary_transect_site	59	21/02/2024	14:15	20.65626 N,54.635868055555555 E	36.8	992	14.3	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	61	primary_transect_site	60	21/02/2024	13:20	20.706374444444442 N,54.732105555555556 E	37.1	992	14.3	source_as_recorded		extra samples: 0.22 um filter (120 ml w syringe), 19 biofilms from aigers (data in a photo), 2 x 50 ml tubes with biofilm and sediment, 3 50 ml tubed with different colored biofilms
+Trip 3 (2024)	trip3-2024.tsv	62	named_special_record	oill spill	17/02/2024	10:25	19.40536 N, 45.72708 E	35.1		20	source_as_recorded		car engine oil dumped by bedouins
+Trip 3 (2024)	trip3-2024.tsv	63	named_special_record	water well	17/02/2024	14:23	19.50145 N, 46.90146 E	39.2		15.9	source_as_recorded		2 surface and 2 deep samples near well structure entrance
+Trip 3 (2024)	trip3-2024.tsv	64	named_special_record	Camel1	17/02/2024	16:49	19.65401 N, 47.68826 E	37.6		25	source_as_recorded		green continues
+Trip 3 (2024)	trip3-2024.tsv	65	named_special_record	plant gradient	18/02/2024	09:25	19.70915 N, 47.95933 E	25	958	24	source_as_recorded		found gradient of plant growth, took samples from empty sand, sand with green plants, and samples from sand with brown/dead/dying plants. took surface and deep samples, took root and root soil samples for MR from brown and green plants
+Trip 3 (2024)	trip3-2024.tsv	66	named_special_record	hot spring	19/02/2024	12:25	20.39723 N, 50.96553 E	32.1	984	14.8	source_as_recorded		
+Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	67	trip1_auxiliary_or_revisit_record	12.5+A	17/03/2023	14:22	19.501494166666667 N,46.90140722222222 E	33	934	30	confirmed_source_workbook	confirmed_source_workbook:date->date	Well water from rest station, syring filtered 100ml through 0.22
+Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	68	trip1_auxiliary_or_revisit_record	19.5	18/03/2023	07:20	19.81927138888889 N,48.24023722222222 E	21.8	960	61.9	confirmed_source_workbook	confirmed_source_workbook:date->date	same site, valley, soil doesn't move as much as 19
+Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	69	trip1_auxiliary_or_revisit_record	27+	18/03/2023	11:21	20.2038574 N,49.1959834 E	31.5	970	23.8	confirmed_source_workbook	confirmed_source_workbook:date->date	material: aerial root
+Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	70	trip1_auxiliary_or_revisit_record	31urine	18/03/2023	15:14	20.294623333333334 N,49.891405 E	33.8	964	22.3	confirmed_source_workbook	confirmed_source_workbook:date->date	
+Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	71	trip1_auxiliary_or_revisit_record	32+	18/03/2023	15:44	20.310684166666668 N,50.09302138888889 E	34	968	22	confirmed_source_workbook	confirmed_source_workbook:date->date	
+Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	72	trip1_auxiliary_or_revisit_record	41+	19/03/2023	12:16	20.539777222222224 N,51.94610583333333 E	35.4	980	19.8	confirmed_source_workbook	confirmed_source_workbook:date->date	material: underground water. dug 1+ meter under sabkhah took large mud water sample
+Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	73	trip1_auxiliary_or_revisit_record	47+	19/03/2023	15:00	20.54181555555556 N,52.868785833333334 E	37.3	986	20.3	confirmed_source_workbook	confirmed_source_workbook:date->date	
+Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	74	trip1_auxiliary_or_revisit_record	47+grass	19/03/2023	15:00	20.54181555555556 N,52.868785833333334 E	37.3	986	20.3	confirmed_source_workbook	confirmed_source_workbook:date->date	
+Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	75	trip1_auxiliary_or_revisit_record	48+	19/03/2023	17:00	20.568648333333332 N,53.09404833333333 E	35.3	984	23.7	confirmed_source_workbook	confirmed_source_workbook:date->date	biofilm between plants and running water
+Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	76	trip1_auxiliary_or_revisit_record	48+	19/03/2023	17:00	20.568648333333332 N,53.09404833333333 E	35.3	984	23.7	confirmed_source_workbook	confirmed_source_workbook:date->date	extra plant from same site
+Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	77	trip1_auxiliary_or_revisit_record	52AD	20/03/2023	08:02	20.851514166666668 N,53.75788444444444 E	31.1	992	29.7	confirmed_source_workbook	confirmed_source_workbook:date->date	dug two holes, collected triplicate from every 10 cm in each hole, starting from surface (1). samples with AD(2) are f4om second hole
+Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	78	trip1_auxiliary_or_revisit_record	54F	20/03/2023	10:16	20.92017888888889 N,53.962204444444446 E	34.8	990	26.9	confirmed_source_workbook	confirmed_source_workbook:date->date	2 0.22 filters 60 ml each. um fatimah
+Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	79	trip1_auxiliary_or_revisit_record	35 + WaterWellRestStop	18/03/2023	18:48	20.397223055555553 N,50.96570472222223 E		976		confirmed_source_workbook	confirmed_source_workbook:date->date	water well, sulfuric water, no soil samples taken, filter size 0.22, 8750ml water filtered
+Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	80	trip1_auxiliary_or_revisit_record	35 + hot spring filter1	19/03/2023	08:03	20.397223055555553 N,50.96570472222223 E	28.3	980	17.7	confirmed_source_workbook	confirmed_source_workbook:date->date	8350ml of water, 6.4ph,0.4g/100g salinity
+Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	81	trip1_auxiliary_or_revisit_record	35 + hot spring filter 2	19/03/2023	08:11	20.397223055555553 N,50.96570472222223 E	28.3	980	17.7	confirmed_source_workbook	confirmed_source_workbook:date->date	10000ml of water,pH 6.4ph
+Trip 4 (2024)	trip4-2024.tsv	2	primary_transect_site	1	29/08/2024	06:04	19.149770555555556 N,45.166511388888885 E	30.83		19.4	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	3	primary_transect_site	2	29/08/2024	06:24	19.203468333333333 N,45.2447675 E	31.5		18.4	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	4	primary_transect_site	3	29/08/2024	06:53	19.301079444444444 N,45.384414166666666 E	33.61		16.5	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	5	primary_transect_site	4	29/08/2024	07:15	19.379571666666667 N,45.55182694444444 E	35.11		15.5	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	6	primary_transect_site	5	29/08/2024	07:29	19.407155277777775 N,45.659501388888884 E	36.67		14	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	7	primary_transect_site	6	29/08/2024	08:07	19.405739166666667 N,45.8161425 E	37.06		13.3	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	8	primary_transect_site	7	29/08/2024	08:32	19.407005277777778 N,45.953943611111114 E	37.56		13	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	9	primary_transect_site	8	29/08/2024	08:57	19.393154166666665 N,46.110734722222226 E	37.39		14.2	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	10	primary_transect_site	9	29/08/2024	09:28	19.411200277777777 N,46.30267361111111 E	39		13.5	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	11	primary_transect_site	10	29/08/2024	09:50	19.420469722222222 N,46.460795277777784 E	39.56		13.4	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	12	primary_transect_site	11	29/08/2024	10:14	19.44435222222222 N,46.6356325 E	42		12.4	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	13	primary_transect_site	12	29/08/2024	10:35	19.47793361111111 N,46.83437333333334 E	42.94		21.5	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	14	primary_transect_site	13	29/08/2024	11:30	19.52934611111111 N,47.053284444444444 E	41.94		16.5	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	15	primary_transect_site	14	29/08/2024	11:50	19.581338055555555 N,47.2920225 E	42.56		18	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	16	primary_transect_site	15	29/08/2024	12:06	19.613749722222224 N,47.47587194444445 E	44.11		15.2	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	17	primary_transect_site	16	29/08/2024	12:21	19.644455833333332 N,47.62611861111111 E	43.5		15.7	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	18	primary_transect_site	17	29/08/2024	12:49	19.676460000000002 N,47.82730555555556 E	43.11		15.2	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	19	primary_transect_site	18	29/08/2024	13:24	19.732518055555555 N,48.046860555555554 E	43.83		12.8	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	20	primary_transect_site	19	29/08/2024	13:52	19.81231916666667 N,48.24049472222222 E	42.83		14.1	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	21	primary_transect_site	20	29/08/2024	13:57	19.869310833333333 N,48.42464444444444 E	41.94		14.5	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	22	primary_transect_site	21	29/08/2024	14:32	19.9011325 N,48.48646388888889 E	41.72		13.1	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	23	primary_transect_site	22	29/08/2024	14:50	19.97866972222222 N,48.63943555555556 E	43.33		13	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	24	primary_transect_site	23	29/08/2024	15:21	20.049265555555557 N,48.773331388888884 E	44.28		12	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	25	primary_transect_site	24	29/08/2024	15:55	20.09273861111111 N,48.89939527777778 E	43.17		12.7	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	26	primary_transect_site	25	29/08/2024	16:45	20.100259722222223 N,48.95421972222223 E	43.5		11.6	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	27	primary_transect_site	26	29/08/2024	17:02	20.148753888888887 N,49.07873861111111 E	42.83		12.3	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	28	primary_transect_site	27	29/08/2024	17:28	20.2038574 N,49.1959834 E	41.83		12.6	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	29	primary_transect_site	28	29/08/2024	17:56	20.24376861111111 N,49.37088472222222 E	40.83		13.3	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	30	primary_transect_site	29	29/08/2024	18:21	20.2597976 N,49.5675445 E	40.78		13.3	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	31	primary_transect_site	30	30/08/2024	05:51	20.269303055555554 N,49.68367333333333 E	36.5		27.7	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	32	primary_transect_site	31	30/08/2024	06:08	20.294623333333334 N,49.891405 E	35.89		27.3	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	33	primary_transect_site	32	30/08/2024	06:30	20.310684166666668 N,50.09302138888889 E	35.72		21.9	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	34	primary_transect_site	33	30/08/2024	06:50	20.317507777777777 N,50.30307027777778 E	35.89		23	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	35	primary_transect_site	34	30/08/2024	07:11	20.344394444444443 N,50.5153725 E	36.39		23.5	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	36	primary_transect_site	35	30/08/2024	07:25	20.371795833333334 N,50.72999222222222 E	38.5		21.2	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	37	primary_transect_site	36	30/08/2024	08:01	20.42319 N, 51.14483 E	39.28		31.8	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	38	primary_transect_site	37	30/08/2024	08:47	20.454150277777778 N,51.344883333333335 E	39.44		23.2	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	39	primary_transect_site	38	30/08/2024	09:14	20.4610275 N,51.370224722222225 E	41.06		20	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	40	primary_transect_site	39	30/08/2024	09:20	20.51023 N, 51.59742 E	42.44		19.5	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	41	primary_transect_site	40	30/08/2024	09:49	20.54718 N, 51.82559 E	42.06		19	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	42	primary_transect_site	41	30/08/2024	10:25	20.539777222222224 N,51.94610583333333 E	43.17		17	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	43	primary_transect_site	42	30/08/2024	10:50	20.55516 N, 52.12403 E	43.67		16.2	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	44	primary_transect_site	43	30/08/2024	11:19	20.567575555555557 N,52.22413277777778 E	42.78		17	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	45	primary_transect_site	44	30/08/2024	11:40	20.56783 N, 52.41036 E	41.94		18	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	46	primary_transect_site	45	30/08/2024	12:12	20.56346 N, 52.46776 E	40.94		17.1	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	47	primary_transect_site	46	30/08/2024	12:22	20.553746111111113 N,52.66920777777778 E	44		15.7	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	48	primary_transect_site	47	30/08/2024	13:16	20.54181555555556 N,52.868785833333334 E	42.94		15.3	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	49	primary_transect_site	48	30/08/2024	13:57	20.568648333333332 N,53.09404833333333 E	42.5		18.2	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	50	primary_transect_site	49	30/08/2024	14:28	20.644662222222223 N,53.28794 E	44		14.4	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	51	primary_transect_site	50	31/08/2024	06:08	20.71385 N, 53.41230 E	35.61		25.1	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	52	primary_transect_site	51	31/08/2024	06:34	20.79870 N, 53.48700 E	36.11		25	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	53	primary_transect_site	52	31/08/2024	06:54	20.82784 N,53.57835 E	36.28		25.5	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	54	primary_transect_site	53	31/08/2024	09:00	20.851514166666668 N,53.75788444444444 E	42.61		17.5	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	55	primary_transect_site	54	31/08/2024	09:34	20.92017888888889 N,53.962204444444446 E	42.5		17.5	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	56	primary_transect_site	55	31/08/2024	09:48	20.9022725 N,54.0024376 E	40.72		20	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	57	primary_transect_site	56	31/08/2024	10:16	20.821580833333332 N,54.22385916666667 E	40.44		21.4	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	58	primary_transect_site	57	31/08/2024	10:40	20.7349775 N,54.41764333333333 E	42.78		18	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	59	primary_transect_site	58	31/08/2024	10:58	20.66540111111111 N,54.59327444444445 E	43.5		15	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	60	primary_transect_site	59	31/08/2024	11:06	20.65626 N,54.635868055555555 E	43		14.9	source_as_recorded		
+Trip 4 (2024)	trip4-2024.tsv	61	primary_transect_site	60	31/08/2024	11:28	20.706374444444442 N,54.732105555555556 E	42.89		18.1	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	2	primary_transect_site	1	12/10/2025	07:32	19.149770555555556 N,45.166511388888885 E	26.9	894	24.3	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	3	primary_transect_site	2	12/10/2025	08:05	19.203468333333333 N,45.2447675 E	27.8	902	23.4	source_as_recorded		First xrf reading
+Trip 5 (2025)	trip5-2025.tsv	4	primary_transect_site	3	12/10/2025	08:38	19.301079444444444 N,45.384414166666666 E	29	912	23	source_as_recorded		poo sample collected
+Trip 5 (2025)	trip5-2025.tsv	5	primary_transect_site	4	12/10/2025	09:20	19.379571666666667 N,45.55182694444444 E	32.4	922	18.8	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	6	primary_transect_site	5	12/10/2025	10:00	19.407155277777775 N,45.659501388888884 E	33.4	924	19.2	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	7	primary_transect_site	6	12/10/2025	10:50	19.405739166666667 N,45.8161425 E	36.7	916	14.1	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	8	primary_transect_site	7	12/10/2025	11:18	19.407005277777778 N,45.953943611111114 E	35	918	13.4	source_as_recorded		also camel sample nearby. 1129am. 13.7% hum. 35.5C. 916hPa. Labelled A3 and A4
+Trip 5 (2025)	trip5-2025.tsv	9	primary_transect_site	8	12/10/2025	11:55	19.393154166666665 N,46.110734722222226 E	34	918	12.9	source_as_recorded		also oil spill sample nearby. 1223pm. 12.5% hum. 34.1C. 920hPa. 19.40287N  46.26018E a5
+Trip 5 (2025)	trip5-2025.tsv	10	primary_transect_site	9	12/10/2025	12:33	19.411200277777777 N,46.30267361111111 E	35.5	918	12.5	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	11	primary_transect_site	10	12/10/2025	12:58	19.420469722222222 N,46.460795277777784 E	35.6	920	10.5	source_as_recorded		also oil spill or fire nearby. 1338pm. 10.9 hum. 35.5C. 922hpa. 19.42578N  46.52600E, a6,
+Trip 5 (2025)	trip5-2025.tsv	12	primary_transect_site	11	12/10/2025	13:30	19.44435222222222 N,46.6356325 E	35.6	926	10.7	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	13	primary_transect_site	12	12/10/2025	13:57	19.47793361111111 N,46.83437333333334 E	36.3	928	10.3	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	14	primary_transect_site	13	12/10/2025	15:25	19.52934611111111 N,47.053284444444444 E	36.5	934	10.1	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	15	primary_transect_site	14	12/10/2025	15:51	19.581338055555555 N,47.2920225 E	35	936	11.9	source_as_recorded		2 black and white birds spotted here
+Trip 5 (2025)	trip5-2025.tsv	16	primary_transect_site	15	12/10/2025	16:22	19.613749722222224 N,47.47587194444445 E	34.7	940	11.9	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	17	primary_transect_site	16	12/10/2025	16:42	19.644455833333332 N,47.62611861111111 E	33.9	942	13.2	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	18	primary_transect_site	17	13/10/2025	07:05	19.676460000000002 N,47.82730555555556 E	26.4	948	32.1	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	19	primary_transect_site	18	13/10/2025	07:42	19.732518055555555 N,48.046860555555554 E	26.6	950	27	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	20	primary_transect_site	19	13/10/2025	08:15	19.81231916666667 N,48.24049472222222 E	28.2	954	27.5	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	21	primary_transect_site	20	13/10/2025	09:04	19.869310833333333 N,48.42464444444444 E	32.9	958	23.5	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	22	primary_transect_site	21	13/10/2025	09:30	19.9011325 N,48.48646388888889 E	33	958	25	source_as_recorded		a7 and a8 samples
+Trip 5 (2025)	trip5-2025.tsv	23	primary_transect_site	22	13/10/2025	10:10	19.97866972222222 N,48.63943555555556 E	35.5	962	20.8	source_as_recorded		also took archeology samples nearby
+Trip 5 (2025)	trip5-2025.tsv	24	primary_transect_site	23	13/10/2025	10:56	20.049265555555557 N,48.773331388888884 E	36.1	960	21.6	source_as_recorded		also took special spider website sample here
+Trip 5 (2025)	trip5-2025.tsv	25	primary_transect_site	24	13/10/2025	11:39	20.09273861111111 N,48.89939527777778 E	36.3	958	18.2	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	26	primary_transect_site	25	13/10/2025	11:55	20.100259722222223 N,48.95421972222223 E	35	960	18.4	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	27	primary_transect_site	26	13/10/2025	12:16	20.148753888888887 N,49.07873861111111 E	34.3	960	19.5	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	28	primary_transect_site	27	13/10/2025	12:42	20.2038574 N,49.1959834 E	36.4	960	16.6	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	29	primary_transect_site	28	13/10/2025	13:08	20.24376861111111 N,49.37088472222222 E	38.8	960	15.5	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	30	primary_transect_site	29	13/10/2025	13:56	20.2597976 N,49.5675445 E	37.5	966	14.9	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	31	primary_transect_site	30	13/10/2025	14:13	20.269303055555554 N,49.68367333333333 E	37.5	966	14.2	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	32	primary_transect_site	31	13/10/2025	14:46	20.294623333333334 N,49.891405 E	35.9	968	17.5	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	33	primary_transect_site	32	13/10/2025	15:38	20.310684166666668 N,50.09302138888889 E	39	970	12.8	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	34	primary_transect_site	33	13/10/2025	16:10	20.317507777777777 N,50.30307027777778 E	37.9	972	11.9	source_as_recorded		also took special spider website sample here. labelled special33 or sp33
+Trip 5 (2025)	trip5-2025.tsv	35	primary_transect_site	34	13/10/2025	16:58	20.344394444444443 N,50.5153725 E	34.3	974	17.9	source_as_recorded		camped around here. took bug sample in 2ml tube and 1 scorpion sample from here.
+Trip 5 (2025)	trip5-2025.tsv	36	primary_transect_site	35	14/10/2025	06:58	20.371795833333334 N,50.72999222222222 E	35.1	982	27.1	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	37	primary_transect_site	36	14/10/2025	08:36	20.42319 N, 51.14483 E	33.2	982	22.6	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	38	primary_transect_site	37	14/10/2025	09:01	20.454150277777778 N,51.344883333333335 E	32.3	984	23.7	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	39	primary_transect_site	38	14/10/2025	09:13	20.4610275 N,51.370224722222225 E	33.2	984	22.3	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	40	primary_transect_site	39	14/10/2025	09:50	20.51023 N, 51.59742 E	37.2	986	22.1	source_as_recorded		oil spill special sample 39.1
+Trip 5 (2025)	trip5-2025.tsv	41	primary_transect_site	40	14/10/2025	10:40	20.54718 N, 51.82559 E	39	984		quarantined_out_of_range	quarantined_out_of_range:humidity->humidity	
+Trip 5 (2025)	trip5-2025.tsv	42	primary_transect_site	41	14/10/2025	11:04	20.539777222222224 N,51.94610583333333 E	37.1	986	20.8	source_as_recorded		Chris sample taken, water level 1 raik showel deep
+Trip 5 (2025)	trip5-2025.tsv	43	primary_transect_site	42	14/10/2025	11:40	20.55516 N, 52.12403 E	36	984	22.6	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	44	primary_transect_site	43	14/10/2025	12:07	20.567575555555557 N,52.22413277777778 E	40.4	984	19.7	source_as_recorded		lake ved afterwards TOOK SPECIAL X sample from lake digging, water level similar as before
+Trip 5 (2025)	trip5-2025.tsv	45	primary_transect_site	44	14/10/2025	13:03	20.56783 N, 52.41036 E	37.1	984	19.3	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	46	primary_transect_site	45	14/10/2025	13:16	20.56346 N, 52.46776 E	39.5	984	17.6	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	47	primary_transect_site	46	14/10/2025	14:02	20.553746111111113 N,52.66920777777778 E	38.6	982	17.2	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	48	primary_transect_site	47	14/10/2025	14:41	20.54181555555556 N,52.868785833333334 E	36.2	984	23	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	49	primary_transect_site	48	14/10/2025	15:30	20.568648333333332 N,53.09404833333333 E	36.7	986	19.2	source_as_recorded		3 special samples for Mark; 1 sample for Tiannyu; 3 special samples for Mark; 1 sample for Tiannyu; 1 biofilm for ont
+Trip 5 (2025)	trip5-2025.tsv	50	primary_transect_site	49	14/10/2025	16:20	20.644662222222223 N,53.28794 E	35.2	986	20.4	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	51	primary_transect_site	50	14/10/2025	17:00	20.71385 N, 53.41230 E	34.7	984	20.9	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	52	primary_transect_site	51	15/10/2025	06:41	20.79870 N, 53.48700 E	31.1	990	36.3	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	53	primary_transect_site	52	15/10/2025	07:09	20.82784 N,53.57835 E	33.5	990	34.1	source_as_recorded		no plant samples near here. went to nearby sand. got samples 52s and d instead of plant samples
+Trip 5 (2025)	trip5-2025.tsv	54	primary_transect_site	53	15/10/2025	07:59	20.851514166666668 N,53.75788444444444 E	33.7	990	32.4	source_as_recorded		Wood sample taken at 20.8901 53.7741
+Trip 5 (2025)	trip5-2025.tsv	55	primary_transect_site	54	15/10/2025	09:14	20.92017888888889 N,53.962204444444446 E	37.5	992	24.2	source_as_recorded		special samples taken. water sample from hose for abdulrahman. abdulrahman c1 same samples as sampling site 54. special 54 is green and orange biofilm near hose . Rob took two xrfs, one from the water with crust around it  and one from one from the standard sampling site. Mark took two samples for culturing. one directly from the hose water stream and from the surrounding environment around the hose outlet
+Trip 5 (2025)	trip5-2025.tsv	56	primary_transect_site	55	15/10/2025	09:59	20.9022725 N,54.0024376 E	39.3	988	21.4	source_as_recorded		abdulrahman c2 identical to site 55. magnus took soil sample next to the plant labeller mr55
+Trip 5 (2025)	trip5-2025.tsv	57	primary_transect_site	56	15/10/2025	10:38	20.821580833333332 N,54.22385916666667 E	42.8	988	19.8	source_as_recorded		normal sampling site did not have a soil sample. camp 4 abdulrahman sample taken at near dune here.  plant samples taken for c4 but could not find any soil / probably no proper rhizoshpere taken. c3 was taken later at the crust site. no plant sample for c3
+Trip 5 (2025)	trip5-2025.tsv	58	primary_transect_site	57	15/10/2025	11:18	20.7349775 N,54.41764333333333 E	39.4	986	20.3	source_as_recorded		special grass sample taken. probably mislabelled as '56 grass' instead of 57
+Trip 5 (2025)	trip5-2025.tsv	59	primary_transect_site	58	15/10/2025	11:41	20.66540111111111 N,54.59327444444445 E	41.8	986	18.3	source_as_recorded		
+Trip 5 (2025)	trip5-2025.tsv	60	primary_transect_site	59	15/10/2025	11:59	20.65626 N,54.635868055555555 E	40.2	984	20.7	source_as_recorded		2 samples for abdulrahman. First is sp, one sample at moment temp, then from that 1 sample in glycerol frozen at -20 . also there's a negative control for that sample just with glycerol exposed to the environment and also frozen at minus 20. salt pond 2 neighboring pond sample sp2  consists of 1 sample in glycerol stock in minus 20 and 1 original sample at ambient temperature. magnus took some samples as prelabelled. Mark took 2 samples for his group. one from the first salt pond labelled 'by the road' and another from the read salt pond labelled 'away from the road'
+Trip 5 (2025)	trip5-2025.tsv	61	primary_transect_site	60	15/10/2025	13:55	20.706374444444442 N,54.732105555555556 E	35.9	988	25.5	source_as_recorded		60a to d collected in glycerol (also all labeldd c5)). they are biofil,Ms of 3 colours and a negative control exposed to water.  negative control is labelled d. these were all biofilm large structures or nodules. there is also a negative control 2hich is just glycerol exposed to air labeled ncontrol6. c6w1 is lake water in room temperature. 10ml of this sample was transferred to glycerol and labelled c6water.  there is also a c6 sample exposed to water as n3gative these are all c6. Mark has a sample of different algae biofilm from lake called 60 algae. magnus samples are according to labels
+Trip 5 (2025)	trip5-2025.tsv	62	named_special_record	oill spill	12/10/2025	10:20	19.40536 N, 45.72708 E	34.1	924	17.1	source_as_recorded		special 2 old cloth sample also collected here. special 3 tube contains oil sample. a1 and a2 are 2 samples from, oil sample,please directly for
+Trip 5 (2025)	trip5-2025.tsv	63	named_special_record	hot spring	14/10/2025	07:58	20.39723 N, 50.96553 E	32.7	984	22.8	source_as_recorded		also took special samples here. shower1 amd shower2 are roberts samples from the main shower outlet. shower3 is a sample from the main outlet for Barbara. shower 4 is scooped up algae biofilm from around shower area for barb. shower 5 is sample from the pool for barb

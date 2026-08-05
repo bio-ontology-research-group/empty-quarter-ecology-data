@@ -1,0 +1,4 @@
+model	n_observations	n_sites	estimate_per_ph_unit	std_error	ci_low	ci_high	p	formula
+site_fixed_primary	503	60	0.03898792044583835	0.25359128224087807	-0.4580418595396145	0.5360177004312912	0.8778122669751656	shannon ~ ph + log_sequencing_depth + C(trip) + C(compartment) + C(site)
+geographic_trend_sensitivity	503	60	0.056445447650900926	0.297082843792803	-0.5258262266077316	0.6387171219095336	0.8493099025020094	shannon ~ ph + log_sequencing_depth + C(trip) + C(compartment) + transect_km + I(transect_km ** 2)
+two_or_more_ph_specimens_sensitivity	92	49	-0.8083955751302412	1.0021053258563082	-2.77248592252438	1.155694772263898	0.4198409492639851	shannon ~ ph + log_sequencing_depth + C(trip) + C(compartment) + C(site)

@@ -1,0 +1,5 @@
+arm	null	n_maps	observed_skill	null_median_skill	null_p95_skill	null_max_skill	p_value
+group_level_campaign_by_block	whole_site_relabelling	499	-0.00153427232	-0.002208222614	0.0009712268049	0.005449473721	0.354
+site_level_block	whole_site_relabelling	499	0.2525898686	-0.1281825641	-0.05083874529	-0.008256607282	0.002
+group_level_campaign_by_block	cyclic_shift_reflection	119	-0.00153427232	-0.01048964954	3.290621278e-05	0.002470565962	0.08333333333
+site_level_block	cyclic_shift_reflection	119	0.2525898686	-0.2674585896	0.207573297	0.2712953788	0.025

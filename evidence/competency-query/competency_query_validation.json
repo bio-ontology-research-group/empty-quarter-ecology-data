@@ -1,0 +1,45 @@
+{
+  "distinct_process_labels": [
+    "Field XRF analysis (Test 5847) for Site 10 (Trip5)",
+    "Field XRF analysis (Test 5848) for Site 10 (Trip5)"
+  ],
+  "engine": {
+    "name": "RDFLib",
+    "version": "7.1.4"
+  },
+  "expected_rows": 46,
+  "graph_triples_after_union": 266976,
+  "inputs": {
+    "base": {
+      "bytes": 128996,
+      "path": "/home/leechuck/Public/software/empty-quarter/data/processed/semantics/ontology/rubalkhali.owl",
+      "sha256": "9c9a435c98c815dfd755ac7787f5f25bab0514a0457e4d3ea03e37fde486b98e"
+    },
+    "query": {
+      "bytes": 681,
+      "path": "/home/leechuck/Public/software/empty-quarter/data-paper/zenodo/sparql/field_xrf_site10.rq",
+      "sha256": "8a9e352277bdd674a1015ea90fdb9abf79bad3acd7ee41bb79cde14e8b7adcce"
+    },
+    "sites": {
+      "bytes": 87211,
+      "path": "/home/leechuck/Public/software/empty-quarter/data/processed/semantics/ontology/rubalkhali_sites.owl",
+      "sha256": "87db62ce596d20562525c9f93ee752e7d6fb0f425ff6ea5f67dfa37e820f8ea4"
+    },
+    "xrf": {
+      "bytes": 25966489,
+      "path": "/home/leechuck/Public/software/empty-quarter/data/processed/semantics/ontology/rubalkhali_xrf.owl",
+      "sha256": "5c9a7df5fdc53ed221d4a55c005ded8776d6615523a5546de910c7d9415fae5f"
+    }
+  },
+  "observed_rows": 46,
+  "query_snapshot": {
+    "bytes": 681,
+    "file": "field_xrf_site10.rq",
+    "sha256": "8a9e352277bdd674a1015ea90fdb9abf79bad3acd7ee41bb79cde14e8b7adcce"
+  },
+  "schema_version": "1.0",
+  "site_labels": [
+    "Site 10"
+  ],
+  "status": "passed"
+}

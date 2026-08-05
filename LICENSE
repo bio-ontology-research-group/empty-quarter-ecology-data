@@ -21,24 +21,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
----
-
-NOTE ON CONTENT LICENSING
-=========================
-
-The MIT license above applies to the SOURCE CODE in this repository (the
-Groovy RDF generators, Python helper scripts, validation suite, and build
-tooling).
-
-  * Data and metadata (the contents of `data/`, the ontology modules under
-    `rdf/ontology-src/`, and the knowledge-graph artifacts archived on Zenodo)
-    are released under the Creative Commons Attribution 4.0 International
-    license (CC-BY 4.0): https://creativecommons.org/licenses/by/4.0/
-
-  * The manuscript text and figures under `paper/` are subject to the
-    copyright terms of the journal to which the article is submitted and are
-    provided here for review and reproducibility only.
-
-The Springer Nature LaTeX class and bibliography style files (`sn-jnl.cls`,
-`sn-*.bst`) under `paper/` are distributed by Springer Nature under their own
-terms and are included unmodified for compilation convenience.
+This MIT licence applies only to project-authored software. Data, metadata,
+ontology snapshots, manuscript sources, Springer Nature class/style files and
+third-party resources retain their own terms. Their final deposit licences are
+not inferred here; PRE_RELEASE_MANIFEST.tsv records the unresolved author and
+third-party licence gates.

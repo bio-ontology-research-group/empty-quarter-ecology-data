@@ -1,0 +1,116 @@
+{
+  "artifact_root": "analysis/v3/control_audit",
+  "files": [
+    {
+      "bytes": 3427,
+      "path": "control_analysis_roles.tsv",
+      "sha256": "da2f31eab24df55adb9ab7a76147d18bc6b43f0b45b733559ee56a78f4188e16"
+    },
+    {
+      "bytes": 11926,
+      "path": "positive_control_dominant_taxa.tsv",
+      "sha256": "be8c7524c0ed1f1a374eb63cab0cb57e12efe65d483edf0f60092475d8a7864c"
+    },
+    {
+      "bytes": 37528,
+      "path": "positive_control_expected_asv_occurrences.tsv",
+      "sha256": "139b2d4d9e597ab826e285c4d09d7730eba6f6805ed4e92bb217c9335c7262e0"
+    },
+    {
+      "bytes": 16134,
+      "path": "positive_control_expected_taxon_recovery.tsv",
+      "sha256": "a3d1279f40e16a167d4f501befd3b732570285cfea4ebd0aebc6c7a6c3096e4a"
+    },
+    {
+      "bytes": 1066,
+      "path": "positive_control_index_neighbours.tsv",
+      "sha256": "7223022a37018e868ec82b4e918d2e93088efcfcf95f6e2e613750f76be0ec69"
+    },
+    {
+      "bytes": 1946,
+      "path": "positive_control_profiles.tsv",
+      "sha256": "5d3ca3c3ca5ce7d9bff6a5b4b1bab957b974d8f7b2f520621c277dc9385f7691"
+    },
+    {
+      "bytes": 1083,
+      "path": "positive_control_spillover_summary.json",
+      "sha256": "5b689796d70469561ef37072a3ba55edd1916c29656ca3291f470273a1a853e7"
+    },
+    {
+      "bytes": 1661,
+      "path": "positive_control_spillover_summary.tsv",
+      "sha256": "e6243d03bff1984caba45b50e79bc03844fe17481a6f7ff676bee4cbca4ad204"
+    },
+    {
+      "bytes": 122946,
+      "path": "sensitivity_inputs/alpha.tsv",
+      "sha256": "4c7078ced219b5b08488c6ba7d25f7387f928b8c26cb47e67722b01ed4a87705"
+    },
+    {
+      "bytes": 23196,
+      "path": "sensitivity_inputs/alpha_diversity_sensitivity.tsv",
+      "sha256": "db4d932b14aed453645ab481749820ad23e270c31195228d1d342651b2f6e2a6"
+    },
+    {
+      "bytes": 3671413,
+      "path": "sensitivity_inputs/asv_filt_counts.tsv.gz",
+      "sha256": "19abb89cb50921fb48e95783be03e7a05e9263198f22ee5dcc28a8a902a4c230"
+    },
+    {
+      "bytes": 630810,
+      "path": "sensitivity_inputs/genus_counts.tsv.gz",
+      "sha256": "05d1056349b07a48171f161b22d84bdff52a9bd913949d723e83d1804ab7b73a"
+    },
+    {
+      "bytes": 2625,
+      "path": "sensitivity_inputs/summary.json",
+      "sha256": "4aed0d81c5af0e8984e274f0087191470aa6272a9bcaf44efd744cbc43dc289f"
+    },
+    {
+      "bytes": 589,
+      "path": "sensitivity_inputs/trip5_paired_compartment_sensitivity.tsv",
+      "sha256": "2e1e31680573b56a235e686b187c73fef4fb21c2be0d15bf58bc9fe2d7074d22"
+    },
+    {
+      "bytes": 3368,
+      "path": "summary.json",
+      "sha256": "8ab6fe2ff06bdcb202320f2da1f4ebc077f535f9595587eceed435a07370a3c4"
+    },
+    {
+      "bytes": 1667,
+      "path": "trip5_extraction_batch_summary.tsv",
+      "sha256": "9c875392714e2295317138b9ecc18db22e37840b7871976f7afd98c82826d760"
+    },
+    {
+      "bytes": 377,
+      "path": "trip5_filter_sensitivity.tsv",
+      "sha256": "a18f7e107cf6111cf0ae7fa9b5666b4ce37a4bce1a81c8f346397200024b4f40"
+    },
+    {
+      "bytes": 9256116,
+      "path": "trip5_mapped_feature_table_control_filtered.tsv.gz",
+      "sha256": "b7916acba11df3c1ae78b6ef0a430a730634e63e05801a3b99072ad3275cdf37"
+    },
+    {
+      "bytes": 67494,
+      "path": "trip5_primary_contaminant_calls.tsv",
+      "sha256": "cee9ba8db4c91bc6c1b3e73e1e8c5541676ee165c92c323ef0074d5903d7149f"
+    },
+    {
+      "bytes": 284,
+      "path": "trip5_removal_fraction_by_campaign.tsv",
+      "sha256": "9a612de02f21984d69c8601e601ec3f40fbdfb51897f7e4ad601f02ecbab32ae"
+    },
+    {
+      "bytes": 437,
+      "path": "trip5_removal_fraction_by_compartment.tsv",
+      "sha256": "7c0b25d84c57e098efbab9c9b8fec974f6df4052a617972f08c36f82f1290817"
+    },
+    {
+      "bytes": 25728,
+      "path": "trip5_removal_fraction_by_profile.tsv",
+      "sha256": "515b008f9c8e1887aa4e1aa80911e6679f0c4fa96f687c5ae668fa703d6df736"
+    }
+  ],
+  "schema_version": "1.0"
+}

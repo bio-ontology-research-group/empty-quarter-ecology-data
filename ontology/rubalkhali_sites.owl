@@ -1,0 +1,1915 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://rubalkhali.science/kb/rubalkhali_sites.owl#"
+     xml:base="https://rubalkhali.science/kb/rubalkhali_sites.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#">
+    <owl:Ontology rdf:about="https://rubalkhali.science/kb/rubalkhali_sites.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#asWKT -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.opengis.net/ont/geosparql#asWKT"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#wktLiteral -->
+
+
+    <rdfs:Datatype rdf:about="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000001 -->
+
+
+    <owl:ObjectProperty rdf:about="https://rubalkhali.science/kb/RAK_2000001"/>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_2000002 -->
+
+
+    <owl:ObjectProperty rdf:about="https://rubalkhali.science/kb/RAK_2000002"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_00000064 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000064"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_00000156 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000156"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_00000170 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_00000192 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000192"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_00000279 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000279"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_00000308 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000308"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_00002034 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00002034"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_00002061 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00002061"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000002 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000002"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000018 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000018"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000179 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000935 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000935"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001105 -->
+
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001105"/>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_0000002 -->
+
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0000002"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000001 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000001">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000018"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.149770555555556, 45.166511388888885. Biome: desert biome. Features: gravel.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(45.166511388888885 19.149770555555556)</geosparql:asWKT>
+        <rdfs:label>Site 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000002 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000002">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.203468333333333, 45.2447675. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(45.2447675 19.203468333333333)</geosparql:asWKT>
+        <rdfs:label>Site 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000003 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000003">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.301079444444444, 45.384414166666666. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(45.384414166666666 19.301079444444444)</geosparql:asWKT>
+        <rdfs:label>Site 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000004 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000004">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000279"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.379571666666667, 45.55182694444444. Biome: desert biome. Features: saline pan.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(45.55182694444444 19.379571666666667)</geosparql:asWKT>
+        <rdfs:label>Site 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000005 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000005">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000279"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.407155277777775, 45.659501388888884. Biome: desert biome. Features: saline pan.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(45.659501388888884 19.407155277777775)</geosparql:asWKT>
+        <rdfs:label>Site 5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000006 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000006">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000279"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.405739166666667, 45.8161425. Biome: desert biome. Features: saline pan.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(45.8161425 19.405739166666667)</geosparql:asWKT>
+        <rdfs:label>Site 6</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000007 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000007">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.407005277777778, 45.953943611111114. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(45.953943611111114 19.407005277777778)</geosparql:asWKT>
+        <rdfs:label>Site 7</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000008 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000008">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.393154166666665, 46.110734722222226. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(46.110734722222226 19.393154166666665)</geosparql:asWKT>
+        <rdfs:label>Site 8</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000009 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000009">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.411200277777777, 46.30267361111111. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(46.30267361111111 19.411200277777777)</geosparql:asWKT>
+        <rdfs:label>Site 9</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000010 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000010">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.420469722222222, 46.460795277777784. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(46.460795277777784 19.420469722222222)</geosparql:asWKT>
+        <rdfs:label>Site 10</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000011 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000011">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.44435222222222, 46.6356325. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(46.6356325 19.44435222222222)</geosparql:asWKT>
+        <rdfs:label>Site 11</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000012 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000012">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.47793361111111, 46.83437333333334. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(46.83437333333334 19.47793361111111)</geosparql:asWKT>
+        <rdfs:label>Site 12</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000013 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000013">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.52934611111111, 47.053284444444444. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(47.053284444444444 19.52934611111111)</geosparql:asWKT>
+        <rdfs:label>Site 13</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000014 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000014">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.581338055555555, 47.2920225. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(47.2920225 19.581338055555555)</geosparql:asWKT>
+        <rdfs:label>Site 14</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000015 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000015">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.613749722222224, 47.47587194444445. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(47.47587194444445 19.613749722222224)</geosparql:asWKT>
+        <rdfs:label>Site 15</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000016 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000016">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.644455833333332, 47.62611861111111. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(47.62611861111111 19.644455833333332)</geosparql:asWKT>
+        <rdfs:label>Site 16</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000017 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000017">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.676460000000002, 47.82730555555556. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(47.82730555555556 19.676460000000002)</geosparql:asWKT>
+        <rdfs:label>Site 17</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000018 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000018">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.732518055555555, 48.046860555555554. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(48.046860555555554 19.732518055555555)</geosparql:asWKT>
+        <rdfs:label>Site 18</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000019 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000019">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.81231916666667, 48.24049472222222. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(48.24049472222222 19.81231916666667)</geosparql:asWKT>
+        <rdfs:label>Site 19</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000020 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000020">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000308"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.869310833333333, 48.42464444444444. Biome: desert biome. Features: dune slack.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(48.42464444444444 19.869310833333333)</geosparql:asWKT>
+        <rdfs:label>Site 20</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000021 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000021">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002061"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.9011325, 48.48646388888889. Biome: desert biome. Features: oilspill.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(48.48646388888889 19.9011325)</geosparql:asWKT>
+        <rdfs:label>Site 21</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000022 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000022">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000279"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.97866972222222, 48.63943555555556. Biome: desert biome. Features: saline pan.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(48.63943555555556 19.97866972222222)</geosparql:asWKT>
+        <rdfs:label>Site 22</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000023 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000023">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.049265555555557, 48.773331388888884. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(48.773331388888884 20.049265555555557)</geosparql:asWKT>
+        <rdfs:label>Site 23</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000024 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000024">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.09273861111111, 48.89939527777778. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(48.89939527777778 20.09273861111111)</geosparql:asWKT>
+        <rdfs:label>Site 24</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000025 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000025">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.100259722222223, 48.95421972222223. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(48.95421972222223 20.100259722222223)</geosparql:asWKT>
+        <rdfs:label>Site 25</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000026 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000026">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.148753888888887, 49.07873861111111. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(49.07873861111111 20.148753888888887)</geosparql:asWKT>
+        <rdfs:label>Site 26</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000027 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000027">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.2038574, 49.1959834. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(49.1959834 20.2038574)</geosparql:asWKT>
+        <rdfs:label>Site 27</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000028 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000028">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.24376861111111, 49.37088472222222. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(49.37088472222222 20.24376861111111)</geosparql:asWKT>
+        <rdfs:label>Site 28</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000029 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000029">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.2597976, 49.5675445. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(49.5675445 20.2597976)</geosparql:asWKT>
+        <rdfs:label>Site 29</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000030 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000030">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.269303055555554, 49.68367333333333. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(49.68367333333333 20.269303055555554)</geosparql:asWKT>
+        <rdfs:label>Site 30</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000031 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000031">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.294623333333334, 49.891405. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(49.891405 20.294623333333334)</geosparql:asWKT>
+        <rdfs:label>Site 31</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000032 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000032">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.310684166666668, 50.09302138888889. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(50.09302138888889 20.310684166666668)</geosparql:asWKT>
+        <rdfs:label>Site 32</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000033 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000033">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.317507777777777, 50.30307027777778. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(50.30307027777778 20.317507777777777)</geosparql:asWKT>
+        <rdfs:label>Site 33</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000034 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000034">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.344394444444443, 50.5153725. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(50.5153725 20.344394444444443)</geosparql:asWKT>
+        <rdfs:label>Site 34</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000035 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000035">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.371795833333334, 50.72999222222222. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(50.72999222222222 20.371795833333334)</geosparql:asWKT>
+        <rdfs:label>Site 35</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000036 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000036">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.42319, 51.14483. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(51.14483 20.42319)</geosparql:asWKT>
+        <rdfs:label>Site 36</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000037 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000037">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.454150277777778, 51.344883333333335. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(51.344883333333335 20.454150277777778)</geosparql:asWKT>
+        <rdfs:label>Site 37</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000038 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000038">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.4610275, 51.370224722222225. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(51.370224722222225 20.4610275)</geosparql:asWKT>
+        <rdfs:label>Site 38</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000039 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000039">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.51023, 51.59742. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(51.59742 20.51023)</geosparql:asWKT>
+        <rdfs:label>Site 39</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000040 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000040">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.54718, 51.82559. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(51.82559 20.54718)</geosparql:asWKT>
+        <rdfs:label>Site 40</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000041 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000041">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000279"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.539777222222224, 51.94610583333333. Biome: desert biome. Features: saline pan.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(51.94610583333333 20.539777222222224)</geosparql:asWKT>
+        <rdfs:label>Site 41</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000042 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000042">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.55516, 52.12403. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(52.12403 20.55516)</geosparql:asWKT>
+        <rdfs:label>Site 42</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000043 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000043">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.567575555555557, 52.22413277777778. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(52.22413277777778 20.567575555555557)</geosparql:asWKT>
+        <rdfs:label>Site 43</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000044 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000044">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.56783, 52.41036. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(52.41036 20.56783)</geosparql:asWKT>
+        <rdfs:label>Site 44</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000045 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000045">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.56346, 52.46776. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(52.46776 20.56346)</geosparql:asWKT>
+        <rdfs:label>Site 45</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000046 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000046">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.553746111111113, 52.66920777777778. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(52.66920777777778 20.553746111111113)</geosparql:asWKT>
+        <rdfs:label>Site 46</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000047 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000047">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.54181555555556, 52.868785833333334. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(52.868785833333334 20.54181555555556)</geosparql:asWKT>
+        <rdfs:label>Site 47</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000048 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000048">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000156"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002034"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.568648333333332, 53.09404833333333. Biome: desert biome. Features: desert oasis, biofilm.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(53.09404833333333 20.568648333333332)</geosparql:asWKT>
+        <rdfs:label>Site 48</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000049 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000049">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.644662222222223, 53.28794. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(53.28794 20.644662222222223)</geosparql:asWKT>
+        <rdfs:label>Site 49</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000050 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000050">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.71385, 53.4123. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(53.4123 20.71385)</geosparql:asWKT>
+        <rdfs:label>Site 50</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000051 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000051">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000279"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.7987, 53.487. Biome: desert biome. Features: saline pan.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(53.487 20.7987)</geosparql:asWKT>
+        <rdfs:label>Site 51</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000052 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000052">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000279"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.83967708333333, 53.66811722222222. Biome: desert biome. Features: saline pan.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(53.66811722222222 20.83967708333333)</geosparql:asWKT>
+        <rdfs:label>Site 52</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000053 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000053">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000279"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.851514166666668, 53.75788444444444. Biome: desert biome. Features: sand dune, saline pan.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(53.75788444444444 20.851514166666668)</geosparql:asWKT>
+        <rdfs:label>Site 53</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000054 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000054">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001105"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.92017888888889, 53.962204444444446. Biome: desert biome. Features: aeolian lake, aerolian lake.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(53.962204444444446 20.92017888888889)</geosparql:asWKT>
+        <rdfs:label>Site 54</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000055 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000055">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000279"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.9022725, 54.0024376. Biome: desert biome. Features: saline pan.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(54.0024376 20.9022725)</geosparql:asWKT>
+        <rdfs:label>Site 55</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000056 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000056">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000279"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.821580833333332, 54.22385916666667. Biome: desert biome. Features: saline pan.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(54.22385916666667 20.821580833333332)</geosparql:asWKT>
+        <rdfs:label>Site 56</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000057 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000057">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.7349775, 54.41764333333333. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(54.41764333333333 20.7349775)</geosparql:asWKT>
+        <rdfs:label>Site 57</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000058 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000058">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.66540111111111, 54.59327444444445. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(54.59327444444445 20.66540111111111)</geosparql:asWKT>
+        <rdfs:label>Site 58</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000059 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000059">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000156"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.65626, 54.635868055555555. Biome: desert biome. Features: desert oasis.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(54.635868055555555 20.65626)</geosparql:asWKT>
+        <rdfs:label>Site 59</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000060 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000060">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000156"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.706374444444442, 54.732105555555556. Biome: desert biome. Features: desert oasis.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(54.732105555555556 20.706374444444442)</geosparql:asWKT>
+        <rdfs:label>Site 60</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000061 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000061">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002061"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.40536, 45.72708. Biome: desert biome. Features: oilspill.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(45.72708 19.40536)</geosparql:asWKT>
+        <rdfs:label>Site oill spill</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000062 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000062">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000002"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.39723, 50.96553. Biome: desert biome. Features: hot spring, water well.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(50.96553 20.39723)</geosparql:asWKT>
+        <rdfs:label>Site hot spring</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000063 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000063">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000002"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.50145, 46.90146. Biome: desert biome. Features: water well.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(46.90146 19.50145)</geosparql:asWKT>
+        <rdfs:label>Site water well (location 1)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000064 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000064">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.65401, 47.68826. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(47.68826 19.65401)</geosparql:asWKT>
+        <rdfs:label>Site Camel1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000065 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000065">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.70915, 47.95933. Biome: desert biome. Features: sand dune.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(47.95933 19.70915)</geosparql:asWKT>
+        <rdfs:label>Site plant gradient</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000066 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000066">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000308"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 19.81927138888889, 48.24023722222222. Biome: desert biome. Features: dune slack.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(48.24023722222222 19.81927138888889)</geosparql:asWKT>
+        <rdfs:label>Site 19.5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000067 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000067">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000002"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.7158697, 54.7996974. Biome: desert biome. Features: water well.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(54.7996974 20.7158697)</geosparql:asWKT>
+        <rdfs:label>Site water well (location 2)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000068 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000068">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000064"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.82577583333333, 54.988932500000004. Biome: desert biome. Features: road.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(54.988932500000004 20.82577583333333)</geosparql:asWKT>
+        <rdfs:label>Site road (location 1)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000069 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000069">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000064"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 20.93405111111111, 55.12609. Biome: desert biome. Features: road.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(55.12609 20.93405111111111)</geosparql:asWKT>
+        <rdfs:label>Site road (location 2)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1000070 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1000070">
+        <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000002"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000001"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000935"/>
+            </owl:Restriction>
+        </rdf:type>
+        <terms:description>Sampling site located at 21.031050555555556, 55.159842777777776. Biome: desert biome. Features: campground.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(55.159842777777776 21.031050555555556)</geosparql:asWKT>
+        <rdfs:label>Site camground</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://rubalkhali.science/kb/RAK_1999999 -->
+
+
+    <owl:NamedIndividual rdf:about="https://rubalkhali.science/kb/RAK_1999999">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000192"/>
+        <terms:description>Approximate boundary of the Rub&apos; al Khali desert.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POLYGON((46.50 17.45, 50.70 17.15, 53.25 17.00, 55.65 19.45, 55.80 22.50, 53.50 23.80, 51.00 24.10, 48.50 23.25, 46.00 21.50, 45.00 19.80, 44.80 19.00, 45.50 18.00, 46.50 17.45))</geosparql:asWKT>
+        <rdfs:label>Rub&apos; al Khali (Empty Quarter)</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.20.2022-02-19T16:38:31Z) https://github.com/owlcs/owlapi/ -->
+
+

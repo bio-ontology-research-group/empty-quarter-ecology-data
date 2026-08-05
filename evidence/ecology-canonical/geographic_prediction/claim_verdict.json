@@ -1,0 +1,59 @@
+{
+  "all_campaign_group_level_equal_weight_skill": -0.004011417102783135,
+  "all_campaign_group_level_pooled_skill": -0.0020094502321279517,
+  "arm_definitions": {
+    "group_level_campaign_by_block": "Requested design: a whole campaign and a contiguous transect block are excluded together; taxa are selected inside the training fold only; scoring uses within-compartment CLR differences between held-out sites, so no held-out campaign intercept is ever estimated.",
+    "site_level_block": "Sensitivity only: a contiguous site block is excluded, but every campaign remains on both sides of the split, so this arm cannot test transport to an unseen campaign."
+  },
+  "collection_order_alias": {
+    "alias_status": "collection_order_aliased_with_transect_position",
+    "campaigns_audited": 5,
+    "campaigns_with_abs_rho_at_least_0_99": 5,
+    "max_abs_spearman_rho": 1.0,
+    "min_abs_spearman_rho": 0.9938316198944154
+  },
+  "group_level_equal_weight_skill": -0.0015342723198300792,
+  "group_level_pooled_skill": -0.0003587259156487832,
+  "input": {
+    "counts_path": "analysis/v2/review/cache/genus_counts.tsv",
+    "counts_sha256": "324d19da3669d489a42b60e0bdd6ca7f3238308bbadc72b8a28ae6098ddc8481",
+    "input_genera": 1604,
+    "input_sample_columns": 1237,
+    "minimum_group_reads": 2000,
+    "parsed_core_sample_columns": 1227,
+    "prevalence_threshold": 0.2,
+    "pseudocount": 0.5,
+    "retained_site_campaign_compartment_groups": 630,
+    "retained_sites": 60,
+    "seed": 20260728,
+    "site_permutations": 499,
+    "taxon_count": 200
+  },
+  "n_blocks": 6,
+  "n_group_level_folds": 18,
+  "n_group_level_folds_with_positive_skill": 10,
+  "n_site_level_folds": 6,
+  "n_site_level_folds_with_positive_skill": 6,
+  "null_p_values": {
+    "group_level_campaign_by_block::cyclic_shift_reflection": 0.08333333333333333,
+    "group_level_campaign_by_block::whole_site_relabelling": 0.354,
+    "site_level_block::cyclic_shift_reflection": 0.025,
+    "site_level_block::whole_site_relabelling": 0.002
+  },
+  "permitted_wording": "The primary test holds out a whole campaign and a contiguous transect block together and scores within-compartment differences between held-out sites. It did not support cross-campaign, cross-block transport of the transect gradient (equal-weight R2 -0.0015, pooled -0.0004, 10/18 folds positive, strictest null p = 0.354). As a sensitivity, holding out a contiguous site block alone while keeping the same campaigns on both sides of the split did predict the site-averaged composition of the held-out block (out-of-block R2 0.2526, 6/6 blocks positive, strictest null p = 0.025). This sensitivity does not hold out a campaign and therefore does not demonstrate transport to an unseen campaign.",
+  "primary_arm": "group_level_campaign_by_block",
+  "primary_arm_supported": false,
+  "primary_campaigns": [
+    1,
+    3,
+    4
+  ],
+  "prohibited_wording": "Do not report the site-block-only sensitivity as the geographic prediction result, and do not describe geographic prediction as succeeding: the requested campaign-plus-block design is the primary arm and it is not supported. Do not describe any out-of-block skill as evidence for a geographic driver. Elapsed collection time and transect position are aliased in every campaign, so a repeated pattern cannot be separated from a repeated collection order or from order-dependent instrument effects.",
+  "schema_version": "1.1",
+  "sensitivity_arm": "site_level_block",
+  "sensitivity_arm_supported": true,
+  "site_level_block_skill": 0.2525898685630754,
+  "status": "joint_campaign_block_not_supported_site_block_sensitivity_supported",
+  "strictest_group_level_null_p_value": 0.354,
+  "strictest_site_level_null_p_value": 0.025
+}

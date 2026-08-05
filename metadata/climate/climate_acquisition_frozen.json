@@ -1,0 +1,75 @@
+{
+  "daily": {
+    "acquisition_code": {
+      "bytes": 4532,
+      "mtime_utc": "2026-07-28T16:32:55.072064+00:00",
+      "path": "scripts/utils/fetch_daily_weather.py",
+      "sha256": "9fd09c7239d4590d29e577ccef7190af4ebb4046dc37f9e7cc7bbbc10b416322"
+    },
+    "declared_window": {
+      "daily_variables": [
+        "temperature_2m_mean",
+        "rain_sum",
+        "precipitation_sum"
+      ],
+      "end_date": "2026-02-01",
+      "start_date": "2022-01-01"
+    },
+    "observed_period": {
+      "column": "Date",
+      "max": "2026-02-01",
+      "min": "2022-01-01",
+      "rows": 120933
+    },
+    "output": {
+      "bytes": 3456797,
+      "mtime_utc": "2026-02-01T09:14:49.068766+00:00",
+      "path": "data/processed/climate/daily_weather.tsv",
+      "sha256": "290eb42524cd5095b894abd93fa73e3e4b09a96e38b58dd1ef9e2fcb4ad4ae8f"
+    }
+  },
+  "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+  "monthly": {
+    "acquisition_code": {
+      "bytes": 8733,
+      "mtime_utc": "2026-07-28T16:32:36.485188+00:00",
+      "path": "scripts/utils/fetch_monthly_weather.py",
+      "sha256": "5e72aa1702c679c84adb3549e37841f11ebb489d692cea34c8e7db4fa5831610"
+    },
+    "declared_window": {
+      "daily_variables": [
+        "temperature_2m_mean",
+        "rain_sum",
+        "precipitation_sum",
+        "relative_humidity_2m_mean"
+      ],
+      "end_date": "2026-01-20",
+      "start_date": "2022-01-01"
+    },
+    "observed_period": {
+      "min_year_month": [
+        "2022",
+        "1"
+      ]
+    },
+    "output": {
+      "bytes": 134912,
+      "mtime_utc": "2026-01-30T14:03:29.326953+00:00",
+      "path": "data/processed/climate/monthly_weather_averages.tsv",
+      "sha256": "7a2d46d59057c9a85e8a232519672634ab0a4d3a90233408c9caa2b56b9f9751"
+    }
+  },
+  "reproducibility_note": "scripts/utils/fetch_monthly_weather.py now writes raw response snapshots and a provenance record, and both acquisition scripts use an explicit frozen end date instead of today(); a future retrieval is therefore reproducible from snapshots without network access.",
+  "retrieval_date_evidence": "No retrieval timestamp was captured. The output file modification times bound it from above; the monthly acquisition code additionally records the intended archive cut-off in its frozen end date.",
+  "site_table": {
+    "bytes": 3418,
+    "mtime_utc": "2026-01-11T17:19:47.985091+00:00",
+    "path": "data/metadata/geodata/site_altitudes.tsv",
+    "sha256": "c90b546995fec37e1f2e7d96fd6d5ad175fdbe5fb2519082c43fbe0487580ad7"
+  },
+  "unrecoverable": [
+    "raw Open-Meteo response bodies for the archived tables",
+    "per-request retrieval timestamps",
+    "an Open-Meteo model or dataset version (not reported by the archive API)"
+  ]
+}

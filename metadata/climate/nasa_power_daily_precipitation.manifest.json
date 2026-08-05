@@ -1,0 +1,28 @@
+{
+  "dataset": "NASA POWER daily corrected precipitation snapshot",
+  "date_range": [
+    "2022-01-01",
+    "2025-12-31"
+  ],
+  "output": {
+    "path": "data/processed/climate/nasa_power_daily_precipitation.tsv.gz",
+    "sha256": "71d11a8c930760b0dfcb45b59017d3f00321f75ade4f01ad50ea8f1b47379cc2"
+  },
+  "parameter": "PRECTOTCORR",
+  "rows": 87660,
+  "schema_version": "1.0",
+  "site_range": [
+    1,
+    60
+  ],
+  "software": {
+    "pandas": "2.2.3",
+    "python": "3.11.14"
+  },
+  "source": {
+    "original_request_metadata_status": "not_preserved_with_source_csv",
+    "path": "empty-quarter-amplicon/repository/data/climate/daily_weather_full.csv",
+    "sha256": "823ccb4f7ff1e57f10da62511d92adfc8b4287f70c2cb9927f35b9d9730634b5"
+  },
+  "units": "mm/day"
+}
