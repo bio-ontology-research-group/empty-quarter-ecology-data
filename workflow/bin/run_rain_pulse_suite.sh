@@ -20,9 +20,9 @@ mkdir -p \
   "$output_dir_abs"
 
 cp \
-  "$project_root/analysis/v3/rain_response_window.py" \
-  "$project_root/analysis/v3/rain_pulse_response.py" \
-  "$project_root/analysis/v3/run_rain_pulse_suite.py" \
+  "$project_root/scripts/analysis/rain_response_window.py" \
+  "$project_root/scripts/analysis/rain_pulse_response.py" \
+  "$project_root/scripts/analysis/run_rain_pulse_suite.py" \
   "$task_root/analysis/v3/"
 ln -s "$ecology_core/cache" "$task_root/analysis/v2/review/cache"
 ln -s "$control_results/control_audit" \

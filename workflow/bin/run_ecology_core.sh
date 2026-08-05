@@ -11,8 +11,19 @@ output_dir=$2
 pma_asv_table=$(realpath "$3")
 task_root=$PWD/ecology-sandbox
 
-mkdir -p "$task_root" "$output_dir/logs"
-cp -a "$project_root/analysis" "$task_root/analysis"
+mkdir -p \
+  "$task_root/analysis/v2/review" \
+  "$task_root/analysis/v3" \
+  "$output_dir/logs"
+cp "$project_root/scripts/analysis/common.py" \
+  "$task_root/analysis/v2/common.py"
+cp "$project_root/scripts/analysis/corrected.py" \
+  "$task_root/analysis/v2/review/corrected.py"
+cp \
+  "$project_root/scripts/analysis/build_cache.py" \
+  "$project_root/scripts/analysis/build_tree.py" \
+  "$task_root/analysis/v2/review/"
+cp "$project_root"/scripts/analysis/*.py "$task_root/analysis/v3/"
 mkdir -p \
   "$task_root/data/processed" \
   "$task_root/data/metadata" \
@@ -195,7 +206,7 @@ cp -a analysis/v3/distance_decay_turnover \
   "$OLDPWD/$output_dir/distance_decay_turnover"
 cp -a analysis/v3/evenness_decomposition \
   "$OLDPWD/$output_dir/evenness_decomposition"
-cp -a "$project_root/analysis/v3/ph_shared_v1/ecology" \
+cp -a "$project_root/evidence/ph/ecology" \
   "$OLDPWD/$output_dir/ph_shared_v1"
 
 python3 - "$OLDPWD/$output_dir" <<'PY'

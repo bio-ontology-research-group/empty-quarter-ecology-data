@@ -33,6 +33,13 @@ def test_core_runner_removes_every_copied_cache_and_output() -> None:
         assert f"analysis/v3/{name}" in cleanup
 
 
+def test_core_runner_uses_packaged_analysis_sources() -> None:
+    for name in ("common.py", "corrected.py", "build_cache.py", "build_tree.py"):
+        assert f"scripts/analysis/{name}" in RUNNER
+    assert '"$project_root"/scripts/analysis/*.py' in RUNNER
+    assert 'cp -a "$project_root/evidence/ph/ecology"' in RUNNER
+
+
 def test_missing_spatial_and_evenness_analyses_are_regenerated_and_published() -> None:
     build_offset = RUNNER.index("run_step build_cache")
     claim_offset = RUNNER.index("run_step claim_rescue")

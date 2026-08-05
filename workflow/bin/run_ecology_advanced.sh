@@ -19,12 +19,12 @@ mkdir -p \
   "$task_root/analysis/v3" \
   "$task_root/data/processed" \
   "$task_root/data/metadata"
-cp "$project_root/analysis/v2/common.py" "$task_root/analysis/v2/"
-cp "$project_root/analysis/v2/review/corrected.py" \
+cp "$project_root/scripts/analysis/common.py" "$task_root/analysis/v2/"
+cp "$project_root/scripts/analysis/corrected.py" \
   "$task_root/analysis/v2/review/"
-cp "$project_root/analysis/v2/RQ26_CausalIdentification/scripts/phylo_signal_test.py" \
+cp "$project_root/scripts/analysis/phylo_signal_test.py" \
   "$task_root/analysis/v2/RQ26_CausalIdentification/scripts/"
-cp "$project_root/analysis/v3/measured_function_summary.py" \
+cp "$project_root/scripts/analysis/measured_function_summary.py" \
   "$task_root/analysis/v3/"
 cp \
   "$core_results/cache/asv_filt_counts.tsv" \

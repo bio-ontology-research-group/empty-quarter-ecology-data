@@ -22,7 +22,7 @@ mkdir -p \
 # code and generated outputs inside the task sandbox, while presenting the
 # immutable repository inputs through read-only symlinks.
 cp -a "$project_root/scripts" "$task_root/scripts"
-cp "$project_root"/analysis/v3/*.py "$task_root/analysis/v3/"
+cp "$project_root"/scripts/analysis/*.py "$task_root/analysis/v3/"
 ln -s "$ecology_core/cache" "$task_root/analysis/v2/review/cache"
 ln -s "$project_root/data/metadata" "$task_root/data/metadata"
 ln -s "$project_root/data/processed/taxonomy" \
