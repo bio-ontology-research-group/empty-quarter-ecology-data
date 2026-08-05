@@ -244,7 +244,7 @@ python3 scripts/validation/validate_site_biome_completeness.py \
   --report "$output_dir_abs/site_biome_completeness.json" \
   > "$output_dir_abs/logs/site_biome_completeness.log" 2>&1
 
-python3 "$project_root/data-paper/scripts/verify_manuscript_listings.py" \
+python3 "$project_root/scripts/manuscript/verify_manuscript_listings.py" \
   --paper-root "$project_root/data-paper" \
   --ontology-dir data/processed/semantics/ontology \
   --report "$output_dir_abs/manuscript_listing_verification.json" \

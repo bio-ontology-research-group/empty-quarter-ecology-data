@@ -121,7 +121,7 @@ if observed_rows != 46:
     )
 PY
 
-python3 "$project_root/data-paper/scripts/test_manuscript_consistency.py" \
+python3 "$project_root/scripts/manuscript/test_manuscript_consistency.py" \
   > "$output_dir/logs/data_paper_consistency.log" 2>&1
 
 # Stage only the source files needed for deterministic TeX builds. The data

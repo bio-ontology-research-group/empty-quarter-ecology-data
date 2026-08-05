@@ -23,19 +23,19 @@ run_step build_inputs \
   "$python_bin" "$project_root/scripts/controls/build_control_sensitivity_inputs.py"
 
 run_step claim_rescue \
-  "$python_bin" "$project_root/analysis/v3/claim_rescue.py" \
+  "$python_bin" "$project_root/scripts/analysis/claim_rescue.py" \
   --project-root "$project_root" \
   --alpha "$input_root/alpha.tsv" \
   --output-dir "$output_root/claim_rescue" \
   --skip-downstream
 
 run_step evenness_decomposition \
-  "$python_bin" "$project_root/analysis/v3/evenness_decomposition_analysis.py" \
+  "$python_bin" "$project_root/scripts/analysis/evenness_decomposition_analysis.py" \
   --alpha "$input_root/alpha.tsv" \
   --output-dir "$output_root/evenness_decomposition"
 
 run_step depth_extraction \
-  "$python_bin" "$project_root/analysis/v3/depth_extraction_sensitivity.py" \
+  "$python_bin" "$project_root/scripts/analysis/depth_extraction_sensitivity.py" \
   --project-root "$project_root" \
   --alpha "$input_root/alpha.tsv" \
   --sample-ledger "$project_root/data/release/sample_ledger.tsv" \
@@ -44,14 +44,14 @@ run_step depth_extraction \
   --seed 20260725
 
 run_step spatial_turnover \
-  "$python_bin" "$project_root/analysis/v3/spatial_turnover_rescue.py" \
+  "$python_bin" "$project_root/scripts/analysis/spatial_turnover_rescue.py" \
   --project-root "$project_root" \
   --counts "$input_root/genus_counts.tsv.gz" \
   --output-dir "$output_root/spatial_turnover" \
   --permutations 999
 
 run_step compartment_composition \
-  "$python_bin" "$project_root/analysis/v3/compartment_composition_rescue.py" \
+  "$python_bin" "$project_root/scripts/analysis/compartment_composition_rescue.py" \
   --project-root "$project_root" \
   --counts "$input_root/genus_counts.tsv.gz" \
   --output-dir "$output_root/compartment_composition" \
@@ -62,7 +62,7 @@ run_step compartment_composition \
   --seed 20260725
 
 run_step xrf_community_clr \
-  "$python_bin" "$project_root/analysis/v3/xrf_community_clr_sensitivity.py" \
+  "$python_bin" "$project_root/scripts/analysis/xrf_community_clr_sensitivity.py" \
   --project-root "$project_root" \
   --counts "$input_root/genus_counts.tsv.gz" \
   --alpha "$input_root/alpha.tsv" \
@@ -76,7 +76,7 @@ run_step xrf_community_clr \
   --seed 20260725
 
 run_step geographic_prediction \
-  "$python_bin" "$project_root/analysis/v3/geographic_prediction.py" \
+  "$python_bin" "$project_root/scripts/analysis/geographic_prediction.py" \
   --project-root "$project_root" \
   --counts "$input_root/genus_counts.tsv.gz" \
   --output-dir "$output_root/geographic_prediction" \
@@ -88,7 +88,7 @@ run_step geographic_prediction \
   --seed 20260728
 
 run_step spatial_resolution \
-  "$python_bin" "$project_root/analysis/v3/spatial_resolution_sensitivity.py" \
+  "$python_bin" "$project_root/scripts/analysis/spatial_resolution_sensitivity.py" \
   --project-root "$project_root" \
   --genus-counts "$input_root/genus_counts.tsv.gz" \
   --asv-counts "$input_root/asv_filt_counts.tsv.gz" \
@@ -100,7 +100,7 @@ run_step spatial_resolution \
   --seed 20260728
 
 run_step distance_decay_turnover \
-  "$python_bin" "$project_root/analysis/v3/distance_decay_turnover.py" \
+  "$python_bin" "$project_root/scripts/analysis/distance_decay_turnover.py" \
   --project-root "$project_root" \
   --counts "$input_root/genus_counts.tsv.gz" \
   --output-dir "$output_root/distance_decay_turnover" \

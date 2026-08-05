@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -38,6 +39,35 @@ def test_core_runner_uses_packaged_analysis_sources() -> None:
         assert f"scripts/analysis/{name}" in RUNNER
     assert '"$project_root"/scripts/analysis/*.py' in RUNNER
     assert 'cp -a "$project_root/evidence/ph/ecology"' in RUNNER
+
+
+def test_nextflow_uses_packaged_sources_for_direct_ecology_processes() -> None:
+    names = (
+        "environment_associations.py",
+        "picrust2_ecology.py",
+        "functional_redundancy_null.py",
+        "run_network_rescue.py",
+        "make_submission_figures.py",
+    )
+    for name in names:
+        assert f"scripts/analysis/{name}" in MAIN
+    assert "${project_root}/analysis/v3/" not in MAIN
+    assert "${params.project_root}/analysis/v3/" not in MAIN
+
+
+def test_executable_sources_do_not_use_compatibility_tree_paths() -> None:
+    sources = [ROOT / "workflow/main.nf"]
+    sources.extend((ROOT / "workflow").rglob("*.sh"))
+    sources.extend((ROOT / "scripts").rglob("*.sh"))
+    pattern = re.compile(
+        r"(?:\$\{(?:params\.)?project_root\}|\$project_root)/"
+        r"(?:analysis/[^\"'\s]+\.py|data-paper/scripts/[^\"'\s]+\.py)"
+    )
+    offenders = []
+    for source in sources:
+        for match in pattern.findall(source.read_text(encoding="utf-8")):
+            offenders.append((str(source.relative_to(ROOT)), match))
+    assert offenders == []
 
 
 def test_missing_spatial_and_evenness_analyses_are_regenerated_and_published() -> None:

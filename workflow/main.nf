@@ -113,7 +113,7 @@ process ENVIRONMENTAL_METADATA {
 
     script:
     """
-    python3 '${project_root}/data-paper/scripts/generate_env_table.py' \
+    python3 '${project_root}/scripts/manuscript/generate_env_table.py' \
       --project-root '${project_root}' \
       --output-dir environmental_metadata
     cmp environmental_metadata/environmental_measurements_curated.tsv \
@@ -443,7 +443,7 @@ process ENVIRONMENT_ASSOCIATIONS {
 
     script:
     """
-    python3 '${project_root}/analysis/v3/environment_associations.py' \
+    python3 '${project_root}/scripts/analysis/environment_associations.py' \
       --project-root '${project_root}' \
       --alpha-table '${ecology_core}/cache/alpha.tsv' \
       --genus-counts '${ecology_core}/cache/genus_counts.tsv' \
@@ -540,7 +540,7 @@ process PICRUST2_ECOLOGY {
 
     script:
     """
-    python3 '${project_root}/analysis/v3/picrust2_ecology.py' \
+    python3 '${project_root}/scripts/analysis/picrust2_ecology.py' \
       --project-root '${project_root}' \
       --alpha-table '${ecology_core}/cache/alpha.tsv' \
       --measured-function-summary \
@@ -590,7 +590,7 @@ process FUNCTIONAL_REDUNDANCY_NULL {
         "\$coverm_path" >&2
       exit 66
     fi
-    python3 '${project_root}/analysis/v3/functional_redundancy_null.py' \
+    python3 '${project_root}/scripts/analysis/functional_redundancy_null.py' \
       --coverm-dir "\$coverm_path" \
       --eggnog-annotations '${eggnog_annotations}' \
       --output-dir functional_redundancy \
@@ -627,7 +627,7 @@ process NETWORK_RESCUE {
 
     script:
     """
-    python3 '${project_root}/analysis/v3/network_rescue/run_network_rescue.py' \
+    python3 '${project_root}/scripts/analysis/run_network_rescue.py' \
       --project-root '${project_root}' \
       --input-table "\$PWD/${ecology_core}/cache/genus_counts.tsv" \
       --output-dir "\$PWD/network_rescue"
@@ -666,7 +666,7 @@ process SUBMISSION_FIGURES {
 
     script:
     """
-    python3 '${params.project_root}/analysis/v3/make_submission_figures.py' \
+    python3 '${params.project_root}/scripts/analysis/make_submission_figures.py' \
       --core-dir '${ecology_core}' \
       --environment-dir '${environment_associations}' \
       --rain-dir '${rain_pulse}/rain_pulse_response' \

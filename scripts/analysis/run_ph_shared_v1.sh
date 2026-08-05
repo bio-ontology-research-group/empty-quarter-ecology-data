@@ -36,7 +36,7 @@ cp "$project_root/config/ph/ph_measurements.shex" \
   --dataset-purpose shared-manuscripts \
   --measurement-campaign-closed
 
-"$python_bin" "$project_root/analysis/v3/ph_ecology_analysis.py" \
+"$python_bin" "$project_root/scripts/analysis/ph_ecology_analysis.py" \
   --project-root "$project_root" \
   --ph-dir "$output_dir" \
   --dataset-version "$dataset_version" \
