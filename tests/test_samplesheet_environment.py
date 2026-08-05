@@ -135,6 +135,14 @@ def test_all_curated_measurements_are_in_declared_ranges() -> None:
             assert lower <= float(row[column]) <= upper
 
 
+def test_measurement_generator_orders_declared_geodata_inputs() -> None:
+    generator = (
+        ROOT / "scripts/rdf/generate_measurements_abox.groovy"
+    ).read_text(encoding="utf-8")
+    assert "trip[1-5]_geodata" in generator
+    assert ".sort { first, second -> first.name <=> second.name }" in generator
+
+
 def test_rdf_contains_no_out_of_range_field_humidity() -> None:
     path = (
         ROOT / "data/processed/ontology/rubalkhali_measurements.owl"

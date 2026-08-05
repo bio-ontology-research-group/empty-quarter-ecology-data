@@ -396,8 +396,10 @@ if (unusedEnvironmentalCorrections) {
 }
 
 // 2. Geodata
-new File("data/metadata/geodata").listFiles().each { file ->
-    if (!file.name.endsWith(".tsv")) return
+new File("data/metadata/geodata").listFiles()
+    .findAll { file -> file.name ==~ /trip[1-5]_geodata\.tsv/ }
+    .sort { first, second -> first.name <=> second.name }
+    .each { file ->
     def tripKey = file.name.split("_")[0]; def teamInd = tripTeams[tripKey]; def lines = file.readLines(); if (lines.isEmpty()) return
     def header = lines[0].split("\t")
     def colSite = header.findIndexOf { it.trim().equalsIgnoreCase("site") }
