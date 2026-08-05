@@ -1,10 +1,18 @@
 from __future__ import annotations
 
 import hashlib
+import importlib.util
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
+SPEC = importlib.util.spec_from_file_location(
+    "run_assay_aware_control_audit",
+    ROOT / "scripts/controls/run_assay_aware_control_audit.py",
+)
+assert SPEC is not None and SPEC.loader is not None
+CONTROL_AUDIT = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(CONTROL_AUDIT)
 CONTROL_INPUT = (
     ROOT
     / "evidence/controls/source_snapshots/ibex_20250714_qiime2/extracted"
@@ -50,3 +58,26 @@ def test_control_runner_exposes_packaged_inputs_in_its_sandbox() -> None:
     assert '"$task_root/data/metadata"' in runner
     assert "ibex_20250714_qiime2/extracted/feature-table.biom" in audit
     assert "ibex_20250714_qiime2/extracted/taxonomy.tsv" in audit
+
+
+def test_control_manifest_keeps_relative_staging_path(
+    tmp_path: Path, monkeypatch
+) -> None:
+    sandbox = tmp_path / "control-analysis-sandbox"
+    sandbox.mkdir()
+    monkeypatch.chdir(sandbox)
+
+    staged = Path("analysis/v2/review/cache/alpha.tsv")
+    assert CONTROL_AUDIT.provenance_path(staged, sandbox) == staged.as_posix()
+
+    absolute_staged = sandbox / "data/metadata/control.tsv"
+    assert (
+        CONTROL_AUDIT.provenance_path(absolute_staged, sandbox)
+        == "data/metadata/control.tsv"
+    )
+
+
+def test_control_manifest_retains_explicit_external_path(tmp_path: Path) -> None:
+    sandbox = tmp_path / "control-analysis-sandbox"
+    external = tmp_path / "external" / "alpha.tsv"
+    assert CONTROL_AUDIT.provenance_path(external, sandbox) == external.as_posix()

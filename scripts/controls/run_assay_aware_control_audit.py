@@ -79,6 +79,23 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def provenance_path(path: Path, root: Path) -> str:
+    """Return a stable manifest label without resolving staged symlinks.
+
+    Workflow inputs may be passed as relative paths whose final component is a
+    symlink to another process output.  Resolving such a path would move it
+    outside ``root`` and make ``relative_to`` fail, even though the staged path
+    itself is inside the task sandbox.  ``Path.absolute`` normalizes the
+    lexical path while preserving that staging boundary.
+    """
+    absolute_path = path.absolute()
+    absolute_root = root.absolute()
+    try:
+        return absolute_path.relative_to(absolute_root).as_posix()
+    except ValueError:
+        return path.as_posix()
+
+
 def split_ids(value: object) -> list[str]:
     if value is None:
         return []
@@ -734,7 +751,9 @@ def main() -> int:
         {
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "method_reference": "Fierer et al. 2025, doi:10.1038/s41564-025-02035-2",
-            "input_sha256": {str(path.relative_to(root)): sha256(path) for path in inputs},
+            "input_sha256": {
+                provenance_path(path, root): sha256(path) for path in inputs
+            },
             "positive_control_profiles": len(profiles),
             "positive_expected_taxon_evaluations": len(recovery),
         }
