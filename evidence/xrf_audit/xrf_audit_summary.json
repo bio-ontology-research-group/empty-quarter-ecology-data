@@ -73,7 +73,7 @@
     "shared_element_analytes": 24
   },
   "parameters": {
-    "community_table": "analysis/v2/review/cache/genus_counts.tsv",
+    "community_table": "evidence/ecology-canonical/cache/genus_counts.tsv",
     "minimum_community_reads": 2000.0
   },
   "resolved_flags": [
