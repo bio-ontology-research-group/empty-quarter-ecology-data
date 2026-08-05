@@ -67,10 +67,20 @@ def write_fixture(root: Path) -> tuple[Path, Path]:
     for filename in (
         "main.tex",
         "supplement.tex",
+        "ph_shared_v1.tex",
         "sample.bib",
         "olplainarticle.cls",
     ):
         (ecology / filename).write_text(f"{filename}\n")
+    (ecology / "generated").mkdir()
+    (ecology / "generated" / "ph_shared_v1_values.tex").write_text(
+        "generated pH values\n"
+    )
+    (
+        ecology
+        / "generated"
+        / "ph_shared_v1_values.manifest.json"
+    ).write_text('{"status": "passed"}\n')
     (ecology / "figures").mkdir()
     (ecology / "figures" / "figure.pdf").write_bytes(b"%PDF-fixture")
     return data_paper, ecology
@@ -125,7 +135,11 @@ def test_exported_tree_uses_current_bytes_not_stale_patch(tmp_path: Path):
     with tarfile.open(
         first / "ecology_paper_source_snapshot.tar.gz", "r:gz"
     ) as tar:
-        assert "figures/figure.pdf" not in set(tar.getnames())
+        members = set(tar.getnames())
+        assert "ph_shared_v1.tex" in members
+        assert "generated/ph_shared_v1_values.tex" in members
+        assert "generated/ph_shared_v1_values.manifest.json" in members
+        assert "figures/figure.pdf" not in members
 
     (root / "workflow" / "main.nf").write_text("version two\n")
     second = tmp_path / "second"

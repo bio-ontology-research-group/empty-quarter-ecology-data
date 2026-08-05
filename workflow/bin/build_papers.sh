@@ -34,6 +34,7 @@ export LC_ALL="${LC_ALL:-C.UTF-8}"
 mkdir -p \
   "$task_root/data-paper" \
   "$task_root/ecology-paper/figures" \
+  "$task_root/ecology-paper/generated" \
   "$output_dir/data_paper" \
   "$output_dir/ecology_paper" \
   "$output_dir/logs"
@@ -154,9 +155,14 @@ cp \
 cp \
   "$ecology_paper/main.tex" \
   "$ecology_paper/supplement.tex" \
+  "$ecology_paper/ph_shared_v1.tex" \
   "$ecology_paper/sample.bib" \
   "$ecology_paper/olplainarticle.cls" \
   "$task_root/ecology-paper/"
+cp \
+  "$ecology_paper/generated/ph_shared_v1_values.tex" \
+  "$ecology_paper/generated/ph_shared_v1_values.manifest.json" \
+  "$task_root/ecology-paper/generated/"
 cp \
   "$submission_figures/fig1_landscape.pdf" \
   "$submission_figures/fig2_soil_position.pdf" \

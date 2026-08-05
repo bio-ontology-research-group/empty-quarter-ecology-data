@@ -69,6 +69,20 @@ def test_current_ecology_figure_names_are_staged_and_built() -> None:
         assert name not in BUILDER
 
 
+def test_ecology_supplement_inputs_are_staged_and_snapshotted() -> None:
+    required = (
+        "ph_shared_v1.tex",
+        "generated/ph_shared_v1_values.tex",
+        "generated/ph_shared_v1_values.manifest.json",
+    )
+    authoritative_block = SNAPSHOT.split(
+        "ECOLOGY_PAPER_AUTHORITATIVE_FILES = (", 1
+    )[1].split(")", 1)[0]
+    for name in required:
+        assert name in BUILDER
+        assert f'"{name}"' in authoritative_block
+
+
 def test_data_supplement_runs_the_full_bibliography_build() -> None:
     assert 'build_tex "$task_root/data-paper" supplement' in BUILDER
     assert 'cp "$task_root/data-paper/supplement.blg"' in BUILDER

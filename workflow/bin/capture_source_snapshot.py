@@ -66,6 +66,9 @@ DATA_PAPER_AUTHORITATIVE_FILES = (
 ECOLOGY_PAPER_AUTHORITATIVE_FILES = (
     "main.tex",
     "supplement.tex",
+    "ph_shared_v1.tex",
+    "generated/ph_shared_v1_values.tex",
+    "generated/ph_shared_v1_values.manifest.json",
     "sample.bib",
     "olplainarticle.cls",
 )
