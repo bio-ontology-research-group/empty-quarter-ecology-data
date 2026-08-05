@@ -30,15 +30,33 @@ or digest.
 
 ## 2. Recreate the software environment
 
-The Python environment is hash-locked for CPython 3.11 on Linux/x86-64:
+The reviewed figures and complete workflow use an exact Linux/x86-64 Conda
+environment. Its explicit lock names every package build and archive digest,
+including Matplotlib and FreeType, whose font metrics affect PDF bytes:
+
+```bash
+make env-linux-exact
+export PATH="$PWD/.conda-env/bin:$PATH"
+```
+
+This creates the compiled environment from
+`environment/conda-linux-64.lock`, then installs the two pip-only packages
+from `environment/pip-overlay.lock.txt` with hashes and `--no-deps`. The latter
+guard prevents pip from replacing Conda's compiled numerical and graphics
+libraries.
+
+For the shorter Python-only regression path, the CPython 3.11 environment is
+also hash-locked:
 
 ```bash
 uv venv --python 3.11 .venv
 uv pip sync --python .venv/bin/python environment/requirements.lock.txt
 ```
 
-`environment/environment.yml` additionally pins Java, Groovy, R, MAFFT and
-FastTree for the full knowledge-graph and cross-paper workflow. Raptor
+`environment/environment.yml` is the editable cross-platform recipe and pins
+Java, Groovy, R, MAFFT, FastTree, Matplotlib, and FreeType. The explicit Linux
+lock above is the authoritative byte-level runtime for the reviewed release.
+Raptor
 `rapper` `2.0.16` is built separately from its checksum-pinned upstream source:
 
 ```bash

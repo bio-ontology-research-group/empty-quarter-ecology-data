@@ -149,6 +149,18 @@ else
     > "$output_dir/python_packages.txt"
 fi
 
+python3 - > "$output_dir/figure_runtime.tsv" <<'PY'
+import sys
+
+import matplotlib
+from matplotlib import ft2font
+
+print("component\tversion")
+print(f"python\t{sys.version.split()[0]}")
+print(f"matplotlib\t{matplotlib.__version__}")
+print(f"freetype\t{ft2font.__freetype_version__}")
+PY
+
 {
   printf 'schema_version\texecution-environment-v1\n'
   printf 'role\texecuted-analysis-task-environment\n'
@@ -182,6 +194,14 @@ fi
   )"
   printf 'environment_yml_sha256\t%s\n' "$(
     sha256sum "$project_root/workflow/environment.yml" |
+      cut -d' ' -f1
+  )"
+  printf 'conda_explicit_lock_sha256\t%s\n' "$(
+    sha256sum "$project_root/workflow/conda-linux-64.lock" |
+      cut -d' ' -f1
+  )"
+  printf 'pip_overlay_lock_sha256\t%s\n' "$(
+    sha256sum "$project_root/workflow/pip-overlay.lock.txt" |
       cut -d' ' -f1
   )"
   printf 'python_package_inventory_method\t%s\n' \
@@ -254,6 +274,7 @@ payload = {
         name: evidence(output_dir / name)
         for name in (
             "environment.tsv",
+            "figure_runtime.tsv",
             "tool_versions.tsv",
             "python_packages.txt",
             "r_session_info.txt",
@@ -261,8 +282,9 @@ payload = {
     },
     "interpretation": (
         "These versions were queried inside the environment that executed "
-        "this Nextflow process. environment.yml is a declared build input, "
-        "not evidence that its versions were executed."
+        "this Nextflow process. The explicit Conda lock, pip overlay, and "
+        "environment.yml are declared build inputs; the queried inventory "
+        "is the evidence for the versions that actually executed."
     ),
 }
 (output_dir / "execution_environment_manifest.json").write_text(

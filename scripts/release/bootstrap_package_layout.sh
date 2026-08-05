@@ -126,6 +126,12 @@ link_path \
   "$package_root/workflow/environment.yml" \
   "$package_root/environment/environment.yml"
 link_path \
+  "$package_root/workflow/conda-linux-64.lock" \
+  "$package_root/environment/conda-linux-64.lock"
+link_path \
+  "$package_root/workflow/pip-overlay.lock.txt" \
+  "$package_root/environment/pip-overlay.lock.txt"
+link_path \
   "$package_root/workflow/requirements.in" \
   "$package_root/environment/requirements.in"
 link_path \

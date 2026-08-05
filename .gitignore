@@ -3,7 +3,9 @@
 /data/
 /data-paper/
 /paper/zenodo
+/workflow/conda-linux-64.lock
 /workflow/environment.yml
+/workflow/pip-overlay.lock.txt
 /workflow/requirements.in
 /workflow/requirements.lock.txt
 /config/ph/ph_measurements.shex

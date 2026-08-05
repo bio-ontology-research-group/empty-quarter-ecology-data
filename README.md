@@ -4,13 +4,18 @@ This private BORG repository is the reproducible companion to the Scientific
 Data manuscript *A multimodal field dataset and semantic knowledge graph for
 the Rub' al-Khali desert microbiome*. It contains the active manuscript,
 source metadata, ontology and ShEx sources, generated tractable modules,
-analysis code, validation evidence, a hash-locked Python environment and the
-Nextflow workflow.
+analysis code, validation evidence, an explicit Linux environment lock, a
+hash-locked Python environment, and the Nextflow workflow.
 
 Start with [REPRODUCE.md](REPRODUCE.md). Files too large for ordinary Git are
 identified in [BULK_ARTIFACTS.tsv](BULK_ARTIFACTS.tsv) and are retrieved from a
 private, checksum-pinned pre-release. `make verify`, `make test` and
 `make paper` provide the short verification path.
+
+For the exact Linux/x86-64 runtime used to render the reviewed figures and run
+the final workflow, use `make env-linux-exact`. The explicit package URLs and
+archive digests are in `environment/conda-linux-64.lock`; the editable
+cross-platform recipe remains in `environment/environment.yml`.
 
 Run every real knowledge-graph build on `ws` or Ontolinator. Local machines may
 run regression tests, manuscript builds, and the explicitly stubbed workflow,

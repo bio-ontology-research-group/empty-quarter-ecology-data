@@ -106,10 +106,12 @@ workflow/bin/bootstrap_nextflow.sh run workflow/main.nf \
 ```
 
 `bare` is explicitly containerless: every task uses the current host
-environment (with the local `.venv` prepended when present).
-`environment.yml` is then a build recipe only; it is not evidence that those
-versions executed. For a fully containerized release, build the environment
-from `environment.yml`, record its explicit lock, and supply the resulting
+environment. `conda-linux-64.lock` is the exact package-build lock used for the
+reviewed Linux run; `pip-overlay.lock.txt` adds only the two hash-locked
+pip-only packages without replacing Conda dependencies. `environment.yml`
+remains the editable cross-platform recipe. The execution stage records the
+actual package inventory and the hashes of all three declarations. For a fully
+containerized release, build from the explicit lock and supply the resulting
 analysis and TeX container images:
 
 ```bash
@@ -139,8 +141,8 @@ uv pip compile workflow/requirements.in \
 ```
 
 `environment.yml` additionally pins the R and command-line components used by
-the advanced/legacy diagnostics. Release containers must be referenced by
-immutable digest.
+the advanced diagnostics. Release containers must be referenced by immutable
+digest.
 
 On a workstation with Docker but no Singularity, use `ws_host`. All analysis,
 including `CAPTURE_EXECUTION_ENVIRONMENT`, then runs in the actual host

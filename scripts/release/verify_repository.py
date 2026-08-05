@@ -95,6 +95,8 @@ def main() -> int:
 
     for required in (
         "PRE_RELEASE_MANIFEST.tsv",
+        "environment/conda-linux-64.lock",
+        "environment/pip-overlay.lock.txt",
         "environment/requirements.lock.txt",
         "metadata/DATA_DICTIONARY.tsv",
         "ontology/rubalkhali_kb.owl",

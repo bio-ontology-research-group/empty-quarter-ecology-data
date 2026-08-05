@@ -1,9 +1,11 @@
 SHELL := /usr/bin/env bash
 PYTHON ?= python3
 VENV ?= .venv
+MAMBA ?= micromamba
+CONDA_ENV ?= .conda-env
 SOURCE_DATE_EPOCH ?= 1785888000
 
-.PHONY: bootstrap env manifest verify test paper evidence-stub clean
+.PHONY: bootstrap env env-linux-exact manifest verify test paper evidence-stub clean
 
 bootstrap:
 	bash scripts/release/bootstrap_package_layout.sh .
@@ -11,6 +13,12 @@ bootstrap:
 env:
 	uv venv --python 3.11 $(VENV)
 	uv pip sync --python $(VENV)/bin/python environment/requirements.lock.txt
+
+env-linux-exact:
+	$(MAMBA) create --yes --prefix "$(CURDIR)/$(CONDA_ENV)" \
+		--file environment/conda-linux-64.lock
+	"$(CURDIR)/$(CONDA_ENV)/bin/python" -m pip install \
+		--no-deps --require-hashes -r environment/pip-overlay.lock.txt
 
 manifest: bootstrap
 	$(PYTHON) scripts/release/build_repository_manifest.py . --write

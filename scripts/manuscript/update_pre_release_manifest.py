@@ -828,8 +828,8 @@ DIRECTORY_RULES: tuple[tuple[str, tuple[str, str, str]], ...] = (
         (
             "execution-environment",
             "audit-evidence",
-            "pinned Conda recipe, direct Python requirements and hash-locked "
-            "Python environment used by the reproducible workflow",
+            "explicit Linux Conda package lock, pinned cross-platform recipe, "
+            "and hash-locked Python inputs used by the reproducible workflow",
         ),
     ),
     (
