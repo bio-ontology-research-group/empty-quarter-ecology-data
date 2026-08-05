@@ -44,6 +44,16 @@
 *.synctex.gz
 *.toc
 
+# These project-generated audit logs are declared release evidence. Keep the
+# allow-list explicit so ordinary workflow and LaTeX logs remain local.
+!/evidence/core-kg-regeneration/logs/*.log
+!/evidence/ph/ph_negative_missing_unit.log
+!/evidence/ph/predecessor/kg/shex_validation.log
+!/evidence/ph/shex_validation.log
+!/evidence/semantic-validation/control_semantic_validation_20260801.log
+!/evidence/semantic-validation/semantic_validation_20260801.log
+!/evidence/taxonomy-abox/taxonomy_abox_streaming_validation.log
+
 # Editors and operating systems.
 *.bak
 *.bak[0-9]*

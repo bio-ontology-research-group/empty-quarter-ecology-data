@@ -1,0 +1,12 @@
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Loading sample mappings from rubalkhali_samples.owl...
+Loaded 1238 sequenced samples from SRA sheet.
+ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+Processing sheet: Trip1
+Processing sheet: Trip2
+Processing sheet: Trip3
+Processing sheet: Trip4
+Processing sheet: Trip5
+Success: Generated data/processed/ontology/rubalkhali_dna.owl

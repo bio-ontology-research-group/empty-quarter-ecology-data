@@ -1,6 +1,7 @@
 import csv
 import hashlib
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -256,17 +257,26 @@ def test_generator_is_byte_reproducible(tmp_path: Path) -> None:
 
 
 def test_shared_ph_version_is_provenance_not_article_prose() -> None:
-    if not (ROOT / "empty-quarter-amplicon/main.tex").is_file():
-        if (ROOT / "data-paper").is_dir():
-            pytest.fail("active ecology main.tex is missing from the root checkout")
+    configured_ecology = os.environ.get("EQ_ECOLOGY_PAPER")
+    ecology_root = (
+        Path(configured_ecology)
+        if configured_ecology
+        else ROOT / "empty-quarter-amplicon"
+    )
+    if not (ecology_root / "main.tex").is_file():
+        if configured_ecology:
+            pytest.fail(
+                "configured active ecology main.tex is missing: "
+                f"{ecology_root / 'main.tex'}"
+            )
         pytest.skip("submission manuscripts are not part of the data package")
-    ecology_main = (ROOT / "empty-quarter-amplicon/main.tex").read_text(
+    ecology_main = (ecology_root / "main.tex").read_text(
         encoding="utf-8"
     )
     ecology_supplement = (
-        ROOT / "empty-quarter-amplicon/supplement.tex"
+        ecology_root / "supplement.tex"
     ).read_text(encoding="utf-8")
-    ecology_ph = (ROOT / "empty-quarter-amplicon/ph_shared_v1.tex").read_text(
+    ecology_ph = (ecology_root / "ph_shared_v1.tex").read_text(
         encoding="utf-8"
     )
     data_paper = "\n".join(
@@ -295,7 +305,7 @@ def test_shared_ph_version_is_provenance_not_article_prose() -> None:
     assert VERSION in data_paper
     assert "EQ-PH-DATA-" not in ecology_main + ecology_supplement + data_paper
 
-    generated = ROOT / "empty-quarter-amplicon/generated/ph_shared_v1_values.tex"
+    generated = ecology_root / "generated/ph_shared_v1_values.tex"
     manifest = json.loads(
         (generated.with_suffix(".manifest.json")).read_text(encoding="utf-8")
     )

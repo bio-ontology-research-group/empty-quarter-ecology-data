@@ -1,0 +1,6 @@
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Processing lab XRF table: xrf_lab_table_filtered.tsv
+Processing lab XRF table: xrf_lab_table_trips1-4.tsv
+Success: Regenerated rubalkhali_xrf.owl with soil-type distinction.

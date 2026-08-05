@@ -1,0 +1,44 @@
+Laboratory-control semantic validation
+Executed: 2026-08-01T11:49:00+03:00
+
+$ ./.venv/bin/python scripts/rdf/generate_controls_abox.py
+Generated 3,800 triples, 489 registered entities, 51 roles and 47 sequence occurrences.
+
+$ ./.venv/bin/python scripts/rdf/generate_controls_abox.py
+Generated 3,800 triples, 489 registered entities, 51 roles and 47 sequence occurrences.
+
+$ ./.venv/bin/python scripts/validation/validate_controls.py
+PASS: control validation (489 entities, 3,800 triples, 51 roles, 47 sequence occurrences, 351 candidate ASVs)
+
+$ ./.venv/bin/python -m pytest -q tests/test_control_negative_invariants.py tests/test_control_kg.py tests/test_control_author_confirmation.py
+.....................                                                    [100%]
+21 passed in 0.72s
+
+$ groovy tests/shex_negatives/run_tests.groovy
+============================================================
+  Released-shape negative fixtures
+============================================================
+  ✅ sampling site with coordinates — CONFORM
+  ✅ sampling site missing coordinates — REJECT
+  ✅ canonical climate measurement — CONFORM
+  ✅ measurement payload with an invalid datatype — REJECT
+  ✅ reversed measurement link (quality subject of SIO_000215) — REJECT
+  ✅ laboratory XRF process with an input — CONFORM
+  ✅ XRF process missing both input and target — REJECT
+  ✅ complete laboratory-control pattern — CONFORM
+  ✅ extraction blank realized in a PCR process — REJECT
+  ✅ expected-taxon assertion with source-less specification — REJECT
+
+============================================================
+  ALL 10 SHAPE FIXTURES BEHAVED AS DECLARED
+============================================================
+
+$ ./.venv/bin/python scripts/validation/check_iri_registry.py
+Scanned 12 Groovy/Python generator files, 160 unique RAK IRIs declared, 160 declarations, 235 uses.
+✅ IRI registry: no conflicts, no undeclared class/property IRIs.
+
+Independent RDF checks
+PASS: Turtle and RDF/XML are isomorphic at 3,800 triples.
+PASS: all four declared SIO inverse pairs have reciprocal closure.
+PASS: two consecutive generator runs produced byte-identical outputs.
+PASS: the supplied full semantic-validation record and log agree.

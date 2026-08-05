@@ -1,0 +1,10 @@
+{
+  "duration_seconds": 465.029,
+  "execution_errors": [],
+  "input_bytes": 6722670815,
+  "input_sha256": "d78be36a0fb3f91a28bec4c6489ca1a34d97c576e10cd2c92fc59e4dfd0eb808",
+  "report": "/home/leechuck/Public/software/empty-quarter/results/kg-validation-current-20260729-1/validation/taxonomy_abox_streaming_validation.json",
+  "status": "passed",
+  "triples": 44528482,
+  "violations": 0
+}
