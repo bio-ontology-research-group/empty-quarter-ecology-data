@@ -1,6 +1,7 @@
 SHELL := /usr/bin/env bash
 PYTHON ?= python3
 VENV ?= .venv
+SOURCE_DATE_EPOCH ?= 1785888000
 
 .PHONY: bootstrap env manifest verify test paper evidence-stub clean
 
@@ -28,8 +29,10 @@ test: bootstrap
 		workflow/tests/test_release_dictionary.py
 
 paper:
-	cd paper && latexmk -pdf -interaction=nonstopmode -halt-on-error sn-article.tex
-	cd paper && latexmk -pdf -interaction=nonstopmode -halt-on-error supplement.tex
+	cd paper && SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) FORCE_SOURCE_DATE=1 \
+		latexmk -pdf -interaction=nonstopmode -halt-on-error sn-article.tex
+	cd paper && SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) FORCE_SOURCE_DATE=1 \
+		latexmk -pdf -interaction=nonstopmode -halt-on-error supplement.tex
 
 evidence-stub: bootstrap
 	@echo "Stub only: run every real KG build on ws or Ontolinator."

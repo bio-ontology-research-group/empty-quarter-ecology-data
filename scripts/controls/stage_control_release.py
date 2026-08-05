@@ -77,13 +77,21 @@ ECOLOGY_SCRIPTS = (
     "distance_decay_turnover.py",
     "environment_associations.py",
     "evenness_decomposition_analysis.py",
+    "functional_redundancy_null.py",
     "geographic_prediction.py",
+    "headline_uncertainty_summary.py",
     "make_submission_figures.py",
+    "measured_function_summary.py",
+    "midpoint_root_tree.py",
     "picrust2_ecology.py",
+    "pma_endpoint_analysis.py",
+    "rain_pulse_response.py",
     "rain_response_window.py",
+    "run_rain_pulse_suite.py",
     "spatial_resolution_sensitivity.py",
     "spatial_turnover_rescue.py",
     "xrf_community_clr_sensitivity.py",
+    "xrf_community_rescue.py",
 )
 
 CORE_ONTOLOGY_MODULES = (
@@ -144,7 +152,33 @@ ECOLOGY_CANONICAL_DIRECTORIES = (
     ("analysis/v3/environment_associations", "environment_associations"),
     ("analysis/v3/picrust2_ecology", "picrust2_ecology"),
     ("analysis/v3/rain_response_window", "rain_response_window"),
+    ("analysis/v3/rain_pulse_response", "rain_pulse_response"),
+    (
+        "analysis/v3/rain_pulse_response_open_meteo",
+        "rain_pulse_response_open_meteo",
+    ),
+    (
+        "analysis/v3/rain_pulse_sensitivities",
+        "rain_pulse_sensitivities",
+    ),
     ("analysis/v3/cross_desert_context", "cross_desert_context"),
+    ("analysis/v3/pma_endpoint_results", "pma_endpoint_results"),
+    (
+        "analysis/v3/measured_function_summary_results",
+        "measured_function_summary_results",
+    ),
+    (
+        "analysis/v3/functional_redundancy_results",
+        "functional_redundancy_results",
+    ),
+    (
+        "analysis/v3/functional_redundancy_sensitivity",
+        "functional_redundancy_sensitivity",
+    ),
+    ("analysis/v3/headline_uncertainty", "headline_uncertainty"),
+    ("analysis/v3/phylo_signal_results", "phylo_signal_results"),
+    ("analysis/v3/network_rescue/results", "network_rescue/results"),
+    ("analysis/v3/xrf_community_rescue", "xrf_community_rescue"),
 )
 
 CROSS_DESERT_INPUTS = (

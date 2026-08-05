@@ -46,7 +46,7 @@ import numpy as np
 import pandas as pd
 
 
-SCHEMA_VERSION = "1.0"
+SCHEMA_VERSION = "1.1"
 POSITIONS = ("Surface", "Deep", "Rhizosphere")
 POSITION_LABELS = {
     "Surface": "surface",
@@ -87,6 +87,8 @@ class LocationResult:
     displacement_ci_low: float
     displacement_ci_high: float
     standardized_displacement: float
+    standardized_displacement_ci_low: float
+    standardized_displacement_ci_high: float
     pseudo_f: float
     permutation_p: float
     direction_cosine_vs_primary: float
@@ -371,13 +373,27 @@ def paired_location(
     )
     boot_rng = np.random.default_rng(seed + 1)
     indices = boot_rng.integers(0, n_sites, size=(bootstrap, n_sites))
-    boot = np.linalg.norm(differences[indices].mean(axis=1), axis=1)
+    boot_differences = differences[indices]
+    boot = np.linalg.norm(boot_differences.mean(axis=1), axis=1)
+    boot_scale = np.linalg.norm(boot_differences, axis=2).mean(axis=1)
+    standardized_boot = np.divide(
+        boot,
+        boot_scale,
+        out=np.full_like(boot, np.nan),
+        where=boot_scale > 0,
+    )
     return {
         "displacement": displacement,
         "displacement_ci_low": float(np.quantile(boot, 0.025)),
         "displacement_ci_high": float(np.quantile(boot, 0.975)),
         "standardized_displacement": (
             displacement / per_site_norm if per_site_norm > 0 else math.nan
+        ),
+        "standardized_displacement_ci_low": float(
+            np.nanquantile(standardized_boot, 0.025)
+        ),
+        "standardized_displacement_ci_high": float(
+            np.nanquantile(standardized_boot, 0.975)
         ),
         "permutation_p": permutation_p,
         "mean_difference": mean_difference,
@@ -485,6 +501,8 @@ def run_configuration(
             displacement_ci_low=math.nan,
             displacement_ci_high=math.nan,
             standardized_displacement=math.nan,
+            standardized_displacement_ci_low=math.nan,
+            standardized_displacement_ci_high=math.nan,
             pseudo_f=observed_f,
             permutation_p=omnibus_p,
             direction_cosine_vs_primary=math.nan,
@@ -533,6 +551,12 @@ def run_configuration(
                 displacement_ci_high=result["displacement_ci_high"],
                 standardized_displacement=result[
                     "standardized_displacement"
+                ],
+                standardized_displacement_ci_low=result[
+                    "standardized_displacement_ci_low"
+                ],
+                standardized_displacement_ci_high=result[
+                    "standardized_displacement_ci_high"
                 ],
                 pseudo_f=pseudo_f(pair_tensor),
                 permutation_p=result["permutation_p"],
@@ -643,6 +667,10 @@ def decision(
                 base.displacement_ci_high,
             ],
             "standardized_displacement": base.standardized_displacement,
+            "standardized_displacement_ci": [
+                base.standardized_displacement_ci_low,
+                base.standardized_displacement_ci_high,
+            ],
             "permutation_p": base.permutation_p,
             "q_within_primary_family": primary_q,
             "taxon_and_zero_sensitivities_supported": sensitivity_supported,
@@ -906,6 +934,8 @@ def main() -> None:
             "displacement_ci_low",
             "displacement_ci_high",
             "standardized_displacement",
+            "standardized_displacement_ci_low",
+            "standardized_displacement_ci_high",
             "pseudo_f",
             "permutation_p",
             "q_primary_family",

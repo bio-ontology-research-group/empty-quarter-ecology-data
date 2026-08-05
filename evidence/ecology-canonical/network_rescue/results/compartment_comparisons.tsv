@@ -1,0 +1,4 @@
+compartment_a	compartment_b	raw_density_difference_a_minus_b	bootstrap_median_density_difference	bootstrap_ci_low	bootstrap_ci_high	bootstrap_probability_a_greater_b	stable_edges_a	stable_edges_b	stable_edge_intersection	stable_edge_union	stable_edge_jaccard	sensitivity_configurations	fraction_same_density_direction_as_primary	bootstrap_ci_excludes_zero	direction_robust_across_sensitivity	comparative_density_supported
+Surface	Deep	-0.006012658228	-0.002848101266	-0.01424050633	0.008876582278	0.275	180	221	74	327	0.2262996942	9	0.7777777778	false	false	false
+Surface	Rhizosphere	-0.01708860759	-0.004905063291	-0.0161471519	0.006969936709	0.21	180	237	79	338	0.2337278107	9	0.6666666667	false	false	false
+Deep	Rhizosphere	-0.01107594937	-0.001582278481	-0.01550632911	0.01044303797	0.41	221	237	76	382	0.1989528796	9	0.6666666667	false	false	false

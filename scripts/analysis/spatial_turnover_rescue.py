@@ -33,9 +33,10 @@ from typing import Any, Iterable, Mapping, Sequence
 
 import numpy as np
 import pandas as pd
+from scipy import stats
 
 
-SCHEMA_VERSION = "1.0"
+SCHEMA_VERSION = "1.1"
 COMPARTMENTS = ("Surface", "Deep", "Rhizosphere")
 SAMPLE_RE = re.compile(
     r"^(?:e\d+_)?(?P<prefix>[TFSV])?(?P<site>\d+)"
@@ -63,6 +64,9 @@ class SpatialResult:
     permutation_p: float
     residual_moran_i: float
     residual_moran_p: float
+    partial_r2_jackknife_se: float = float("nan")
+    partial_r2_ci_low: float = float("nan")
+    partial_r2_ci_high: float = float("nan")
 
 
 def sample_metadata(sample_id: str) -> dict[str, Any] | None:
@@ -296,6 +300,23 @@ def fit_multivariate(
     return partial_r2, pseudo_f, residual
 
 
+def delete_one_site_interval(
+    estimate: float, values: np.ndarray
+) -> tuple[float, float, float]:
+    """Return delete-one-site jackknife SE and a 95% t interval."""
+    jackknife = np.asarray(values, dtype=float)
+    n = len(jackknife)
+    standard_error = math.sqrt(
+        (n - 1) / n * float(np.square(jackknife - jackknife.mean()).sum())
+    )
+    critical = float(stats.t.ppf(0.975, df=n - 1))
+    return (
+        standard_error,
+        max(0.0, estimate - critical * standard_error),
+        min(1.0, estimate + critical * standard_error),
+    )
+
+
 def symmetric_knn_weights(
     x: np.ndarray,
     y: np.ndarray,
@@ -348,6 +369,18 @@ def analyse(
     spatial = coordinates.set_index("site").loc[sites]
     design = design_matrix(spatial["transect_km"].to_numpy(), trend_degree)
     partial_r2, pseudo_f, residual = fit_multivariate(response, design)
+    jackknife_r2 = []
+    for omitted_site in range(len(sites)):
+        keep = np.arange(len(sites)) != omitted_site
+        jackknife_design = design_matrix(
+            spatial["transect_km"].to_numpy()[keep], trend_degree
+        )
+        jackknife_r2.append(
+            fit_multivariate(response[keep], jackknife_design)[0]
+        )
+    jackknife_se, ci_low, ci_high = delete_one_site_interval(
+        partial_r2, np.asarray(jackknife_r2)
+    )
     weights = symmetric_knn_weights(
         spatial["x_km"].to_numpy(), spatial["y_km"].to_numpy()
     )
@@ -375,6 +408,9 @@ def analyse(
         n_sites=len(sites),
         n_groups=n_groups,
         partial_r2=partial_r2,
+        partial_r2_jackknife_se=jackknife_se,
+        partial_r2_ci_low=ci_low,
+        partial_r2_ci_high=ci_high,
         pseudo_f=pseudo_f,
         permutation_p=permutation_p,
         residual_moran_i=observed_moran,
@@ -437,6 +473,13 @@ def decision(results: Sequence[SpatialResult]) -> dict[str, Any]:
         "status": status,
         "permitted_wording": wording,
         "primary_partial_r2": primary.partial_r2,
+        "primary_partial_r2_95_jackknife_ci": [
+            primary.partial_r2_ci_low,
+            primary.partial_r2_ci_high,
+        ],
+        "uncertainty_method": (
+            "delete-one-site jackknife standard error with a 95% t interval"
+        ),
         "primary_permutation_p": primary.permutation_p,
         "primary_residual_moran_i": primary.residual_moran_i,
         "primary_residual_moran_p": primary.residual_moran_p,
@@ -528,6 +571,9 @@ def main() -> None:
             "n_sites",
             "n_groups",
             "partial_r2",
+            "partial_r2_jackknife_se",
+            "partial_r2_ci_low",
+            "partial_r2_ci_high",
             "pseudo_f",
             "permutation_p",
             "residual_moran_i",
@@ -559,6 +605,9 @@ def main() -> None:
         verdict["permitted_wording"],
         "",
         f"- Primary partial R2: {verdict['primary_partial_r2']:.4f}",
+        "- Primary partial R2 95% delete-one-site jackknife interval: "
+        f"{verdict['primary_partial_r2_95_jackknife_ci'][0]:.4f}--"
+        f"{verdict['primary_partial_r2_95_jackknife_ci'][1]:.4f}",
         f"- Primary permutation p: {verdict['primary_permutation_p']:.4g}",
         f"- Primary residual multivariate Moran I: "
         f"{verdict['primary_residual_moran_i']:.4f}",

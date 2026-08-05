@@ -42,6 +42,47 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         duplicates = sorted({key for key in lowered if lowered.count(key) > 1})
         self.assertEqual([], duplicates)
 
+    def test_confirmed_author_order_and_affiliations(self) -> None:
+        source = self.text("sn-article.tex")
+        authors = re.findall(
+            r"^\\author\*?\[([0-9]+)\]\{\\fnm\{([^{}]+)\} "
+            r"\\sur\{([^{}]+)\}\}",
+            source,
+            re.MULTILINE,
+        )
+        expected = [
+            ("1", "Rund", "Tawfiq"),
+            ("1", "Marwa", "Abdelhakim"),
+            ("3", "Sulaiman M.", "Alajel"),
+            ("1", "Mohammed", "Alarawi"),
+            ("1", "Hind", "Aldakhil"),
+            ("1", "Abderahmane", "Derouiche"),
+            ("4", "Daniela I.", "Drautz-Moses"),
+            ("7", "Michel", "Dumontier"),
+            ("6", "Raik", r"Gr\"unberg"),
+            ("1", "Maxat", "Kulmanov"),
+            ("1", "Alejandra", "Lopez Velazquez"),
+            ("2", "Susana", "Martinez Arbas"),
+            ("1", "Kexin", "Niu"),
+            ("1", "Krishnakumar", "Sivakumar"),
+            ("5", "Tiannyu", "Wang"),
+            ("4", "Xiang", "Zhao"),
+            ("1", "Jood Kamal", "Zubair"),
+            ("5", "Magnus", "Rueping"),
+            ("1", "Robert", "Hoehndorf"),
+        ]
+        self.assertEqual(expected, authors)
+        self.assertIn("Bio-Ontology Research Group (BORG)", source)
+        self.assertIn("Physical Science and Engineering (PSE) Division", source)
+        self.assertIn(
+            "Biological and Environmental Science and Engineering (BESE)",
+            source,
+        )
+        self.assertIn(
+            "Institute of Data Science, Department of Advanced Computing",
+            source,
+        )
+
     def test_supplement_listings_can_wrap_long_iris(self) -> None:
         supplement = self.text("supplement.tex")
         self.assertIn("columns=fullflexible", supplement)

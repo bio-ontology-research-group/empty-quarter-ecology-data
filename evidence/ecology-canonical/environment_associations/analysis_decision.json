@@ -30,9 +30,11 @@
     "genus": "Benjamini-Hochberg across all 600 climate-genus tests"
   },
   "provenance": {
-    "random_operations": false,
+    "bootstrap_replicates": 9999,
+    "bootstrap_seed": 20260805,
+    "random_operations": true,
     "script": "analysis/v3/environment_associations.py",
-    "script_sha256": "9dbc318c871f84e81cde099292bfccad93f47b73c7aaff300624dd08260cfdce",
+    "script_sha256": "945df0ff89bcf8ab679c99dbcdc37e728c4d557cd74f599d25d80f00695990a5",
     "software": {
       "numpy": "2.1.3",
       "pandas": "2.2.3",
@@ -41,7 +43,13 @@
       "statsmodels": "0.14.6"
     }
   },
-  "schema_version": "1.0",
+  "sampling_uncertainty": {
+    "confidence_level": 0.95,
+    "method": "paired percentile bootstrap of the 60 complete sites; both variables are resampled together",
+    "replicates": 9999,
+    "seed": 20260805
+  },
+  "schema_version": "1.1",
   "selected_genera": 200,
   "status": "observational_climate_associations_supported"
 }

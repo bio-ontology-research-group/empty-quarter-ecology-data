@@ -29,9 +29,10 @@ from typing import Iterable, Sequence
 import numpy as np
 import pandas as pd
 import scipy
+from scipy import stats
 
 
-SCHEMA_VERSION = "1.0"
+SCHEMA_VERSION = "1.1"
 POSITIONS = ("Surface", "Deep", "Rhizosphere")
 POSITION_MAP = {
     "surface": "Surface",
@@ -261,12 +262,22 @@ def paired_test(
     null = np.linalg.norm(signs @ differences / len(differences), axis=1)
     boot_rng = np.random.default_rng(seed + 1)
     indices = boot_rng.integers(0, len(differences), size=(bootstrap, len(differences)))
-    boot = np.linalg.norm(differences[indices].mean(axis=1), axis=1)
+    boot_differences = differences[indices]
+    boot = np.linalg.norm(boot_differences.mean(axis=1), axis=1)
+    boot_scale = np.linalg.norm(boot_differences, axis=2).mean(axis=1)
+    standardized_boot = np.divide(
+        boot,
+        boot_scale,
+        out=np.full_like(boot, np.nan),
+        where=boot_scale > 0,
+    )
     return {
         "displacement": observed,
         "ci_low": float(np.quantile(boot, 0.025)),
         "ci_high": float(np.quantile(boot, 0.975)),
         "standardized_displacement": observed / mean_site_norm,
+        "standardized_ci_low": float(np.nanquantile(standardized_boot, 0.025)),
+        "standardized_ci_high": float(np.nanquantile(standardized_boot, 0.975)),
         "permutation_p": (1 + int(np.sum(null >= observed))) / (permutations + 1),
     }
 
@@ -298,6 +309,8 @@ def position_analysis(
             "ci_low": np.nan,
             "ci_high": np.nan,
             "standardized_displacement": np.nan,
+            "standardized_ci_low": np.nan,
+            "standardized_ci_high": np.nan,
             "pseudo_f": omnibus_f,
             "permutation_p": omnibus_p,
         }
@@ -381,6 +394,24 @@ def spatial_test(
     spatial = coordinates.set_index("site").loc[sites]
     design = quadratic_design(spatial["transect_km"].to_numpy(dtype=float))
     r2, observed = fit_multivariate(response, design)
+    jackknife = []
+    transect = spatial["transect_km"].to_numpy(dtype=float)
+    for omitted_site in range(len(response)):
+        keep = np.arange(len(response)) != omitted_site
+        jackknife.append(
+            fit_multivariate(
+                response[keep], quadratic_design(transect[keep])
+            )[0]
+        )
+    jackknife_values = np.asarray(jackknife)
+    jackknife_se = float(
+        np.sqrt(
+            (len(jackknife_values) - 1)
+            / len(jackknife_values)
+            * np.square(jackknife_values - jackknife_values.mean()).sum()
+        )
+    )
+    critical = float(stats.t.ppf(0.975, len(jackknife_values) - 1))
     rng = np.random.default_rng(seed)
     centred = response - response.mean(axis=0, keepdims=True)
     total_ss = float(np.square(centred).sum())
@@ -413,6 +444,9 @@ def spatial_test(
         "n_sites": len(sites),
         "n_grouped_profiles": n_groups,
         "quadratic_transect_r2": r2,
+        "quadratic_transect_r2_jackknife_se": jackknife_se,
+        "quadratic_transect_r2_ci_low": max(0.0, r2 - critical * jackknife_se),
+        "quadratic_transect_r2_ci_high": min(1.0, r2 + critical * jackknife_se),
         "pseudo_f": observed,
         "permutation_p": (exceed + 1) / (permutations + 1),
     }
@@ -696,6 +730,13 @@ def main() -> None:
         "primary_geography": {
             "n_sites": int(primary_spatial["n_sites"]),
             "quadratic_transect_r2": float(primary_spatial["quadratic_transect_r2"]),
+            "quadratic_transect_r2_95_jackknife_ci": [
+                float(primary_spatial["quadratic_transect_r2_ci_low"]),
+                float(primary_spatial["quadratic_transect_r2_ci_high"]),
+            ],
+            "uncertainty_method": (
+                "delete-one-site jackknife standard error with a 95% t interval"
+            ),
             "permutation_p": float(primary_spatial["permutation_p"]),
             "all_sensitivities_p_lt_0_05": bool((sensitivities_spatial["permutation_p"] < 0.05).all()),
         },
@@ -704,6 +745,14 @@ def main() -> None:
                 "n_sites": int(row["n_sites"]),
                 "n_complete_blocks": int(row["n_complete_blocks"]),
                 "standardized_displacement": None if pd.isna(row["standardized_displacement"]) else float(row["standardized_displacement"]),
+                "standardized_displacement_95_bootstrap_ci": (
+                    None
+                    if pd.isna(row["standardized_ci_low"])
+                    else [
+                        float(row["standardized_ci_low"]),
+                        float(row["standardized_ci_high"]),
+                    ]
+                ),
                 "permutation_p": float(row["permutation_p"]),
                 "q_primary_three": None if pd.isna(row.get("q_primary_three")) else float(row["q_primary_three"]),
             }

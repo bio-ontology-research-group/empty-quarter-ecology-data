@@ -1,10 +1,10 @@
-climate_variable	response	response_label	n_sites	spearman_rho	p_value	q_global_9	supported_q_lt_0_05
-mean_air_temperature_c	shannon	Shannon diversity	60	-0.7106615913	2.006285336e-10	6.018856007e-10	True
-mean_air_temperature_c	expected_richness_25k	Expected richness at 25,000 reads	60	-0.7946872659	3.465489772e-14	3.118940795e-13	True
-mean_air_temperature_c	normalized_evenness	Normalized evenness	60	-0.5838728503	9.737253644e-07	1.752705656e-06	True
-mean_monthly_rain_mm	shannon	Shannon diversity	60	-0.4704558405	0.0001487701498	0.0001673664185	True
-mean_monthly_rain_mm	expected_richness_25k	Expected richness at 25,000 reads	60	-0.4948247361	5.844927621e-05	7.514906942e-05	True
-mean_monthly_rain_mm	normalized_evenness	Normalized evenness	60	-0.298345305	0.02059311071	0.02059311071	True
-mean_relative_humidity_pct	shannon	Shannon diversity	60	-0.7006029623	4.616640526e-10	1.038744118e-09	True
-mean_relative_humidity_pct	expected_richness_25k	Expected richness at 25,000 reads	60	-0.7700686324	6.383345964e-13	2.872505684e-12	True
-mean_relative_humidity_pct	normalized_evenness	Normalized evenness	60	-0.5215760373	1.925309344e-05	2.887964016e-05	True
+climate_variable	response	response_label	n_sites	spearman_rho	bootstrap_ci_low	bootstrap_ci_high	bootstrap_replicates	p_value	q_global_9	supported_q_lt_0_05
+mean_air_temperature_c	shannon	Shannon diversity	60	-0.7106615913	-0.8328242804	-0.5201526456	9999	2.006285336e-10	6.018856007e-10	True
+mean_air_temperature_c	expected_richness_25k	Expected richness at 25,000 reads	60	-0.7946872659	-0.886615487	-0.63924576	9999	3.465489772e-14	3.118940795e-13	True
+mean_air_temperature_c	normalized_evenness	Normalized evenness	60	-0.5838728503	-0.7528543991	-0.358723205	9999	9.737253644e-07	1.752705656e-06	True
+mean_monthly_rain_mm	shannon	Shannon diversity	60	-0.4704558405	-0.6706682331	-0.2112886556	9999	0.0001487701498	0.0001673664185	True
+mean_monthly_rain_mm	expected_richness_25k	Expected richness at 25,000 reads	60	-0.4948247361	-0.7016281788	-0.2256974108	9999	5.844927621e-05	7.514906942e-05	True
+mean_monthly_rain_mm	normalized_evenness	Normalized evenness	60	-0.298345305	-0.5316410325	-0.0226844577	9999	0.02059311071	0.02059311071	True
+mean_relative_humidity_pct	shannon	Shannon diversity	60	-0.7006029623	-0.8344026277	-0.4904553895	9999	4.616640526e-10	1.038744118e-09	True
+mean_relative_humidity_pct	expected_richness_25k	Expected richness at 25,000 reads	60	-0.7700686324	-0.8766104983	-0.5927879406	9999	6.383345964e-13	2.872505684e-12	True
+mean_relative_humidity_pct	normalized_evenness	Normalized evenness	60	-0.5215760373	-0.7134104277	-0.2663408217	9999	1.925309344e-05	2.887964016e-05	True

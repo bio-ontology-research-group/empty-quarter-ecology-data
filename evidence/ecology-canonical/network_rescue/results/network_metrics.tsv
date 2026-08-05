@@ -1,0 +1,4 @@
+compartment	observations	unique_sites	taxa	alpha	raw_edges	raw_density	raw_positive_fraction	null_mean_edges	null_q95_edges	null_to_raw_edge_ratio	stable_edges	stable_density	stable_positive_fraction	stable_median_absolute_partial_correlation	expected_false_stable_edges	expected_false_fraction_among_stable	full_fit_convergence_warnings
+Surface	170	60	80	0.2	560	0.1772151899	0.4982142857	31.94	41	0.05703571429	180	0.05696202532	0.6277777778	0.1175649083	1.73	0.009611111111	0
+Deep	170	60	80	0.2	579	0.1832278481	0.5336787565	28.93	38	0.04996545769	221	0.06993670886	0.5746606335	0.107147203	1.92	0.008687782805	0
+Rhizosphere	170	60	80	0.2	614	0.1943037975	0.5276872964	31.99	41	0.0521009772	237	0.075	0.5864978903	0.1050944708	2.46	0.01037974684	0

@@ -249,7 +249,7 @@ def make_landscape_figure(
     climate_ax.axhline(0, color="#999999", linewidth=0.6)
     climate_ax.set(
         xlabel="West--east coordinate (km)",
-        ylabel="Standardized 49-month mean",
+        ylabel="Climate value relative to sites\n(standard deviations)",
         title="(c) Climate changes along the route",
     )
     climate_ax.legend(frameon=False, fontsize=7.4)
@@ -289,7 +289,7 @@ def make_landscape_figure(
         )
     distance_ax.set(
         xlabel="Distance between sites (km)",
-        ylabel="Mean Aitchison dissimilarity",
+        ylabel="Difference in relative composition\n(Aitchison dissimilarity)",
         title="(d) Communities diverge with distance",
     )
     distance_ax.legend(frameon=False, fontsize=7.3)
@@ -322,11 +322,11 @@ def make_landscape_figure(
         xticklabels=response_labels,
         yticks=np.arange(3),
         yticklabels=climate_labels,
-        title="(e) Diversity follows the climate gradient",
+        title="(e) Diversity is lower at higher climate values",
     )
     diversity_ax.tick_params(axis="x", labelsize=7.3)
     colourbar = fig.colorbar(image_plot, ax=diversity_ax, fraction=0.05, pad=0.04)
-    colourbar.set_label("Spearman $\\rho$")
+    colourbar.set_label("Rank association (Spearman $\\rho$)")
 
     supported = genus_correlations[
         genus_correlations["supported_q_lt_0_05"]
@@ -362,11 +362,11 @@ def make_landscape_figure(
         )
     genus_ax.axvline(0, color="#777777", linewidth=0.8)
     genus_ax.set(
-        xlabel="Genus CLR abundance (Spearman $\\rho$)",
+        xlabel="Rank association of relative genus abundance\n(Spearman $\\rho$)",
         yticks=genus_y,
         yticklabels=[rf"$\it{{{name}}}$" for name in selected.index],
         xlim=(-0.9, 0.9),
-        title="(f) Leading genera track the gradients",
+        title="(f) Genera associated with long-term climate",
     )
     genus_ax.legend(frameon=False, fontsize=6.8, loc="upper left")
 
@@ -410,12 +410,8 @@ def make_soil_position_figure(
     primary_location = primary_location.sort_values("contrast")
     if primary_location["contrast"].astype(str).tolist() != comparison_order:
         raise ValueError("Missing a primary paired composition contrast")
-    location_scale = (
-        primary_location["displacement"]
-        / primary_location["standardized_displacement"]
-    )
-    location_low = primary_location["displacement_ci_low"] / location_scale
-    location_high = primary_location["displacement_ci_high"] / location_scale
+    location_low = primary_location["standardized_displacement_ci_low"]
+    location_high = primary_location["standardized_displacement_ci_high"]
     axes[0].errorbar(
         primary_location["standardized_displacement"],
         y,
@@ -433,7 +429,7 @@ def make_soil_position_figure(
     axes[0].set(
         yticks=y,
         yticklabels=labels,
-        xlabel="Standardized Aitchison displacement",
+        xlabel="Consistency of composition shift\n(0 = cancelling, 1 = aligned)",
         title="(a) Paired composition",
     )
 
@@ -458,7 +454,7 @@ def make_soil_position_figure(
     axes[1].axvline(0, color="#777777", linewidth=0.8)
     axes[1].set(
         yticks=y,
-        xlabel="Paired Shannon difference",
+        xlabel="Shannon difference within sites",
         title="(b) Shannon diversity",
     )
     axes[1].tick_params(axis="y", labelleft=False)
@@ -491,7 +487,7 @@ def make_soil_position_figure(
     axes[2].axvline(0, color="#777777", linewidth=0.8)
     axes[2].set(
         yticks=y,
-        xlabel=r"Paired $H/\log(E[S_{25k}])$ difference",
+        xlabel="Normalized-evenness difference within sites",
         title="(c) Normalized evenness",
     )
     axes[2].tick_params(axis="y", labelleft=False)
@@ -546,14 +542,14 @@ def make_soil_position_figure(
         xticklabels=[rf"$\it{{{name}}}$" for name in selected_genera],
         yticks=np.arange(len(comparison_order)),
         yticklabels=labels,
-        title="(d) Leading genera in paired composition contrasts",
+        title="(d) Genera contributing most to position differences",
     )
     loading_ax.tick_params(axis="x", rotation=28, labelsize=8.0)
     loading_ax.tick_params(axis="y", labelsize=8.3)
     colourbar = fig.colorbar(
         image_plot, ax=loading_ax, fraction=0.025, pad=0.02
     )
-    colourbar.set_label("Mean paired CLR difference")
+    colourbar.set_label("Relative-abundance difference\n(log ratio)")
 
     fig.tight_layout(h_pad=2.0, w_pad=1.6)
     fig.savefig(output, bbox_inches="tight", metadata=PDF_METADATA)
@@ -563,7 +559,9 @@ def make_soil_position_figure(
 def make_function_control_figure(
     position: pd.DataFrame,
     ko_validation: pd.DataFrame,
+    ko_metrics: pd.DataFrame,
     pma_pairs: pd.DataFrame,
+    pma_summary: dict[str, Any],
     removal: pd.DataFrame,
     output: Path,
 ) -> None:
@@ -591,9 +589,8 @@ def make_function_control_figure(
     if primary["contrast"].astype(str).tolist() != contrast_order:
         raise ValueError("Missing a primary PICRUSt2 position contrast")
     y = np.arange(3)
-    pathway_scale = primary["displacement"] / primary["standardized_displacement"]
-    pathway_low = primary["ci_low"] / pathway_scale
-    pathway_high = primary["ci_high"] / pathway_scale
+    pathway_low = primary["standardized_ci_low"]
+    pathway_high = primary["standardized_ci_high"]
     axes[0, 0].errorbar(
         primary["standardized_displacement"],
         y,
@@ -611,7 +608,7 @@ def make_function_control_figure(
     axes[0, 0].set(
         yticks=y,
         yticklabels=contrast_labels,
-        xlabel="Standardized Aitchison displacement",
+        xlabel="Consistency of pathway shift\n(0 = cancelling, 1 = aligned)",
         title="(a) Predicted pathway profiles\ndiffer by soil position",
     )
     axes[0, 0].invert_yaxis()
@@ -625,18 +622,32 @@ def make_function_control_figure(
         linewidth=0.5,
     )
     median = float(np.median(validation_values))
+    median_metric = ko_metrics[
+        ko_metrics["metric"].eq("per_sample_ko_profile_spearman_median")
+    ]
+    if len(median_metric) != 1:
+        raise ValueError("Missing median KO-profile uncertainty result")
+    median_low = float(median_metric.iloc[0]["interval_low"])
+    median_high = float(median_metric.iloc[0]["interval_high"])
+    axes[0, 1].axvspan(
+        median_low,
+        median_high,
+        color="#CC3311",
+        alpha=0.18,
+        linewidth=0,
+    )
     axes[0, 1].axvline(median, color="#CC3311", linewidth=1.5)
     axes[0, 1].text(
         median - 0.008,
         axes[0, 1].get_ylim()[1] * 0.92,
-        f"median {median:.2f}",
+        f"median {median:.2f}\n95% interval {median_low:.2f}--{median_high:.2f}",
         ha="right",
         va="top",
         color="#CC3311",
         fontsize=8.5,
     )
     axes[0, 1].set(
-        xlabel="PICRUSt2--shotgun KO Spearman $\\rho$",
+        xlabel="Predicted vs shotgun gene-family ranking\n(Spearman $\\rho$)",
         ylabel="Matched samples",
         title="(b) Broad predictions agree\nwith shotgun ($n=125$)",
     )
@@ -675,6 +686,23 @@ def make_function_control_figure(
         title="(c) PMA lowers richness in 8 of 9 pairs",
     )
     axes[1, 0].legend(frameon=False, fontsize=8.0)
+    richness_uncertainty = pma_summary["richness_endpoint"][
+        "mean_difference_uncertainty"
+    ]
+    axes[1, 0].text(
+        0.03,
+        0.97,
+        "mean difference "
+        f"{richness_uncertainty['estimate']:.0f}\n"
+        "95% interval "
+        f"{richness_uncertainty['interval_low']:.0f} to "
+        f"{richness_uncertainty['interval_high']:.0f}",
+        transform=axes[1, 0].transAxes,
+        ha="left",
+        va="top",
+        fontsize=8.0,
+        bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.72},
+    )
 
     biological = removal[
         removal["role"].eq("compatible_biological_profile")
@@ -694,6 +722,14 @@ def make_function_control_figure(
     axes[1, 1].axhline(
         np.median(fractions), color="#CC3311", linewidth=1.2, linestyle="--"
     )
+    fraction_q1, fraction_q3 = np.quantile(fractions, [0.25, 0.75])
+    axes[1, 1].axhspan(
+        fraction_q1,
+        fraction_q3,
+        color="#CC3311",
+        alpha=0.10,
+        linewidth=0,
+    )
     axes[1, 1].set_yscale("log")
     axes[1, 1].set(
         xlabel="Trip 5 profiles, ordered by fraction",
@@ -703,7 +739,9 @@ def make_function_control_figure(
     axes[1, 1].text(
         0.03,
         0.95,
-        f"median {np.median(fractions):.2f}%\nmaximum {np.max(fractions):.1f}%",
+        f"median {np.median(fractions):.2f}%\n"
+        f"middle 50% {fraction_q1:.2f}--{fraction_q3:.2f}%\n"
+        f"maximum {np.max(fractions):.1f}%",
         transform=axes[1, 1].transAxes,
         ha="left",
         va="top",
@@ -723,6 +761,7 @@ def main() -> None:
     parser.add_argument("--functional-dir", type=Path, default=None)
     parser.add_argument("--environment-dir", type=Path, default=None)
     parser.add_argument("--picrust-dir", type=Path, default=None)
+    parser.add_argument("--rain-dir", type=Path, default=None)
     parser.add_argument("--control-dir", type=Path, default=None)
     parser.add_argument("--pma-dir", type=Path, default=None)
     parser.add_argument("--measured-function-dir", type=Path, default=None)
@@ -772,11 +811,11 @@ def main() -> None:
     output = args.output_dir.resolve()
     output.mkdir(parents=True, exist_ok=True)
 
-    rain_response_dir = core / "rain_response_window"
-    if not (rain_response_dir / "analysis_decision.json").is_file():
-        rain_response_dir = core.parent / "rain_response_window"
-    if not (rain_response_dir / "analysis_decision.json").is_file():
-        rain_response_dir = local_v3 / "rain_response_window"
+    rain_response_dir = (
+        args.rain_dir.resolve()
+        if args.rain_dir is not None
+        else local_v3 / "rain_pulse_response"
+    )
     distance_decay_dir = core / "distance_decay_turnover"
     if not (distance_decay_dir / "distance_decay_pairs.tsv").is_file():
         distance_decay_dir = core.parent / "distance_decay_turnover"
@@ -805,7 +844,7 @@ def main() -> None:
             core
             / "compartment_composition/paired_displacement_loadings.tsv"
         ),
-        "rain_response_figure": rain_response_dir / "rain_response_window.pdf",
+        "rain_response_figure": rain_response_dir / "rain_pulse_response.pdf",
         "rain_response_decision": rain_response_dir / "analysis_decision.json",
         "spatial_claim_verdict": (
             core / "spatial_turnover_rescue/results/claim_verdict.json"
@@ -832,6 +871,7 @@ def main() -> None:
         "ko_validation": (
             measured_function_dir / "per_sample_ko_correlations.tsv"
         ),
+        "ko_metrics": measured_function_dir / "summary_metrics.tsv",
         "pma_pairs": pma_dir / "pma_pair_endpoints.tsv",
         "control_removal": (
             control_dir / "trip5_removal_fraction_by_profile.tsv"
@@ -872,6 +912,7 @@ def main() -> None:
         input_paths["picrust_position_tests"], sep="\t"
     )
     ko_validation = pd.read_csv(input_paths["ko_validation"], sep="\t")
+    ko_metrics = pd.read_csv(input_paths["ko_metrics"], sep="\t")
     pma_pairs = pd.read_csv(input_paths["pma_pairs"], sep="\t")
     control_removal = pd.read_csv(
         input_paths["control_removal"], sep="\t"
@@ -931,6 +972,8 @@ def main() -> None:
             "displacement_ci_low",
             "displacement_ci_high",
             "standardized_displacement",
+            "standardized_displacement_ci_low",
+            "standardized_displacement_ci_high",
             "permutation_p",
         },
         input_paths["paired_composition_location"],
@@ -993,6 +1036,8 @@ def main() -> None:
             "ci_low",
             "ci_high",
             "standardized_displacement",
+            "standardized_ci_low",
+            "standardized_ci_high",
             "permutation_p",
         },
         input_paths["picrust_position_tests"],
@@ -1027,7 +1072,7 @@ def main() -> None:
         "pma": (pma_summary["status"], "paired_endpoints_only"),
         "rain_response": (
             rain_response_verdict["analysis_status"],
-            "response_window_not_identified",
+            "temporally_localized_association_borderline",
         ),
         "environment": (
             environment_verdict["status"],
@@ -1083,7 +1128,9 @@ def main() -> None:
     make_function_control_figure(
         picrust_position,
         ko_validation,
+        ko_metrics,
         pma_pairs,
+        pma_summary,
         control_removal,
         output_paths["function_controls"],
     )

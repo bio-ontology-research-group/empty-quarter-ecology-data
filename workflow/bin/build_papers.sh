@@ -26,7 +26,8 @@ case "$output_dir" in
   *) output_dir="$PWD/$output_dir" ;;
 esac
 
-export SOURCE_DATE_EPOCH="${SOURCE_DATE_EPOCH:-0}"
+export SOURCE_DATE_EPOCH="${SOURCE_DATE_EPOCH:-1785888000}"
+export FORCE_SOURCE_DATE="${FORCE_SOURCE_DATE:-1}"
 export TZ="${TZ:-UTC}"
 export LC_ALL="${LC_ALL:-C.UTF-8}"
 

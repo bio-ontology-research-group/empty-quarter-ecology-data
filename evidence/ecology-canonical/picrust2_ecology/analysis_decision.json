@@ -9,7 +9,7 @@
   "input_sha256": {
     "alpha": "e6083716b713a36a5e6984826b20107613a1fd65359172a1e9cf10a7b3161c2c",
     "descriptions": "cf7d23ac7d03d6174f5ee3cd919cfedc6f827927a0df0b1ac977a18aa6f7bdc3",
-    "measured_function": "d3d1931e95f45da73ca74c4f9a803e78e85c53129af83dd1c2c7f9594531d602",
+    "measured_function": "d90051c1ef5c1237c62df7f11a6bdfdeb0dad4cfce239571f2689306b22aacd5",
     "metadata": "4f6b4f67a54bd06f66a74e566e463ae5225116b53a23aa6f7b08002f6e2cb082",
     "nsti": "2a3468f5239627d8c22e1c3e9abeb7b8ddd0088e0676932c4e9f4e7913eb67e0",
     "pathways": "41bf98b763fa4b7dc392fcf25e2d4ccd37c5f7d351f7ce87002dea0ab3c6fa1d"
@@ -61,7 +61,12 @@
     "all_sensitivities_p_lt_0_05": true,
     "n_sites": 60,
     "permutation_p": 0.0001,
-    "quadratic_transect_r2": 0.23424681119179114
+    "quadratic_transect_r2": 0.23424681119179114,
+    "quadratic_transect_r2_95_jackknife_ci": [
+      0.15464262705223558,
+      0.3138509953313467
+    ],
+    "uncertainty_method": "delete-one-site jackknife standard error with a 95% t interval"
   },
   "primary_position": {
     "Deep-Surface": {
@@ -69,35 +74,48 @@
       "n_sites": 60,
       "permutation_p": 0.0194,
       "q_primary_three": 0.0194,
-      "standardized_displacement": 0.33003300412201897
+      "standardized_displacement": 0.33003300412201897,
+      "standardized_displacement_95_bootstrap_ci": [
+        0.29629172130910314,
+        0.5011996288845711
+      ]
     },
     "Rhizosphere-Deep": {
       "n_complete_blocks": 172,
       "n_sites": 60,
       "permutation_p": 0.0001,
       "q_primary_three": 0.00015000000000000001,
-      "standardized_displacement": 0.45263559276097903
+      "standardized_displacement": 0.45263559276097903,
+      "standardized_displacement_95_bootstrap_ci": [
+        0.4120725699230126,
+        0.5488486646064863
+      ]
     },
     "Rhizosphere-Surface": {
       "n_complete_blocks": 172,
       "n_sites": 60,
       "permutation_p": 0.0001,
       "q_primary_three": 0.00015000000000000001,
-      "standardized_displacement": 0.4290215075218419
+      "standardized_displacement": 0.4290215075218419,
+      "standardized_displacement_95_bootstrap_ci": [
+        0.3500250492821676,
+        0.5658686423969876
+      ]
     },
     "omnibus_three_positions": {
       "n_complete_blocks": 172,
       "n_sites": 60,
       "permutation_p": 0.0001,
       "q_primary_three": null,
-      "standardized_displacement": null
+      "standardized_displacement": null,
+      "standardized_displacement_95_bootstrap_ci": null
     }
   },
   "provenance": {
     "bootstrap": 2000,
     "permutations": 9999,
     "script": "analysis/v3/picrust2_ecology.py",
-    "script_sha256": "52f44796d79090378f4cefdde2c0dd7ea5e4401b29d43059a00b357fa9897d9d",
+    "script_sha256": "6db75dd264597ae16cfdf040e0d74b513b85a40588b9a0bd8a3c8e3832314db2",
     "seed": 20260804,
     "software": {
       "numpy": "2.1.3",
@@ -106,6 +124,6 @@
       "scipy": "1.14.1"
     }
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "status": "predicted_functional_structure_supported"
 }

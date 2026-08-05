@@ -1,0 +1,87 @@
+{
+  "analysis_date": "2026-08-05",
+  "input_files": [
+    {
+      "bytes": 1506,
+      "path": "analysis/v3/spatial_turnover_rescue/results/spatial_model_results.tsv",
+      "sha256": "14463f0c6464479b233f7c6edb5cadf5dfdf014c8e84958c13098edc192ee1cd"
+    },
+    {
+      "bytes": 2177,
+      "path": "analysis/v3/distance_decay_turnover/distance_decay_slopes.tsv",
+      "sha256": "ff82109b880e877f78f7b6f397de1f61b49d7c1bf8d23354331cdcfd7f060349"
+    },
+    {
+      "bytes": 900,
+      "path": "analysis/v3/distance_decay_turnover/turnover_nestedness_components.tsv",
+      "sha256": "e7183e06125b752b13fd5bb807a703fa1e7ae68277154a58357e3ca236d292c3"
+    },
+    {
+      "bytes": 9230,
+      "path": "analysis/v3/compartment_composition/compartment_location_results.tsv",
+      "sha256": "c036ab0cba2474cd086b5438b973eaa6f358e44a9c70182c2da9409e565729d8"
+    },
+    {
+      "bytes": 6377,
+      "path": "analysis/v3/results/paired_compartment_effects.tsv",
+      "sha256": "5841c45fe8c6c5d79f018814100dfa0455b817bb6a41201df2d693cec86b0d65"
+    },
+    {
+      "bytes": 2656,
+      "path": "analysis/v3/evenness_decomposition/paired_contrasts.tsv",
+      "sha256": "7b5dd22de48f8657c4b74448c9184a7605b15b33188a034dc04d59e855cd238c"
+    },
+    {
+      "bytes": 1510,
+      "path": "analysis/v3/environment_associations/climate_alpha_correlations.tsv",
+      "sha256": "6091025b75bdfb8636e0ea0f2fcbe44a24ad86c67a5d31df050eec6e682c53d3"
+    },
+    {
+      "bytes": 770,
+      "path": "analysis/v3/ph_shared_v1/ecology/ph_influence_sensitivity.tsv",
+      "sha256": "7aaea3973dca6eb89700686cb4234a67b0506467b9bdb35f374803e5ccc6618e"
+    },
+    {
+      "bytes": 1619,
+      "path": "analysis/v3/xrf_community_clr/clr_elemental_axis_models.tsv",
+      "sha256": "1e86a5b769502143633ed3bce0a689121fac63458cf2abb1590e229573e5e7e4"
+    },
+    {
+      "bytes": 3945,
+      "path": "analysis/v3/rain_pulse_sensitivities/summary.tsv",
+      "sha256": "0b24dbd8ea5e0846e14013de6a7789783aad2e901b199052f75b114ec19198ed"
+    },
+    {
+      "bytes": 1434,
+      "path": "analysis/v3/picrust2_ecology/geographic_profile_tests.tsv",
+      "sha256": "001159ba7a1743bc7d73564a002db3b9bcfd6753240d11d69c5e390eaf46ae4d"
+    },
+    {
+      "bytes": 5858,
+      "path": "analysis/v3/picrust2_ecology/position_profile_tests.tsv",
+      "sha256": "eb2c689eb6536e921acadbec57de2f5ed75e0ada37b5738fa30ea79b2076b62e"
+    },
+    {
+      "bytes": 1472,
+      "path": "analysis/v3/measured_function_summary_results/summary_metrics.tsv",
+      "sha256": "d90051c1ef5c1237c62df7f11a6bdfdeb0dad4cfce239571f2689306b22aacd5"
+    },
+    {
+      "bytes": 2525,
+      "path": "analysis/v3/pma_endpoint_results/pma_summary.json",
+      "sha256": "3e556a56512d85e2196bac55c68285b54390a822fcbb2c7b03299478fed80aaa"
+    },
+    {
+      "bytes": 25728,
+      "path": "analysis/v3/control_audit/trip5_removal_fraction_by_profile.tsv",
+      "sha256": "515b008f9c8e1887aa4e1aa80911e6679f0c4fa96f687c5ae668fa703d6df736"
+    }
+  ],
+  "n_estimates": 44,
+  "output": {
+    "path": "headline_uncertainty.tsv",
+    "sha256": "9563791ceb36e870195020919b02d463e2325d8a090551960f638f362372fef6"
+  },
+  "purpose": "typed uncertainty summary for manuscript reporting",
+  "schema_version": "1.0"
+}

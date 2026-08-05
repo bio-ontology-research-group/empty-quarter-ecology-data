@@ -31,6 +31,7 @@ from typing import Any, Sequence
 
 import numpy as np
 import pandas as pd
+from scipy import stats
 
 from spatial_turnover_rescue import (
     COMPARTMENTS,
@@ -123,6 +124,69 @@ def geographic_matrix(coordinates: pd.DataFrame, sites: Sequence[int]) -> np.nda
 def upper_triangle(matrix: np.ndarray) -> np.ndarray:
     rows, columns = np.triu_indices(matrix.shape[0], k=1)
     return matrix[rows, columns]
+
+
+def matrix_slope(geographic: np.ndarray, response: np.ndarray) -> float:
+    x = upper_triangle(geographic)
+    y = upper_triangle(response)
+    centred = x - x.mean()
+    return float(np.dot(centred, y) / np.square(centred).sum())
+
+
+def jackknife_interval(
+    estimate: float,
+    leave_one_values: Sequence[float],
+    *,
+    lower_bound: float | None = None,
+    upper_bound: float | None = None,
+) -> tuple[float, float, float]:
+    values = np.asarray(leave_one_values, dtype=float)
+    n = len(values)
+    standard_error = float(
+        np.sqrt((n - 1) / n * np.square(values - values.mean()).sum())
+    )
+    critical = float(stats.t.ppf(0.975, df=n - 1))
+    low = estimate - critical * standard_error
+    high = estimate + critical * standard_error
+    if lower_bound is not None:
+        low = max(lower_bound, low)
+    if upper_bound is not None:
+        high = min(upper_bound, high)
+    return standard_error, low, high
+
+
+def delete_one_site_slope_interval(
+    geographic: np.ndarray, response: np.ndarray
+) -> tuple[float, float, float]:
+    estimate = matrix_slope(geographic, response)
+    leave_one = []
+    for omitted in range(len(geographic)):
+        keep = np.arange(len(geographic)) != omitted
+        leave_one.append(
+            matrix_slope(
+                geographic[np.ix_(keep, keep)],
+                response[np.ix_(keep, keep)],
+            )
+        )
+    return jackknife_interval(estimate, leave_one)
+
+
+def delete_one_site_ratio_interval(
+    numerator: np.ndarray, denominator: np.ndarray
+) -> tuple[float, float, float]:
+    estimate = float(upper_triangle(numerator).mean() / upper_triangle(denominator).mean())
+    leave_one = []
+    for omitted in range(len(denominator)):
+        keep = np.arange(len(denominator)) != omitted
+        leave_one.append(
+            float(
+                upper_triangle(numerator[np.ix_(keep, keep)]).mean()
+                / upper_triangle(denominator[np.ix_(keep, keep)]).mean()
+            )
+        )
+    return jackknife_interval(
+        estimate, leave_one, lower_bound=0.0, upper_bound=1.0
+    )
 
 
 def sorensen_partition(
@@ -296,14 +360,18 @@ def main() -> None:
         list(pair_rows[0]),
     )
 
-    responses = {
-        f"aitchison::{compartment}": upper_triangle(matrix)
+    response_matrices = {
+        f"aitchison::{compartment}": matrix
         for compartment, matrix in aitchison.items()
     }
     for first, second in CONTRASTS:
-        responses[f"contrast::{first}-{second}"] = upper_triangle(
+        response_matrices[f"contrast::{first}-{second}"] = (
             aitchison[first] - aitchison[second]
         )
+    responses = {
+        name: upper_triangle(matrix)
+        for name, matrix in response_matrices.items()
+    }
 
     # Coverage-standardised presence/absence for the replacement partition.
     pooled = {
@@ -327,6 +395,9 @@ def main() -> None:
     partition_rows = []
     for compartment, drawn in rarefied.items():
         sorensen, simpson, nestedness = sorensen_partition(drawn > 0)
+        response_matrices[f"sorensen::{compartment}"] = sorensen
+        response_matrices[f"simpson_turnover::{compartment}"] = simpson
+        response_matrices[f"nestedness::{compartment}"] = nestedness
         responses[f"sorensen::{compartment}"] = upper_triangle(sorensen)
         responses[f"simpson_turnover::{compartment}"] = upper_triangle(simpson)
         responses[f"nestedness::{compartment}"] = upper_triangle(nestedness)
@@ -336,6 +407,12 @@ def main() -> None:
             np.log(library[:, None]) - np.log(library[None, :])
         )
         gradient_vector = upper_triangle(gradient)
+        turnover_share = float(
+            upper_triangle(simpson).mean() / upper_triangle(sorensen).mean()
+        )
+        turnover_se, turnover_ci_low, turnover_ci_high = (
+            delete_one_site_ratio_interval(simpson, sorensen)
+        )
         partition_rows.append(
             {
                 "compartment": compartment,
@@ -347,10 +424,10 @@ def main() -> None:
                 "mean_nestedness_resultant": float(
                     upper_triangle(nestedness).mean()
                 ),
-                "turnover_share_of_sorensen": float(
-                    upper_triangle(simpson).mean()
-                    / upper_triangle(sorensen).mean()
-                ),
+                "turnover_share_of_sorensen": turnover_share,
+                "turnover_share_jackknife_se": turnover_se,
+                "turnover_share_ci_low": turnover_ci_low,
+                "turnover_share_ci_high": turnover_ci_high,
                 "mean_bray_curtis_unstandardised": float(
                     upper_triangle(bray).mean()
                 ),
@@ -378,12 +455,18 @@ def main() -> None:
     for name, value in observed.items():
         family, _, label = name.partition("::")
         draws = null[name]
+        slope_se, slope_ci_low, slope_ci_high = delete_one_site_slope_interval(
+            geographic, response_matrices[name]
+        )
         slope_rows.append(
             {
                 "family": family,
                 "response": label,
                 "slope_per_km": value,
                 "slope_per_100km": value * 100.0,
+                "jackknife_se_per_100km": slope_se * 100.0,
+                "jackknife_ci_low_per_100km": slope_ci_low * 100.0,
+                "jackknife_ci_high_per_100km": slope_ci_high * 100.0,
                 "null_mean_slope_per_100km": float(draws.mean()) * 100.0,
                 "null_sd_slope_per_100km": float(draws.std(ddof=1)) * 100.0,
                 "two_sided_p": two_sided_p(value, draws),
@@ -427,6 +510,9 @@ def main() -> None:
         "response",
         "slope_per_km",
         "slope_per_100km",
+        "jackknife_se_per_100km",
+        "jackknife_ci_low_per_100km",
+        "jackknife_ci_high_per_100km",
         "null_mean_slope_per_100km",
         "null_sd_slope_per_100km",
         "two_sided_p",
@@ -445,7 +531,7 @@ def main() -> None:
         row["turnover_share_of_sorensen"] > 0.5 for row in partition_rows
     )
     verdict = {
-        "schema_version": "1.0",
+        "schema_version": "1.1",
         "status": (
             "compartment_slopes_differ"
             if any(contrast_supported.values())
@@ -454,6 +540,10 @@ def main() -> None:
         "matched_sites": len(matched),
         "site_pairs": int(len(matched) * (len(matched) - 1) // 2),
         "permutations": int(args.permutations),
+        "sampling_uncertainty": (
+            "95% t intervals from delete-one-site jackknife standard errors; "
+            "all distances involving the omitted site are removed together"
+        ),
         "omnibus_statistic": omnibus_observed,
         "omnibus_p": float(omnibus_p),
         "contrast_max_t_supported": contrast_supported,
@@ -510,6 +600,10 @@ def main() -> None:
         verdict["permitted_wording"],
         "",
         verdict["prohibited_wording"],
+        "",
+        "Sampling uncertainty is reported as a 95% t interval from a "
+        "delete-one-site jackknife. Every distance involving the omitted site "
+        "is removed together, so site pairs are never treated as independent.",
         "",
         "Evidence files: `distance_decay_pairs.tsv`,",
         "`distance_decay_slopes.tsv`, `turnover_nestedness_components.tsv`,",

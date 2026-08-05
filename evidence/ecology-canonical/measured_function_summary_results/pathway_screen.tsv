@@ -1,0 +1,6 @@
+pathway	source_screen_rule	positive_genome_records	interpretation
+CBB	joint RuBisCO and phosphoribulokinase marker call encoded by the source screen	132	candidate CBB encoded potential from the joint marker screen; not completeness, expression, or activity
+rTCA	ATP-citrate-lyase marker call encoded by the source screen	0	no positive record in the supplied screen; this is not evidence of biological absence
+WL	ACS/CODH marker call encoded by the source screen	0	no positive record in the supplied screen; this is not evidence of biological absence
+3HP	malonyl-CoA-reductase or propionyl-CoA-synthase marker call encoded by the source screen	0	no positive record in the supplied screen; this is not evidence of biological absence
+HB	4-hydroxybutyryl-CoA-dehydratase marker call; this marker is not pathway-specific	33	single-marker hits only; the marker is not pathway-specific

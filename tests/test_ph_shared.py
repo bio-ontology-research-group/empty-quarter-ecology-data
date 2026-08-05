@@ -255,11 +255,11 @@ def test_generator_is_byte_reproducible(tmp_path: Path) -> None:
     assert rerun_summary == staged_summary
 
 
-def test_both_manuscripts_name_the_same_version() -> None:
+def test_shared_ph_version_is_provenance_not_article_prose() -> None:
     if not (ROOT / "empty-quarter-amplicon/main.tex").is_file():
-        pytest.skip(
-            "the companion ecology repository is validated in its own checkout"
-        )
+        if (ROOT / "data-paper").is_dir():
+            pytest.fail("active ecology main.tex is missing from the root checkout")
+        pytest.skip("submission manuscripts are not part of the data package")
     ecology_main = (ROOT / "empty-quarter-amplicon/main.tex").read_text(
         encoding="utf-8"
     )
@@ -286,10 +286,10 @@ def test_both_manuscripts_name_the_same_version() -> None:
     assert "\\input{ph_shared_v1.tex}" in ecology_supplement
     assert "ph_ecology_v1.tex" not in ecology_main + ecology_supplement
     assert "\\PHEcology" not in ecology_main + ecology_supplement + ecology_ph
-    assert VERSION in ecology_main
+    assert VERSION not in ecology_main
     assert VERSION in ecology_ph
     assert (
-        "Transect, same cohort before pH & \\PHGeographySites\\ sites"
+        "Transect, same cohort before pH & $\\PHGeographySites$ sites"
         in ecology_supplement
     )
     assert VERSION in data_paper

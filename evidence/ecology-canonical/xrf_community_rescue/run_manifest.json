@@ -1,0 +1,41 @@
+{
+  "artifact_root": "analysis/v3/xrf_community_rescue",
+  "files": [
+    {
+      "bytes": 632,
+      "path": "README.md",
+      "sha256": "7bd45a61d6a08e32ac1d6a6249d865f9330e9f84d31e083c52d22f414bced521"
+    },
+    {
+      "bytes": 428,
+      "path": "elemental_pc1_loadings.tsv",
+      "sha256": "747bc732bee6255a601260bbea1ba9363da8d989f80fb40e5a7858d4e65815ad"
+    },
+    {
+      "bytes": 37817,
+      "path": "laboratory_xrf_axis.tsv",
+      "sha256": "5cc9008bcd24b6c284339d684d05ee55bacc4f12d44b77549d5a9286d4718d6a"
+    },
+    {
+      "bytes": 81008,
+      "path": "xrf_alpha_analysis_table.tsv",
+      "sha256": "037f5189dbe8e77304d853598206f28b7a3e394a2db7b050b554362684edadf0"
+    },
+    {
+      "bytes": 475,
+      "path": "xrf_alpha_models.tsv",
+      "sha256": "ba1e81bb1dc8ee58bda1280fb2d666c33606c8f4e9b065ce5051ed0aa459bbf8"
+    },
+    {
+      "bytes": 1655,
+      "path": "xrf_claim_summary.json",
+      "sha256": "39eebed2305bc7978639d029a56e730558e127cb03c0b39a84e454cad872badb"
+    },
+    {
+      "bytes": 301,
+      "path": "xrf_community_models.tsv",
+      "sha256": "dd4fe20e4a024d533de3e0a26be3ee544c029668bc79076a31b7d1bbf91bc749"
+    }
+  ],
+  "schema_version": "1.0"
+}

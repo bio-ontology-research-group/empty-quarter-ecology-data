@@ -27,6 +27,7 @@ import hashlib
 import importlib.metadata
 import json
 import math
+import re
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
@@ -35,7 +36,9 @@ import pandas as pd
 from scipy import stats
 
 
-SCHEMA_VERSION = "1.0"
+SCHEMA_VERSION = "1.1"
+BOOTSTRAP_SEED = 20260805
+DEFAULT_BOOTSTRAPS = 9_999
 RUBISCO_KO = "K01601"
 PATHWAYS = ("CBB", "rTCA", "WL", "3HP", "HB")
 PATHWAY_RULES = {
@@ -207,10 +210,100 @@ def load_profiles(
     return measured_shared, picrust_shared, mapping_rows, accounting
 
 
+def _sample_site_cluster(sample: str) -> str:
+    """Return the site prefix used to keep same-site profiles together."""
+    match = re.match(r"^(\d+)", str(sample))
+    return match.group(1) if match is not None else str(sample)
+
+
+def _rowwise_spearman(left: np.ndarray, right: np.ndarray) -> np.ndarray:
+    left_ranks = stats.rankdata(left, axis=1, method="average")
+    right_ranks = stats.rankdata(right, axis=1, method="average")
+    left_centred = left_ranks - left_ranks.mean(axis=1, keepdims=True)
+    right_centred = right_ranks - right_ranks.mean(axis=1, keepdims=True)
+    denominator = np.sqrt(
+        np.sum(left_centred**2, axis=1)
+        * np.sum(right_centred**2, axis=1)
+    )
+    result = np.sum(left_centred * right_centred, axis=1) / denominator
+    if np.any(~np.isfinite(result)):
+        raise ValueError("A bootstrap KO-profile correlation is not estimable")
+    return result
+
+
+def site_block_bootstrap_profile_metrics(
+    measured: pd.DataFrame,
+    picrust: pd.DataFrame,
+    per_sample_correlations: np.ndarray,
+    n_bootstraps: int,
+    seed: int,
+) -> dict[str, Any]:
+    """Resample whole sites and quantify profile-summary uncertainty."""
+    if n_bootstraps < 999:
+        raise ValueError("At least 999 bootstrap samples are required")
+    samples = [str(sample) for sample in measured.columns]
+    clusters = np.asarray([_sample_site_cluster(sample) for sample in samples])
+    unique_clusters, inverse = np.unique(clusters, return_inverse=True)
+    rng = np.random.default_rng(seed)
+    cluster_counts = rng.multinomial(
+        len(unique_clusters),
+        np.full(len(unique_clusters), 1 / len(unique_clusters)),
+        size=n_bootstraps,
+    )
+    sample_weights = cluster_counts[:, inverse].astype(float)
+    totals = sample_weights.sum(axis=1)
+    if np.any(totals <= 0):
+        raise ValueError("A site bootstrap produced no sample profiles")
+
+    mean_draws = (
+        sample_weights @ np.asarray(per_sample_correlations, dtype=float)
+    ) / totals
+    order = np.argsort(per_sample_correlations)
+    ordered_values = np.asarray(per_sample_correlations)[order]
+    ordered_weights = sample_weights[:, order].astype(int)
+    median_draws = np.empty(n_bootstraps, dtype=float)
+    for index, weights in enumerate(ordered_weights):
+        median_draws[index] = float(
+            np.median(np.repeat(ordered_values, weights))
+        )
+
+    measured_values = measured.to_numpy(dtype=float).T
+    picrust_values = picrust.to_numpy(dtype=float).T
+    community_draws = np.empty(n_bootstraps, dtype=float)
+    chunk_size = 128
+    for start in range(0, n_bootstraps, chunk_size):
+        stop = min(start + chunk_size, n_bootstraps)
+        weights = sample_weights[start:stop]
+        denominator = totals[start:stop, None]
+        measured_means = (weights @ measured_values) / denominator
+        picrust_means = (weights @ picrust_values) / denominator
+        community_draws[start:stop] = _rowwise_spearman(
+            measured_means,
+            picrust_means,
+        )
+
+    def interval(draws: np.ndarray) -> list[float]:
+        return [float(value) for value in np.quantile(draws, [0.025, 0.975])]
+
+    return {
+        "method": "whole-site percentile bootstrap",
+        "independent_unit": "sampling site",
+        "n_site_clusters": int(len(unique_clusters)),
+        "n_bootstraps": int(n_bootstraps),
+        "seed": int(seed),
+        "interval_level": 0.95,
+        "per_sample_median_interval": interval(median_draws),
+        "per_sample_mean_interval": interval(mean_draws),
+        "community_mean_profile_interval": interval(community_draws),
+    }
+
+
 def profile_correlations(
     measured: pd.DataFrame,
     picrust: pd.DataFrame,
     compartments: Mapping[str, str] | None = None,
+    n_bootstraps: int = DEFAULT_BOOTSTRAPS,
+    bootstrap_seed: int = BOOTSTRAP_SEED,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, float]]:
     if measured.shape != picrust.shape:
         raise ValueError("Measured and predicted shared matrices differ in shape")
@@ -252,6 +345,37 @@ def profile_correlations(
         raise ValueError("Community-mean KO-profile correlation is not estimable")
     if not np.isfinite(marker_result.statistic):
         raise ValueError(f"Marker correlation for {RUBISCO_KO} is not estimable")
+    uncertainty = site_block_bootstrap_profile_metrics(
+        measured,
+        picrust,
+        values,
+        n_bootstraps,
+        bootstrap_seed,
+    )
+
+    def sampling_fields(interval_key: str) -> dict[str, Any]:
+        low, high = uncertainty[interval_key]
+        return {
+            "interval_level": uncertainty["interval_level"],
+            "interval_low": low,
+            "interval_high": high,
+            "uncertainty_type": "sampling uncertainty",
+            "uncertainty_method": uncertainty["method"],
+            "independent_unit": uncertainty["independent_unit"],
+            "n_bootstraps": uncertainty["n_bootstraps"],
+            "bootstrap_seed": uncertainty["seed"],
+        }
+
+    no_interval = {
+        "interval_level": None,
+        "interval_low": None,
+        "interval_high": None,
+        "uncertainty_type": "none; descriptive endpoint or test only",
+        "uncertainty_method": None,
+        "independent_unit": None,
+        "n_bootstraps": None,
+        "bootstrap_seed": None,
+    }
     metrics = [
         {
             "metric": "per_sample_ko_profile_spearman_median",
@@ -261,6 +385,7 @@ def profile_correlations(
             "estimate": float(np.median(values)),
             "p_value": None,
             "interpretation": "descriptive distribution across samples",
+            **sampling_fields("per_sample_median_interval"),
         },
         {
             "metric": "per_sample_ko_profile_spearman_mean",
@@ -270,6 +395,7 @@ def profile_correlations(
             "estimate": float(np.mean(values)),
             "p_value": None,
             "interpretation": "descriptive distribution across samples",
+            **sampling_fields("per_sample_mean_interval"),
         },
         {
             "metric": "per_sample_ko_profile_spearman_minimum",
@@ -279,6 +405,7 @@ def profile_correlations(
             "estimate": float(np.min(values)),
             "p_value": None,
             "interpretation": "descriptive distribution across samples",
+            **no_interval,
         },
         {
             "metric": "per_sample_ko_profile_spearman_maximum",
@@ -288,6 +415,7 @@ def profile_correlations(
             "estimate": float(np.max(values)),
             "p_value": None,
             "interpretation": "descriptive distribution across samples",
+            **no_interval,
         },
         {
             "metric": "community_mean_ko_profile_spearman",
@@ -300,6 +428,7 @@ def profile_correlations(
                 "aggregate encoded-profile agreement; KO dependence makes "
                 "a feature-level significance test inappropriate"
             ),
+            **sampling_fields("community_mean_profile_interval"),
         },
         {
             "metric": "marker_across_sample_spearman",
@@ -312,6 +441,7 @@ def profile_correlations(
                 "weak marker-level agreement; does not validate RuBisCO "
                 "prediction"
             ),
+            **no_interval,
         },
     ]
     diagnostics = {
@@ -322,6 +452,7 @@ def profile_correlations(
             np.sum(picrust.loc[RUBISCO_KO] > 0)
         ),
     }
+    diagnostics["sampling_uncertainty"] = uncertainty
     return sample_rows, metrics, diagnostics
 
 
@@ -414,6 +545,8 @@ def write_outputs(
     picrust_ko_path: Path,
     picrust_metadata_path: Path,
     output_dir: Path,
+    n_bootstraps: int = DEFAULT_BOOTSTRAPS,
+    bootstrap_seed: int = BOOTSTRAP_SEED,
 ) -> dict[str, Any]:
     measured_ko_path = measured_dir / "measured_ko_by_sample.tsv.gz"
     marker_path = measured_dir / "measured_marker_by_sample.tsv"
@@ -447,6 +580,8 @@ def write_outputs(
         measured,
         picrust,
         compartments,
+        n_bootstraps,
+        bootstrap_seed,
     )
     pathway_frame = pd.read_csv(pathway_path, sep="\t")
     pathway_rows = pathway_screen_rows(pathway_frame)
@@ -479,6 +614,14 @@ def write_outputs(
             "n_features",
             "estimate",
             "p_value",
+            "interval_level",
+            "interval_low",
+            "interval_high",
+            "uncertainty_type",
+            "uncertainty_method",
+            "independent_unit",
+            "n_bootstraps",
+            "bootstrap_seed",
             "interpretation",
         ],
     )
@@ -529,6 +672,22 @@ def write_outputs(
             "community_mean_profile_spearman": metric_lookup[
                 "community_mean_ko_profile_spearman"
             ]["estimate"],
+            "per_sample_median_95_interval": [
+                metric_lookup[
+                    "per_sample_ko_profile_spearman_median"
+                ]["interval_low"],
+                metric_lookup[
+                    "per_sample_ko_profile_spearman_median"
+                ]["interval_high"],
+            ],
+            "community_mean_profile_95_interval": [
+                metric_lookup[
+                    "community_mean_ko_profile_spearman"
+                ]["interval_low"],
+                metric_lookup[
+                    "community_mean_ko_profile_spearman"
+                ]["interval_high"],
+            ],
         },
         "rubisco_marker": {
             "ko": RUBISCO_KO,
@@ -583,8 +742,8 @@ def write_outputs(
     summary["provenance"] = {
         "script": relative_path(script_path, project_root),
         "script_sha256": sha256_file(script_path),
-        "seed": None,
-        "random_operations": False,
+        "seed": bootstrap_seed,
+        "random_operations": True,
         "duplicate_picrust_rule": (
             "sum source columns sharing a normalized sample ID, then "
             "normalize within sample"
@@ -632,11 +791,17 @@ def write_outputs(
         f"- Matched normalized sample IDs: {accounting['shared_samples']}",
         f"- Shared KOs: {accounting['shared_kos']:,}",
         "- Per-sample KO-profile Spearman median: "
-        f"{ko_summary['per_sample_median_spearman']:.3f}",
+        f"{ko_summary['per_sample_median_spearman']:.3f} "
+        f"(whole-site bootstrap 95% interval "
+        f"[{ko_summary['per_sample_median_95_interval'][0]:.3f}, "
+        f"{ko_summary['per_sample_median_95_interval'][1]:.3f}])",
         "- Per-sample KO-profile Spearman mean: "
         f"{ko_summary['per_sample_mean_spearman']:.3f}",
         "- Community-mean KO-profile Spearman: "
-        f"{ko_summary['community_mean_profile_spearman']:.3f}",
+        f"{ko_summary['community_mean_profile_spearman']:.3f} "
+        f"(whole-site bootstrap 95% interval "
+        f"[{ko_summary['community_mean_profile_95_interval'][0]:.3f}, "
+        f"{ko_summary['community_mean_profile_95_interval'][1]:.3f}])",
         f"- RuBisCO marker {RUBISCO_KO}: rho="
         f"{rubisco['across_sample_spearman']:.3f}, "
         f"p={rubisco['two_sided_p_value']:.3g}",
@@ -644,6 +809,8 @@ def write_outputs(
         "",
         "Two normalized sample IDs each mapped to two PICRUSt2 source columns. "
         "Duplicate columns were summed before within-sample normalization.",
+        "Whole-site bootstrap intervals resampled all profiles from a site "
+        "together and used 9,999 samples with seed 20260805.",
         "",
         "The supplied local files do not reconstruct the total genome universe "
         "screened, so no CBB-positive genome fraction is reported. In "
@@ -680,6 +847,12 @@ def main() -> None:
     parser.add_argument("--picrust-ko", type=Path, default=None)
     parser.add_argument("--picrust-metadata", type=Path, default=None)
     parser.add_argument("--output-dir", type=Path, default=None)
+    parser.add_argument(
+        "--bootstraps", type=int, default=DEFAULT_BOOTSTRAPS
+    )
+    parser.add_argument(
+        "--bootstrap-seed", type=int, default=BOOTSTRAP_SEED
+    )
     args = parser.parse_args()
 
     project_root = args.project_root.resolve()
@@ -728,6 +901,8 @@ def main() -> None:
         picrust_ko_path,
         picrust_metadata_path,
         output_dir,
+        args.bootstraps,
+        args.bootstrap_seed,
     )
 
 

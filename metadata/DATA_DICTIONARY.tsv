@@ -519,6 +519,8 @@ metadata/samples/site_iri_registry.tsv	note	string	not applicable	never blank	Re
 metadata/samples/site_iri_registry.tsv	site_iri	IRI	not applicable	never blank	Stable site IRI assigned to the label.
 metadata/samples/site_iri_registry.tsv	site_label	string	not applicable	never blank	Exact named-site label consumed by the site generator.
 metadata/samples/site_iri_registry.tsv	status	string	not applicable	never blank	Registry disposition.
+metadata/samplesheets/additional_fastqs_v2.tsv	FASTQ Paths	string	not applicable	never blank	Fastq paths as defined by the file-specific audit method.
+metadata/samplesheets/additional_fastqs_v2.tsv	Sample Name	string	not applicable	never blank	Sample name as defined by the file-specific audit method.
 metadata/samplesheets/trip1-2023.tsv	biome	string	not applicable	never blank	Biome as defined by the file-specific audit method.
 metadata/samplesheets/trip1-2023.tsv	coordinates	string	not applicable	never blank	Coordinates as defined by the file-specific audit method.
 metadata/samplesheets/trip1-2023.tsv	date	string	not applicable	never blank	Date as defined by the file-specific audit method.

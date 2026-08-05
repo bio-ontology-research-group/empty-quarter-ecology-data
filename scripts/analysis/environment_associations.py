@@ -34,7 +34,9 @@ import statsmodels
 import statsmodels.formula.api as smf
 
 
-SCHEMA_VERSION = "1.0"
+SCHEMA_VERSION = "1.1"
+BOOTSTRAP_SEED = 20260805
+DEFAULT_BOOTSTRAPS = 9_999
 CLIMATE_VARIABLES = {
     "mean_air_temperature_c": "Avg_Temp_C",
     "mean_monthly_rain_mm": "Avg_Total_Rain_mm",
@@ -179,11 +181,42 @@ def load_climate(path: Path) -> tuple[pd.DataFrame, dict[str, object]]:
     return grouped, accounting
 
 
-def alpha_correlations(site: pd.DataFrame) -> pd.DataFrame:
+def spearman_bootstrap_interval(
+    first: pd.Series,
+    second: pd.Series,
+    indices: np.ndarray,
+) -> tuple[float, float]:
+    """Paired site-bootstrap percentile interval for Spearman correlation."""
+    first_values = first.to_numpy(dtype=float)[indices]
+    second_values = second.to_numpy(dtype=float)[indices]
+    first_ranks = stats.rankdata(first_values, axis=1)
+    second_ranks = stats.rankdata(second_values, axis=1)
+    first_ranks -= first_ranks.mean(axis=1, keepdims=True)
+    second_ranks -= second_ranks.mean(axis=1, keepdims=True)
+    denominator = np.sqrt(
+        np.square(first_ranks).sum(axis=1)
+        * np.square(second_ranks).sum(axis=1)
+    )
+    correlations = np.divide(
+        (first_ranks * second_ranks).sum(axis=1),
+        denominator,
+        out=np.full(len(indices), np.nan),
+        where=denominator > 0,
+    )
+    lower, upper = np.nanquantile(correlations, (0.025, 0.975))
+    return float(lower), float(upper)
+
+
+def alpha_correlations(
+    site: pd.DataFrame, bootstrap_indices: np.ndarray
+) -> pd.DataFrame:
     rows = []
     for climate in CLIMATE_VARIABLES:
         for response, label in ALPHA_VARIABLES.items():
             result = stats.spearmanr(site[climate], site[response])
+            ci_low, ci_high = spearman_bootstrap_interval(
+                site[climate], site[response], bootstrap_indices
+            )
             rows.append(
                 {
                     "climate_variable": climate,
@@ -191,6 +224,9 @@ def alpha_correlations(site: pd.DataFrame) -> pd.DataFrame:
                     "response_label": label,
                     "n_sites": int(len(site)),
                     "spearman_rho": float(result.statistic),
+                    "bootstrap_ci_low": ci_low,
+                    "bootstrap_ci_high": ci_high,
+                    "bootstrap_replicates": int(len(bootstrap_indices)),
                     "p_value": float(result.pvalue),
                 }
             )
@@ -200,18 +236,26 @@ def alpha_correlations(site: pd.DataFrame) -> pd.DataFrame:
     return frame
 
 
-def climate_covariation(site: pd.DataFrame) -> pd.DataFrame:
+def climate_covariation(
+    site: pd.DataFrame, bootstrap_indices: np.ndarray
+) -> pd.DataFrame:
     variables = [*CLIMATE_VARIABLES, "transect_km"]
     rows = []
     for first_index, first in enumerate(variables):
         for second in variables[first_index + 1 :]:
             result = stats.spearmanr(site[first], site[second])
+            ci_low, ci_high = spearman_bootstrap_interval(
+                site[first], site[second], bootstrap_indices
+            )
             rows.append(
                 {
                     "variable_a": first,
                     "variable_b": second,
                     "n_sites": int(len(site)),
                     "spearman_rho": float(result.statistic),
+                    "bootstrap_ci_low": ci_low,
+                    "bootstrap_ci_high": ci_high,
+                    "bootstrap_replicates": int(len(bootstrap_indices)),
                     "p_value": float(result.pvalue),
                 }
             )
@@ -403,6 +447,8 @@ def main() -> None:
     parser.add_argument("--selected-genera", type=int, default=200)
     parser.add_argument("--prevalence", type=float, default=0.20)
     parser.add_argument("--pseudocount", type=float, default=0.5)
+    parser.add_argument("--bootstraps", type=int, default=DEFAULT_BOOTSTRAPS)
+    parser.add_argument("--bootstrap-seed", type=int, default=BOOTSTRAP_SEED)
     parser.add_argument("--alpha-table", type=Path, default=None)
     parser.add_argument("--genus-counts", type=Path, default=None)
     parser.add_argument("--monthly-climate", type=Path, default=None)
@@ -455,9 +501,14 @@ def main() -> None:
     )
     if len(site) != 60:
         raise ValueError(f"Expected 60 complete core sites; found {len(site)}")
+    if args.bootstraps < 999:
+        parser.error("--bootstraps must be at least 999")
+    bootstrap_indices = np.random.default_rng(args.bootstrap_seed).integers(
+        0, len(site), size=(args.bootstraps, len(site))
+    )
 
-    alpha_results = alpha_correlations(site)
-    covariation = climate_covariation(site)
+    alpha_results = alpha_correlations(site, bootstrap_indices)
+    covariation = climate_covariation(site, bootstrap_indices)
     genus_results, genus_ranking = genus_correlations(
         paths["genus_counts"],
         alpha,
@@ -506,6 +557,15 @@ def main() -> None:
             "alpha": "Benjamini-Hochberg across all nine climate-diversity tests",
             "genus": "Benjamini-Hochberg across all 600 climate-genus tests",
         },
+        "sampling_uncertainty": {
+            "method": (
+                "paired percentile bootstrap of the 60 complete sites; both "
+                "variables are resampled together"
+            ),
+            "confidence_level": 0.95,
+            "replicates": args.bootstraps,
+            "seed": args.bootstrap_seed,
+        },
         "interpretation": (
             "Long-term temperature, rain and humidity covary with bacterial diversity "
             "and genus CLR abundance across the 60 sites. These variables also covary "
@@ -528,7 +588,9 @@ def main() -> None:
                 "scipy": scipy.__version__,
                 "statsmodels": statsmodels.__version__,
             },
-            "random_operations": False,
+            "random_operations": True,
+            "bootstrap_replicates": args.bootstraps,
+            "bootstrap_seed": args.bootstrap_seed,
         },
     }
     (output / "analysis_decision.json").write_text(
@@ -539,7 +601,8 @@ def main() -> None:
         "This directory contains the deterministic site-level climate analysis "
         "and the separate collection-weather diagnostics used by the ecology "
         "manuscript. See `analysis_decision.json` for the interpretation boundary "
-        "and each TSV for the exact estimates.\n",
+        "and each TSV for the exact estimates. Climate correlations include 95% "
+        "percentile intervals from paired resampling of the 60 sites.\n",
         encoding="utf-8",
     )
     write_checksums(output)

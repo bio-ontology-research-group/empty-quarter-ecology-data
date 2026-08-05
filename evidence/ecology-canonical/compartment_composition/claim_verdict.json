@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "status": "compartment_composition_supported",
   "permitted_wording": "Paired compositional comparisons with the site as the permutation unit supported a multivariate location difference for shallow subsurface versus surface; root-adjacent versus surface; root-adjacent versus shallow subsurface, and the direction and location result persisted across taxon-set, zero-treatment and leave-one-campaign fits. Within-position dispersion also differed for shallow subsurface versus surface; root-adjacent versus surface; root-adjacent versus shallow subsurface, so the compartments differ in spread as well as in location; the location result itself is a paired sign-flip test of the mean within-block difference vector and is exact under the paired-symmetry null irrespective of that dispersion heterogeneity. A retained compartment effect describes composition only. Plant identity, root activity, root distance and local moisture were not measured, so it must not be interpreted as a plant selective filter.",
   "prohibited_wording": "Do not describe any compartment difference as a plant selective filter, rhizosphere effect mechanism, or moisture-driven selection; none of those variables were measured.",
@@ -23,6 +23,10 @@
         9.404180816421
       ],
       "standardized_displacement": 0.3311512087626922,
+      "standardized_displacement_ci": [
+        0.30584847866380893,
+        0.40362157596189385
+      ],
       "permutation_p": 0.001,
       "q_within_primary_family": 0.001,
       "taxon_and_zero_sensitivities_supported": true,
@@ -46,6 +50,10 @@
         13.66426936374395
       ],
       "standardized_displacement": 0.4327815103955024,
+      "standardized_displacement_ci": [
+        0.38614168131753535,
+        0.5088602911097341
+      ],
       "permutation_p": 0.001,
       "q_within_primary_family": 0.001,
       "taxon_and_zero_sensitivities_supported": true,
@@ -69,6 +77,10 @@
         15.296958923010695
       ],
       "standardized_displacement": 0.4780294798714601,
+      "standardized_displacement_ci": [
+        0.4225544861880429,
+        0.5556173038264599
+      ],
       "permutation_p": 0.001,
       "q_within_primary_family": 0.001,
       "taxon_and_zero_sensitivities_supported": true,

@@ -31,7 +31,9 @@ from scipy import stats
 from scipy.special import gammaln
 
 
-SCHEMA_VERSION = "1.0"
+SCHEMA_VERSION = "1.1"
+BOOTSTRAP_SEED = 20260805
+DEFAULT_BOOTSTRAPS = 99_999
 PAIR_RE = re.compile(
     r"^(?P<pair_id>C\d+[RS]\d+)(?P<treatment>UT|T)$"
 )
@@ -164,9 +166,38 @@ def exact_paired_wilcoxon(differences: np.ndarray) -> dict[str, float]:
     return {"statistic": float(result.statistic), "p_value": float(result.pvalue)}
 
 
+def paired_mean_bootstrap(
+    differences: np.ndarray,
+    n_bootstraps: int,
+    seed: int,
+) -> dict[str, Any]:
+    """Resample matched aliquot pairs and summarize the mean difference."""
+    values = np.asarray(differences, dtype=float)
+    if not len(values) or np.any(~np.isfinite(values)):
+        raise ValueError("Bootstrap differences must be finite and non-empty")
+    if n_bootstraps < 999:
+        raise ValueError("At least 999 bootstrap samples are required")
+    rng = np.random.default_rng(seed)
+    indices = rng.integers(0, len(values), size=(n_bootstraps, len(values)))
+    draws = values[indices].mean(axis=1)
+    low, high = np.quantile(draws, [0.025, 0.975])
+    return {
+        "estimate": float(values.mean()),
+        "interval_level": 0.95,
+        "interval_low": float(low),
+        "interval_high": float(high),
+        "method": "paired-aliquot percentile bootstrap",
+        "independent_unit": "matched aliquot pair",
+        "n_bootstraps": int(n_bootstraps),
+        "seed": int(seed),
+    }
+
+
 def analyse_pma(
     counts_path: Path,
     rarefaction_depth: int | None = None,
+    n_bootstraps: int = DEFAULT_BOOTSTRAPS,
+    bootstrap_seed: int = BOOTSTRAP_SEED,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     counts = pd.read_csv(counts_path, sep="\t", index_col=0)
     pairs = paired_columns([str(column) for column in counts.columns])
@@ -246,6 +277,16 @@ def analyse_pma(
     )
     richness_test = exact_paired_wilcoxon(richness_differences)
     shannon_test = exact_paired_wilcoxon(shannon_differences)
+    richness_uncertainty = paired_mean_bootstrap(
+        richness_differences,
+        n_bootstraps,
+        bootstrap_seed,
+    )
+    shannon_uncertainty = paired_mean_bootstrap(
+        shannon_differences,
+        n_bootstraps,
+        bootstrap_seed,
+    )
     summary: dict[str, Any] = {
         "schema_version": SCHEMA_VERSION,
         "analysis_unit": "paired aliquot",
@@ -280,6 +321,7 @@ def analyse_pma(
             "mean_difference_treated_minus_untreated": float(
                 np.mean(richness_differences)
             ),
+            "mean_difference_uncertainty": richness_uncertainty,
             "pairs_with_lower_treated_value": int(
                 np.sum(richness_differences < 0)
             ),
@@ -296,6 +338,7 @@ def analyse_pma(
             "mean_difference_treated_minus_untreated": float(
                 np.mean(shannon_differences)
             ),
+            "mean_difference_uncertainty": shannon_uncertainty,
             "wilcoxon_two_sided_exact": shannon_test,
         },
         "status": "paired_endpoints_only",
@@ -320,8 +363,15 @@ def write_outputs(
     counts_path: Path,
     output_dir: Path,
     rarefaction_depth: int | None,
+    n_bootstraps: int = DEFAULT_BOOTSTRAPS,
+    bootstrap_seed: int = BOOTSTRAP_SEED,
 ) -> dict[str, Any]:
-    rows, summary = analyse_pma(counts_path, rarefaction_depth)
+    rows, summary = analyse_pma(
+        counts_path,
+        rarefaction_depth,
+        n_bootstraps,
+        bootstrap_seed,
+    )
     output_dir.mkdir(parents=True, exist_ok=True)
     pair_columns = [
         "pair_id",
@@ -350,8 +400,8 @@ def write_outputs(
     summary["provenance"] = {
         "script": relative_path(script_path, project_root),
         "script_sha256": sha256_file(script_path),
-        "seed": None,
-        "random_operations": False,
+        "seed": bootstrap_seed,
+        "random_operations": True,
         "software": {
             package: importlib.metadata.version(package)
             for package in ("numpy", "pandas", "scipy")
@@ -385,19 +435,30 @@ def write_outputs(
         "- Expected rarefied richness, treated versus untreated mean: "
         f"{richness['treated_mean']:.1f} versus "
         f"{richness['untreated_mean']:.1f}",
+        "- Mean treated-minus-untreated richness difference, paired-bootstrap "
+        "95% interval: "
+        f"{richness['mean_difference_treated_minus_untreated']:.1f} "
+        f"[{richness['mean_difference_uncertainty']['interval_low']:.1f}, "
+        f"{richness['mean_difference_uncertainty']['interval_high']:.1f}]",
         "- Richness paired exact Wilcoxon: "
         f"W={richness['wilcoxon_two_sided_exact']['statistic']:.0f}, "
         f"p={richness['wilcoxon_two_sided_exact']['p_value']:.6g}",
         "- Shannon, treated versus untreated mean: "
         f"{shannon['treated_mean']:.2f} versus "
         f"{shannon['untreated_mean']:.2f}",
+        "- Mean treated-minus-untreated Shannon difference, paired-bootstrap "
+        "95% interval: "
+        f"{shannon['mean_difference_treated_minus_untreated']:.2f} "
+        f"[{shannon['mean_difference_uncertainty']['interval_low']:.2f}, "
+        f"{shannon['mean_difference_uncertainty']['interval_high']:.2f}]",
         "- Shannon paired exact Wilcoxon: "
         f"W={shannon['wilcoxon_two_sided_exact']['statistic']:.0f}, "
         f"p={shannon['wilcoxon_two_sided_exact']['p_value']:.6g}",
         "",
-        "The richness endpoint is an exact expectation, not a random rarefaction; "
-        "no seed is used. A nonsignificant Shannon test is reported as no "
-        "detected difference, not as equivalence.",
+        "The richness endpoint is an exact expectation, not a random "
+        "rarefaction. The percentile intervals resample the nine matched "
+        "aliquot pairs and use the recorded seed. A nonsignificant Shannon "
+        "test is reported as no detected difference, not as equivalence.",
         "",
         "These endpoints do not quantify a relic-DNA fraction, establish cell "
         "viability, or support a survey-wide mechanism.",
@@ -427,6 +488,12 @@ def main() -> None:
     parser.add_argument("--counts", type=Path, default=None)
     parser.add_argument("--output-dir", type=Path, default=None)
     parser.add_argument("--rarefaction-depth", type=int, default=None)
+    parser.add_argument(
+        "--bootstraps", type=int, default=DEFAULT_BOOTSTRAPS
+    )
+    parser.add_argument(
+        "--bootstrap-seed", type=int, default=BOOTSTRAP_SEED
+    )
     args = parser.parse_args()
 
     project_root = args.project_root.resolve()
@@ -445,6 +512,8 @@ def main() -> None:
         counts_path,
         output_dir,
         args.rarefaction_depth,
+        args.bootstraps,
+        args.bootstrap_seed,
     )
 
 

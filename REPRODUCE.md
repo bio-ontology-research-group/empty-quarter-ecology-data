@@ -51,7 +51,9 @@ make paper
 
 `make paper` builds both `paper/sn-article.tex` and `paper/supplement.tex`.
 The manuscript roots are explicit; retired drafts and local TeX products are
-not inputs. `make test` runs manuscript, package, and workflow-wiring checks
+not inputs. The build fixes `SOURCE_DATE_EPOCH` and `FORCE_SOURCE_DATE` so its
+PDF bytes repeat in the pinned TeX environment. `make test` runs manuscript,
+package, and workflow-wiring checks
 that do not generate a KG. The complete generator and semantic-validation suite
 runs on `ws` or Ontolinator in the next step.
 

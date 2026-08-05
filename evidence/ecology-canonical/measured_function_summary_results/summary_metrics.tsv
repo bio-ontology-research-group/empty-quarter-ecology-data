@@ -1,0 +1,7 @@
+metric	feature	n_samples	n_features	estimate	p_value	interval_level	interval_low	interval_high	uncertainty_type	uncertainty_method	independent_unit	n_bootstraps	bootstrap_seed	interpretation
+per_sample_ko_profile_spearman_median	all_shared_KOs	125	3471	0.742527620976		0.95	0.730836023036	0.750892163025	sampling uncertainty	whole-site percentile bootstrap	sampling site	9999	20260805	descriptive distribution across samples
+per_sample_ko_profile_spearman_mean	all_shared_KOs	125	3471	0.729609134249		0.95	0.717835990282	0.739701564476	sampling uncertainty	whole-site percentile bootstrap	sampling site	9999	20260805	descriptive distribution across samples
+per_sample_ko_profile_spearman_minimum	all_shared_KOs	125	3471	0.441601068281					none; descriptive endpoint or test only					descriptive distribution across samples
+per_sample_ko_profile_spearman_maximum	all_shared_KOs	125	3471	0.809273530042					none; descriptive endpoint or test only					descriptive distribution across samples
+community_mean_ko_profile_spearman	all_shared_KOs	125	3471	0.806207191166		0.95	0.792848699296	0.811993454436	sampling uncertainty	whole-site percentile bootstrap	sampling site	9999	20260805	aggregate encoded-profile agreement; KO dependence makes a feature-level significance test inappropriate
+marker_across_sample_spearman	K01601	125	1	0.164365464367	0.0669993409184				none; descriptive endpoint or test only					weak marker-level agreement; does not validate RuBisCO prediction

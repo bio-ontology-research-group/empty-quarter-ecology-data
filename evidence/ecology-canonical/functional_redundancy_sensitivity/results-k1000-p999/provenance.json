@@ -1,0 +1,13 @@
+{
+  "parameters": {
+    "max_kos": 1000,
+    "permutations": 999
+  },
+  "script": "/home/leechuck/Public/software/empty-quarter/analysis/v3/functional_redundancy_null.py",
+  "script_sha256": "8ddc8b402d597ae960b43eb0caa75061cb26518aa34e15ee72779f35f034ec7a",
+  "seed": 20260723,
+  "software": {
+    "numpy": "2.1.3",
+    "scipy": "1.14.1"
+  }
+}

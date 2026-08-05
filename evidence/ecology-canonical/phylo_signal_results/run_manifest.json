@@ -1,0 +1,21 @@
+{
+  "artifact_root": "analysis/v3/phylo_signal_results",
+  "files": [
+    {
+      "bytes": 672,
+      "path": "README.md",
+      "sha256": "f183ee98720374abca2cecbd6341e9d4b96225fdbc54a358297c7f86206066f8"
+    },
+    {
+      "bytes": 662,
+      "path": "phylo_signal_distance_classes.tsv",
+      "sha256": "0e6c8e51988271d06e9811c272f264b5d3408bb21bf44362b48b0748dc1ff899"
+    },
+    {
+      "bytes": 1611,
+      "path": "phylo_signal_summary.json",
+      "sha256": "6c33ca3ca8eae4152a8b540e40d05647b18e6368dce269722965b1626f393e73"
+    }
+  ],
+  "schema_version": "1.0"
+}
