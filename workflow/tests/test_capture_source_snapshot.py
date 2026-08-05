@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import csv
 import json
 import subprocess
 import sys
@@ -156,3 +157,41 @@ def test_archives_are_byte_deterministic(tmp_path: Path):
         (first / "snapshot_file_manifest.tsv").read_bytes()
         == (second / "snapshot_file_manifest.tsv").read_bytes()
     )
+
+
+def test_manuscript_file_symlinks_capture_consumed_bytes(tmp_path: Path):
+    root = tmp_path / "export"
+    data_paper, ecology = write_fixture(root)
+    canonical = root / "paper"
+    canonical.mkdir()
+    canonical_intro = canonical / "01_introduction.tex"
+    canonical_intro.write_text("canonical introduction\n")
+    (data_paper / "01_introduction.tex").unlink()
+    (data_paper / "01_introduction.tex").symlink_to(
+        Path("../paper/01_introduction.tex")
+    )
+
+    output = tmp_path / "snapshot"
+    run_snapshot(root, ecology, output)
+
+    with (output / "snapshot_file_manifest.tsv").open(
+        newline="", encoding="utf-8"
+    ) as handle:
+        rows = list(csv.DictReader(handle, delimiter="\t"))
+    intro = next(
+        row
+        for row in rows
+        if row["snapshot"] == "data_paper"
+        and row["path"] == "01_introduction.tex"
+    )
+    assert intro["type"] == "file"
+    assert intro["bytes"] == str(len(b"canonical introduction\n"))
+    assert intro["link_target"] == ""
+
+    with tarfile.open(
+        output / "data_paper_source_snapshot.tar.gz", "r:gz"
+    ) as archive:
+        assert (
+            archive.extractfile("01_introduction.tex").read()
+            == b"canonical introduction\n"
+        )

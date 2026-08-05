@@ -161,9 +161,18 @@ def add_file(
     root: Path,
     relative: Path,
     snapshot: str,
+    *,
+    dereference_file_symlinks: bool = False,
 ) -> ManifestRow:
     source = root / relative
     source_stat = source.lstat()
+    dereference = (
+        dereference_file_symlinks
+        and source.is_symlink()
+        and source.resolve(strict=True).is_file()
+    )
+    if dereference:
+        source_stat = source.stat()
     info = tarfile.TarInfo(relative.as_posix())
     info.uid = 0
     info.gid = 0
@@ -172,7 +181,7 @@ def add_file(
     info.mtime = 0
     info.mode = stat.S_IMODE(source_stat.st_mode)
 
-    if source.is_symlink():
+    if source.is_symlink() and not dereference:
         target = os.readlink(source)
         info.type = tarfile.SYMTYPE
         info.linkname = target
@@ -208,6 +217,8 @@ def write_archive(
     relative_paths: list[Path],
     output: Path,
     snapshot: str,
+    *,
+    dereference_file_symlinks: bool = False,
 ) -> tuple[list[ManifestRow], dict[str, object]]:
     output.parent.mkdir(parents=True, exist_ok=True)
     rows: list[ManifestRow] = []
@@ -226,7 +237,17 @@ def write_archive(
                 format=tarfile.PAX_FORMAT,
             ) as archive:
                 for relative in relative_paths:
-                    rows.append(add_file(archive, root, relative, snapshot))
+                    rows.append(
+                        add_file(
+                            archive,
+                            root,
+                            relative,
+                            snapshot,
+                            dereference_file_symlinks=(
+                                dereference_file_symlinks
+                            ),
+                        )
+                    )
     os.replace(temporary, output)
     return rows, {
         "archive": output.name,
@@ -356,7 +377,19 @@ def main() -> int:
     snapshots: dict[str, dict[str, object]] = {}
     for label, root, paths, archive_path in snapshot_specs:
         archive_rows, record = write_archive(
-            root, paths, archive_path, label
+            root,
+            paths,
+            archive_path,
+            label,
+            # Standalone release layouts expose the canonical manuscript
+            # files through compatibility symlinks.  A source snapshot must
+            # identify the bytes that TeX consumes, not merely the spelling
+            # of those links.  Directory links remain links so that this
+            # narrowly scoped policy cannot pull large release trees into a
+            # manuscript archive.
+            dereference_file_symlinks=(
+                label in {"data_paper", "ecology_paper"}
+            ),
         )
         rows.extend(archive_rows)
         snapshots[label] = record
