@@ -1,8 +1,10 @@
 from pathlib import Path
 
 import pytest
+import yaml
 
 from scripts.analysis.transect_altitude_figure import (
+    EXPECTED_FIGURE_RUNTIME,
     haversine_km,
     read_profile,
     render,
@@ -12,6 +14,19 @@ from scripts.analysis.transect_altitude_figure import (
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data/metadata/geodata/site_altitudes.tsv"
+
+
+def test_canonical_figure_runtime_matches_the_exact_recipe() -> None:
+    dependencies = yaml.safe_load(
+        (ROOT / "environment/environment.yml").read_text(encoding="utf-8")
+    )["dependencies"]
+    assert EXPECTED_FIGURE_RUNTIME == {
+        "python": "3.11.14",
+        "matplotlib": "3.9.4",
+        "freetype": "2.14.3",
+    }
+    for component, version in EXPECTED_FIGURE_RUNTIME.items():
+        assert f"{component}={version}" in dependencies
 
 
 def test_canonical_transect_profile_is_complete_and_grounded() -> None:

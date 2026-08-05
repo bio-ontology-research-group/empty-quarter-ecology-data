@@ -9,14 +9,36 @@ import hashlib
 import json
 import math
 from pathlib import Path
+import sys
 
 import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
+from matplotlib import ft2font  # noqa: E402
 
 
 EXPECTED_SITES = set(range(1, 61))
+EXPECTED_FIGURE_RUNTIME = {
+    "python": "3.11.14",
+    "matplotlib": "3.9.4",
+    "freetype": "2.14.3",
+}
+
+
+def require_figure_runtime() -> dict[str, str]:
+    """Fail before canonical rendering when native font metrics differ."""
+    observed = {
+        "python": sys.version.split()[0],
+        "matplotlib": matplotlib.__version__,
+        "freetype": ft2font.__freetype_version__,
+    }
+    if observed != EXPECTED_FIGURE_RUNTIME:
+        raise RuntimeError(
+            "Figure runtime differs from environment/conda-linux-64.lock: "
+            f"expected {EXPECTED_FIGURE_RUNTIME}, observed {observed}"
+        )
+    return observed
 
 
 def sha256(path: Path) -> str:
@@ -194,6 +216,7 @@ def main() -> int:
 
     input_path = args.input.resolve()
     output_dir = args.output_dir.resolve()
+    figure_runtime = require_figure_runtime()
     output_dir.mkdir(parents=True, exist_ok=True)
     rows = read_profile(input_path)
     profile_path = output_dir / "transect_altitude_profile.tsv"
@@ -224,6 +247,10 @@ def main() -> int:
         "altitude_m": {
             "minimum": min(float(row["altitude_m"]) for row in rows),
             "maximum": max(float(row["altitude_m"]) for row in rows),
+        },
+        "figure_runtime": {
+            "schema_version": "figure-runtime-v1",
+            **figure_runtime,
         },
         "outputs": {
             "figure": {
