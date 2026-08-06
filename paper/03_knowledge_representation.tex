@@ -66,7 +66,14 @@ introduced relations are sub-relations of SIO relations. We mapped
 classes to SIO and maintained full semantic mappings in our public
 repository (see Section~\ref{code}).
 
-The core ontology comprises 302 distinct domain-specific classes integrated directly under the SIO framework. To accurately represent the complex relationships between environmental samples, laboratory processes, and bioinformatic workflows, we incorporated 4 object properties and 18 datatype properties. In total, the terminology model encapsulates 1,290 formal axioms. This compact semantic structure maintains precise alignment with our standardized schemas while minimizing redundant inferences.
+The canonical terminology module declares 333 classes: 297
+project-local classes and 36 referenced classes (32 SIO and four
+PATO). It also declares 20 object properties (11 project-local and
+nine SIO) and 35 datatype properties (34 project-local and one SIO).
+These are declaration counts from the staged canonical module, not
+counts of the imported ontologies or of whole-graph axioms. This
+compact semantic structure maintains precise alignment with our
+standardized schemas while minimizing redundant inferences.
 
 \subsubsection{Measurement pattern}
 
@@ -443,50 +450,152 @@ attribute of the same FASTQ dataset. Splitting the quality class into
 forward and reverse subclasses preserves the read direction, so that
 paired-end QC metrics can be queried independently per orientation.
 
+\subsubsection{Laboratory-control pattern}
+
+A laboratory control is an occurrence-specific material entity, not a
+property of an expedition and not the string used to label a library.
+Each physical control carries its own instance of a positive,
+negative, extraction-blank or PCR-blank role, and a laboratory process
+realizes that role while consuming the material as input and target
+and producing a derived material or dataset. Processes are grouped
+into batches, and, because an extraction day can contain samples from
+several expeditions, neither the control nor its batch is linked
+directly to a trip.
+
+\begin{align}
+	\label{eq:control}
+	\text{ControlMaterial} & \sqsubseteq \text{MaterialEntity} \\
+	\text{ControlRole} & \sqsubseteq \text{Role} \\
+	\text{ControlMaterial} & \sqsubseteq \exists
+	    \text{hasRole}.\text{ControlRole} \\
+	\text{LaboratoryProcess} & \sqsubseteq
+	    \begin{aligned}[t]
+	    &\exists \text{hasInput}.\text{ControlMaterial} \sqcap
+	     \exists \text{hasTarget}.\text{ControlMaterial} \\[-0.25ex]
+	    &\sqcap \exists \text{realizes}.\text{ControlRole}
+	    \end{aligned} \\
+	\text{LaboratoryProcess} & \sqsubseteq \exists
+	    \text{isPartOf}.\text{ProcessingBatch}
+\end{align}
+
+Listing~\ref{lst:ttl_control} instantiates the pattern for an
+extraction blank. The blank material \texttt{rak:C000001} bears an
+extraction-blank role \texttt{rak:R000001} through
+\texttt{sio:000228} (\emph{has role}); the extraction process
+\texttt{rak:P400001} takes the blank as input and target, realizes the
+role through \texttt{sio:000355}, and is part of the extraction batch
+\texttt{rak:B000001}. Asserting the role as an individual rather than
+as a class membership keeps each physical control distinct even when
+labels are reused across expeditions.
+
+\begin{lstlisting}[caption={Turtle representation of an extraction-blank control and its role realization.}, label={lst:ttl_control}, basicstyle=\ttfamily\scriptsize, frame=single]
+rak:C000001 a rak:0000300 ; # Extraction Blank Material
+  sio:000228 rak:R000001 . # hasRole
+
+rak:R000001 a rak:0000301 ; # Extraction Blank Role
+  sio:000227 rak:C000001 . # isRoleOf
+
+rak:P400001 a rak:0000302 ; # Extraction Process
+  sio:000230 rak:C000001 ; # hasInput
+  sio:000291 rak:C000001 ; # hasTarget
+  sio:000355 rak:R000001 ; # realizes
+  sio:000068 rak:B000001 . # isPartOf (Batch)
+
+rak:B000001 a rak:0000310 . # Extraction Batch
+\end{lstlisting}
+
+Uncertain identity, batch membership and assay applicability are
+represented as evidence-bearing statements with an explicit confirmed,
+provisional, unresolved or inapplicable status rather than as ground
+truth, so a reused or ambiguous label never merges two physical
+controls. Whole-cell D6300 and purified-DNA D6322 controls enter the
+workflow at different processes, which lets the graph distinguish
+extraction and lysis evaluation from PCR, library and sequencing
+evaluation. The control module contains 489 entities and 3,800
+triples, including 51 material-specific role individuals and 47
+sequence occurrences.
+
+\subsubsection{Archived-soil pH pattern}
+
+Archived-soil pH instantiates the generic measurement pattern of
+Equation~\ref{eq:measurement} but binds it to an archived specimen
+rather than to a field site. The measuring process consumes and
+targets an existing specimen, outputs a single pH value, is specified
+by the CaCl$_2$ protocol, and is part of a dated measurement session.
+The value is the measurement value of an acidity quality borne by the
+same specimen.
+
+\begin{align}
+	\label{eq:ph}
+	\text{pHMeasurementProcess} & \sqsubseteq
+	    \begin{aligned}[t]
+	    &\text{MeasurementProcess} \sqcap
+	     \exists \text{hasInput}.\text{Specimen} \\[-0.25ex]
+	    &\sqcap \exists \text{hasTarget}.\text{Specimen} \sqcap
+	     \exists \text{hasOutput}.\text{pHValue}
+	    \end{aligned} \\
+	\text{pHValue} & \sqsubseteq
+	    \text{Quantity} \sqcap \exists
+	    \text{isMeasurementValueOf}.\text{AcidityQuality} \\
+	\text{AcidityQuality} & \sqsubseteq
+	    \text{Quality} \sqcap \exists
+	    \text{isAttributeOf}.\text{Specimen} \\
+	\text{pHMeasurementProcess} & \sqsubseteq \exists
+	    \text{isPartOf}.\text{MeasurementSession}
+\end{align}
+
+Listing~\ref{lst:ttl_ph} shows a single admitted pH observation. The
+specimen \texttt{rak:6000001} bears the acidity quality
+\texttt{rak:5600001}; the value \texttt{rak:4600001} carries the
+literal \texttt{7.8}, has unit UO:0000196, and points back to the
+quality with \texttt{sio:000215} and to its producing process with
+\texttt{sio:000232}. The process is specified by the CaCl$_2$ protocol
+and is part of the session \texttt{rak:B100001}. Rows that fail
+source, date, specimen or quality-control admission remain in the
+audit table and are not asserted as measurements
+(Section~\ref{methods:ph}).
+
+\begin{lstlisting}[caption={Turtle representation of an archived-soil pH measurement.}, label={lst:ttl_ph}, basicstyle=\ttfamily\scriptsize, frame=single]
+rak:P500001 a sio:001054 ; # Measuring Process
+  sio:000230 rak:6000001 ; # hasInput (Specimen)
+  sio:000291 rak:6000001 ; # hasTarget
+  sio:000229 rak:4600001 ; # hasOutput (pH Value)
+  sio:000339 rak:L000020 ; # isSpecifiedBy (CaCl2 Protocol)
+  sio:000068 rak:B100001 . # isPartOf (Session)
+
+rak:4600001 a sio:001089 ; # pH Value
+  sio:000300 "7.8"^^xsd:double ; # hasValue
+  sio:000221 uo:0000196 ; # hasUnit (pH)
+  sio:000215 rak:5600001 ; # isMeasurementValueOf
+  sio:000232 rak:P500001 . # isOutputOf
+
+rak:5600001 a pato:0001842 ; # Acidity Quality
+  sio:000011 rak:6000001 ; # isAttributeOf (Specimen)
+  sio:000216 rak:4600001 . # hasMeasurementValue
+\end{lstlisting}
+
 \subsection{OWL and RDF implementation}\label{subsec:owl_rdf}
 
 We generated the OWL/RDF implementation using custom Groovy scripts
 utilizing the OWL API 5 \cite{owlapi}. The knowledge base employs a
 modular design, separating the base ontology, sites, samples,
 measurements, XRF data, DNA extraction records, sequencing metadata,
-quality control metrics, and taxonomic abundances into individual ABox
-modules \cite{hitzler_modularity}. 
+quality control metrics, laboratory controls, archived-soil pH, and
+taxonomic abundances into individual ABox modules
+\cite{hitzler_modularity}.
 
-We utilize the OpenLink Virtuoso triple store \cite{virtuoso} for data
-hosting and query answering. Virtuoso features an inference engine
-configured with an OWL-Horst~\cite{owlhorst} rule set. This
-configuration enables the on-the-fly materialization of inverse
-properties, transitive closures, and property chains defined within
-the SIO ontology framework.
-
-Prior to OWL-Horst inference, the base knowledge graph comprised
-37,043,525 asserted triples across three named graphs (knowledge base
-36,978,835; taxonomy 42,406; ontology 16,643), with taxonomy
-assertions accounting for approximately 36.5 million of the knowledge
-base graph. During deployment, the workflow applies OWL-Horst (pD*)
-forward-chaining materialization in three rounds: (1)~ground rules
-that pair a single asserted triple with a TBox axiom
-(\texttt{rdfs:subClassOf}, \texttt{rdfs:subPropertyOf},
-\texttt{rdfs:domain}, \texttt{rdfs:range},
-\texttt{owl:inverseOf}, \texttt{owl:SymmetricProperty},
-\texttt{owl:equivalentClass}, \texttt{owl:equivalentProperty});
-(2)~re-application of \texttt{subPropertyOf} and
-\texttt{subClassOf} over the triples produced in round~1; and
-(3)~one-hop transitive closure for all
-\texttt{owl:TransitiveProperty} instances. This process generates
-80,907,421 materialized triples, resulting in a total of
-117,950,946 triples (a 3.18$\times$ expansion). The materialization
-completes in approximately 114~minutes on a single server.
-The materialized triples are written to a dedicated named graph
-(\texttt{<https://rubalkhali.science/inferred/>}) so that they can be
-queried without per-query backward-chaining cost. Logging is
-temporarily disabled (\texttt{log\_enable(2,1)}) during
-materialization to avoid exceeding Virtuoso's per-transaction log size
-limit. The dominant inferred predicates are
-\texttt{sio:isRelatedTo} (22.6M), \texttt{rdf:type} (14.6M),
-\texttt{sio:hasAttribute} (11.3M), and \texttt{sio:isAttributeOf}
-(5.7M), reflecting the propagation of SIO's property hierarchy and
-inverse properties across the ABox.
+We use OpenLink Virtuoso \cite{virtuoso} for RDF storage and query
+answering. In a development benchmark, a project-specific
+forward-rule program applied selected RDFS/OWL rules for subclass,
+subproperty, domain, range, inverse, symmetric, equivalence and
+transitive-property assertions. The program used three scheduled
+passes, including only a one-hop transitive pass. It did not
+demonstrate convergence to a fixed point and did not implement
+arbitrary OWL property chains. We therefore describe this output as a
+\emph{selected rule expansion}, not as complete OWL-Horst
+\cite{owlhorst} closure, and we report exact module-level entity
+counts (Section~\ref{records}) rather than historical asserted or
+inferred whole-graph triple counts.
 
 \subsection{Schema definition}\label{subsec:schema_def}
 
@@ -498,8 +607,13 @@ validate the graph's structure, ensuring data quality and compliance
 before loading it into the database.
 
 Our ShEx implementation defines shapes for Sampling Sites, Soil
-Samples, Environmental Measurements, DNA Extracts, and Sequencing
-Datasets. These shapes guarantee that essential attributes are invariably present. For instance, Listing~\ref{lst:shex_site} demonstrates how the schema enforces that every Sampling Site is explicitly typed and labeled, while optionally capturing geographic coordinates and textual descriptions.
+Samples, Environmental Measurements, DNA Extracts, XRF processes,
+Sequencing Datasets, laboratory controls, and archived-soil pH
+observations. These shapes guarantee that essential attributes are
+invariably present. For instance, Listing~\ref{lst:shex_site}
+demonstrates how the schema enforces that every Sampling Site is
+explicitly typed and labeled, while capturing geographic coordinates
+and an optional textual description.
 
 \begin{lstlisting}[caption={ShEx shape for Sampling Site validation.}, label={lst:shex_site}, basicstyle=\ttfamily\scriptsize, frame=single]
 <#SamplingSiteShape> {
@@ -507,7 +621,7 @@ Datasets. These shapes guarantee that essential attributes are invariably presen
     rdf:type . * ;                # May have other inferred types
     rdfs:label . ;                # Must have a label
     dcterms:description xsd:string ? ; # Optional description
-    geo:asWKT . ? ;               # Optional geographic coordinates
+    geo:asWKT . ;                 # Mandatory geographic coordinates
 }
 \end{lstlisting}
 
@@ -515,7 +629,66 @@ In words, the shape \texttt{<\#SamplingSiteShape>} requires that
 every conforming node carry an explicit type assertion to
 \texttt{rak:0000002} (Sampling Site) and an \texttt{rdfs:label};
 it permits any number of additional inferred types and optionally
-allows a free-text description and a WKT geometry. Records that omit
-the mandatory type or label are rejected before they reach the triple
-store.
+allows a free-text description. Coordinates are mandatory in the
+shape, and all 70 sampling-site individuals in the released module
+satisfy it. Records that omit the mandatory type, label or geometry
+are rejected before they reach the triple store, and a deliberately
+coordinate-free fixture in the negative-fixture suite
+(Section~\ref{valid}) proves that the rejection fires.
 
+The remaining shapes reuse the same closed-world idiom but encode the
+domain-specific provenance and measurement contracts that a type
+assertion alone cannot express. Listing~\ref{lst:shex_sample} shows
+the soil-sample shape: a conforming sample must be explicitly typed as
+a replicate, carry a label and a stable source identifier, and be
+derived from a sampling site. The derivation edge is what lets a query
+traverse from a specimen to its site without joining through the
+sampling event.
+
+\begin{lstlisting}[caption={ShEx shape for a soil sample.}, label={lst:shex_sample}, basicstyle=\ttfamily\scriptsize, frame=single]
+<#SampleShape> {
+    rdf:type [sio:001418] ;      # Replicate
+    rdf:type IRI * ;             # Plus a specific material type
+    rdfs:label xsd:string ;
+    dc:identifier xsd:string ;   # Stable source identifier
+    sio:000244 IRI ;             # isDerivedFrom -> Site
+}
+\end{lstlisting}
+
+The DNA-extract and XRF shapes enforce the canonical measurement
+reification (split quality and value) of
+Equation~\ref{eq:measurement}. Listing~\ref{lst:shex_dna} requires the
+concentration value to carry a numeric concentration, the
+nanograms-per-microlitre unit, and links back to both its quality and
+its producing measurement process, so a value that is detached from
+its process or that uses the wrong unit is rejected.
+
+\begin{lstlisting}[caption={ShEx shape for a DNA-concentration value.}, label={lst:shex_dna}, basicstyle=\ttfamily\scriptsize, frame=single]
+<#DNAConcentrationValueShape> {
+    rdf:type [rak:0000044] ;     # Concentration value
+    sio:000215 @<#DNAConcentrationQualityShape> ; # -> Quality
+    sio:000232 @<#MeasurementProcessShape> ;      # -> Process
+    sio:000221 [uo:0000275] ;    # hasUnit -> ng/uL
+    rak:2000015 xsd:double ;     # hasDNAConcentration
+}
+\end{lstlisting}
+
+The XRF shape encodes the two acquisition workflows directly: a
+conforming XRF process must either take a collected specimen as input
+(the laboratory workflow) or target a recorded sampling site (the
+field workflow), and it must produce at least one value. This
+disjunction is what allows one shape to cover both workflows while
+still rejecting a process that has neither an input nor a target, the
+defect exercised by one of the negative fixtures.
+
+\begin{lstlisting}[caption={ShEx shape for an XRF measurement process.}, label={lst:shex_xrf}, basicstyle=\ttfamily\scriptsize, frame=single]
+<#XRFProcessShape> {
+    rdf:type [rak:0000025] ;
+    (
+        sio:000230 IRI |         # lab: hasInput -> specimen
+        sio:000291 IRI           # field: hasTarget -> site
+    ) ;
+    sio:000339 IRI ;             # isSpecifiedBy -> Protocol
+    sio:000229 @<#XRFValueShape> + ; # hasOutput -> 1+ values
+}
+\end{lstlisting}

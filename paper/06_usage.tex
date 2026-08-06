@@ -39,12 +39,12 @@ deployments.
 Full OWL 2 DL reasoning over the combined TBox and the ABox is not
 computationally feasible with HermiT on commodity hardware. We
 therefore use ELK \cite{elk} to validate the logical consistency of
-the knowledge graph (confirming zero unsatisfiable classes both before
-and after materialization). For query answering, we rely on
-OWL-Horst forward-chaining materialization in Virtuoso, which
-physically expands the graph from 37~million asserted triples to
-approximately 118~million triples by applying subclass, subproperty,
-inverse, symmetric, equivalence, and transitivity rules. Two decades
+the knowledge graph. For query answering, we rely on a selected
+forward-rule expansion in Virtuoso, which physically expands the graph
+by applying subclass, subproperty,
+inverse, symmetric, equivalence, and transitivity rules; this
+expansion has not been demonstrated to reach a fixed point and is not
+complete OWL-Horst closure \cite{owlhorst}. Two decades
 of work on scaling OWL reasoning---materialization-based approaches
 \cite{owlhorst}, query rewriting, modular reasoning, and
 consequence-based calculi such as ELK itself---provide several
@@ -53,11 +53,29 @@ could be applied to a sub-module of the TBox in future work.
 
 \subsection{Limitations and outstanding challenges}
 
-Several challenges remain open. First, more complex reasoning---for
+Several challenges remain open. First, the assay-aware control screen
+identifies 351 of 351,472 ASVs using 17 extraction-day blanks with
+batch links to Trip~5 profiles. Removing these candidates only from
+the 217 co-extracted Trip~5 biological profiles removes 2.19\,\% of
+reads in aggregate, and the unfiltered table remains canonical.
+Inference is bounded because the design provides only one blank per
+extraction batch, concentration data are absent, Trip~4 has no
+positive control and has an unsequenced blank affecting all or part of
+23 sites, and Trip~5 has no 16S positive control. A reuser should use
+the control module and audit tables to select compatible controls by
+assay, stage and batch, and should not treat contamination as
+eliminated. Second, archived-soil pH is available for 712 admitted
+specimens under the specified CaCl$_2$ protocol, but coverage is
+incomplete and non-random and should not be interpreted as an in-situ
+field map. Third, the XRF sources lack machine-readable unit and
+non-detect semantics, and Trips~1--4 and Trip~5 use disclosed but
+different repeat-formula rules; field and laboratory XRF values cannot
+be assumed interchangeable, and their current comparison is site-level
+rather than same-aliquot. Fourth, more complex reasoning---for
 example over disjunctions arising from ENVO biome classifications or
 negative axioms about taxon absence---would require either a different
 reasoner or the extraction of a sub-module amenable to a more
-expressive calculus. Second, the resource depends on upstream
+expressive calculus. Finally, the resource depends on upstream
 ontologies (SIO, ChEBI, ENVO, NCBI Taxonomy) that evolve
 independently; keeping the deployed graph aligned with their releases
 is an ongoing maintenance task and a known reproducibility risk for any
@@ -77,6 +95,31 @@ semantics of an existing query, we will record the affected competency
 questions in the changelog so that downstream users can audit the
 impact.
 
+\section{Data availability}\label{data_availability}
+
+Three project accessions appear in the project records, resolved
+against the live European Nucleotide Archive on 28~July 2026. The
+accessions are not yet reconciled, and none is currently a usable
+route to the data described here. \texttt{PRJEB106069} is the project
+against which all 1,268 submitted amplicon run rows are registered,
+but it returns no public record. \texttt{PRJEB104209} is a public
+umbrella study (``The genome of the Rub' al Khali (Empty Quarter)'',
+secondary accession \texttt{ERP185514}) but carries no read runs of
+its own. \texttt{PRJNA1065643} is public and holds 85 amplicon read
+runs on Illumina MiSeq, an earlier partial deposition on a different
+instrument that is not the five-expedition release described here.
+Every run accession the project holds was checked individually, and
+none yet resolves to a public record; establishing the sample-level
+mapping requires \texttt{PRJEB106069} and its runs to be released.
+The staged release candidate contains the derived companion-analysis
+inputs (the paired PMA table, 150 CoverM profiles, eggNOG annotations
+for the 990-genome analytical subset and the measured-function input
+archive), which support their named downstream endpoints but do not
+reproduce raw-read processing, assembly, binning, dereplication,
+annotation or profile generation. Public deposition of the checksummed
+package and the underlying sequence resources remains an availability
+gate for submission.
+
 \section{Code availability}\label{code}
 
-All source code for data processing, ontology engineering, RDF generation, validation, and the web portal is openly available at \url{https://github.com/bio-ontology-research-group/empty-quarter}. The repository includes Groovy scripts utilizing the OWL API 5 for OWL/RDF generation, Python scripts for data processing and statistical analysis, ShEx shape definitions for structural validation, SPARQL competency queries, React/FastAPI web application source code, and Docker Compose configurations for deployment.
+All source code for data processing, ontology engineering, RDF generation, validation, and the web portal is openly available at \url{https://github.com/bio-ontology-research-group/empty-quarter}. The repository includes Groovy scripts utilizing the OWL API 5 for OWL/RDF generation, Python scripts for data processing and statistical analysis, ShEx shape definitions for structural validation, SPARQL competency queries, React/FastAPI web application source code, Docker Compose configurations for deployment, and the \texttt{main.nf} Nextflow entry point with its pinned software environment.

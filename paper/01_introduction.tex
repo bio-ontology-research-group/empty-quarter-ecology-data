@@ -1,15 +1,46 @@
 \section{Background and summary}\label{intro}
 
 The Rub' al-Khali (Empty Quarter) is the largest contiguous sand
-desert on Earth, and it covers approximately 650,000 km$^2$ across the
-southern Arabian Peninsula \cite{mandaville_1986}. Despite extreme
-aridity and surface temperatures that exceed 50\degree C, this
+desert on Earth, a hyper-arid sand sea of approximately 500,000
+km$^2$ across the southern Arabian Peninsula
+\cite{mandaville_1986}. Air temperatures recorded during our
+expeditions spanned 20.0--49.4\degree C across 273 field
+observations, and the region receives negligible and highly irregular
+rainfall. Despite these extremes, this
 environment harbors microbial communities whose composition,
 diversity, and ecological drivers remain poorly characterized
 \cite{makhalanyane2015}. To predict ecosystem responses to climate
 change and to inform conservation and land-use policy, researchers
 require deep knowledge of the biogeochemistry of such extreme
 environments \cite{fierer2017}.
+
+Saudi Arabia already has a substantial arid-soil microbiome
+literature. Previous studies examined elevation gradients
+\cite{yasir2015saudi}, rainfall responses across soil compartments
+\cite{aslam2016rainfall}, open and rhizosphere soils across three
+regions \cite{khan2020saudi}, rhizosphere bacteria of pioneer sand
+plants near Jizan \cite{osman2016jizan}, and bacteria associated with
+native desert plants \cite{eida2018plants}. More recent surveys
+characterized fertility islands and plant-associated networks
+\cite{maurice2023fertility,maurice2024}, sandy soils near natural and
+artificial water points \cite{alawthan2024reserve}, rhizosphere and
+endosphere communities across northern reserves
+\cite{alhasani2026reserve}, and Red Sea coastal sabkhas
+\cite{gopi2026sabkha}. Fungal studies progressed from a small number
+of western-coastal and open-sand samples
+\cite{moussa2017fungi,murgia2019sandfungi} to a standardized
+single-visit survey of 85 locations across Saudi Arabia
+\cite{mani2026mycobiome}, and a recent synthesis identifies
+substantial geographic and taxonomic gaps in Arabian
+biological-soil-crust research \cite{blancosacristan2025biocrust}. In
+the United Arab Emirates, related studies profiled a Rub' al-Khali
+interdune microbial mat \cite{mckay2016} and desert-plant rhizosphere
+and endosphere communities \cite{mousa2024}. These studies establish
+that a Saudi arid-soil survey is not itself new. What remains missing
+is a repeated, multi-expedition transect in which every community
+profile stays joined to its provenance across locations, physical
+specimens, molecular products, environmental observations, climate,
+and geochemistry.
 
 To characterize complex ecosystems, researchers must integrate
 heterogeneous and multi-scale data: microbial community profiles
@@ -66,20 +97,47 @@ each of these challenges in the usage notes
 (Section~\ref{usage}) and link them to the corresponding design
 choices in the methods and knowledge representation sections.
 
+Community reporting standards and knowledge-graph infrastructure
+define the reuse target this resource is built against. The FAIR
+principles set the criteria a deposited resource is judged against
+\cite{fair}. MIxS/MIMARKS define contextual fields for marker-gene and
+environmental sequence data \cite{mixs}, and the STREAMS guideline
+extends reporting practice to environmental microbiomes
+\cite{streams2025}. The National Microbiome Data Collaborative shows
+how persistent identifiers, standardized metadata and linked-data
+schemas support reuse across environmental microbiome studies
+\cite{nmdc2026}. On the knowledge-graph side, KG-Microbe connects
+microbial taxa with traits, environments and growth preferences
+\cite{kgmicrobe2026}, and MetagenomicKG integrates taxonomic,
+functional and biomedical sources for metagenomic applications
+\cite{metagenomickg2026}. These resources establish that a microbiome
+knowledge graph is not itself novel. The contribution of the present
+resource is the joined, expedition-level provenance of locations,
+physical specimens, laboratory processes, geochemistry, climate,
+sequence runs, quality control and taxon observations from a single
+landscape survey, rather than vocabulary coverage or graph
+construction alone.
+
 Here, we develop a knowledge graph of large parts of the Rub' al-Khali
 desert ecosystem to serve as the semantic foundation of the Rub'
 al-Khali digital twin. We present an OWL 2 DL knowledge graph
-\cite{owl2} that contains 37.4 million RDF triples \cite{rdf}. This
+\cite{owl2} built from RDF instance data \cite{rdf}. This
 knowledge graph integrates data from five field expeditions
-(2023--2025) across 70 sampling sites that span an over 1,000 km
-transect from the western to the east of the Rub' al-Khali. The
-dataset includes 16S rRNA gene amplicon profiles from 2,535 soil
-samples, which yield 1,401,008 taxon-sample abundance observations. We
-incorporated X-ray fluorescence (XRF) measurements of 91 chemical
-analytes from 249 measurement sessions. Furthermore, we integrated
-site-specific environmental metadata recorded at each visit and
-monthly climate records derived from the Open-Meteo database
-\cite{openmeteo}.
+(2023--2025) along a transect of more than 1,000 km across the Saudi
+Rub' al-Khali, from the western escarpment to the eastern border with
+Oman. A versioned source ledger of 2,550 rows (2,302 master-sheet rows
+and 248 plant rows) links field specimens to their downstream
+products; 2,516 non-control rows are represented as sample individuals
+in the graph. The canonical 16S rRNA gene amplicon feature table
+contains 1,271 profiles, of which 1,237 pass ecological filtering
+across 64 numeric site labels. We incorporated X-ray fluorescence
+(XRF) measurements from two complementary workflows: 71 complete
+in-situ handheld field sessions at 58 Trip~5 sites, and 725 processed
+laboratory records of archived material from all five expeditions. We
+further integrated site-specific environmental metadata recorded at
+each visit (274 field logs), 712 admitted archived-soil pH
+observations, and monthly climate records derived from the Open-Meteo
+database \cite{openmeteo}.
 
 We structured the knowledge graph with the Semanticscience Integrated
 Ontology (SIO) \cite{sio} as the upper-level framework. This design
@@ -109,26 +167,27 @@ evidence-based policy.
 This resource makes several contributions. On the scientific side,
 it provides a coordinated multi-trip desert microbiome and
 geochemistry dataset---16S rRNA amplicon profiles, XRF elemental
-measurements, GPS-tagged field metadata, and monthly climate
-records---for 2{,}535 soil samples from 70 sites across a
-1{,}000~km transect of the Rub' al-Khali, together with a
-harmonized taxonomic abundance table that maps operational taxonomic
-units from heterogeneous classifier outputs onto NCBI Taxonomy while
-preserving the original assertions. On the technical side, the
-resource comprises an OWL~2~DL knowledge graph (37~million asserted
-triples, expanded to approximately 118~million triples after
-OWL-Horst materialization) built on SIO with domain classes grounded
-in ChEBI, ENVO, and NCBI Taxonomy, modelling the full provenance
-chain from field sampling to digital data products. We formalize
-reusable ontology design patterns for sampling, measurement,
-taxonomic abundance, and provenance aligned with SIO's core idioms.
-A ShEx-based ingest validation workflow enforces structural shapes on
-every RDF batch before loading, and the ELK reasoner is used to
-validate logical consistency of the knowledge graph. OWL-Horst
-forward-chaining materialization in Virtuoso expands subclass,
-subproperty, inverse, and transitivity entailments so that query
-answering can be served from physically materialized triples. A set of
-competency questions documents the intended query workload and serves
-as regression tests, and a web portal with an interactive map, per-site
-dashboards, and a SPARQL editor exposes the knowledge graph to domain
-scientists without requiring SPARQL fluency.
+measurements, archived-soil pH, GPS-tagged field metadata, and monthly
+climate records---for 2{,}516 sample individuals from five expeditions
+across a 1{,}043~km transect of the Rub' al-Khali, together with a
+harmonized taxonomic abundance table that maps amplicon sequence
+variants onto NCBI Taxonomy while preserving the original assertions.
+On the technical side, the
+resource comprises an OWL~2~DL knowledge graph built on SIO with
+domain classes grounded in ChEBI, ENVO, and NCBI Taxonomy, modelling
+the full provenance chain from field sampling to digital data
+products. We formalize reusable ontology design patterns for sampling,
+measurement, taxonomic abundance, and provenance aligned with SIO's
+core idioms. A ShEx-based ingest validation workflow enforces
+structural shapes on every RDF batch before loading, and the ELK
+reasoner is used to validate logical consistency of the knowledge
+graph. A set of competency questions documents the intended query
+workload and serves as regression tests, and a web portal with an
+interactive map, per-site dashboards, and a SPARQL editor exposes the
+knowledge graph to domain scientists without requiring SPARQL fluency.
+The companion ecological analysis reports the inferential results for
+the quality-controlled community profiles, laboratory-XRF gradient,
+rainfall, spatial turnover and association networks
+\cite{ecology_companion}; the present paper describes the reusable
+data products, provenance model, identifier mappings and their
+executable validation.

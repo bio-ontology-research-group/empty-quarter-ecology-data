@@ -1,29 +1,86 @@
 \section{Data records}\label{records}
 
-We deposited the raw sequencing data generated in this study in the
-European Nucleotide Archive (ENA) under the umbrella project accession
-{\tt PRJEB104209}. Amplicon sequencing data reside under project {\tt
-  PRJEB106069}.
-
-We made the knowledge graph accessible via a public SPARQL endpoint at
+The resource is distributed as a single directory tree in which every
+payload file is declared in a machine-readable manifest
+(\texttt{PRE\_RELEASE\_MANIFEST.tsv}) with its byte size, SHA-256
+checksum, category, release status and licence gate. The raw
+sequencing data are deposited in the European Nucleotide Archive (ENA)
+under the umbrella project accession {\tt PRJEB104209}, with amplicon
+sequencing under project {\tt PRJEB106069}. The knowledge graph is
+accessible via a public SPARQL endpoint at
 \url{https://rubalkhali.science/sparql} and through a web interface at
-\url{https://rubalkhali.science/}. We maintain all source code for
-data processing, ontology generation, and validation at
+\url{https://rubalkhali.science/}, and all source code for data
+processing, ontology generation, and validation is maintained at
 \url{https://github.com/bio-ontology-research-group/empty-quarter}.
 
-We distribute the knowledge graph data files as OWL/XML and Turtle
-(.ttl) formats, structured by data type:
-\begin{itemize}
-\item \texttt{rubalkhali.owl} --- Base ontology (TBox).
-\item \texttt{rubalkhali\_sites.owl} --- 70 sampling sites with coordinates and biome annotations.
-\item \texttt{rubalkhali\_samples.owl} --- 2,535 soil and plant samples with compartment types.
-\item \texttt{rubalkhali\_measurements.owl} --- Environmental measurements (temperature, pressure, humidity) and climate records (12,936 monthly, 582 annual).
-\item \texttt{rubalkhali\_xrf.owl} --- 6,674 XRF measurement values across 91 analytes from 249 measuring processes.
-\item \texttt{rubalkhali\_dna.owl} --- 2,410 DNA extracts with concentration data.
-\item \texttt{rubalkhali\_sra.owl} --- 1,242 sequencing run records linked to ENA accessions.
-\item \texttt{rubalkhali\_qc.owl} --- Sequencing quality metrics (GC content, duplicate rate, sequence counts).
-\item \texttt{rubalkhali\_taxonomy\_abox.ttl} --- 1,401,008 taxon abundance observations with relative and absolute counts.
-\end{itemize}
+\subsection{Knowledge-graph modules}
+
+The primary artifacts are the knowledge-graph modules, distributed as
+OWL/XML and Turtle files and structured by data type
+(Table~\ref{tab:modules}). The base ontology
+(\texttt{rubalkhali.owl}) holds the terminology; each remaining module
+holds the instance data for one domain and shares the same site,
+specimen and process identifiers, so the modules can be loaded
+together into any RDF store or used individually.
+
+\begin{table}[h]
+\centering
+\caption{Knowledge-graph modules in the deposit.}
+\label{tab:modules}
+\small
+\begin{tabular}{p{0.34\textwidth} p{0.58\textwidth}}
+\toprule
+\textbf{Module} & \textbf{Content} \\
+\midrule
+\texttt{rubalkhali.owl} & Base ontology (TBox) \\
+\texttt{rubalkhali\_sites.owl} & Sampling sites with coordinates and biome annotations \\
+\texttt{rubalkhali\_samples.owl} & Soil and plant specimen individuals with compartment types \\
+\texttt{rubalkhali\_measurements.owl} & Field environmental measurements and climate records \\
+\texttt{rubalkhali\_xrf.owl} & XRF measurement values from the field and laboratory workflows \\
+\texttt{rubalkhali\_dna.owl} & DNA extracts with concentration data \\
+\texttt{rubalkhali\_sra.owl} & Sequencing run records linked to ENA accessions \\
+\texttt{rubalkhali\_qc.owl} & Sequencing quality metrics (GC content, duplicate rate, sequence counts) \\
+\texttt{rubalkhali\_controls.ttl} & Laboratory-control materials, roles, batches and sequence occurrences \\
+\texttt{rubalkhali\_ph\_eq\_ph\_shared\_v1\_0\_0.ttl} & Archived-soil pH measurements and sessions \\
+\texttt{rubalkhali\_taxonomy\_abox.ttl} & Taxon abundance observations over the feature profiles \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Tabular data products}
+
+Alongside the graph, the deposit distributes the curated tabular data
+products from which the modules are generated: the versioned source
+ledger linking site and trip to specimen, extraction, library,
+sequence run, quality-control decision and derived community; the
+canonical Trips~1--5 amplicon feature table and its taxonomy mapping;
+the correction and alias ledgers that record every deterministic
+metadata repair without overwriting source values; the curated field
+environmental table; the field and laboratory XRF tables together with
+the audited chemical-mapping ledger; and the versioned archived-soil
+pH dataset \texttt{EQ-PH-SHARED-v1.0.0}. The four derived
+companion-analysis inputs (the paired PMA table, the CoverM
+genome-abundance profiles, the eggNOG annotations and the
+measured-function input archive) are distributed as records for
+downstream statistical re-execution rather than as graph modules.
+
+\subsection{Validation schemas, queries and evidence}
+
+The deposit includes the artifacts needed to re-validate the resource:
+the ShEx shapes that define the structural contract for each entity
+family, the positive and negative structural fixtures, the archived
+competency SPARQL queries, and the machine-readable evidence bundles
+(reconciliation summaries, audit tables, validation records and
+checksum manifests) produced by the release workflow. A companion data
+dictionary (\texttt{metadata/DATA\_DICTIONARY.tsv}) records the field
+names, data types, units, missing-value conventions and definitions
+for the curated canonical tabular records. Quantities carry units only
+where a unit is documented at the source: environmental source tables
+retain degrees Celsius, hectopascals and percent relative humidity; in
+the graph, pressure magnitudes are asserted in pascals, climate
+records use degrees Celsius and millimetres, and DNA concentrations
+are in nanograms per microlitre. XRF concentrations carry no
+documented unit assertion and must not be treated as percentages.
 
 The data and source code to generate the Rub' al-Khali knowledge graph
 is available at \todo{Add Zenodo DOI URL here}.

@@ -4,28 +4,44 @@
 \usepackage{multirow}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{amsthm}
-\usepackage{mathrsfs}
 \usepackage[title]{appendix}
 \usepackage{xcolor}
 \usepackage{textcomp}
 \usepackage{manyfoot}
 \usepackage{booktabs}
-\usepackage{algorithm}
-\usepackage{algorithmicx}
-\usepackage{algpseudocode}
 \usepackage{listings}
-\usepackage{tikz}
+\lstset{breaklines=true,breakatwhitespace=false,columns=fullflexible,
+  basicstyle=\ttfamily\scriptsize}
 \usepackage{longtable}
+\usepackage{pdflscape}
+% Longtable repeats its continuation anchor on page breaks in this class.
+% Disable PDF links in the standalone supplement while retaining numbered
+% cross-references; this avoids duplicate destinations without hiding tables.
+\hypersetup{draft,hypertexnames=false}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\setlength{\tabcolsep}{3pt}
 
 \begin{document}
 
 \title{Supplementary Material: A formal knowledge base for metagenomics and geochemistry of the Rub' al Khali desert}
 \maketitle
 
+\input{kr_supplement.tex}
+
 \section{Supplementary Tables}
 
-\input{env_table.tex}
+Table~\ref{tab:env_data} reports the curated field observations, and
+Table~\ref{tab:chebi_mapping} reports the audited XRF channel cross-references.
 
+\begin{landscape}
+\input{env_table.tex}
+\end{landscape}
+
+\begin{landscape}
 \input{xrf_table.tex}
+\end{landscape}
+
+\bibliography{sn-bibliography}
 
 \end{document}
