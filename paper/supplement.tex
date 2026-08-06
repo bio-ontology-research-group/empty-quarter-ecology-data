@@ -18,9 +18,15 @@
 % Disable PDF links in the standalone supplement while retaining numbered
 % cross-references; this avoids duplicate destinations without hiding tables.
 \hypersetup{draft,hypertexnames=false}
-\setlength{\LTleft}{0pt}
-\setlength{\LTright}{0pt}
 \setlength{\tabcolsep}{3pt}
+% Inside the rotated landscape environment the text block is as wide as the
+% portrait text height, but longtable still measures its rows against the
+% portrait text width. The difference is the amount by which a full-width
+% longtable would overflow the rotated page; we use it to shift and widen
+% the longtable rows so they fill the landscape page instead of overflowing.
+\newlength{\landexcess}
+\setlength{\landexcess}{\textheight}
+\addtolength{\landexcess}{-\textwidth}
 
 \begin{document}
 
@@ -35,10 +41,14 @@ Table~\ref{tab:env_data} reports the curated field observations, and
 Table~\ref{tab:chebi_mapping} reports the audited XRF channel cross-references.
 
 \begin{landscape}
+\pagestyle{empty}
+\setlength{\LTcapwidth}{\textheight}
 \input{env_table.tex}
 \end{landscape}
 
 \begin{landscape}
+\pagestyle{empty}
+\setlength{\LTcapwidth}{\textheight}
 \input{xrf_table.tex}
 \end{landscape}
 
