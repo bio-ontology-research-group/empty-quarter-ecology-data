@@ -218,6 +218,7 @@ For instance, the sequence analysis for a specific sample yields an absolute seq
 \emph{Collection--hasMember--Thing} and \emph{Quantity--refersTo--Quality}
 idioms:
 
+{\small
 \begin{align}
 	\label{eq:taxabundance}
 	\text{BioinformaticWorkflow} & \sqsubseteq \text{Process} \\
@@ -232,6 +233,7 @@ idioms:
 	\text{AbundanceQuality} & \sqsubseteq \exists
 	    \text{isAttributeOf}.\text{Taxon}
 \end{align}
+}
 
 \begin{lstlisting}[caption={Turtle representation of taxonomic abundance formalized from a feature table.}, label={lst:ttl_tax}, basicstyle=\ttfamily\scriptsize, frame=single]
 rak:P290001 a rak:0000071 ; # Bioinformatic Workflow
@@ -271,6 +273,7 @@ the measurement pattern (Equation~\ref{eq:measurement}), with the
 target restricted to a soil sample and the produced quantity bound to
 an analyte-specific quality:
 
+{\small
 \begin{align}
 	\label{eq:xrf}
 	\text{XRFMeasurementProcess} & \sqsubseteq \text{MeasurementProcess} \\
@@ -282,6 +285,7 @@ an analyte-specific quality:
 	\text{AnalyteQuality} & \sqsubseteq \exists
 	    \text{isAttributeOf}.\text{SoilSample}
 \end{align}
+}
 
 Listing~\ref{lst:ttl_xrf} illustrates an XRF measurement
 for a specific analyte.
@@ -356,6 +360,7 @@ Each process is specified by a protocol and may carry agents and
 device participants, reusing the experimental protocol pattern of
 Equation~\ref{eq:protocol}.
 
+{\small
 \begin{align}
 	\label{eq:sequencing}
 	\text{DNAExtractionProcess} & \sqsubseteq \text{ProtocolExecution} \\
@@ -373,6 +378,7 @@ Equation~\ref{eq:protocol}.
 	\text{FASTQDataset} & \sqsubseteq \text{Dataset} \sqcap \forall
 	    \text{hasMember}.\text{SequenceRead}
 \end{align}
+}
 
 \begin{lstlisting}[caption={Turtle representation of the sequencing workflow from soil sample to FASTQ dataset.}, label={lst:ttl_sequencing}, basicstyle=\ttfamily\scriptsize, frame=single]
 rak:P200001 a rak:0000044 ; # DNA Extraction Process
@@ -415,6 +421,7 @@ Metrics (sequence count, GC content, duplicate rate, read length)
 are split into forward (R1) and reverse (R2) subclasses so that the
 provenance of paired-end runs is preserved.
 
+{\small
 \begin{align}
 	\label{eq:qc}
 	\text{SequencingQCProcess} & \sqsubseteq \text{Process} \\
@@ -426,6 +433,7 @@ provenance of paired-end runs is preserved.
 	\text{QCQuality} & \sqsubseteq \exists
 	    \text{isAttributeOf}.\text{FASTQDataset}
 \end{align}
+}
 
 \begin{lstlisting}[caption={Turtle representation of a sequencing QC measurement (forward-read GC content).}, label={lst:ttl_qc}, basicstyle=\ttfamily\scriptsize, frame=single]
 rak:P350001 a rak:0000047 ; # Sequencing QC Process
