@@ -209,9 +209,8 @@ all 4,293 reported Trip~5 cells under the last-reported rule, with no
 mismatched reported cells, and verified that the canonical laboratory
 input comprises all 725 processed records. An independent
 chemical-identifier gate checked all 93 instrument channels against
-the pinned ChEBI 
-%v247
-release and a checksummed PubChem snapshot; all
+the pinned ChEBI release 247 and the checksummed PubChem snapshot of
+23 July 2026 (Section~\ref{methods:xrf}); all
 rows passed, and audited nulls are retained for the unmapped LE
 pseudo-analyte and unsupported oxides rather than being replaced by
 lexical matches. The pH reconciliation independently accounts for all
@@ -221,30 +220,13 @@ Section~\ref{records}.
 
 \subsection{ShEx schema validation}
 
-We validated the structural integrity of the knowledge graph using
-Shape Expressions (ShEx), as described in
-Section~\ref{subsec:schema_def}. We defined ShEx shapes for all core
-entity types: sampling sites, soil samples, environmental
-measurements, DNA extracts, sequencing datasets, quality control
-records, and taxonomy observations. We bound each shape to its
-corresponding class instances via a Shape Map.
-
-We implemented the validation using the Apache Jena ShEx library
-(v4.10.0) invoked from Groovy scripts. We integrated ShEx
-validation into the automated deployment workflow: each time the
-workflow regenerates an ABox module, the validation step tests
-instances of the relevant class against their ShEx shape before
-loading the data into Virtuoso. The workflow terminates with an error
-if any instance violates the shape constraints (e.g., a sampling site
-lacking GPS coordinates or a DNA extract missing a concentration
-value). This mechanism functions as a regression test, ensuring that
-modifications to the ETL scripts do not introduce structural
-inconsistencies. The pH module was validated separately over all 712
-measurement processes, values and acidity qualities and all 29
-sessions, and the laboratory-control module passed its shape and
-scientific-invariant checks.
-
-The tractable modules passed their assigned ShEx shapes. The ShEx
+We ran the ShEx validation described in Section~\ref{methods}
+(shapes defined in Section~\ref{subsec:schema_def}) over every
+regenerated ABox module before loading into Virtuoso. The tractable
+modules passed their assigned ShEx shapes. The pH module was
+validated separately over all 712 measurement processes, values and
+acidity qualities and all 29 sessions, and the laboratory-control
+module passed its shape and scientific-invariant checks. The ShEx
 suite also tests rejection, not only conformance: negative fixtures
 that differ from a valid instance in exactly one respect (a sampling
 site without coordinates, a value with an invalid datatype, a reversed
@@ -261,22 +243,9 @@ unexecuted ShEx shapes.
 
 \subsection{Logical consistency}
 
-We verified the logical consistency of the knowledge graph using the
-ELK reasoner, as described in Section~\ref{methods}. We loaded the
-tractable set of OWL modules into a single OWL ontology and ran ELK to
-check for unsatisfiable classes and contradictory axioms. The reasoner
-reported the merged included modules as consistent.
-
-We performed this consistency check as part of continuous integration
-during ontology development. Whenever we modified the TBox or
-introduced new ABox modules, we re-ran the ELK reasoner to detect
-regressions. We chose ELK over more expressive reasoners such as
-HermiT \cite{hermit} because the size of the knowledge graph
-made reasoning in the full OWL 2 DL profile computationally
-infeasible.
-
-We implemented the ELK consistency check via the OWL API (v4.5.26) with the ELK OWL API module (v0.4.3) in a Groovy
-script. A clean rerun on the current tractable modules loaded 781,293
+The ELK consistency check described in Section~\ref{methods} was
+re-run whenever the TBox changed or a new ABox module was introduced.
+A clean rerun on the current tractable modules loaded 781,293
 axioms from 10 distinct ontology IRIs and reported the resulting
 merged ontology as consistent; the generated ecosystem and
 laboratory-control modules were included. The run excluded the

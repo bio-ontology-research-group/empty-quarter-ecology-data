@@ -323,6 +323,27 @@ thresholds, is archived with the release.
 
 \input{02_methods_taxonomy}
 
+\subsection{Shotgun-derived companion inputs}
+
+Two of the tabular companion-analysis inputs distributed with the
+deposit (Section~\ref{records}) derive from a separate shotgun
+metagenomic study of the same expeditions rather than from the 16S
+workflow above. A catalogue of metagenome-assembled genomes was
+assembled, binned and dereplicated in that study; its assembly and
+binning parameters and its read accessions are reported there and
+remain a release gate here \todo{assembly, binning and CoverM
+versions; shotgun read accessions}. From that catalogue we distribute
+(i) 150 per-library CoverM genome-relative-abundance tables (one
+column per shotgun library, in percent of reads, with the unmapped
+fraction retained as its own row) and (ii) the eggNOG-mapper v2.1.12
+annotation table \cite{eggnog} of the concatenated predicted proteome,
+run on the KAUST Ibex cluster on 14 June 2026, from which a
+990-genome by KEGG Orthology copy-number matrix is built for the
+genomes present in both inputs. These files are provided as records
+for downstream re-execution of the ecology paper's encoded-function
+test, not as graph modules, and the deposit does not by itself make
+the upstream assembly, binning or mapping reproducible.
+
 \subsection{Environmental and climate data}
 
 We retrieved historical climate data from the Open-Meteo archive
@@ -353,16 +374,16 @@ inputs contain 547 selected sample records from Trips~1--4 and 178
 from Trip~5 (725 records in total).
 %, and all 725 enter the analyses. A former 158-row Trip~5 table and the resulting 705-row cross-trip table are retired legacy artifacts and are not analytical inputs.
 
-The provenance audit reproduced all 13,390 reported Trips~1--4 cells under the current largest-positive-value rule and all 4,293 reported Trip~5 cells under the parser's different last-reported-value rule. Neither rule is treated as instrument-prescribed, and the release discloses the two source-specific policies rather than implying a common calibrated procedure.
+Both laboratory sources occasionally report the same formula more than once for one sample: the Trips~1--4 workbooks list a formula under several reporting sections (for example the element and oxide sections), and the Trip~5 workbook contains one sample (V14Dr1) with two readings. The two source-specific parsers resolve these repeats differently, taking the largest positive value for Trips~1--4 and the last reported row for Trip~5; neither policy is instrument-prescribed. The provenance audit reproduced all 13,390 reported Trips~1--4 cells and all 4,293 reported Trip~5 cells under these rules. In practice the two rules give the same value everywhere except three analyte cells (Al, Na and Si) of that one Trip~5 record, because repeated Trips~1--4 rows always carry identical values; a single rule would therefore change one of the 725 laboratory records, and the release discloses both policies rather than implying a common calibrated procedure.
 
 
 All XRF instrument channels (e.g. element, oxide) were mapped
-to a chemical identifier in a pinned ChEBI \cite{chebi} release and cross-checked against a PubChem \cite{pubchem} snapshot. An
+to a chemical identifier in the pinned ChEBI \cite{chebi} release 247 (3 December 2025) and cross-checked against a PubChem \cite{pubchem} property snapshot retrieved on 23 July 2026. An
 executable audit rejects identifiers that cannot be found, that have been deprecated, or whose formula does not match the channel.
 %missing, deprecated or formula-mismatched records, and unsupported mappings remain null.
 For a descriptive
 cross-workflow diagnostic, we took the median of repeated field sessions at each site and compared it with the Trip~5 Deep laboratory record at the 58 sites measured by both workflows.
-Rank agreement was modest. We do not infer calibration between the two workflows, and no analysis treats field and laboratory values as being on the same scale.
+Rank agreement was modest: for the 12 analytes reported positive by both workflows at more than 10 of the 58 matched sites, the Spearman correlation between field and laboratory values had a median of 0.21 (range $-0.40$ to 0.48; \path{evidence/xrf_audit/xrf_field_lab_agreement.tsv}). We do not infer calibration between the two workflows, and no analysis treats field and laboratory values as being on the same scale.
 %repeated field sessions were reduced by their site median and matched to the Trip~5 laboratory record at 58 sites; rank agreement was generally modest. No cross-workflow calibration is inferred, and no analysis assumes that field and laboratory values have the same scale.
 
 \subsection{Archived-soil pH acquisition and admission}\label{methods:ph}
@@ -419,7 +440,10 @@ quantification or inverse object properties found in ontologies like
 the Semanticscience Integrated Ontology (SIO). We employed ELK instead
 of more expressive reasoners (e.g., HermiT \cite{hermit}) because
 verifying the large knowledge graph we created with a more expressive
-reasoner proved impossible due to computational complexity. The
+reasoner proved impossible due to computational complexity. We
+invoked ELK through the OWL API (v4.5.26) with the ELK OWL API module
+(v0.4.3) from a Groovy script, loading the tractable set of OWL
+modules into a single merged ontology. The
 current run is memory-bounded and excludes the multi-gigabyte taxonomy
 ABox and large reference modules, so a successful run establishes
 bounded consistency of the included modules rather than whole-graph
