@@ -1,0 +1,76 @@
+{
+  "analysis_unit": "paired aliquot",
+  "input": {
+    "bytes": 452179,
+    "path": "relic-dna/ASV_table.tsv",
+    "sha256": "ab504fdd38483f467529bcfeff23f1d7037a9b8399f1135fd4b877f12719a2d3"
+  },
+  "n_pairs": 9,
+  "not_supported": [
+    "a quantitative relic-DNA fraction",
+    "equivalence or proof of no Shannon effect",
+    "cell viability",
+    "survey-wide relic-DNA uniformity",
+    "a mechanism for patterns across campaigns or compartments"
+  ],
+  "permitted_wording": "In nine paired Trip-5 aliquots, PMA treatment reduced expected rarefied richness, while no Shannon-diversity difference was detected.",
+  "provenance": {
+    "random_operations": true,
+    "script": "analysis/v3/pma_endpoint_analysis.py",
+    "script_sha256": "55ec443a98e7a4538c50faffeec859a570cd68bfb401e8189ba3bafbc79276da",
+    "seed": 20260805,
+    "software": {
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "scipy": "1.14.1"
+    }
+  },
+  "rarefaction": {
+    "depth": 123897,
+    "depth_basis": "minimum library size among the 18 paired biological samples",
+    "method": "Hurlbert exact expected richness",
+    "random_rarefaction": false
+  },
+  "richness_endpoint": {
+    "mean_difference_treated_minus_untreated": -163.32301665346964,
+    "mean_difference_uncertainty": {
+      "estimate": -163.32301665346964,
+      "independent_unit": "matched aliquot pair",
+      "interval_high": -69.82311684494061,
+      "interval_level": 0.95,
+      "interval_low": -273.996779040886,
+      "method": "paired-aliquot percentile bootstrap",
+      "n_bootstraps": 99999,
+      "seed": 20260805
+    },
+    "pairs_with_lower_treated_value": 8,
+    "treated_mean": 608.495324583152,
+    "untreated_mean": 771.8183412366217,
+    "wilcoxon_two_sided_exact": {
+      "p_value": 0.0078125,
+      "statistic": 1.0
+    }
+  },
+  "schema_version": "1.1",
+  "shannon_endpoint": {
+    "logarithm": "natural",
+    "mean_difference_treated_minus_untreated": 0.13007997109326885,
+    "mean_difference_uncertainty": {
+      "estimate": 0.13007997109326885,
+      "independent_unit": "matched aliquot pair",
+      "interval_high": 0.46675519772893853,
+      "interval_level": 0.95,
+      "interval_low": -0.15444593468608095,
+      "method": "paired-aliquot percentile bootstrap",
+      "n_bootstraps": 99999,
+      "seed": 20260805
+    },
+    "treated_mean": 4.323543671754851,
+    "untreated_mean": 4.193463700661582,
+    "wilcoxon_two_sided_exact": {
+      "p_value": 0.65234375,
+      "statistic": 18.0
+    }
+  },
+  "status": "paired_endpoints_only"
+}

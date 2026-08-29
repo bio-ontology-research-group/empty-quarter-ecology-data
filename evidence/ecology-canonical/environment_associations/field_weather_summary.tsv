@@ -1,0 +1,4 @@
+variable	label	unit	n_site_visits	minimum	median	maximum
+temperature_c	Air temperature	degree Celsius	247	20	35.2	49.4
+pressure_mbar	Atmospheric pressure	mbar	177	894	968	998
+relative_humidity_pct	Relative humidity	percent	239	9.5	20.2	62.5

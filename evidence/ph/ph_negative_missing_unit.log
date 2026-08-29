@@ -1,0 +1,2 @@
+FAIL
+<https://rubalkhali.science/kb/RAK_PH_VALUE_00136b2b88637110b45cfc80bb50418e7df8ba0370bfb3c90d4891e7c1936c56> @ <https://rubalkhali.science/schema/ph_measurements#PHMeasurementValueShape> :: Focus = <https://rubalkhali.science/kb/RAK_PH_VALUE_00136b2b88637110b45cfc80bb50418e7df8ba0370bfb3c90d4891e7c1936c56>, Status = nonconformant, Reason = Cardinality violation (min=1): 0

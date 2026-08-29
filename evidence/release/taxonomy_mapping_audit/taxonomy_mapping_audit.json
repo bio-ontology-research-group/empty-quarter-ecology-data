@@ -1,0 +1,141 @@
+{
+  "artifacts": {
+    "corrected_json": {
+      "bytes": 19886830,
+      "file": "mapped_taxonomy_corrected.json",
+      "sha256": "ad9899dea09c10688bc45b93349c542958234f3e9d7ac0480b1f1cb242c18aae"
+    },
+    "corrected_tsv": {
+      "bytes": 3997202,
+      "file": "mapped_taxonomy_corrected.tsv",
+      "sha256": "35dac225c30df165a8a0dc6c510749ca7f62a3574051880fd9f58fd2ebdb65a8"
+    },
+    "decision_ledger": {
+      "bytes": 13817313,
+      "file": "taxonomy_mapping_decisions.tsv",
+      "sha256": "72e232fd8408aa2b6c2a10d84c7410439ecea01fedcd387a2bb22ed813391acc"
+    },
+    "ecosystem_module_owl": {
+      "bytes": 4852434,
+      "file": "ecosystem_module.owl",
+      "sha256": "ff5e8e88975504130438fdcd1e7c867a581f1a43883a325e028a5157a0a0a457"
+    },
+    "ecosystem_module_ttl": {
+      "bytes": 4605839,
+      "file": "ecosystem_module.ttl",
+      "sha256": "5c4cc5bb85d0bcf46fbe94959eb89062ced28575cfa4c37f01a86f60f70b51bc"
+    },
+    "legacy_supplementary_species_ledger": {
+      "bytes": 33034,
+      "file": "taxonomy_source_extra_species_audit.tsv",
+      "sha256": "229b6bddd01b7391c9dffe92f1b385d1e65338578160b1342d6f78e76403c5d3"
+    },
+    "supplementary_species_ledger": {
+      "bytes": 33034,
+      "file": "taxonomy_source_supplementary_species.tsv",
+      "sha256": "229b6bddd01b7391c9dffe92f1b385d1e65338578160b1342d6f78e76403c5d3"
+    }
+  },
+  "checks": {
+    "ancestry": {
+      "status": "passed",
+      "violations": 0
+    },
+    "contextual_iri_collisions": {
+      "status": "passed",
+      "violations": 0
+    },
+    "coverage": {
+      "status": "passed",
+      "violations": 0
+    },
+    "ecosystem_module": {
+      "local_classes": 5622,
+      "mapped_classes": 8132,
+      "ncbi_classes": 2666,
+      "status": "passed",
+      "triples": 55628,
+      "violations": 0
+    },
+    "label": {
+      "status": "passed",
+      "violations": 0
+    },
+    "rank": {
+      "status": "passed",
+      "violations": 0
+    },
+    "shared_prefix_consistency": {
+      "status": "passed",
+      "violations": 0
+    },
+    "supplementary_species_not_promoted": {
+      "status": "passed",
+      "violations": 0
+    }
+  },
+  "counts": {
+    "contextual_prefixes": 5030,
+    "contextual_rows": 7581,
+    "decision_reasons": {
+      "2 ancestry-compatible exact NCBI candidates remain; external identity is ambiguous": 2,
+      "exact NCBI name candidates conflict with validated higher-rank ancestry": 946,
+      "historical NCBI identifier conflicts with validated higher-rank ancestry": 3012,
+      "historical NCBI identifier has the wrong rank": 39,
+      "historical NCBI identifier resolves with exact label/synonym, expected rank, and compatible validated ancestry": 18813,
+      "historical project identifier has one normalized rank/name/nearest-explicit-parent context": 2509,
+      "historical project identifier is reused in incompatible rank, label, or parent contexts": 43,
+      "new lineage has one exact rank-compatible NCBI label/synonym match with compatible validated ancestry": 1232,
+      "no exact rank-compatible NCBI preferred-label or synonym match": 318,
+      "source rank is unclassified; inherited identifiers are not asserted": 3221
+    },
+    "historical_collided_project_identifiers": 4,
+    "historical_collided_project_rows": 36,
+    "historical_header_artifacts_quarantined": 1,
+    "historical_stable_project_identifiers_before_parent_audit": 592,
+    "historical_stable_project_rows_before_parent_audit": 1664,
+    "historical_taxon_strings": 2488,
+    "mapping_rows": 30135,
+    "source_rows": 354251,
+    "source_taxon_strings": 4305,
+    "stable_project_identifiers_demoted_by_corrected_parent_audit": 0,
+    "stable_project_prefixes": 592,
+    "stable_project_rows": 2509,
+    "unique_contextual_identifiers": 5030,
+    "unique_final_ncbi_identifiers": 2510,
+    "unique_rank_prefix_decisions": 8133,
+    "unique_stable_project_identifiers": 592,
+    "validated_ncbi_prefixes": 2511,
+    "validated_ncbi_rows": 20045,
+    "violations": 0
+  },
+  "inputs": {
+    "historical_mapping": {
+      "bytes": 2164656,
+      "path": "data/processed/ontology/mapped_taxonomy.tsv",
+      "sha256": "c9e746a4fc9570b33d96aaedbf9d0b89c654c9f80456c8d3ca5d2a1f77bfa9cd"
+    },
+    "ncbi_taxonomy": {
+      "bytes": 1646833334,
+      "path": "data/ontologies/ncbitaxon.owl",
+      "sha256": "5238897945e50ceb9007a1f96f40d1e8774456c3a0d691292fe7e8e9b5b1287d"
+    }
+  },
+  "ncbi_index": {
+    "indexed_name_assertions": "4302",
+    "numeric_class_count": "2650540",
+    "owl_path": "data/ontologies/ncbitaxon.owl",
+    "owl_sha256": "5238897945e50ceb9007a1f96f40d1e8774456c3a0d691292fe7e8e9b5b1287d",
+    "schema_version": "ncbi-sqlite-v1",
+    "status": "complete",
+    "wanted_names_count": "4883",
+    "wanted_names_sha256": "7c194c581f5c1aae8952f4596cbb1972e05ec294544d755bd8e600ec48b4c86f"
+  },
+  "policy": {
+    "external_identity": "unique exact NCBI label/synonym + rank + compatible ancestry",
+    "fallback": "deterministic lineage-and-rank contextual class",
+    "gtdb_inaturalist_equivalence": "excluded",
+    "inherited_identifiers": "retired"
+  },
+  "status": "passed"
+}

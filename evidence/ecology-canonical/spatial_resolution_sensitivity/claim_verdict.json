@@ -1,0 +1,51 @@
+{
+  "asv_alignment": {
+    "aligned_groups": 629,
+    "groups_dropped_from_asv_cache": 2,
+    "reference_groups": 630,
+    "reference_groups_absent_from_asv_cache": 1
+  },
+  "asv_partial_r2_range": [
+    0.3462326527798828,
+    0.37368211786597405
+  ],
+  "genus_primary_partial_r2": 0.4016095009554631,
+  "input": {
+    "asv_counts_sha256": "6b5a98d4d59566dea26f25e0412a7ad5d7663de3d8a672a476813b62e8e78750",
+    "asv_groups_before_alignment": 631,
+    "genus_counts_sha256": "324d19da3669d489a42b60e0bdd6ca7f3238308bbadc72b8a28ae6098ddc8481",
+    "genus_groups": 630,
+    "permutations": 999,
+    "prevalence_threshold": 0.2,
+    "pseudocount": 0.5,
+    "seed": 20260728
+  },
+  "moran_i_range_across_k": [
+    -0.00974576739594647,
+    0.1104372473095462
+  ],
+  "moran_k_status": "residual_autocorrelation_depends_on_neighbour_count",
+  "moran_p_max_across_k": 0.241,
+  "neighbour_counts_tested": [
+    3,
+    4,
+    5,
+    6,
+    8,
+    10
+  ],
+  "neighbour_counts_with_detected_autocorrelation": [
+    3,
+    4,
+    5,
+    6,
+    8
+  ],
+  "neighbour_counts_without_detected_autocorrelation": [
+    10
+  ],
+  "permitted_wording": "The transect association is not an artefact of genus aggregation: at amplicon-sequence-variant resolution the same model gives partial R2 0.3462 to 0.3737 against 0.4016 at genus level. The comparison runs on the 629-group intersection of the two caches, covering 629 of the 630 genus-reference groups (1 reference group absent from the ASV cache, 2 extra ASV-cache groups dropped); the genus figure quoted here is the 630-group primary fit. The residual Moran diagnostic declines with the neighbour count: it is detected at k = [3, 4, 5, 6, 8] and not at k = [10] (Moran I 0.1104 down to -0.0097). The fixed-k residual autocorrelation statement is bounded to the short-neighbourhood scale.",
+  "prohibited_wording": "Do not promote the ASV-resolution fit to the primary result; it is a supplementary resolution sensitivity on the same design and inherits every design limit of the primary model, including the collection-order alias. Do not state unqualified residual spatial autocorrelation without naming the neighbour count.",
+  "schema_version": "1.0",
+  "status": "asv_resolution_consistent_with_genus_primary"
+}

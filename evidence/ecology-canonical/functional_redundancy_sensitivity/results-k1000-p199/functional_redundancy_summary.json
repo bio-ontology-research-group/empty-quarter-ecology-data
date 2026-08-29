@@ -1,0 +1,17 @@
+{
+  "counts": {
+    "genomes": 990,
+    "kos_retained": 1000,
+    "permutations": 199,
+    "samples": 150
+  },
+  "limitations": [
+    "The analysis covers only reads assigned to the dereplicated genome catalog.",
+    "It tests encoded potential, not direct read-level function, expression, activity, or flux.",
+    "The null reassigns intact annotation profiles and is not a metabolic-network null."
+  ],
+  "mean_annotated_genome_fraction_of_coverm_total": 0.2846526590453926,
+  "permitted_wording": "Encoded-functional turnover was lower than taxonomic turnover, but not beyond the resolution-matched genome-label null.",
+  "schema_version": "1.0",
+  "status": "not_robust_to_resolution_matched_null"
+}

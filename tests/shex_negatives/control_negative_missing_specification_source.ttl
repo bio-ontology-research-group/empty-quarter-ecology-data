@@ -1,0 +1,22 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ncbitaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix rak: <https://rubalkhali.science/kb/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+
+rak:source_less_specification
+    a rak:RAK_0000316 ;
+    rdfs:label "composition specification missing its source" ;
+    dcterms:identifier "source-less-specification" ;
+    sio:SIO_000338 rak:fixture_product ;
+    rak:RAK_2000092 ncbitaxon:287 .
+
+rak:source_less_expected_taxon_assertion
+    a rak:RAK_0000313, rak:RAK_0000317 ;
+    rdfs:label "expected-taxon assertion with source-less specification" ;
+    dcterms:identifier "source-less-assertion" ;
+    rak:RAK_2000093 rak:source_less_specification ;
+    rak:RAK_2000094 rak:fixture_relation_descriptor ;
+    rak:RAK_2000095 ncbitaxon:287 ;
+    rak:RAK_2000090 rak:fixture_confirmed_status ;
+    sio:SIO_000772 rak:fixture_evidence .

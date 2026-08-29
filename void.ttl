@@ -1,0 +1,12 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rak: <https://rubalkhali.science/kb/> .
+
+rak:Dataset a void:Dataset ;
+    dcterms:title "Rub al-Khali Knowledge Graph" ;
+    dcterms:description "A knowledge graph integrating geochemical, environmental, and metagenomic data from the Rub al-Khali desert." ;
+    dcterms:creator "Robert Hoehndorf (https://orcid.org/0000-0001-8149-5890)" ;
+    dcterms:publisher "Robert Hoehndorf (https://orcid.org/0000-0001-8149-5890)" ;
+    dcterms:identifier <https://rubalkhali.science/kb/rubalkhali.owl> .

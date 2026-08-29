@@ -1,0 +1,66 @@
+{
+  "analysis_date": "2026-08-03",
+  "analysis_status": "response_window_not_identified",
+  "contamination_sensitivity": {
+    "candidate_interval": [
+      1,
+      4
+    ],
+    "direction_consistent": true,
+    "filtered_estimate_per_mm": -0.01228562813981781,
+    "filtered_n_pairs": 179,
+    "scope_note": "The contaminant filter changes linked Trip 5 profiles only; Trip 5 has little short-window rain, so this is a weak sensitivity for a rain effect carried by other campaigns.",
+    "unfiltered_estimate_per_mm": -0.012541227301478162,
+    "unfiltered_n_pairs": 179
+  },
+  "criteria": {
+    "climate_product_direction_consistent": true,
+    "finite_selected_direction": true,
+    "future_and_remote_placebos_nominally_null": false,
+    "permutation_endpoint_fwer_below_0.05": false,
+    "sampling_day_sensitivity_direction_consistent": false,
+    "spatial_halves_direction_and_magnitude_consistent": false
+  },
+  "main_paper_eligible": false,
+  "null_draw_accounting": {
+    "cumulative_scan_finite_draws": {
+      "max_absolute_t_all_endpoints": 4999,
+      "max_absolute_t_evenness_h_over_log_hurlbert": 4999,
+      "max_absolute_t_richness_hurlbert_25000": 4999,
+      "max_absolute_t_shannon": 4999
+    },
+    "disjoint_lag_finite_draws": {
+      "max_absolute_t_all_endpoints": 4786,
+      "max_absolute_t_evenness_h_over_log_hurlbert": 4786,
+      "max_absolute_t_richness_hurlbert_25000": 4786,
+      "max_absolute_t_shannon": 4786
+    },
+    "p_value_denominator_rule": "Plus-one permutation p-values use finite null statistics only. Non-estimable shifted disjoint-lag fits remain in the archived null table as missing values rather than being silently replaced.",
+    "requested_time_shifts": 4999
+  },
+  "permitted_wording": "The calibrated paired analysis did not identify a temporal response window to antecedent rainfall.",
+  "position_contrast": "Surface-minus-shallow-subsurface",
+  "post_hoc_status": "post_hoc_design_audit_and_window_analysis",
+  "primary_endpoint": "evenness_h_over_log_hurlbert",
+  "primary_endpoint_label": "Normalized evenness, $H/\\log(E[S_{25k}])$",
+  "primary_results": {
+    "best_cumulative_absolute_t": 2.1860473696501708,
+    "best_cumulative_window_days": 4,
+    "best_disjoint_lag_absolute_t": 1.9690032350890305,
+    "best_disjoint_lag_bin": [
+      8,
+      14
+    ],
+    "cumulative_scan_permutation_p_all_endpoint_fwer": 0.6286,
+    "cumulative_scan_permutation_p_endpoint_fwer": 0.5178,
+    "disjoint_lag_permutation_p_all_endpoint_fwer": 0.633799874660539,
+    "disjoint_lag_permutation_p_endpoint_fwer": 0.4679339878838521
+  },
+  "prohibited_wording": [
+    "rain caused the observed community pattern",
+    "a post-rain bloom was demonstrated",
+    "the smallest nominal p-value identifies the response window",
+    "sites sharing one POWER precipitation series are independent rain exposures"
+  ],
+  "schema_version": "1.0"
+}

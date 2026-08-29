@@ -1,0 +1,726 @@
+{
+  "bibliography": "data-paper/sn-bibliography.bib",
+  "bibliography_entries": 93,
+  "bibliography_sha256": "76e3e91d292fd0ab1c2c09e05bea423ad849d2ce3b0ba687e466846a89f23131",
+  "cited_keys": 55,
+  "keys_missing_from_bibliography": [],
+  "keys_without_local_copy": [
+    "ampliseq",
+    "chebi",
+    "dlhandbook",
+    "ecology_companion",
+    "elk",
+    "envo",
+    "fair",
+    "fierer2017",
+    "gopi2026sabkha",
+    "gtdb",
+    "hitzler_modularity",
+    "klindworth2013primers",
+    "mandaville_1986",
+    "ncbitaxon",
+    "nfcore",
+    "nmdc2026",
+    "obi",
+    "openmeteo",
+    "owl2",
+    "owlapi",
+    "owlhorst",
+    "pato",
+    "provo",
+    "pubchem",
+    "qiime2",
+    "shex",
+    "silva",
+    "sio",
+    "uo",
+    "virtuoso"
+  ],
+  "libraries_searched": [
+    "data-paper/resource",
+    "review-literature"
+  ],
+  "note": "Matching is by DOI plus title context or strong title-token overlap against PDF filenames and the first 4,000 characters of text files; bibliography mentions deep in unrelated files are not matches. A key reported as covered is not a guarantee that the local copy is the exact cited version; where a preprint and a final version differ, the archived copy should be checked against the bibliography entry before submission.",
+  "records": [
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.3390/life14121692",
+      "in_bibliography": true,
+      "key": "alawthan2024reserve",
+      "local_copies": [
+        "review-literature/2026-07-23/self/saudi-update/29-alawthan-reserve-2024.txt"
+      ],
+      "title": "Metagenome Analysis Identified Novel Microbial Diversity of Sandy Soils Surrounded by Natural Lakes and Artificial Water Points in {King Salman Bin Abdulaziz Royal Natural Reserve}, {Saudi Arabia}"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.25259/JKSUS_1695_2025",
+      "in_bibliography": true,
+      "key": "alhasani2026reserve",
+      "local_copies": [
+        "review-literature/2026-07-23/self/saudi-update/31-alhasani-reserve-plants-2026.txt"
+      ],
+      "title": "Diversity and ecological drivers of rhizospheric and endophytic microbiomes of desert plants in {King Salman Reserve}, {Saudi Arabia}"
+    },
+    {
+      "cited_in": [
+        "02_methods.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "ampliseq",
+      "local_copies": [],
+      "title": "Interpretations of environmental microbial community studies are biased by the selected 16S rRNA (gene) amplicon sequencing pipeline"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1111/1462-2920.13474",
+      "in_bibliography": true,
+      "key": "aslam2016rainfall",
+      "local_copies": [
+        "review-literature/2026-07-23/self/saudi-update/21-aslam-rainfall-2016.txt"
+      ],
+      "title": "Soil compartment is a major determinant of the impact of simulated rainfall on desert microbiota"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1017/dry.2025.10007",
+      "in_bibliography": true,
+      "key": "blancosacristan2025biocrust",
+      "local_copies": [
+        "review-literature/2026-07-23/self/saudi-update/48-biocrust-arabian-peninsula-review-2025.txt"
+      ],
+      "title": "Biological soil crusts in the {Arabian Peninsula}: Ecological functions, current knowledge and research gaps"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex",
+        "kr_supplement.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "chebi",
+      "local_copies": [],
+      "title": "{ChEBI}: a database and ontology for chemical entities of biological interest"
+    },
+    {
+      "cited_in": [
+        "03_knowledge_representation.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.1017/CBO9780511711787",
+      "in_bibliography": true,
+      "key": "dlhandbook",
+      "local_copies": [],
+      "title": "The {Description} {Logic} {Handbook}: theory, implementation, and applications"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "ecology_companion",
+      "local_copies": [],
+      "title": "Landscape-scale bacterial biogeography across the {Rub' al-Khali} reveals recurring spatial and soil-position structure"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1371/journal.pone.0208223",
+      "in_bibliography": true,
+      "key": "eida2018plants",
+      "local_copies": [
+        "review-literature/2026-07-23/self/saudi-update/22-eida-desert-plants-2018.txt"
+      ],
+      "title": "Desert plant bacteria reveal host influence and beneficial plant growth properties"
+    },
+    {
+      "cited_in": [
+        "02_methods.tex",
+        "05_validation.tex",
+        "06_usage.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.1007/s10817-013-9296-3",
+      "in_bibliography": true,
+      "key": "elk",
+      "local_copies": [],
+      "title": "The Incredible {ELK}: From Polynomial Procedures to Efficient Reasoning with $\\mathcal{EL}$ Ontologies"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex",
+        "02_methods.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "envo",
+      "local_copies": [],
+      "title": "The environment ontology: contextualising biological and biomedical entities"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "fair",
+      "local_copies": [],
+      "title": "The {FAIR} {Guiding} {Principles} for scientific data management and stewardship"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "fierer2017",
+      "local_copies": [],
+      "title": "Embracing the unknown: disentangling the complexities of the soil microbiome"
+    },
+    {
+      "cited_in": [
+        "02_methods.tex",
+        "06_usage.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1038/s41564-025-02035-2",
+      "in_bibliography": true,
+      "key": "fierer2025controls",
+      "local_copies": [
+        "review-literature/2026-07-30/control-consensus/guidelines-preventing-reporting-contamination-low-biomass-microbiome-studies_s41564-025-02035-2.pdf"
+      ],
+      "title": "Guidelines for preventing and reporting contamination in low-biomass microbiome studies"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.1016/j.egg.2026.100448",
+      "in_bibliography": true,
+      "key": "gopi2026sabkha",
+      "local_copies": [],
+      "title": "{eDNA} metabarcoding reveals halophilic and halotolerant bacterial assemblages in the salt flats of the northern {Red Sea} coast"
+    },
+    {
+      "cited_in": [
+        "02_methods_taxonomy.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.1093/nar/gkab776",
+      "in_bibliography": true,
+      "key": "gtdb",
+      "local_copies": [],
+      "title": "{GTDB}: an ongoing census of bacterial and archaeal diversity through a phylogenetically consistent, rank normalized and complete genome-based taxonomy"
+    },
+    {
+      "cited_in": [
+        "03_knowledge_representation.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "hitzler_modularity",
+      "local_copies": [],
+      "title": "A survey on ontology modularization"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1038/s44185-025-00116-3",
+      "in_bibliography": true,
+      "key": "islam2026",
+      "local_copies": [
+        "data-paper/resource/s44185-025-00116-3.txt",
+        "review-literature/2026-07-23/opus/Islam2026_npjBiodiversity_FAIR-digital-twins.txt"
+      ],
+      "title": "{FAIR} digital twins for biodiversity: enabling data, model, and workflow integration"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1093/gigascience/giag077",
+      "in_bibliography": true,
+      "key": "kgmicrobe2026",
+      "local_copies": [
+        "review-literature/2026-07-23/self/LITERATURE_AUDIT.txt"
+      ],
+      "title": "{KG-Microbe} -- Building Modular and Scalable Knowledge Graphs for Microbiome and Microbial Sciences"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.5194/soil-6-513-2020",
+      "in_bibliography": true,
+      "key": "khan2020saudi",
+      "local_copies": [
+        "review-literature/2026-07-23/opus/SaudiArabia2020_arid-soil-microbiome.txt",
+        "review-literature/2026-07-23/self/05-saudi-arid-soil-2020.txt",
+        "review-literature/2026-07-23/self/LITERATURE_AUDIT.txt",
+        "review-literature/2026-07-23/self/saudi-update/31-alhasani-reserve-plants-2026.txt",
+        "review-literature/2026-07-23/self/saudi-update/39-alsaedi-senna-2023.txt"
+      ],
+      "title": "Microbial communities and their predictive functional profiles in the arid soil of {Saudi Arabia}"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1016/j.ecoinf.2025.103407",
+      "in_bibliography": true,
+      "key": "khan2025",
+      "local_copies": [
+        "data-paper/resource/1-s2.0-S1574954125004169-main.txt",
+        "review-literature/2026-07-23/opus/EcolInf2025_A_digital-twin.txt"
+      ],
+      "title": "{TwinEco}: a unified framework for dynamic data-driven digital twins in ecology"
+    },
+    {
+      "cited_in": [
+        "02_methods.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.1093/nar/gks808",
+      "in_bibliography": true,
+      "key": "klindworth2013primers",
+      "local_copies": [],
+      "title": "Evaluation of general 16S ribosomal {RNA} gene {PCR} primers for classical and next-generation sequencing-based diversity studies"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "makhalanyane2015",
+      "local_copies": [
+        "review-literature/2026-07-23/opus/AEM2025_habitat-heterogeneity-extremely-arid_FULLTEXT.txt",
+        "review-literature/2026-07-23/self/saudi-update/50-mani-saudi-mycobiome-2026.txt"
+      ],
+      "title": "Microbial ecology of hot desert edaphic systems"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.1017/s0269727000008988",
+      "in_bibliography": true,
+      "key": "mandaville_1986",
+      "local_copies": [],
+      "title": "Plant Life in the Rub' al-Khali (the Empty Quarter), South-Central Arabia"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.3897/mycokeys.130.176937",
+      "in_bibliography": true,
+      "key": "mani2026mycobiome",
+      "local_copies": [
+        "review-literature/2026-07-23/self/saudi-update/43-elhady-water-vegetation-preprint-2025.txt",
+        "review-literature/2026-07-23/self/saudi-update/50-mani-saudi-mycobiome-2026.txt"
+      ],
+      "title": "Desert mycobiome of {Saudi Arabia} is driven by vegetation patterns"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1016/j.jaridenv.2023.105074",
+      "in_bibliography": true,
+      "key": "maurice2023fertility",
+      "local_copies": [
+        "review-literature/2026-07-23/self/saudi-update/38-maurice-fertility-islands-2023.txt"
+      ],
+      "title": "Fertility islands, keys to the establishment of plant and microbial diversity in a highly alkaline hot desert"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1186/s40793-024-00610-4",
+      "in_bibliography": true,
+      "key": "maurice2024",
+      "local_copies": [
+        "review-literature/2026-07-23/self/18-saudi-plant-microbiome-2024.txt"
+      ],
+      "title": "Networking the desert plant microbiome, bacterial and fungal symbionts structure and assortativity in co-occurrence networks"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1371/journal.pone.0150342",
+      "in_bibliography": true,
+      "key": "mckay2016",
+      "local_copies": [
+        "review-literature/2026-07-23/opus/McKay2016_PLOSONE_RubAlKhali-inverted-mat.txt",
+        "review-literature/2026-07-23/self/06-rub-al-khali-microbial-mat-2016.txt",
+        "review-literature/2026-07-23/self/LITERATURE_AUDIT.txt"
+      ],
+      "title": "An Unusual Inverted Saline Microbial Mat Community in an Interdune Sabkha in the {Rub' al-Khali} (the {Empty Quarter}), {United Arab Emirates}"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1093/bioinformatics/btag421",
+      "in_bibliography": true,
+      "key": "metagenomickg2026",
+      "local_copies": [
+        "review-literature/2026-07-23/self/LITERATURE_AUDIT.txt"
+      ],
+      "title": "{MetagenomicKG}: a knowledge graph for metagenomic applications"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1038/nbt.1823",
+      "in_bibliography": true,
+      "key": "mixs",
+      "local_copies": [
+        "review-literature/2026-07-23/self/LITERATURE_AUDIT.txt"
+      ],
+      "title": "Minimum information about a marker gene sequence ({MIMARKS}) and minimum information about any ({x}) sequence ({MIxS}) specifications"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.3389/fpls.2024.1294173",
+      "in_bibliography": true,
+      "key": "mousa2024",
+      "local_copies": [
+        "review-literature/2026-07-23/opus/2024_desert-microbiome-climate.txt",
+        "review-literature/2026-07-23/self/saudi-update/49-mousa-arabian-plant-endophytes-2026.txt"
+      ],
+      "title": "High-throughput sequencing reveals the structure and metabolic resilience of desert microbiome confronting climate change"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1371/journal.pone.0185096",
+      "in_bibliography": true,
+      "key": "moussa2017fungi",
+      "local_copies": [
+        "review-literature/2026-07-23/self/saudi-update/51-moussa-western-fungi-2017.txt"
+      ],
+      "title": "Comparative metagenomics approaches to characterize the soil fungal communities of western coastal region, {Saudi Arabia}"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1002/mbo3.595",
+      "in_bibliography": true,
+      "key": "murgia2019sandfungi",
+      "local_copies": [
+        "review-literature/2026-07-23/self/saudi-update/33-osman-jizan-2016.txt",
+        "review-literature/2026-07-23/self/saudi-update/50-mani-saudi-mycobiome-2026.txt",
+        "review-literature/2026-07-23/self/saudi-update/52-murgia-hot-desert-fungi-2019.xml"
+      ],
+      "title": "Biodiversity of fungi in hot desert sands"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "ncbitaxon",
+      "local_copies": [],
+      "title": "{NCBI} {Taxonomy}: a comprehensive update on curation, resources and tools"
+    },
+    {
+      "cited_in": [
+        "02_methods.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "nfcore",
+      "local_copies": [],
+      "title": "The nf-core framework for community-curated bioinformatics pipelines"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "nmdc2026",
+      "local_copies": [],
+      "title": "National Microbiome Data Collaborative: Data Standards"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.1371/journal.pone.0154556",
+      "in_bibliography": true,
+      "key": "obi",
+      "local_copies": [],
+      "title": "The {Ontology for Biomedical Investigations}"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex",
+        "02_methods.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "openmeteo",
+      "local_copies": [],
+      "title": "{Open-Meteo}: free weather {API}"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.2174/2210289201607020070",
+      "in_bibliography": true,
+      "key": "osman2016jizan",
+      "local_copies": [
+        "review-literature/2026-07-23/self/saudi-update/33-osman-jizan-2016.txt"
+      ],
+      "title": "Bacterial rhizosphere biodiversity from several pioneer desert sand\n    plants near {Jizan}, Saudi Arabia"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1038/s41559-025-02966-3",
+      "in_bibliography": true,
+      "key": "ovaskainen2026",
+      "local_copies": [
+        "data-paper/resource/s41559-025-02966-3.txt",
+        "review-literature/2026-07-23/opus/Ovaskainen2026_NatEcolEvol_digital-twin-biodiversity-forecast.txt"
+      ],
+      "title": "A digital twin for real-time biodiversity forecasting with citizen science data"
+    },
+    {
+      "cited_in": [
+        "03_knowledge_representation.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "owl2",
+      "local_copies": [],
+      "title": "{OWL} 2 {Web} {Ontology} {Language} document overview"
+    },
+    {
+      "cited_in": [
+        "03_knowledge_representation.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "owlapi",
+      "local_copies": [],
+      "title": "The {OWL} {API}: a {Java} {API} for {OWL} ontologies"
+    },
+    {
+      "cited_in": [
+        "03_knowledge_representation.tex",
+        "05_validation.tex",
+        "06_usage.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.1016/j.websem.2005.06.001",
+      "in_bibliography": true,
+      "key": "owlhorst",
+      "local_copies": [],
+      "title": "Completeness, decidability and complexity of entailment for RDF Schema and a semantic extension involving the OWL vocabulary"
+    },
+    {
+      "cited_in": [
+        "03_knowledge_representation.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "pato",
+      "local_copies": [],
+      "title": "The {Phenotype} {And} {Trait} {Ontology} ({PATO}): a standard for cross-species phenotype data integration"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "provo",
+      "local_copies": [],
+      "title": "{PROV-O}: The {PROV} Ontology"
+    },
+    {
+      "cited_in": [
+        "kr_supplement.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "pubchem",
+      "local_copies": [],
+      "title": "{PubChem} 2023 update"
+    },
+    {
+      "cited_in": [
+        "02_methods.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "qiime2",
+      "local_copies": [],
+      "title": "Reproducible, interactive, scalable and extensible microbiome data science using {QIIME} 2"
+    },
+    {
+      "cited_in": [
+        "02_methods.tex",
+        "03_knowledge_representation.tex",
+        "05_validation.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "shex",
+      "local_copies": [],
+      "title": "Shape {Expressions}: an {RDF} validation and transformation language"
+    },
+    {
+      "cited_in": [
+        "02_methods.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.1093/nar/gks1219",
+      "in_bibliography": true,
+      "key": "silva",
+      "local_copies": [],
+      "title": "The {SILVA} ribosomal {RNA} gene database project: improved data processing and web-based tools"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex",
+        "03_knowledge_representation.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "sio",
+      "local_copies": [],
+      "title": "The {Semanticscience} {Integrated} {Ontology} ({SIO}) for biomedical research and knowledge discovery"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "sosa",
+      "local_copies": [
+        "review-literature/2026-07-23/opus/FINAL_REVIEW_PROMPT.txt"
+      ],
+      "title": "{Semantic Sensor Network Ontology}"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1038/s41564-025-02186-2",
+      "in_bibliography": true,
+      "key": "streams2025",
+      "local_copies": [
+        "review-literature/2026-07-23/self/LITERATURE_AUDIT.txt"
+      ],
+      "title": "{STREAMS} guidelines: standards for technical reporting in environmental and host-associated microbiome studies"
+    },
+    {
+      "cited_in": [
+        "03_knowledge_representation.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "uo",
+      "local_copies": [],
+      "title": "The {Units} {Ontology}: a tool for integrating units of measurement in science"
+    },
+    {
+      "cited_in": [
+        "03_knowledge_representation.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "virtuoso",
+      "local_copies": [],
+      "title": "{OpenLink} {Virtuoso} {Universal} {Server}"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1186/s12866-015-0398-4",
+      "in_bibliography": true,
+      "key": "yasir2015saudi",
+      "local_copies": [
+        "review-literature/2026-07-23/self/saudi-update/20-yasir-elevation-2015.txt"
+      ],
+      "title": "Composition of soil microbiome along elevation gradients in southwestern highlands of {Saudi Arabia}"
+    }
+  ]
+}

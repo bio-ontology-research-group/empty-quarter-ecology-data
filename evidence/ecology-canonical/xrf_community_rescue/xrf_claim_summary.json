@@ -1,0 +1,46 @@
+{
+  "alpha_primary": {
+    "ci_high": 0.04074804792076195,
+    "ci_low": -0.04021056309990892,
+    "estimate": 0.00026874241042651806,
+    "model": "site_fixed_primary",
+    "n_observations": 622,
+    "n_sites": 60,
+    "p": 0.9896180471467837,
+    "std_error": 0.020653086398337437
+  },
+  "axis": {
+    "detection_threshold": 0.75,
+    "laboratory_records": 725,
+    "pc1_evaporite_reference_correlation": 0.8246667056461063,
+    "pc1_variance_explained": 0.39232172728877185,
+    "retained_element_count": 11,
+    "retained_elements": "Al,Ca,Cl,Fe,K,Mg,Na,P,S,Si,Ti",
+    "within_vs_global_pc1_correlation": 0.9755053731299489
+  },
+  "community_primary": {
+    "n_observations": 621.0,
+    "n_sites": 60.0,
+    "p": 0.056,
+    "partial_r2": 0.0034547475768325502,
+    "pcoa_axes": 38.0,
+    "pcoa_retained_fraction": 0.8000459413452449,
+    "pcoa_target_fraction": 0.8,
+    "permutations": 999.0,
+    "pseudo_f": 1.9205652256246082,
+    "residual_df": 554.0
+  },
+  "counts": {
+    "alpha_joined_observations": 622,
+    "community_joined_observations": 621,
+    "core_sites": 60,
+    "laboratory_xrf_records": 725,
+    "trip5_records": 178,
+    "trips1_4_records": 547
+  },
+  "field_xrf_role": "Excluded from the ecological join; retained as a separate Trip-5 site-level diagnostic because no physical aliquot ID exists.",
+  "permitted_wording": "No robust adjusted community association with the primary laboratory-XRF elemental axis was detected.",
+  "prohibited_wording": "Do not call the axis salinity or infer a salinity mechanism until independent EC/soluble-ion calibration is available.",
+  "schema_version": "1.0",
+  "status": "not_supported"
+}

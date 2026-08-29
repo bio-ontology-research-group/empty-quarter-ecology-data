@@ -1,0 +1,19 @@
+{
+  "accepted_rows": 653,
+  "acidity_qualities": 653,
+  "analysis_input_manifest_verified": true,
+  "analysis_output_checksums_verified": true,
+  "canonical_kg_import_allowed": false,
+  "dataset_version": "EQ-PH-ECOLOGY-v1.0.0",
+  "ecology_manuscript_use_allowed": true,
+  "ecology_summary_status": "FROZEN_ECOLOGY_ANALYSIS",
+  "frozen_version_manifest_verified": true,
+  "measurement_processes": 653,
+  "measurement_values": 653,
+  "released_kg_imports_ecology_version": false,
+  "sessions": 26,
+  "shex_negative_missing_unit": "REJECTED_AS_EXPECTED",
+  "shex_positive_validation": "PASS",
+  "source_sha256_verified": true,
+  "status": "PASS_FROZEN_ECOLOGY"
+}

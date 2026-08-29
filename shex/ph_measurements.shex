@@ -1,0 +1,67 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX pato: <http://purl.obolibrary.org/obo/PATO_>
+PREFIX uo: <http://purl.obolibrary.org/obo/UO_>
+BASE <https://rubalkhali.science/schema/ph_measurements>
+
+# Versioned pH shape set. Canonical release validation may reuse this schema
+# when a data-paper version is approved for KG import.
+
+<#PHMeasurementProcessShape> IRI EXTRA rdf:type {
+    rdf:type [sio:SIO_001054] ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string ;
+    dcterms:date xsd:date ;
+    sio:SIO_000230 IRI ;
+    sio:SIO_000291 IRI ;
+    sio:SIO_000229 @<#PHMeasurementValueShape> ;
+    sio:SIO_000339 @<#PHProtocolShape> ;
+    sio:SIO_000132 @<#PHDeviceShape> ;
+    sio:SIO_000068 @<#PHSessionShape> ;
+    sio:SIO_000772 IRI
+}
+
+<#PHMeasurementValueShape> IRI EXTRA rdf:type {
+    rdf:type [sio:SIO_000070] ;
+    rdf:type [sio:SIO_001089] ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string ;
+    sio:SIO_000300 xsd:double MININCLUSIVE 0 MAXINCLUSIVE 14 ;
+    sio:SIO_000221 [uo:UO_0000196] ;
+    sio:SIO_000215 @<#AcidityQualityShape> ;
+    sio:SIO_000232 @<#PHMeasurementProcessShape>
+}
+
+<#AcidityQualityShape> IRI EXTRA rdf:type {
+    rdf:type [pato:PATO_0001842] ;
+    rdfs:label xsd:string ;
+    sio:SIO_000011 IRI ;
+    sio:SIO_000216 @<#PHMeasurementValueShape>
+}
+
+<#PHProtocolShape> IRI EXTRA rdf:type {
+    rdf:type [sio:SIO_001043] ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string ;
+    dcterms:description xsd:string ;
+    dcterms:source IRI
+}
+
+<#PHDeviceShape> IRI EXTRA rdf:type {
+    rdf:type [sio:SIO_000956] ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string
+}
+
+<#PHSessionShape> IRI EXTRA rdf:type {
+    rdf:type [sio:SIO_000994] ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string ;
+    dcterms:date xsd:date ;
+    dcterms:description xsd:string ;
+    sio:SIO_000132 @<#PHDeviceShape> ;
+    sio:SIO_000772 IRI
+}

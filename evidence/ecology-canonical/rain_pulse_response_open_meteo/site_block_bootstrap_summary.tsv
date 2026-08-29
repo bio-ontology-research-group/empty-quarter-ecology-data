@@ -1,0 +1,7 @@
+quantity	estimate	ci_low	ci_high	uncertainty_type	bootstrap_replicates	seed	analysis_unit
+effect_per_mm_at_fixed_selected_peak	327.5450881780399	154.8169250171209	558.2880330357036	95% site-block percentile bootstrap interval	9999	20260805	site with all repeated observations
+partial_r2_at_fixed_selected_peak	0.03839864811323217	0.005656750850619843	0.08988182821859733	95% site-block percentile bootstrap interval	9999	20260805	site with all repeated observations
+selected_endpoint_peak_complete_days	1.0	0.5	6.5	95% site-block peak-selection interval	9999	20260805	site with all repeated observations
+effect_at_reselected_endpoint_peak	327.5450881780399	56.466688705595274	1611.7699923880175	95% site-block peak-selection interval	9999	20260805	site with all repeated observations
+half_maximum_complete_day	2.6783733918669594	1.3391866959334797	17.409427047135235	95% site-block peak-selection interval	9999	20260805	site with all repeated observations
+ten_percent_complete_day	4.8897944489722445	2.4448972244861222	31.78366391831959	95% site-block peak-selection interval	9999	20260805	site with all repeated observations

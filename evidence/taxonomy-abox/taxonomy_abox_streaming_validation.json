@@ -1,0 +1,195 @@
+{
+  "coverage": {
+    "project_structural_invariants": {
+      "complete_when_status_passed": true,
+      "method": "complete source-line scan plus exact per-record checks and order-independent relationship fingerprints",
+      "scope": "every process, taxonomy dataset, abundance quality, abundance value, membership and reciprocal attribute/measurement link emitted by the current generator"
+    },
+    "shex": {
+      "coverage_fraction": 0.0,
+      "reason": "This gate does not load the multi-gigabyte graph and does not claim full ShEx validation.",
+      "status": "not_run"
+    },
+    "turtle_syntax": {
+      "complete_when_status_passed": true,
+      "method": "Raptor streaming Turtle parser",
+      "scope": "entire input file"
+    }
+  },
+  "deterministic_result_fields": [
+    "input.bytes",
+    "input.sha256",
+    "structural_scan.bytes_read",
+    "structural_scan.lines_read",
+    "structural_scan.triples_scanned",
+    "structural_results.category_counts",
+    "structural_results.selected_predicate_counts",
+    "structural_results.relationship_fingerprints",
+    "structural_results.violations",
+    "turtle_parser.triple_count",
+    "status"
+  ],
+  "execution_errors": [],
+  "input": {
+    "bytes": 6722670815,
+    "mtime_ns": 1784826635958478794,
+    "path": "/home/leechuck/Public/software/empty-quarter/results/reproducibility-20260723-ws/09_taxonomy_abox/taxonomy_abox/rubalkhali_taxonomy_abox.ttl",
+    "sha256": "d78be36a0fb3f91a28bec4c6489ca1a34d97c576e10cd2c92fc59e4dfd0eb808"
+  },
+  "schema_version": "1.0",
+  "status": "passed",
+  "structural_results": {
+    "category_counts": {
+      "datasets": 17304,
+      "fastq_bearer_subjects": 1236,
+      "other_bearer_subjects": 8056,
+      "processes": 1236,
+      "protocol_subjects": 1,
+      "qualities": 2962918,
+      "values": 2962918
+    },
+    "numeric_summaries": {
+      "absolute": {
+        "count": 1481459,
+        "maximum": 4335201.0,
+        "minimum": 1.0,
+        "sum": 3556540400.0
+      },
+      "relative": {
+        "count": 1481459,
+        "maximum": 1.0,
+        "minimum": 2.3035880226322915e-07,
+        "sum": 8651.999999998134
+      }
+    },
+    "rank_fingerprints_match": {
+      "absolute_class": true,
+      "absolute_domain": true,
+      "absolute_family": true,
+      "absolute_genus": true,
+      "absolute_order": true,
+      "absolute_phylum": true,
+      "absolute_species": true,
+      "relative_class": true,
+      "relative_domain": true,
+      "relative_family": true,
+      "relative_genus": true,
+      "relative_order": true,
+      "relative_phylum": true,
+      "relative_species": true
+    },
+    "relationship_fingerprints": {
+      "bearer_to_quality": {
+        "count": 5925836,
+        "sum_blake2b128_mod_2_128": "75080d8b8e44e65ceea58127088fe0c8",
+        "xor_blake2b128": "dd3ec4dfc8ebf1f21a1a184178635216"
+      },
+      "dataset_members": {
+        "count": 2962918,
+        "sum_blake2b128_mod_2_128": "528e01c637638b252036abfe298a7944",
+        "xor_blake2b128": "41c027590aee887977bf89f2bcb87a8c"
+      },
+      "dataset_subjects": {
+        "count": 17304,
+        "sum_blake2b128_mod_2_128": "cf892a55ee9b5de40e59685657d673ce",
+        "xor_blake2b128": "26d6cd55a00d8e7f36d7ed18ad026530"
+      },
+      "fastq_subjects": {
+        "count": 1236,
+        "sum_blake2b128_mod_2_128": "edcdcb3a4b0803f8fcf19662f6abe0b6",
+        "xor_blake2b128": "57c6aef94d4284ffb9b6b8811b3edc9c"
+      },
+      "process_inputs": {
+        "count": 1236,
+        "sum_blake2b128_mod_2_128": "edcdcb3a4b0803f8fcf19662f6abe0b6",
+        "xor_blake2b128": "57c6aef94d4284ffb9b6b8811b3edc9c"
+      },
+      "process_outputs": {
+        "count": 17304,
+        "sum_blake2b128_mod_2_128": "cf892a55ee9b5de40e59685657d673ce",
+        "xor_blake2b128": "26d6cd55a00d8e7f36d7ed18ad026530"
+      },
+      "quality_to_bearer": {
+        "count": 5925836,
+        "sum_blake2b128_mod_2_128": "75080d8b8e44e65ceea58127088fe0c8",
+        "xor_blake2b128": "dd3ec4dfc8ebf1f21a1a184178635216"
+      },
+      "quality_to_value": {
+        "count": 2962918,
+        "sum_blake2b128_mod_2_128": "3f82370b1711ff880a16cdcbf699a858",
+        "xor_blake2b128": "4ab855b8a1b2141037bd1df1213cae0e"
+      },
+      "value_subjects": {
+        "count": 2962918,
+        "sum_blake2b128_mod_2_128": "528e01c637638b252036abfe298a7944",
+        "xor_blake2b128": "41c027590aee887977bf89f2bcb87a8c"
+      },
+      "value_to_quality": {
+        "count": 2962918,
+        "sum_blake2b128_mod_2_128": "3f82370b1711ff880a16cdcbf699a858",
+        "xor_blake2b128": "4ab855b8a1b2141037bd1df1213cae0e"
+      }
+    },
+    "selected_predicate_counts": {
+      "http://semanticscience.org/resource/SIO_000008": 5925836,
+      "http://semanticscience.org/resource/SIO_000011": 5925836,
+      "http://semanticscience.org/resource/SIO_000059": 2962918,
+      "http://semanticscience.org/resource/SIO_000215": 2962918,
+      "http://semanticscience.org/resource/SIO_000216": 2962918,
+      "http://semanticscience.org/resource/SIO_000229": 17304,
+      "http://semanticscience.org/resource/SIO_000230": 1236,
+      "http://semanticscience.org/resource/SIO_000339": 1236,
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": 14860984,
+      "http://www.w3.org/2000/01/rdf-schema#label": 2981459,
+      "https://rubalkhali.science/kb/RAK_2000020": 1481459,
+      "https://rubalkhali.science/kb/RAK_2000025": 2962918,
+      "https://rubalkhali.science/kb/RAK_2000026": 1481459
+    },
+    "violations": {
+      "by_code": {},
+      "examples": [],
+      "examples_truncated": false,
+      "total": 0
+    },
+    "warnings": {
+      "by_code": {},
+      "examples": [],
+      "examples_truncated": false,
+      "total": 0
+    }
+  },
+  "structural_scan": {
+    "bytes_read": 6722670815,
+    "duration_seconds": 327.435,
+    "lines_read": 50482175,
+    "sha256": "d78be36a0fb3f91a28bec4c6489ca1a34d97c576e10cd2c92fc59e4dfd0eb808",
+    "subject_blocks": 5953690,
+    "triples_scanned": 44528482,
+    "validator_peak_rss_kib": 31424
+  },
+  "total_duration_seconds": 465.029,
+  "turtle_parser": {
+    "command": [
+      "/usr/bin/rapper",
+      "-i",
+      "turtle",
+      "-c",
+      "/home/leechuck/Public/software/empty-quarter/results/reproducibility-20260723-ws/09_taxonomy_abox/taxonomy_abox/rubalkhali_taxonomy_abox.ttl"
+    ],
+    "diagnostic_lines": [],
+    "diagnostic_lines_truncated": false,
+    "duration_seconds": 137.574,
+    "exit_code": 0,
+    "passed": true,
+    "peak_rss_kib": 14612,
+    "tool": "Raptor rapper",
+    "triple_count": 44528482,
+    "version": "2.0.16"
+  },
+  "validator": {
+    "memory_model": "Constant-size per-subject counters and fixed-size multiset fingerprints; no RDF graph or unbounded identifier set is materialized.",
+    "name": "taxonomy-abox-streaming-structural-validator",
+    "script": "/home/leechuck/Public/software/empty-quarter/results/kg-validation-current-20260729-1/kg-sandbox/scripts/validation/validate_taxonomy_abox_streaming.py",
+    "script_sha256": "b4f59f44ada336920abc8da55e7dcf2f51af87240f9898ce67a1d8cd6a7b5a1d"
+  }
+}

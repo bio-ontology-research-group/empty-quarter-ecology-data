@@ -1,0 +1,253 @@
+=================================================
+   ORIGINAL RDF DATA VALIDATION (PRE-INFERENCE)
+=================================================
+Start Time: Sat Aug  1 11:42:21 AM +03 2026
+
+Step 1: XRF Data Integrity...
+Loading RDF Models (TBox and XRF ABox)...
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Verifying Test 5847 against field TSV...
+  [OK]   LE Conc = 84.2275
+  [OK]   Ba Conc = 0.0017
+  [OK]   BaO Conc = 0.001898
+  [OK]   Ca Conc = 0.2521
+  [OK]   CaO Conc = 0.352738
+  [OK]   Ce Conc = 0.0032
+  [OK]   CeO2 Conc = 0.003931
+  [OK]   Fe Conc = 0.1725
+  [OK]   Fe2O3 Conc = 0.246623
+  [OK]   K Conc = 0.0506
+  [OK]   K2O Conc = 0.060953
+  [OK]   La Conc = 0.0032
+  [OK]   La2O3 Conc = 0.003753
+  [OK]   Mo Conc = 0.0011
+  [OK]   Nd Conc = 0.0078
+  [OK]   Nd2O3 Conc = 0.009098
+  [OK]   S Conc = 0.148
+  [OK]   SO3 Conc = 0.369586
+  [OK]   Si Conc = 15.1229
+  [OK]   SiO2 Conc = 32.35242
+  [OK]   Sr Conc = 0.0021
+  [OK]   SrO Conc = 0.002483
+  [OK]   Th Conc = 0.0042
+  [OK]   Zr Conc = 0.0031
+  [OK]   ZrO2 Conc = 0.004187
+Verifying Test 5848 against field TSV...
+  [OK]   LE Conc = 81.2284
+  [OK]   Al Conc = 0.2522
+  [OK]   Al2O3 Conc = 0.476532
+  [OK]   Ba Conc = 0.0017
+  [OK]   BaO Conc = 0.001898
+  [OK]   Ca Conc = 0.2824
+  [OK]   CaO Conc = 0.395134
+  [OK]   Fe Conc = 0.1803
+  [OK]   Fe2O3 Conc = 0.257775
+  [OK]   K Conc = 0.1225
+  [OK]   K2O Conc = 0.147563
+  [OK]   La Conc = 0.0028
+  [OK]   La2O3 Conc = 0.003284
+  [OK]   Rb Conc = 4.0E-4
+  [OK]   S Conc = 0.1713
+  [OK]   SO3 Conc = 0.42777
+  [OK]   Si Conc = 17.7482
+  [OK]   SiO2 Conc = 37.968724
+  [OK]   Sr Conc = 0.0024
+  [OK]   SrO Conc = 0.002838
+  [OK]   Th Conc = 0.0043
+  [OK]   Zr Conc = 0.0031
+  [OK]   ZrO2 Conc = 0.004187
+INTEGRITY CHECK PASSED: RDF values match field TSV expectations.
+✅ PASSED: XRF Integrity
+Step 1b: XRF Field/Laboratory Semantics...
+Loading XRF, site, and collected-sample ABoxes...
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Validating 71 field XRF sessions...
+Validating 725 laboratory XRF processes...
+SUCCESS: 71 field sessions target recorded sites with TestIDs; 725 laboratory processes retain collected-sample inputs.
+✅ PASSED: XRF Field/Laboratory Semantics
+Step 2: Logical Consistency (Original)...
+Mode: LITE (deployment gate, fast)
+Initializing OWL Manager...
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Wiring generated-module cache: /home/leechuck/Public/software/empty-quarter/data/processed/semantics/ontology
+Wiring local ontology cache: /home/leechuck/Public/software/empty-quarter/data/ontologies
+Loading ontologies...
+  skip ecosystem_module.owl (LITE mode — large or covered by sibling)
+  skip ncbitaxon_module.owl (LITE mode — large or covered by sibling)
+  Loading rubalkhali.owl...
+  Loading rubalkhali_controls.owl...
+  Loading rubalkhali_dna.owl...
+  Loading rubalkhali_kb.owl...
+    skip (already loaded as another file)
+  Loading rubalkhali_measurements.owl...
+  Loading rubalkhali_qc.owl...
+  Loading rubalkhali_samples.owl...
+  Loading rubalkhali_sites.owl...
+  Loading rubalkhali_sra.owl...
+  skip rubalkhali_taxonomy_abox.owl (LITE mode — large or covered by sibling)
+  skip rubalkhali_taxonomy_rak.owl (LITE mode — large or covered by sibling)
+  Loading rubalkhali_xrf.owl...
+  Loading ecosystem_module.ttl...
+  Loading rubalkhali_controls.ttl...
+    skip (already loaded as another file)
+  skip rubalkhali_taxonomy_abox.ttl (LITE mode — large or covered by sibling)
+Total axioms loaded: 781293
+Distinct OntologyIRIs: 10
+Initializing ELK Reasoner...
+log4j:WARN No appenders could be found for logger (org.semanticweb.elk.config.ConfigurationFactory).
+log4j:WARN Please initialize the log4j system properly.
+Checking consistency...
+Loading ...
+    1%
+    2%
+    3%
+    4%
+    5%
+    6%
+    7%
+    8%
+    9%
+    10%
+    11%
+    12%
+    13%
+    14%
+    15%
+    16%
+    17%
+    18%
+    19%
+    20%
+    21%
+    22%
+    23%
+    24%
+    25%
+    26%
+    27%
+    28%
+    29%
+    30%
+    31%
+    32%
+    33%
+    34%
+    35%
+    36%
+    37%
+    38%
+    39%
+    40%
+    41%
+    42%
+    43%
+    44%
+    45%
+    46%
+    47%
+    48%
+    49%
+    50%
+    51%
+    52%
+    53%
+    54%
+    55%
+    56%
+    57%
+    58%
+    59%
+    60%
+    61%
+    62%
+    63%
+    64%
+    65%
+    66%
+    67%
+    68%
+    69%
+    70%
+    71%
+    72%
+    73%
+    74%
+    75%
+    76%
+    77%
+    78%
+    79%
+    80%
+    81%
+    82%
+    83%
+    84%
+    85%
+    86%
+    87%
+    88%
+    89%
+    90%
+    91%
+    92%
+    93%
+    94%
+    95%
+    96%
+    97%
+    98%
+    99%
+    ... finished
+
+✅ Ontology is CONSISTENT.
+(skipping class-hierarchy precompute in LITE mode — set FULL=1 for the deep check)
+Done.
+✅ PASSED: Logical Consistency
+Step 3: ShEx Validation (Original)...
+Validating rubalkhali_sites.owl...
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Validating rubalkhali_samples.owl...
+Validating rubalkhali_measurements.owl...
+Validating rubalkhali_dna.owl...
+Validating rubalkhali_xrf.owl...
+Skipping rubalkhali_taxonomy_abox.ttl (6411 MB — too large for ShEx spot-check)
+Validating rubalkhali_sra.owl...
+Validating rubalkhali_qc.owl...
+Validating rubalkhali_controls.ttl...
+All Validations PASSED.
+✅ PASSED: ShEx Validation
+Step 4: Label Uniqueness...
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+  skip ecosystem_module.ttl (sibling serialization already loaded)
+  skip rubalkhali_controls.ttl (sibling serialization already loaded)
+Loaded 11 files: ecosystem_module.owl, rubalkhali.owl, rubalkhali_controls.owl, rubalkhali_dna.owl, rubalkhali_kb.owl, rubalkhali_measurements.owl, rubalkhali_qc.owl, rubalkhali_samples.owl, rubalkhali_sites.owl, rubalkhali_sra.owl, rubalkhali_xrf.owl
+Total triples in merged graph: 782229
+
+[Pass 1] Counting labels per RAK_ entity via SPARQL...
+  ✅ No multi-label violations found by SPARQL pass.
+
+[Pass 2] ShEx validation against label_uniqueness.shex...
+  104697 RAK_ subjects carry rdfs:label
+  ✅ All 104697 subjects conform to RAKLabeledEntityShape.
+
+✅ Label uniqueness validation PASSED.
+✅ PASSED: Label Uniqueness
+Step 5: IRI Registry...
+Scanned 12 Groovy/Python generator files, 160 unique RAK IRIs declared, 160 declarations, 235 uses.
+✅ IRI registry: no conflicts, no undeclared class/property IRIs.
+✅ PASSED: IRI Registry
+Step 6: Laboratory Control Validation...
+PASS: control validation (489 entities, 3,800 triples, 51 roles, 47 sequence occurrences, 351 candidate ASVs)
+✅ PASSED: Laboratory Controls
+
+ALL ORIGINAL DATA VALIDATIONS PASSED. 🚀

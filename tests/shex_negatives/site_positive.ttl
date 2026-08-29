@@ -1,0 +1,10 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix geo:  <http://www.opengis.net/ont/geosparql#> .
+@prefix rak:  <https://rubalkhali.science/kb/> .
+
+# Well-formed sampling site for data/processed/semantics/shex/sites.shex.
+rak:RAK_1099901 a rak:RAK_0000002 , owl:NamedIndividual ;
+    rdfs:label "Fixture Site 1" ;
+    geo:asWKT "POINT(50.0 20.0)" .

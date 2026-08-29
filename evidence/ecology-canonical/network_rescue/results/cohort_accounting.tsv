@@ -1,0 +1,21 @@
+stage	campaign	compartment	sample_columns	site_campaign_groups	groups_passing_read_qc	groups_in_final_matched_cohort
+before_matched_intersection	1	Surface	108	54	54	42
+before_matched_intersection	2	Surface	6	4	4	2
+before_matched_intersection	3	Surface	168	58	58	53
+before_matched_intersection	4	Surface	60	60	60	56
+before_matched_intersection	5	Surface	30	22	22	17
+before_matched_intersection	1	Deep	107	56	56	42
+before_matched_intersection	2	Deep	7	6	5	2
+before_matched_intersection	3	Deep	148	55	55	53
+before_matched_intersection	4	Deep	59	59	58	56
+before_matched_intersection	5	Deep	60	35	35	17
+before_matched_intersection	1	Rhizosphere	100	50	49	42
+before_matched_intersection	2	Rhizosphere	11	7	7	2
+before_matched_intersection	3	Rhizosphere	162	56	56	53
+before_matched_intersection	4	Rhizosphere	58	58	58	56
+before_matched_intersection	5	Rhizosphere	143	53	53	17
+final_exact_match	1	ALL_EXACTLY_MATCHED		42	42	42
+final_exact_match	2	ALL_EXACTLY_MATCHED		2	2	2
+final_exact_match	3	ALL_EXACTLY_MATCHED		53	53	53
+final_exact_match	4	ALL_EXACTLY_MATCHED		56	56	56
+final_exact_match	5	ALL_EXACTLY_MATCHED		17	17	17

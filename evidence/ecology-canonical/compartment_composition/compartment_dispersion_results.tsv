@@ -1,0 +1,43 @@
+analysis	contrast	omitted_campaign	taxon_count	zero_treatment	n_sites	mean_dispersion_first	mean_dispersion_second	dispersion_difference	difference_ci_low	difference_ci_high	permutation_p	q_primary_family
+primary	Deep-Surface		200	pseudocount_0.5	60	32.22279394	30.84520045	1.377593482	0.4411488073	2.374760835	0.01	0.015
+primary	Rhizosphere-Surface		200	pseudocount_0.5	60	33.23182456	30.84520045	2.386624103	1.550186532	3.212328587	0.001	0.003
+primary	Rhizosphere-Deep		200	pseudocount_0.5	60	33.23182456	32.22279394	1.009030621	0.05563271838	2.055012313	0.061	0.061
+taxon_or_zero_sensitivity	Deep-Surface		80	pseudocount_0.5	60	18.28933553	16.58298872	1.706346809	0.8584841321	2.518428557	0.002	
+taxon_or_zero_sensitivity	Rhizosphere-Surface		80	pseudocount_0.5	60	19.22204139	16.58298872	2.639052666	1.802598563	3.48292438	0.001	
+taxon_or_zero_sensitivity	Rhizosphere-Deep		80	pseudocount_0.5	60	19.22204139	18.28933553	0.9327058571	0.05430322467	1.791074688	0.051	
+taxon_or_zero_sensitivity	Deep-Surface		80	pseudocount_1.0	60	17.06559441	15.53316113	1.532433277	0.7895267231	2.263193541	0.001	
+taxon_or_zero_sensitivity	Rhizosphere-Surface		80	pseudocount_1.0	60	18.00372974	15.53316113	2.470568613	1.70943774	3.171326204	0.001	
+taxon_or_zero_sensitivity	Rhizosphere-Deep		80	pseudocount_1.0	60	18.00372974	17.06559441	0.9381353359	0.1120316676	1.738262946	0.027	
+taxon_or_zero_sensitivity	Deep-Surface		80	multiplicative_0.65	60	17.83577431	16.19617891	1.639595401	0.890804981	2.418706647	0.001	
+taxon_or_zero_sensitivity	Rhizosphere-Surface		80	multiplicative_0.65	60	18.78422883	16.19617891	2.588049914	1.831641661	3.385339955	0.001	
+taxon_or_zero_sensitivity	Rhizosphere-Deep		80	multiplicative_0.65	60	18.78422883	17.83577431	0.9484545122	0.09220102955	1.834288247	0.034	
+taxon_or_zero_sensitivity	Deep-Surface		200	pseudocount_1.0	60	29.43757517	28.184539	1.253036174	0.3467421137	2.110059578	0.008	
+taxon_or_zero_sensitivity	Rhizosphere-Surface		200	pseudocount_1.0	60	30.48281256	28.184539	2.298273565	1.476533023	3.10016929	0.001	
+taxon_or_zero_sensitivity	Rhizosphere-Deep		200	pseudocount_1.0	60	30.48281256	29.43757517	1.045237391	0.1203348533	1.920741949	0.029	
+taxon_or_zero_sensitivity	Deep-Surface		200	multiplicative_0.65	60	31.167652	29.84066426	1.326987741	0.4103426155	2.259827808	0.007	
+taxon_or_zero_sensitivity	Rhizosphere-Surface		200	multiplicative_0.65	60	32.20868261	29.84066426	2.368018345	1.559582972	3.22735589	0.001	
+taxon_or_zero_sensitivity	Rhizosphere-Deep		200	multiplicative_0.65	60	32.20868261	31.167652	1.041030604	-0.007157955984	2.009500839	0.051	
+taxon_or_zero_sensitivity	Deep-Surface		384	pseudocount_0.5	60	43.44675488	42.31593004	1.130824842	0.1749245768	2.117845508	0.035	
+taxon_or_zero_sensitivity	Rhizosphere-Surface		384	pseudocount_0.5	60	44.45042752	42.31593004	2.13449748	1.165774334	3.046351402	0.001	
+taxon_or_zero_sensitivity	Rhizosphere-Deep		384	pseudocount_0.5	60	44.45042752	43.44675488	1.003672638	-0.05622701538	2.07875493	0.08	
+taxon_or_zero_sensitivity	Deep-Surface		384	pseudocount_1.0	60	39.15596366	38.05801614	1.097947525	0.1976725633	1.982621882	0.023	
+taxon_or_zero_sensitivity	Rhizosphere-Surface		384	pseudocount_1.0	60	40.17303879	38.05801614	2.11502265	1.222000303	2.989595965	0.001	
+taxon_or_zero_sensitivity	Rhizosphere-Deep		384	pseudocount_1.0	60	40.17303879	39.15596366	1.017075125	0.04458685501	1.964693927	0.055	
+taxon_or_zero_sensitivity	Deep-Surface		384	multiplicative_0.65	60	41.78861939	40.66630508	1.122314301	0.1487227286	2.072840561	0.028	
+taxon_or_zero_sensitivity	Rhizosphere-Surface		384	multiplicative_0.65	60	42.81047821	40.66630508	2.144173126	1.235339929	3.047540687	0.001	
+taxon_or_zero_sensitivity	Rhizosphere-Deep		384	multiplicative_0.65	60	42.81047821	41.78861939	1.021858825	-0.07567335702	2.041762907	0.062	
+leave_one_campaign_out	Deep-Surface	1	200	pseudocount_0.5	60	32.13091592	31.33584684	0.7950690799	-0.2577929801	1.869040227	0.181	
+leave_one_campaign_out	Rhizosphere-Surface	1	200	pseudocount_0.5	60	33.22742588	31.33584684	1.891579046	0.9186643664	2.905967349	0.003	
+leave_one_campaign_out	Rhizosphere-Deep	1	200	pseudocount_0.5	60	33.22742588	32.13091592	1.096509966	-0.06545892189	2.24647348	0.074	
+leave_one_campaign_out	Deep-Surface	2	200	pseudocount_0.5	60	32.35602898	30.87930727	1.476721707	0.5786664662	2.40711224	0.005	
+leave_one_campaign_out	Rhizosphere-Surface	2	200	pseudocount_0.5	60	33.33572522	30.87930727	2.456417951	1.631895603	3.329189236	0.001	
+leave_one_campaign_out	Rhizosphere-Deep	2	200	pseudocount_0.5	60	33.33572522	32.35602898	0.9796962438	-0.01132594466	2.015258447	0.062	
+leave_one_campaign_out	Deep-Surface	3	200	pseudocount_0.5	60	32.00827447	30.77793695	1.23033752	0.2082742085	2.318282919	0.029	
+leave_one_campaign_out	Rhizosphere-Surface	3	200	pseudocount_0.5	60	32.54588981	30.77793695	1.767952864	0.7190266977	2.830906463	0.004	
+leave_one_campaign_out	Rhizosphere-Deep	3	200	pseudocount_0.5	60	32.54588981	32.00827447	0.5376153438	-0.5575067252	1.603448642	0.337	
+leave_one_campaign_out	Deep-Surface	4	200	pseudocount_0.5	59	32.18235696	30.40594343	1.77641353	0.6092757678	2.928087787	0.005	
+leave_one_campaign_out	Rhizosphere-Surface	4	200	pseudocount_0.5	57	33.32814	30.1992363	3.128903703	2.232890097	4.081622693	0.001	
+leave_one_campaign_out	Rhizosphere-Deep	4	200	pseudocount_0.5	58	33.64014255	31.8929915	1.747151054	0.4784361927	3.023265852	0.01	
+leave_one_campaign_out	Deep-Surface	5	200	pseudocount_0.5	60	32.26902821	30.72951986	1.539508353	0.5482369984	2.551665317	0.004	
+leave_one_campaign_out	Rhizosphere-Surface	5	200	pseudocount_0.5	60	33.40813194	30.72951986	2.678612075	1.84483705	3.625048389	0.001	
+leave_one_campaign_out	Rhizosphere-Deep	5	200	pseudocount_0.5	60	33.40813194	32.26902821	1.139103722	0.06168374224	2.146293995	0.034	

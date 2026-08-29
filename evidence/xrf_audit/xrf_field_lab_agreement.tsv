@@ -1,0 +1,25 @@
+analyte	matched_sites	both_reported_positive	field_only_positive	lab_only_positive	neither_positive	reported_positive_agreement	spearman_all_sites	spearman_both_positive	median_field_lab_ratio	mean_log10_field_lab_bias	log10_lower_loa	log10_upper_loa	interpretation_limit
+Al	58	51	0	7	0	0.9357798165	-0.02598133422	-0.09024085765	0.5325294118	-0.2976887606	-1.030752973	0.4353754519	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Ba	58	18	40	0	0	0.4736842105	-0.07948558427	-0.4039258354	0.1015338828	-1.17933734	-2.366592911	0.00791823021	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Ca	58	58	0	0	0	1	0.3279339195	0.3279339195	0.2328051282	-0.5486763637	-1.719802003	0.6224492761	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Ce	58	2	6	8	42	0.2222222222	0.0667290562	-1	0.03831818182	-1.483105415	-2.16646116	-0.7997496702	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Co	58	0	0	1	57	0							Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Cr	58	13	4	24	17	0.4814814815	0.2589048589	0.07438044753	0.7947916667	-0.227938397	-0.9756426087	0.5197658147	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Cu	58	0	7	2	49	0	-0.06981802126						Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Fe	58	58	0	0	0	1	0.1578834032	0.1578834032	0.5070487652	-0.2852704555	-0.8836880613	0.3131471503	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+K	58	58	0	0	0	1	-0.08104700362	-0.08104700362	0.454375	-0.3336997412	-1.008586503	0.3411870206	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+La	58	4	12	22	20	0.1904761905	-0.258599936	1	0.06436202686	-1.324401883	-2.200716003	-0.4480877624	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Mg	58	17	0	41	0	0.4533333333	0.4698612358	0.4525363441	0.7655454545	-0.08800385501	-0.5096887651	0.3336810551	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Mn	58	8	31	5	14	0.3076923077	-0.02934154567	0.155691414	0.4689516129	-0.3505714405	-1.051591827	0.3504489461	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Mo	58	0	46	0	12	0							Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Nd	58	6	11	18	23	0.2926829268	-0.09438554762	-0.7714285714	0.09105904405	-1.075435747	-1.579330918	-0.5715405755	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Ni	58	0	19	1	38	0	-0.09010117944						Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+P	58	1	2	48	7	0.03846153846	-0.2798470704		0.3596153846	-0.4441617371			Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Pr	58	3	6	20	29	0.1875	-0.09256591057	-0.5	0.222	-0.7109943695	-1.346342135	-0.07564660421	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+S	58	43	10	5	0	0.8514851485	0.2025767308	0.3857860487	2.502727273	0.2752873716	-0.9045561965	1.45513094	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Si	58	58	0	0	0	1	0.4806017988	0.4806017988	1.135770351	0.001816460131	-0.4712421042	0.4748750245	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Sr	58	33	25	0	0	0.7252747253	0.1976519707	-0.04936001421	0.2555555556	-0.5114653615	-1.627425619	0.6044948961	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Ti	58	37	0	20	1	0.7872340426	0.2401588598	0.2645699584	0.6636956522	-0.1211833987	-0.9213931538	0.6790263564	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+V	58	0	0	42	16	0							Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Zn	58	0	30	2	26	0	-0.179747023						Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment
+Zr	58	32	26	0	0	0.7111111111	0.151890487	0.3081161783	0.2360416667	-0.6341348537	-1.39355389	0.1252841822	Site-level field-session median versus one archived Deep lab record; not a same-aliquot method-comparison experiment

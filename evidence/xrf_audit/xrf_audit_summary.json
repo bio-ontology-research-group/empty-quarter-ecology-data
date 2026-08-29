@@ -1,0 +1,83 @@
+{
+  "aggregation_reproduction": {
+    "lab_t1_4": {
+      "checked_reported_cells": 13390,
+      "mismatched_reported_cells": 0,
+      "nonzero_cells_without_source_row": 0,
+      "rule": "max_positive"
+    },
+    "lab_t5": {
+      "checked_reported_cells": 4293,
+      "mismatched_reported_cells": 0,
+      "nonzero_cells_without_source_row": 0,
+      "rule": "last_reported"
+    }
+  },
+  "audit_schema_version": "1.1",
+  "canonical_policy": {
+    "field_lab_interchangeability_claim": false,
+    "laboratory_record_count": 725,
+    "retired_trip_5_subset_records": 158,
+    "trip_5_records": 178,
+    "trip_5_rule": "last_reported",
+    "trips_1_4_records": 547,
+    "trips_1_4_rule": "max_positive"
+  },
+  "community": {
+    "all_group_keys": 640,
+    "feature_rows": 1605,
+    "qc_group_keys": 639,
+    "qc_sample_columns": 1233,
+    "sample_columns": 1237
+  },
+  "counts": {
+    "aggregation_groups_audited": 242,
+    "community_join_canonical_all": 622,
+    "community_join_canonical_qc": 621,
+    "community_join_retired_subset_all": 612,
+    "community_join_retired_subset_qc": 611,
+    "field_complete_sessions": 71,
+    "field_error_sessions": 3,
+    "field_instrument_exports": 71,
+    "field_lab_matched_sites": 58,
+    "field_log_rows": 106,
+    "field_log_sites": 59,
+    "field_processed_rows": 71,
+    "field_repeated_sites": 9,
+    "field_short_sessions": 32,
+    "field_sites": 58,
+    "lab_all_canonical": 725,
+    "lab_all_retired_analytical_subset": 705,
+    "lab_t14_measurements": 13552,
+    "lab_t14_raw_analytes_absent_from_schema": 15,
+    "lab_t14_samples": 547,
+    "lab_t5_canonical": 178,
+    "lab_t5_measurements": 4352,
+    "lab_t5_missing_from_retired_subset": 20,
+    "lab_t5_processed_samples": 178,
+    "lab_t5_retired_analytical_subset": 158,
+    "lab_t5_selected_sheets": 178,
+    "lab_t5_workbook_sheets": 180
+  },
+  "critical_flags": [
+    "FIELD_LOG_HAS_NO_PHYSICAL_SAMPLE_OR_COMPARTMENT_ID",
+    "LAB_T1_4_MAX_ACROSS_STATUS_IS_PROCESSING_NOT_CALIBRATION",
+    "LAB_T1_4_AND_T5_USE_DIFFERENT_REPEAT_FORMULA_RULES",
+    "CONCENTRATION_UNIT_AND_NONDETECT_SEMANTICS_NOT_MACHINE_READABLE"
+  ],
+  "field_lab": {
+    "field_sites": 58,
+    "lab_deep_sites": 60,
+    "matched_sites": 58,
+    "repeated_field_sites": 9,
+    "shared_element_analytes": 24
+  },
+  "parameters": {
+    "community_table": "evidence/ecology-canonical/cache/genus_counts.tsv",
+    "minimum_community_reads": 2000.0
+  },
+  "resolved_flags": [
+    "LAB_T5_158_ROW_SUBSET_RETIRED",
+    "LAB_CANONICAL_COUNT_725_EQUALS_547_PLUS_178"
+  ]
+}

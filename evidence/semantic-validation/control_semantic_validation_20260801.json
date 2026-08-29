@@ -1,0 +1,109 @@
+{
+  "checks": {
+    "assay_aware_control_invariants": "passed",
+    "focused_control_pytest": "passed_21_of_21",
+    "full_control_node_shex": "passed",
+    "generator_determinism": "passed",
+    "iri_registry_groovy_and_python": "passed",
+    "merged_elk_consistency": "passed",
+    "released_shape_fixture_suite": "passed_10_of_10",
+    "sio_inverse_closure": "passed",
+    "ttl_rdfxml_isomorphism": "passed"
+  },
+  "commands": [
+    "python3 scripts/rdf/generate_controls_abox.py (twice)",
+    "${PROJECT_PYTHON} scripts/validation/validate_controls.py",
+    "${PROJECT_PYTHON} -m pytest -q tests/test_control_negative_invariants.py tests/test_control_kg.py tests/test_control_author_confirmation.py",
+    "groovy tests/shex_negatives/run_tests.groovy",
+    "python3 scripts/validation/check_iri_registry.py",
+    "VALIDATE_LIVE=0 bash scripts/validation/validate_original.sh"
+  ],
+  "control_module": {
+    "composition_rows": 18,
+    "expected_taxon_assertions": 18,
+    "registered_entities": 489,
+    "roles": 51,
+    "sequence_occurrences": 47,
+    "sio_inverse_pairs": {
+      "SIO_000244_SIO_000245": [
+        1,
+        1
+      ],
+      "SIO_000332_SIO_000629": [
+        34,
+        34
+      ],
+      "SIO_000339_SIO_000338": [
+        2,
+        2
+      ],
+      "SIO_000772_SIO_000773": [
+        72,
+        72
+      ]
+    },
+    "triples": 3800
+  },
+  "executed_at": "2026-08-01T11:49:00+03:00",
+  "generated_output_sha256": {
+    "data/processed/metadata/controls/control_aliases.tsv": "87168ea7b74930fca59885eebb0e717c516ba299c3affcc545c26c3e966fef11",
+    "data/processed/metadata/controls/control_assertions.tsv": "e96b7880e726f5558da98ab2b069634eb47713a4c06b992369dbe3272acf52f3",
+    "data/processed/metadata/controls/control_composition.tsv": "cf1457cd283d4b6636242a6e3ca56af5081e846da41e97a2958a4e3880d8f5a6",
+    "data/processed/metadata/controls/control_entity_registry.tsv": "c7f2d920f45f5f5cbb4b1b67bd8cd119aed78944235221edf35b9c9d14835a10",
+    "data/processed/metadata/controls/control_metadata_dispositions.tsv": "4dbdb1029979e2d75e38ed9686c98a49bbf01b6c979809431513724c78340f4f",
+    "data/processed/metadata/controls/control_roles.tsv": "326460f4dffd07f13b7570031a4e141688cc7fdbf893e9d162788752067b2edb",
+    "data/processed/metadata/controls/control_sequence_occurrences.tsv": "dc2513ee350494cf0f68544a3e5859cbd4ac201c76d99d774f0c147525810016",
+    "data/processed/metadata/controls/laboratory_processes.tsv": "2c2bfbb796c5b4156d5fa6e0ee8b4acb993aaf23f630354155bd8784a552bd18",
+    "data/processed/semantics/ontology/rubalkhali_controls.owl": "de8d99575800b8a1109627861f0df895545bbc54b69724ca2ea8758cb5dcdb2c",
+    "data/processed/semantics/ontology/rubalkhali_controls.ttl": "e56255b9129e71c867429331c10a8128cd425f623667a4bf669cd95aec0be9d8"
+  },
+  "merged_elk_lite": {
+    "axioms": 781293,
+    "class_hierarchy_precomputed": false,
+    "consistent": true,
+    "distinct_ontology_iris": 10
+  },
+  "merged_label_gate": {
+    "files": 11,
+    "labelled_rak_subjects": 104697,
+    "multiple_distinct_label_violations": 0,
+    "shex_nonconformant_subjects": 0,
+    "triples": 782229
+  },
+  "schema_version": "1.1",
+  "scope": "asserted laboratory-control module plus the tractable merged pre-inference knowledge graph",
+  "scope_limit": "The multi-gigabyte taxonomy ABox is excluded from ELK, ShEx and label-uniqueness loading here; its full-file streaming and Raptor validations remain those of the checksum-identified workflow snapshot. The generated laboratory-control module is included in this run. Live Virtuoso publication was not performed; the requested endpoint is a deposit-ready package, not publication.",
+  "sha256": {
+    "consensus_pdf": "92f1d29f0bdcd386ab512528a63444076559b49e2c4411fec160b44f5fe99c85",
+    "control_evidence_freezer": "6050e73ced35e9b8806902f2ec9744b422bbfaf2873597bc68b04bf922426a16",
+    "control_generator": "11b4db904159a71eb30f522034dccd875190d6633bda088514087815841ae0bd",
+    "control_rdfxml": "de8d99575800b8a1109627861f0df895545bbc54b69724ca2ea8758cb5dcdb2c",
+    "control_shex": "e96850844965d42cd7d96ae53d98e153d25afb74f11befbb7b0b213344e16894",
+    "control_turtle": "e56255b9129e71c867429331c10a8128cd425f623667a4bf669cd95aec0be9d8",
+    "control_validator": "7c9d942f6c1eb6719746acbf8b704f788b6d1e345de4541456b21e08f2de7746",
+    "full_semantic_log": "ac78bfe223ff2199a691363bce780aab622dd464e2c06cc0aaa37696c3947a97",
+    "full_semantic_record": "b5bea22cb59e218f0792f4b8c034670f163d9e1a8f0c4210d980f45de9fc1f88",
+    "iri_registry": "3faf90292da6fcd03c7e6c8619583115da59f404714337fb185a24e197e33c85",
+    "log": "6a9c199cb3981f0e533d9360e9f9fcf344945615924c7ad0e2912abda7dde850",
+    "missing_specification_source_fixture": "a1c9dc7c3cefedba8f0c99d3ddb7f50115f340872e4fd6d9e061d6fbdb6e13b5",
+    "pinned_sio_1_59": "f868e0601635e1aa20a9407f07a2c671c0cd00331962ee1004ac652a9c4ee925",
+    "positive_control_fixture": "69571f99f5773ee64b4461b1225a5fdf175f7f1361aed017a2cfa70fa0cfddd0",
+    "rdf_validator": "db60b5b9fa7daf7b3dd5e19f68b674fb00cf7eb5d9b7935a59b0e390d4d5d358",
+    "rubalkhali_tbox": "9c9a435c98c815dfd755ac7787f5f25bab0514a0457e4d3ea03e37fde486b98e",
+    "static_negative_tests": "e928910767c08b78ccbcd160e6742a9f4e7d46472d4ecc782b4b8931b19a437c",
+    "wrong_stage_fixture": "d70d00cf97bc93214788953f5605a44c2e1418df0c82440696e30aa4a075497a"
+  },
+  "status": "passed",
+  "tool_versions": {
+    "elk": "0.4.3",
+    "generator_and_freezer_python": "3.11.14",
+    "generator_and_freezer_rdflib": "7.1.4",
+    "generator_openpyxl": "3.1.5",
+    "groovy": "Groovy Version: 4.0.21 JVM: 21.0.11 Vendor: Debian OS: Linux",
+    "jena": "4.10.0",
+    "openjdk": "openjdk version \"21.0.11\" 2026-04-21",
+    "owlapi": "4.5.26",
+    "validator_python": "Python 3.11.14",
+    "validator_rdflib": "7.1.4"
+  }
+}

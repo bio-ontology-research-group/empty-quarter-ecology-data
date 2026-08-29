@@ -1,0 +1,55 @@
+{
+  "alpha_profiles": 1227,
+  "alpha_sites": 60,
+  "alpha_tests": 9,
+  "alpha_tests_q_lt_0_05": 9,
+  "analysis_unit": "core site",
+  "climate_coverage": {
+    "core_sites": 60,
+    "first_month": "2022-01",
+    "last_month": "2026-01",
+    "monthly_records": 2940,
+    "months_per_site": 49
+  },
+  "field_weather_scope": "Air temperature, pressure and relative humidity recorded at collection describe site-visit conditions rather than soil microclimate. Raw and geography-adjusted models are supplementary diagnostics.",
+  "genus_tests": 600,
+  "genus_tests_q_lt_0_05_by_climate": {
+    "mean_air_temperature_c": 112,
+    "mean_monthly_rain_mm": 112,
+    "mean_relative_humidity_pct": 111
+  },
+  "input_sha256": {
+    "alpha": "e6083716b713a36a5e6984826b20107613a1fd65359172a1e9cf10a7b3161c2c",
+    "field_weather": "1b8cb5c71fa05f6d15cee34c489105d755a0c42b900ec36fe4007f7cd19c5559",
+    "genus_counts": "324d19da3669d489a42b60e0bdd6ca7f3238308bbadc72b8a28ae6098ddc8481",
+    "monthly_climate": "cde0a115147408bb846919a1e61e55cf88df7942f0e81f921de3305b49e33f9d"
+  },
+  "interpretation": "Long-term temperature, rain and humidity covary with bacterial diversity and genus CLR abundance across the 60 sites. These variables also covary with the transect and with one another, so the associations do not identify a causal climate driver.",
+  "multiplicity": {
+    "alpha": "Benjamini-Hochberg across all nine climate-diversity tests",
+    "genus": "Benjamini-Hochberg across all 600 climate-genus tests"
+  },
+  "provenance": {
+    "bootstrap_replicates": 9999,
+    "bootstrap_seed": 20260805,
+    "random_operations": true,
+    "script": "analysis/v3/environment_associations.py",
+    "script_sha256": "945df0ff89bcf8ab679c99dbcdc37e728c4d557cd74f599d25d80f00695990a5",
+    "software": {
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "python": "3.11.14",
+      "scipy": "1.14.1",
+      "statsmodels": "0.14.6"
+    }
+  },
+  "sampling_uncertainty": {
+    "confidence_level": 0.95,
+    "method": "paired percentile bootstrap of the 60 complete sites; both variables are resampled together",
+    "replicates": 9999,
+    "seed": 20260805
+  },
+  "schema_version": "1.1",
+  "selected_genera": 200,
+  "status": "observational_climate_associations_supported"
+}

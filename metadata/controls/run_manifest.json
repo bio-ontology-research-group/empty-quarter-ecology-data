@@ -1,0 +1,46 @@
+{
+  "artifact_root": "data/processed/metadata/controls",
+  "files": [
+    {
+      "bytes": 10884,
+      "path": "control_aliases.tsv",
+      "sha256": "87168ea7b74930fca59885eebb0e717c516ba299c3affcc545c26c3e966fef11"
+    },
+    {
+      "bytes": 20092,
+      "path": "control_assertions.tsv",
+      "sha256": "1d14ef3e4e477a41e1e5f306804827adf119efa59d653ec8e8a1504e14f68287"
+    },
+    {
+      "bytes": 10366,
+      "path": "control_composition.tsv",
+      "sha256": "64fc1c6af834135520256b9620cc1e3876f074c3665528fcb43f82536d2586f0"
+    },
+    {
+      "bytes": 266379,
+      "path": "control_entity_registry.tsv",
+      "sha256": "968bdb3a4fa32749df4c4a4d28c449076b5dc571db9c946faaf8219517902a0b"
+    },
+    {
+      "bytes": 15570,
+      "path": "control_metadata_dispositions.tsv",
+      "sha256": "4dbdb1029979e2d75e38ed9686c98a49bbf01b6c979809431513724c78340f4f"
+    },
+    {
+      "bytes": 21584,
+      "path": "control_roles.tsv",
+      "sha256": "326460f4dffd07f13b7570031a4e141688cc7fdbf893e9d162788752067b2edb"
+    },
+    {
+      "bytes": 36028,
+      "path": "control_sequence_occurrences.tsv",
+      "sha256": "dc2513ee350494cf0f68544a3e5859cbd4ac201c76d99d774f0c147525810016"
+    },
+    {
+      "bytes": 143510,
+      "path": "laboratory_processes.tsv",
+      "sha256": "2c2bfbb796c5b4156d5fa6e0ee8b4acb993aaf23f630354155bd8784a552bd18"
+    }
+  ],
+  "schema_version": "1.0"
+}

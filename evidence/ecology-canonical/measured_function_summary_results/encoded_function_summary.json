@@ -1,0 +1,107 @@
+{
+  "cbb_joint_marker_screen": {
+    "interpretation": "candidate encoded CBB potential only; no denominator, expression, activity, or flux inference",
+    "positive_genome_records": 132,
+    "screen": "joint RuBisCO and phosphoribulokinase source call"
+  },
+  "cohort": {
+    "duplicate_normalized_sample_ids": 2,
+    "measured_sample_columns": 150,
+    "picrust_normalized_sample_ids_matched": 125,
+    "picrust_source_columns_matched": 127,
+    "shared_kos": 3471,
+    "shared_samples": 125
+  },
+  "genome_denominator_audit": {
+    "filtered_genomes_rows": 991,
+    "filtered_genomes_unique_labels": 991,
+    "genome_fraction_reportable": false,
+    "pathway_positive_labels_matched_to_filtered_table": 157,
+    "pathway_positive_labels_not_matched_to_filtered_table": 3,
+    "pathway_positive_table_rows": 160,
+    "pathway_positive_unique_labels": 160,
+    "reason": "The supplied genome_cfix_taxonomy table contains positive pathway records only, while filtered_genomes is not a complete matching manifest for those records.",
+    "status": "total_screened_genome_denominator_not_reconstructable",
+    "total_screened_genomes": null,
+    "unmatched_pathway_positive_labels": [
+      "17_MR59-84_assembly",
+      "18_MR59-85_assembly",
+      "41_MR60-2_assembly"
+    ]
+  },
+  "ko_profile_correlations": {
+    "community_mean_profile_95_interval": [
+      0.7928486992963311,
+      0.8119934544361616
+    ],
+    "community_mean_profile_spearman": 0.8062071911659484,
+    "per_sample_mean_spearman": 0.7296091342490371,
+    "per_sample_median_95_interval": [
+      0.7308360230358404,
+      0.7508921630251081
+    ],
+    "per_sample_median_spearman": 0.7425276209764592,
+    "per_sample_range": [
+      0.4416010682814793,
+      0.8092735300418581
+    ]
+  },
+  "not_supported": [
+    "validation of PICRUSt2 for RuBisCO or another individual rare marker",
+    "any genome fraction or a total screened denominator of 2,970 from the supplied local outputs",
+    "a complete or active CBB pathway",
+    "the sole carbon-fixation route",
+    "biological absence from zero marker-screen hits",
+    "chemolithoautotrophy, trace-gas oxidation, expression, activity, or flux"
+  ],
+  "pathway_screen": {
+    "3HP": 0,
+    "CBB": 132,
+    "HB": 33,
+    "WL": 0,
+    "rTCA": 0
+  },
+  "permitted_wording": "Across 125 matched normalized sample IDs and 3,471 shared KOs, genome-derived and PICRUSt2 KO profiles had median per-sample Spearman correlation 0.743. Agreement for the RuBisCO marker K01601 was weak (rho 0.164). The supplied joint RuBisCO+PRK screen contained 132 positive genome records, supporting candidate encoded CBB potential only.",
+  "provenance": {
+    "duplicate_picrust_rule": "sum source columns sharing a normalized sample ID, then normalize within sample",
+    "random_operations": true,
+    "script": "analysis/v3/measured_function_summary.py",
+    "script_sha256": "b83c89cf34ec6a47e50ea7a8fbfdae5bec75824c45e8275cad59472e287cbded",
+    "seed": 20260805,
+    "software": {
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "scipy": "1.14.1"
+    }
+  },
+  "rubisco_marker": {
+    "across_sample_spearman": 0.16436546436660457,
+    "interpretation": "weak marker-level agreement; the aggregate KO-profile correlation does not validate this rare marker",
+    "ko": "K01601",
+    "rubisco_measured_nonzero_samples": 119,
+    "rubisco_picrust_nonzero_samples": 123,
+    "sampling_uncertainty": {
+      "community_mean_profile_interval": [
+        0.7928486992963311,
+        0.8119934544361616
+      ],
+      "independent_unit": "sampling site",
+      "interval_level": 0.95,
+      "method": "whole-site percentile bootstrap",
+      "n_bootstraps": 9999,
+      "n_site_clusters": 111,
+      "per_sample_mean_interval": [
+        0.7178359902820438,
+        0.7397015644763526
+      ],
+      "per_sample_median_interval": [
+        0.7308360230358404,
+        0.7508921630251081
+      ],
+      "seed": 20260805
+    },
+    "two_sided_p_value": 0.06699934091835633
+  },
+  "schema_version": "1.1",
+  "status": "encoded_potential_summary_only"
+}

@@ -1,0 +1,76 @@
+{
+  "artifact_root": "analysis/v3/network_rescue/results",
+  "files": [
+    {
+      "bytes": 2934,
+      "path": "README.md",
+      "sha256": "8815b1773d0768a5474e0e2c263b6952b7fd38ffae042e3906e716cc053ef53d"
+    },
+    {
+      "bytes": 2949,
+      "path": "alpha_calibration.tsv",
+      "sha256": "7aaa8dc8289751bd12b91cde633043248425c1f203f9578ba8f1ea555c408160"
+    },
+    {
+      "bytes": 38557,
+      "path": "bootstrap_metrics.tsv",
+      "sha256": "8f8ad9be0b9c4b5d9c2991f5fd872cb0a88d4eb80dc8c18efa8a25f6de7a4af4"
+    },
+    {
+      "bytes": 739,
+      "path": "campaign_feasibility.tsv",
+      "sha256": "b835f95aff6b4199bfc1327490900c4ab9ed931798f4f171442c7a9dc9152509"
+    },
+    {
+      "bytes": 1356,
+      "path": "claim_verdict.json",
+      "sha256": "1414c4d7d7c00504a808763f3c6f6284c9339ebe80861d6d3fd87a8b86156c26"
+    },
+    {
+      "bytes": 1115,
+      "path": "cohort_accounting.tsv",
+      "sha256": "abf76fc431b7050c93c407094f0c65aabf9a3ec190abca0bc19a8a7d9cea4137"
+    },
+    {
+      "bytes": 20637,
+      "path": "cohort_groups.tsv",
+      "sha256": "5c14ba94e98abf02ad3c78df99425ee763e687b7a35854f923626402bf7bd750"
+    },
+    {
+      "bytes": 853,
+      "path": "compartment_comparisons.tsv",
+      "sha256": "f86196fab11a342ac9cac72ace51346906cdf4c6fb70a79edded7931a5e4f513"
+    },
+    {
+      "bytes": 622425,
+      "path": "network_edges.tsv",
+      "sha256": "0af4515978a6689167756b42a65dcc06e1200a73133b9f4cfa90b6c68cb761df"
+    },
+    {
+      "bytes": 751,
+      "path": "network_metrics.tsv",
+      "sha256": "459da1923a4aaacba038b8b5486e037ee7508afc8a937ce102758a596f4e6f65"
+    },
+    {
+      "bytes": 546,
+      "path": "network_rescue.tsv",
+      "sha256": "4584669cf62b008065a7885830379864c7bcf0f6df2d0f069cb0e94e57854db4"
+    },
+    {
+      "bytes": 1747,
+      "path": "parameters.json",
+      "sha256": "eb9ddcb972c7a5da7fe6419a933546130b270d6f8ffb83a02f6d451f73119946"
+    },
+    {
+      "bytes": 1920,
+      "path": "sensitivity_metrics.tsv",
+      "sha256": "1a52da4c7bc9af2cb501f0bfcd28602151d8e2a7d3ff24b18466820f49a7e231"
+    },
+    {
+      "bytes": 128946,
+      "path": "taxa_selection.tsv",
+      "sha256": "008a1ae2fd895668519e59f233c2a9615f75389c364ddc605e98767acdffb785"
+    }
+  ],
+  "schema_version": "1.0"
+}

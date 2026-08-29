@@ -1,0 +1,2 @@
+group_type	group_value	biological_profile_count	total_reads	candidate_contaminant_reads	pooled_candidate_contaminant_read_fraction	median_candidate_contaminant_read_fraction	maximum_candidate_contaminant_read_fraction
+campaign	5	217	146948587	3213225	0.02186632	0.00402735	0.56595080

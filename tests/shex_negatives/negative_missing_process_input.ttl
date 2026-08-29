@@ -1,0 +1,25 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix uo:   <http://purl.obolibrary.org/obo/UO_> .
+@prefix sio:  <http://semanticscience.org/resource/> .
+@prefix rak:  <https://rubalkhali.science/kb/> .
+
+# Negative: xrf_positive.ttl with neither SIO_000230 (laboratory hasInput) nor
+# SIO_000291 (field hasTarget). An XRF process that measures nothing must be
+# rejected.
+rak:RAK_P300001 a rak:RAK_0000025 , owl:NamedIndividual ;
+    rdfs:label "XRF analysis with no input or target" ;
+    sio:SIO_000339 rak:RAK_L000001 ;
+    sio:SIO_000229 rak:RAK_4300001 .
+
+rak:RAK_4300001 a rak:RAK_0000500 , owl:NamedIndividual ;
+    rdfs:label "SiO2 concentration value" ;
+    sio:SIO_000232 rak:RAK_P300001 ;
+    sio:SIO_000215 rak:RAK_5300001 ;
+    rak:RAK_2000012 "42.5"^^xsd:double .
+
+rak:RAK_5300001 a rak:RAK_0000100 , owl:NamedIndividual ;
+    sio:SIO_000216 rak:RAK_4300001 ;
+    sio:SIO_000011 rak:RAK_S000001 .

@@ -1,0 +1,11 @@
+cartopy
+matplotlib
+numpy
+openmeteo-requests
+pandas
+requests
+requests-cache
+retry-requests
+scikit-learn
+scipy
+seaborn

@@ -1,0 +1,20 @@
+{
+  "derived_subset": {
+    "bytes": 613915,
+    "package_path": "ontology/ncbitaxon_module.owl",
+    "sha256": "53281f99e31738c7e8f8c455ebd8d4b235518fc10d776b86f8912a666c5a6b46"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "bytes": 1646833334,
+    "ontology_iri": "http://purl.obolibrary.org/obo/ncbitaxon.owl",
+    "repository_path": "data/ontologies/ncbitaxon.owl",
+    "retrieval_date": null,
+    "retrieval_date_status": "not_recorded",
+    "sha256": "5238897945e50ceb9007a1f96f40d1e8774456c3a0d691292fe7e8e9b5b1287d",
+    "taxonomy_source_version": "2025-03-01",
+    "version_info": "2025-03-13",
+    "version_iri": "http://purl.obolibrary.org/obo/ncbitaxon/2025-03-13/ncbitaxon.owl"
+  },
+  "status": "source_release_identified"
+}

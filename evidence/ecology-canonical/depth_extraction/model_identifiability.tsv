@@ -1,0 +1,7 @@
+model	n_observations	n_sites	aliased_columns	note
+depth_and_kit_complete_cases_not_identified	352	60	1	Extraction kit is exactly aliased with campaign in the complete-case cohort; replaced by complete_case_cohort and depth_and_kit_kit_varying_campaigns.
+additive_unadjusted	633	60	0	"shannon ~ C(Trip) + C(Type, Treatment(reference=""Surface""))"
+additive_depth_adjusted	633	60	0	"shannon ~ C(Trip) + C(Type, Treatment(reference=""Surface"")) + log_sequencing_depth"
+depth_and_kit_as_recorded	633	60	0	"shannon ~ C(Trip) + C(Type, Treatment(reference=""Surface"")) + log_sequencing_depth + C(dna_kit)"
+complete_case_cohort	352	60	0	"shannon ~ C(Trip) + C(Type, Treatment(reference=""Surface"")) + log_sequencing_depth"
+depth_and_kit_kit_varying_campaigns	285	60	0	"shannon ~ C(Trip) + C(Type, Treatment(reference=""Surface"")) + log_sequencing_depth + C(dna_kit)"

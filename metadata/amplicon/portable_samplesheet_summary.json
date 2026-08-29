@@ -1,0 +1,46 @@
+{
+  "bioprojects": [
+    "PRJEB106069"
+  ],
+  "disambiguated_identifiers": 30,
+  "distinct_source_sample_names": 1238,
+  "duplicate_submission_rows_collapsed_on_run": 258,
+  "examples_without_a_ledger_match": [
+    "EB1",
+    "EB10",
+    "EB11",
+    "EB12",
+    "EB13",
+    "EB14",
+    "EB15",
+    "EB16",
+    "EB17",
+    "EB18",
+    "EB2",
+    "EB3",
+    "EB4",
+    "EB5",
+    "EB6",
+    "EB7",
+    "EB8",
+    "EB9",
+    "Negative1",
+    "Negative2"
+  ],
+  "inputs": {
+    "data-paper/zenodo/metadata/sra-submissions/submission-sheet-trip5.tsv": "4a28870c3f865e89adbee2e5d1a2406eb6859f6f18481ddb643e93e970bd8f7c",
+    "data-paper/zenodo/metadata/sra-submissions/submission-sheet.tsv": "3813e534e69ff7e8e475eca5db7d94a5a827d70c3b42c4a69dd984eafe40fbde",
+    "data/release/sample_ledger.tsv": "cf7affd4d58803417fc5cf03ab71e6455e7fe190db449b0eb7ebaedfb4d1c99f"
+  },
+  "outputs": {
+    "data/processed/amplicon/combined_samplesheet_accessions.tsv": "c74ba99ab6baa3c47d2d445d7037c1c88160dfb92bc966825c7e745a0362967e",
+    "data/processed/amplicon/combined_samplesheet_portable.csv": "bf6f0c5b83a430d2935ff01a19919a28cc6e4b772ddb61d0a46791e93fe5909c"
+  },
+  "reads_variable": "${EQ_READS_DIR}",
+  "rows": 1268,
+  "rows_without_a_ledger_match": 43,
+  "umbrella_projects": [
+    "PRJEB104209"
+  ],
+  "usage": "export EQ_READS_DIR=/path/to/fastq && nextflow run nf-core/ampliseq -r 2.14.0 --input combined_samplesheet_portable.csv ... ; the read files must be named <run>_1.fastq.gz and <run>_2.fastq.gz, which is the archive layout. Runs are not public at the time of writing, so the sheet is portable in structure but not yet resolvable from the archive alone."
+}

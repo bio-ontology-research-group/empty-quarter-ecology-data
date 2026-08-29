@@ -1,0 +1,13 @@
+dataset_id	workflow	trip_scope	compartment_scope	record_unit	row_count	analyte_measurement_count	unique_sample_ids	unique_trip_site_compartments	unique_sites	community_joined_all	community_joined_qc	status	caveat
+field_session_log_all	field	5	not_encoded	instrument_session_log_entry	106				59			source	Includes COMPLETE, SHORT, and ERROR sessions.
+field_session_log_complete	field	5	project_context=Deep;not_encoded_in_log	complete_instrument_session	71				58			source	Repeated complete sessions occur at some sites.
+field_instrument_exports_complete	field	5	project_context=Deep;not_encoded_in_export	instrument_export	71		71		58			source_export	One Vanta composition export per retained complete TestID.
+field_processed_table	field	5	project_context=Deep;not_encoded_in_table	complete_instrument_session	71		71		58			processed	One row per complete TestID; not one row per site.
+lab_source_t1_4	lab	1-4	Deep;Surface;Rhizosphere	sample_sheet	547	13552	547	547	60			source_consolidation	12 sheets; run/method metadata are incomplete.
+lab_canonical_table_t1_4	lab	1-4	Deep;Surface;Rhizosphere	sample	547		547	547	60			canonical_analytical	Uses maximum positive value across XRF statuses.
+lab_source_t5_all_sheets	lab	5	Deep;Surface;Rhizosphere	workbook_sheet	180	4352						source	2 Best Detection sheets are excluded by the current parser.
+lab_source_t5_selected_sheets	lab	5	Deep;Surface;Rhizosphere	selected_sample_sheet	178	4352	178	178	60			source_selected	Selection reproduces the existing parser behavior.
+lab_processed_table_t5	lab	5	Deep;Surface;Rhizosphere	sample	178		178	178	60			canonical_analytical	Canonical Trip-5 table; repeated formulas keep the last workbook row.
+lab_retired_analytical_subset_t5	lab	5	Deep;Surface;Rhizosphere	sample	158		158	158	60			retired_legacy_subset	Retired 158-row subset; 20 canonical Trip-5 records are absent.
+lab_all_retired_analytical_subset	lab	1-5	Deep;Surface;Rhizosphere	trip_site_compartment	705			705	60	612	611	retired_legacy_subset	Retired combination: 547 Trips 1-4 plus 158 Trip-5.
+lab_all_canonical_analytical	lab	1-5	Deep;Surface;Rhizosphere	trip_site_compartment	725			725	60	622	621	canonical_analytical	Canonical: 547 Trips 1-4 plus 178 Trip-5 records.

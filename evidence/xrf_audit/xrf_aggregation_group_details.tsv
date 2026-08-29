@@ -1,0 +1,243 @@
+workflow	sample_id	trip	site	compartment	analyte	source_row_count	status_value_sequence	expected_primary_status	max_positive	mean_positive	median_positive	first_reported	last_reported	primary_status_value	current_rule	current_value	current_minus_primary_relative	primary_status_available
+lab_t1_4	1Dr1	1	1	Deep	Cl	2	XRF 0:0.45;XRF 1:0.45	XRF 0	0.45	0.45	0.45	0.45	0.45	0.45	max_positive	0.45	0	true
+lab_t1_4	1PRr1	1	1	Rhizosphere	Cl	2	XRF 0:0.12;XRF 1:0.12	XRF 0	0.12	0.12	0.12	0.12	0.12	0.12	max_positive	0.12	0	true
+lab_t1_4	3PRr1	1	3	Rhizosphere	Cl	2	XRF 0:0.12;XRF 1:0.12	XRF 0	0.12	0.12	0.12	0.12	0.12	0.12	max_positive	0.12	0	true
+lab_t1_4	7Dr1	1	7	Deep	Cl	2	XRF 0:0.18;XRF 1:0.18	XRF 0	0.18	0.18	0.18	0.18	0.18	0.18	max_positive	0.18	0	true
+lab_t1_4	10Dr1	1	10	Deep	Cl	2	XRF 0:0.14;XRF 1:0.14	XRF 0	0.14	0.14	0.14	0.14	0.14	0.14	max_positive	0.14	0	true
+lab_t1_4	16Dr1	1	16	Deep	Cl	2	XRF 0:0.1;XRF 1:0.1	XRF 0	0.1	0.1	0.1	0.1	0.1	0.1	max_positive	0.1	0	true
+lab_t1_4	19Dr1	1	19	Deep	Cl	2	XRF 0:0.11;XRF 1:0.11	XRF 0	0.11	0.11	0.11	0.11	0.11	0.11	max_positive	0.11	0	true
+lab_t1_4	22PRr1	1	22	Rhizosphere	Cl	2	XRF 0:0.12;XRF 1:0.12	XRF 0	0.12	0.12	0.12	0.12	0.12	0.12	max_positive	0.12	0	true
+lab_t1_4	28PRr1	1	28	Rhizosphere	CeO2	1	XRF 2:0.37	XRF 1	0.37	0.37	0.37	0.37	0.37		max_positive	0.37		false
+lab_t1_4	29PRr1	1	29	Rhizosphere	Nd2O3	1	XRF 2:0.31	XRF 1	0.31	0.31	0.31	0.31	0.31		max_positive	0.31		false
+lab_t1_4	32Dr1	1	32	Deep	CeO2	1	XRF 2:0.59	XRF 1	0.59	0.59	0.59	0.59	0.59		max_positive	0.59		false
+lab_t1_4	40Dr1	1	40	Deep	Cl	2	XRF 0:0.11;XRF 1:0.11	XRF 0	0.11	0.11	0.11	0.11	0.11	0.11	max_positive	0.11	0	true
+lab_t1_4	40Sr1	1	40	Surface	Cl	2	XRF 0:3.22;XRF 1:3.22	XRF 0	3.22	3.22	3.22	3.22	3.22	3.22	max_positive	3.22	0	true
+lab_t1_4	41PRr1	1	41	Rhizosphere	Cl	2	XRF 0:0.17;XRF 1:0.17	XRF 0	0.17	0.17	0.17	0.17	0.17	0.17	max_positive	0.17	0	true
+lab_t1_4	41Sr1	1	41	Surface	Cl	2	XRF 0:3.12;XRF 1:3.12	XRF 0	3.12	3.12	3.12	3.12	3.12	3.12	max_positive	3.12	0	true
+lab_t1_4	42Dr1	1	42	Deep	Nd2O3	1	XRF 2:0.28	XRF 1	0.28	0.28	0.28	0.28	0.28		max_positive	0.28		false
+lab_t1_4	42Sr1	1	42	Surface	Cl	2	XRF 0:0.47;XRF 1:0.47	XRF 0	0.47	0.47	0.47	0.47	0.47	0.47	max_positive	0.47	0	true
+lab_t1_4	45Dr1	1	45	Deep	CeO2	1	XRF 2:0.73	XRF 1	0.73	0.73	0.73	0.73	0.73		max_positive	0.73		false
+lab_t1_4	45Dr1	1	45	Deep	Cl	2	XRF 0:0.1;XRF 1:0.1	XRF 0	0.1	0.1	0.1	0.1	0.1	0.1	max_positive	0.1	0	true
+lab_t1_4	45PRr1	1	45	Rhizosphere	Cl	2	XRF 0:0.11;XRF 1:0.11	XRF 0	0.11	0.11	0.11	0.11	0.11	0.11	max_positive	0.11	0	true
+lab_t1_4	46PRr1	1	46	Rhizosphere	Cl	2	XRF 0:0.12;XRF 1:0.12	XRF 0	0.12	0.12	0.12	0.12	0.12	0.12	max_positive	0.12	0	true
+lab_t1_4	46Sr1	1	46	Surface	Cl	2	XRF 0:0.15;XRF 1:0.15	XRF 0	0.15	0.15	0.15	0.15	0.15	0.15	max_positive	0.15	0	true
+lab_t1_4	48Dr1	1	48	Deep	Cl	2	XRF 0:2.4;XRF 1:2.4	XRF 0	2.4	2.4	2.4	2.4	2.4	2.4	max_positive	2.4	0	true
+lab_t1_4	48PRr1	1	48	Rhizosphere	Cl	2	XRF 0:0.34;XRF 1:0.34	XRF 0	0.34	0.34	0.34	0.34	0.34	0.34	max_positive	0.34	0	true
+lab_t1_4	48Sr1	1	48	Surface	Cl	2	XRF 0:1.1;XRF 1:1.1	XRF 0	1.1	1.1	1.1	1.1	1.1	1.1	max_positive	1.1	0	true
+lab_t1_4	49Dr1	1	49	Deep	Cl	2	XRF 0:0.11;XRF 1:0.11	XRF 0	0.11	0.11	0.11	0.11	0.11	0.11	max_positive	0.11	0	true
+lab_t1_4	51Dr1	1	51	Deep	CeO2	1	XRF 2:0.41	XRF 1	0.41	0.41	0.41	0.41	0.41		max_positive	0.41		false
+lab_t1_4	51Dr1	1	51	Deep	Cl	2	XRF 0:0.25;XRF 1:0.25	XRF 0	0.25	0.25	0.25	0.25	0.25	0.25	max_positive	0.25	0	true
+lab_t1_4	51Sr1	1	51	Surface	Cl	2	XRF 0:0.47;XRF 1:0.47	XRF 0	0.47	0.47	0.47	0.47	0.47	0.47	max_positive	0.47	0	true
+lab_t1_4	52Dr1	1	52	Deep	Cl	2	XRF 0:3.48;XRF 1:3.48	XRF 0	3.48	3.48	3.48	3.48	3.48	3.48	max_positive	3.48	0	true
+lab_t1_4	52Sr1	1	52	Surface	Cl	2	XRF 0:4.11;XRF 1:4.11	XRF 0	4.11	4.11	4.11	4.11	4.11	4.11	max_positive	4.11	0	true
+lab_t1_4	53Sr1	1	53	Surface	Cl	2	XRF 0:0.21;XRF 1:0.21	XRF 0	0.21	0.21	0.21	0.21	0.21	0.21	max_positive	0.21	0	true
+lab_t1_4	54Dr1	1	54	Deep	Cl	2	XRF 0:0.27;XRF 1:0.27	XRF 0	0.27	0.27	0.27	0.27	0.27	0.27	max_positive	0.27	0	true
+lab_t1_4	54PRr1	1	54	Rhizosphere	Cl	2	XRF 0:0.18;XRF 1:0.18	XRF 0	0.18	0.18	0.18	0.18	0.18	0.18	max_positive	0.18	0	true
+lab_t1_4	54Sr1	1	54	Surface	Cl	2	XRF 0:0.86;XRF 1:0.86	XRF 0	0.86	0.86	0.86	0.86	0.86	0.86	max_positive	0.86	0	true
+lab_t1_4	55Dr1	1	55	Deep	Cl	2	XRF 0:3.02;XRF 1:3.02	XRF 0	3.02	3.02	3.02	3.02	3.02	3.02	max_positive	3.02	0	true
+lab_t1_4	55PRr1	1	55	Rhizosphere	Br	2	XRF 0:0.021;XRF 1:0.021	XRF 0	0.021	0.021	0.021	0.021	0.021	0.021	max_positive	0.021	0	true
+lab_t1_4	55PRr1	1	55	Rhizosphere	Cl	2	XRF 0:2.1;XRF 1:2.1	XRF 0	2.1	2.1	2.1	2.1	2.1	2.1	max_positive	2.1	0	true
+lab_t1_4	56Dr1	1	56	Deep	Cl	2	XRF 0:2.6;XRF 1:2.6	XRF 0	2.6	2.6	2.6	2.6	2.6	2.6	max_positive	2.6	0	true
+lab_t1_4	56Sr1	1	56	Surface	Cl	2	XRF 0:1.1;XRF 1:1.1	XRF 0	1.1	1.1	1.1	1.1	1.1	1.1	max_positive	1.1	0	true
+lab_t1_4	57Dr1	1	57	Deep	Cl	2	XRF 0:2.2;XRF 1:2.2	XRF 0	2.2	2.2	2.2	2.2	2.2	2.2	max_positive	2.2	0	true
+lab_t1_4	57PRr1	1	57	Rhizosphere	Cl	2	XRF 0:0.72;XRF 1:0.72	XRF 0	0.72	0.72	0.72	0.72	0.72	0.72	max_positive	0.72	0	true
+lab_t1_4	57Sr1	1	57	Surface	Cl	2	XRF 0:2.4;XRF 1:2.4	XRF 0	2.4	2.4	2.4	2.4	2.4	2.4	max_positive	2.4	0	true
+lab_t1_4	58Dr1	1	58	Deep	Cl	2	XRF 0:0.19;XRF 1:0.19	XRF 0	0.19	0.19	0.19	0.19	0.19	0.19	max_positive	0.19	0	true
+lab_t1_4	58PRr1	1	58	Rhizosphere	Cl	2	XRF 0:1;XRF 1:1	XRF 0	1	1	1	1	1	1	max_positive	1	0	true
+lab_t1_4	58Sr1	1	58	Surface	Cl	2	XRF 0:0.8;XRF 1:0.8	XRF 0	0.8	0.8	0.8	0.8	0.8	0.8	max_positive	0.8	0	true
+lab_t1_4	59Dr1	1	59	Deep	Cl	2	XRF 0:2.5;XRF 1:2.5	XRF 0	2.5	2.5	2.5	2.5	2.5	2.5	max_positive	2.5	0	true
+lab_t1_4	59PRr1	1	59	Rhizosphere	CeO2	1	XRF 2:0.52	XRF 1	0.52	0.52	0.52	0.52	0.52		max_positive	0.52		false
+lab_t1_4	59PRr1	1	59	Rhizosphere	Cl	2	XRF 0:1.9;XRF 1:1.9	XRF 0	1.9	1.9	1.9	1.9	1.9	1.9	max_positive	1.9	0	true
+lab_t1_4	59Sr1	1	59	Surface	BaO	1	XRF 2:0.66	XRF 1	0.66	0.66	0.66	0.66	0.66		max_positive	0.66		false
+lab_t1_4	59Sr1	1	59	Surface	Cl	2	XRF 0:5.69;XRF 1:5.69	XRF 0	5.69	5.69	5.69	5.69	5.69	5.69	max_positive	5.69	0	true
+lab_t1_4	60Dr1	1	60	Deep	Cl	2	XRF 0:0.99;XRF 1:0.99	XRF 0	0.99	0.99	0.99	0.99	0.99	0.99	max_positive	0.99	0	true
+lab_t1_4	60PRr1	1	60	Rhizosphere	Cl	2	XRF 0:0.34;XRF 1:0.34	XRF 0	0.34	0.34	0.34	0.34	0.34	0.34	max_positive	0.34	0	true
+lab_t1_4	60Sr1	1	60	Surface	Cl	2	XRF 0:2.2;XRF 1:2.2	XRF 0	2.2	2.2	2.2	2.2	2.2	2.2	max_positive	2.2	0	true
+lab_t1_4	T1PRr1	2	1	Rhizosphere	Cl	2	XRF 0:0.17;XRF 1:0.17	XRF 0	0.17	0.17	0.17	0.17	0.17	0.17	max_positive	0.17	0	true
+lab_t1_4	T2Dr1	2	2	Deep	Cl	2	XRF 0:0.12;XRF 1:0.12	XRF 0	0.12	0.12	0.12	0.12	0.12	0.12	max_positive	0.12	0	true
+lab_t1_4	T2PRr1	2	2	Rhizosphere	Cl	2	XRF 0:0.11;XRF 1:0.11	XRF 0	0.11	0.11	0.11	0.11	0.11	0.11	max_positive	0.11	0	true
+lab_t1_4	T2Sr1	2	2	Surface	CeO2	1	XRF 2:0.36	XRF 1	0.36	0.36	0.36	0.36	0.36		max_positive	0.36		false
+lab_t1_4	T3PRr1	2	3	Rhizosphere	Cl	2	XRF 0:0.12;XRF 1:0.12	XRF 0	0.12	0.12	0.12	0.12	0.12	0.12	max_positive	0.12	0	true
+lab_t1_4	T3PRr1	2	3	Rhizosphere	Nd2O3	1	XRF 2:0.41	XRF 1	0.41	0.41	0.41	0.41	0.41		max_positive	0.41		false
+lab_t1_4	T4Dr1	2	4	Deep	Cl	2	XRF 0:0.17;XRF 1:0.17	XRF 0	0.17	0.17	0.17	0.17	0.17	0.17	max_positive	0.17	0	true
+lab_t1_4	T5PRr1	2	5	Rhizosphere	Cl	2	XRF 0:0.17;XRF 1:0.17	XRF 0	0.17	0.17	0.17	0.17	0.17	0.17	max_positive	0.17	0	true
+lab_t1_4	T7Sr1	2	7	Surface	Cr2O3	1	XRF 2:0.37	XRF 1	0.37	0.37	0.37	0.37	0.37		max_positive	0.37		false
+lab_t1_4	F1Dr1	3	1	Deep	Cl	2	XRF 0:0.2;XRF 1:0.2	XRF 0	0.2	0.2	0.2	0.2	0.2	0.2	max_positive	0.2	0	true
+lab_t1_4	F6PRr1	3	6	Rhizosphere	Pr6O11	1	XRF 2:0.4	XRF 1	0.4	0.4	0.4	0.4	0.4		max_positive	0.4		false
+lab_t1_4	F7Dr1	3	7	Deep	Cl	2	XRF 0:0.15;XRF 1:0.15	XRF 0	0.15	0.15	0.15	0.15	0.15	0.15	max_positive	0.15	0	true
+lab_t1_4	F7PRr1	3	7	Rhizosphere	Cl	2	XRF 0:0.14;XRF 1:0.14	XRF 0	0.14	0.14	0.14	0.14	0.14	0.14	max_positive	0.14	0	true
+lab_t1_4	F10Dr1	3	10	Deep	Nd2O3	1	XRF 2:0.23	XRF 1	0.23	0.23	0.23	0.23	0.23		max_positive	0.23		false
+lab_t1_4	F11Dr1	3	11	Deep	Cl	2	XRF 0:0.15;XRF 1:0.15	XRF 0	0.15	0.15	0.15	0.15	0.15	0.15	max_positive	0.15	0	true
+lab_t1_4	F12Dr1	3	12	Deep	Cl	2	XRF 0:0.12;XRF 1:0.12	XRF 0	0.12	0.12	0.12	0.12	0.12	0.12	max_positive	0.12	0	true
+lab_t1_4	F17Sr1	3	17	Surface	Cl	2	XRF 0:0.045;XRF 1:0.045	XRF 0	0.045	0.045	0.045	0.045	0.045	0.045	max_positive	0.045	0	true
+lab_t1_4	F17Sr1	3	17	Surface	Cr2O3	1	XRF 2:17.8	XRF 1	17.8	17.8	17.8	17.8	17.8		max_positive	17.8		false
+lab_t1_4	F17Sr1	3	17	Surface	Fe2O3	1	XRF 2:65.5	XRF 1	65.5	65.5	65.5	65.5	65.5		max_positive	65.5		false
+lab_t1_4	F22PRr1	3	22	Rhizosphere	Cl	2	XRF 0:0.11;XRF 1:0.11	XRF 0	0.11	0.11	0.11	0.11	0.11	0.11	max_positive	0.11	0	true
+lab_t1_4	F23Dr1	3	23	Deep	BaO	1	XRF 3:0.66	XRF 1	0.66	0.66	0.66	0.66	0.66		max_positive	0.66		false
+lab_t1_4	F24Sr1	3	24	Surface	Cr2O3	1	XRF 2:0.39	XRF 1	0.39	0.39	0.39	0.39	0.39		max_positive	0.39		false
+lab_t1_4	F29Dr1	3	29	Deep	Nd2O3	1	XRF 2:0.23	XRF 1	0.23	0.23	0.23	0.23	0.23		max_positive	0.23		false
+lab_t1_4	F35Dr1	3	35	Deep	I	2	XRF 0:0.47;XRF 1:0.47	XRF 0	0.47	0.47	0.47	0.47	0.47	0.47	max_positive	0.47	0	true
+lab_t1_4	F35PRr1	3	35	Rhizosphere	Cl	2	XRF 0:0.12;XRF 1:0.12	XRF 0	0.12	0.12	0.12	0.12	0.12	0.12	max_positive	0.12	0	true
+lab_t1_4	F38Sr1	3	38	Surface	Cl	2	XRF 0:0.11;XRF 1:0.11	XRF 0	0.11	0.11	0.11	0.11	0.11	0.11	max_positive	0.11	0	true
+lab_t1_4	F40Sr1	3	40	Surface	BaO	1	XRF 3:0.61	XRF 1	0.61	0.61	0.61	0.61	0.61		max_positive	0.61		false
+lab_t1_4	F40Sr1	3	40	Surface	Cr2O3	1	XRF 2:0.38	XRF 1	0.38	0.38	0.38	0.38	0.38		max_positive	0.38		false
+lab_t1_4	F41Dr1	3	41	Deep	Cl	2	XRF 0:1.3;XRF 1:1.3	XRF 0	1.3	1.3	1.3	1.3	1.3	1.3	max_positive	1.3	0	true
+lab_t1_4	F41Sr1	3	41	Surface	Cl	2	XRF 0:1.3;XRF 1:1.3	XRF 0	1.3	1.3	1.3	1.3	1.3	1.3	max_positive	1.3	0	true
+lab_t1_4	F42Dr1	3	42	Deep	CeO2	1	XRF 2:0.63	XRF 1	0.63	0.63	0.63	0.63	0.63		max_positive	0.63		false
+lab_t1_4	F42Dr1	3	42	Deep	Cl	2	XRF 0:0.18;XRF 1:0.18	XRF 0	0.18	0.18	0.18	0.18	0.18	0.18	max_positive	0.18	0	true
+lab_t1_4	F42PRr1	3	42	Rhizosphere	Cl	2	XRF 0:0.52;XRF 1:0.52	XRF 0	0.52	0.52	0.52	0.52	0.52	0.52	max_positive	0.52	0	true
+lab_t1_4	F48Sr1	3	48	Surface	Cl	2	XRF 0:0.8;XRF 1:0.8	XRF 0	0.8	0.8	0.8	0.8	0.8	0.8	max_positive	0.8	0	true
+lab_t1_4	F50Dr1	3	50	Deep	Cl	2	XRF 0:0.15;XRF 1:0.15	XRF 0	0.15	0.15	0.15	0.15	0.15	0.15	max_positive	0.15	0	true
+lab_t1_4	F50Sr1	3	50	Surface	Nd2O3	1	XRF 2:0.37	XRF 1	0.37	0.37	0.37	0.37	0.37		max_positive	0.37		false
+lab_t1_4	F51Dr1	3	51	Deep	Cl	2	XRF 0:0.49;XRF 1:0.49	XRF 0	0.49	0.49	0.49	0.49	0.49	0.49	max_positive	0.49	0	true
+lab_t1_4	F51PRr1	3	51	Rhizosphere	CeO2	1	XRF 2:0.45	XRF 1	0.45	0.45	0.45	0.45	0.45		max_positive	0.45		false
+lab_t1_4	F51PRr1	3	51	Rhizosphere	Cl	2	XRF 0:0.35;XRF 1:0.35	XRF 0	0.35	0.35	0.35	0.35	0.35	0.35	max_positive	0.35	0	true
+lab_t1_4	F51Sr1	3	51	Surface	Cl	2	XRF 0:0.18;XRF 1:0.18	XRF 0	0.18	0.18	0.18	0.18	0.18	0.18	max_positive	0.18	0	true
+lab_t1_4	F52Dr1	3	52	Deep	Cl	2	XRF 0:3.35;XRF 1:3.35	XRF 0	3.35	3.35	3.35	3.35	3.35	3.35	max_positive	3.35	0	true
+lab_t1_4	F52Sr1	3	52	Surface	Cl	2	XRF 0:1.2;XRF 1:1.2	XRF 0	1.2	1.2	1.2	1.2	1.2	1.2	max_positive	1.2	0	true
+lab_t1_4	F53PRr1	3	53	Rhizosphere	Cl	2	XRF 0:0.19;XRF 1:0.19	XRF 0	0.19	0.19	0.19	0.19	0.19	0.19	max_positive	0.19	0	true
+lab_t1_4	F54Dr1	3	54	Deep	Cl	2	XRF 0:0.5;XRF 1:0.5	XRF 0	0.5	0.5	0.5	0.5	0.5	0.5	max_positive	0.5	0	true
+lab_t1_4	F54PRr1	3	54	Rhizosphere	Br	2	XRF 0:0.035;XRF 1:0.035	XRF 0	0.035	0.035	0.035	0.035	0.035	0.035	max_positive	0.035	0	true
+lab_t1_4	F54PRr1	3	54	Rhizosphere	Cl	2	XRF 0:0.91;XRF 1:0.91	XRF 0	0.91	0.91	0.91	0.91	0.91	0.91	max_positive	0.91	0	true
+lab_t1_4	F54Sr1	3	54	Surface	Br	2	XRF 0:0.036;XRF 1:0.036	XRF 0	0.036	0.036	0.036	0.036	0.036	0.036	max_positive	0.036	0	true
+lab_t1_4	F54Sr1	3	54	Surface	Cl	2	XRF 0:2.1;XRF 1:2.1	XRF 0	2.1	2.1	2.1	2.1	2.1	2.1	max_positive	2.1	0	true
+lab_t1_4	F55Dr1	3	55	Deep	Cl	2	XRF 0:2.5;XRF 1:2.5	XRF 0	2.5	2.5	2.5	2.5	2.5	2.5	max_positive	2.5	0	true
+lab_t1_4	F55PRr1	3	55	Rhizosphere	Cl	2	XRF 0:1.4;XRF 1:1.4	XRF 0	1.4	1.4	1.4	1.4	1.4	1.4	max_positive	1.4	0	true
+lab_t1_4	F55Sr1	3	55	Surface	Cl	2	XRF 0:2.6;XRF 1:2.6	XRF 0	2.6	2.6	2.6	2.6	2.6	2.6	max_positive	2.6	0	true
+lab_t1_4	F56Dr1	3	56	Deep	Cl	2	XRF 0:2;XRF 1:2	XRF 0	2	2	2	2	2	2	max_positive	2	0	true
+lab_t1_4	F56Sr1	3	56	Surface	Cl	2	XRF 0:2.6;XRF 1:2.6	XRF 0	2.6	2.6	2.6	2.6	2.6	2.6	max_positive	2.6	0	true
+lab_t1_4	F57Dr1	3	57	Deep	Cl	2	XRF 0:1.7;XRF 1:1.7	XRF 0	1.7	1.7	1.7	1.7	1.7	1.7	max_positive	1.7	0	true
+lab_t1_4	F57PRr1	3	57	Rhizosphere	Cl	2	XRF 0:1.7;XRF 1:1.7	XRF 0	1.7	1.7	1.7	1.7	1.7	1.7	max_positive	1.7	0	true
+lab_t1_4	F57Sr1	3	57	Surface	Cl	2	XRF 0:2.8;XRF 1:2.8	XRF 0	2.8	2.8	2.8	2.8	2.8	2.8	max_positive	2.8	0	true
+lab_t1_4	F58Dr1	3	58	Deep	Cl	2	XRF 0:0.44;XRF 1:0.44	XRF 0	0.44	0.44	0.44	0.44	0.44	0.44	max_positive	0.44	0	true
+lab_t1_4	F58Dr1	3	58	Deep	Cr2O3	1	XRF 2:0.44	XRF 1	0.44	0.44	0.44	0.44	0.44		max_positive	0.44		false
+lab_t1_4	F58PRr1	3	58	Rhizosphere	CeO2	1	XRF 2:0.49	XRF 1	0.49	0.49	0.49	0.49	0.49		max_positive	0.49		false
+lab_t1_4	F58Sr1	3	58	Surface	Cl	2	XRF 0:1.1;XRF 1:1.1	XRF 0	1.1	1.1	1.1	1.1	1.1	1.1	max_positive	1.1	0	true
+lab_t1_4	F59Dr1	3	59	Deep	BaO	1	XRF 3:0.59	XRF 1	0.59	0.59	0.59	0.59	0.59		max_positive	0.59		false
+lab_t1_4	F59Dr1	3	59	Deep	Cl	2	XRF 0:1.8;XRF 1:1.8	XRF 0	1.8	1.8	1.8	1.8	1.8	1.8	max_positive	1.8	0	true
+lab_t1_4	F59PRr1	3	59	Rhizosphere	Cl	2	XRF 0:1.7;XRF 1:1.7	XRF 0	1.7	1.7	1.7	1.7	1.7	1.7	max_positive	1.7	0	true
+lab_t1_4	F59Sr1	3	59	Surface	Cl	2	XRF 0:2;XRF 1:2	XRF 0	2	2	2	2	2	2	max_positive	2	0	true
+lab_t1_4	F60Dr1	3	60	Deep	Cl	2	XRF 0:0.92;XRF 1:0.92	XRF 0	0.92	0.92	0.92	0.92	0.92	0.92	max_positive	0.92	0	true
+lab_t1_4	F60PRr1	3	60	Rhizosphere	Cl	2	XRF 0:1.7;XRF 1:1.7	XRF 0	1.7	1.7	1.7	1.7	1.7	1.7	max_positive	1.7	0	true
+lab_t1_4	S1Sr1	4	1	Surface	Cl	2	XRF 0:0.16;XRF 1:0.16	XRF 0	0.16	0.16	0.16	0.16	0.16	0.16	max_positive	0.16	0	true
+lab_t1_4	S2Dr1	4	2	Deep	CeO2	1	XRF 2:0.55	XRF 1	0.55	0.55	0.55	0.55	0.55		max_positive	0.55		false
+lab_t1_4	S3PRr1	4	3	Rhizosphere	ZrO2	1	XRF 2:0.37	XRF 1	0.37	0.37	0.37	0.37	0.37		max_positive	0.37		false
+lab_t1_4	S7PRr1	4	7	Rhizosphere	Cr2O3	1	XRF 2:0.18	XRF 1	0.18	0.18	0.18	0.18	0.18		max_positive	0.18		false
+lab_t1_4	S11Sr1	4	11	Surface	Cl	2	XRF 0:0.11;XRF 1:0.11	XRF 0	0.11	0.11	0.11	0.11	0.11	0.11	max_positive	0.11	0	true
+lab_t1_4	S12Sr1	4	12	Surface	Cl	2	XRF 0:0.12;XRF 1:0.12	XRF 0	0.12	0.12	0.12	0.12	0.12	0.12	max_positive	0.12	0	true
+lab_t1_4	S18Sr1	4	18	Surface	Cl	2	XRF 0:0.15;XRF 1:0.15	XRF 0	0.15	0.15	0.15	0.15	0.15	0.15	max_positive	0.15	0	true
+lab_t1_4	S23Dr1	4	23	Deep	Cl	2	XRF 0:0.11;XRF 1:0.11	XRF 0	0.11	0.11	0.11	0.11	0.11	0.11	max_positive	0.11	0	true
+lab_t1_4	S23PRr1	4	23	Rhizosphere	CeO2	1	XRF 2:0.72	XRF 1	0.72	0.72	0.72	0.72	0.72		max_positive	0.72		false
+lab_t1_4	S25Dr1	4	25	Deep	BaO	1	XRF 3:0.66	XRF 1	0.66	0.66	0.66	0.66	0.66		max_positive	0.66		false
+lab_t1_4	S25Sr1	4	25	Surface	Nd2O3	1	XRF 2:0.34	XRF 1	0.34	0.34	0.34	0.34	0.34		max_positive	0.34		false
+lab_t1_4	S33PRr1	4	33	Rhizosphere	Nd2O3	1	XRF 2:0.38	XRF 1	0.38	0.38	0.38	0.38	0.38		max_positive	0.38		false
+lab_t1_4	S34Sr1	4	34	Surface	Cl	2	XRF 0:0.11;XRF 1:0.11	XRF 0	0.11	0.11	0.11	0.11	0.11	0.11	max_positive	0.11	0	true
+lab_t1_4	S40PRr1	4	40	Rhizosphere	Cr2O3	1	XRF 2:0.3	XRF 1	0.3	0.3	0.3	0.3	0.3		max_positive	0.3		false
+lab_t1_4	S42Dr1	4	42	Deep	Cl	2	XRF 0:0.21;XRF 1:0.21	XRF 0	0.21	0.21	0.21	0.21	0.21	0.21	max_positive	0.21	0	true
+lab_t1_4	S42PRr1	4	42	Rhizosphere	Cl	2	XRF 0:0.5;XRF 1:0.5	XRF 0	0.5	0.5	0.5	0.5	0.5	0.5	max_positive	0.5	0	true
+lab_t1_4	S42Sr1	4	42	Surface	Cl	2	XRF 0:0.43;XRF 1:0.43	XRF 0	0.43	0.43	0.43	0.43	0.43	0.43	max_positive	0.43	0	true
+lab_t1_4	S43Dr1	4	43	Deep	CeO2	1	XRF 2:0.34	XRF 1	0.34	0.34	0.34	0.34	0.34		max_positive	0.34		false
+lab_t1_4	S44PRr1	4	44	Rhizosphere	Cl	2	XRF 0:0.12;XRF 1:0.12	XRF 0	0.12	0.12	0.12	0.12	0.12	0.12	max_positive	0.12	0	true
+lab_t1_4	S44PRr1	4	44	Rhizosphere	Cr2O3	1	XRF 2:18.3	XRF 1	18.3	18.3	18.3	18.3	18.3		max_positive	18.3		false
+lab_t1_4	S44PRr1	4	44	Rhizosphere	Fe2O3	1	XRF 2:64.36	XRF 1	64.36	64.36	64.36	64.36	64.36		max_positive	64.36		false
+lab_t1_4	S49Dr1	4	49	Deep	Br	2	XRF 0:0.12;XRF 1:0.12	XRF 0	0.12	0.12	0.12	0.12	0.12	0.12	max_positive	0.12	0	true
+lab_t1_4	S49Dr1	4	49	Deep	Cl	2	XRF 0:4.07;XRF 1:4.07	XRF 0	4.07	4.07	4.07	4.07	4.07	4.07	max_positive	4.07	0	true
+lab_t1_4	S49PRr1	4	49	Rhizosphere	Cl	2	XRF 0:0.17;XRF 1:0.17	XRF 0	0.17	0.17	0.17	0.17	0.17	0.17	max_positive	0.17	0	true
+lab_t1_4	S49Sr1	4	49	Surface	Cl	2	XRF 0:1.3;XRF 1:1.3	XRF 0	1.3	1.3	1.3	1.3	1.3	1.3	max_positive	1.3	0	true
+lab_t1_4	S50Dr1	4	50	Deep	Cl	2	XRF 0:0.41;XRF 1:0.41	XRF 0	0.41	0.41	0.41	0.41	0.41	0.41	max_positive	0.41	0	true
+lab_t1_4	S50Sr1	4	50	Surface	Cl	2	XRF 0:0.12;XRF 1:0.12	XRF 0	0.12	0.12	0.12	0.12	0.12	0.12	max_positive	0.12	0	true
+lab_t1_4	S51Dr1	4	51	Deep	Cl	2	XRF 0:0.11;XRF 1:0.11	XRF 0	0.11	0.11	0.11	0.11	0.11	0.11	max_positive	0.11	0	true
+lab_t1_4	S52Dr1	4	52	Deep	Cl	2	XRF 0:0.35;XRF 1:0.35	XRF 0	0.35	0.35	0.35	0.35	0.35	0.35	max_positive	0.35	0	true
+lab_t1_4	S52PRr1	4	52	Rhizosphere	Cl	2	XRF 0:0.36;XRF 1:0.36	XRF 0	0.36	0.36	0.36	0.36	0.36	0.36	max_positive	0.36	0	true
+lab_t1_4	S52Sr1	4	52	Surface	Cl	2	XRF 0:0.47;XRF 1:0.47	XRF 0	0.47	0.47	0.47	0.47	0.47	0.47	max_positive	0.47	0	true
+lab_t1_4	S54Dr1	4	54	Deep	Cl	2	XRF 0:0.33;XRF 1:0.33	XRF 0	0.33	0.33	0.33	0.33	0.33	0.33	max_positive	0.33	0	true
+lab_t1_4	S54PRr1	4	54	Rhizosphere	Br	2	XRF 0:0.037;XRF 1:0.037	XRF 0	0.037	0.037	0.037	0.037	0.037	0.037	max_positive	0.037	0	true
+lab_t1_4	S54PRr1	4	54	Rhizosphere	Cl	2	XRF 0:1.2;XRF 1:1.2	XRF 0	1.2	1.2	1.2	1.2	1.2	1.2	max_positive	1.2	0	true
+lab_t1_4	S54Sr1	4	54	Surface	Cl	2	XRF 0:0.44;XRF 1:0.44	XRF 0	0.44	0.44	0.44	0.44	0.44	0.44	max_positive	0.44	0	true
+lab_t1_4	S55Dr1	4	55	Deep	Br	2	XRF 0:0.041;XRF 1:0.041	XRF 0	0.041	0.041	0.041	0.041	0.041	0.041	max_positive	0.041	0	true
+lab_t1_4	S55Dr1	4	55	Deep	Cl	2	XRF 0:2.7;XRF 1:2.7	XRF 0	2.7	2.7	2.7	2.7	2.7	2.7	max_positive	2.7	0	true
+lab_t1_4	S55PRr1	4	55	Rhizosphere	Cl	2	XRF 0:1.9;XRF 1:1.9	XRF 0	1.9	1.9	1.9	1.9	1.9	1.9	max_positive	1.9	0	true
+lab_t1_4	S55Sr1	4	55	Surface	Cl	2	XRF 0:2.98;XRF 1:2.98	XRF 0	2.98	2.98	2.98	2.98	2.98	2.98	max_positive	2.98	0	true
+lab_t1_4	S56Dr1	4	56	Deep	Cl	2	XRF 0:1.4;XRF 1:1.4	XRF 0	1.4	1.4	1.4	1.4	1.4	1.4	max_positive	1.4	0	true
+lab_t1_4	S56PRr1	4	56	Rhizosphere	Cl	2	XRF 0:0.183;XRF 1:0.183	XRF 0	0.183	0.183	0.183	0.183	0.183	0.183	max_positive	0.183	0	true
+lab_t1_4	S56PRr1	4	56	Rhizosphere	Cr2O3	1	XRF 2:18	XRF 1	18	18	18	18	18		max_positive	18		false
+lab_t1_4	S56PRr1	4	56	Rhizosphere	Fe2O3	1	XRF 2:67.07	XRF 1	67.07	67.07	67.07	67.07	67.07		max_positive	67.07		false
+lab_t1_4	S56Sr1	4	56	Surface	Cl	2	XRF 0:1.6;XRF 1:1.6	XRF 0	1.6	1.6	1.6	1.6	1.6	1.6	max_positive	1.6	0	true
+lab_t1_4	S57PRr1	4	57	Rhizosphere	Cl	2	XRF 0:0.95;XRF 1:0.95	XRF 0	0.95	0.95	0.95	0.95	0.95	0.95	max_positive	0.95	0	true
+lab_t1_4	S57Sr1	4	57	Surface	Cl	2	XRF 0:0.69;XRF 1:0.69	XRF 0	0.69	0.69	0.69	0.69	0.69	0.69	max_positive	0.69	0	true
+lab_t1_4	S57Sr1	4	57	Surface	Cr2O3	1	XRF 2:0.35	XRF 1	0.35	0.35	0.35	0.35	0.35		max_positive	0.35		false
+lab_t1_4	S58Dr1	4	58	Deep	Cl	2	XRF 0:0.53;XRF 1:0.53	XRF 0	0.53	0.53	0.53	0.53	0.53	0.53	max_positive	0.53	0	true
+lab_t1_4	S58PRr1	4	58	Rhizosphere	Cl	2	XRF 0:0.42;XRF 1:0.42	XRF 0	0.42	0.42	0.42	0.42	0.42	0.42	max_positive	0.42	0	true
+lab_t1_4	S59Dr1	4	59	Deep	BaO	1	XRF 3:0.58	XRF 1	0.58	0.58	0.58	0.58	0.58		max_positive	0.58		false
+lab_t1_4	S59Dr1	4	59	Deep	Cl	2	XRF 0:3;XRF 1:3	XRF 0	3	3	3	3	3	3	max_positive	3	0	true
+lab_t1_4	S59PRr1	4	59	Rhizosphere	Cl	2	XRF 0:0.28;XRF 1:0.28	XRF 0	0.28	0.28	0.28	0.28	0.28	0.28	max_positive	0.28	0	true
+lab_t1_4	S59PRr1	4	59	Rhizosphere	Nd2O3	1	XRF 2:0.25	XRF 1	0.25	0.25	0.25	0.25	0.25		max_positive	0.25		false
+lab_t1_4	S59Sr1	4	59	Surface	Cl	2	XRF 0:2;XRF 1:2	XRF 0	2	2	2	2	2	2	max_positive	2	0	true
+lab_t1_4	S60Sr1	4	60	Surface	Cl	2	XRF 0:0.43;XRF 1:0.43	XRF 0	0.43	0.43	0.43	0.43	0.43	0.43	max_positive	0.43	0	true
+lab_t5	V2Dr1	5	2	Deep	Cl	2	XRF 0:0.13;XRF 1:0.13	XRF 0	0.13	0.13	0.13	0.13	0.13	0.13	last_reported	0.13	0	true
+lab_t5	V2Sr1	5	2	Surface	Cl	2	XRF 0:0.16;XRF 1:0.16	XRF 0	0.16	0.16	0.16	0.16	0.16	0.16	last_reported	0.16	0	true
+lab_t5	V3Sr1	5	3	Surface	Cl	2	XRF 0:0.38;XRF 1:0.38	XRF 0	0.38	0.38	0.38	0.38	0.38	0.38	last_reported	0.38	0	true
+lab_t5	V4PRr1	5	4	Rhizosphere	CeO2	1	XRF 2:0.48	XRF 1	0.48	0.48	0.48	0.48	0.48		last_reported	0.48		false
+lab_t5	V7Dr1	5	7	Deep	Cl	2	XRF 0:0.13;XRF 1:0.13	XRF 0	0.13	0.13	0.13	0.13	0.13	0.13	last_reported	0.13	0	true
+lab_t5	V14Dr1	5	14	Deep	Al	2	XRF 0:1.1;XRF 0:1	XRF 0	1.1	1.05	1.05	1.1	1	1.05	last_reported	1	-0.04761904762	true
+lab_t5	V14Dr1	5	14	Deep	Ba	2	XRF 0:0.079;XRF 0:0.53	XRF 0	0.53	0.3045	0.3045	0.079	0.53	0.3045	last_reported	0.53	0.7405582923	true
+lab_t5	V14Dr1	5	14	Deep	Ca	2	XRF 0:1.1;XRF 0:1.6	XRF 0	1.6	1.35	1.35	1.1	1.6	1.35	last_reported	1.6	0.1851851852	true
+lab_t5	V14Dr1	5	14	Deep	Fe	2	XRF 0:0.28;XRF 0:0.506	XRF 0	0.506	0.393	0.393	0.28	0.506	0.393	last_reported	0.506	0.2875318066	true
+lab_t5	V14Dr1	5	14	Deep	K	2	XRF 0:0.6;XRF 0:0.97	XRF 0	0.97	0.785	0.785	0.6	0.97	0.785	last_reported	0.97	0.2356687898	true
+lab_t5	V14Dr1	5	14	Deep	Mg	2	XRF 0:0.29;XRF 0:0.37	XRF 0	0.37	0.33	0.33	0.29	0.37	0.33	last_reported	0.37	0.1212121212	true
+lab_t5	V14Dr1	5	14	Deep	Na	2	XRF 0:0.35;XRF 0:0.3	XRF 0	0.35	0.325	0.325	0.35	0.3	0.325	last_reported	0.3	-0.07692307692	true
+lab_t5	V14Dr1	5	14	Deep	P	2	XRF 0:0.12;XRF 0:0.19	XRF 0	0.19	0.155	0.155	0.12	0.19	0.155	last_reported	0.19	0.2258064516	true
+lab_t5	V14Dr1	5	14	Deep	Pr	2	XRF 0:0.046;XRF 0:0.15	XRF 0	0.15	0.098	0.098	0.046	0.15	0.098	last_reported	0.15	0.5306122449	true
+lab_t5	V14Dr1	5	14	Deep	Si	2	XRF 0:21.5;XRF 0:20.2	XRF 0	21.5	20.85	20.85	21.5	20.2	20.85	last_reported	20.2	-0.03117505995	true
+lab_t5	V14Dr1	5	14	Deep	Sr	2	XRF 0:0.03;XRF 0:0.036	XRF 0	0.036	0.033	0.033	0.03	0.036	0.033	last_reported	0.036	0.09090909091	true
+lab_t5	V15PRr1	5	15	Rhizosphere	Cl	2	XRF 0:0.1;XRF 1:0.1	XRF 0	0.1	0.1	0.1	0.1	0.1	0.1	last_reported	0.1	0	true
+lab_t5	V18Dr3	5	18	Deep	BaO	1	XRF 3:0.37	XRF 1	0.37	0.37	0.37	0.37	0.37		last_reported	0.37		false
+lab_t5	V18Dr3	5	18	Deep	Cl	2	XRF 1:0.16;XRF 0:0.16	XRF 0	0.16	0.16	0.16	0.16	0.16	0.16	last_reported	0.16	0	true
+lab_t5	V18PRr1	5	18	Rhizosphere	Cl	2	XRF 0:0.12;XRF 1:0.12	XRF 0	0.12	0.12	0.12	0.12	0.12	0.12	last_reported	0.12	0	true
+lab_t5	V20PRr1	5	20	Rhizosphere	BaO	1	XRF 2:0.5	XRF 1	0.5	0.5	0.5	0.5	0.5		last_reported	0.5		false
+lab_t5	V22Dr1	5	22	Deep	Cl	2	XRF 0:0.12;XRF 1:0.12	XRF 0	0.12	0.12	0.12	0.12	0.12	0.12	last_reported	0.12	0	true
+lab_t5	V25Dr1	5	25	Deep	Cl	2	XRF 0:0.13;XRF 1:0.13	XRF 0	0.13	0.13	0.13	0.13	0.13	0.13	last_reported	0.13	0	true
+lab_t5	V26PRr1	5	26	Rhizosphere	Nd2O3	1	XRF 2:0.23	XRF 1	0.23	0.23	0.23	0.23	0.23		last_reported	0.23		false
+lab_t5	V32Dr1	5	32	Deep	Nd2O3	1	XRF 2:0.36	XRF 1	0.36	0.36	0.36	0.36	0.36		last_reported	0.36		false
+lab_t5	V32Sr1	5	32	Surface	CeO2	1	XRF 2:0.43	XRF 1	0.43	0.43	0.43	0.43	0.43		last_reported	0.43		false
+lab_t5	V36PRr1	5	36	Rhizosphere	BaO	1	XRF 3:0.79	XRF 1	0.79	0.79	0.79	0.79	0.79		last_reported	0.79		false
+lab_t5	V36PRr1	5	36	Rhizosphere	Cl	2	XRF 0:0.11;XRF 1:0.11	XRF 0	0.11	0.11	0.11	0.11	0.11	0.11	last_reported	0.11	0	true
+lab_t5	V41Dr1	5	41	Deep	Cl	2	XRF 0:2.9;XRF 1:2.9	XRF 0	2.9	2.9	2.9	2.9	2.9	2.9	last_reported	2.9	0	true
+lab_t5	V41PRr1	5	41	Rhizosphere	Cl	2	XRF 0:0.13;XRF 1:0.13	XRF 0	0.13	0.13	0.13	0.13	0.13	0.13	last_reported	0.13	0	true
+lab_t5	V41Sr1	5	41	Surface	Cl	2	XRF 0:0.43;XRF 1:0.43	XRF 0	0.43	0.43	0.43	0.43	0.43	0.43	last_reported	0.43	0	true
+lab_t5	V43Dr1	5	43	Deep	Cl	2	XRF 0:0.15;XRF 1:0.15	XRF 0	0.15	0.15	0.15	0.15	0.15	0.15	last_reported	0.15	0	true
+lab_t5	V43Sr1	5	43	Surface	Cl	2	XRF 0:0.12;XRF 1:0.12	XRF 0	0.12	0.12	0.12	0.12	0.12	0.12	last_reported	0.12	0	true
+lab_t5	V45Dr1	5	45	Deep	Cl	2	XRF 0:2.3;XRF 1:2.3	XRF 0	2.3	2.3	2.3	2.3	2.3	2.3	last_reported	2.3	0	true
+lab_t5	V48Dr1	5	48	Deep	Br	2	XRF 0:0.023;XRF 1:0.023	XRF 0	0.023	0.023	0.023	0.023	0.023	0.023	last_reported	0.023	0	true
+lab_t5	V48Dr1	5	48	Deep	Cl	2	XRF 0:2.8;XRF 1:2.8	XRF 0	2.8	2.8	2.8	2.8	2.8	2.8	last_reported	2.8	0	true
+lab_t5	V48PRr1	5	48	Rhizosphere	Cl	2	XRF 0:2.1;XRF 1:2.1	XRF 0	2.1	2.1	2.1	2.1	2.1	2.1	last_reported	2.1	0	true
+lab_t5	V48Sr1	5	48	Surface	Cl	2	XRF 0:2.3;XRF 1:2.3	XRF 0	2.3	2.3	2.3	2.3	2.3	2.3	last_reported	2.3	0	true
+lab_t5	V49Sr1	5	49	Surface	Cl	2	XRF 0:0.19;XRF 1:0.19	XRF 0	0.19	0.19	0.19	0.19	0.19	0.19	last_reported	0.19	0	true
+lab_t5	V51Dr1	5	51	Deep	Cl	2	XRF 0:1.8;XRF 1:1.8	XRF 0	1.8	1.8	1.8	1.8	1.8	1.8	last_reported	1.8	0	true
+lab_t5	V51PRr1	5	51	Rhizosphere	Cl	2	XRF 0:0.78;XRF 1:0.78	XRF 0	0.78	0.78	0.78	0.78	0.78	0.78	last_reported	0.78	0	true
+lab_t5	V51Sr1	5	51	Surface	Cl	2	XRF 0:0.71;XRF 1:0.71	XRF 0	0.71	0.71	0.71	0.71	0.71	0.71	last_reported	0.71	0	true
+lab_t5	V52Dr1	5	52	Deep	Cl	2	XRF 0:4.98;XRF 1:4.98	XRF 0	4.98	4.98	4.98	4.98	4.98	4.98	last_reported	4.98	0	true
+lab_t5	V52Sr1	5	52	Surface	Cl	2	XRF 0:6.71;XRF 1:6.71	XRF 0	6.71	6.71	6.71	6.71	6.71	6.71	last_reported	6.71	0	true
+lab_t5	V53Sr1	5	53	Surface	Cl	2	XRF 0:0.55;XRF 1:0.55	XRF 0	0.55	0.55	0.55	0.55	0.55	0.55	last_reported	0.55	0	true
+lab_t5	V54Dr1	5	54	Deep	Cl	2	XRF 0:0.7;XRF 1:0.7	XRF 0	0.7	0.7	0.7	0.7	0.7	0.7	last_reported	0.7	0	true
+lab_t5	V54PRr1	5	54	Rhizosphere	Cl	2	XRF 0:0.34;XRF 1:0.34	XRF 0	0.34	0.34	0.34	0.34	0.34	0.34	last_reported	0.34	0	true
+lab_t5	V54Sr1	5	54	Surface	Cl	2	XRF 0:0.76;XRF 1:0.76	XRF 0	0.76	0.76	0.76	0.76	0.76	0.76	last_reported	0.76	0	true
+lab_t5	V55Dr1	5	55	Deep	Br	2	XRF 0:0.027;XRF 1:0.027	XRF 0	0.027	0.027	0.027	0.027	0.027	0.027	last_reported	0.027	0	true
+lab_t5	V55Dr1	5	55	Deep	Cl	2	XRF 0:6.79;XRF 1:6.79	XRF 0	6.79	6.79	6.79	6.79	6.79	6.79	last_reported	6.79	0	true
+lab_t5	V55PRr1	5	55	Rhizosphere	Br	2	XRF 0:0.05;XRF 1:0.05	XRF 0	0.05	0.05	0.05	0.05	0.05	0.05	last_reported	0.05	0	true
+lab_t5	V55PRr1	5	55	Rhizosphere	Cl	2	XRF 0:4.2;XRF 1:4.2	XRF 0	4.2	4.2	4.2	4.2	4.2	4.2	last_reported	4.2	0	true
+lab_t5	V55Sr1	5	55	Surface	Cl	2	XRF 0:2.3;XRF 1:2.3	XRF 0	2.3	2.3	2.3	2.3	2.3	2.3	last_reported	2.3	0	true
+lab_t5	V56Dr1	5	56	Deep	Cl	2	XRF 0:4.06;XRF 1:4.06	XRF 0	4.06	4.06	4.06	4.06	4.06	4.06	last_reported	4.06	0	true
+lab_t5	V56Sr1	5	56	Surface	Cl	2	XRF 0:2.8;XRF 1:2.8	XRF 0	2.8	2.8	2.8	2.8	2.8	2.8	last_reported	2.8	0	true
+lab_t5	V57Dr1	5	57	Deep	Cl	2	XRF 0:1.9;XRF 1:1.9	XRF 0	1.9	1.9	1.9	1.9	1.9	1.9	last_reported	1.9	0	true
+lab_t5	V57PRr1	5	57	Rhizosphere	Cl	2	XRF 0:0.38;XRF 1:0.38	XRF 0	0.38	0.38	0.38	0.38	0.38	0.38	last_reported	0.38	0	true
+lab_t5	V57PRr1	5	57	Rhizosphere	Nd2O3	1	XRF 2:0.29	XRF 1	0.29	0.29	0.29	0.29	0.29		last_reported	0.29		false
+lab_t5	V57Sr1	5	57	Surface	Cl	2	XRF 0:1.5;XRF 1:1.5	XRF 0	1.5	1.5	1.5	1.5	1.5	1.5	last_reported	1.5	0	true
+lab_t5	V58Dr1	5	58	Deep	Cl	2	XRF 0:0.87;XRF 1:0.87	XRF 0	0.87	0.87	0.87	0.87	0.87	0.87	last_reported	0.87	0	true
+lab_t5	V58PRr1	5	58	Rhizosphere	Cl	2	XRF 0:0.41;XRF 1:0.41	XRF 0	0.41	0.41	0.41	0.41	0.41	0.41	last_reported	0.41	0	true
+lab_t5	V58Sr1	5	58	Surface	Cl	2	XRF 0:0.45;XRF 1:0.45	XRF 0	0.45	0.45	0.45	0.45	0.45	0.45	last_reported	0.45	0	true
+lab_t5	V59Dr1	5	59	Deep	Cl	2	XRF 0:2.3;XRF 1:2.3	XRF 0	2.3	2.3	2.3	2.3	2.3	2.3	last_reported	2.3	0	true
+lab_t5	V59PRr1	5	59	Rhizosphere	Cl	2	XRF 0:1.7;XRF 1:1.7	XRF 0	1.7	1.7	1.7	1.7	1.7	1.7	last_reported	1.7	0	true
+lab_t5	V59Sr1	5	59	Surface	Cl	2	XRF 0:4.58;XRF 1:4.58	XRF 0	4.58	4.58	4.58	4.58	4.58	4.58	last_reported	4.58	0	true
+lab_t5	V60PRr1	5	60	Rhizosphere	Cl	2	XRF 0:0.54;XRF 1:0.54	XRF 0	0.54	0.54	0.54	0.54	0.54	0.54	last_reported	0.54	0	true
+lab_t5	V60Sr1	5	60	Surface	Cl	2	XRF 0:0.22;XRF 1:0.22	XRF 0	0.22	0.22	0.22	0.22	0.22	0.22	last_reported	0.22	0	true

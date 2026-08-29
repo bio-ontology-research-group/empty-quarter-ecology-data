@@ -1,0 +1,2995 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/rak/ontology/taxonomy#"
+     xml:base="http://purl.org/rak/ontology/taxonomy"
+     xmlns:rak="http://purl.org/rak/ontology/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://purl.org/rak/ontology/taxonomy"/>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010001">
+        <rdfs:label>Acetothermia (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010002">
+        <rdfs:label>Acetothermiia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010001"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010003">
+        <rdfs:label>Acidobacteriae (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_57723"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010004">
+        <rdfs:label>AMGG11 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010003"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010005">
+        <rdfs:label>Elev-16S-1166 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010003"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010006">
+        <rdfs:label>Incertae Sedis (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010005"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010007">
+        <rdfs:label>WY65 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010006"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010008">
+        <rdfs:label>PAUC26f (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010003"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010009">
+        <rdfs:label>Solibacterales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010003"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010010">
+        <rdfs:label>Subgroup 12 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010003"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010011">
+        <rdfs:label>Acidobacteriaceae (Subgroup 1) (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_204433"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010012">
+        <rdfs:label>Koribacteraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_204433"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010013">
+        <rdfs:label>Candidatus Koribacter (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010012"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010014">
+        <rdfs:label>Aminicenantia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_57723"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010015">
+        <rdfs:label>Aminicenantales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010014"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010016">
+        <rdfs:label>Aminicenantaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010015"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010017">
+        <rdfs:label>Aminicenans (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010016"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010018">
+        <rdfs:label>AT-s3-28 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_57723"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010019">
+        <rdfs:label>11-24 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1562566"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010020">
+        <rdfs:label>JGI 0001001-H03 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1748772"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010021">
+        <rdfs:label>DS-100 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1562566"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010022">
+        <rdfs:label>RB41 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2048906"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010023">
+        <rdfs:label>FFCH5909 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_57723"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010024">
+        <rdfs:label>Subgroup 7 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_533205"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010025">
+        <rdfs:label>Subgroup 18 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_57723"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010026">
+        <rdfs:label>Subgroup 21 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_57723"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010027">
+        <rdfs:label>Subgroup 22 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_57723"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010028">
+        <rdfs:label>Subgroup 25 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_57723"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010029">
+        <rdfs:label>Subgroup 26 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_57723"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010030">
+        <rdfs:label>Subgroup 5 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_57723"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010031">
+        <rdfs:label>Subgroup 10 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2562242"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010032">
+        <rdfs:label>Subgroup 17 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1813735"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010033">
+        <rdfs:label>Subgroup 9 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1813735"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010034">
+        <rdfs:label>Actinomarinales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_84992"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010035">
+        <rdfs:label>Microtrichales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_84992"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010036">
+        <rdfs:label>CL500-29 marine group (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2448023"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010037">
+        <rdfs:label>Microtrichaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010035"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010038">
+        <rdfs:label>IMCC26207 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010037"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010039">
+        <rdfs:label>Sva0996 marine group (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010037"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010040">
+        <rdfs:label>Actinobacteria (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_201174"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010041">
+        <rdfs:label>0319-7L14 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010040"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010042">
+        <rdfs:label>endophyticus (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_38501"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010043">
+        <rdfs:label>KIST-JJY010 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010040"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010044">
+        <rdfs:label>E1B-B3-114 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2062"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010045">
+        <rdfs:label>Bogoriella (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_145358"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010046">
+        <rdfs:label>Pedococcus-Phycicoccus (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_85021"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010047">
+        <rdfs:label>Rothia (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1268"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010048">
+        <rdfs:label>Longispora (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28056"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010049">
+        <rdfs:label>Verrucosispora (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28056"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010050">
+        <rdfs:label>celeriflavum (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1763"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010051">
+        <rdfs:label>chlorophenolicum (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1763"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010052">
+        <rdfs:label>flavescens (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1763"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010053">
+        <rdfs:label>fortuitum (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1763"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010054">
+        <rdfs:label>litorale (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1763"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010055">
+        <rdfs:label>mageritense (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1763"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010056">
+        <rdfs:label>neoaurum (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1763"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010057">
+        <rdfs:label>obuense (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1763"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010058">
+        <rdfs:label>rutilum (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1763"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010059">
+        <rdfs:label>tusciae (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1763"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010060">
+        <rdfs:label>vaccae (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1763"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010061">
+        <rdfs:label>Gordonia (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_85025"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010062">
+        <rdfs:label>Rhodococcus (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_85025"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010063">
+        <rdfs:label>fascians (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010062"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010064">
+        <rdfs:label>hoagii (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010062"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010065">
+        <rdfs:label>YC-ZSS-LKJ90 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_596498"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010066">
+        <rdfs:label>aidingensis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1835"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010067">
+        <rdfs:label>glauciflava (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1988"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010068">
+        <rdfs:label>[Streptomyces] thermoautotrophicus (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2012"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010069">
+        <rdfs:label>thermoautotrophicus (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010068"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010070">
+        <rdfs:label>CG2-30-50-142 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_84998"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010071">
+        <rdfs:label>Coriobacteriales Incertae Sedis (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_84999"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010072">
+        <rdfs:label>OPB41 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_84998"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010073">
+        <rdfs:label>MB-A2-108 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_201174"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010074">
+        <rdfs:label>Rubrobacteriaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_84996"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010075">
+        <rdfs:label>67-14 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_588673"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010076">
+        <rdfs:label>JCM 18997 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_320599"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010077">
+        <rdfs:label>Thermophilales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1497346"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010078">
+        <rdfs:label>AncK6 (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010079">
+        <rdfs:label>Alicyclobacillales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_91061"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010080">
+        <rdfs:label>Aneurinibacillales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_91061"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010081">
+        <rdfs:label>Aneurinibacillaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010080"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010082">
+        <rdfs:label>amylolyticus (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_150247"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010083">
+        <rdfs:label>Bacillus (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_186817"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010084">
+        <rdfs:label>beringensis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010083"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010085">
+        <rdfs:label>circulans (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010083"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010086">
+        <rdfs:label>cohnii (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010083"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010087">
+        <rdfs:label>firmus (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010083"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010088">
+        <rdfs:label>gottheilii (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010083"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010089">
+        <rdfs:label>hwajinpoensis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010083"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010090">
+        <rdfs:label>intestinalis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010083"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010091">
+        <rdfs:label>koreensis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010083"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010092">
+        <rdfs:label>korlensis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010083"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010093">
+        <rdfs:label>mannanilyticus (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010083"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010094">
+        <rdfs:label>thermoamylovorans (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010083"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010095">
+        <rdfs:label>vireti (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010083"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010096">
+        <rdfs:label>virus (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010083"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010097">
+        <rdfs:label>Ferdinandcohnia (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_186817"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010098">
+        <rdfs:label>Weizmannia (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_186817"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010099">
+        <rdfs:label>Marinococcaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1385"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010100">
+        <rdfs:label>Planococcaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1385"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010101">
+        <rdfs:label>massiliensis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_400634"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010102">
+        <rdfs:label>Planococcus (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010100"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010103">
+        <rdfs:label>Salisediminibacteriaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1385"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010104">
+        <rdfs:label>Brevibacillales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_91061"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010105">
+        <rdfs:label>Brevibacillaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010104"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010106">
+        <rdfs:label>Caldalkalibacillales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_91061"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010107">
+        <rdfs:label>Caldalkalibacillaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010106"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010108">
+        <rdfs:label>Exiguobacterales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_91061"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010109">
+        <rdfs:label>Exiguobacteraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010108"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010110">
+        <rdfs:label>Eremococcus (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_186827"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010111">
+        <rdfs:label>tabacinasalis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_66831"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010112">
+        <rdfs:label>girerdii (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2093"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010113">
+        <rdfs:label>type III (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2092"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010114">
+        <rdfs:label>panacisoli (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44249"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010115">
+        <rdfs:label>RsaHf231 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_91061"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010116">
+        <rdfs:label>Staphylococcales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_91061"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010117">
+        <rdfs:label>Auricoccus-Abyssicoccus (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_90964"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010118">
+        <rdfs:label>indicus (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010117"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010119">
+        <rdfs:label>kunmingensis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_45669"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010120">
+        <rdfs:label>Thermoactinomycetales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_91061"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010121">
+        <rdfs:label>Christensenellaceae R-7 group (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_990719"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010122">
+        <rdfs:label>Clostridiales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_186801"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010123">
+        <rdfs:label>Caloramatoraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010122"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010124">
+        <rdfs:label>Oxobacteraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010122"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010125">
+        <rdfs:label>Clostridia UCG-014 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_186801"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010126">
+        <rdfs:label>Clostridia vadinBB60 group (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_186801"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010127">
+        <rdfs:label>Defluviitaleaceae UCG-011 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1185407"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010128">
+        <rdfs:label>CHKCI001 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_186803"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010129">
+        <rdfs:label>Lachnospiraceae ND3007 group (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_186803"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010130">
+        <rdfs:label>Lachnospiraceae UCG-008 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_186803"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010131">
+        <rdfs:label>Lachnospiraceae UCG-010 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_186803"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010132">
+        <rdfs:label>Oscillospirales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_186801"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010133">
+        <rdfs:label>Ethanoligenenaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010132"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010134">
+        <rdfs:label>[Eubacterium] coprostanoligenes group (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010132"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010135">
+        <rdfs:label>HN-HF0106 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_216572"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010136">
+        <rdfs:label>NK4A214 group (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_216572"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010137">
+        <rdfs:label>Ruminococcaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010132"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010138">
+        <rdfs:label>UCG-010 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010132"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010139">
+        <rdfs:label>Peptococcales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_186801"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010140">
+        <rdfs:label>Peptostreptococcales-Tissierellales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_186801"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010141">
+        <rdfs:label>Family XIII AD3011 group (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_543314"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010142">
+        <rdfs:label>Caldisalinibacteraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010140"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010143">
+        <rdfs:label>Family XI (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010140"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010144">
+        <rdfs:label>Fusibacteraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010140"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010145">
+        <rdfs:label>sordellii (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1849828"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010146">
+        <rdfs:label>D8A-2 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1239"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010147">
+        <rdfs:label>TC1 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010006"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010148">
+        <rdfs:label>intricatum (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2282742"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010149">
+        <rdfs:label>ruminis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1562"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010150">
+        <rdfs:label>Desulfotomaculales Incertae Sedis (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3120412"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010151">
+        <rdfs:label>Pelotomaculaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3120412"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010152">
+        <rdfs:label>DTU014 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010006"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010153">
+        <rdfs:label>M55-D21 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1676648"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010154">
+        <rdfs:label>Moorellia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1239"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010155">
+        <rdfs:label>Desulfitibacterales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010154"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010156">
+        <rdfs:label>Veillonellales-Selenomonadales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_909932"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010157">
+        <rdfs:label>Symbiobacteriales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3118674"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010158">
+        <rdfs:label>Symbiobacteraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010157"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010159">
+        <rdfs:label>Thermaerobacteraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3120449"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010160">
+        <rdfs:label>Thermoanaerobacteria (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1239"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010161">
+        <rdfs:label>Family III (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_68295"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010162">
+        <rdfs:label>Thermovenabulia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1239"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010163">
+        <rdfs:label>Thermovenabulales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010162"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010164">
+        <rdfs:label>Bacteroidetes vadinHA17 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_171549"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010165">
+        <rdfs:label>M2PB4-65 termite group (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_171549"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010166">
+        <rdfs:label>p-2534-18B5 gut group (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_171549"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010167">
+        <rdfs:label>F0058 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2005523"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010168">
+        <rdfs:label>H1 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2005523"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010169">
+        <rdfs:label>BCf9-17 termite group (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2038695"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010170">
+        <rdfs:label>Blvii28 wastewater-sludge group (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2038695"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010171">
+        <rdfs:label>Bacteroidetes VC2.1 Bac22 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200643"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010172">
+        <rdfs:label>Flaviaestuariibacter (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_563835"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010173">
+        <rdfs:label>UTBCD1 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_563835"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010174">
+        <rdfs:label>MWH-CFBk5 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_768507"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010175">
+        <rdfs:label>ummariense (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_237"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010176">
+        <rdfs:label>Muricauda (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_49546"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010177">
+        <rdfs:label>NS9 marine group (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200644"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010178">
+        <rdfs:label>hominis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_59732"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010179">
+        <rdfs:label>massiliae (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_59732"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010180">
+        <rdfs:label>SM1A07 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200643"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010181">
+        <rdfs:label>AKYH767 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200666"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010182">
+        <rdfs:label>CWT CU03-E12 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200666"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010183">
+        <rdfs:label>env.OPS 17 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200666"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010184">
+        <rdfs:label>FFCH9454 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200666"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010185">
+        <rdfs:label>KD3-93 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200666"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010186">
+        <rdfs:label>LiUU-11-161 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200666"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010187">
+        <rdfs:label>NS11-12 marine group (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200666"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010188">
+        <rdfs:label>S15-21 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200666"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010189">
+        <rdfs:label>ST-12K33 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200666"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010190">
+        <rdfs:label>Aliifodinibius (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1813606"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010191">
+        <rdfs:label>B2706-C7 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1813606"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010192">
+        <rdfs:label>CK06-06-Mud-MAS4B-21 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1813606"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010193">
+        <rdfs:label>MAT-CR-P4-C12 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1813606"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010194">
+        <rdfs:label>0319-6G20 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1553900"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010195">
+        <rdfs:label>053A03-B-DI-P58 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1553900"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010196">
+        <rdfs:label>JdFR-76 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1962854"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010197">
+        <rdfs:label>Campylobacteria (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_29547"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010198">
+        <rdfs:label>Rs-M59 termite group (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_213849"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010199">
+        <rdfs:label>Candidatus Eremiobacterota (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010200">
+        <rdfs:label>Eremiobacteria (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010199"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010201">
+        <rdfs:label>Candidatus Kapabacteria (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010202">
+        <rdfs:label>Kapabacteria (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010201"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010203">
+        <rdfs:label>Kapabacteriales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010202"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010204">
+        <rdfs:label>cvE6 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_51291"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010205">
+        <rdfs:label>Ga0074140 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_92712"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010206">
+        <rdfs:label>AD3 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200795"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010207">
+        <rdfs:label>A4b (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2806304"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010208">
+        <rdfs:label>OLB13 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010207"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010209">
+        <rdfs:label>UTCFX1 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_292628"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010210">
+        <rdfs:label>RBG-13-54-9 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_292625"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010211">
+        <rdfs:label>Candidatus Chlorothrix (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1106"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010212">
+        <rdfs:label>FFCH7168 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1106"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010213">
+        <rdfs:label>Elev-1554 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32061"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010214">
+        <rdfs:label>AKIW781 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1508535"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010215">
+        <rdfs:label>Thermobaculales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32061"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010216">
+        <rdfs:label>Thermobaculaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010215"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010217">
+        <rdfs:label>AKYG1722 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_189776"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010218">
+        <rdfs:label>JG30-KF-CM45 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_189776"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010219">
+        <rdfs:label>S085 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_301297"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010220">
+        <rdfs:label>SAR202 clade (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_301297"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010221">
+        <rdfs:label>Gitt-GS-136 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200795"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010222">
+        <rdfs:label>JG30-KF-CM66 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200795"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010223">
+        <rdfs:label>KD4-96 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200795"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010224">
+        <rdfs:label>C0119 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_388447"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010225">
+        <rdfs:label>1959-1 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_388449"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010226">
+        <rdfs:label>FCPS473 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_388449"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010227">
+        <rdfs:label>N9D0 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200795"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010228">
+        <rdfs:label>OLB14 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200795"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010229">
+        <rdfs:label>P2-11E (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200795"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010230">
+        <rdfs:label>SHA-26 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200795"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010231">
+        <rdfs:label>TK10 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_200795"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010232">
+        <rdfs:label>CK-2C2-2 (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010233">
+        <rdfs:label>Cyanobacteriia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1117"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010234">
+        <rdfs:label>Chloroplast (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010233"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010235">
+        <rdfs:label>Cyanobacteriales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010233"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010236">
+        <rdfs:label>Chroococcidiopsaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010235"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010237">
+        <rdfs:label>Chroococcidiopsis SAG 2023 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010238">
+        <rdfs:label>Crinalium SAG 22.89 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010239">
+        <rdfs:label>Myxosarcina SAG 30.84 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010240">
+        <rdfs:label>Microcoleus PCC-7113 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1892251"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010241">
+        <rdfs:label>Symplocastrum CPER-KK1 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1892251"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010242">
+        <rdfs:label>Cyanobacteriaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010235"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010243">
+        <rdfs:label>Cyanobacterium PCC-10605 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010242"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010244">
+        <rdfs:label>aponinum (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010243"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010245">
+        <rdfs:label>Cyanobacteriales Incertae Sedis (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010235"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010246">
+        <rdfs:label>Gloeocapsaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010235"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010247">
+        <rdfs:label>Synechocystis BDHKU-20401 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1890449"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010248">
+        <rdfs:label>pevalekii (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010247"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010249">
+        <rdfs:label>Mastigocladopsis PCC-10914 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1162"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010250">
+        <rdfs:label>Nostoc BDU-40302 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1162"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010251">
+        <rdfs:label>Nostoc PCC-7107 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1162"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010252">
+        <rdfs:label>Nostoc PCC-73102 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1162"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010253">
+        <rdfs:label>commune (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010252"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010254">
+        <rdfs:label>Oxynema BDU 92071 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1892254"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010255">
+        <rdfs:label>Phormidiaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010235"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010256">
+        <rdfs:label>Phormidium IAM M-71 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010255"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010257">
+        <rdfs:label>Trichocoleus SAG 26.92 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010255"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010258">
+        <rdfs:label>Tychonema CCAP 1459-11B (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010255"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010259">
+        <rdfs:label>Rubidibacteraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010235"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010260">
+        <rdfs:label>Dactylococcopsis PCC-8305 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010259"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010261">
+        <rdfs:label>Leptolyngbya Es-Yyy1000 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1890438"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010262">
+        <rdfs:label>Leptolyngbya PCC-6306 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1890438"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010263">
+        <rdfs:label>Limnotrichales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010233"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010264">
+        <rdfs:label>Limnotrichaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010263"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010265">
+        <rdfs:label>Oxyphotobacteria Incertae Sedis (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010233"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010266">
+        <rdfs:label>Unknown Family (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010265"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010267">
+        <rdfs:label>Leptolyngbya EcFYyyy-00 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010266"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010268">
+        <rdfs:label>Phormidesmiales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010233"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010269">
+        <rdfs:label>Phormidesmiaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010268"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010270">
+        <rdfs:label>Phormidium MBIC10003 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010269"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010271">
+        <rdfs:label>Cyanobiaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1890424"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010272">
+        <rdfs:label>Synechococcus CC9902 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010271"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010273">
+        <rdfs:label>Thermosynechococcales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010233"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010274">
+        <rdfs:label>Cyanothece PCC 7425 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2881378"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010275">
+        <rdfs:label>Loriellopsis LF-B5 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2881378"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010276">
+        <rdfs:label>Sericytochromatia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1117"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010277">
+        <rdfs:label>Vampirivibrionia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1117"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010278">
+        <rdfs:label>Obscuribacterales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010277"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010279">
+        <rdfs:label>Obscuribacteraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010278"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010280">
+        <rdfs:label>Dadabacteria (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010281">
+        <rdfs:label>Dadabacteriia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010280"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010282">
+        <rdfs:label>Dadabacteriales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010281"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010283">
+        <rdfs:label>CSP1-2 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010006"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010284">
+        <rdfs:label>Dependentiae (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010285">
+        <rdfs:label>Babeliae (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010284"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010286">
+        <rdfs:label>Babeliales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010285"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010287">
+        <rdfs:label>Babeliaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010286"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010288">
+        <rdfs:label>UBA12409 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010006"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010289">
+        <rdfs:label>UBA12411 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010006"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010290">
+        <rdfs:label>Vermiphilaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010286"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010291">
+        <rdfs:label>Lineage IV (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_641853"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010292">
+        <rdfs:label>MVP-88 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_641853"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010293">
+        <rdfs:label>Lineage IIa (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_74152"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010294">
+        <rdfs:label>Lineage IIb (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_74152"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010295">
+        <rdfs:label>Lineage IIc (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_74152"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010296">
+        <rdfs:label>Entotheonellaeota (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010297">
+        <rdfs:label>Entotheonellia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010296"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010298">
+        <rdfs:label>Entotheonellales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010297"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010299">
+        <rdfs:label>Entotheonellaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010298"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010300">
+        <rdfs:label>FCPU426 (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010301">
+        <rdfs:label>possible genus 04 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_204431"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010302">
+        <rdfs:label>GAL15 (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010303">
+        <rdfs:label>AKAU4049 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_142182"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010304">
+        <rdfs:label>BD2-11 terrestrial group (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_142182"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010305">
+        <rdfs:label>YC-ZSS-LKJ147 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1804993"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010306">
+        <rdfs:label>PAUC43f marine benthic group (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_142182"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010307">
+        <rdfs:label>S0134 terrestrial group (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_142182"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010308">
+        <rdfs:label>Halanaerobiaeota (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010309">
+        <rdfs:label>Halanaerobiia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010308"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010310">
+        <rdfs:label>Hydrogenedentes (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010311">
+        <rdfs:label>Hydrogenedentia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010310"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010312">
+        <rdfs:label>Hydrogenedentiales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010311"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010313">
+        <rdfs:label>Hydrogenedensaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010312"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010314">
+        <rdfs:label>Latescibacterota (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010315">
+        <rdfs:label>Marinimicrobia (SAR406 clade) (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010316">
+        <rdfs:label>MBNT15 (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010317">
+        <rdfs:label>Methylomirabilota (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010318">
+        <rdfs:label>Methylomirabilia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010317"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010319">
+        <rdfs:label>Rokubacteriales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010318"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010320">
+        <rdfs:label>WX65 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010319"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010321">
+        <rdfs:label>bacteriap25 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2818505"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010322">
+        <rdfs:label>27F-1492R (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_29"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010323">
+        <rdfs:label>KD3-10 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_31"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010324">
+        <rdfs:label>P3OB-42 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_31"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010325">
+        <rdfs:label>Polyangiia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2818505"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010326">
+        <rdfs:label>Blfdi19 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010325"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010327">
+        <rdfs:label>FFCH16767 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010325"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010328">
+        <rdfs:label>Haliangiaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3031714"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010329">
+        <rdfs:label>mle1-27 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010325"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010330">
+        <rdfs:label>MSB-4B10 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010325"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010331">
+        <rdfs:label>BIrii41 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3031712"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010332">
+        <rdfs:label>Eel-36e1D6 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3031712"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010333">
+        <rdfs:label>Phaselicystaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3031712"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010334">
+        <rdfs:label>UASB-TL25 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010325"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010335">
+        <rdfs:label>VHS-B3-70 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010325"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010336">
+        <rdfs:label>NB1-j (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010337">
+        <rdfs:label>P9X2b3D02 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1293497"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010338">
+        <rdfs:label>enrichment (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1234"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010339">
+        <rdfs:label>Patescibacteria (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010340">
+        <rdfs:label>ABY1 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010339"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010341">
+        <rdfs:label>Candidatus Kerfeldbacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010340"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010342">
+        <rdfs:label>Candidatus Magasanikbacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010340"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010343">
+        <rdfs:label>Candidatus Uhrbacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010340"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010344">
+        <rdfs:label>Berkelbacteria (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010339"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010345">
+        <rdfs:label>Dojkabacteria (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010339"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010346">
+        <rdfs:label>Gracilibacteria (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010339"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010347">
+        <rdfs:label>Absconditabacteriales (SR1) (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010346"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010348">
+        <rdfs:label>Candidatus Peregrinibacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010346"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010349">
+        <rdfs:label>JGI 0000069-P22 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010346"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010350">
+        <rdfs:label>Microgenomatia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010339"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010351">
+        <rdfs:label>Candidatus Pacebacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010350"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010352">
+        <rdfs:label>Candidatus Woykebacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010350"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010353">
+        <rdfs:label>Parcubacteria (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010339"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010354">
+        <rdfs:label>Candidatus Adlerbacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010353"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010355">
+        <rdfs:label>Candidatus Azambacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010353"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010356">
+        <rdfs:label>Candidatus Campbellbacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010353"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010357">
+        <rdfs:label>Candidatus Doudnabacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010353"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010358">
+        <rdfs:label>Candidatus Kaiserbacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010353"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010359">
+        <rdfs:label>Candidatus Liptonbacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010353"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010360">
+        <rdfs:label>Candidatus Moranbacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010353"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010361">
+        <rdfs:label>Candidatus Nomurabacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010353"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010362">
+        <rdfs:label>Candidatus Spechtbacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010353"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010363">
+        <rdfs:label>Candidatus Terrybacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010353"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010364">
+        <rdfs:label>Candidatus Vogelbacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010353"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010365">
+        <rdfs:label>Candidatus Yanofskybacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010353"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010366">
+        <rdfs:label>Candidatus Zambryskibacteria (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010353"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010367">
+        <rdfs:label>GWA2-38-13b (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010353"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010368">
+        <rdfs:label>Saccharimonadia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010339"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010369">
+        <rdfs:label>Saccharimonadales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010368"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010370">
+        <rdfs:label>LWQ8 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010369"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010371">
+        <rdfs:label>Saccharimonadaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010369"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010372">
+        <rdfs:label>TM7a (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010371"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010373">
+        <rdfs:label>TM7x (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010371"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010374">
+        <rdfs:label>WWH38 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010369"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010375">
+        <rdfs:label>YM_S32_TM7_50_20 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010369"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010376">
+        <rdfs:label>WWE3 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010339"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010377">
+        <rdfs:label>PAUC34f (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010378">
+        <rdfs:label>BD7-11 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_203682"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010379">
+        <rdfs:label>OM190 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_203682"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010380">
+        <rdfs:label>CCM11a (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_666505"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010381">
+        <rdfs:label>mle1-8 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_666505"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010382">
+        <rdfs:label>AKYG587 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_666507"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010383">
+        <rdfs:label>I-8 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_666507"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010384">
+        <rdfs:label>SM1A02 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_666507"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010385">
+        <rdfs:label>Urania-1B-19 marine sediment group (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_666507"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010386">
+        <rdfs:label>Pla1 lineage (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_666505"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010387">
+        <rdfs:label>S-70 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_666505"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010388">
+        <rdfs:label>CPla-3 termite group (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1771349"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010389">
+        <rdfs:label>WD2101 soil group (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1771349"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010390">
+        <rdfs:label>Pla3 lineage (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_203682"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010391">
+        <rdfs:label>Pla4 lineage (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_203682"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010392">
+        <rdfs:label>Planctomycetes (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_203682"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010393">
+        <rdfs:label>Candidatus Nostocoida (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1763524"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010394">
+        <rdfs:label>Pir4 lineage (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2691357"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010395">
+        <rdfs:label>Gimesiaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_112"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010396">
+        <rdfs:label>Rubinisphaeraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_112"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010397">
+        <rdfs:label>marisgermanicae (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_204225"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010398">
+        <rdfs:label>SH-PL14 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010396"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010399">
+        <rdfs:label>Schlesneriaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_112"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010400">
+        <rdfs:label>vadinHA49 (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_203682"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010401">
+        <rdfs:label>cervicalis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_125216"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010402">
+        <rdfs:label>frigidaquae (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_125216"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010403">
+        <rdfs:label>genomospecies (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_125216"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010404">
+        <rdfs:label>ludipueritiae (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_125216"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010405">
+        <rdfs:label>AT-s3-44 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28211"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010406">
+        <rdfs:label>Azospirillales Incertae Sedis (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3120400"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010407">
+        <rdfs:label>Caedibacterales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28211"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010408">
+        <rdfs:label>Caedibacteraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010407"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010409">
+        <rdfs:label>PMMR1 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_76892"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010410">
+        <rdfs:label>SWB02 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_69657"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010411">
+        <rdfs:label>Defluviicoccales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28211"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010412">
+        <rdfs:label>Defluviicoccaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010411"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010413">
+        <rdfs:label>Elsteraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3120417"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010414">
+        <rdfs:label>A0839 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_356"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010415">
+        <rdfs:label>Amb-16S-1323 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_356"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010416">
+        <rdfs:label>alphaI cluster (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_45404"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010417">
+        <rdfs:label>Bosea (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_45404"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010418">
+        <rdfs:label>FFCH5858 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_45404"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010419">
+        <rdfs:label>Neo-b11 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_45404"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010420">
+        <rdfs:label>C2U (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_356"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010421">
+        <rdfs:label>D05-2 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_356"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010422">
+        <rdfs:label>marinum (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_119044"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010423">
+        <rdfs:label>KF-JG30-B3 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_356"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010424">
+        <rdfs:label>Labraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_356"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010425">
+        <rdfs:label>Labrys (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010424"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010426">
+        <rdfs:label>Lutibaculaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_356"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010427">
+        <rdfs:label>fredii (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_106591"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010428">
+        <rdfs:label>meliloti (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_106591"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010429">
+        <rdfs:label>petrolearium (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_379"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010430">
+        <rdfs:label>Thermopetrobacteraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_356"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010431">
+        <rdfs:label>Kiloniellales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28211"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010432">
+        <rdfs:label>Fodinicurvataceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010431"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010433">
+        <rdfs:label>Micavibrionales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28211"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010434">
+        <rdfs:label>Micavibrionaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010433"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010435">
+        <rdfs:label>NRL2 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28211"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010436">
+        <rdfs:label>Paracaedibacterales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28211"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010437">
+        <rdfs:label>Paracaedibacteraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010436"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010438">
+        <rdfs:label>Puniceispirillales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28211"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010439">
+        <rdfs:label>EF100-94H03 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010438"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010440">
+        <rdfs:label>Puniceispirillales Incertae Sedis (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010438"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010441">
+        <rdfs:label>HIMB11 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_31989"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010442">
+        <rdfs:label>Maribius (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_31989"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010443">
+        <rdfs:label>Palleronia-Pseudomaribius (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_31989"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010444">
+        <rdfs:label>Paracoccus (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_31989"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010445">
+        <rdfs:label>Phycocomes (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_31989"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010446">
+        <rdfs:label>Tropicimonas-Psychromarinibacter (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_31989"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010447">
+        <rdfs:label>AEGEAN-169 marine group (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_204441"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010448">
+        <rdfs:label>BRH-c57 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_41295"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010449">
+        <rdfs:label>AB1 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_766"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010450">
+        <rdfs:label>bac2nit3 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_766"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010451">
+        <rdfs:label>Midichloriaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_766"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010452">
+        <rdfs:label>Mitochondria (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_766"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010453">
+        <rdfs:label>Candidatus Megaira (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_775"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010454">
+        <rdfs:label>SM2D12 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_766"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010455">
+        <rdfs:label>DSSF69 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_41297"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010456">
+        <rdfs:label>Ellin6055 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_41297"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010457">
+        <rdfs:label>MN 122.2a (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_41297"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010458">
+        <rdfs:label>Qinpengyuania (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_41297"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010459">
+        <rdfs:label>Tistrellales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28211"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010460">
+        <rdfs:label>Candidatus Alysiosphaera (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2066434"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010461">
+        <rdfs:label>Zavarziniales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28211"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010462">
+        <rdfs:label>1013-28-CG33 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010463">
+        <rdfs:label>KCM-B-112 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_225058"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010464">
+        <rdfs:label>RCP1-48 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_225058"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010465">
+        <rdfs:label>Beggiatoales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010466">
+        <rdfs:label>Beggiatoaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010465"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010467">
+        <rdfs:label>A21b (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_80840"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010468">
+        <rdfs:label>B1-7BS (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_80840"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010469">
+        <rdfs:label>Burkholderia-Caballeronia-Paraburkholderia (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_119060"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010470">
+        <rdfs:label>cenocepacia (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010469"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010471">
+        <rdfs:label>Kinneretia (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_80864"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010472">
+        <rdfs:label>Leptothrix (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_80864"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010473">
+        <rdfs:label>[Polyangium] brachysporum group (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_80864"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010474">
+        <rdfs:label>brachysporum (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010473"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010475">
+        <rdfs:label>gummiphilus (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_212743"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010476">
+        <rdfs:label>Xylophilus (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_80864"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010477">
+        <rdfs:label>MM2 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32011"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010478">
+        <rdfs:label>MWH-UniP1 aquatic group (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_80840"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010479">
+        <rdfs:label>Ellin6067 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_206379"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010480">
+        <rdfs:label>mle1-7 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_206379"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010481">
+        <rdfs:label>MND1 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_206379"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010482">
+        <rdfs:label>oc32 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_206379"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010483">
+        <rdfs:label>[Aquaspirillum] arcticum group (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_75682"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010484">
+        <rdfs:label>CM1G08 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_75682"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010485">
+        <rdfs:label>albidiflava (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_149698"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010486">
+        <rdfs:label>armeniaca (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_149698"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010487">
+        <rdfs:label>Procabacter (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_224469"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010488">
+        <rdfs:label>acanthamoebae (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010487"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010489">
+        <rdfs:label>SC-I-84 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_80840"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010490">
+        <rdfs:label>TRA3-20 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_80840"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010491">
+        <rdfs:label>CCD24 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010492">
+        <rdfs:label>CHAB-XI-27 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010493">
+        <rdfs:label>Coxiella (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_118968"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010494">
+        <rdfs:label>Halofilum (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_72276"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010495">
+        <rdfs:label>Escherichia-Shigella (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_543"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010496">
+        <rdfs:label>albertii (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010495"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010497">
+        <rdfs:label>boydii (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010495"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010498">
+        <rdfs:label>coli (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010495"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010499">
+        <rdfs:label>dysenteriae (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010495"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010500">
+        <rdfs:label>fergusonii (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010495"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010501">
+        <rdfs:label>flexneri (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010495"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010502">
+        <rdfs:label>marmotae (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010495"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010503">
+        <rdfs:label>phage (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_590"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010504">
+        <rdfs:label>Hafnia-Obesumbacterium (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1903412"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010505">
+        <rdfs:label>paralvei (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010504"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010506">
+        <rdfs:label>endosymbionts (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1903414"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010507">
+        <rdfs:label>Morganella (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1903414"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010508">
+        <rdfs:label>Serratia (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1903411"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010509">
+        <rdfs:label>EPR3968-O8a-Bc78 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010510">
+        <rdfs:label>Francisellales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010511">
+        <rdfs:label>Ga0077536 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010512">
+        <rdfs:label>Halothiobacillales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010513">
+        <rdfs:label>HOC36 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010514">
+        <rdfs:label>AK92 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010006"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010515">
+        <rdfs:label>JTB23 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010516">
+        <rdfs:label>bugurensis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_68"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010517">
+        <rdfs:label>defluvii (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_68"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010518">
+        <rdfs:label>xinjiangensis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_68"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010519">
+        <rdfs:label>SN8 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32033"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010520">
+        <rdfs:label>Nitrococcales Incertae Sedis (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3120430"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010521">
+        <rdfs:label>AqS1 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3120726"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010522">
+        <rdfs:label>Cm1-21 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3120726"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010523">
+        <rdfs:label>SZB85 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3120726"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010524">
+        <rdfs:label>wb1-P19 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3120726"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010525">
+        <rdfs:label>NKB5 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010526">
+        <rdfs:label>Piscirickettsiales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010527">
+        <rdfs:label>PLTA13 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010528">
+        <rdfs:label>211ds20 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_72274"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010529">
+        <rdfs:label>Alcanivoracaceae1 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_72274"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010530">
+        <rdfs:label>venustensis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_59753"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010531">
+        <rdfs:label>BD2-7 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_72274"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010532">
+        <rdfs:label>salexigens (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_42054"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010533">
+        <rdfs:label>anticariensis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2745"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010534">
+        <rdfs:label>aquamarina (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2745"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010535">
+        <rdfs:label>gudaonensis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2745"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010536">
+        <rdfs:label>lutea (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2745"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010537">
+        <rdfs:label>subterranea (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2745"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010538">
+        <rdfs:label>sulfidaeris (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2745"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010539">
+        <rdfs:label>xianhensis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2745"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010540">
+        <rdfs:label>HdN1 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28256"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010541">
+        <rdfs:label>KI89A clade (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_72274"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010542">
+        <rdfs:label>hydrocarbonoclasticus (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2742"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010543">
+        <rdfs:label>Marinomonadaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_72274"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010544">
+        <rdfs:label>P13-46 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_72274"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010545">
+        <rdfs:label>C1-B045 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1706374"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010546">
+        <rdfs:label>BIyi10 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3085095"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010547">
+        <rdfs:label>azotifigens (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_286"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010548">
+        <rdfs:label>litoralis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_286"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010549">
+        <rdfs:label>mendocina (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_286"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010550">
+        <rdfs:label>oleovorans (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_286"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010551">
+        <rdfs:label>otitidis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_286"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010552">
+        <rdfs:label>psychrotolerans (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_286"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010553">
+        <rdfs:label>resinovorans (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_286"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010554">
+        <rdfs:label>stutzeri (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_286"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010555">
+        <rdfs:label>zhaodongensis (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_286"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010556">
+        <rdfs:label>R7C24 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010557">
+        <rdfs:label>Rickettsiellales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010558">
+        <rdfs:label>Rickettsiellaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010557"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010559">
+        <rdfs:label>JTB255 marine benthic group (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1738654"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010560">
+        <rdfs:label>WN-HWB-116 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1236"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010561">
+        <rdfs:label>RCP2-54 (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010562">
+        <rdfs:label>SAR324 clade(Marine group B) (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010563">
+        <rdfs:label>Candidatus Nitrosoarchaeum (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010006"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010564">
+        <rdfs:label>Schekmanbacteria (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010565">
+        <rdfs:label>Leptospirae (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_203691"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010566">
+        <rdfs:label>Termite Treponema cluster (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_137"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010567">
+        <rdfs:label>Sumerlaeota (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010568">
+        <rdfs:label>Sumerlaeia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010567"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010569">
+        <rdfs:label>Sumerlaeales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010568"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010570">
+        <rdfs:label>Sumerlaeaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010569"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010571">
+        <rdfs:label>Sumerlaea (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010570"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010572">
+        <rdfs:label>chitinovorans (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010571"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010573">
+        <rdfs:label>vulgaris (Species)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_872"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010574">
+        <rdfs:label>SKP-2 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010006"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010575">
+        <rdfs:label>PB19 (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3031651"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010576">
+        <rdfs:label>Thermosipho (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1643950"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010577">
+        <rdfs:label>TX1A-33 (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010578">
+        <rdfs:label>Omnitrophia (Class)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_74201"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010579">
+        <rdfs:label>Omnitrophales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010578"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010580">
+        <rdfs:label>Omnitrophaceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010579"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010581">
+        <rdfs:label>01D2Z36 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1836787"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010582">
+        <rdfs:label>LD29 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1836792"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010583">
+        <rdfs:label>Xiphinematobacteraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1836787"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010584">
+        <rdfs:label>IMCC26134 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_134623"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010585">
+        <rdfs:label>Verruc-01 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_415002"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010586">
+        <rdfs:label>Pedosphaerales (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_203494"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010587">
+        <rdfs:label>Pedosphaeraceae (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010586"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010588">
+        <rdfs:label>ADurb.Bin063-1 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010587"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010589">
+        <rdfs:label>DEV008 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010587"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010590">
+        <rdfs:label>Ellin516 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010587"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010591">
+        <rdfs:label>Ellin517 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010587"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010592">
+        <rdfs:label>SCGC AAA164-E04 (Genus)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://rubalkhali.science/kb/RAK_0010587"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010593">
+        <rdfs:label>S-BQ2-57 soil group (Order)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_203494"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010594">
+        <rdfs:label>DEV007 (Family)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_48461"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010595">
+        <rdfs:label>WS2 (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010596">
+        <rdfs:label>Zixibacteria (Phylum)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://rubalkhali.science/kb/RAK_0010597">
+        <rdfs:label>Taxon (Kingdom)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1"/>
+    </owl:Class>
+
+</rdf:RDF>

@@ -1,0 +1,20 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix obo:  <http://purl.obolibrary.org/obo/> .
+@prefix sio:  <http://semanticscience.org/resource/> .
+@prefix rak:  <https://rubalkhali.science/kb/> .
+
+# Negative: the quality, not the value, is the subject of SIO_000215. This is
+# the pre-2026-05-07 direction that silently breaks the TBox property chain.
+rak:P000001 a rak:RAK_0000006 , owl:NamedIndividual ;
+    sio:SIO_000229 rak:V4000001 .
+
+rak:V4000001 a rak:RAK_0000010 , owl:NamedIndividual ;
+    sio:SIO_000232 rak:P000001 ;
+    sio:SIO_000221 obo:UO_0000027 ;
+    rak:RAK_2000003 "23.5"^^xsd:double .
+
+rak:Q5000001 a obo:PATO_0000146 , owl:NamedIndividual ;
+    sio:SIO_000215 rak:V4000001 ;
+    sio:SIO_000216 rak:V4000001 .

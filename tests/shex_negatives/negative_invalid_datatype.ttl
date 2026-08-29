@@ -1,0 +1,20 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix obo:  <http://purl.obolibrary.org/obo/> .
+@prefix sio:  <http://semanticscience.org/resource/> .
+@prefix rak:  <https://rubalkhali.science/kb/> .
+
+# Negative: positive.ttl with the temperature payload typed xsd:string instead
+# of xsd:double. MeasurementValueShape must reject it.
+rak:P000001 a rak:RAK_0000006 , owl:NamedIndividual ;
+    sio:SIO_000229 rak:V4000001 .
+
+rak:V4000001 a rak:RAK_0000010 , owl:NamedIndividual ;
+    sio:SIO_000232 rak:P000001 ;
+    sio:SIO_000215 rak:Q5000001 ;
+    sio:SIO_000221 obo:UO_0000027 ;
+    rak:RAK_2000003 "23.5"^^xsd:string .
+
+rak:Q5000001 a obo:PATO_0000146 , owl:NamedIndividual ;
+    sio:SIO_000216 rak:V4000001 .

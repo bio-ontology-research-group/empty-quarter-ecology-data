@@ -1,53 +1,64 @@
-# ---- LaTeX build artifacts ----
+# Local compatibility layout created by the package bootstrap.
+/analysis/
+/data/
+/data-paper/
+/paper/zenodo
+/workflow/conda-linux-64.lock
+/workflow/environment.yml
+/workflow/pip-overlay.lock.txt
+/workflow/requirements.in
+/workflow/requirements.lock.txt
+/config/ph/ph_measurements.shex
+/metadata/obsolete/Trip_Metadata.xlsx
+/metadata/samples/controls
+
+# Large, checksum-pinned inputs installed by download_bulk_artifacts.sh.
+/metadata/taxonomy/feature-table-trips1-5.tsv
+/metadata/taxonomy/ASV_seqs-trips1-5.fasta
+/metadata/taxonomy/feature-table.tsv
+/metadata/taxonomy/feature_table_filtered_normalized.tsv
+/metadata/taxonomy/feature_table_filtered_raw_w_reps.tsv
+/metadata/metagenome/eq.emapper.annotations.gz
+/metadata/metagenome/measured_function_inputs.tar.gz
+/ontology/rubalkhali_taxonomy_abox.ttl
+
+# Workflow and environment outputs.
+/.nextflow*
+/.nextflow-bin/
+/.venv
+/results/
+/work/
+/debug-work/
+/.pytest_cache/
+**/__pycache__/
+*.py[cod]
+
+# LaTeX build products. The two reviewed PDFs already tracked in paper/ remain
+# tracked; rebuilt local copies do not create new files in Git.
 *.aux
 *.bbl
 *.blg
 *.fdb_latexmk
 *.fls
-*.idx
-*.ilg
-*.ind
-*.lof
 *.log
-*.lot
 *.out
+*.run.xml
 *.synctex.gz
 *.toc
-*.nav
-*.snm
-*.vrb
-*.run.xml
-*-blx.bib
-texput.log
-indent.log
 
-# Overleaf / editor revision snapshots
+# These project-generated audit logs are declared release evidence. Keep the
+# allow-list explicit so ordinary workflow and LaTeX logs remain local.
+!/evidence/core-kg-regeneration/logs/*.log
+!/evidence/ph/ph_negative_missing_unit.log
+!/evidence/ph/predecessor/kg/shex_validation.log
+!/evidence/ph/shex_validation.log
+!/evidence/semantic-validation/control_semantic_validation_20260801.log
+!/evidence/semantic-validation/semantic_validation_20260801.log
+!/evidence/taxonomy-abox/taxonomy_abox_streaming_validation.log
+
+# Editors and operating systems.
 *.bak
 *.bak[0-9]*
 *~
-
-# latexdiff output
-sn-article-diff.*
-
-# ---- Python ----
-__pycache__/
-*.py[cod]
-.venv/
-venv/
-*.egg-info/
-
-# ---- Large data (deposited on Zenodo, not in git) ----
-# Generated knowledge graph (OWL/TTL) and multi-GB taxon abundance tables
-# live in the Zenodo deposit — see data/README.md.
-*.owl
-*.ttl
-!rdf/ontology-src/*.ttl
-!rdf/ontology-src/*.owl
-!rdf/void.ttl
-data/metadata/taxonomy/feature*.tsv
-data/metadata/taxonomy/*.fasta
-data/processed/
-
-# ---- OS ----
 .DS_Store
 Thumbs.db

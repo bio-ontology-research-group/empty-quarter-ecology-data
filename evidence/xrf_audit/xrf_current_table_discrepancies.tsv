@@ -1,0 +1,38 @@
+issue_type	workflow	sample_key	detail	requires_resolution
+aggregation_rule_reproduction	lab_t1_4	ALL	Current table compared with max_positive: 0 mismatches among 13390 source-backed cells.	No
+raw_analyte_absent_from_wide_schema	lab_t1_4	ALL	As2O3: 1 positive source rows omitted.	Yes
+raw_analyte_absent_from_wide_schema	lab_t1_4	ALL	As: 1 positive source rows omitted.	Yes
+raw_analyte_absent_from_wide_schema	lab_t1_4	ALL	Cs2O: 1 positive source rows omitted.	Yes
+raw_analyte_absent_from_wide_schema	lab_t1_4	ALL	Dy: 1 positive source rows omitted.	Yes
+raw_analyte_absent_from_wide_schema	lab_t1_4	ALL	I: 2 positive source rows omitted.	Yes
+raw_analyte_absent_from_wide_schema	lab_t1_4	ALL	Nb2O5: 2 positive source rows omitted.	Yes
+raw_analyte_absent_from_wide_schema	lab_t1_4	ALL	Nb: 2 positive source rows omitted.	Yes
+raw_analyte_absent_from_wide_schema	lab_t1_4	ALL	Rb2O: 2 positive source rows omitted.	Yes
+raw_analyte_absent_from_wide_schema	lab_t1_4	ALL	Rb: 2 positive source rows omitted.	Yes
+raw_analyte_absent_from_wide_schema	lab_t1_4	ALL	Sb2O3: 1 positive source rows omitted.	Yes
+raw_analyte_absent_from_wide_schema	lab_t1_4	ALL	Sb: 1 positive source rows omitted.	Yes
+raw_analyte_absent_from_wide_schema	lab_t1_4	ALL	Sn: 3 positive source rows omitted.	Yes
+raw_analyte_absent_from_wide_schema	lab_t1_4	ALL	SnO2: 3 positive source rows omitted.	Yes
+raw_analyte_absent_from_wide_schema	lab_t1_4	ALL	Tb4O7: 2 positive source rows omitted.	Yes
+raw_analyte_absent_from_wide_schema	lab_t1_4	ALL	Tb: 6 positive source rows omitted.	Yes
+aggregation_rule_reproduction	lab_t5_processed	ALL	Current table compared with last_reported: 0 mismatches among 4293 source-backed cells.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|16|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|17|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|18|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|1|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|26|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|36|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|38|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|40|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|41|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|41|Rhizosphere	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|48|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|4|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|51|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|52|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|54|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|56|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|58|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|59|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|60|Rhizosphere	Present in canonical 178-row table; absent from retired 158-row subset.	No
+processed_sample_absent_from_analytical_table	lab_t5_retired_subset	5|8|Deep	Present in canonical 178-row table; absent from retired 158-row subset.	No

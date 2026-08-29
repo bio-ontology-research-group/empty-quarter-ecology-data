@@ -1,0 +1,127 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX rak: <https://rubalkhali.science/kb/>
+PREFIX sio: <http://semanticscience.org/resource/>
+
+<#ControlMaterialShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000300] ;
+    rdf:type IRI + ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string ;
+    sio:SIO_000228 @<#AnyControlRoleShape> +
+}
+
+<#AnyControlRoleShape> IRI EXTRA rdf:type {
+    rdf:type [
+        rak:RAK_0000304
+        rak:RAK_0000305
+        rak:RAK_0000306
+        rak:RAK_0000307
+    ] ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string ;
+    sio:SIO_000227 IRI ;
+    sio:SIO_000356 IRI ?
+}
+
+<#ExtractionBlankRoleShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000306] ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string ;
+    sio:SIO_000227 IRI ;
+    sio:SIO_000356 @<#ExtractionProcessShape>
+}
+
+<#PCRBlankRoleShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000307] ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string ;
+    sio:SIO_000227 IRI ;
+    sio:SIO_000356 @<#PCRProcessShape>
+}
+
+<#ExtractionProcessShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000309] ;
+    rdf:type IRI + ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string ;
+    sio:SIO_000230 IRI ;
+    sio:SIO_000291 IRI ;
+    sio:SIO_000229 IRI ;
+    sio:SIO_000355 IRI ? ;
+    sio:SIO_000068 IRI ?
+}
+
+<#PCRProcessShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000311] ;
+    rdf:type IRI + ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string ;
+    sio:SIO_000230 IRI ;
+    sio:SIO_000229 IRI ;
+    sio:SIO_000355 IRI ?
+}
+
+<#LaboratoryBatchShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000308] ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string ;
+    sio:SIO_000028 IRI +
+}
+
+<#ControlFASTQShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000318] ;
+    rdf:type IRI + ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string ;
+    dc:source xsd:string {2} ;
+    sio:SIO_000232 IRI ;
+    rdfs:seeAlso IRI ?
+}
+
+<#ControlAssertionShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000313] ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string ;
+    rak:RAK_2000093 IRI ;
+    rak:RAK_2000094 IRI ;
+    (rak:RAK_2000095 IRI | rak:RAK_2000096 LITERAL) ;
+    rak:RAK_2000090 IRI ;
+    rak:RAK_2000091 IRI ? ;
+    sio:SIO_000772 IRI +
+}
+
+<#MetadataDispositionShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000320 rak:RAK_0000321] ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string ;
+    sio:SIO_000332 IRI ;
+    rak:RAK_2000097 IRI ;
+    rak:RAK_2000090 IRI ;
+    sio:SIO_000772 IRI + ;
+    dcterms:description xsd:string
+}
+
+<#CompositionSpecificationShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000316] ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string ;
+    sio:SIO_000338 IRI ;
+    dcterms:source IRI ;
+    rak:RAK_2000092 IRI +
+}
+
+<#ExpectedTaxonAssertionShape> IRI EXTRA rdf:type {
+    rdf:type [rak:RAK_0000317] ;
+    rdf:type [rak:RAK_0000313] ;
+    rdfs:label xsd:string ;
+    dcterms:identifier xsd:string ;
+    rak:RAK_2000093 @<#CompositionSpecificationShape> ;
+    rak:RAK_2000094 IRI ;
+    rak:RAK_2000095 IRI ;
+    rak:RAK_2000090 IRI ;
+    sio:SIO_000772 IRI +
+}

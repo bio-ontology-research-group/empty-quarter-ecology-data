@@ -1,0 +1,20 @@
+PREFIX rak: <https://rubalkhali.science/kb/RAK_>
+PREFIX sio: <http://semanticscience.org/resource/SIO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?processLabel ?siteLabel ?analyte ?concentration
+WHERE {
+  ?process a rak:0000025 ;
+           rdfs:label ?processLabel ;
+           sio:000291 ?site ;
+           sio:000229 ?value .
+  FILTER(CONTAINS(LCASE(STR(?processLabel)), "field xrf"))
+  ?site rdfs:label ?siteLabel .
+  FILTER(?siteLabel = "Site 10")
+  ?value sio:000215 ?quality ;
+         rak:2000012 ?concentration .
+  ?quality a ?qualityClass .
+  ?qualityClass rdfs:label ?analyte .
+  FILTER(?qualityClass != rak:0000032)
+}
+ORDER BY ?processLabel ?analyte

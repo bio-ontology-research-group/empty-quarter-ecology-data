@@ -1,0 +1,12 @@
+{
+  "counts": {
+    "ADDED_IN_SUCCESSOR": 59,
+    "UNCHANGED": 653
+  },
+  "ecology_dataset_version": "EQ-PH-ECOLOGY-v1.0.0",
+  "ecology_source_sha256_verified": true,
+  "material_review_required": false,
+  "policy": "Any revision or absence in the successor requires explicit author review. A frozen shared-manuscripts successor replaces the predecessor in both current manuscripts while retaining the predecessor as immutable provenance.",
+  "successor_dataset_purpose": "shared-manuscripts",
+  "successor_dataset_version": "EQ-PH-SHARED-v1.0.0"
+}

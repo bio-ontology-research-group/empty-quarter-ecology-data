@@ -1,0 +1,64 @@
+{
+  "annual": {
+    "quarantined_measurement_values": 54,
+    "quarantined_rows": 18,
+    "site_resolved_measurement_values": 582,
+    "site_resolved_rows": 194,
+    "source_measurement_values": 636,
+    "source_rows": 212,
+    "variables_per_complete_row": 3
+  },
+  "daily": {
+    "quarantined_rows": 22395,
+    "resolved_rows": 98538,
+    "resolved_sha256": "6cb570e7a8a85a9508fdc910ae0a11bf7db614ef05e0d22fd6fd6a599966581a",
+    "source": "data/processed/climate/daily_weather.tsv",
+    "source_sha256": "290eb42524cd5095b894abd93fa73e3e4b09a96e38b58dd1ef9e2fcb4ad4ae8f"
+  },
+  "distinct_fetch_keys": 81,
+  "keys_by_disposition": {
+    "canonical_named_site": 6,
+    "canonical_numeric_site": 60,
+    "free_text_location": 2,
+    "near_site_annotation": 13
+  },
+  "ledger_sha256": "1bb368f22cfe107a26233a44be51a37652ae6e337cc7442194cab7ce0169973b",
+  "monthly": {
+    "quarantined_rows": 735,
+    "resolved_rows": 3234,
+    "resolved_sha256": "cde0a115147408bb846919a1e61e55cf88df7942f0e81f921de3305b49e33f9d",
+    "source": "data/processed/climate/monthly_weather_averages.tsv",
+    "source_sha256": "7a2d46d59057c9a85e8a232519672634ab0a4d3a90233408c9caa2b56b9f9751"
+  },
+  "named_site_keys": {
+    "19.5": "https://rubalkhali.science/kb/RAK_1000066",
+    "Camel1": "https://rubalkhali.science/kb/RAK_1000064",
+    "camground": "https://rubalkhali.science/kb/RAK_1000070",
+    "hot spring": "https://rubalkhali.science/kb/RAK_1000062",
+    "oill spill": "https://rubalkhali.science/kb/RAK_1000061",
+    "plant gradient": "https://rubalkhali.science/kb/RAK_1000065"
+  },
+  "note": "The measurement generator uses exact site-key resolution for both monthly and annual climate records. The unresolved labels are retained in the source tables and in this ledger and excluded from the site-resolved graph; coordinate fallback is forbidden for annual records because it would map near-site observations onto their stem site.",
+  "resolution_rule": "Index every sampling-site individual by its full rdfs:label and, for labels beginning 'Site ', also by the remainder. This is the rule in scripts/rdf/generate_measurements_abox.groovy.",
+  "sampling_site_individuals": 70,
+  "site_resolved_keys": 66,
+  "sites_module": "data/processed/semantics/ontology/rubalkhali_sites.owl",
+  "sites_module_sha256": "ecf8c4411d25ef8affe81904ed1fadf203418502f72e5a9b75a1e6a034becbcb",
+  "unresolved_keys": [
+    "12.5+A",
+    "27+",
+    "31urine",
+    "32+",
+    "35 + WaterWellRestStop",
+    "35 + hot spring filter 2",
+    "35 + hot spring filter1",
+    "41+",
+    "47+",
+    "47+grass",
+    "48+",
+    "52AD",
+    "54F",
+    "road",
+    "water well"
+  ]
+}

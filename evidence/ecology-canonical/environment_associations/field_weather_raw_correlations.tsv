@@ -1,0 +1,10 @@
+weather_variable	response	n_site_campaigns	spearman_rho	p_value	q_global_9
+temperature_c	shannon	243	0.03613846692	0.5750556728	0.6469376319
+temperature_c	expected_richness_25k	241	-0.01376769054	0.8316148769	0.8316148769
+temperature_c	normalized_evenness	241	0.1307692688	0.04253494174	0.06380241261
+pressure_mbar	shannon	173	-0.5701636808	2.657350306e-16	1.195807638e-15
+pressure_mbar	expected_richness_25k	172	-0.5910995537	1.385491412e-17	1.246942271e-16
+pressure_mbar	normalized_evenness	172	-0.3490501869	2.69463118e-06	8.083893539e-06
+relative_humidity_pct	shannon	235	-0.1625287668	0.01260125533	0.0283528245
+relative_humidity_pct	expected_richness_25k	234	-0.1491670677	0.02246677988	0.04044020379
+relative_humidity_pct	normalized_evenness	234	-0.08342834	0.2035181238	0.2616661591

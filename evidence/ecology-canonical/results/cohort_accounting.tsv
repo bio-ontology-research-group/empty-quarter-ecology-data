@@ -1,0 +1,4 @@
+cohort	site_definition	n_alpha_profiles	n_site_campaign_compartment_observations	n_sites	inferential_role
+all_observed_sites	All genuine sampling sites, including 61–64	1237	640	64	release inventory and descriptive accounting
+core_sites_1_60	Sites in the intended repeated-campaign frame	1227	633	60	primary ecological inference
+trip1_only_nonrevisited	Sites 61–64; inaccessible after Trip 1	10	7	4	excluded from repeated-campaign inference

@@ -1,0 +1,4 @@
+.nextflow-bin/
+.raptor-bin/
+.nextflow/
+work/

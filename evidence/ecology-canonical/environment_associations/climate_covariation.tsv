@@ -1,0 +1,7 @@
+variable_a	variable_b	n_sites	spearman_rho	bootstrap_ci_low	bootstrap_ci_high	bootstrap_replicates	p_value	q_global
+mean_air_temperature_c	mean_monthly_rain_mm	60	0.5540812783	0.3015664053	0.7369571888	9999	4.373868253e-06	5.085361788e-06
+mean_air_temperature_c	mean_relative_humidity_pct	60	0.8936867845	0.7789221871	0.9532790085	9999	7.556645427e-22	1.511329085e-21
+mean_air_temperature_c	transect_km	60	0.9820778575	0.9516842641	0.9950888959	9999	9.789274775e-44	5.873564865e-43
+mean_monthly_rain_mm	mean_relative_humidity_pct	60	0.6304689129	0.408690381	0.7916209342	9999	6.718307308e-08	1.007746096e-07
+mean_monthly_rain_mm	transect_km	60	0.5509259907	0.2857240202	0.7553174782	9999	5.085361788e-06	5.085361788e-06
+mean_relative_humidity_pct	transect_km	60	0.918891884	0.8085118536	0.978068173	9999	4.217888291e-25	1.265366487e-24

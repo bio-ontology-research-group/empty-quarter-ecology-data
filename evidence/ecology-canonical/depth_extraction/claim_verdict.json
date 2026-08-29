@@ -1,0 +1,182 @@
+{
+  "schema_version": "1.0",
+  "status": "compartment_wording_retained_with_interaction_dependence",
+  "campaign_by_position_interaction_changes_with_depth": true,
+  "permitted_wording": "After adjusting for log sequencing depth in the site-clustered GEE, the root-adjacent minus shallow subsurface Shannon contrast was -0.273 (95% CI -0.424 to -0.122). The root-adjacent minus surface contrast is sensitivity-dependent: its direction is stable but its interval or adjusted test changes across the prespecified extraction models, so it is reported as such rather than as a general result. The campaign-by-position interaction changed materially with depth adjustment (Wald p = 0.00831 unadjusted, 0.175 after log sequencing depth). Report that dependence in the Results and abstract; do not present either model as the single campaign-by-position result. Extraction metadata are incomplete and partly confounded with campaign (858 of 1237 profiles carry a recorded kit), so these fits are a robustness check and do not remove laboratory batch effects.",
+  "prohibited_wording": "Do not describe the extraction sensitivity as removal of all laboratory batch effects; campaign, processing context and missing extraction metadata remain coupled.",
+  "campaign_by_position_interaction": {
+    "unadjusted_wald_p": 0.008305651348651431,
+    "depth_adjusted_wald_p": 0.17475762976085266
+  },
+  "contrasts": {
+    "Deep-Surface": {
+      "label": "shallow subsurface minus surface",
+      "status": "direction_only",
+      "depth_adjusted_estimate": 0.10258922709140299,
+      "depth_adjusted_ci": [
+        -0.01190259950657517,
+        0.21708105368938113
+      ],
+      "depth_adjusted_p": 0.0790533039759442,
+      "interval_excludes_zero_by_model": {
+        "additive_unadjusted": false,
+        "additive_depth_adjusted": false,
+        "depth_and_kit_as_recorded": false,
+        "complete_case_cohort": true,
+        "depth_and_kit_kit_varying_campaigns": true,
+        "protocol_matched_pairs": true
+      },
+      "direction_stable_across_models": true,
+      "paired_depth_adjusted": {
+        "n_sites": 60,
+        "mean_difference": 0.08931947558056101,
+        "ci": [
+          -0.026468675433709267,
+          0.20264891153542428
+        ],
+        "p": 0.030440467413401947,
+        "q": 0.0421736612655226
+      }
+    },
+    "Rhizosphere-Surface": {
+      "label": "root-adjacent minus surface",
+      "status": "sensitivity_dependent",
+      "depth_adjusted_estimate": -0.1708874112620887,
+      "depth_adjusted_ci": [
+        -0.3214289785228578,
+        -0.02034584400131964
+      ],
+      "depth_adjusted_p": 0.026090968030685485,
+      "interval_excludes_zero_by_model": {
+        "additive_unadjusted": true,
+        "additive_depth_adjusted": true,
+        "depth_and_kit_as_recorded": false,
+        "complete_case_cohort": false,
+        "depth_and_kit_kit_varying_campaigns": false,
+        "protocol_matched_pairs": true
+      },
+      "direction_stable_across_models": true,
+      "paired_depth_adjusted": {
+        "n_sites": 60,
+        "mean_difference": -0.09896358795622333,
+        "ci": [
+          -0.2553096693140106,
+          0.07199162054062568
+        ],
+        "p": 0.0421736612655226,
+        "q": 0.0421736612655226
+      }
+    },
+    "Rhizosphere-Deep": {
+      "label": "root-adjacent minus shallow subsurface",
+      "status": "supported",
+      "depth_adjusted_estimate": -0.2734766383534917,
+      "depth_adjusted_ci": [
+        -0.42446422586713306,
+        -0.12248905083985029
+      ],
+      "depth_adjusted_p": 0.00038524640522527267,
+      "interval_excludes_zero_by_model": {
+        "additive_unadjusted": true,
+        "additive_depth_adjusted": true,
+        "depth_and_kit_as_recorded": true,
+        "complete_case_cohort": true,
+        "depth_and_kit_kit_varying_campaigns": true,
+        "protocol_matched_pairs": true
+      },
+      "direction_stable_across_models": true,
+      "paired_depth_adjusted": {
+        "n_sites": 60,
+        "mean_difference": -0.18828306353678434,
+        "ci": [
+          -0.3455797663395192,
+          -0.024930732968412486
+        ],
+        "p": 0.01019337710425394,
+        "q": 0.03058013131276182
+      }
+    }
+  },
+  "join_audit": {
+    "profiles": 1237,
+    "exact_joins": 1221,
+    "suffix_fallback_joins": 16,
+    "unmatched_profiles": 0,
+    "ambiguous_specimens": 3,
+    "profiles_with_recorded_kit": 858,
+    "profiles_without_recorded_kit": 379,
+    "recorded_kits": [
+      "PowerSoil",
+      "PowerSoil MoBio",
+      "Pro",
+      "QIACube"
+    ],
+    "core_site_groups": 633,
+    "core_site_groups_with_recorded_kit": 352,
+    "core_sites": 60
+  },
+  "multiplicity_family": "The three position contrasts form one Benjamini-Hochberg family within each adjustment; GEE contrast intervals are reported without further correction and read together with that family.",
+  "extraction_identifiability": {
+    "kit_varying_campaigns": [
+      1,
+      2,
+      3
+    ],
+    "complete_case_kit_aliased_with_campaign": true,
+    "detail": [
+      {
+        "model": "depth_and_kit_complete_cases_not_identified",
+        "n_observations": 352,
+        "n_sites": 60,
+        "aliased_columns": 1,
+        "note": "Extraction kit is exactly aliased with campaign in the complete-case cohort; replaced by complete_case_cohort and depth_and_kit_kit_varying_campaigns."
+      },
+      {
+        "model": "additive_unadjusted",
+        "n_observations": 633,
+        "n_sites": 60,
+        "aliased_columns": 0,
+        "note": "shannon ~ C(Trip) + C(Type, Treatment(reference=\"Surface\"))"
+      },
+      {
+        "model": "additive_depth_adjusted",
+        "n_observations": 633,
+        "n_sites": 60,
+        "aliased_columns": 0,
+        "note": "shannon ~ C(Trip) + C(Type, Treatment(reference=\"Surface\")) + log_sequencing_depth"
+      },
+      {
+        "model": "depth_and_kit_as_recorded",
+        "n_observations": 633,
+        "n_sites": 60,
+        "aliased_columns": 0,
+        "note": "shannon ~ C(Trip) + C(Type, Treatment(reference=\"Surface\")) + log_sequencing_depth + C(dna_kit)"
+      },
+      {
+        "model": "complete_case_cohort",
+        "n_observations": 352,
+        "n_sites": 60,
+        "aliased_columns": 0,
+        "note": "shannon ~ C(Trip) + C(Type, Treatment(reference=\"Surface\")) + log_sequencing_depth"
+      },
+      {
+        "model": "depth_and_kit_kit_varying_campaigns",
+        "n_observations": 285,
+        "n_sites": 60,
+        "aliased_columns": 0,
+        "note": "shannon ~ C(Trip) + C(Type, Treatment(reference=\"Surface\")) + log_sequencing_depth + C(dna_kit)"
+      }
+    ]
+  },
+  "input": {
+    "alpha_path": "analysis/v2/review/cache/alpha.tsv",
+    "alpha_sha256": "e6083716b713a36a5e6984826b20107613a1fd65359172a1e9cf10a7b3161c2c",
+    "sample_ledger_path": "data/release/sample_ledger.tsv",
+    "sample_ledger_sha256": "cf7affd4d58803417fc5cf03ab71e6455e7fe190db449b0eb7ebaedfb4d1c99f",
+    "core_sites": "1-60",
+    "bootstrap_resamples": 5000,
+    "seed": 20260725,
+    "depth_slope_per_log_read": 0.5757794232048609,
+    "depth_slope_p": 6.780676025823658e-20
+  }
+}

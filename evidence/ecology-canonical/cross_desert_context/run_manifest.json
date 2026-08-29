@@ -1,0 +1,58 @@
+{
+  "cohorts": {
+    "atacama_gradient": {
+      "analysis_sites": 16,
+      "excluded_sites": [
+        "BAQ4697"
+      ],
+      "input_sites": 17,
+      "technical_profiles_represented": 50
+    },
+    "atacama_pit": {
+      "asvs": 9194,
+      "depth_max_cm": 420.0,
+      "depth_min_cm": 2.5,
+      "genera_used_for_composition": 200,
+      "profiles_in_depth_map": 62,
+      "profiles_retained": 62,
+      "sampled_depths": 23
+    }
+  },
+  "inputs": {
+    "atacama_gradient_site_table": {
+      "bytes": 1464,
+      "path": "analysis/v2/RQ27_Transportability/atacama_gradient/atacama_per_site.csv",
+      "sha256": "7d12c3ff102a8fa9d535d4bb55f1832ce756ba4c07ee24cbc4cbd7bff8a29b97"
+    },
+    "atacama_pit_asv_table": {
+      "bytes": 1480567,
+      "path": "analysis/v2/RQ27_Transportability/atacama_pit/ASV_table.tsv",
+      "sha256": "0ccc857ae41b929c280f876f827f67559154378cc9e0927b11f4971125626c1e"
+    },
+    "atacama_pit_depth_map": {
+      "bytes": 1530,
+      "path": "analysis/v2/RQ27_Transportability/atacama_pit/sample_depth_map.tsv",
+      "sha256": "48214b4912729005498aa3f0f0e9332f10602d56fff7bd7c6abef8aa8041e985"
+    },
+    "atacama_pit_taxonomy": {
+      "bytes": 3340348,
+      "path": "analysis/v2/RQ27_Transportability/atacama_pit/ASV_tax.silva_138_2.tsv",
+      "sha256": "835aa7811d9669378f579bf034de1f5731ef5eefd9122db4eddd7e48ca998014"
+    }
+  },
+  "parameters": {
+    "permutations": 9999,
+    "pseudocount": 0.5,
+    "rarefaction_depth": 8000,
+    "rarefaction_iterations": 100,
+    "seed": 20260804,
+    "top_genera": 200
+  },
+  "scope": "Effect-level comparison across incompatible marker-gene surveys; no feature-table merging and no common-mechanism claim.",
+  "software": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.14.1"
+  },
+  "status": "contextual_comparisons_complete"
+}

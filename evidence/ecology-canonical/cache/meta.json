@@ -1,0 +1,8 @@
+{
+  "rarefaction_depth": 25000,
+  "retain_frac": 0.95,
+  "n_samples_kept": 1237,
+  "n_samples_rarefiable": 1177,
+  "n_genera": 1605,
+  "n_phyla": 73
+}

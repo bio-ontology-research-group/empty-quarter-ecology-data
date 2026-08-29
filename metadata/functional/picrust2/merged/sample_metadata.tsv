@@ -1,0 +1,1271 @@
+picrust2_col	sample_id	trip	site	compartment	replicate	extraction_suffix	biome	feature	date	coordinates	is_control	duplicate_run
+e0325_10Dr2	10Dr2	1	10.0	deep	2.0		desert biome	sand dune	17/03/2023	19.420469722222222 N,46.460795277777784 E	False	False
+e0326_10PRr2	10PRr2	1	10.0	plant_rhizosphere	2.0		desert biome	sand dune	17/03/2023	19.420469722222222 N,46.460795277777784 E	False	False
+e0327_10Sr2	10Sr2	1	10.0	surface	2.0		desert biome	sand dune	17/03/2023	19.420469722222222 N,46.460795277777784 E	False	False
+e0328_10Sr3	10Sr3	1	10.0	surface	3.0		desert biome	sand dune	17/03/2023	19.420469722222222 N,46.460795277777784 E	False	False
+e0329_11Dr3	11Dr3	1	11.0	deep	3.0		desert biome	sand dune	17/03/2023	19.44435222222222 N,46.6356325 E	False	False
+e0330_11PRr3	11PRr3	1	11.0	plant_rhizosphere	3.0		desert biome	sand dune	17/03/2023	19.44435222222222 N,46.6356325 E	False	False
+e0331_11Sr2	11Sr2	1	11.0	surface	2.0		desert biome	sand dune	17/03/2023	19.44435222222222 N,46.6356325 E	False	False
+e0332_12PRr1	12PRr1	1	12.0	plant_rhizosphere	1.0		desert biome	sand dune	17/03/2023	19.47793361111111 N,46.83437333333334 E	False	False
+e0333_12PRr3	12PRr3	1	12.0	plant_rhizosphere	3.0		desert biome	sand dune	17/03/2023	19.47793361111111 N,46.83437333333334 E	False	False
+e0334_12Sr1	12Sr1	1	12.0	surface	1.0		desert biome	sand dune	17/03/2023	19.47793361111111 N,46.83437333333334 E	False	False
+e0335_12Sr3	12Sr3	1	12.0	surface	3.0		desert biome	sand dune	17/03/2023	19.47793361111111 N,46.83437333333334 E	False	False
+e0336_13Dr1	13Dr1	1	13.0	deep	1.0		desert biome	sand dune	17/03/2023	19.52934611111111 N,47.053284444444444 E	False	False
+e0337_13Dr3	13Dr3	1	13.0	deep	3.0		desert biome	sand dune	17/03/2023	19.52934611111111 N,47.053284444444444 E	False	False
+e0338_13Sr2	13Sr2	1	13.0	surface	2.0		desert biome	sand dune	17/03/2023	19.52934611111111 N,47.053284444444444 E	False	False
+e0339_14Dr1	14Dr1	1	14.0	deep	1.0		desert biome	sand dune	17/03/2023	19.581338055555555 N,47.2920225 E	False	False
+e0340_14Dr3	14Dr3	1	14.0	deep	3.0		desert biome	sand dune	17/03/2023	19.581338055555555 N,47.2920225 E	False	False
+e0341_14PRr1	14PRr1	1	14.0	plant_rhizosphere	1.0		desert biome	sand dune	17/03/2023	19.581338055555555 N,47.2920225 E	False	False
+e0342_14PRr2	14PRr2	1	14.0	plant_rhizosphere	2.0		desert biome	sand dune	17/03/2023	19.581338055555555 N,47.2920225 E	False	False
+e0343_14Sr2	14Sr2	1	14.0	surface	2.0		desert biome	sand dune	17/03/2023	19.581338055555555 N,47.2920225 E	False	False
+e0344_15Dr1	15Dr1	1	15.0	deep	1.0		desert biome	sand dune	17/03/2023	19.613749722222224 N,47.47587194444445 E	False	False
+e0345_15Dr3	15Dr3	1	15.0	deep	3.0		desert biome	sand dune	17/03/2023	19.613749722222224 N,47.47587194444445 E	False	False
+e0346_15PRr1	15PRr1	1	15.0	plant_rhizosphere	1.0		desert biome	sand dune	17/03/2023	19.613749722222224 N,47.47587194444445 E	False	False
+e0347_15PRr2	15PRr2	1	15.0	plant_rhizosphere	2.0		desert biome	sand dune	17/03/2023	19.613749722222224 N,47.47587194444445 E	False	False
+e0348_15PRr3	15PRr3	1	15.0	plant_rhizosphere	3.0		desert biome	sand dune	17/03/2023	19.613749722222224 N,47.47587194444445 E	False	False
+e0349_15Sr1	15Sr1	1	15.0	surface	1.0		desert biome	sand dune	17/03/2023	19.613749722222224 N,47.47587194444445 E	False	False
+e0350_15Sr3	15Sr3	1	15.0	surface	3.0		desert biome	sand dune	17/03/2023	19.613749722222224 N,47.47587194444445 E	False	False
+e0351_16Dr1	16Dr1	1	16.0	deep	1.0		desert biome	sand dune	17/03/2023	19.644455833333332 N,47.62611861111111 E	False	False
+e0352_16Dr3	16Dr3	1	16.0	deep	3.0		desert biome	sand dune	17/03/2023	19.644455833333332 N,47.62611861111111 E	False	False
+e0353_16PRr2	16PRr2	1	16.0	plant_rhizosphere	2.0		desert biome	sand dune	17/03/2023	19.644455833333332 N,47.62611861111111 E	False	False
+e0354_16PRr3	16PRr3	1	16.0	plant_rhizosphere	3.0		desert biome	sand dune	17/03/2023	19.644455833333332 N,47.62611861111111 E	False	False
+e0355_16Sr1	16Sr1	1	16.0	surface	1.0		desert biome	sand dune	17/03/2023	19.644455833333332 N,47.62611861111111 E	False	False
+e0356_17Dr1	17Dr1	1	17.0	deep	1.0		desert biome	sand dune	17/03/2023	19.676460000000002 N,47.82730555555556 E	False	False
+e0357_17Dr3	17Dr3	1	17.0	deep	3.0		desert biome	sand dune	17/03/2023	19.676460000000002 N,47.82730555555556 E	False	False
+e0358_17PRr2	17PRr2	1	17.0	plant_rhizosphere	2.0		desert biome	sand dune	17/03/2023	19.676460000000002 N,47.82730555555556 E	False	False
+e0359_18PRr1	18PRr1	1	18.0	plant_rhizosphere	1.0		desert biome	sand dune	18/03/2023	19.732518055555555 N,48.046860555555554 E	False	False
+e0360_18PRr2	18PRr2	1	18.0	plant_rhizosphere	2.0		desert biome	sand dune	18/03/2023	19.732518055555555 N,48.046860555555554 E	False	False
+e0361_18Sr1	18Sr1	1	18.0	surface	1.0		desert biome	sand dune	18/03/2023	19.732518055555555 N,48.046860555555554 E	False	False
+e0362_18Sr2	18Sr2	1	18.0	surface	2.0		desert biome	sand dune	18/03/2023	19.732518055555555 N,48.046860555555554 E	False	False
+e0363_19Dr2	19Dr2	1	19.0	deep	2.0		desert biome	sand dune	18/03/2023	19.81231916666667 N,48.24049472222222 E	False	False
+e0364_1Dr1	1Dr1	1	1.0	deep	1.0		desert biome	gravel	17/03/2023	19.149770555555556 N,45.166511388888885 E	False	False
+e0365_1Dr2	1Dr2	1	1.0	deep	2.0		desert biome	gravel	17/03/2023	19.149770555555556 N,45.166511388888885 E	False	False
+e0366_1PRr2	1PRr2	1	1.0	plant_rhizosphere	2.0		desert biome	gravel	17/03/2023	19.149770555555556 N,45.166511388888885 E	False	False
+e0367_1PRr3	1PRr3	1	1.0	plant_rhizosphere	3.0		desert biome	gravel	17/03/2023	19.149770555555556 N,45.166511388888885 E	False	False
+e0368_1Sr1	1Sr1	1	1.0	surface	1.0		desert biome	gravel	17/03/2023	19.149770555555556 N,45.166511388888885 E	False	False
+e0369_1Sr3	1Sr3	1	1.0	surface	3.0		desert biome	gravel	17/03/2023	19.149770555555556 N,45.166511388888885 E	False	False
+e0370_20Dr2	20Dr2	1	20.0	deep	2.0		desert biome	dune slack	18/03/2023	19.869310833333333 N,48.42464444444444 E	False	False
+e0371_20PRr1	20PRr1	1	20.0	plant_rhizosphere	1.0		desert biome	dune slack	18/03/2023	19.869310833333333 N,48.42464444444444 E	False	False
+e0372_20PRr2	20PRr2	1	20.0	plant_rhizosphere	2.0		desert biome	dune slack	18/03/2023	19.869310833333333 N,48.42464444444444 E	False	False
+e0373_21Dr1	21Dr1	1	21.0	deep	1.0		desert biome	oilspill	18/03/2023	19.9011325 N,48.48646388888889 E	False	False
+e0374_21Sr1	21Sr1	1	21.0	surface	1.0		desert biome	oilspill	18/03/2023	19.9011325 N,48.48646388888889 E	False	False
+e0375_21Sr2	21Sr2	1	21.0	surface	2.0		desert biome	oilspill	18/03/2023	19.9011325 N,48.48646388888889 E	False	False
+e0376_22Dr1	22Dr1	1	22.0	deep	1.0		desert biome	saline pan	18/03/2023	19.97866972222222 N,48.63943555555556 E	False	False
+e0377_22Dr2	22Dr2	1	22.0	deep	2.0		desert biome	saline pan	18/03/2023	19.97866972222222 N,48.63943555555556 E	False	False
+e0378_22PRr1	22PRr1	1	22.0	plant_rhizosphere	1.0		desert biome	saline pan	18/03/2023	19.97866972222222 N,48.63943555555556 E	False	False
+e0379_22PRr3	22PRr3	1	22.0	plant_rhizosphere	3.0		desert biome	saline pan	18/03/2023	19.97866972222222 N,48.63943555555556 E	False	False
+e0380_23Dr1	23Dr1	1	23.0	deep	1.0		desert biome	sand dune	18/03/2023	20.049265555555557 N,48.773331388888884 E	False	False
+e0381_23Sr2	23Sr2	1	23.0	surface	2.0		desert biome	sand dune	18/03/2023	20.049265555555557 N,48.773331388888884 E	False	False
+e0382_24Dr1	24Dr1	1	24.0	deep	1.0		desert biome	sand dune	18/03/2023	20.09273861111111 N,48.89939527777778 E	False	False
+e0383_24Dr2	24Dr2	1	24.0	deep	2.0		desert biome	sand dune	18/03/2023	20.09273861111111 N,48.89939527777778 E	False	False
+e0384_24PRr2	24PRr2	1	24.0	plant_rhizosphere	2.0		desert biome	sand dune	18/03/2023	20.09273861111111 N,48.89939527777778 E	False	False
+e0385_25Dr1	25Dr1	1	25.0	deep	1.0		desert biome	sand dune	18/03/2023	20.100259722222223 N,48.95421972222223 E	False	False
+e0386_25Dr3	25Dr3	1	25.0	deep	3.0		desert biome	sand dune	18/03/2023	20.100259722222223 N,48.95421972222223 E	False	False
+e0387_25PRr2	25PRr2	1	25.0	plant_rhizosphere	2.0		desert biome	sand dune	18/03/2023	20.100259722222223 N,48.95421972222223 E	False	False
+e0388_25Sr1	25Sr1	1	25.0	surface	1.0		desert biome	sand dune	18/03/2023	20.100259722222223 N,48.95421972222223 E	False	False
+e0389_25Sr2	25Sr2	1	25.0	surface	2.0		desert biome	sand dune	18/03/2023	20.100259722222223 N,48.95421972222223 E	False	False
+e0390_26Dr1	26Dr1	1	26.0	deep	1.0		desert biome	sand dune	18/03/2023	20.148753888888887 N,49.07873861111111 E	False	False
+e0391_26Dr2	26Dr2	1	26.0	deep	2.0		desert biome	sand dune	18/03/2023	20.148753888888887 N,49.07873861111111 E	False	False
+e0392_26Dr3	26Dr3	1	26.0	deep	3.0		desert biome	sand dune	18/03/2023	20.148753888888887 N,49.07873861111111 E	False	False
+e0393_26PRr2	26PRr2	1	26.0	plant_rhizosphere	2.0		desert biome	sand dune	18/03/2023	20.148753888888887 N,49.07873861111111 E	False	False
+e0394_26PRr3	26PRr3	1	26.0	plant_rhizosphere	3.0		desert biome	sand dune	18/03/2023	20.148753888888887 N,49.07873861111111 E	False	False
+e0395_26Sr2	26Sr2	1	26.0	surface	2.0		desert biome	sand dune	18/03/2023	20.148753888888887 N,49.07873861111111 E	False	False
+e0396_26Sr3	26Sr3	1	26.0	surface	3.0		desert biome	sand dune	18/03/2023	20.148753888888887 N,49.07873861111111 E	False	False
+e0397_27Dr1	27Dr1	1	27.0	deep	1.0		desert biome	sand dune	18/03/2023	20.2038574 N,49.1959834 E	False	False
+e0398_27Dr3	27Dr3	1	27.0	deep	3.0		desert biome	sand dune	18/03/2023	20.2038574 N,49.1959834 E	False	False
+e0399_27PRr1	27PRr1	1	27.0	plant_rhizosphere	1.0		desert biome	sand dune	18/03/2023	20.2038574 N,49.1959834 E	False	False
+e0400_27PRr2	27PRr2	1	27.0	plant_rhizosphere	2.0		desert biome	sand dune	18/03/2023	20.2038574 N,49.1959834 E	False	False
+e0401_27Sr2	27Sr2	1	27.0	surface	2.0		desert biome	sand dune	18/03/2023	20.2038574 N,49.1959834 E	False	False
+e0402_27Sr3	27Sr3	1	27.0	surface	3.0		desert biome	sand dune	18/03/2023	20.2038574 N,49.1959834 E	False	False
+e0403_28Dr1	28Dr1	1	28.0	deep	1.0		desert biome	sand dune	18/03/2023	20.24376861111111 N,49.37088472222222 E	False	False
+e0404_28Dr3	28Dr3	1	28.0	deep	3.0		desert biome	sand dune	18/03/2023	20.24376861111111 N,49.37088472222222 E	False	False
+e0405_28PRr3	28PRr3	1	28.0	plant_rhizosphere	3.0		desert biome	sand dune	18/03/2023	20.24376861111111 N,49.37088472222222 E	False	False
+e0406_28Sr2	28Sr2	1	28.0	surface	2.0		desert biome	sand dune	18/03/2023	20.24376861111111 N,49.37088472222222 E	False	False
+e0407_28Sr3	28Sr3	1	28.0	surface	3.0		desert biome	sand dune	18/03/2023	20.24376861111111 N,49.37088472222222 E	False	False
+e0408_29Dr1	29Dr1	1	29.0	deep	1.0		desert biome	sand dune	18/03/2023	20.2597976 N,49.5675445 E	False	False
+e0409_29Dr2	29Dr2	1	29.0	deep	2.0		desert biome	sand dune	18/03/2023	20.2597976 N,49.5675445 E	False	False
+e0410_29Dr3	29Dr3	1	29.0	deep	3.0		desert biome	sand dune	18/03/2023	20.2597976 N,49.5675445 E	False	False
+e0411_29PRr1	29PRr1	1	29.0	plant_rhizosphere	1.0		desert biome	sand dune	18/03/2023	20.2597976 N,49.5675445 E	False	False
+e0412_29PRr3	29PRr3	1	29.0	plant_rhizosphere	3.0		desert biome	sand dune	18/03/2023	20.2597976 N,49.5675445 E	False	False
+e0413_29Sr1	29Sr1	1	29.0	surface	1.0		desert biome	sand dune	18/03/2023	20.2597976 N,49.5675445 E	False	False
+e0414_2Dr1	2Dr1	1	2.0	deep	1.0		desert biome	sand dune	17/03/2023	19.203468333333333 N,45.2447675 E	False	False
+e0415_2Dr3	2Dr3	1	2.0	deep	3.0		desert biome	sand dune	17/03/2023	19.203468333333333 N,45.2447675 E	False	False
+e0416_2PRr2	2PRr2	1	2.0	plant_rhizosphere	2.0		desert biome	sand dune	17/03/2023	19.203468333333333 N,45.2447675 E	False	False
+e0417_2Sr3	2Sr3	1	2.0	surface	3.0		desert biome	sand dune	17/03/2023	19.203468333333333 N,45.2447675 E	False	False
+e0418_30Dr1	30Dr1	1	30.0	deep	1.0		desert biome	sand dune	18/03/2023	20.269303055555554 N,49.68367333333333 E	False	False
+e0419_30PRr1	30PRr1	1	30.0	plant_rhizosphere	1.0		desert biome	sand dune	18/03/2023	20.269303055555554 N,49.68367333333333 E	False	False
+e0420_30PRr3	30PRr3	1	30.0	plant_rhizosphere	3.0		desert biome	sand dune	18/03/2023	20.269303055555554 N,49.68367333333333 E	False	False
+e0421_30Sr1	30Sr1	1	30.0	surface	1.0		desert biome	sand dune	18/03/2023	20.269303055555554 N,49.68367333333333 E	False	False
+e0422_30Sr3	30Sr3	1	30.0	surface	3.0		desert biome	sand dune	18/03/2023	20.269303055555554 N,49.68367333333333 E	False	False
+e0423_31Dr2	31Dr2	1	31.0	deep	2.0		desert biome	sand dune	18/03/2023	20.294623333333334 N,49.891405 E	False	False
+e0424_31PRr2	31PRr2	1	31.0	plant_rhizosphere	2.0		desert biome	sand dune	18/03/2023	20.294623333333334 N,49.891405 E	False	False
+e0425_31PRr3	31PRr3	1	31.0	plant_rhizosphere	3.0		desert biome	sand dune	18/03/2023	20.294623333333334 N,49.891405 E	False	False
+e0426_31Sr2	31Sr2	1	31.0	surface	2.0		desert biome	sand dune	18/03/2023	20.294623333333334 N,49.891405 E	False	False
+e0427_32PRr2	32PRr2	1	32.0	plant_rhizosphere	2.0		desert biome	sand dune	18/03/2023	20.310684166666668 N,50.09302138888889 E	False	False
+e0428_33Dr2	33Dr2	1	33.0	deep	2.0		desert biome	sand dune	18/03/2023	20.317507777777777 N,50.30307027777778 E	False	False
+e0429_33PRr1	33PRr1	1	33.0	plant_rhizosphere	1.0		desert biome	sand dune	18/03/2023	20.317507777777777 N,50.30307027777778 E	False	False
+e0430_33PRr2	33PRr2	1	33.0	plant_rhizosphere	2.0		desert biome	sand dune	18/03/2023	20.317507777777777 N,50.30307027777778 E	False	False
+e0431_33Sr1	33Sr1	1	33.0	surface	1.0		desert biome	sand dune	18/03/2023	20.317507777777777 N,50.30307027777778 E	False	False
+e0432_34Dr2	34Dr2	1	34.0	deep	2.0		desert biome	sand dune	18/03/2023	20.344394444444443 N,50.5153725 E	False	False
+e0433_34PRr1	34PRr1	1	34.0	plant_rhizosphere	1.0		desert biome	sand dune	18/03/2023	20.344394444444443 N,50.5153725 E	False	False
+e0434_34PRr3	34PRr3	1	34.0	plant_rhizosphere	3.0		desert biome	sand dune	18/03/2023	20.344394444444443 N,50.5153725 E	False	False
+e0435_34Sr1	34Sr1	1	34.0	surface	1.0		desert biome	sand dune	18/03/2023	20.344394444444443 N,50.5153725 E	False	False
+e0436_34Sr3	34Sr3	1	34.0	surface	3.0		desert biome	sand dune	18/03/2023	20.344394444444443 N,50.5153725 E	False	False
+e0437_35Dr2	35Dr2	1	35.0	deep	2.0		desert biome	sand dune	18/03/2023	20.371795833333334 N,50.72999222222222 E	False	False
+e0438_35Dr3	35Dr3	1	35.0	deep	3.0		desert biome	sand dune	18/03/2023	20.371795833333334 N,50.72999222222222 E	False	False
+e0439_35Sr2	35Sr2	1	35.0	surface	2.0		desert biome	sand dune	18/03/2023	20.371795833333334 N,50.72999222222222 E	False	False
+e0440_36Dr2	36Dr2	1	36.0	deep	2.0		desert biome	sand dune	19/03/2023	20.42319 N, 51.14483 E	False	False
+e0441_36Dr3	36Dr3	1	36.0	deep	3.0		desert biome	sand dune	19/03/2023	20.42319 N, 51.14483 E	False	False
+e0442_36Sr3	36Sr3	1	36.0	surface	3.0		desert biome	sand dune	19/03/2023	20.42319 N, 51.14483 E	False	False
+e0443_37Dr2	37Dr2	1	37.0	deep	2.0		desert biome	sand dune	19/03/2023	20.454150277777778 N,51.344883333333335 E	False	False
+e0444_37Dr3	37Dr3	1	37.0	deep	3.0		desert biome	sand dune	19/03/2023	20.454150277777778 N,51.344883333333335 E	False	False
+e0445_37PRr2	37PRr2	1	37.0	plant_rhizosphere	2.0		desert biome	sand dune	19/03/2023	20.454150277777778 N,51.344883333333335 E	False	False
+e0446_37PRr3	37PRr3	1	37.0	plant_rhizosphere	3.0		desert biome	sand dune	19/03/2023	20.454150277777778 N,51.344883333333335 E	False	False
+e0447_37Sr1	37Sr1	1	37.0	surface	1.0		desert biome	sand dune	19/03/2023	20.454150277777778 N,51.344883333333335 E	False	False
+e0448_37Sr2	37Sr2	1	37.0	surface	2.0		desert biome	sand dune	19/03/2023	20.454150277777778 N,51.344883333333335 E	False	False
+e0449_38Dr2	38Dr2	1	38.0	deep	2.0		desert biome	sand dune	19/03/2023	20.4610275 N,51.370224722222225 E	False	False
+e0450_38Dr3	38Dr3	1	38.0	deep	3.0		desert biome	sand dune	19/03/2023	20.4610275 N,51.370224722222225 E	False	False
+e0451_38PRr2	38PRr2	1	38.0	plant_rhizosphere	2.0		desert biome	sand dune	19/03/2023	20.4610275 N,51.370224722222225 E	False	False
+e0452_38Sr2	38Sr2	1	38.0	surface	2.0		desert biome	sand dune	19/03/2023	20.4610275 N,51.370224722222225 E	False	False
+e0453_39Dr2	39Dr2	1	39.0	deep	2.0		desert biome	sand dune	19/03/2023	20.51023 N, 51.59742 E	False	False
+e0454_39PRr1	39PRr1	1	39.0	plant_rhizosphere	1.0		desert biome	sand dune	19/03/2023	20.51023 N, 51.59742 E	False	False
+e0455_39PRr3	39PRr3	1	39.0	plant_rhizosphere	3.0		desert biome	sand dune	19/03/2023	20.51023 N, 51.59742 E	False	False
+e0456_39Sr3	39Sr3	1	39.0	surface	3.0		desert biome	sand dune	19/03/2023	20.51023 N, 51.59742 E	False	False
+e0457_3Dr2	3Dr2	1	3.0	deep	2.0		desert biome	sand dune	17/03/2023	19.301079444444444 N,45.384414166666666 E	False	False
+e0458_3PRr1	3PRr1	1	3.0	plant_rhizosphere	1.0		desert biome	sand dune	17/03/2023	19.301079444444444 N,45.384414166666666 E	False	False
+e0459_3PRr3	3PRr3	1	3.0	plant_rhizosphere	3.0		desert biome	sand dune	17/03/2023	19.301079444444444 N,45.384414166666666 E	False	False
+e0460_40Dr1	40Dr1	1	40.0	deep	1.0		desert biome	sand dune	19/03/2023	20.54718 N, 51.82559 E	False	False
+e0461_40Dr2	40Dr2	1	40.0	deep	2.0		desert biome	sand dune	19/03/2023	20.54718 N, 51.82559 E	False	False
+e0462_40PRr2	40PRr2	1	40.0	plant_rhizosphere	2.0		desert biome	sand dune	19/03/2023	20.54718 N, 51.82559 E	False	False
+e0463_41PRr2	41PRr2	1	41.0	plant_rhizosphere	2.0		desert biome	saline pan	19/03/2023	20.539777222222224 N,51.94610583333333 E	False	False
+e0464_42Dr1	42Dr1	1	42.0	deep	1.0		desert biome	sand dune	19/03/2023	20.55516 N, 52.12403 E	False	False
+e0466_42PRr1	42PRr1	1	42.0	plant_rhizosphere	1.0		desert biome	sand dune	19/03/2023	20.55516 N, 52.12403 E	False	False
+e0467_42PRr2	42PRr2	1	42.0	plant_rhizosphere	2.0		desert biome	sand dune	19/03/2023	20.55516 N, 52.12403 E	False	False
+e0468_42Sr1	42Sr1	1	42.0	surface	1.0		desert biome	sand dune	19/03/2023	20.55516 N, 52.12403 E	False	False
+e0469_42Sr2	42Sr2	1	42.0	surface	2.0		desert biome	sand dune	19/03/2023	20.55516 N, 52.12403 E	False	False
+e0470_43Dr1	43Dr1	1	43.0	deep	1.0		desert biome	sand dune	19/03/2023	20.567575555555557 N,52.22413277777778 E	False	False
+e0471_43Dr2	43Dr2	1	43.0	deep	2.0		desert biome	sand dune	19/03/2023	20.567575555555557 N,52.22413277777778 E	False	False
+e0472_43PRr2	43PRr2	1	43.0	plant_rhizosphere	2.0		desert biome	sand dune	19/03/2023	20.567575555555557 N,52.22413277777778 E	False	False
+e0473_43Sr2	43Sr2	1	43.0	surface	2.0		desert biome	sand dune	19/03/2023	20.567575555555557 N,52.22413277777778 E	False	False
+e0474_44Dr2	44Dr2	1	44.0	deep	2.0		desert biome	sand dune	19/03/2023	20.56783 N, 52.41036 E	False	False
+e0475_44PRr3	44PRr3	1	44.0	plant_rhizosphere	3.0		desert biome	sand dune	19/03/2023	20.56783 N, 52.41036 E	False	False
+e0476_45Dr3	45Dr3	1	45.0	deep	3.0		desert biome	sand dune	19/03/2023	20.56346 N, 52.46776 E	False	False
+e0477_45PRr2	45PRr2	1	45.0	plant_rhizosphere	2.0		desert biome	sand dune	19/03/2023	20.56346 N, 52.46776 E	False	False
+e0478_46PRr1	46PRr1	1	46.0	plant_rhizosphere	1.0		desert biome	sand dune	19/03/2023	20.553746111111113 N,52.66920777777778 E	False	False
+e0480_47Dr2	47Dr2	1	47.0	deep	2.0		desert biome	sand dune	19/03/2023	20.54181555555556 N,52.868785833333334 E	False	False
+e0481_47Dr3	47Dr3	1	47.0	deep	3.0		desert biome	sand dune	19/03/2023	20.54181555555556 N,52.868785833333334 E	False	False
+e0482_47PRr1	47PRr1	1	47.0	plant_rhizosphere	1.0		desert biome	sand dune	19/03/2023	20.54181555555556 N,52.868785833333334 E	False	False
+e0483_47Sr1	47Sr1	1	47.0	surface	1.0		desert biome	sand dune	19/03/2023	20.54181555555556 N,52.868785833333334 E	False	False
+e0484_48Dr2	48Dr2	1	48.0	deep	2.0		desert biome	desert oasis	19/03/2023	20.568648333333332 N,53.09404833333333 E	False	False
+e0486_48Sr2	48Sr2	1	48.0	surface	2.0		desert biome	desert oasis	19/03/2023	20.568648333333332 N,53.09404833333333 E	False	False
+e0487_49Dr2	49Dr2	1	49.0	deep	2.0		desert biome	sand dune	19/03/2023	20.644662222222223 N,53.28794 E	False	False
+e0488_49Sr2	49Sr2	1	49.0	surface	2.0		desert biome	sand dune	19/03/2023	20.644662222222223 N,53.28794 E	False	False
+e0489_49Sr3	49Sr3	1	49.0	surface	3.0		desert biome	sand dune	19/03/2023	20.644662222222223 N,53.28794 E	False	False
+e0490_4Dr3	4Dr3	1	4.0	deep	3.0		desert biome	saline pan	17/03/2023	19.379571666666667 N,45.55182694444444 E	False	False
+e0491_4PRr1	4PRr1	1	4.0	plant_rhizosphere	1.0		desert biome	saline pan	17/03/2023	19.379571666666667 N,45.55182694444444 E	False	False
+e0492_4PRr2	4PRr2	1	4.0	plant_rhizosphere	2.0		desert biome	saline pan	17/03/2023	19.379571666666667 N,45.55182694444444 E	False	False
+e0493_4PRr3	4PRr3	1	4.0	plant_rhizosphere	3.0		desert biome	saline pan	17/03/2023	19.379571666666667 N,45.55182694444444 E	False	False
+e0494_4Sr1	4Sr1	1	4.0	surface	1.0		desert biome	saline pan	17/03/2023	19.379571666666667 N,45.55182694444444 E	False	False
+e0495_50Dr1	50Dr1	1	50.0	deep	1.0		desert biome	sand dune	20/03/2023	20.71385 N, 53.41230 E	False	False
+e0496_50Dr2	50Dr2	1	50.0	deep	2.0		desert biome	sand dune	20/03/2023	20.71385 N, 53.41230 E	False	False
+e0497_50PRr2	50PRr2	1	50.0	plant_rhizosphere	2.0		desert biome	sand dune	20/03/2023	20.71385 N, 53.41230 E	False	False
+e0498_50Sr1	50Sr1	1	50.0	surface	1.0		desert biome	sand dune	20/03/2023	20.71385 N, 53.41230 E	False	False
+e0499_50Sr3	50Sr3	1	50.0	surface	3.0		desert biome	sand dune	20/03/2023	20.71385 N, 53.41230 E	False	False
+e0500_51Dr1	51Dr1	1	51.0	deep	1.0		desert biome	saline pan	20/03/2023	20.79870 N, 53.48700 E	False	False
+e0501_51Dr3	51Dr3	1	51.0	deep	3.0		desert biome	saline pan	20/03/2023	20.79870 N, 53.48700 E	False	False
+e0502_51PRr3	51PRr3	1	51.0	plant_rhizosphere	3.0		desert biome	saline pan	20/03/2023	20.79870 N, 53.48700 E	False	False
+e0503_52Dr1	52Dr1	1	52.0	deep	1.0		desert biome	saline pan	20/03/2023	20.851514166666668 N,53.75788444444444 E	False	False
+e0504_53Dr2	53Dr2	1	53.0	deep	2.0		desert biome	sand dune	20/03/2023	20.851514166666668 N,53.75788444444444 E	False	False
+e0505_53Dr3	53Dr3	1	53.0	deep	3.0		desert biome	sand dune	20/03/2023	20.851514166666668 N,53.75788444444444 E	False	False
+e0506_53PRr2	53PRr2	1	53.0	plant_rhizosphere	2.0		desert biome	sand dune	20/03/2023	20.851514166666668 N,53.75788444444444 E	False	False
+e0507_54PRr1	54PRr1	1	54.0	plant_rhizosphere	1.0		desert biome	aeolian lake	20/03/2023	20.92017888888889 N,53.962204444444446 E	False	False
+e0508_54PRr2	54PRr2	1	54.0	plant_rhizosphere	2.0		desert biome	aeolian lake	20/03/2023	20.92017888888889 N,53.962204444444446 E	False	False
+e0509_54PRr3	54PRr3	1	54.0	plant_rhizosphere	3.0		desert biome	aeolian lake	20/03/2023	20.92017888888889 N,53.962204444444446 E	False	False
+e0510_54Sr1	54Sr1	1	54.0	surface	1.0		desert biome	aeolian lake	20/03/2023	20.92017888888889 N,53.962204444444446 E	False	False
+e0511_54Sr2	54Sr2	1	54.0	surface	2.0		desert biome	aeolian lake	20/03/2023	20.92017888888889 N,53.962204444444446 E	False	False
+e0512_54Sr3	54Sr3	1	54.0	surface	3.0		desert biome	aeolian lake	20/03/2023	20.92017888888889 N,53.962204444444446 E	False	False
+e0513_55Dr2	55Dr2	1	55.0	deep	2.0		desert biome	saline pan	20/03/2023	20.9022725 N,54.0024376 E	False	False
+e0514_55PRr3	55PRr3	1	55.0	plant_rhizosphere	3.0		desert biome	saline pan	20/03/2023	20.9022725 N,54.0024376 E	False	False
+e0515_55Sr3	55Sr3	1	55.0	surface	3.0		desert biome	saline pan	20/03/2023	20.9022725 N,54.0024376 E	False	False
+e0516_56Dr1	56Dr1	1	56.0	deep	1.0		desert biome	saline pan	20/03/2023	20.821580833333332 N,54.22385916666667 E	False	False
+e0517_56Dr3	56Dr3	1	56.0	deep	3.0		desert biome	saline pan	20/03/2023	20.821580833333332 N,54.22385916666667 E	False	False
+e0518_56Sr1	56Sr1	1	56.0	surface	1.0		desert biome	saline pan	20/03/2023	20.821580833333332 N,54.22385916666667 E	False	False
+e0519_56Sr3	56Sr3	1	56.0	surface	3.0		desert biome	saline pan	20/03/2023	20.821580833333332 N,54.22385916666667 E	False	False
+e0520_57Dr3	57Dr3	1	57.0	deep	3.0		desert biome	sand dune	20/03/2023	20.7349775 N,54.41764333333333 E	False	False
+e0521_57PRr3	57PRr3	1	57.0	plant_rhizosphere	3.0		desert biome	sand dune	20/03/2023	20.7349775 N,54.41764333333333 E	False	False
+e0522_58PRr1	58PRr1	1	58.0	plant_rhizosphere	1.0		desert biome	sand dune	20/03/2023	20.66540111111111 N,54.59327444444445 E	False	False
+e0523_58Sr2	58Sr2	1	58.0	surface	2.0		desert biome	sand dune	20/03/2023	20.66540111111111 N,54.59327444444445 E	False	False
+e0524_58Sr3	58Sr3	1	58.0	surface	3.0		desert biome	sand dune	20/03/2023	20.66540111111111 N,54.59327444444445 E	False	False
+e0525_59PRr3	59PRr3	1	59.0	plant_rhizosphere	3.0		desert biome	desert oasis	20/03/2023	20.65626 N,54.635868055555555 E	False	False
+e0526_5Dr1	5Dr1	1	5.0	deep	1.0		desert biome	saline pan	17/03/2023	19.407155277777775 N,45.659501388888884 E	False	False
+e0527_5Sr1	5Sr1	1	5.0	surface	1.0		desert biome	saline pan	17/03/2023	19.407155277777775 N,45.659501388888884 E	False	False
+e0528_5Sr3	5Sr3	1	5.0	surface	3.0		desert biome	saline pan	17/03/2023	19.407155277777775 N,45.659501388888884 E	False	False
+e0529_60Sr3	60Sr3	1	60.0	surface	3.0		desert biome	desert oasis	20/03/2023	20.706374444444442 N,54.732105555555556 E	False	False
+e0530_62PRr2	62PRr2	1	62.0	plant_rhizosphere	2.0						False	False
+e0531_62Sr3	62Sr3	1	62.0	surface	3.0						False	False
+e0532_63PRr3	63PRr3	1	63.0	plant_rhizosphere	3.0						False	False
+e0533_63Sr3	63Sr3	1	63.0	surface	3.0						False	False
+e0534_64Dr3	64Dr3	1	64.0	deep	3.0						False	False
+e0535_64PRr2	64PRr2	1	64.0	plant_rhizosphere	2.0						False	False
+e0536_64PRr3	64PRr3	1	64.0	plant_rhizosphere	3.0						False	False
+e0537_64Sr1	64Sr1	1	64.0	surface	1.0						False	False
+e0538_64Sr2	64Sr2	1	64.0	surface	2.0						False	False
+e0539_64Sr3	64Sr3	1	64.0	surface	3.0						False	False
+e0540_6Dr1	6Dr1	1	6.0	deep	1.0		desert biome	saline pan	17/03/2023	19.405739166666667 N,45.8161425 E	False	False
+e0541_6PRr2	6PRr2	1	6.0	plant_rhizosphere	2.0		desert biome	saline pan	17/03/2023	19.405739166666667 N,45.8161425 E	False	False
+e0542_6Sr2	6Sr2	1	6.0	surface	2.0		desert biome	saline pan	17/03/2023	19.405739166666667 N,45.8161425 E	False	False
+e0543_7Sr1	7Sr1	1	7.0	surface	1.0		desert biome	sand dune	17/03/2023	19.407005277777778 N,45.953943611111114 E	False	False
+e0544_7Sr2	7Sr2	1	7.0	surface	2.0		desert biome	sand dune	17/03/2023	19.407005277777778 N,45.953943611111114 E	False	False
+e0545_8Sr3	8Sr3	1	8.0	surface	3.0		desert biome	sand dune	17/03/2023	19.393154166666665 N,46.110734722222226 E	False	False
+e0546_9Dr1	9Dr1	1	9.0	deep	1.0		desert biome	sand dune	17/03/2023	19.411200277777777 N,46.30267361111111 E	False	False
+e0547_9Dr3	9Dr3	1	9.0	deep	3.0		desert biome	sand dune	17/03/2023	19.411200277777777 N,46.30267361111111 E	False	False
+e0548_9PRr2	9PRr2	1	9.0	plant_rhizosphere	2.0		desert biome	sand dune	17/03/2023	19.411200277777777 N,46.30267361111111 E	False	False
+e0549_9PRr3	9PRr3	1	9.0	plant_rhizosphere	3.0		desert biome	sand dune	17/03/2023	19.411200277777777 N,46.30267361111111 E	False	False
+e0550_9Sr1	9Sr1	1	9.0	surface	1.0		desert biome	sand dune	17/03/2023	19.411200277777777 N,46.30267361111111 E	False	False
+e0551_9Sr2	9Sr2	1	9.0	surface	2.0		desert biome	sand dune	17/03/2023	19.411200277777777 N,46.30267361111111 E	False	False
+e0552_9Sr3	9Sr3	1	9.0	surface	3.0		desert biome	sand dune	17/03/2023	19.411200277777777 N,46.30267361111111 E	False	False
+e0592_S22PRr1	S22PRr1	4	22.0	plant_rhizosphere	1.0		desert biome	saline pan	29/08/2024	19.97866972222222 N,48.63943555555556 E	False	False
+e0593_S22Sr1	S22Sr1	4	22.0	surface	1.0		desert biome	saline pan	29/08/2024	19.97866972222222 N,48.63943555555556 E	False	False
+e0594_S22Dr1	S22Dr1	4	22.0	deep	1.0		desert biome	saline pan	29/08/2024	19.97866972222222 N,48.63943555555556 E	False	False
+e0595_S28PRr1	S28PRr1	4	28.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	20.24376861111111 N,49.37088472222222 E	False	False
+e0596_S28Sr1	S28Sr1	4	28.0	surface	1.0		desert biome	sand dune	29/08/2024	20.24376861111111 N,49.37088472222222 E	False	False
+e0597_S28Dr2	S28Dr2	4	28.0	deep	2.0		desert biome	sand dune	29/08/2024	20.24376861111111 N,49.37088472222222 E	False	False
+e0598_S35PRr1	S35PRr1	4	35.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.371795833333334 N,50.72999222222222 E	False	False
+e0599_S35Sr1	S35Sr1	4	35.0	surface	1.0		desert biome	sand dune	30/08/2024	20.371795833333334 N,50.72999222222222 E	False	False
+e0600_S35Dr1	S35Dr1	4	35.0	deep	1.0		desert biome	sand dune	30/08/2024	20.371795833333334 N,50.72999222222222 E	False	False
+e0601_S43PRr1	S43PRr1	4	43.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.567575555555557 N,52.22413277777778 E	False	False
+e0602_S43Sr1	S43Sr1	4	43.0	surface	1.0		desert biome	sand dune	30/08/2024	20.567575555555557 N,52.22413277777778 E	False	False
+e0603_S43Dr1	S43Dr1	4	43.0	deep	1.0		desert biome	sand dune	30/08/2024	20.567575555555557 N,52.22413277777778 E	False	False
+e0604_S53PRr1	S53PRr1	4	53.0	plant_rhizosphere	1.0		desert biome	sand dune	31/08/2024	20.851514166666668 N,53.75788444444444 E	False	False
+e0605_S53Sr1	S53Sr1	4	53.0	surface	1.0		desert biome	sand dune	31/08/2024	20.851514166666668 N,53.75788444444444 E	False	False
+e0606_S53Dr1	S53Dr1	4	53.0	deep	1.0		desert biome	sand dune	31/08/2024	20.851514166666668 N,53.75788444444444 E	False	False
+e0607_S46PRr1	S46PRr1	4	46.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.553746111111113 N,52.66920777777778 E	False	False
+e0608_S46Sr1	S46Sr1	4	46.0	surface	1.0		desert biome	sand dune	30/08/2024	20.553746111111113 N,52.66920777777778 E	False	False
+e0609_S46Dr1	S46Dr1	4	46.0	deep	1.0		desert biome	sand dune	30/08/2024	20.553746111111113 N,52.66920777777778 E	False	False
+e0610_S47PRr1	S47PRr1	4	47.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.54181555555556 N,52.868785833333334 E	False	False
+e0611_S47Sr1	S47Sr1	4	47.0	surface	1.0		desert biome	sand dune	30/08/2024	20.54181555555556 N,52.868785833333334 E	False	False
+e0612_S47Dr1	S47Dr1	4	47.0	deep	1.0		desert biome	sand dune	30/08/2024	20.54181555555556 N,52.868785833333334 E	False	False
+e0613_S58PRr1	S58PRr1	4	58.0	plant_rhizosphere	1.0		desert biome	sand dune	31/08/2024	20.66540111111111 N,54.59327444444445 E	False	False
+e0614_S58Sr1	S58Sr1	4	58.0	surface	1.0		desert biome	sand dune	31/08/2024	20.66540111111111 N,54.59327444444445 E	False	False
+e0615_S58Dr1	S58Dr1	4	58.0	deep	1.0		desert biome	sand dune	31/08/2024	20.66540111111111 N,54.59327444444445 E	False	False
+e0616_S13PRr1	S13PRr1	4	13.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	19.52934611111111 N,47.053284444444444 E	False	False
+e0617_S13Sr1	S13Sr1	4	13.0	surface	1.0		desert biome	sand dune	29/08/2024	19.52934611111111 N,47.053284444444444 E	False	False
+e0618_S13Dr1	S13Dr1	4	13.0	deep	1.0		desert biome	sand dune	29/08/2024	19.52934611111111 N,47.053284444444444 E	False	False
+e0619_S25PRr1	S25PRr1	4	25.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	20.100259722222223 N,48.95421972222223 E	False	False
+e0620_S25Sr1	S25Sr1	4	25.0	surface	1.0		desert biome	sand dune	29/08/2024	20.100259722222223 N,48.95421972222223 E	False	False
+e0621_S25Dr1	S25Dr1	4	25.0	deep	1.0		desert biome	sand dune	29/08/2024	20.100259722222223 N,48.95421972222223 E	False	False
+e0622_S54PRr1	S54PRr1	4	54.0	plant_rhizosphere	1.0		desert biome	aeolian lake	31/08/2024	20.92017888888889 N,53.962204444444446 E	False	False
+e0623_S54Sr1	S54Sr1	4	54.0	surface	1.0		desert biome	aeolian lake	31/08/2024	20.92017888888889 N,53.962204444444446 E	False	False
+e0624_S54Dr1	S54Dr1	4	54.0	deep	1.0		desert biome	aeolian lake	31/08/2024	20.92017888888889 N,53.962204444444446 E	False	False
+e0625_S55PRr1	S55PRr1	4	55.0	plant_rhizosphere	1.0		desert biome	saline pan	31/08/2024	20.9022725 N,54.0024376 E	False	False
+e0626_S55Sr1	S55Sr1	4	55.0	surface	1.0		desert biome	saline pan	31/08/2024	20.9022725 N,54.0024376 E	False	False
+e0627_S55Dr1	S55Dr1	4	55.0	deep	1.0		desert biome	saline pan	31/08/2024	20.9022725 N,54.0024376 E	False	False
+e0628_S44PRr1	S44PRr1	4	44.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.56783 N, 52.41036 E	False	False
+e0629_S44Sr1	S44Sr1	4	44.0	surface	1.0		desert biome	sand dune	30/08/2024	20.56783 N, 52.41036 E	False	False
+e0630_S44Dr1	S44Dr1	4	44.0	deep	1.0		desert biome	sand dune	30/08/2024	20.56783 N, 52.41036 E	False	False
+e0631_S38PRr1	S38PRr1	4	38.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.4610275 N,51.370224722222225 E	False	False
+e0632_S38Sr1	S38Sr1	4	38.0	surface	1.0		desert biome	sand dune	30/08/2024	20.4610275 N,51.370224722222225 E	False	False
+e0633_S38Dr1	S38Dr1	4	38.0	deep	1.0		desert biome	sand dune	30/08/2024	20.4610275 N,51.370224722222225 E	False	False
+e0634_S41PRr1	S41PRr1	4	41.0	plant_rhizosphere	1.0		desert biome	saline pan	30/08/2024	20.539777222222224 N,51.94610583333333 E	False	False
+e0635_S41Sr1	S41Sr1	4	41.0	surface	1.0		desert biome	saline pan	30/08/2024	20.539777222222224 N,51.94610583333333 E	False	False
+e0636_S41Dr1	S41Dr1	4	41.0	deep	1.0		desert biome	saline pan	30/08/2024	20.539777222222224 N,51.94610583333333 E	False	False
+e0637_S33PRr1	S33PRr1	4	33.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.317507777777777 N,50.30307027777778 E	False	False
+e0638_S33Sr1	S33Sr1	4	33.0	surface	1.0		desert biome	sand dune	30/08/2024	20.317507777777777 N,50.30307027777778 E	False	False
+e0639_S33Dr1	S33Dr1	4	33.0	deep	1.0		desert biome	sand dune	30/08/2024	20.317507777777777 N,50.30307027777778 E	False	False
+e0640_S2Sr1	S2Sr1	4	2.0	surface	1.0		desert biome	sand dune	29/08/2024	19.203468333333333 N,45.2447675 E	False	False
+e0641_S2Dr1	S2Dr1	4	2.0	deep	1.0		desert biome	sand dune	29/08/2024	19.203468333333333 N,45.2447675 E	False	False
+e0642_S27PRr1	S27PRr1	4	27.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	20.2038574 N,49.1959834 E	False	False
+e0643_S27Sr1	S27Sr1	4	27.0	surface	1.0		desert biome	sand dune	29/08/2024	20.2038574 N,49.1959834 E	False	False
+e0644_S27Dr1	S27Dr1	4	27.0	deep	1.0		desert biome	sand dune	29/08/2024	20.2038574 N,49.1959834 E	False	False
+e0645_S51PRr1	S51PRr1	4	51.0	plant_rhizosphere	1.0		desert biome	saline pan	31/08/2024	20.79870 N, 53.48700 E	False	False
+e0646_S51Sr1	S51Sr1	4	51.0	surface	1.0		desert biome	saline pan	31/08/2024	20.79870 N, 53.48700 E	False	False
+e0647_S51Dr1	S51Dr1	4	51.0	deep	1.0		desert biome	saline pan	31/08/2024	20.79870 N, 53.48700 E	False	False
+e0648_S16PRr1	S16PRr1	4	16.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	19.644455833333332 N,47.62611861111111 E	False	False
+e0649_S16Sr1	S16Sr1	4	16.0	surface	1.0		desert biome	sand dune	29/08/2024	19.644455833333332 N,47.62611861111111 E	False	False
+e0650_S16Dr1	S16Dr1	4	16.0	deep	1.0		desert biome	sand dune	29/08/2024	19.644455833333332 N,47.62611861111111 E	False	False
+e0651_S56PRr1	S56PRr1	4	56.0	plant_rhizosphere	1.0		desert biome	saline pan	31/08/2024	20.821580833333332 N,54.22385916666667 E	False	False
+e0652_S56Sr1	S56Sr1	4	56.0	surface	1.0		desert biome	saline pan	31/08/2024	20.821580833333332 N,54.22385916666667 E	False	False
+e0653_S56Dr1	S56Dr1	4	56.0	deep	1.0		desert biome	saline pan	31/08/2024	20.821580833333332 N,54.22385916666667 E	False	False
+e0654_S57PRr1	S57PRr1	4	57.0	plant_rhizosphere	1.0		desert biome	sand dune	31/08/2024	20.7349775 N,54.41764333333333 E	False	False
+e0655_S57Sr1	S57Sr1	4	57.0	surface	1.0		desert biome	sand dune	31/08/2024	20.7349775 N,54.41764333333333 E	False	False
+e0656_S57Dr1	S57Dr1	4	57.0	deep	1.0		desert biome	sand dune	31/08/2024	20.7349775 N,54.41764333333333 E	False	False
+e0657_S60PRr1	S60PRr1	4	60.0	plant_rhizosphere	1.0		desert biome	desert oasis	31/08/2024	20.706374444444442 N,54.732105555555556 E	False	False
+e0658_S60Sr1	S60Sr1	4	60.0	surface	1.0		desert biome	desert oasis	31/08/2024	20.706374444444442 N,54.732105555555556 E	False	False
+e0659_S60Dr1	S60Dr1	4	60.0	deep	1.0		desert biome	desert oasis	31/08/2024	20.706374444444442 N,54.732105555555556 E	False	False
+e0660_S37PRr1	S37PRr1	4	37.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.454150277777778 N,51.344883333333335 E	False	False
+e0661_S37Sr1	S37Sr1	4	37.0	surface	1.0		desert biome	sand dune	30/08/2024	20.454150277777778 N,51.344883333333335 E	False	False
+e0662_S37Dr1	S37Dr1	4	37.0	deep	1.0		desert biome	sand dune	30/08/2024	20.454150277777778 N,51.344883333333335 E	False	False
+e0663_S49PRr1	S49PRr1	4	49.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.644662222222223 N,53.28794 E	False	False
+e0664_S49Sr1	S49Sr1	4	49.0	surface	1.0		desert biome	sand dune	30/08/2024	20.644662222222223 N,53.28794 E	False	False
+e0665_S49Dr1	S49Dr1	4	49.0	deep	1.0		desert biome	sand dune	30/08/2024	20.644662222222223 N,53.28794 E	False	False
+e0666_S45PRr1	S45PRr1	4	45.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.56346 N, 52.46776 E	False	False
+e0667_S45Sr1	S45Sr1	4	45.0	surface	1.0		desert biome	sand dune	30/08/2024	20.56346 N, 52.46776 E	False	False
+e0668_S45Dr1	S45Dr1	4	45.0	deep	1.0		desert biome	sand dune	30/08/2024	20.56346 N, 52.46776 E	False	False
+e0669_S59PRr1	S59PRr1	4	59.0	plant_rhizosphere	1.0		desert biome	desert oasis	31/08/2024	20.65626 N,54.635868055555555 E	False	False
+e0670_S59Sr1	S59Sr1	4	59.0	surface	1.0		desert biome	desert oasis	31/08/2024	20.65626 N,54.635868055555555 E	False	False
+e0671_S59Dr1	S59Dr1	4	59.0	deep	1.0		desert biome	desert oasis	31/08/2024	20.65626 N,54.635868055555555 E	False	False
+e0672_S4PRr1	S4PRr1	4	4.0	plant_rhizosphere	1.0		desert biome	saline pan	29/08/2024	19.379571666666667 N,45.55182694444444 E	False	False
+e0673_S4Sr1	S4Sr1	4	4.0	surface	1.0		desert biome	saline pan	29/08/2024	19.379571666666667 N,45.55182694444444 E	False	False
+e0674_S4Dr1	S4Dr1	4	4.0	deep	1.0		desert biome	saline pan	29/08/2024	19.379571666666667 N,45.55182694444444 E	False	False
+e0675_S8PRr1	S8PRr1	4	8.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	19.393154166666665 N,46.110734722222226 E	False	False
+e0676_S8Sr1	S8Sr1	4	8.0	surface	1.0		desert biome	sand dune	29/08/2024	19.393154166666665 N,46.110734722222226 E	False	False
+e0677_S8Dr1	S8Dr1	4	8.0	deep	1.0		desert biome	sand dune	29/08/2024	19.393154166666665 N,46.110734722222226 E	False	False
+e0678_S11PRr1	S11PRr1	4	11.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	19.44435222222222 N,46.6356325 E	False	False
+e0679_S11Sr1	S11Sr1	4	11.0	surface	1.0		desert biome	sand dune	29/08/2024	19.44435222222222 N,46.6356325 E	False	False
+e0680_S11Dr1	S11Dr1	4	11.0	deep	1.0		desert biome	sand dune	29/08/2024	19.44435222222222 N,46.6356325 E	False	False
+e0681_S36Sr1	S36Sr1	4	36.0	surface	1.0		desert biome	sand dune	30/08/2024	20.42319 N, 51.14483 E	False	False
+e0682_S36PRr1	S36PRr1	4	36.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.42319 N, 51.14483 E	False	False
+e0683_S36Dr1	S36Dr1	4	36.0	deep	1.0		desert biome	sand dune	30/08/2024	20.42319 N, 51.14483 E	False	False
+e0685_S6PRr1	S6PRr1	4	6.0	plant_rhizosphere	1.0		desert biome	saline pan	29/08/2024	19.405739166666667 N,45.8161425 E	False	False
+e0686_S6Sr1	S6Sr1	4	6.0	surface	1.0		desert biome	saline pan	29/08/2024	19.405739166666667 N,45.8161425 E	False	False
+e0687_S6Dr1	S6Dr1	4	6.0	deep	1.0		desert biome	saline pan	29/08/2024	19.405739166666667 N,45.8161425 E	False	False
+e0688_S9PRr1	S9PRr1	4	9.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	19.411200277777777 N,46.30267361111111 E	False	False
+e0689_S9Sr1	S9Sr1	4	9.0	surface	1.0		desert biome	sand dune	29/08/2024	19.411200277777777 N,46.30267361111111 E	False	False
+e0690_S9Dr1	S9Dr1	4	9.0	deep	1.0		desert biome	sand dune	29/08/2024	19.411200277777777 N,46.30267361111111 E	False	False
+e0691_S12PRr1	S12PRr1	4	12.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	19.47793361111111 N,46.83437333333334 E	False	False
+e0692_S12Sr1	S12Sr1	4	12.0	surface	1.0		desert biome	sand dune	29/08/2024	19.47793361111111 N,46.83437333333334 E	False	False
+e0693_S12Dr1	S12Dr1	4	12.0	deep	1.0		desert biome	sand dune	29/08/2024	19.47793361111111 N,46.83437333333334 E	False	False
+e0694_S15PRr1	S15PRr1	4	15.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	19.613749722222224 N,47.47587194444445 E	False	False
+e0695_S15Sr1	S15Sr1	4	15.0	surface	1.0		desert biome	sand dune	29/08/2024	19.613749722222224 N,47.47587194444445 E	False	False
+e0696_S15Dr1	S15Dr1	4	15.0	deep	1.0		desert biome	sand dune	29/08/2024	19.613749722222224 N,47.47587194444445 E	False	False
+e0697_S17PRr1	S17PRr1	4	17.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	19.676460000000002 N,47.82730555555556 E	False	False
+e0698_S17Sr1	S17Sr1	4	17.0	surface	1.0		desert biome	sand dune	29/08/2024	19.676460000000002 N,47.82730555555556 E	False	False
+e0699_S17Dr1	S17Dr1	4	17.0	deep	1.0		desert biome	sand dune	29/08/2024	19.676460000000002 N,47.82730555555556 E	False	False
+e0700_S23PRr1	S23PRr1	4	23.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	20.049265555555557 N,48.773331388888884 E	False	False
+e0701_S23Sr1	S23Sr1	4	23.0	surface	1.0		desert biome	sand dune	29/08/2024	20.049265555555557 N,48.773331388888884 E	False	False
+e0702_S23Dr1	S23Dr1	4	23.0	deep	1.0		desert biome	sand dune	29/08/2024	20.049265555555557 N,48.773331388888884 E	False	False
+e0703_S29PRr1	S29PRr1	4	29.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	20.2597976 N,49.5675445 E	False	False
+e0704_S29Sr1	S29Sr1	4	29.0	surface	1.0		desert biome	sand dune	29/08/2024	20.2597976 N,49.5675445 E	False	False
+e0705_S29Dr1	S29Dr1	4	29.0	deep	1.0		desert biome	sand dune	29/08/2024	20.2597976 N,49.5675445 E	False	False
+e0706_S30PRr1	S30PRr1	4	30.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.269303055555554 N,49.68367333333333 E	False	False
+e0707_S30Sr1	S30Sr1	4	30.0	surface	1.0		desert biome	sand dune	30/08/2024	20.269303055555554 N,49.68367333333333 E	False	False
+e0708_S30Dr1	S30Dr1	4	30.0	deep	1.0		desert biome	sand dune	30/08/2024	20.269303055555554 N,49.68367333333333 E	False	False
+e0709_S3PRr1	S3PRr1	4	3.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	19.301079444444444 N,45.384414166666666 E	False	False
+e0710_S3Sr1	S3Sr1	4	3.0	surface	1.0		desert biome	sand dune	29/08/2024	19.301079444444444 N,45.384414166666666 E	False	False
+e0711_S3Dr1	S3Dr1	4	3.0	deep	1.0		desert biome	sand dune	29/08/2024	19.301079444444444 N,45.384414166666666 E	False	False
+e0712_S7PRr1	S7PRr1	4	7.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	19.407005277777778 N,45.953943611111114 E	False	False
+e0713_S7Sr1	S7Sr1	4	7.0	surface	1.0		desert biome	sand dune	29/08/2024	19.407005277777778 N,45.953943611111114 E	False	False
+e0714_S7Dr1	S7Dr1	4	7.0	deep	1.0		desert biome	sand dune	29/08/2024	19.407005277777778 N,45.953943611111114 E	False	False
+e0715_S14PRr1	S14PRr1	4	14.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	19.581338055555555 N,47.2920225 E	False	False
+e0716_S14Sr1	S14Sr1	4	14.0	surface	1.0		desert biome	sand dune	29/08/2024	19.581338055555555 N,47.2920225 E	False	False
+e0717_S14Dr1	S14Dr1	4	14.0	deep	1.0		desert biome	sand dune	29/08/2024	19.581338055555555 N,47.2920225 E	False	False
+e0718_S21PRr1	S21PRr1	4	21.0	plant_rhizosphere	1.0		desert biome	oilspill	29/08/2024	19.9011325 N,48.48646388888889 E	False	False
+e0719_S21Sr1	S21Sr1	4	21.0	surface	1.0		desert biome	oilspill	29/08/2024	19.9011325 N,48.48646388888889 E	False	False
+e0720_S21Dr1	S21Dr1	4	21.0	deep	1.0		desert biome	oilspill	29/08/2024	19.9011325 N,48.48646388888889 E	False	False
+e0721_S31PRr1	S31PRr1	4	31.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.294623333333334 N,49.891405 E	False	False
+e0722_S31Sr1	S31Sr1	4	31.0	surface	1.0		desert biome	sand dune	30/08/2024	20.294623333333334 N,49.891405 E	False	False
+e0723_S31Dr1	S31Dr1	4	31.0	deep	1.0		desert biome	sand dune	30/08/2024	20.294623333333334 N,49.891405 E	False	False
+e0724_S48PRr1	S48PRr1	4	48.0	plant_rhizosphere	1.0		desert biome	desert oasis	30/08/2024	20.568648333333332 N,53.09404833333333 E	False	False
+e0725_S48Sr1	S48Sr1	4	48.0	surface	1.0		desert biome	desert oasis	30/08/2024	20.568648333333332 N,53.09404833333333 E	False	False
+e0726_S48Dr1	S48Dr1	4	48.0	deep	1.0		desert biome	desert oasis	30/08/2024	20.568648333333332 N,53.09404833333333 E	False	False
+e0727_S32PRr1	S32PRr1	4	32.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.310684166666668 N,50.09302138888889 E	False	False
+e0728_S32Sr1	S32Sr1	4	32.0	surface	1.0		desert biome	sand dune	30/08/2024	20.310684166666668 N,50.09302138888889 E	False	False
+e0729_S32Dr1	S32Dr1	4	32.0	deep	1.0		desert biome	sand dune	30/08/2024	20.310684166666668 N,50.09302138888889 E	False	False
+e0730_S39PRr1	S39PRr1	4	39.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.51023 N, 51.59742 E	False	False
+e0731_S39Sr1	S39Sr1	4	39.0	surface	1.0		desert biome	sand dune	30/08/2024	20.51023 N, 51.59742 E	False	False
+e0732_S39Dr1	S39Dr1	4	39.0	deep	1.0		desert biome	sand dune	30/08/2024	20.51023 N, 51.59742 E	False	False
+e0733_S50PRr1	S50PRr1	4	50.0	plant_rhizosphere	1.0		desert biome	sand dune	31/08/2024	20.71385 N, 53.41230 E	False	False
+e0734_S50Sr1	S50Sr1	4	50.0	surface	1.0		desert biome	sand dune	31/08/2024	20.71385 N, 53.41230 E	False	False
+e0735_S50Dr1	S50Dr1	4	50.0	deep	1.0		desert biome	sand dune	31/08/2024	20.71385 N, 53.41230 E	False	False
+e0736_S1PRr1	S1PRr1	4	1.0	plant_rhizosphere	1.0		desert biome	gravel	29/08/2024	19.149770555555556 N,45.166511388888885 E	False	False
+e0737_S1Sr1	S1Sr1	4	1.0	surface	1.0		desert biome	gravel	29/08/2024	19.149770555555556 N,45.166511388888885 E	False	False
+e0738_S1Dr1	S1Dr1	4	1.0	deep	1.0		desert biome	gravel	29/08/2024	19.149770555555556 N,45.166511388888885 E	False	False
+e0739_S5PRr1	S5PRr1	4	5.0	plant_rhizosphere	1.0		desert biome	saline pan	29/08/2024	19.407155277777775 N,45.659501388888884 E	False	False
+e0740_S5Sr1	S5Sr1	4	5.0	surface	1.0		desert biome	saline pan	29/08/2024	19.407155277777775 N,45.659501388888884 E	False	False
+e0741_S5Dr1	S5Dr1	4	5.0	deep	1.0		desert biome	saline pan	29/08/2024	19.407155277777775 N,45.659501388888884 E	False	False
+e0742_S10PRr1	S10PRr1	4	10.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	19.420469722222222 N,46.460795277777784 E	False	False
+e0743_S10Sr1	S10Sr1	4	10.0	surface	1.0		desert biome	sand dune	29/08/2024	19.420469722222222 N,46.460795277777784 E	False	False
+e0744_S10Dr1	S10Dr1	4	10.0	deep	1.0		desert biome	sand dune	29/08/2024	19.420469722222222 N,46.460795277777784 E	False	False
+e0745_S20PRr1	S20PRr1	4	20.0	plant_rhizosphere	1.0		desert biome	dune slack	29/08/2024	19.869310833333333 N,48.42464444444444 E	False	False
+e0746_S20Sr1	S20Sr1	4	20.0	surface	1.0		desert biome	dune slack	29/08/2024	19.869310833333333 N,48.42464444444444 E	False	False
+e0747_S20Dr1	S20Dr1	4	20.0	deep	1.0		desert biome	dune slack	29/08/2024	19.869310833333333 N,48.42464444444444 E	False	False
+e0748_S24PRr1	S24PRr1	4	24.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	20.09273861111111 N,48.89939527777778 E	False	False
+e0749_S24Sr1	S24Sr1	4	24.0	surface	1.0		desert biome	sand dune	29/08/2024	20.09273861111111 N,48.89939527777778 E	False	False
+e0750_S24Dr1	S24Dr1	4	24.0	deep	1.0		desert biome	sand dune	29/08/2024	20.09273861111111 N,48.89939527777778 E	False	False
+e0751_S34PRr1	S34PRr1	4	34.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.344394444444443 N,50.5153725 E	False	False
+e0752_S34Sr1	S34Sr1	4	34.0	surface	1.0		desert biome	sand dune	30/08/2024	20.344394444444443 N,50.5153725 E	False	False
+e0754_S40Sr1	S40Sr1	4	40.0	surface	1.0		desert biome	sand dune	30/08/2024	20.54718 N, 51.82559 E	False	False
+e0755_S40Dr1	S40Dr1	4	40.0	deep	1.0		desert biome	sand dune	30/08/2024	20.54718 N, 51.82559 E	False	False
+e0756_S52PRr1	S52PRr1	4	52.0	plant_rhizosphere	1.0		desert biome	saline pan	31/08/2024	20.82784 N,53.57835 E	False	False
+e0757_S52Sr1	S52Sr1	4	52.0	surface	1.0		desert biome	saline pan	31/08/2024	20.82784 N,53.57835 E	False	False
+e0758_S52Dr1	S52Dr1	4	52.0	deep	1.0		desert biome	saline pan	31/08/2024	20.82784 N,53.57835 E	False	False
+e0759_S19PRr1	S19PRr1	4	19.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	19.81231916666667 N,48.24049472222222 E	False	False
+e0760_S19Sr1	S19Sr1	4	19.0	surface	1.0		desert biome	sand dune	29/08/2024	19.81231916666667 N,48.24049472222222 E	False	False
+e0761_S19Dr1	S19Dr1	4	19.0	deep	1.0		desert biome	sand dune	29/08/2024	19.81231916666667 N,48.24049472222222 E	False	False
+e0762_S26PRr1	S26PRr1	4	26.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	20.148753888888887 N,49.07873861111111 E	False	False
+e0763_S26Sr1	S26Sr1	4	26.0	surface	1.0		desert biome	sand dune	29/08/2024	20.148753888888887 N,49.07873861111111 E	False	False
+e0764_S26Dr1	S26Dr1	4	26.0	deep	1.0		desert biome	sand dune	29/08/2024	20.148753888888887 N,49.07873861111111 E	False	False
+e0765_S42PRr1	S42PRr1	4	42.0	plant_rhizosphere	1.0		desert biome	sand dune	30/08/2024	20.55516 N, 52.12403 E	False	False
+e0766_S42Sr1	S42Sr1	4	42.0	surface	1.0		desert biome	sand dune	30/08/2024	20.55516 N, 52.12403 E	False	False
+e0767_S42Dr1	S42Dr1	4	42.0	deep	1.0		desert biome	sand dune	30/08/2024	20.55516 N, 52.12403 E	False	False
+e0775_F15PRr1	F15PRr1	3	15.0	plant_rhizosphere	1.0		desert biome	sand dune	17/02/2024	19.613749722222224 N,47.47587194444445 E	False	True
+e0776_F20Sr3	F20Sr3	3	20.0	surface	3.0		desert biome	dune slack	18/02/2024	19.869310833333333 N,48.42464444444444 E	False	True
+e0777_F24PRr3	F24PRr3	3	24.0	plant_rhizosphere	3.0		desert biome	sand dune	18/02/2024	20.09273861111111 N,48.89939527777778 E	False	True
+e0778_F31Sr2	F31Sr2	3	31.0	surface	2.0		desert biome	sand dune	19/02/2024	20.294623333333334 N,49.891405 E	False	True
+e0779_F31Sr3	F31Sr3	3	31.0	surface	3.0		desert biome	sand dune	19/02/2024	20.294623333333334 N,49.891405 E	False	True
+e0780_F33Dr1	F33Dr1	3	33.0	deep	1.0		desert biome	sand dune	19/02/2024	20.317507777777777 N,50.30307027777778 E	False	True
+e0781_F34Sr1	F34Sr1	3	34.0	surface	1.0		desert biome	sand dune	19/02/2024	20.344394444444443 N,50.5153725 E	False	True
+e0782_F40Dr3	F40Dr3	3	40.0	deep	3.0		desert biome	sand dune	19/02/2024	20.54718 N, 51.82559 E	False	True
+e0784_F41Dr3	F41Dr3	3	41.0	deep	3.0		desert biome	saline pan	19/02/2024	20.539777222222224 N,51.94610583333333 E	False	True
+e0785_F43Dr1	F43Dr1	3	43.0	deep	1.0		desert biome	sand dune	20/02/2024	20.567575555555557 N,52.22413277777778 E	False	True
+e0786_F43Sr2	F43Sr2	3	43.0	surface	2.0		desert biome	sand dune	20/02/2024	20.567575555555557 N,52.22413277777778 E	False	False
+e0787_F47PRr1	F47PRr1	3	47.0	plant_rhizosphere	1.0		desert biome	sand dune	20/02/2024	20.54181555555556 N,52.868785833333334 E	False	True
+e0788_F48PRr3	F48PRr3	3	48.0	plant_rhizosphere	3.0		desert biome	desert oasis	20/02/2024	20.568648333333332 N,53.09404833333333 E	False	True
+e0789_F51Sr3	F51Sr3	3	51.0	surface	3.0		desert biome	saline pan	20/02/2024	20.79870 N, 53.48700 E	False	True
+e0790_F52Sr2	F52Sr2	3	52.0	surface	2.0		desert biome	saline pan	20/02/2024	20.851514166666668 N,53.75788444444444 E	False	True
+e0791_F55Sr1	F55Sr1	3	55.0	surface	1.0		desert biome	saline pan	21/02/2024	20.9022725 N,54.0024376 E	False	True
+e0792_F56Sr2	F56Sr2	3	56.0	surface	2.0		desert biome	saline pan	21/02/2024	20.821580833333332 N,54.22385916666667 E	False	True
+e0793_F56Sr3	F56Sr3	3	56.0	surface	3.0		desert biome	saline pan	21/02/2024	20.821580833333332 N,54.22385916666667 E	False	True
+e0794_F57Dr1	F57Dr1	3	57.0	deep	1.0		desert biome	sand dune	21/02/2024	20.7349775 N,54.41764333333333 E	False	True
+e0795_F57Sr3	F57Sr3	3	57.0	surface	3.0		desert biome	sand dune	21/02/2024	20.7349775 N,54.41764333333333 E	False	True
+e0796_F58Dr1	F58Dr1	3	58.0	deep	1.0		desert biome	sand dune	21/02/2024	20.66540111111111 N,54.59327444444445 E	False	True
+e0797_F58Sr3	F58Sr3	3	58.0	surface	3.0		desert biome	sand dune	21/02/2024	20.66540111111111 N,54.59327444444445 E	False	True
+e0798_F59Dr2	F59Dr2	3	59.0	deep	2.0		desert biome	desert oasis	21/02/2024	20.65626 N,54.635868055555555 E	False	True
+e0799_F59PRr1	F59PRr1	3	59.0	plant_rhizosphere	1.0		desert biome	desert oasis	21/02/2024	20.65626 N,54.635868055555555 E	False	True
+e0800_F59Sr3	F59Sr3	3	59.0	surface	3.0		desert biome	desert oasis	21/02/2024	20.65626 N,54.635868055555555 E	False	True
+e0801_F60PRr1	F60PRr1	3	60.0	plant_rhizosphere	1.0		desert biome	desert oasis	21/02/2024	20.706374444444442 N,54.732105555555556 E	False	True
+e0802_F60PRr2	F60PRr2	3	60.0	plant_rhizosphere	2.0		desert biome	desert oasis	21/02/2024	20.706374444444442 N,54.732105555555556 E	False	True
+e0803_F60Sr3	F60Sr3	3	60.0	surface	3.0		desert biome	desert oasis	21/02/2024	20.706374444444442 N,54.732105555555556 E	False	True
+e0804_T1Dr1	T1Dr1	2	1.0	deep	1.0		desert biome	gravel	14/07/2023	19.149770555555556 N,45.166511388888885 E	False	True
+e0805_1Dr3	1Dr3	1	1.0	deep	3.0		desert biome	gravel	17/03/2023	19.149770555555556 N,45.166511388888885 E	False	False
+e0806_1Sr2	1Sr2	1	1.0	surface	2.0		desert biome	gravel	17/03/2023	19.149770555555556 N,45.166511388888885 E	False	False
+e0807_2Dr2	2Dr2	1	2.0	deep	2.0		desert biome	sand dune	17/03/2023	19.203468333333333 N,45.2447675 E	False	False
+e0808_2Sr1	2Sr1	1	2.0	surface	1.0		desert biome	sand dune	17/03/2023	19.203468333333333 N,45.2447675 E	False	False
+e0809_2PRr1	2PRr1	1	2.0	plant_rhizosphere	1.0		desert biome	sand dune	17/03/2023	19.203468333333333 N,45.2447675 E	False	False
+e0810_3Dr3	3Dr3	1	3.0	deep	3.0		desert biome	sand dune	17/03/2023	19.301079444444444 N,45.384414166666666 E	False	False
+e0811_3Sr1	3Sr1	1	3.0	surface	1.0		desert biome	sand dune	17/03/2023	19.301079444444444 N,45.384414166666666 E	False	False
+e0812_3PRr2	3PRr2	1	3.0	plant_rhizosphere	2.0		desert biome	sand dune	17/03/2023	19.301079444444444 N,45.384414166666666 E	False	False
+e0813_4Dr1	4Dr1	1	4.0	deep	1.0		desert biome	saline pan	17/03/2023	19.379571666666667 N,45.55182694444444 E	False	False
+e0814_5Dr2	5Dr2	1	5.0	deep	2.0		desert biome	saline pan	17/03/2023	19.407155277777775 N,45.659501388888884 E	False	False
+e0815_5Sr2	5Sr2	1	5.0	surface	2.0		desert biome	saline pan	17/03/2023	19.407155277777775 N,45.659501388888884 E	False	False
+e0816_6Dr3	6Dr3	1	6.0	deep	3.0		desert biome	saline pan	17/03/2023	19.405739166666667 N,45.8161425 E	False	False
+e0817_6Sr1	6Sr1	1	6.0	surface	1.0		desert biome	saline pan	17/03/2023	19.405739166666667 N,45.8161425 E	False	False
+e0818_6PRr1	6PRr1	1	6.0	plant_rhizosphere	1.0		desert biome	saline pan	17/03/2023	19.405739166666667 N,45.8161425 E	False	False
+e0819_7Dr1	7Dr1	1	7.0	deep	1.0		desert biome	sand dune	17/03/2023	19.407005277777778 N,45.953943611111114 E	False	False
+e0821_7PRr2	7PRr2	1	7.0	plant_rhizosphere	2.0		desert biome	sand dune	17/03/2023	19.407005277777778 N,45.953943611111114 E	False	False
+e0822_8Sr2	8Sr2	1	8.0	surface	2.0		desert biome	sand dune	17/03/2023	19.393154166666665 N,46.110734722222226 E	False	False
+e0823_8PRr1	8PRr1	1	8.0	plant_rhizosphere	1.0		desert biome	sand dune	17/03/2023	19.393154166666665 N,46.110734722222226 E	False	False
+e0824_8PRr2	8PRr2	1	8.0	plant_rhizosphere	2.0		desert biome	sand dune	17/03/2023	19.393154166666665 N,46.110734722222226 E	False	False
+e0825_11PRr1	11PRr1	1	11.0	plant_rhizosphere	1.0		desert biome	sand dune	17/03/2023	19.44435222222222 N,46.6356325 E	False	False
+e0826_12Sr2	12Sr2	1	12.0	surface	2.0		desert biome	sand dune	17/03/2023	19.47793361111111 N,46.83437333333334 E	False	False
+e0827_14Dr2	14Dr2	1	14.0	deep	2.0		desert biome	sand dune	17/03/2023	19.581338055555555 N,47.2920225 E	False	False
+e0828_16PRr1	16PRr1	1	16.0	plant_rhizosphere	1.0		desert biome	sand dune	17/03/2023	19.644455833333332 N,47.62611861111111 E	False	False
+e0829_17Dr2	17Dr2	1	17.0	deep	2.0		desert biome	sand dune	17/03/2023	19.676460000000002 N,47.82730555555556 E	False	False
+e0830_17Sr1	17Sr1	1	17.0	surface	1.0		desert biome	sand dune	17/03/2023	19.676460000000002 N,47.82730555555556 E	False	False
+e0831_17Sr2	17Sr2	1	17.0	surface	2.0		desert biome	sand dune	17/03/2023	19.676460000000002 N,47.82730555555556 E	False	False
+e0832_17Sr3	17Sr3	1	17.0	surface	3.0		desert biome	sand dune	17/03/2023	19.676460000000002 N,47.82730555555556 E	False	False
+e0833_17PRr3	17PRr3	1	17.0	plant_rhizosphere	3.0		desert biome	sand dune	17/03/2023	19.676460000000002 N,47.82730555555556 E	False	False
+e0834_18Dr2	18Dr2	1	18.0	deep	2.0		desert biome	sand dune	18/03/2023	19.732518055555555 N,48.046860555555554 E	False	False
+e0835_21Sr3	21Sr3	1	21.0	surface	3.0		desert biome	oilspill	18/03/2023	19.9011325 N,48.48646388888889 E	False	False
+e0836_22Dr3	22Dr3	1	22.0	deep	3.0		desert biome	saline pan	18/03/2023	19.97866972222222 N,48.63943555555556 E	False	False
+e0837_23Dr3	23Dr3	1	23.0	deep	3.0		desert biome	sand dune	18/03/2023	20.049265555555557 N,48.773331388888884 E	False	False
+e0838_23Sr3	23Sr3	1	23.0	surface	3.0		desert biome	sand dune	18/03/2023	20.049265555555557 N,48.773331388888884 E	False	False
+e0839_23PRr1	23PRr1	1	23.0	plant_rhizosphere	1.0		desert biome	sand dune	18/03/2023	20.049265555555557 N,48.773331388888884 E	False	False
+e0840_24Sr2	24Sr2	1	24.0	surface	2.0		desert biome	sand dune	18/03/2023	20.09273861111111 N,48.89939527777778 E	False	False
+e0841_26Sr1	26Sr1	1	26.0	surface	1.0		desert biome	sand dune	18/03/2023	20.148753888888887 N,49.07873861111111 E	False	False
+e0842_27Dr2	27Dr2	1	27.0	deep	2.0		desert biome	sand dune	18/03/2023	20.2038574 N,49.1959834 E	False	False
+e0843_28Sr1	28Sr1	1	28.0	surface	1.0		desert biome	sand dune	18/03/2023	20.24376861111111 N,49.37088472222222 E	False	False
+e0844_28PRr1	28PRr1	1	28.0	plant_rhizosphere	1.0		desert biome	sand dune	18/03/2023	20.24376861111111 N,49.37088472222222 E	False	False
+e0845_30Sr2	30Sr2	1	30.0	surface	2.0		desert biome	sand dune	18/03/2023	20.269303055555554 N,49.68367333333333 E	False	False
+e0846_31Sr3	31Sr3	1	31.0	surface	3.0		desert biome	sand dune	18/03/2023	20.294623333333334 N,49.891405 E	False	False
+e0847_32Dr3	32Dr3	1	32.0	deep	3.0		desert biome	sand dune	18/03/2023	20.310684166666668 N,50.09302138888889 E	False	False
+e0848_33Dr3	33Dr3	1	33.0	deep	3.0		desert biome	sand dune	18/03/2023	20.317507777777777 N,50.30307027777778 E	False	False
+e0849_35PRr3	35PRr3	1	35.0	plant_rhizosphere	3.0		desert biome	sand dune	18/03/2023	20.371795833333334 N,50.72999222222222 E	False	False
+e0850_36Sr2	36Sr2	1	36.0	surface	2.0		desert biome	sand dune	19/03/2023	20.42319 N, 51.14483 E	False	False
+e0851_38PRr3	38PRr3	1	38.0	plant_rhizosphere	3.0		desert biome	sand dune	19/03/2023	20.4610275 N,51.370224722222225 E	False	False
+e0852_39Dr3	39Dr3	1	39.0	deep	3.0		desert biome	sand dune	19/03/2023	20.51023 N, 51.59742 E	False	False
+e0853_39PRr2	39PRr2	1	39.0	plant_rhizosphere	2.0		desert biome	sand dune	19/03/2023	20.51023 N, 51.59742 E	False	False
+e0854_41Dr1	41Dr1	1	41.0	deep	1.0		desert biome	saline pan	19/03/2023	20.539777222222224 N,51.94610583333333 E	False	False
+e0855_42Sr3	42Sr3	1	42.0	surface	3.0		desert biome	sand dune	19/03/2023	20.55516 N, 52.12403 E	False	False
+e0856_48PRr3	48PRr3	1	48.0	plant_rhizosphere	3.0		desert biome	desert oasis	19/03/2023	20.568648333333332 N,53.09404833333333 E	False	False
+e0857_50Sr2	50Sr2	1	50.0	surface	2.0		desert biome	sand dune	20/03/2023	20.71385 N, 53.41230 E	False	False
+e0858_53Sr3	53Sr3	1	53.0	surface	3.0		desert biome	sand dune	20/03/2023	20.851514166666668 N,53.75788444444444 E	False	False
+e0859_53PRr1	53PRr1	1	53.0	plant_rhizosphere	1.0		desert biome	sand dune	20/03/2023	20.851514166666668 N,53.75788444444444 E	False	False
+e0860_55Sr1	55Sr1	1	55.0	surface	1.0		desert biome	saline pan	20/03/2023	20.9022725 N,54.0024376 E	False	False
+e0861_61Sr2	61Sr2	1	61.0	surface	2.0						False	False
+e0862_T2Dr2	T2Dr2	2	2.0	deep	2.0		desert biome	sand dune	14/07/2023	19.203468333333333 N,45.2447675 E	False	False
+e0863_T2PRr1	T2PRr1	2	2.0	plant_rhizosphere	1.0		desert biome	sand dune	14/07/2023	19.203468333333333 N,45.2447675 E	False	False
+e0864_T3Dr2	T3Dr2	2	3.0	deep	2.0		desert biome	sand dune	14/07/2023	19.301079444444444 N,45.384414166666666 E	False	False
+e0865_T5Sr3	T5Sr3	2	5.0	surface	3.0		desert biome	saline pan	14/07/2023	19.407155277777775 N,45.659501388888884 E	False	False
+e0866_T6PRr2	T6PRr2	2	6.0	plant_rhizosphere	2.0		desert biome	saline pan	14/07/2023	19.405739166666667 N,45.8161425 E	False	False
+e0867_T7PRr2	T7PRr2	2	7.0	plant_rhizosphere	2.0		desert biome	sand dune	14/07/2023	19.407005277777778 N,45.953943611111114 E	False	False
+e0868_T8Dr1	T8Dr1	2	8.0	deep	1.0		desert biome	sand dune	14/07/2023	19.393154166666665 N,46.110734722222226 E	False	False
+e0869_T8PRr1	T8PRr1	2	8.0	plant_rhizosphere	1.0		desert biome	sand dune	14/07/2023	19.393154166666665 N,46.110734722222226 E	False	False
+e0873_F1PRr2	F1PRr2	3	1.0	plant_rhizosphere	2.0		desert biome	gravel	17/02/2024	19.149770555555556 N,45.166511388888885 E	False	True
+e0876_S18PRr1	S18PRr1	4	18.0	plant_rhizosphere	1.0		desert biome	sand dune	29/08/2024	19.732518055555555 N,48.046860555555554 E	False	False
+e0877_S18Sr1	S18Sr1	4	18.0	surface	1.0		desert biome	sand dune	29/08/2024	19.732518055555555 N,48.046860555555554 E	False	False
+e0878_S18Dr1	S18Dr1	4	18.0	deep	1.0		desert biome	sand dune	29/08/2024	19.732518055555555 N,48.046860555555554 E	False	False
+e0880_3Sr3	3Sr3	1	3.0	surface	3.0		desert biome	sand dune	17/03/2023	19.301079444444444 N,45.384414166666666 E	False	False
+e0881_4Dr2	4Dr2	1	4.0	deep	2.0		desert biome	saline pan	17/03/2023	19.379571666666667 N,45.55182694444444 E	False	False
+e0882_7Dr2	7Dr2	1	7.0	deep	2.0		desert biome	sand dune	17/03/2023	19.407005277777778 N,45.953943611111114 E	False	False
+e0883_8PRr3	8PRr3	1	8.0	plant_rhizosphere	3.0		desert biome	sand dune	17/03/2023	19.393154166666665 N,46.110734722222226 E	False	False
+e0884_10PRr3	10PRr3	1	10.0	plant_rhizosphere	3.0		desert biome	sand dune	17/03/2023	19.420469722222222 N,46.460795277777784 E	False	False
+e0885_11Dr1	11Dr1	1	11.0	deep	1.0		desert biome	sand dune	17/03/2023	19.44435222222222 N,46.6356325 E	False	False
+e0886_11PRr2	11PRr2	1	11.0	plant_rhizosphere	2.0		desert biome	sand dune	17/03/2023	19.44435222222222 N,46.6356325 E	False	False
+e0887_12Dr2	12Dr2	1	12.0	deep	2.0		desert biome	sand dune	17/03/2023	19.47793361111111 N,46.83437333333334 E	False	False
+e0888_12Dr3	12Dr3	1	12.0	deep	3.0		desert biome	sand dune	17/03/2023	19.47793361111111 N,46.83437333333334 E	False	False
+e0889_19Dr3	19Dr3	1	19.0	deep	3.0		desert biome	sand dune	18/03/2023	19.81231916666667 N,48.24049472222222 E	False	False
+e0890_19Sr1	19Sr1	1	19.0	surface	1.0		desert biome	sand dune	18/03/2023	19.81231916666667 N,48.24049472222222 E	False	False
+e0891_19Sr3	19Sr3	1	19.0	surface	3.0		desert biome	sand dune	18/03/2023	19.81231916666667 N,48.24049472222222 E	False	False
+e0892_20Dr1	20Dr1	1	20.0	deep	1.0		desert biome	dune slack	18/03/2023	19.869310833333333 N,48.42464444444444 E	False	False
+e0893_20Sr1	20Sr1	1	20.0	surface	1.0		desert biome	dune slack	18/03/2023	19.869310833333333 N,48.42464444444444 E	False	False
+e0894_20Sr3	20Sr3	1	20.0	surface	3.0		desert biome	dune slack	18/03/2023	19.869310833333333 N,48.42464444444444 E	False	False
+e0895_22Sr1	22Sr1	1	22.0	surface	1.0		desert biome	saline pan	18/03/2023	19.97866972222222 N,48.63943555555556 E	False	False
+e0896_22Sr3	22Sr3	1	22.0	surface	3.0		desert biome	saline pan	18/03/2023	19.97866972222222 N,48.63943555555556 E	False	False
+e0897_23PRr2	23PRr2	1	23.0	plant_rhizosphere	2.0		desert biome	sand dune	18/03/2023	20.049265555555557 N,48.773331388888884 E	False	False
+e0898_23PRr3	23PRr3	1	23.0	plant_rhizosphere	3.0		desert biome	sand dune	18/03/2023	20.049265555555557 N,48.773331388888884 E	False	False
+e0899_23Sr1	23Sr1	1	23.0	surface	1.0		desert biome	sand dune	18/03/2023	20.049265555555557 N,48.773331388888884 E	False	False
+e0900_24Sr1	24Sr1	1	24.0	surface	1.0		desert biome	sand dune	18/03/2023	20.09273861111111 N,48.89939527777778 E	False	False
+e0901_29PRr2	29PRr2	1	29.0	plant_rhizosphere	2.0		desert biome	sand dune	18/03/2023	20.2597976 N,49.5675445 E	False	False
+e0902_29Sr2	29Sr2	1	29.0	surface	2.0		desert biome	sand dune	18/03/2023	20.2597976 N,49.5675445 E	False	False
+e0903_32PRr1	32PRr1	1	32.0	plant_rhizosphere	1.0		desert biome	sand dune	18/03/2023	20.310684166666668 N,50.09302138888889 E	False	False
+e0904_32PRr3	32PRr3	1	32.0	plant_rhizosphere	3.0		desert biome	sand dune	18/03/2023	20.310684166666668 N,50.09302138888889 E	False	False
+e0905_33Dr1	33Dr1	1	33.0	deep	1.0		desert biome	sand dune	18/03/2023	20.317507777777777 N,50.30307027777778 E	False	False
+e0906_33Sr2	33Sr2	1	33.0	surface	2.0		desert biome	sand dune	18/03/2023	20.317507777777777 N,50.30307027777778 E	False	False
+e0907_34Dr3	34Dr3	1	34.0	deep	3.0		desert biome	sand dune	18/03/2023	20.344394444444443 N,50.5153725 E	False	False
+e0908_35PRr1	35PRr1	1	35.0	plant_rhizosphere	1.0		desert biome	sand dune	18/03/2023	20.371795833333334 N,50.72999222222222 E	False	False
+e0909_35Sr1	35Sr1	1	35.0	surface	1.0		desert biome	sand dune	18/03/2023	20.371795833333334 N,50.72999222222222 E	False	False
+e0910_36Sr1	36Sr1	1	36.0	surface	1.0		desert biome	sand dune	19/03/2023	20.42319 N, 51.14483 E	False	False
+e0911_38Sr3	38Sr3	1	38.0	surface	3.0		desert biome	sand dune	19/03/2023	20.4610275 N,51.370224722222225 E	False	False
+e0912_40PRr3	40PRr3	1	40.0	plant_rhizosphere	3.0		desert biome	sand dune	19/03/2023	20.54718 N, 51.82559 E	False	False
+e0913_43Sr1	43Sr1	1	43.0	surface	1.0		desert biome	sand dune	19/03/2023	20.567575555555557 N,52.22413277777778 E	False	False
+e0914_44PRr2	44PRr2	1	44.0	plant_rhizosphere	2.0		desert biome	sand dune	19/03/2023	20.56783 N, 52.41036 E	False	False
+e0915_45Dr1	45Dr1	1	45.0	deep	1.0		desert biome	sand dune	19/03/2023	20.56346 N, 52.46776 E	False	False
+e0916_45Sr1	45Sr1	1	45.0	surface	1.0		desert biome	sand dune	19/03/2023	20.56346 N, 52.46776 E	False	False
+e0917_46Dr1	46Dr1	1	46.0	deep	1.0		desert biome	sand dune	19/03/2023	20.553746111111113 N,52.66920777777778 E	False	False
+e0918_46Sr3	46Sr3	1	46.0	surface	3.0		desert biome	sand dune	19/03/2023	20.553746111111113 N,52.66920777777778 E	False	False
+e0919_49PRr2	49PRr2	1	49.0	plant_rhizosphere	2.0		desert biome	sand dune	19/03/2023	20.644662222222223 N,53.28794 E	False	False
+e0920_51Sr2	51Sr2	1	51.0	surface	2.0		desert biome	saline pan	20/03/2023	20.79870 N, 53.48700 E	False	False
+e0921_50PRr1	50PRr1	1	50.0	plant_rhizosphere	1.0		desert biome	sand dune	20/03/2023	20.71385 N, 53.41230 E	False	False
+e0922_54Dr1	54Dr1	1	54.0	deep	1.0		desert biome	aeolian lake	20/03/2023	20.92017888888889 N,53.962204444444446 E	False	False
+e0923_54Dr2	54Dr2	1	54.0	deep	2.0		desert biome	aeolian lake	20/03/2023	20.92017888888889 N,53.962204444444446 E	False	False
+e0924_55PRr1	55PRr1	1	55.0	plant_rhizosphere	1.0		desert biome	saline pan	20/03/2023	20.9022725 N,54.0024376 E	False	False
+e0925_57PRr1	57PRr1	1	57.0	plant_rhizosphere	1.0		desert biome	sand dune	20/03/2023	20.7349775 N,54.41764333333333 E	False	False
+e0926_57Sr2	57Sr2	1	57.0	surface	2.0		desert biome	sand dune	20/03/2023	20.7349775 N,54.41764333333333 E	False	False
+e0927_60Dr2	60Dr2	1	60.0	deep	2.0		desert biome	desert oasis	20/03/2023	20.706374444444442 N,54.732105555555556 E	False	False
+e0928_60Dr3	60Dr3	1	60.0	deep	3.0		desert biome	desert oasis	20/03/2023	20.706374444444442 N,54.732105555555556 E	False	False
+e681_T1Dr1	T1Dr1	2	1.0	deep	1.0		desert biome	gravel	14/07/2023	19.149770555555556 N,45.166511388888885 E	False	True
+e683_T4PRr1	T4PRr1	2	4.0	plant_rhizosphere	1.0		desert biome	saline pan	14/07/2023	19.379571666666667 N,45.55182694444444 E	False	False
+e695_T6Dr2	T6Dr2	2	6.0	deep	2.0		desert biome	saline pan	14/07/2023	19.405739166666667 N,45.8161425 E	False	False
+e705_T5PRr1	T5PRr1	2	5.0	plant_rhizosphere	1.0		desert biome	saline pan	14/07/2023	19.407155277777775 N,45.659501388888884 E	False	False
+e707_T7Dr3	T7Dr3	2	7.0	deep	3.0		desert biome	sand dune	14/07/2023	19.407005277777778 N,45.953943611111114 E	False	False
+e717_T6PRr3	T6PRr3	2	6.0	plant_rhizosphere	3.0		desert biome	saline pan	14/07/2023	19.405739166666667 N,45.8161425 E	False	False
+e719_T8Sr3	T8Sr3	2	8.0	surface	3.0		desert biome	sand dune	14/07/2023	19.393154166666665 N,46.110734722222226 E	False	False
+e729_T8Dr3	T8Dr3	2	8.0	deep	3.0		desert biome	sand dune	14/07/2023	19.393154166666665 N,46.110734722222226 E	False	False
+e730_T6Dr1	T6Dr1	2	6.0	deep	1.0		desert biome	saline pan	14/07/2023	19.405739166666667 N,45.8161425 E	False	False
+e734_T5Sr2	T5Sr2	2	5.0	surface	2.0		desert biome	saline pan	14/07/2023	19.407155277777775 N,45.659501388888884 E	False	False
+e740_T6Sr3	T6Sr3	2	6.0	surface	3.0		desert biome	saline pan	14/07/2023	19.405739166666667 N,45.8161425 E	False	False
+e743_T4PRr2	T4PRr2	2	4.0	plant_rhizosphere	2.0		desert biome	saline pan	14/07/2023	19.379571666666667 N,45.55182694444444 E	False	False
+e744_T8PRr3	T8PRr3	2	8.0	plant_rhizosphere	3.0		desert biome	sand dune	14/07/2023	19.393154166666665 N,46.110734722222226 E	False	False
+e752_T7PRr1	T7PRr1	2	7.0	plant_rhizosphere	1.0		desert biome	sand dune	14/07/2023	19.407005277777778 N,45.953943611111114 E	False	False
+e753_T4Sr1	T4Sr1	2	4.0	surface	1.0		desert biome	saline pan	14/07/2023	19.379571666666667 N,45.55182694444444 E	False	False
+e756_T2PRr3	T2PRr3	2	2.0	plant_rhizosphere	3.0		desert biome	sand dune	14/07/2023	19.203468333333333 N,45.2447675 E	False	False
+e758_T7PRr3	T7PRr3	2	7.0	plant_rhizosphere	3.0		desert biome	sand dune	14/07/2023	19.407005277777778 N,45.953943611111114 E	False	False
+e767_T1PRr3	T1PRr3	2	1.0	plant_rhizosphere	3.0		desert biome	gravel	14/07/2023	19.149770555555556 N,45.166511388888885 E	False	False
+e768_T5Sr1	T5Sr1	2	5.0	surface	1.0		desert biome	saline pan	14/07/2023	19.407155277777775 N,45.659501388888884 E	False	False
+e8287_F1Dr1	F1Dr1	3	1.0	deep	1.0		desert biome	gravel	17/02/2024	19.149770555555556 N,45.166511388888885 E	False	False
+e8288_F1Dr2	F1Dr2	3	1.0	deep	2.0		desert biome	gravel	17/02/2024	19.149770555555556 N,45.166511388888885 E	False	False
+e8289_F1Dr3	F1Dr3	3	1.0	deep	3.0		desert biome	gravel	17/02/2024	19.149770555555556 N,45.166511388888885 E	False	False
+e8290_F1Sr1	F1Sr1	3	1.0	surface	1.0		desert biome	gravel	17/02/2024	19.149770555555556 N,45.166511388888885 E	False	False
+e8291_F1Sr2	F1Sr2	3	1.0	surface	2.0		desert biome	gravel	17/02/2024	19.149770555555556 N,45.166511388888885 E	False	False
+e8292_F1Sr3	F1Sr3	3	1.0	surface	3.0		desert biome	gravel	17/02/2024	19.149770555555556 N,45.166511388888885 E	False	False
+e8293_F1PRr1	F1PRr1	3	1.0	plant_rhizosphere	1.0		desert biome	gravel	17/02/2024	19.149770555555556 N,45.166511388888885 E	False	False
+e8295_F1PRr3	F1PRr3	3	1.0	plant_rhizosphere	3.0		desert biome	gravel	17/02/2024	19.149770555555556 N,45.166511388888885 E	False	False
+e8296_F2Dr1	F2Dr1	3	2.0	deep	1.0		desert biome	sand dune	17/02/2024	19.203468333333333 N,45.2447675 E	False	False
+e8297_F2Dr2	F2Dr2	3	2.0	deep	2.0		desert biome	sand dune	17/02/2024	19.203468333333333 N,45.2447675 E	False	False
+e8298_F2Dr3	F2Dr3	3	2.0	deep	3.0		desert biome	sand dune	17/02/2024	19.203468333333333 N,45.2447675 E	False	False
+e8299_F2Sr1	F2Sr1	3	2.0	surface	1.0		desert biome	sand dune	17/02/2024	19.203468333333333 N,45.2447675 E	False	False
+e8300_F2Sr2	F2Sr2	3	2.0	surface	2.0		desert biome	sand dune	17/02/2024	19.203468333333333 N,45.2447675 E	False	False
+e8301_F2Sr3	F2Sr3	3	2.0	surface	3.0		desert biome	sand dune	17/02/2024	19.203468333333333 N,45.2447675 E	False	False
+e8302_F2PRr1	F2PRr1	3	2.0	plant_rhizosphere	1.0		desert biome	sand dune	17/02/2024	19.203468333333333 N,45.2447675 E	False	False
+e8303_F2PRr2	F2PRr2	3	2.0	plant_rhizosphere	2.0		desert biome	sand dune	17/02/2024	19.203468333333333 N,45.2447675 E	False	False
+e8304_F2PRr3	F2PRr3	3	2.0	plant_rhizosphere	3.0		desert biome	sand dune	17/02/2024	19.203468333333333 N,45.2447675 E	False	False
+e8305_F3Dr1	F3Dr1	3	3.0	deep	1.0		desert biome	sand dune	17/02/2024	19.301079444444444 N,45.384414166666666 E	False	False
+e8306_F3Dr2	F3Dr2	3	3.0	deep	2.0		desert biome	sand dune	17/02/2024	19.301079444444444 N,45.384414166666666 E	False	False
+e8307_F3Dr3	F3Dr3	3	3.0	deep	3.0		desert biome	sand dune	17/02/2024	19.301079444444444 N,45.384414166666666 E	False	False
+e8308_F3Sr1	F3Sr1	3	3.0	surface	1.0		desert biome	sand dune	17/02/2024	19.301079444444444 N,45.384414166666666 E	False	False
+e8309_F3Sr2	F3Sr2	3	3.0	surface	2.0		desert biome	sand dune	17/02/2024	19.301079444444444 N,45.384414166666666 E	False	False
+e8310_F3Sr3	F3Sr3	3	3.0	surface	3.0		desert biome	sand dune	17/02/2024	19.301079444444444 N,45.384414166666666 E	False	False
+e8311_F3PRr1	F3PRr1	3	3.0	plant_rhizosphere	1.0		desert biome	sand dune	17/02/2024	19.301079444444444 N,45.384414166666666 E	False	False
+e8312_F3PRr2	F3PRr2	3	3.0	plant_rhizosphere	2.0		desert biome	sand dune	17/02/2024	19.301079444444444 N,45.384414166666666 E	False	False
+e8313_F4Dr1	F4Dr1	3	4.0	deep	1.0		desert biome	saline pan	17/02/2024	19.379571666666667 N,45.55182694444444 E	False	False
+e8314_F4Dr2	F4Dr2	3	4.0	deep	2.0		desert biome	saline pan	17/02/2024	19.379571666666667 N,45.55182694444444 E	False	False
+e8315_F4Sr1	F4Sr1	3	4.0	surface	1.0		desert biome	saline pan	17/02/2024	19.379571666666667 N,45.55182694444444 E	False	False
+e8316_F4Sr2	F4Sr2	3	4.0	surface	2.0		desert biome	saline pan	17/02/2024	19.379571666666667 N,45.55182694444444 E	False	False
+e8317_F4Sr3	F4Sr3	3	4.0	surface	3.0		desert biome	saline pan	17/02/2024	19.379571666666667 N,45.55182694444444 E	False	False
+e8318_F4PRr1	F4PRr1	3	4.0	plant_rhizosphere	1.0		desert biome	saline pan	17/02/2024	19.379571666666667 N,45.55182694444444 E	False	False
+e8319_F4PRr2	F4PRr2	3	4.0	plant_rhizosphere	2.0		desert biome	saline pan	17/02/2024	19.379571666666667 N,45.55182694444444 E	False	False
+e8320_F5Dr2	F5Dr2	3	5.0	deep	2.0		desert biome	saline pan	17/02/2024	19.407155277777775 N,45.659501388888884 E	False	False
+e8321_F5Dr3	F5Dr3	3	5.0	deep	3.0		desert biome	saline pan	17/02/2024	19.407155277777775 N,45.659501388888884 E	False	False
+e8322_F5Sr1	F5Sr1	3	5.0	surface	1.0		desert biome	saline pan	17/02/2024	19.407155277777775 N,45.659501388888884 E	False	False
+e8323_F5Sr2	F5Sr2	3	5.0	surface	2.0		desert biome	saline pan	17/02/2024	19.407155277777775 N,45.659501388888884 E	False	False
+e8324_F5Sr3	F5Sr3	3	5.0	surface	3.0		desert biome	saline pan	17/02/2024	19.407155277777775 N,45.659501388888884 E	False	False
+e8325_F5PRr2	F5PRr2	3	5.0	plant_rhizosphere	2.0		desert biome	saline pan	17/02/2024	19.407155277777775 N,45.659501388888884 E	False	False
+e8326_F6Dr1	F6Dr1	3	6.0	deep	1.0		desert biome	saline pan	17/02/2024	19.405739166666667 N,45.8161425 E	False	False
+e8327_F6Sr1	F6Sr1	3	6.0	surface	1.0		desert biome	saline pan	17/02/2024	19.405739166666667 N,45.8161425 E	False	False
+e8328_F6Sr2	F6Sr2	3	6.0	surface	2.0		desert biome	saline pan	17/02/2024	19.405739166666667 N,45.8161425 E	False	False
+e8329_F6Sr3	F6Sr3	3	6.0	surface	3.0		desert biome	saline pan	17/02/2024	19.405739166666667 N,45.8161425 E	False	False
+e8330_F6PRr1	F6PRr1	3	6.0	plant_rhizosphere	1.0		desert biome	saline pan	17/02/2024	19.405739166666667 N,45.8161425 E	False	False
+e8331_F6PRr2	F6PRr2	3	6.0	plant_rhizosphere	2.0		desert biome	saline pan	17/02/2024	19.405739166666667 N,45.8161425 E	False	False
+e8332_F6PRr3	F6PRr3	3	6.0	plant_rhizosphere	3.0		desert biome	saline pan	17/02/2024	19.405739166666667 N,45.8161425 E	False	False
+e8333_F7Dr1	F7Dr1	3	7.0	deep	1.0		desert biome	sand dune	17/02/2024	19.407005277777778 N,45.953943611111114 E	False	False
+e8334_F7Dr2	F7Dr2	3	7.0	deep	2.0		desert biome	sand dune	17/02/2024	19.407005277777778 N,45.953943611111114 E	False	False
+e8335_F7Dr3	F7Dr3	3	7.0	deep	3.0		desert biome	sand dune	17/02/2024	19.407005277777778 N,45.953943611111114 E	False	False
+e8336_F7Sr1	F7Sr1	3	7.0	surface	1.0		desert biome	sand dune	17/02/2024	19.407005277777778 N,45.953943611111114 E	False	False
+e8337_F7Sr2	F7Sr2	3	7.0	surface	2.0		desert biome	sand dune	17/02/2024	19.407005277777778 N,45.953943611111114 E	False	False
+e8338_F7Sr3	F7Sr3	3	7.0	surface	3.0		desert biome	sand dune	17/02/2024	19.407005277777778 N,45.953943611111114 E	False	False
+e8339_F7PRr1	F7PRr1	3	7.0	plant_rhizosphere	1.0		desert biome	sand dune	17/02/2024	19.407005277777778 N,45.953943611111114 E	False	False
+e8340_F7PRr2	F7PRr2	3	7.0	plant_rhizosphere	2.0		desert biome	sand dune	17/02/2024	19.407005277777778 N,45.953943611111114 E	False	False
+e8341_F7PRr3	F7PRr3	3	7.0	plant_rhizosphere	3.0		desert biome	sand dune	17/02/2024	19.407005277777778 N,45.953943611111114 E	False	False
+e8342_F8Dr1	F8Dr1	3	8.0	deep	1.0		desert biome	sand dune	17/02/2024	19.393154166666665 N,46.110734722222226 E	False	False
+e8343_F8Dr2	F8Dr2	3	8.0	deep	2.0		desert biome	sand dune	17/02/2024	19.393154166666665 N,46.110734722222226 E	False	False
+e8344_F8Dr3	F8Dr3	3	8.0	deep	3.0		desert biome	sand dune	17/02/2024	19.393154166666665 N,46.110734722222226 E	False	False
+e8345_F8Sr1	F8Sr1	3	8.0	surface	1.0		desert biome	sand dune	17/02/2024	19.393154166666665 N,46.110734722222226 E	False	False
+e8346_F8Sr2	F8Sr2	3	8.0	surface	2.0		desert biome	sand dune	17/02/2024	19.393154166666665 N,46.110734722222226 E	False	False
+e8347_F8Sr3	F8Sr3	3	8.0	surface	3.0		desert biome	sand dune	17/02/2024	19.393154166666665 N,46.110734722222226 E	False	False
+e8348_F8PRr1	F8PRr1	3	8.0	plant_rhizosphere	1.0		desert biome	sand dune	17/02/2024	19.393154166666665 N,46.110734722222226 E	False	False
+e8349_F8PRr2	F8PRr2	3	8.0	plant_rhizosphere	2.0		desert biome	sand dune	17/02/2024	19.393154166666665 N,46.110734722222226 E	False	False
+e8350_F8PRr3	F8PRr3	3	8.0	plant_rhizosphere	3.0		desert biome	sand dune	17/02/2024	19.393154166666665 N,46.110734722222226 E	False	False
+e8351_F9Dr1	F9Dr1	3	9.0	deep	1.0		desert biome	sand dune	17/02/2024	19.411200277777777 N,46.30267361111111 E	False	False
+e8352_F9Dr2	F9Dr2	3	9.0	deep	2.0		desert biome	sand dune	17/02/2024	19.411200277777777 N,46.30267361111111 E	False	False
+e8353_F9Dr3	F9Dr3	3	9.0	deep	3.0		desert biome	sand dune	17/02/2024	19.411200277777777 N,46.30267361111111 E	False	False
+e8354_F9Sr1	F9Sr1	3	9.0	surface	1.0		desert biome	sand dune	17/02/2024	19.411200277777777 N,46.30267361111111 E	False	False
+e8355_F9Sr2	F9Sr2	3	9.0	surface	2.0		desert biome	sand dune	17/02/2024	19.411200277777777 N,46.30267361111111 E	False	False
+e8356_F9Sr3	F9Sr3	3	9.0	surface	3.0		desert biome	sand dune	17/02/2024	19.411200277777777 N,46.30267361111111 E	False	False
+e8357_F9PRr1	F9PRr1	3	9.0	plant_rhizosphere	1.0		desert biome	sand dune	17/02/2024	19.411200277777777 N,46.30267361111111 E	False	False
+e8358_F9PRr2	F9PRr2	3	9.0	plant_rhizosphere	2.0		desert biome	sand dune	17/02/2024	19.411200277777777 N,46.30267361111111 E	False	False
+e8359_F9PRr3	F9PRr3	3	9.0	plant_rhizosphere	3.0		desert biome	sand dune	17/02/2024	19.411200277777777 N,46.30267361111111 E	False	False
+e8360_F10Dr1	F10Dr1	3	10.0	deep	1.0		desert biome	sand dune	17/02/2024	19.420469722222222 N,46.460795277777784 E	False	False
+e8361_F10Dr2	F10Dr2	3	10.0	deep	2.0		desert biome	sand dune	17/02/2024	19.420469722222222 N,46.460795277777784 E	False	False
+e8362_F10Dr3	F10Dr3	3	10.0	deep	3.0		desert biome	sand dune	17/02/2024	19.420469722222222 N,46.460795277777784 E	False	False
+e8363_F10Sr1	F10Sr1	3	10.0	surface	1.0		desert biome	sand dune	17/02/2024	19.420469722222222 N,46.460795277777784 E	False	False
+e8364_F10Sr2	F10Sr2	3	10.0	surface	2.0		desert biome	sand dune	17/02/2024	19.420469722222222 N,46.460795277777784 E	False	False
+e8365_F10Sr3	F10Sr3	3	10.0	surface	3.0		desert biome	sand dune	17/02/2024	19.420469722222222 N,46.460795277777784 E	False	False
+e8366_F10PRr1	F10PRr1	3	10.0	plant_rhizosphere	1.0		desert biome	sand dune	17/02/2024	19.420469722222222 N,46.460795277777784 E	False	False
+e8367_F10PRr2	F10PRr2	3	10.0	plant_rhizosphere	2.0		desert biome	sand dune	17/02/2024	19.420469722222222 N,46.460795277777784 E	False	False
+e8368_F11Dr1	F11Dr1	3	11.0	deep	1.0		desert biome	sand dune	17/02/2024	19.44435222222222 N,46.6356325 E	False	False
+e8369_F11Dr2	F11Dr2	3	11.0	deep	2.0		desert biome	sand dune	17/02/2024	19.44435222222222 N,46.6356325 E	False	False
+e8370_F11Dr3	F11Dr3	3	11.0	deep	3.0		desert biome	sand dune	17/02/2024	19.44435222222222 N,46.6356325 E	False	False
+e8371_F11Sr1	F11Sr1	3	11.0	surface	1.0		desert biome	sand dune	17/02/2024	19.44435222222222 N,46.6356325 E	False	False
+e8372_F11Sr2	F11Sr2	3	11.0	surface	2.0		desert biome	sand dune	17/02/2024	19.44435222222222 N,46.6356325 E	False	False
+e8373_F11Sr3	F11Sr3	3	11.0	surface	3.0		desert biome	sand dune	17/02/2024	19.44435222222222 N,46.6356325 E	False	False
+e8374_F1PRr2	F1PRr2	3	1.0	plant_rhizosphere	2.0		desert biome	gravel	17/02/2024	19.149770555555556 N,45.166511388888885 E	False	True
+e8375_F11PRr1	F11PRr1	3	11.0	plant_rhizosphere	1.0		desert biome	sand dune	17/02/2024	19.44435222222222 N,46.6356325 E	False	False
+e8376_F12Sr3	F12Sr3	3	12.0	surface	3.0		desert biome	sand dune	17/02/2024	19.47793361111111 N,46.83437333333334 E	False	False
+e8377_F13Sr2	F13Sr2	3	13.0	surface	2.0		desert biome	sand dune	17/02/2024	19.52934611111111 N,47.053284444444444 E	False	False
+e8378_F14Sr1	F14Sr1	3	14.0	surface	1.0		desert biome	sand dune	17/02/2024	19.581338055555555 N,47.2920225 E	False	False
+e8379_F15Dr3	F15Dr3	3	15.0	deep	3.0		desert biome	sand dune	17/02/2024	19.613749722222224 N,47.47587194444445 E	False	False
+e8380_F16Dr2	F16Dr2	3	16.0	deep	2.0		desert biome	sand dune	17/02/2024	19.644455833333332 N,47.62611861111111 E	False	False
+e8381_F17Dr1	F17Dr1	3	17.0	deep	1.0		desert biome	sand dune	18/02/2024	19.676460000000002 N,47.82730555555556 E	False	False
+e8382_F17PRr3	F17PRr3	3	17.0	plant_rhizosphere	3.0		desert biome	sand dune	18/02/2024	19.676460000000002 N,47.82730555555556 E	False	False
+e8383_F18PRr2	F18PRr2	3	18.0	plant_rhizosphere	2.0		desert biome	sand dune	18/02/2024	19.732518055555555 N,48.046860555555554 E	False	False
+e8384_F19PRr1	F19PRr1	3	19.0	plant_rhizosphere	1.0		desert biome	sand dune	18/02/2024	19.81231916666667 N,48.24049472222222 E	False	False
+e8385_F20Sr3	F20Sr3	3	20.0	surface	3.0		desert biome	dune slack	18/02/2024	19.869310833333333 N,48.42464444444444 E	False	True
+e8386_F21Sr2	F21Sr2	3	21.0	surface	2.0		desert biome	oilspill	18/02/2024	19.9011325 N,48.48646388888889 E	False	False
+e8387_F11PRr2	F11PRr2	3	11.0	plant_rhizosphere	2.0		desert biome	sand dune	17/02/2024	19.44435222222222 N,46.6356325 E	False	False
+e8388_F12PRr1	F12PRr1	3	12.0	plant_rhizosphere	1.0		desert biome	sand dune	17/02/2024	19.47793361111111 N,46.83437333333334 E	False	False
+e8389_F13Sr3	F13Sr3	3	13.0	surface	3.0		desert biome	sand dune	17/02/2024	19.52934611111111 N,47.053284444444444 E	False	False
+e8390_F14Sr2	F14Sr2	3	14.0	surface	2.0		desert biome	sand dune	17/02/2024	19.581338055555555 N,47.2920225 E	False	False
+e8391_F15Sr1	F15Sr1	3	15.0	surface	1.0		desert biome	sand dune	17/02/2024	19.613749722222224 N,47.47587194444445 E	False	False
+e8392_F16Dr3	F16Dr3	3	16.0	deep	3.0		desert biome	sand dune	17/02/2024	19.644455833333332 N,47.62611861111111 E	False	False
+e8393_F17Dr2	F17Dr2	3	17.0	deep	2.0		desert biome	sand dune	18/02/2024	19.676460000000002 N,47.82730555555556 E	False	False
+e8394_F18Dr1	F18Dr1	3	18.0	deep	1.0		desert biome	sand dune	18/02/2024	19.732518055555555 N,48.046860555555554 E	False	False
+e8395_F18PRr3	F18PRr3	3	18.0	plant_rhizosphere	3.0		desert biome	sand dune	18/02/2024	19.732518055555555 N,48.046860555555554 E	False	False
+e8396_F19PRr2	F19PRr2	3	19.0	plant_rhizosphere	2.0		desert biome	sand dune	18/02/2024	19.81231916666667 N,48.24049472222222 E	False	False
+e8397_F20PRr1	F20PRr1	3	20.0	plant_rhizosphere	1.0		desert biome	dune slack	18/02/2024	19.869310833333333 N,48.42464444444444 E	False	False
+e8398_F21Sr3	F21Sr3	3	21.0	surface	3.0		desert biome	oilspill	18/02/2024	19.9011325 N,48.48646388888889 E	False	False
+e8399_F11PRr3	F11PRr3	3	11.0	plant_rhizosphere	3.0		desert biome	sand dune	17/02/2024	19.44435222222222 N,46.6356325 E	False	False
+e8400_F12PRr2	F12PRr2	3	12.0	plant_rhizosphere	2.0		desert biome	sand dune	17/02/2024	19.47793361111111 N,46.83437333333334 E	False	False
+e8401_F13PRr1	F13PRr1	3	13.0	plant_rhizosphere	1.0		desert biome	sand dune	17/02/2024	19.52934611111111 N,47.053284444444444 E	False	False
+e8402_F14Sr3	F14Sr3	3	14.0	surface	3.0		desert biome	sand dune	17/02/2024	19.581338055555555 N,47.2920225 E	False	False
+e8403_F15Sr2	F15Sr2	3	15.0	surface	2.0		desert biome	sand dune	17/02/2024	19.613749722222224 N,47.47587194444445 E	False	False
+e8404_F16Sr1	F16Sr1	3	16.0	surface	1.0		desert biome	sand dune	17/02/2024	19.644455833333332 N,47.62611861111111 E	False	False
+e8405_F17Dr3	F17Dr3	3	17.0	deep	3.0		desert biome	sand dune	18/02/2024	19.676460000000002 N,47.82730555555556 E	False	False
+e8406_F18Dr2	F18Dr2	3	18.0	deep	2.0		desert biome	sand dune	18/02/2024	19.732518055555555 N,48.046860555555554 E	False	False
+e8407_F19Dr1	F19Dr1	3	19.0	deep	1.0		desert biome	sand dune	18/02/2024	19.81231916666667 N,48.24049472222222 E	False	False
+e8408_F19PRr3	F19PRr3	3	19.0	plant_rhizosphere	3.0		desert biome	sand dune	18/02/2024	19.81231916666667 N,48.24049472222222 E	False	False
+e8409_F20PRr2	F20PRr2	3	20.0	plant_rhizosphere	2.0		desert biome	dune slack	18/02/2024	19.869310833333333 N,48.42464444444444 E	False	False
+e8410_F21PRr1	F21PRr1	3	21.0	plant_rhizosphere	1.0		desert biome	oilspill	18/02/2024	19.9011325 N,48.48646388888889 E	False	False
+e8411_F12Dr1	F12Dr1	3	12.0	deep	1.0		desert biome	sand dune	17/02/2024	19.47793361111111 N,46.83437333333334 E	False	False
+e8412_F12PRr3	F12PRr3	3	12.0	plant_rhizosphere	3.0		desert biome	sand dune	17/02/2024	19.47793361111111 N,46.83437333333334 E	False	False
+e8413_F13PRr2	F13PRr2	3	13.0	plant_rhizosphere	2.0		desert biome	sand dune	17/02/2024	19.52934611111111 N,47.053284444444444 E	False	False
+e8414_F14PRr1	F14PRr1	3	14.0	plant_rhizosphere	1.0		desert biome	sand dune	17/02/2024	19.581338055555555 N,47.2920225 E	False	False
+e8415_F15Sr3	F15Sr3	3	15.0	surface	3.0		desert biome	sand dune	17/02/2024	19.613749722222224 N,47.47587194444445 E	False	False
+e8416_F16Sr2	F16Sr2	3	16.0	surface	2.0		desert biome	sand dune	17/02/2024	19.644455833333332 N,47.62611861111111 E	False	False
+e8417_F17Sr1	F17Sr1	3	17.0	surface	1.0		desert biome	sand dune	18/02/2024	19.676460000000002 N,47.82730555555556 E	False	False
+e8418_F18Dr3	F18Dr3	3	18.0	deep	3.0		desert biome	sand dune	18/02/2024	19.732518055555555 N,48.046860555555554 E	False	False
+e8419_F19Dr2	F19Dr2	3	19.0	deep	2.0		desert biome	sand dune	18/02/2024	19.81231916666667 N,48.24049472222222 E	False	False
+e8420_F20Dr1	F20Dr1	3	20.0	deep	1.0		desert biome	dune slack	18/02/2024	19.869310833333333 N,48.42464444444444 E	False	False
+e8421_F20PRr3	F20PRr3	3	20.0	plant_rhizosphere	3.0		desert biome	dune slack	18/02/2024	19.869310833333333 N,48.42464444444444 E	False	False
+e8422_F21PRr2	F21PRr2	3	21.0	plant_rhizosphere	2.0		desert biome	oilspill	18/02/2024	19.9011325 N,48.48646388888889 E	False	False
+e8423_F12Dr2	F12Dr2	3	12.0	deep	2.0		desert biome	sand dune	17/02/2024	19.47793361111111 N,46.83437333333334 E	False	False
+e8424_F13Dr1	F13Dr1	3	13.0	deep	1.0		desert biome	sand dune	17/02/2024	19.52934611111111 N,47.053284444444444 E	False	False
+e8425_F13PRr3	F13PRr3	3	13.0	plant_rhizosphere	3.0		desert biome	sand dune	17/02/2024	19.52934611111111 N,47.053284444444444 E	False	False
+e8426_F14PRr2	F14PRr2	3	14.0	plant_rhizosphere	2.0		desert biome	sand dune	17/02/2024	19.581338055555555 N,47.2920225 E	False	False
+e8427_F15PRr1	F15PRr1	3	15.0	plant_rhizosphere	1.0		desert biome	sand dune	17/02/2024	19.613749722222224 N,47.47587194444445 E	False	True
+e8428_F16Sr3	F16Sr3	3	16.0	surface	3.0		desert biome	sand dune	17/02/2024	19.644455833333332 N,47.62611861111111 E	False	False
+e8429_F17Sr2	F17Sr2	3	17.0	surface	2.0		desert biome	sand dune	18/02/2024	19.676460000000002 N,47.82730555555556 E	False	False
+e8430_F18Sr1	F18Sr1	3	18.0	surface	1.0		desert biome	sand dune	18/02/2024	19.732518055555555 N,48.046860555555554 E	False	False
+e8431_F19Dr3	F19Dr3	3	19.0	deep	3.0		desert biome	sand dune	18/02/2024	19.81231916666667 N,48.24049472222222 E	False	False
+e8432_F20Dr2	F20Dr2	3	20.0	deep	2.0		desert biome	dune slack	18/02/2024	19.869310833333333 N,48.42464444444444 E	False	False
+e8433_F21Dr1	F21Dr1	3	21.0	deep	1.0		desert biome	oilspill	18/02/2024	19.9011325 N,48.48646388888889 E	False	False
+e8434_F21PRr3	F21PRr3	3	21.0	plant_rhizosphere	3.0		desert biome	oilspill	18/02/2024	19.9011325 N,48.48646388888889 E	False	False
+e8435_F13Dr2	F13Dr2	3	13.0	deep	2.0		desert biome	sand dune	17/02/2024	19.52934611111111 N,47.053284444444444 E	False	False
+e8436_F14Dr1	F14Dr1	3	14.0	deep	1.0		desert biome	sand dune	17/02/2024	19.581338055555555 N,47.2920225 E	False	False
+e8437_F14PRr3	F14PRr3	3	14.0	plant_rhizosphere	3.0		desert biome	sand dune	17/02/2024	19.581338055555555 N,47.2920225 E	False	False
+e8438_F15PRr2	F15PRr2	3	15.0	plant_rhizosphere	2.0		desert biome	sand dune	17/02/2024	19.613749722222224 N,47.47587194444445 E	False	False
+e8439_F16PRr1	F16PRr1	3	16.0	plant_rhizosphere	1.0		desert biome	sand dune	17/02/2024	19.644455833333332 N,47.62611861111111 E	False	False
+e8440_F17Sr3	F17Sr3	3	17.0	surface	3.0		desert biome	sand dune	18/02/2024	19.676460000000002 N,47.82730555555556 E	False	False
+e8441_F18Sr2	F18Sr2	3	18.0	surface	2.0		desert biome	sand dune	18/02/2024	19.732518055555555 N,48.046860555555554 E	False	False
+e8442_F19Sr1	F19Sr1	3	19.0	surface	1.0		desert biome	sand dune	18/02/2024	19.81231916666667 N,48.24049472222222 E	False	False
+e8443_F20Dr3	F20Dr3	3	20.0	deep	3.0		desert biome	dune slack	18/02/2024	19.869310833333333 N,48.42464444444444 E	False	False
+e8444_F21Dr2	F21Dr2	3	21.0	deep	2.0		desert biome	oilspill	18/02/2024	19.9011325 N,48.48646388888889 E	False	False
+e8445_F22Dr1	F22Dr1	3	22.0	deep	1.0		desert biome	saline pan	18/02/2024	19.97866972222222 N,48.63943555555556 E	False	False
+e8446_F13Dr3	F13Dr3	3	13.0	deep	3.0		desert biome	sand dune	17/02/2024	19.52934611111111 N,47.053284444444444 E	False	False
+e8447_F14Dr2	F14Dr2	3	14.0	deep	2.0		desert biome	sand dune	17/02/2024	19.581338055555555 N,47.2920225 E	False	False
+e8448_F15Dr1	F15Dr1	3	15.0	deep	1.0		desert biome	sand dune	17/02/2024	19.613749722222224 N,47.47587194444445 E	False	False
+e8449_F15PRr3	F15PRr3	3	15.0	plant_rhizosphere	3.0		desert biome	sand dune	17/02/2024	19.613749722222224 N,47.47587194444445 E	False	False
+e8450_F16PRr2	F16PRr2	3	16.0	plant_rhizosphere	2.0		desert biome	sand dune	17/02/2024	19.644455833333332 N,47.62611861111111 E	False	False
+e8451_F17PRr1	F17PRr1	3	17.0	plant_rhizosphere	1.0		desert biome	sand dune	18/02/2024	19.676460000000002 N,47.82730555555556 E	False	False
+e8452_F18Sr3	F18Sr3	3	18.0	surface	3.0		desert biome	sand dune	18/02/2024	19.732518055555555 N,48.046860555555554 E	False	False
+e8453_F19Sr2	F19Sr2	3	19.0	surface	2.0		desert biome	sand dune	18/02/2024	19.81231916666667 N,48.24049472222222 E	False	False
+e8454_F21Dr3	F21Dr3	3	21.0	deep	3.0		desert biome	oilspill	18/02/2024	19.9011325 N,48.48646388888889 E	False	False
+e8455_F22Dr2	F22Dr2	3	22.0	deep	2.0		desert biome	saline pan	18/02/2024	19.97866972222222 N,48.63943555555556 E	False	False
+e8456_F12Sr2	F12Sr2	3	12.0	surface	2.0		desert biome	sand dune	17/02/2024	19.47793361111111 N,46.83437333333334 E	False	False
+e8457_F13Sr1	F13Sr1	3	13.0	surface	1.0		desert biome	sand dune	17/02/2024	19.52934611111111 N,47.053284444444444 E	False	False
+e8458_F14Dr3	F14Dr3	3	14.0	deep	3.0		desert biome	sand dune	17/02/2024	19.581338055555555 N,47.2920225 E	False	False
+e8459_F15Dr2	F15Dr2	3	15.0	deep	2.0		desert biome	sand dune	17/02/2024	19.613749722222224 N,47.47587194444445 E	False	False
+e8460_F16Dr1	F16Dr1	3	16.0	deep	1.0		desert biome	sand dune	17/02/2024	19.644455833333332 N,47.62611861111111 E	False	False
+e8461_F16PRr3	F16PRr3	3	16.0	plant_rhizosphere	3.0		desert biome	sand dune	17/02/2024	19.644455833333332 N,47.62611861111111 E	False	False
+e8462_F17PRr2	F17PRr2	3	17.0	plant_rhizosphere	2.0		desert biome	sand dune	18/02/2024	19.676460000000002 N,47.82730555555556 E	False	False
+e8463_F18PRr1	F18PRr1	3	18.0	plant_rhizosphere	1.0		desert biome	sand dune	18/02/2024	19.732518055555555 N,48.046860555555554 E	False	False
+e8464_F19Sr3	F19Sr3	3	19.0	surface	3.0		desert biome	sand dune	18/02/2024	19.81231916666667 N,48.24049472222222 E	False	False
+e8465_F20Sr2	F20Sr2	3	20.0	surface	2.0		desert biome	dune slack	18/02/2024	19.869310833333333 N,48.42464444444444 E	False	False
+e8466_F21Sr1	F21Sr1	3	21.0	surface	1.0		desert biome	oilspill	18/02/2024	19.9011325 N,48.48646388888889 E	False	False
+e8467_F22Dr3	F22Dr3	3	22.0	deep	3.0		desert biome	saline pan	18/02/2024	19.97866972222222 N,48.63943555555556 E	False	False
+e8468_F22Sr1	F22Sr1	3	22.0	surface	1.0		desert biome	saline pan	18/02/2024	19.97866972222222 N,48.63943555555556 E	False	False
+e8469_F23Dr3	F23Dr3	3	23.0	deep	3.0		desert biome	sand dune	18/02/2024	20.049265555555557 N,48.773331388888884 E	False	False
+e8470_F24Dr2	F24Dr2	3	24.0	deep	2.0		desert biome	sand dune	18/02/2024	20.09273861111111 N,48.89939527777778 E	False	False
+e8471_F25Dr1	F25Dr1	3	25.0	deep	1.0		desert biome	sand dune	18/02/2024	20.100259722222223 N,48.95421972222223 E	False	False
+e8472_F25PRr3	F25PRr3	3	25.0	plant_rhizosphere	3.0		desert biome	sand dune	18/02/2024	20.100259722222223 N,48.95421972222223 E	False	False
+e8473_F26PRr2	F26PRr2	3	26.0	plant_rhizosphere	2.0		desert biome	sand dune	18/02/2024	20.148753888888887 N,49.07873861111111 E	False	False
+e8474_F27PRr1	F27PRr1	3	27.0	plant_rhizosphere	1.0		desert biome	sand dune	18/02/2024	20.2038574 N,49.1959834 E	False	False
+e8475_F28Sr3	F28Sr3	3	28.0	surface	3.0		desert biome	sand dune	18/02/2024	20.24376861111111 N,49.37088472222222 E	False	False
+e8476_F29Sr2	F29Sr2	3	29.0	surface	2.0		desert biome	sand dune	18/02/2024	20.2597976 N,49.5675445 E	False	False
+e8477_F30Sr1	F30Sr1	3	30.0	surface	1.0		desert biome	sand dune	19/02/2024	20.269303055555554 N,49.68367333333333 E	False	False
+e8478_F32Dr2	F32Dr2	3	32.0	deep	2.0		desert biome	sand dune	19/02/2024	20.310684166666668 N,50.09302138888889 E	False	False
+e8479_F22Sr2	F22Sr2	3	22.0	surface	2.0		desert biome	saline pan	18/02/2024	19.97866972222222 N,48.63943555555556 E	False	False
+e8480_F23Sr1	F23Sr1	3	23.0	surface	1.0		desert biome	sand dune	18/02/2024	20.049265555555557 N,48.773331388888884 E	False	False
+e8481_F25Dr2	F25Dr2	3	25.0	deep	2.0		desert biome	sand dune	18/02/2024	20.100259722222223 N,48.95421972222223 E	False	False
+e8482_F26Dr1	F26Dr1	3	26.0	deep	1.0		desert biome	sand dune	18/02/2024	20.148753888888887 N,49.07873861111111 E	False	False
+e8483_F26PRr3	F26PRr3	3	26.0	plant_rhizosphere	3.0		desert biome	sand dune	18/02/2024	20.148753888888887 N,49.07873861111111 E	False	False
+e8484_F27PRr2	F27PRr2	3	27.0	plant_rhizosphere	2.0		desert biome	sand dune	18/02/2024	20.2038574 N,49.1959834 E	False	False
+e8485_F28PRr1	F28PRr1	3	28.0	plant_rhizosphere	1.0		desert biome	sand dune	18/02/2024	20.24376861111111 N,49.37088472222222 E	False	False
+e8486_F29Sr3	F29Sr3	3	29.0	surface	3.0		desert biome	sand dune	18/02/2024	20.2597976 N,49.5675445 E	False	False
+e8487_F30Sr2	F30Sr2	3	30.0	surface	2.0		desert biome	sand dune	19/02/2024	20.269303055555554 N,49.68367333333333 E	False	False
+e8488_F32Dr3	F32Dr3	3	32.0	deep	3.0		desert biome	sand dune	19/02/2024	20.310684166666668 N,50.09302138888889 E	False	False
+e8489_F22Sr3	F22Sr3	3	22.0	surface	3.0		desert biome	saline pan	18/02/2024	19.97866972222222 N,48.63943555555556 E	False	False
+e8490_F23Sr2	F23Sr2	3	23.0	surface	2.0		desert biome	sand dune	18/02/2024	20.049265555555557 N,48.773331388888884 E	False	False
+e8491_F24Sr1	F24Sr1	3	24.0	surface	1.0		desert biome	sand dune	18/02/2024	20.09273861111111 N,48.89939527777778 E	False	False
+e8492_F25Dr3	F25Dr3	3	25.0	deep	3.0		desert biome	sand dune	18/02/2024	20.100259722222223 N,48.95421972222223 E	False	False
+e8493_F27Dr1	F27Dr1	3	27.0	deep	1.0		desert biome	sand dune	18/02/2024	20.2038574 N,49.1959834 E	False	False
+e8494_F27PRr3	F27PRr3	3	27.0	plant_rhizosphere	3.0		desert biome	sand dune	18/02/2024	20.2038574 N,49.1959834 E	False	False
+e8495_F28PRr2	F28PRr2	3	28.0	plant_rhizosphere	2.0		desert biome	sand dune	18/02/2024	20.24376861111111 N,49.37088472222222 E	False	False
+e8496_F29PRr1	F29PRr1	3	29.0	plant_rhizosphere	1.0		desert biome	sand dune	18/02/2024	20.2597976 N,49.5675445 E	False	False
+e8497_F30Sr3	F30Sr3	3	30.0	surface	3.0		desert biome	sand dune	19/02/2024	20.269303055555554 N,49.68367333333333 E	False	False
+e8498_F31Sr2	F31Sr2	3	31.0	surface	2.0		desert biome	sand dune	19/02/2024	20.294623333333334 N,49.891405 E	False	True
+e8499_F32Sr1	F32Sr1	3	32.0	surface	1.0		desert biome	sand dune	19/02/2024	20.310684166666668 N,50.09302138888889 E	False	False
+e8500_F22PRr1	F22PRr1	3	22.0	plant_rhizosphere	1.0		desert biome	saline pan	18/02/2024	19.97866972222222 N,48.63943555555556 E	False	False
+e8501_F23Sr3	F23Sr3	3	23.0	surface	3.0		desert biome	sand dune	18/02/2024	20.049265555555557 N,48.773331388888884 E	False	False
+e8502_F24Sr2	F24Sr2	3	24.0	surface	2.0		desert biome	sand dune	18/02/2024	20.09273861111111 N,48.89939527777778 E	False	False
+e8503_F25Sr1	F25Sr1	3	25.0	surface	1.0		desert biome	sand dune	18/02/2024	20.100259722222223 N,48.95421972222223 E	False	False
+e8504_F26Dr3	F26Dr3	3	26.0	deep	3.0		desert biome	sand dune	18/02/2024	20.148753888888887 N,49.07873861111111 E	False	False
+e8505_F27Dr2	F27Dr2	3	27.0	deep	2.0		desert biome	sand dune	18/02/2024	20.2038574 N,49.1959834 E	False	False
+e8506_F28Dr1	F28Dr1	3	28.0	deep	1.0		desert biome	sand dune	18/02/2024	20.24376861111111 N,49.37088472222222 E	False	False
+e8507_F28PRr3	F28PRr3	3	28.0	plant_rhizosphere	3.0		desert biome	sand dune	18/02/2024	20.24376861111111 N,49.37088472222222 E	False	False
+e8508_F29PRr2	F29PRr2	3	29.0	plant_rhizosphere	2.0		desert biome	sand dune	18/02/2024	20.2597976 N,49.5675445 E	False	False
+e8509_F30PRr1	F30PRr1	3	30.0	plant_rhizosphere	1.0		desert biome	sand dune	19/02/2024	20.269303055555554 N,49.68367333333333 E	False	False
+e8510_F31Sr3	F31Sr3	3	31.0	surface	3.0		desert biome	sand dune	19/02/2024	20.294623333333334 N,49.891405 E	False	True
+e8511_F32Sr2	F32Sr2	3	32.0	surface	2.0		desert biome	sand dune	19/02/2024	20.310684166666668 N,50.09302138888889 E	False	False
+e8512_F22PRr2	F22PRr2	3	22.0	plant_rhizosphere	2.0		desert biome	saline pan	18/02/2024	19.97866972222222 N,48.63943555555556 E	False	False
+e8513_F23PRr1	F23PRr1	3	23.0	plant_rhizosphere	1.0		desert biome	sand dune	18/02/2024	20.049265555555557 N,48.773331388888884 E	False	False
+e8514_F24Sr3	F24Sr3	3	24.0	surface	3.0		desert biome	sand dune	18/02/2024	20.09273861111111 N,48.89939527777778 E	False	False
+e8515_F25Sr2	F25Sr2	3	25.0	surface	2.0		desert biome	sand dune	18/02/2024	20.100259722222223 N,48.95421972222223 E	False	False
+e8516_F26Sr1	F26Sr1	3	26.0	surface	1.0		desert biome	sand dune	18/02/2024	20.148753888888887 N,49.07873861111111 E	False	False
+e8518_F28Dr2	F28Dr2	3	28.0	deep	2.0		desert biome	sand dune	18/02/2024	20.24376861111111 N,49.37088472222222 E	False	False
+e8519_F29Dr1	F29Dr1	3	29.0	deep	1.0		desert biome	sand dune	18/02/2024	20.2597976 N,49.5675445 E	False	False
+e8520_F29PRr3	F29PRr3	3	29.0	plant_rhizosphere	3.0		desert biome	sand dune	18/02/2024	20.2597976 N,49.5675445 E	False	False
+e8521_F30PRr2	F30PRr2	3	30.0	plant_rhizosphere	2.0		desert biome	sand dune	19/02/2024	20.269303055555554 N,49.68367333333333 E	False	False
+e8522_F31PRr1	F31PRr1	3	31.0	plant_rhizosphere	1.0		desert biome	sand dune	19/02/2024	20.294623333333334 N,49.891405 E	False	False
+e8523_F32Sr3	F32Sr3	3	32.0	surface	3.0		desert biome	sand dune	19/02/2024	20.310684166666668 N,50.09302138888889 E	False	False
+e8524_F22PRr3	F22PRr3	3	22.0	plant_rhizosphere	3.0		desert biome	saline pan	18/02/2024	19.97866972222222 N,48.63943555555556 E	False	False
+e8525_F23PRr2	F23PRr2	3	23.0	plant_rhizosphere	2.0		desert biome	sand dune	18/02/2024	20.049265555555557 N,48.773331388888884 E	False	False
+e8526_F24PRr1	F24PRr1	3	24.0	plant_rhizosphere	1.0		desert biome	sand dune	18/02/2024	20.09273861111111 N,48.89939527777778 E	False	False
+e8527_F25Sr3	F25Sr3	3	25.0	surface	3.0		desert biome	sand dune	18/02/2024	20.100259722222223 N,48.95421972222223 E	False	False
+e8528_F27Sr1	F27Sr1	3	27.0	surface	1.0		desert biome	sand dune	18/02/2024	20.2038574 N,49.1959834 E	False	False
+e8529_F28Dr3	F28Dr3	3	28.0	deep	3.0		desert biome	sand dune	18/02/2024	20.24376861111111 N,49.37088472222222 E	False	False
+e8530_F29Dr2	F29Dr2	3	29.0	deep	2.0		desert biome	sand dune	18/02/2024	20.2597976 N,49.5675445 E	False	False
+e8531_F30Dr1	F30Dr1	3	30.0	deep	1.0		desert biome	sand dune	19/02/2024	20.269303055555554 N,49.68367333333333 E	False	False
+e8532_F30PRr3	F30PRr3	3	30.0	plant_rhizosphere	3.0		desert biome	sand dune	19/02/2024	20.269303055555554 N,49.68367333333333 E	False	False
+e8533_F31PRr2	F31PRr2	3	31.0	plant_rhizosphere	2.0		desert biome	sand dune	19/02/2024	20.294623333333334 N,49.891405 E	False	False
+e8534_F32PRr1	F32PRr1	3	32.0	plant_rhizosphere	1.0		desert biome	sand dune	19/02/2024	20.310684166666668 N,50.09302138888889 E	False	False
+e8535_F23Dr1	F23Dr1	3	23.0	deep	1.0		desert biome	sand dune	18/02/2024	20.049265555555557 N,48.773331388888884 E	False	False
+e8536_F23PRr3	F23PRr3	3	23.0	plant_rhizosphere	3.0		desert biome	sand dune	18/02/2024	20.049265555555557 N,48.773331388888884 E	False	False
+e8537_F24PRr2	F24PRr2	3	24.0	plant_rhizosphere	2.0		desert biome	sand dune	18/02/2024	20.09273861111111 N,48.89939527777778 E	False	False
+e8538_F25PRr1	F25PRr1	3	25.0	plant_rhizosphere	1.0		desert biome	sand dune	18/02/2024	20.100259722222223 N,48.95421972222223 E	False	False
+e8539_F26Sr3	F26Sr3	3	26.0	surface	3.0		desert biome	sand dune	18/02/2024	20.148753888888887 N,49.07873861111111 E	False	False
+e8540_F27Sr2	F27Sr2	3	27.0	surface	2.0		desert biome	sand dune	18/02/2024	20.2038574 N,49.1959834 E	False	False
+e8541_F28Sr1	F28Sr1	3	28.0	surface	1.0		desert biome	sand dune	18/02/2024	20.24376861111111 N,49.37088472222222 E	False	False
+e8542_F29Dr3	F29Dr3	3	29.0	deep	3.0		desert biome	sand dune	18/02/2024	20.2597976 N,49.5675445 E	False	False
+e8543_F30Dr2	F30Dr2	3	30.0	deep	2.0		desert biome	sand dune	19/02/2024	20.269303055555554 N,49.68367333333333 E	False	False
+e8544_F31Dr1	F31Dr1	3	31.0	deep	1.0		desert biome	sand dune	19/02/2024	20.294623333333334 N,49.891405 E	False	False
+e8545_F31PRr3	F31PRr3	3	31.0	plant_rhizosphere	3.0		desert biome	sand dune	19/02/2024	20.294623333333334 N,49.891405 E	False	False
+e8546_F32PRr2	F32PRr2	3	32.0	plant_rhizosphere	2.0		desert biome	sand dune	19/02/2024	20.310684166666668 N,50.09302138888889 E	False	False
+e8547_F23Dr2	F23Dr2	3	23.0	deep	2.0		desert biome	sand dune	18/02/2024	20.049265555555557 N,48.773331388888884 E	False	False
+e8548_F24Dr1	F24Dr1	3	24.0	deep	1.0		desert biome	sand dune	18/02/2024	20.09273861111111 N,48.89939527777778 E	False	False
+e8549_F24PRr3	F24PRr3	3	24.0	plant_rhizosphere	3.0		desert biome	sand dune	18/02/2024	20.09273861111111 N,48.89939527777778 E	False	True
+e8550_F25PRr2	F25PRr2	3	25.0	plant_rhizosphere	2.0		desert biome	sand dune	18/02/2024	20.100259722222223 N,48.95421972222223 E	False	False
+e8551_F26PRr1	F26PRr1	3	26.0	plant_rhizosphere	1.0		desert biome	sand dune	18/02/2024	20.148753888888887 N,49.07873861111111 E	False	False
+e8552_F27Sr3	F27Sr3	3	27.0	surface	3.0		desert biome	sand dune	18/02/2024	20.2038574 N,49.1959834 E	False	False
+e8553_F28Sr2	F28Sr2	3	28.0	surface	2.0		desert biome	sand dune	18/02/2024	20.24376861111111 N,49.37088472222222 E	False	False
+e8554_F29Sr1	F29Sr1	3	29.0	surface	1.0		desert biome	sand dune	18/02/2024	20.2597976 N,49.5675445 E	False	False
+e8555_F30Dr3	F30Dr3	3	30.0	deep	3.0		desert biome	sand dune	19/02/2024	20.269303055555554 N,49.68367333333333 E	False	False
+e8556_F31Dr2	F31Dr2	3	31.0	deep	2.0		desert biome	sand dune	19/02/2024	20.294623333333334 N,49.891405 E	False	False
+e8557_F32Dr1	F32Dr1	3	32.0	deep	1.0		desert biome	sand dune	19/02/2024	20.310684166666668 N,50.09302138888889 E	False	False
+e8558_F32PRr3	F32PRr3	3	32.0	plant_rhizosphere	3.0		desert biome	sand dune	19/02/2024	20.310684166666668 N,50.09302138888889 E	False	False
+e8559_F33Dr1	F33Dr1	3	33.0	deep	1.0		desert biome	sand dune	19/02/2024	20.317507777777777 N,50.30307027777778 E	False	True
+e8560_F33PRr3	F33PRr3	3	33.0	plant_rhizosphere	3.0		desert biome	sand dune	19/02/2024	20.317507777777777 N,50.30307027777778 E	False	False
+e8561_F34PRr2	F34PRr2	3	34.0	plant_rhizosphere	2.0		desert biome	sand dune	19/02/2024	20.344394444444443 N,50.5153725 E	False	False
+e8562_F35PRr1	F35PRr1	3	35.0	plant_rhizosphere	1.0		desert biome	sand dune	19/02/2024	20.371795833333334 N,50.72999222222222 E	False	False
+e8563_F37Sr2	F37Sr2	3	37.0	surface	2.0		desert biome	sand dune	19/02/2024	20.454150277777778 N,51.344883333333335 E	False	False
+e8564_F38Sr1	F38Sr1	3	38.0	surface	1.0		desert biome	sand dune	19/02/2024	20.4610275 N,51.370224722222225 E	False	False
+e8565_F39Dr3	F39Dr3	3	39.0	deep	3.0		desert biome	sand dune	19/02/2024	20.51023 N, 51.59742 E	False	False
+e8566_F40Dr2	F40Dr2	3	40.0	deep	2.0		desert biome	sand dune	19/02/2024	20.54718 N, 51.82559 E	False	False
+e8567_F42PRr2	F42PRr2	3	42.0	plant_rhizosphere	2.0		desert biome	sand dune	20/02/2024	20.55516 N, 52.12403 E	False	False
+e8568_F33Dr2	F33Dr2	3	33.0	deep	2.0		desert biome	sand dune	19/02/2024	20.317507777777777 N,50.30307027777778 E	False	False
+e8569_F34Dr1	F34Dr1	3	34.0	deep	1.0		desert biome	sand dune	19/02/2024	20.344394444444443 N,50.5153725 E	False	False
+e8570_F34PRr3	F34PRr3	3	34.0	plant_rhizosphere	3.0		desert biome	sand dune	19/02/2024	20.344394444444443 N,50.5153725 E	False	False
+e8571_F35PRr2	F35PRr2	3	35.0	plant_rhizosphere	2.0		desert biome	sand dune	19/02/2024	20.371795833333334 N,50.72999222222222 E	False	False
+e8572_F36PRr1	F36PRr1	3	36.0	plant_rhizosphere	1.0		desert biome	sand dune	19/02/2024	20.42319 N, 51.14483 E	False	False
+e8573_F37Sr3	F37Sr3	3	37.0	surface	3.0		desert biome	sand dune	19/02/2024	20.454150277777778 N,51.344883333333335 E	False	False
+e8574_F38Sr2	F38Sr2	3	38.0	surface	2.0		desert biome	sand dune	19/02/2024	20.4610275 N,51.370224722222225 E	False	False
+e8575_F39Sr1	F39Sr1	3	39.0	surface	1.0		desert biome	sand dune	19/02/2024	20.51023 N, 51.59742 E	False	False
+e8576_F40Dr3	F40Dr3	3	40.0	deep	3.0		desert biome	sand dune	19/02/2024	20.54718 N, 51.82559 E	False	True
+e8577_F42Dr1	F42Dr1	3	42.0	deep	1.0		desert biome	sand dune	20/02/2024	20.55516 N, 52.12403 E	False	False
+e8578_F42PRr3	F42PRr3	3	42.0	plant_rhizosphere	3.0		desert biome	sand dune	20/02/2024	20.55516 N, 52.12403 E	False	False
+e8579_F33Dr3	F33Dr3	3	33.0	deep	3.0		desert biome	sand dune	19/02/2024	20.317507777777777 N,50.30307027777778 E	False	False
+e8580_F34Dr2	F34Dr2	3	34.0	deep	2.0		desert biome	sand dune	19/02/2024	20.344394444444443 N,50.5153725 E	False	False
+e8581_F35Dr1	F35Dr1	3	35.0	deep	1.0		desert biome	sand dune	19/02/2024	20.371795833333334 N,50.72999222222222 E	False	False
+e8582_F35PRr3	F35PRr3	3	35.0	plant_rhizosphere	3.0		desert biome	sand dune	19/02/2024	20.371795833333334 N,50.72999222222222 E	False	False
+e8583_F36PRr2	F36PRr2	3	36.0	plant_rhizosphere	2.0		desert biome	sand dune	19/02/2024	20.42319 N, 51.14483 E	False	False
+e8584_F37PRr1	F37PRr1	3	37.0	plant_rhizosphere	1.0		desert biome	sand dune	19/02/2024	20.454150277777778 N,51.344883333333335 E	False	False
+e8585_F38Sr3	F38Sr3	3	38.0	surface	3.0		desert biome	sand dune	19/02/2024	20.4610275 N,51.370224722222225 E	False	False
+e8586_F39Sr2	F39Sr2	3	39.0	surface	2.0		desert biome	sand dune	19/02/2024	20.51023 N, 51.59742 E	False	False
+e8587_F40Sr1	F40Sr1	3	40.0	surface	1.0		desert biome	sand dune	19/02/2024	20.54718 N, 51.82559 E	False	False
+e8588_F41Dr3	F41Dr3	3	41.0	deep	3.0		desert biome	saline pan	19/02/2024	20.539777222222224 N,51.94610583333333 E	False	True
+e8589_F42Dr2	F42Dr2	3	42.0	deep	2.0		desert biome	sand dune	20/02/2024	20.55516 N, 52.12403 E	False	False
+e8590_F43Dr1	F43Dr1	3	43.0	deep	1.0		desert biome	sand dune	20/02/2024	20.567575555555557 N,52.22413277777778 E	False	True
+e8591_F33Sr1	F33Sr1	3	33.0	surface	1.0		desert biome	sand dune	19/02/2024	20.317507777777777 N,50.30307027777778 E	False	False
+e8592_F34Dr3	F34Dr3	3	34.0	deep	3.0		desert biome	sand dune	19/02/2024	20.344394444444443 N,50.5153725 E	False	False
+e8593_F35Dr2	F35Dr2	3	35.0	deep	2.0		desert biome	sand dune	19/02/2024	20.371795833333334 N,50.72999222222222 E	False	False
+e8594_F36Dr1	F36Dr1	3	36.0	deep	1.0		desert biome	sand dune	19/02/2024	20.42319 N, 51.14483 E	False	False
+e8595_F36PRr3	F36PRr3	3	36.0	plant_rhizosphere	3.0		desert biome	sand dune	19/02/2024	20.42319 N, 51.14483 E	False	False
+e8596_F37PRr2	F37PRr2	3	37.0	plant_rhizosphere	2.0		desert biome	sand dune	19/02/2024	20.454150277777778 N,51.344883333333335 E	False	False
+e8597_F38PRr1	F38PRr1	3	38.0	plant_rhizosphere	1.0		desert biome	sand dune	19/02/2024	20.4610275 N,51.370224722222225 E	False	False
+e8598_F39Sr3	F39Sr3	3	39.0	surface	3.0		desert biome	sand dune	19/02/2024	20.51023 N, 51.59742 E	False	False
+e8599_F40Sr2	F40Sr2	3	40.0	surface	2.0		desert biome	sand dune	19/02/2024	20.54718 N, 51.82559 E	False	False
+e8600_F42Dr3	F42Dr3	3	42.0	deep	3.0		desert biome	sand dune	20/02/2024	20.55516 N, 52.12403 E	False	False
+e8601_F43Dr2	F43Dr2	3	43.0	deep	2.0		desert biome	sand dune	20/02/2024	20.567575555555557 N,52.22413277777778 E	False	False
+e8602_F33Sr2	F33Sr2	3	33.0	surface	2.0		desert biome	sand dune	19/02/2024	20.317507777777777 N,50.30307027777778 E	False	False
+e8603_F34Sr1	F34Sr1	3	34.0	surface	1.0		desert biome	sand dune	19/02/2024	20.344394444444443 N,50.5153725 E	False	True
+e8604_F35Dr3	F35Dr3	3	35.0	deep	3.0		desert biome	sand dune	19/02/2024	20.371795833333334 N,50.72999222222222 E	False	False
+e8605_F36Dr2	F36Dr2	3	36.0	deep	2.0		desert biome	sand dune	19/02/2024	20.42319 N, 51.14483 E	False	False
+e8606_F37Dr1	F37Dr1	3	37.0	deep	1.0		desert biome	sand dune	19/02/2024	20.454150277777778 N,51.344883333333335 E	False	False
+e8607_F37PRr3	F37PRr3	3	37.0	plant_rhizosphere	3.0		desert biome	sand dune	19/02/2024	20.454150277777778 N,51.344883333333335 E	False	False
+e8608_F38PRr2	F38PRr2	3	38.0	plant_rhizosphere	2.0		desert biome	sand dune	19/02/2024	20.4610275 N,51.370224722222225 E	False	False
+e8609_F39PRr1	F39PRr1	3	39.0	plant_rhizosphere	1.0		desert biome	sand dune	19/02/2024	20.51023 N, 51.59742 E	False	False
+e8610_F40Sr3	F40Sr3	3	40.0	surface	3.0		desert biome	sand dune	19/02/2024	20.54718 N, 51.82559 E	False	False
+e8611_F42Sr1	F42Sr1	3	42.0	surface	1.0		desert biome	sand dune	20/02/2024	20.55516 N, 52.12403 E	False	False
+e8612_F43Dr3	F43Dr3	3	43.0	deep	3.0		desert biome	sand dune	20/02/2024	20.567575555555557 N,52.22413277777778 E	False	False
+e8613_F33Sr3	F33Sr3	3	33.0	surface	3.0		desert biome	sand dune	19/02/2024	20.317507777777777 N,50.30307027777778 E	False	False
+e8614_F34Sr2	F34Sr2	3	34.0	surface	2.0		desert biome	sand dune	19/02/2024	20.344394444444443 N,50.5153725 E	False	False
+e8615_F35Sr1	F35Sr1	3	35.0	surface	1.0		desert biome	sand dune	19/02/2024	20.371795833333334 N,50.72999222222222 E	False	False
+e8616_F36Dr3	F36Dr3	3	36.0	deep	3.0		desert biome	sand dune	19/02/2024	20.42319 N, 51.14483 E	False	False
+e8617_F37Dr2	F37Dr2	3	37.0	deep	2.0		desert biome	sand dune	19/02/2024	20.454150277777778 N,51.344883333333335 E	False	False
+e8618_F38PRr3	F38PRr3	3	38.0	plant_rhizosphere	3.0		desert biome	sand dune	19/02/2024	20.4610275 N,51.370224722222225 E	False	False
+e8619_F40PRr1	F40PRr1	3	40.0	plant_rhizosphere	1.0		desert biome	sand dune	19/02/2024	20.54718 N, 51.82559 E	False	False
+e8620_F42Sr2	F42Sr2	3	42.0	surface	2.0		desert biome	sand dune	20/02/2024	20.55516 N, 52.12403 E	False	False
+e8621_F43Sr1	F43Sr1	3	43.0	surface	1.0		desert biome	sand dune	20/02/2024	20.567575555555557 N,52.22413277777778 E	False	False
+e8622_F34Sr3	F34Sr3	3	34.0	surface	3.0		desert biome	sand dune	19/02/2024	20.344394444444443 N,50.5153725 E	False	False
+e8623_F35Sr2	F35Sr2	3	35.0	surface	2.0		desert biome	sand dune	19/02/2024	20.371795833333334 N,50.72999222222222 E	False	False
+e8624_F36Sr1	F36Sr1	3	36.0	surface	1.0		desert biome	sand dune	19/02/2024	20.42319 N, 51.14483 E	False	False
+e8625_F37Dr3	F37Dr3	3	37.0	deep	3.0		desert biome	sand dune	19/02/2024	20.454150277777778 N,51.344883333333335 E	False	False
+e8626_F38Dr2	F38Dr2	3	38.0	deep	2.0		desert biome	sand dune	19/02/2024	20.4610275 N,51.370224722222225 E	False	False
+e8627_F39PRr3	F39PRr3	3	39.0	plant_rhizosphere	3.0		desert biome	sand dune	19/02/2024	20.51023 N, 51.59742 E	False	False
+e8628_F40PRr2	F40PRr2	3	40.0	plant_rhizosphere	2.0		desert biome	sand dune	19/02/2024	20.54718 N, 51.82559 E	False	False
+e8629_F41PRr1	F41PRr1	3	41.0	plant_rhizosphere	1.0		desert biome	saline pan	19/02/2024	20.539777222222224 N,51.94610583333333 E	False	False
+e8630_F42Sr3	F42Sr3	3	42.0	surface	3.0		desert biome	sand dune	20/02/2024	20.55516 N, 52.12403 E	False	False
+e8632_F33PRr2	F33PRr2	3	33.0	plant_rhizosphere	2.0		desert biome	sand dune	19/02/2024	20.317507777777777 N,50.30307027777778 E	False	False
+e8633_F34PRr1	F34PRr1	3	34.0	plant_rhizosphere	1.0		desert biome	sand dune	19/02/2024	20.344394444444443 N,50.5153725 E	False	False
+e8634_F35Sr3	F35Sr3	3	35.0	surface	3.0		desert biome	sand dune	19/02/2024	20.371795833333334 N,50.72999222222222 E	False	False
+e8635_F36Sr2	F36Sr2	3	36.0	surface	2.0		desert biome	sand dune	19/02/2024	20.42319 N, 51.14483 E	False	False
+e8636_F37Sr1	F37Sr1	3	37.0	surface	1.0		desert biome	sand dune	19/02/2024	20.454150277777778 N,51.344883333333335 E	False	False
+e8637_F38Dr3	F38Dr3	3	38.0	deep	3.0		desert biome	sand dune	19/02/2024	20.4610275 N,51.370224722222225 E	False	False
+e8638_F39Dr2	F39Dr2	3	39.0	deep	2.0		desert biome	sand dune	19/02/2024	20.51023 N, 51.59742 E	False	False
+e8639_F40Dr1	F40Dr1	3	40.0	deep	1.0		desert biome	sand dune	19/02/2024	20.54718 N, 51.82559 E	False	False
+e8640_F40PRr3	F40PRr3	3	40.0	plant_rhizosphere	3.0		desert biome	sand dune	19/02/2024	20.54718 N, 51.82559 E	False	False
+e8641_F41PRr2	F41PRr2	3	41.0	plant_rhizosphere	2.0		desert biome	saline pan	19/02/2024	20.539777222222224 N,51.94610583333333 E	False	False
+e8642_F42PRr1	F42PRr1	3	42.0	plant_rhizosphere	1.0		desert biome	sand dune	20/02/2024	20.55516 N, 52.12403 E	False	False
+e8643_F43Sr3	F43Sr3	3	43.0	surface	3.0		desert biome	sand dune	20/02/2024	20.567575555555557 N,52.22413277777778 E	False	False
+e8644_F56Sr2	F56Sr2	3	56.0	surface	2.0		desert biome	saline pan	21/02/2024	20.821580833333332 N,54.22385916666667 E	False	True
+e8645_F57PRr1	F57PRr1	3	57.0	plant_rhizosphere	1.0		desert biome	sand dune	21/02/2024	20.7349775 N,54.41764333333333 E	False	False
+e8646_F58Sr3	F58Sr3	3	58.0	surface	3.0		desert biome	sand dune	21/02/2024	20.66540111111111 N,54.59327444444445 E	False	True
+e8647_F59Sr2	F59Sr2	3	59.0	surface	2.0		desert biome	desert oasis	21/02/2024	20.65626 N,54.635868055555555 E	False	False
+e8648_F60Sr1	F60Sr1	3	60.0	surface	1.0		desert biome	desert oasis	21/02/2024	20.706374444444442 N,54.732105555555556 E	False	False
+e8650_F54PRr2	F54PRr2	3	54.0	plant_rhizosphere	2.0		desert biome	aeolian lake	21/02/2024	20.92017888888889 N,53.962204444444446 E	False	False
+e8651_F56Sr3	F56Sr3	3	56.0	surface	3.0		desert biome	saline pan	21/02/2024	20.821580833333332 N,54.22385916666667 E	False	True
+e8652_F57PRr2	F57PRr2	3	57.0	plant_rhizosphere	2.0		desert biome	sand dune	21/02/2024	20.7349775 N,54.41764333333333 E	False	False
+e8653_F58PRr1	F58PRr1	3	58.0	plant_rhizosphere	1.0		desert biome	sand dune	21/02/2024	20.66540111111111 N,54.59327444444445 E	False	False
+e8654_F59Sr3	F59Sr3	3	59.0	surface	3.0		desert biome	desert oasis	21/02/2024	20.65626 N,54.635868055555555 E	False	True
+e8655_F60Sr2	F60Sr2	3	60.0	surface	2.0		desert biome	desert oasis	21/02/2024	20.706374444444442 N,54.732105555555556 E	False	False
+e8656_F57Dr1	F57Dr1	3	57.0	deep	1.0		desert biome	sand dune	21/02/2024	20.7349775 N,54.41764333333333 E	False	True
+e8657_F57PRr3	F57PRr3	3	57.0	plant_rhizosphere	3.0		desert biome	sand dune	21/02/2024	20.7349775 N,54.41764333333333 E	False	False
+e8658_F58PRr2	F58PRr2	3	58.0	plant_rhizosphere	2.0		desert biome	sand dune	21/02/2024	20.66540111111111 N,54.59327444444445 E	False	False
+e8659_F59PRr1	F59PRr1	3	59.0	plant_rhizosphere	1.0		desert biome	desert oasis	21/02/2024	20.65626 N,54.635868055555555 E	False	True
+e8660_F60Sr3	F60Sr3	3	60.0	surface	3.0		desert biome	desert oasis	21/02/2024	20.706374444444442 N,54.732105555555556 E	False	True
+e8662_F58Dr1	F58Dr1	3	58.0	deep	1.0		desert biome	sand dune	21/02/2024	20.66540111111111 N,54.59327444444445 E	False	True
+e8663_F58PRr3	F58PRr3	3	58.0	plant_rhizosphere	3.0		desert biome	sand dune	21/02/2024	20.66540111111111 N,54.59327444444445 E	False	False
+e8664_F60PRr1	F60PRr1	3	60.0	plant_rhizosphere	1.0		desert biome	desert oasis	21/02/2024	20.706374444444442 N,54.732105555555556 E	False	True
+e8666_F60PRr2	F60PRr2	3	60.0	plant_rhizosphere	2.0		desert biome	desert oasis	21/02/2024	20.706374444444442 N,54.732105555555556 E	False	True
+e8668_F59Dr2	F59Dr2	3	59.0	deep	2.0		desert biome	desert oasis	21/02/2024	20.65626 N,54.635868055555555 E	False	True
+e8669_F60PRr3	F60PRr3	3	60.0	plant_rhizosphere	3.0		desert biome	desert oasis	21/02/2024	20.706374444444442 N,54.732105555555556 E	False	False
+e8670_F55Sr1	F55Sr1	3	55.0	surface	1.0		desert biome	saline pan	21/02/2024	20.9022725 N,54.0024376 E	False	True
+e8671_F58Sr1	F58Sr1	3	58.0	surface	1.0		desert biome	sand dune	21/02/2024	20.66540111111111 N,54.59327444444445 E	False	False
+e8673_F57Sr3	F57Sr3	3	57.0	surface	3.0		desert biome	sand dune	21/02/2024	20.7349775 N,54.41764333333333 E	False	True
+e8674_F58Sr2	F58Sr2	3	58.0	surface	2.0		desert biome	sand dune	21/02/2024	20.66540111111111 N,54.59327444444445 E	False	False
+e8675_F59Sr1	F59Sr1	3	59.0	surface	1.0		desert biome	desert oasis	21/02/2024	20.65626 N,54.635868055555555 E	False	False
+e8677_F43PRr1	F43PRr1	3	43.0	plant_rhizosphere	1.0		desert biome	sand dune	20/02/2024	20.567575555555557 N,52.22413277777778 E	False	False
+e8678_F44Sr3	F44Sr3	3	44.0	surface	3.0		desert biome	sand dune	20/02/2024	20.56783 N, 52.41036 E	False	False
+e8679_F45Sr2	F45Sr2	3	45.0	surface	2.0		desert biome	sand dune	20/02/2024	20.56346 N, 52.46776 E	False	False
+e8680_F47Dr3	F47Dr3	3	47.0	deep	3.0		desert biome	sand dune	20/02/2024	20.54181555555556 N,52.868785833333334 E	False	False
+e8681_F48Dr2	F48Dr2	3	48.0	deep	2.0		desert biome	desert oasis	20/02/2024	20.568648333333332 N,53.09404833333333 E	False	False
+e8682_F49Dr1	F49Dr1	3	49.0	deep	1.0		desert biome	sand dune	20/02/2024	20.644662222222223 N,53.28794 E	False	False
+e8683_F49PRr3	F49PRr3	3	49.0	plant_rhizosphere	3.0		desert biome	sand dune	20/02/2024	20.644662222222223 N,53.28794 E	False	False
+e8684_F50PRr2	F50PRr2	3	50.0	plant_rhizosphere	2.0		desert biome	sand dune	20/02/2024	20.71385 N, 53.41230 E	False	False
+e8685_F51PRr1	F51PRr1	3	51.0	plant_rhizosphere	1.0		desert biome	saline pan	20/02/2024	20.79870 N, 53.48700 E	False	False
+e8686_F52Sr3	F52Sr3	3	52.0	surface	3.0		desert biome	saline pan	20/02/2024	20.851514166666668 N,53.75788444444444 E	False	False
+e8687_F43PRr2	F43PRr2	3	43.0	plant_rhizosphere	2.0		desert biome	sand dune	20/02/2024	20.567575555555557 N,52.22413277777778 E	False	False
+e8688_F44PRr1	F44PRr1	3	44.0	plant_rhizosphere	1.0		desert biome	sand dune	20/02/2024	20.56783 N, 52.41036 E	False	False
+e8689_F45Sr3	F45Sr3	3	45.0	surface	3.0		desert biome	sand dune	20/02/2024	20.56346 N, 52.46776 E	False	False
+e8690_F46Sr2	F46Sr2	3	46.0	surface	2.0		desert biome	sand dune	20/02/2024	20.553746111111113 N,52.66920777777778 E	False	False
+e8691_F48Dr3	F48Dr3	3	48.0	deep	3.0		desert biome	desert oasis	20/02/2024	20.568648333333332 N,53.09404833333333 E	False	False
+e8692_F49Dr2	F49Dr2	3	49.0	deep	2.0		desert biome	sand dune	20/02/2024	20.644662222222223 N,53.28794 E	False	False
+e8693_F50Dr1	F50Dr1	3	50.0	deep	1.0		desert biome	sand dune	20/02/2024	20.71385 N, 53.41230 E	False	False
+e8694_F50PRr3	F50PRr3	3	50.0	plant_rhizosphere	3.0		desert biome	sand dune	20/02/2024	20.71385 N, 53.41230 E	False	False
+e8695_F51PRr2	F51PRr2	3	51.0	plant_rhizosphere	2.0		desert biome	saline pan	20/02/2024	20.79870 N, 53.48700 E	False	False
+e8696_F53Dr1	F53Dr1	3	53.0	deep	1.0		desert biome	sand dune	21/02/2024	20.851514166666668 N,53.75788444444444 E	False	False
+e8697_F43PRr3	F43PRr3	3	43.0	plant_rhizosphere	3.0		desert biome	sand dune	20/02/2024	20.567575555555557 N,52.22413277777778 E	False	False
+e8698_F44PRr2	F44PRr2	3	44.0	plant_rhizosphere	2.0		desert biome	sand dune	20/02/2024	20.56783 N, 52.41036 E	False	False
+e8699_F45PRr1	F45PRr1	3	45.0	plant_rhizosphere	1.0		desert biome	sand dune	20/02/2024	20.56346 N, 52.46776 E	False	False
+e8700_F48Sr1	F48Sr1	3	48.0	surface	1.0		desert biome	desert oasis	20/02/2024	20.568648333333332 N,53.09404833333333 E	False	False
+e8701_F49Dr3	F49Dr3	3	49.0	deep	3.0		desert biome	sand dune	20/02/2024	20.644662222222223 N,53.28794 E	False	False
+e8702_F50Dr2	F50Dr2	3	50.0	deep	2.0		desert biome	sand dune	20/02/2024	20.71385 N, 53.41230 E	False	False
+e8703_F51PRr3	F51PRr3	3	51.0	plant_rhizosphere	3.0		desert biome	saline pan	20/02/2024	20.79870 N, 53.48700 E	False	False
+e8704_F53Dr2	F53Dr2	3	53.0	deep	2.0		desert biome	sand dune	21/02/2024	20.851514166666668 N,53.75788444444444 E	False	False
+e8705_F44Dr1	F44Dr1	3	44.0	deep	1.0		desert biome	sand dune	20/02/2024	20.56783 N, 52.41036 E	False	False
+e8706_F44PRr3	F44PRr3	3	44.0	plant_rhizosphere	3.0		desert biome	sand dune	20/02/2024	20.56783 N, 52.41036 E	False	False
+e8707_F45PRr2	F45PRr2	3	45.0	plant_rhizosphere	2.0		desert biome	sand dune	20/02/2024	20.56346 N, 52.46776 E	False	False
+e8708_F47Sr3	F47Sr3	3	47.0	surface	3.0		desert biome	sand dune	20/02/2024	20.54181555555556 N,52.868785833333334 E	False	False
+e8709_F48Sr2	F48Sr2	3	48.0	surface	2.0		desert biome	desert oasis	20/02/2024	20.568648333333332 N,53.09404833333333 E	False	False
+e8710_F49Sr1	F49Sr1	3	49.0	surface	1.0		desert biome	sand dune	20/02/2024	20.644662222222223 N,53.28794 E	False	False
+e8711_F50Dr3	F50Dr3	3	50.0	deep	3.0		desert biome	sand dune	20/02/2024	20.71385 N, 53.41230 E	False	False
+e8712_F53Dr3	F53Dr3	3	53.0	deep	3.0		desert biome	sand dune	21/02/2024	20.851514166666668 N,53.75788444444444 E	False	False
+e8713_F44Dr2	F44Dr2	3	44.0	deep	2.0		desert biome	sand dune	20/02/2024	20.56783 N, 52.41036 E	False	False
+e8714_F45Dr1	F45Dr1	3	45.0	deep	1.0		desert biome	sand dune	20/02/2024	20.56346 N, 52.46776 E	False	False
+e8715_F45PRr3	F45PRr3	3	45.0	plant_rhizosphere	3.0		desert biome	sand dune	20/02/2024	20.56346 N, 52.46776 E	False	False
+e8716_F47PRr1	F47PRr1	3	47.0	plant_rhizosphere	1.0		desert biome	sand dune	20/02/2024	20.54181555555556 N,52.868785833333334 E	False	True
+e8717_F48Sr3	F48Sr3	3	48.0	surface	3.0		desert biome	desert oasis	20/02/2024	20.568648333333332 N,53.09404833333333 E	False	False
+e8718_F49Sr2	F49Sr2	3	49.0	surface	2.0		desert biome	sand dune	20/02/2024	20.644662222222223 N,53.28794 E	False	False
+e8719_F50Sr1	F50Sr1	3	50.0	surface	1.0		desert biome	sand dune	20/02/2024	20.71385 N, 53.41230 E	False	False
+e8720_F51Dr3	F51Dr3	3	51.0	deep	3.0		desert biome	saline pan	20/02/2024	20.79870 N, 53.48700 E	False	False
+e8721_F44Dr3	F44Dr3	3	44.0	deep	3.0		desert biome	sand dune	20/02/2024	20.56783 N, 52.41036 E	False	False
+e8722_F45Dr2	F45Dr2	3	45.0	deep	2.0		desert biome	sand dune	20/02/2024	20.56346 N, 52.46776 E	False	False
+e8723_F46Dr1	F46Dr1	3	46.0	deep	1.0		desert biome	sand dune	20/02/2024	20.553746111111113 N,52.66920777777778 E	False	False
+e8724_F47PRr2	F47PRr2	3	47.0	plant_rhizosphere	2.0		desert biome	sand dune	20/02/2024	20.54181555555556 N,52.868785833333334 E	False	False
+e8725_F48PRr1	F48PRr1	3	48.0	plant_rhizosphere	1.0		desert biome	desert oasis	20/02/2024	20.568648333333332 N,53.09404833333333 E	False	False
+e8726_F49Sr3	F49Sr3	3	49.0	surface	3.0		desert biome	sand dune	20/02/2024	20.644662222222223 N,53.28794 E	False	False
+e8729_F44Sr1	F44Sr1	3	44.0	surface	1.0		desert biome	sand dune	20/02/2024	20.56783 N, 52.41036 E	False	False
+e8730_F45Dr3	F45Dr3	3	45.0	deep	3.0		desert biome	sand dune	20/02/2024	20.56346 N, 52.46776 E	False	False
+e8731_F47Dr1	F47Dr1	3	47.0	deep	1.0		desert biome	sand dune	20/02/2024	20.54181555555556 N,52.868785833333334 E	False	False
+e8732_F47PRr3	F47PRr3	3	47.0	plant_rhizosphere	3.0		desert biome	sand dune	20/02/2024	20.54181555555556 N,52.868785833333334 E	False	False
+e8733_F48PRr2	F48PRr2	3	48.0	plant_rhizosphere	2.0		desert biome	desert oasis	20/02/2024	20.568648333333332 N,53.09404833333333 E	False	False
+e8734_F49PRr1	F49PRr1	3	49.0	plant_rhizosphere	1.0		desert biome	sand dune	20/02/2024	20.644662222222223 N,53.28794 E	False	False
+e8735_F50Sr3	F50Sr3	3	50.0	surface	3.0		desert biome	sand dune	20/02/2024	20.71385 N, 53.41230 E	False	False
+e8736_F52Sr1	F52Sr1	3	52.0	surface	1.0		desert biome	saline pan	20/02/2024	20.851514166666668 N,53.75788444444444 E	False	False
+e8737_F53Sr3	F53Sr3	3	53.0	surface	3.0		desert biome	sand dune	21/02/2024	20.851514166666668 N,53.75788444444444 E	False	False
+e8738_F44Sr2	F44Sr2	3	44.0	surface	2.0		desert biome	sand dune	20/02/2024	20.56783 N, 52.41036 E	False	False
+e8739_F45Sr1	F45Sr1	3	45.0	surface	1.0		desert biome	sand dune	20/02/2024	20.56346 N, 52.46776 E	False	False
+e8740_F48Dr1	F48Dr1	3	48.0	deep	1.0		desert biome	desert oasis	20/02/2024	20.568648333333332 N,53.09404833333333 E	False	False
+e8741_F48PRr3	F48PRr3	3	48.0	plant_rhizosphere	3.0		desert biome	desert oasis	20/02/2024	20.568648333333332 N,53.09404833333333 E	False	True
+e8742_F49PRr2	F49PRr2	3	49.0	plant_rhizosphere	2.0		desert biome	sand dune	20/02/2024	20.644662222222223 N,53.28794 E	False	False
+e8743_F50PRr1	F50PRr1	3	50.0	plant_rhizosphere	1.0		desert biome	sand dune	20/02/2024	20.71385 N, 53.41230 E	False	False
+e8744_F51Sr3	F51Sr3	3	51.0	surface	3.0		desert biome	saline pan	20/02/2024	20.79870 N, 53.48700 E	False	True
+e8745_F52Sr2	F52Sr2	3	52.0	surface	2.0		desert biome	saline pan	20/02/2024	20.851514166666668 N,53.75788444444444 E	False	True
+e8746_F53PRr1	F53PRr1	3	53.0	plant_rhizosphere	1.0		desert biome	sand dune	21/02/2024	20.851514166666668 N,53.75788444444444 E	False	False
+EB10	EB10	5									True	False
+EB11	EB11	5									True	False
+EB12	EB12	5									True	False
+EB13	EB13	5									True	False
+EB14	EB14	5									True	False
+EB15	EB15	5									True	False
+EB16	EB16	5									True	False
+EB17	EB17	5									True	False
+EB18	EB18	5									True	False
+EB1	EB1	5									True	False
+EB2	EB2	5									True	False
+EB3	EB3	5									True	False
+EB4	EB4	5									True	False
+EB5	EB5	5									True	False
+EB6	EB6	5									True	False
+EB7	EB7	5									True	False
+EB8	EB8	5									True	False
+EB9	EB9	5									True	False
+Negative1	Negative1	5									True	False
+Negative2	Negative2	5									True	False
+Negative4	Negative4	5									True	False
+Negative5	Negative5	5									True	False
+Negative6	Negative6	5									True	False
+Negative7	Negative7	5									True	False
+V10Dr1	V10Dr1	5	10.0	deep	1.0		desert biome	sand dune	12/10/2025	19.420469722222222 N,46.460795277777784 E	False	False
+V10PRr2	V10PRr2	5	10.0	plant_rhizosphere	2.0		desert biome	sand dune	12/10/2025	19.420469722222222 N,46.460795277777784 E	False	False
+V11Dr3	V11Dr3	5	11.0	deep	3.0		desert biome	sand dune	12/10/2025	19.44435222222222 N,46.6356325 E	False	False
+V11PRr2	V11PRr2	5	11.0	plant_rhizosphere	2.0		desert biome	sand dune	12/10/2025	19.44435222222222 N,46.6356325 E	False	False
+V11PRr3	V11PRr3	5	11.0	plant_rhizosphere	3.0		desert biome	sand dune	12/10/2025	19.44435222222222 N,46.6356325 E	False	False
+V11Sr2	V11Sr2	5	11.0	surface	2.0		desert biome	sand dune	12/10/2025	19.44435222222222 N,46.6356325 E	False	False
+V12Dr3	V12Dr3	5	12.0	deep	3.0		desert biome	sand dune	12/10/2025	19.47793361111111 N,46.83437333333334 E	False	False
+V12PRr1	V12PRr1	5	12.0	plant_rhizosphere	1.0		desert biome	sand dune	12/10/2025	19.47793361111111 N,46.83437333333334 E	False	False
+V12PRr2	V12PRr2	5	12.0	plant_rhizosphere	2.0		desert biome	sand dune	12/10/2025	19.47793361111111 N,46.83437333333334 E	False	False
+V12PRr3	V12PRr3	5	12.0	plant_rhizosphere	3.0		desert biome	sand dune	12/10/2025	19.47793361111111 N,46.83437333333334 E	False	False
+V12Sr1	V12Sr1	5	12.0	surface	1.0		desert biome	sand dune	12/10/2025	19.47793361111111 N,46.83437333333334 E	False	False
+V12Sr3	V12Sr3	5	12.0	surface	3.0		desert biome	sand dune	12/10/2025	19.47793361111111 N,46.83437333333334 E	False	False
+V13PRr1	V13PRr1	5	13.0	plant_rhizosphere	1.0		desert biome	sand dune	12/10/2025	19.52934611111111 N,47.053284444444444 E	False	False
+V13PRr2	V13PRr2	5	13.0	plant_rhizosphere	2.0		desert biome	sand dune	12/10/2025	19.52934611111111 N,47.053284444444444 E	False	False
+V13Sr3	V13Sr3	5	13.0	surface	3.0		desert biome	sand dune	12/10/2025	19.52934611111111 N,47.053284444444444 E	False	False
+V14Dr3	V14Dr3	5	14.0	deep	3.0		desert biome	sand dune	12/10/2025	19.581338055555555 N,47.2920225 E	False	False
+V14PRr1	V14PRr1	5	14.0	plant_rhizosphere	1.0		desert biome	sand dune	12/10/2025	19.581338055555555 N,47.2920225 E	False	False
+V14PRr2	V14PRr2	5	14.0	plant_rhizosphere	2.0		desert biome	sand dune	12/10/2025	19.581338055555555 N,47.2920225 E	False	False
+V14PRr3	V14PRr3	5	14.0	plant_rhizosphere	3.0		desert biome	sand dune	12/10/2025	19.581338055555555 N,47.2920225 E	False	False
+V14Sr1	V14Sr1	5	14.0	surface	1.0		desert biome	sand dune	12/10/2025	19.581338055555555 N,47.2920225 E	False	False
+V15Dr1	V15Dr1	5	15.0	deep	1.0		desert biome	sand dune	12/10/2025	19.613749722222224 N,47.47587194444445 E	False	False
+V15Dr2	V15Dr2	5	15.0	deep	2.0		desert biome	sand dune	12/10/2025	19.613749722222224 N,47.47587194444445 E	False	False
+V15Dr3	V15Dr3	5	15.0	deep	3.0		desert biome	sand dune	12/10/2025	19.613749722222224 N,47.47587194444445 E	False	False
+V15PRr1	V15PRr1	5	15.0	plant_rhizosphere	1.0		desert biome	sand dune	12/10/2025	19.613749722222224 N,47.47587194444445 E	False	False
+V15PRr2	V15PRr2	5	15.0	plant_rhizosphere	2.0		desert biome	sand dune	12/10/2025	19.613749722222224 N,47.47587194444445 E	False	False
+V15PRr3	V15PRr3	5	15.0	plant_rhizosphere	3.0		desert biome	sand dune	12/10/2025	19.613749722222224 N,47.47587194444445 E	False	False
+V15Sr1	V15Sr1	5	15.0	surface	1.0		desert biome	sand dune	12/10/2025	19.613749722222224 N,47.47587194444445 E	False	False
+V15Sr2	V15Sr2	5	15.0	surface	2.0		desert biome	sand dune	12/10/2025	19.613749722222224 N,47.47587194444445 E	False	False
+V16Dr1O	V16Dr1O	5	16.0	deep	1.0	O	desert biome	sand dune	12/10/2025	19.644455833333332 N,47.62611861111111 E	False	False
+V16Dr1T	V16Dr1T	5	16.0	deep	1.0	T	desert biome	sand dune	12/10/2025	19.644455833333332 N,47.62611861111111 E	False	False
+V16Dr3	V16Dr3	5	16.0	deep	3.0		desert biome	sand dune	12/10/2025	19.644455833333332 N,47.62611861111111 E	False	False
+V16PRr1O	V16PRr1O	5	16.0	plant_rhizosphere	1.0	O	desert biome	sand dune	12/10/2025	19.644455833333332 N,47.62611861111111 E	False	False
+V16PRr1T	V16PRr1T	5	16.0	plant_rhizosphere	1.0	T	desert biome	sand dune	12/10/2025	19.644455833333332 N,47.62611861111111 E	False	False
+V16PRr1	V16PRr1	5	16.0	plant_rhizosphere	1.0		desert biome	sand dune	12/10/2025	19.644455833333332 N,47.62611861111111 E	False	False
+V16PRr2	V16PRr2	5	16.0	plant_rhizosphere	2.0		desert biome	sand dune	12/10/2025	19.644455833333332 N,47.62611861111111 E	False	False
+V16PRr3	V16PRr3	5	16.0	plant_rhizosphere	3.0		desert biome	sand dune	12/10/2025	19.644455833333332 N,47.62611861111111 E	False	False
+V16Sr1O	V16Sr1O	5	16.0	surface	1.0	O	desert biome	sand dune	12/10/2025	19.644455833333332 N,47.62611861111111 E	False	False
+V17Dr1	V17Dr1	5	17.0	deep	1.0		desert biome	sand dune	13/10/2025	19.676460000000002 N,47.82730555555556 E	False	False
+V17Dr2	V17Dr2	5	17.0	deep	2.0		desert biome	sand dune	13/10/2025	19.676460000000002 N,47.82730555555556 E	False	False
+V17PRr1	V17PRr1	5	17.0	plant_rhizosphere	1.0		desert biome	sand dune	13/10/2025	19.676460000000002 N,47.82730555555556 E	False	False
+V17PRr2	V17PRr2	5	17.0	plant_rhizosphere	2.0		desert biome	sand dune	13/10/2025	19.676460000000002 N,47.82730555555556 E	False	False
+V17PRr3	V17PRr3	5	17.0	plant_rhizosphere	3.0		desert biome	sand dune	13/10/2025	19.676460000000002 N,47.82730555555556 E	False	False
+V18PRr2	V18PRr2	5	18.0	plant_rhizosphere	2.0		desert biome	sand dune	13/10/2025	19.732518055555555 N,48.046860555555554 E	False	False
+V18PRr3	V18PRr3	5	18.0	plant_rhizosphere	3.0		desert biome	sand dune	13/10/2025	19.732518055555555 N,48.046860555555554 E	False	False
+V19Dr2	V19Dr2	5	19.0	deep	2.0		desert biome	sand dune	13/10/2025	19.81231916666667 N,48.24049472222222 E	False	False
+V19Dr3	V19Dr3	5	19.0	deep	3.0		desert biome	sand dune	13/10/2025	19.81231916666667 N,48.24049472222222 E	False	False
+V19PRr1	V19PRr1	5	19.0	plant_rhizosphere	1.0		desert biome	sand dune	13/10/2025	19.81231916666667 N,48.24049472222222 E	False	False
+V19PRr2	V19PRr2	5	19.0	plant_rhizosphere	2.0		desert biome	sand dune	13/10/2025	19.81231916666667 N,48.24049472222222 E	False	False
+V19PRr3	V19PRr3	5	19.0	plant_rhizosphere	3.0		desert biome	sand dune	13/10/2025	19.81231916666667 N,48.24049472222222 E	False	False
+V19Sr3	V19Sr3	5	19.0	surface	3.0		desert biome	sand dune	13/10/2025	19.81231916666667 N,48.24049472222222 E	False	False
+V1Dr1	V1Dr1	5	1.0	deep	1.0		desert biome	gravel	12/10/2025	19.149770555555556 N,45.166511388888885 E	False	False
+V1Dr3	V1Dr3	5	1.0	deep	3.0		desert biome	gravel	12/10/2025	19.149770555555556 N,45.166511388888885 E	False	False
+V1PRr1	V1PRr1	5	1.0	plant_rhizosphere	1.0		desert biome	gravel	12/10/2025	19.149770555555556 N,45.166511388888885 E	False	False
+V1PRr2	V1PRr2	5	1.0	plant_rhizosphere	2.0		desert biome	gravel	12/10/2025	19.149770555555556 N,45.166511388888885 E	False	False
+V1PRr3	V1PRr3	5	1.0	plant_rhizosphere	3.0		desert biome	gravel	12/10/2025	19.149770555555556 N,45.166511388888885 E	False	False
+V20PRr1	V20PRr1	5	20.0	plant_rhizosphere	1.0		desert biome	dune slack	13/10/2025	19.869310833333333 N,48.42464444444444 E	False	False
+V20PRr2	V20PRr2	5	20.0	plant_rhizosphere	2.0		desert biome	dune slack	13/10/2025	19.869310833333333 N,48.42464444444444 E	False	False
+V20PRr3	V20PRr3	5	20.0	plant_rhizosphere	3.0		desert biome	dune slack	13/10/2025	19.869310833333333 N,48.42464444444444 E	False	False
+V20Sr2	V20Sr2	5	20.0	surface	2.0		desert biome	dune slack	13/10/2025	19.869310833333333 N,48.42464444444444 E	False	False
+V21Dr1	V21Dr1	5	21.0	deep	1.0		desert biome	oilspill	13/10/2025	19.9011325 N,48.48646388888889 E	False	False
+V21Dr2	V21Dr2	5	21.0	deep	2.0		desert biome	oilspill	13/10/2025	19.9011325 N,48.48646388888889 E	False	False
+V21PRr1RE	V21PRr1RE	5	21.0	plant_rhizosphere	1.0	RE	desert biome	oilspill	13/10/2025	19.9011325 N,48.48646388888889 E	False	False
+V21PRr1	V21PRr1	5	21.0	plant_rhizosphere	1.0		desert biome	oilspill	13/10/2025	19.9011325 N,48.48646388888889 E	False	False
+V21PRr2RE	V21PRr2RE	5	21.0	plant_rhizosphere	2.0	RE	desert biome	oilspill	13/10/2025	19.9011325 N,48.48646388888889 E	False	False
+V21PRr2	V21PRr2	5	21.0	plant_rhizosphere	2.0		desert biome	oilspill	13/10/2025	19.9011325 N,48.48646388888889 E	False	False
+V21PRr3RE	V21PRr3RE	5	21.0	plant_rhizosphere	3.0	RE	desert biome	oilspill	13/10/2025	19.9011325 N,48.48646388888889 E	False	False
+V21PRr3	V21PRr3	5	21.0	plant_rhizosphere	3.0		desert biome	oilspill	13/10/2025	19.9011325 N,48.48646388888889 E	False	False
+V21Sr3	V21Sr3	5	21.0	surface	3.0		desert biome	oilspill	13/10/2025	19.9011325 N,48.48646388888889 E	False	False
+V22PRr2	V22PRr2	5	22.0	plant_rhizosphere	2.0		desert biome	saline pan	13/10/2025	19.97866972222222 N,48.63943555555556 E	False	False
+V23Dr1	V23Dr1	5	23.0	deep	1.0		desert biome	sand dune	13/10/2025	20.049265555555557 N,48.773331388888884 E	False	False
+V23PRr1	V23PRr1	5	23.0	plant_rhizosphere	1.0		desert biome	sand dune	13/10/2025	20.049265555555557 N,48.773331388888884 E	False	False
+V23PRr2	V23PRr2	5	23.0	plant_rhizosphere	2.0		desert biome	sand dune	13/10/2025	20.049265555555557 N,48.773331388888884 E	False	False
+V24Dr1	V24Dr1	5	24.0	deep	1.0		desert biome	sand dune	13/10/2025	20.09273861111111 N,48.89939527777778 E	False	False
+V24PRr1	V24PRr1	5	24.0	plant_rhizosphere	1.0		desert biome	sand dune	13/10/2025	20.09273861111111 N,48.89939527777778 E	False	False
+V24PRr3	V24PRr3	5	24.0	plant_rhizosphere	3.0		desert biome	sand dune	13/10/2025	20.09273861111111 N,48.89939527777778 E	False	False
+V25Dr3	V25Dr3	5	25.0	deep	3.0		desert biome	sand dune	13/10/2025	20.100259722222223 N,48.95421972222223 E	False	False
+V25PRr1	V25PRr1	5	25.0	plant_rhizosphere	1.0		desert biome	sand dune	13/10/2025	20.100259722222223 N,48.95421972222223 E	False	False
+V25PRr2	V25PRr2	5	25.0	plant_rhizosphere	2.0		desert biome	sand dune	13/10/2025	20.100259722222223 N,48.95421972222223 E	False	False
+V25PRr3	V25PRr3	5	25.0	plant_rhizosphere	3.0		desert biome	sand dune	13/10/2025	20.100259722222223 N,48.95421972222223 E	False	False
+V25Sr2	V25Sr2	5	25.0	surface	2.0		desert biome	sand dune	13/10/2025	20.100259722222223 N,48.95421972222223 E	False	False
+V25Sr3	V25Sr3	5	25.0	surface	3.0		desert biome	sand dune	13/10/2025	20.100259722222223 N,48.95421972222223 E	False	False
+V26Dr2	V26Dr2	5	26.0	deep	2.0		desert biome	sand dune	13/10/2025	20.148753888888887 N,49.07873861111111 E	False	False
+V26Dr3	V26Dr3	5	26.0	deep	3.0		desert biome	sand dune	13/10/2025	20.148753888888887 N,49.07873861111111 E	False	False
+V26PRr1	V26PRr1	5	26.0	plant_rhizosphere	1.0		desert biome	sand dune	13/10/2025	20.148753888888887 N,49.07873861111111 E	False	False
+V26PRr2	V26PRr2	5	26.0	plant_rhizosphere	2.0		desert biome	sand dune	13/10/2025	20.148753888888887 N,49.07873861111111 E	False	False
+V26Sr2	V26Sr2	5	26.0	surface	2.0		desert biome	sand dune	13/10/2025	20.148753888888887 N,49.07873861111111 E	False	False
+V27Dr2	V27Dr2	5	27.0	deep	2.0		desert biome	sand dune	13/10/2025	20.2038574 N,49.1959834 E	False	False
+V27Dr3	V27Dr3	5	27.0	deep	3.0		desert biome	sand dune	13/10/2025	20.2038574 N,49.1959834 E	False	False
+V27PRr1	V27PRr1	5	27.0	plant_rhizosphere	1.0		desert biome	sand dune	13/10/2025	20.2038574 N,49.1959834 E	False	False
+V27PRr2	V27PRr2	5	27.0	plant_rhizosphere	2.0		desert biome	sand dune	13/10/2025	20.2038574 N,49.1959834 E	False	False
+V27PRr3	V27PRr3	5	27.0	plant_rhizosphere	3.0		desert biome	sand dune	13/10/2025	20.2038574 N,49.1959834 E	False	False
+V28Dr1	V28Dr1	5	28.0	deep	1.0		desert biome	sand dune	13/10/2025	20.24376861111111 N,49.37088472222222 E	False	False
+V28Dr3	V28Dr3	5	28.0	deep	3.0		desert biome	sand dune	13/10/2025	20.24376861111111 N,49.37088472222222 E	False	False
+V28PRr1	V28PRr1	5	28.0	plant_rhizosphere	1.0		desert biome	sand dune	13/10/2025	20.24376861111111 N,49.37088472222222 E	False	False
+V28PRr2	V28PRr2	5	28.0	plant_rhizosphere	2.0		desert biome	sand dune	13/10/2025	20.24376861111111 N,49.37088472222222 E	False	False
+V28PRr3	V28PRr3	5	28.0	plant_rhizosphere	3.0		desert biome	sand dune	13/10/2025	20.24376861111111 N,49.37088472222222 E	False	False
+V29PRr2	V29PRr2	5	29.0	plant_rhizosphere	2.0		desert biome	sand dune	13/10/2025	20.2597976 N,49.5675445 E	False	False
+V29PRr3	V29PRr3	5	29.0	plant_rhizosphere	3.0		desert biome	sand dune	13/10/2025	20.2597976 N,49.5675445 E	False	False
+V2Dr1	V2Dr1	5	2.0	deep	1.0		desert biome	sand dune	12/10/2025	19.203468333333333 N,45.2447675 E	False	False
+V2Dr2	V2Dr2	5	2.0	deep	2.0		desert biome	sand dune	12/10/2025	19.203468333333333 N,45.2447675 E	False	False
+V2PRr1	V2PRr1	5	2.0	plant_rhizosphere	1.0		desert biome	sand dune	12/10/2025	19.203468333333333 N,45.2447675 E	False	False
+V2PRr2	V2PRr2	5	2.0	plant_rhizosphere	2.0		desert biome	sand dune	12/10/2025	19.203468333333333 N,45.2447675 E	False	False
+V2PRr3	V2PRr3	5	2.0	plant_rhizosphere	3.0		desert biome	sand dune	12/10/2025	19.203468333333333 N,45.2447675 E	False	False
+V2Sr1	V2Sr1	5	2.0	surface	1.0		desert biome	sand dune	12/10/2025	19.203468333333333 N,45.2447675 E	False	False
+V2Sr2	V2Sr2	5	2.0	surface	2.0		desert biome	sand dune	12/10/2025	19.203468333333333 N,45.2447675 E	False	False
+V30PRr1	V30PRr1	5	30.0	plant_rhizosphere	1.0		desert biome	sand dune	13/10/2025	20.269303055555554 N,49.68367333333333 E	False	False
+V30PRr2	V30PRr2	5	30.0	plant_rhizosphere	2.0		desert biome	sand dune	13/10/2025	20.269303055555554 N,49.68367333333333 E	False	False
+V30PRr3	V30PRr3	5	30.0	plant_rhizosphere	3.0		desert biome	sand dune	13/10/2025	20.269303055555554 N,49.68367333333333 E	False	False
+V30Sr2	V30Sr2	5	30.0	surface	2.0		desert biome	sand dune	13/10/2025	20.269303055555554 N,49.68367333333333 E	False	False
+V31Dr1	V31Dr1	5	31.0	deep	1.0		desert biome	sand dune	13/10/2025	20.294623333333334 N,49.891405 E	False	False
+V31Dr3	V31Dr3	5	31.0	deep	3.0		desert biome	sand dune	13/10/2025	20.294623333333334 N,49.891405 E	False	False
+V32PRr1	V32PRr1	5	32.0	plant_rhizosphere	1.0		desert biome	sand dune	13/10/2025	20.310684166666668 N,50.09302138888889 E	False	False
+V32PRr2	V32PRr2	5	32.0	plant_rhizosphere	2.0		desert biome	sand dune	13/10/2025	20.310684166666668 N,50.09302138888889 E	False	False
+V32PRr3	V32PRr3	5	32.0	plant_rhizosphere	3.0		desert biome	sand dune	13/10/2025	20.310684166666668 N,50.09302138888889 E	False	False
+V33PRr1	V33PRr1	5	33.0	plant_rhizosphere	1.0		desert biome	sand dune	13/10/2025	20.317507777777777 N,50.30307027777778 E	False	False
+V33PRr2	V33PRr2	5	33.0	plant_rhizosphere	2.0		desert biome	sand dune	13/10/2025	20.317507777777777 N,50.30307027777778 E	False	False
+V33PRr3	V33PRr3	5	33.0	plant_rhizosphere	3.0		desert biome	sand dune	13/10/2025	20.317507777777777 N,50.30307027777778 E	False	False
+V34Dr2	V34Dr2	5	34.0	deep	2.0		desert biome	sand dune	13/10/2025	20.344394444444443 N,50.5153725 E	False	False
+V34PRr1	V34PRr1	5	34.0	plant_rhizosphere	1.0		desert biome	sand dune	13/10/2025	20.344394444444443 N,50.5153725 E	False	False
+V34PRr2	V34PRr2	5	34.0	plant_rhizosphere	2.0		desert biome	sand dune	13/10/2025	20.344394444444443 N,50.5153725 E	False	False
+V34PRr3	V34PRr3	5	34.0	plant_rhizosphere	3.0		desert biome	sand dune	13/10/2025	20.344394444444443 N,50.5153725 E	False	False
+V35Dr1	V35Dr1	5	35.0	deep	1.0		desert biome	sand dune	14/10/2025	20.371795833333334 N,50.72999222222222 E	False	False
+V35PRr1	V35PRr1	5	35.0	plant_rhizosphere	1.0		desert biome	sand dune	14/10/2025	20.371795833333334 N,50.72999222222222 E	False	False
+V35PRr2	V35PRr2	5	35.0	plant_rhizosphere	2.0		desert biome	sand dune	14/10/2025	20.371795833333334 N,50.72999222222222 E	False	False
+V35PRr3R	V35PRr3R	5	35.0	plant_rhizosphere	3.0	R	desert biome	sand dune	14/10/2025	20.371795833333334 N,50.72999222222222 E	False	False
+V35PRr3	V35PRr3	5	35.0	plant_rhizosphere	3.0		desert biome	sand dune	14/10/2025	20.371795833333334 N,50.72999222222222 E	False	False
+V37Dr1	V37Dr1	5	37.0	deep	1.0		desert biome	sand dune	14/10/2025	20.454150277777778 N,51.344883333333335 E	False	False
+V37PRr2	V37PRr2	5	37.0	plant_rhizosphere	2.0		desert biome	sand dune	14/10/2025	20.454150277777778 N,51.344883333333335 E	False	False
+V37PRr3	V37PRr3	5	37.0	plant_rhizosphere	3.0		desert biome	sand dune	14/10/2025	20.454150277777778 N,51.344883333333335 E	False	False
+V38PRr3	V38PRr3	5	38.0	plant_rhizosphere	3.0		desert biome	sand dune	14/10/2025	20.4610275 N,51.370224722222225 E	False	False
+V38Sr2	V38Sr2	5	38.0	surface	2.0		desert biome	sand dune	14/10/2025	20.4610275 N,51.370224722222225 E	False	False
+V39Dr1	V39Dr1	5	39.0	deep	1.0		desert biome	sand dune	14/10/2025	20.51023 N, 51.59742 E	False	False
+V39Dr3	V39Dr3	5	39.0	deep	3.0		desert biome	sand dune	14/10/2025	20.51023 N, 51.59742 E	False	False
+V39PRr1	V39PRr1	5	39.0	plant_rhizosphere	1.0		desert biome	sand dune	14/10/2025	20.51023 N, 51.59742 E	False	False
+V39PRr2	V39PRr2	5	39.0	plant_rhizosphere	2.0		desert biome	sand dune	14/10/2025	20.51023 N, 51.59742 E	False	False
+V39PRr3	V39PRr3	5	39.0	plant_rhizosphere	3.0		desert biome	sand dune	14/10/2025	20.51023 N, 51.59742 E	False	False
+V39Sr2	V39Sr2	5	39.0	surface	2.0		desert biome	sand dune	14/10/2025	20.51023 N, 51.59742 E	False	False
+V3PRr1	V3PRr1	5	3.0	plant_rhizosphere	1.0		desert biome	sand dune	12/10/2025	19.301079444444444 N,45.384414166666666 E	False	False
+V3PRr2	V3PRr2	5	3.0	plant_rhizosphere	2.0		desert biome	sand dune	12/10/2025	19.301079444444444 N,45.384414166666666 E	False	False
+V3PRr3	V3PRr3	5	3.0	plant_rhizosphere	3.0		desert biome	sand dune	12/10/2025	19.301079444444444 N,45.384414166666666 E	False	False
+V40Dr1	V40Dr1	5	40.0	deep	1.0		desert biome	sand dune	14/10/2025	20.54718 N, 51.82559 E	False	False
+V40PRr1	V40PRr1	5	40.0	plant_rhizosphere	1.0		desert biome	sand dune	14/10/2025	20.54718 N, 51.82559 E	False	False
+V40PRr2	V40PRr2	5	40.0	plant_rhizosphere	2.0		desert biome	sand dune	14/10/2025	20.54718 N, 51.82559 E	False	False
+V40PRr3	V40PRr3	5	40.0	plant_rhizosphere	3.0		desert biome	sand dune	14/10/2025	20.54718 N, 51.82559 E	False	False
+V40Sr3	V40Sr3	5	40.0	surface	3.0		desert biome	sand dune	14/10/2025	20.54718 N, 51.82559 E	False	False
+V41Dr3	V41Dr3	5	41.0	deep	3.0		desert biome	saline pan	14/10/2025	20.539777222222224 N,51.94610583333333 E	False	False
+V42PRr2	V42PRr2	5	42.0	plant_rhizosphere	2.0		desert biome	sand dune	14/10/2025	20.55516 N, 52.12403 E	False	False
+V42Sr2	V42Sr2	5	42.0	surface	2.0		desert biome	sand dune	14/10/2025	20.55516 N, 52.12403 E	False	False
+V43Dr1	V43Dr1	5	43.0	deep	1.0		desert biome	sand dune	14/10/2025	20.567575555555557 N,52.22413277777778 E	False	False
+V43Dr2	V43Dr2	5	43.0	deep	2.0		desert biome	sand dune	14/10/2025	20.567575555555557 N,52.22413277777778 E	False	False
+V43Dr3	V43Dr3	5	43.0	deep	3.0		desert biome	sand dune	14/10/2025	20.567575555555557 N,52.22413277777778 E	False	False
+V43PRr1	V43PRr1	5	43.0	plant_rhizosphere	1.0		desert biome	sand dune	14/10/2025	20.567575555555557 N,52.22413277777778 E	False	False
+V43PRr2	V43PRr2	5	43.0	plant_rhizosphere	2.0		desert biome	sand dune	14/10/2025	20.567575555555557 N,52.22413277777778 E	False	False
+V43PRr3	V43PRr3	5	43.0	plant_rhizosphere	3.0		desert biome	sand dune	14/10/2025	20.567575555555557 N,52.22413277777778 E	False	False
+V44Dr1	V44Dr1	5	44.0	deep	1.0		desert biome	sand dune	14/10/2025	20.56783 N, 52.41036 E	False	False
+V44PRr1	V44PRr1	5	44.0	plant_rhizosphere	1.0		desert biome	sand dune	14/10/2025	20.56783 N, 52.41036 E	False	False
+V44PRr2	V44PRr2	5	44.0	plant_rhizosphere	2.0		desert biome	sand dune	14/10/2025	20.56783 N, 52.41036 E	False	False
+V45Dr1	V45Dr1	5	45.0	deep	1.0		desert biome	sand dune	14/10/2025	20.56346 N, 52.46776 E	False	False
+V45Dr2	V45Dr2	5	45.0	deep	2.0		desert biome	sand dune	14/10/2025	20.56346 N, 52.46776 E	False	False
+V45Dr3	V45Dr3	5	45.0	deep	3.0		desert biome	sand dune	14/10/2025	20.56346 N, 52.46776 E	False	False
+V45PRr1	V45PRr1	5	45.0	plant_rhizosphere	1.0		desert biome	sand dune	14/10/2025	20.56346 N, 52.46776 E	False	False
+V45PRr2	V45PRr2	5	45.0	plant_rhizosphere	2.0		desert biome	sand dune	14/10/2025	20.56346 N, 52.46776 E	False	False
+V45PRr3	V45PRr3	5	45.0	plant_rhizosphere	3.0		desert biome	sand dune	14/10/2025	20.56346 N, 52.46776 E	False	False
+V45Sr3	V45Sr3	5	45.0	surface	3.0		desert biome	sand dune	14/10/2025	20.56346 N, 52.46776 E	False	False
+V46PRr1	V46PRr1	5	46.0	plant_rhizosphere	1.0		desert biome	sand dune	14/10/2025	20.553746111111113 N,52.66920777777778 E	False	False
+V46PRr2	V46PRr2	5	46.0	plant_rhizosphere	2.0		desert biome	sand dune	14/10/2025	20.553746111111113 N,52.66920777777778 E	False	False
+V46PRr3	V46PRr3	5	46.0	plant_rhizosphere	3.0		desert biome	sand dune	14/10/2025	20.553746111111113 N,52.66920777777778 E	False	False
+V47PRr1	V47PRr1	5	47.0	plant_rhizosphere	1.0		desert biome	sand dune	14/10/2025	20.54181555555556 N,52.868785833333334 E	False	False
+V47PRr2	V47PRr2	5	47.0	plant_rhizosphere	2.0		desert biome	sand dune	14/10/2025	20.54181555555556 N,52.868785833333334 E	False	False
+V47PRr3	V47PRr3	5	47.0	plant_rhizosphere	3.0		desert biome	sand dune	14/10/2025	20.54181555555556 N,52.868785833333334 E	False	False
+V48Dr1	V48Dr1	5	48.0	deep	1.0		desert biome	desert oasis	14/10/2025	20.568648333333332 N,53.09404833333333 E	False	False
+V48Dr2	V48Dr2	5	48.0	deep	2.0		desert biome	desert oasis	14/10/2025	20.568648333333332 N,53.09404833333333 E	False	False
+V48Dr3	V48Dr3	5	48.0	deep	3.0		desert biome	desert oasis	14/10/2025	20.568648333333332 N,53.09404833333333 E	False	False
+V48PRr1	V48PRr1	5	48.0	plant_rhizosphere	1.0		desert biome	desert oasis	14/10/2025	20.568648333333332 N,53.09404833333333 E	False	False
+V49Dr2	V49Dr2	5	49.0	deep	2.0		desert biome	sand dune	14/10/2025	20.644662222222223 N,53.28794 E	False	False
+V4Dr1	V4Dr1	5	4.0	deep	1.0		desert biome	saline pan	12/10/2025	19.379571666666667 N,45.55182694444444 E	False	False
+V4Dr2	V4Dr2	5	4.0	deep	2.0		desert biome	saline pan	12/10/2025	19.379571666666667 N,45.55182694444444 E	False	False
+V4Dr3	V4Dr3	5	4.0	deep	3.0		desert biome	saline pan	12/10/2025	19.379571666666667 N,45.55182694444444 E	False	False
+V4PRr1	V4PRr1	5	4.0	plant_rhizosphere	1.0		desert biome	saline pan	12/10/2025	19.379571666666667 N,45.55182694444444 E	False	False
+V4PRr2	V4PRr2	5	4.0	plant_rhizosphere	2.0		desert biome	saline pan	12/10/2025	19.379571666666667 N,45.55182694444444 E	False	False
+V4PRr3	V4PRr3	5	4.0	plant_rhizosphere	3.0		desert biome	saline pan	12/10/2025	19.379571666666667 N,45.55182694444444 E	False	False
+V4Sr1	V4Sr1	5	4.0	surface	1.0		desert biome	saline pan	12/10/2025	19.379571666666667 N,45.55182694444444 E	False	False
+V4Sr3	V4Sr3	5	4.0	surface	3.0		desert biome	saline pan	12/10/2025	19.379571666666667 N,45.55182694444444 E	False	False
+V50PRr2	V50PRr2	5	50.0	plant_rhizosphere	2.0		desert biome	sand dune	14/10/2025	20.71385 N, 53.41230 E	False	False
+V51PRr2	V51PRr2	5	51.0	plant_rhizosphere	2.0		desert biome	saline pan	15/10/2025	20.79870 N, 53.48700 E	False	False
+V51PRr3	V51PRr3	5	51.0	plant_rhizosphere	3.0		desert biome	saline pan	15/10/2025	20.79870 N, 53.48700 E	False	False
+V53PRr2	V53PRr2	5	53.0	plant_rhizosphere	2.0		desert biome	sand dune	15/10/2025	20.851514166666668 N,53.75788444444444 E	False	False
+V54PRr1	V54PRr1	5	54.0	plant_rhizosphere	1.0		desert biome	aeolian lake	15/10/2025	20.92017888888889 N,53.962204444444446 E	False	False
+V54PRr2	V54PRr2	5	54.0	plant_rhizosphere	2.0		desert biome	aeolian lake	15/10/2025	20.92017888888889 N,53.962204444444446 E	False	False
+V54PRr3	V54PRr3	5	54.0	plant_rhizosphere	3.0		desert biome	aeolian lake	15/10/2025	20.92017888888889 N,53.962204444444446 E	False	False
+V55Dr1	V55Dr1	5	55.0	deep	1.0		desert biome	saline pan	15/10/2025	20.9022725 N,54.0024376 E	False	False
+V55PRr1	V55PRr1	5	55.0	plant_rhizosphere	1.0		desert biome	saline pan	15/10/2025	20.9022725 N,54.0024376 E	False	False
+V55PRr2	V55PRr2	5	55.0	plant_rhizosphere	2.0		desert biome	saline pan	15/10/2025	20.9022725 N,54.0024376 E	False	False
+V55PRr3	V55PRr3	5	55.0	plant_rhizosphere	3.0		desert biome	saline pan	15/10/2025	20.9022725 N,54.0024376 E	False	False
+V55Sr2	V55Sr2	5	55.0	surface	2.0		desert biome	saline pan	15/10/2025	20.9022725 N,54.0024376 E	False	False
+V55Sr3	V55Sr3	5	55.0	surface	3.0		desert biome	saline pan	15/10/2025	20.9022725 N,54.0024376 E	False	False
+V57PRr2	V57PRr2	5	57.0	plant_rhizosphere	2.0		desert biome	sand dune	15/10/2025	20.7349775 N,54.41764333333333 E	False	False
+V57PRr3	V57PRr3	5	57.0	plant_rhizosphere	3.0		desert biome	sand dune	15/10/2025	20.7349775 N,54.41764333333333 E	False	False
+V58PRr1	V58PRr1	5	58.0	plant_rhizosphere	1.0		desert biome	sand dune	15/10/2025	20.66540111111111 N,54.59327444444445 E	False	False
+V58PRr2	V58PRr2	5	58.0	plant_rhizosphere	2.0		desert biome	sand dune	15/10/2025	20.66540111111111 N,54.59327444444445 E	False	False
+V58PRr3	V58PRr3	5	58.0	plant_rhizosphere	3.0		desert biome	sand dune	15/10/2025	20.66540111111111 N,54.59327444444445 E	False	False
+V5Dr1T	V5Dr1T	5	5.0	deep	1.0	T	desert biome	saline pan	12/10/2025	19.407155277777775 N,45.659501388888884 E	False	False
+V5Dr1	V5Dr1	5	5.0	deep	1.0		desert biome	saline pan	12/10/2025	19.407155277777775 N,45.659501388888884 E	False	False
+V5PRr1T	V5PRr1T	5	5.0	plant_rhizosphere	1.0	T	desert biome	saline pan	12/10/2025	19.407155277777775 N,45.659501388888884 E	False	False
+V5PRr1	V5PRr1	5	5.0	plant_rhizosphere	1.0		desert biome	saline pan	12/10/2025	19.407155277777775 N,45.659501388888884 E	False	False
+V5PRr2	V5PRr2	5	5.0	plant_rhizosphere	2.0		desert biome	saline pan	12/10/2025	19.407155277777775 N,45.659501388888884 E	False	False
+V5PRr3	V5PRr3	5	5.0	plant_rhizosphere	3.0		desert biome	saline pan	12/10/2025	19.407155277777775 N,45.659501388888884 E	False	False
+V5Sr1	V5Sr1	5	5.0	surface	1.0		desert biome	saline pan	12/10/2025	19.407155277777775 N,45.659501388888884 E	False	False
+V5Sr3	V5Sr3	5	5.0	surface	3.0		desert biome	saline pan	12/10/2025	19.407155277777775 N,45.659501388888884 E	False	False
+V60PRr1O	V60PRr1O	5	60.0	plant_rhizosphere	1.0	O	desert biome	desert oasis	15/10/2025	20.706374444444442 N,54.732105555555556 E	False	False
+V60PRr1	V60PRr1	5	60.0	plant_rhizosphere	1.0		desert biome	desert oasis	15/10/2025	20.706374444444442 N,54.732105555555556 E	False	False
+V60PRr2	V60PRr2	5	60.0	plant_rhizosphere	2.0		desert biome	desert oasis	15/10/2025	20.706374444444442 N,54.732105555555556 E	False	False
+V6Dr1	V6Dr1	5	6.0	deep	1.0		desert biome	saline pan	12/10/2025	19.405739166666667 N,45.8161425 E	False	False
+V6PRr1	V6PRr1	5	6.0	plant_rhizosphere	1.0		desert biome	saline pan	12/10/2025	19.405739166666667 N,45.8161425 E	False	False
+V6PRr2	V6PRr2	5	6.0	plant_rhizosphere	2.0		desert biome	saline pan	12/10/2025	19.405739166666667 N,45.8161425 E	False	False
+V6PRr3	V6PRr3	5	6.0	plant_rhizosphere	3.0		desert biome	saline pan	12/10/2025	19.405739166666667 N,45.8161425 E	False	False
+V6Sr1	V6Sr1	5	6.0	surface	1.0		desert biome	saline pan	12/10/2025	19.405739166666667 N,45.8161425 E	False	False
+V6Sr3	V6Sr3	5	6.0	surface	3.0		desert biome	saline pan	12/10/2025	19.405739166666667 N,45.8161425 E	False	False
+V7Dr1T	V7Dr1T	5	7.0	deep	1.0	T	desert biome	sand dune	12/10/2025	19.407005277777778 N,45.953943611111114 E	False	False
+V7Dr3R	V7Dr3R	5	7.0	deep	3.0	R	desert biome	sand dune	12/10/2025	19.407005277777778 N,45.953943611111114 E	False	False
+V7Dr3	V7Dr3	5	7.0	deep	3.0		desert biome	sand dune	12/10/2025	19.407005277777778 N,45.953943611111114 E	False	False
+V7PRr1O	V7PRr1O	5	7.0	plant_rhizosphere	1.0	O	desert biome	sand dune	12/10/2025	19.407005277777778 N,45.953943611111114 E	False	False
+V7PRr1T	V7PRr1T	5	7.0	plant_rhizosphere	1.0	T	desert biome	sand dune	12/10/2025	19.407005277777778 N,45.953943611111114 E	False	False
+V7PRr1	V7PRr1	5	7.0	plant_rhizosphere	1.0		desert biome	sand dune	12/10/2025	19.407005277777778 N,45.953943611111114 E	False	False
+V7PRr2	V7PRr2	5	7.0	plant_rhizosphere	2.0		desert biome	sand dune	12/10/2025	19.407005277777778 N,45.953943611111114 E	False	False
+V7PRr3	V7PRr3	5	7.0	plant_rhizosphere	3.0		desert biome	sand dune	12/10/2025	19.407005277777778 N,45.953943611111114 E	False	False
+V8Dr3	V8Dr3	5	8.0	deep	3.0		desert biome	sand dune	12/10/2025	19.393154166666665 N,46.110734722222226 E	False	False
+V8PRr1	V8PRr1	5	8.0	plant_rhizosphere	1.0		desert biome	sand dune	12/10/2025	19.393154166666665 N,46.110734722222226 E	False	False
+V8PRr2	V8PRr2	5	8.0	plant_rhizosphere	2.0		desert biome	sand dune	12/10/2025	19.393154166666665 N,46.110734722222226 E	False	False
+V8PRr3	V8PRr3	5	8.0	plant_rhizosphere	3.0		desert biome	sand dune	12/10/2025	19.393154166666665 N,46.110734722222226 E	False	False
+V9PRr1	V9PRr1	5	9.0	plant_rhizosphere	1.0		desert biome	sand dune	12/10/2025	19.411200277777777 N,46.30267361111111 E	False	False
+V9PRr2	V9PRr2	5	9.0	plant_rhizosphere	2.0		desert biome	sand dune	12/10/2025	19.411200277777777 N,46.30267361111111 E	False	False
+V9PRr3	V9PRr3	5	9.0	plant_rhizosphere	3.0		desert biome	sand dune	12/10/2025	19.411200277777777 N,46.30267361111111 E	False	False

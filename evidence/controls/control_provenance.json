@@ -1,0 +1,55 @@
+{
+  "author_confirmation": {
+    "confirmed": [
+      "numbered positive and negative controls are replicate groups",
+      "negative controls include distinct extraction-control and PCR-blank types",
+      "EB denotes extraction blank",
+      "Negative1-Negative7 are extraction blanks",
+      "one EB was included per extraction day",
+      "an extraction day could include samples from multiple trips",
+      "EB labels do not encode trip and a single-trip assignment is not applicable"
+    ],
+    "pending": [
+      "composition and trip assignment of the two mock communities",
+      "exact extraction-day/batch membership for EB libraries",
+      "sequence-index reconciliation of reused EB library labels",
+      "identifier-level assignment of every PCR blank",
+      "reason Negative3 is absent"
+    ]
+  },
+  "control_records_found": 112,
+  "feature_table": {
+    "bytes": 1801512613,
+    "control_columns": 24,
+    "path": "data/processed/taxonomy/taxon-tables/feature-table-trips1-5.tsv"
+  },
+  "gate": "Two mock communities are author-confirmed, but their compositions and trip assignments remain pending from Marwa. control_ground_truth.tsv is not created.",
+  "ground_truth_table_written": false,
+  "remote_discovery": {
+    "consequence": "Raw read files and BCL-level run metadata were not inspected. Every statement here rests on local manifests, MultiQC output, the release ledger and public archive metadata.",
+    "ibex": "unreachable at run time (hostname did not resolve); no remote read performed",
+    "workstation": "unreachable at run time (connection timed out)"
+  },
+  "sources": {
+    "data-paper/zenodo/evidence/accessions/accession_reconciliation.json": {
+      "bytes": 302804,
+      "sha256": "6d0ef9acace630134f413c3b17f944f056a66c41dfc88f4aaa854605501590cb"
+    },
+    "data-paper/zenodo/metadata/QC_reads/multiqc_general_stats.txt": {
+      "bytes": 120090,
+      "sha256": "e06494040042a1c1a6aaeedbffdc766e49887336e0d935e58f5aa02e8b022e17"
+    },
+    "data/release/release_evidence.json": {
+      "bytes": 23704,
+      "sha256": "d9817b6f92a0040ae5841928268d8b60c81e4fb642edc6ee48670f73942642f2"
+    },
+    "data/release/sample_ledger.tsv": {
+      "bytes": 558402,
+      "sha256": "cf7affd4d58803417fc5cf03ab71e6455e7fe190db449b0eb7ebaedfb4d1c99f"
+    },
+    "revision/controls/author_control_confirmation_20260729.tsv": {
+      "bytes": 2701,
+      "sha256": "610874a89769da14901e3865a25e87d98de850140c6435c409d6521717a8108a"
+    }
+  }
+}

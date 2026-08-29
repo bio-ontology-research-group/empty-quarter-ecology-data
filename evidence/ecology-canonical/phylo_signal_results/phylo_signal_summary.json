@@ -1,0 +1,41 @@
+{
+  "betaNTI_process_percentages_permitted": false,
+  "counts": {
+    "abundant_asvs_requested": 800,
+    "asvs_with_niche_summary": 800,
+    "communities_total": 629,
+    "communities_with_elemental_axis": 613,
+    "phylogenetic_pairs": 319600
+  },
+  "diagnostics": {
+    "closest_class_mean_niche_difference": 0.8079093542158223,
+    "farthest_class_mean_niche_difference": 0.5146863287227287,
+    "overall_mantel_p": 0.002,
+    "overall_mantel_r": -0.08371349144732017,
+    "short_distance_pearson_r": 0.026205016282388423
+  },
+  "inputs": {
+    "asv_counts": {
+      "file": "asv_filt_counts.tsv",
+      "sha256": "6b5a98d4d59566dea26f25e0412a7ad5d7663de3d8a672a476813b62e8e78750"
+    },
+    "elemental_axis": {
+      "file": "laboratory_xrf_axis.tsv",
+      "sha256": "5cc9008bcd24b6c284339d684d05ee55bacc4f12d44b77549d5a9286d4718d6a"
+    },
+    "tree": {
+      "file": "asv_filt_tree_rooted.nwk",
+      "sha256": "66fe5e1641ea0905c3285d2f88f4fba9fcede0c7bd9300ab4e18e7835c6c08e5"
+    }
+  },
+  "parameters": {
+    "distance_classes": 10,
+    "permutations": 999,
+    "seed": 20260723,
+    "short_distance_fraction": 0.3
+  },
+  "permitted_wording": "The tested elemental-axis niche summary lacked the positive short-range phylogenetic signal required for interpreting betaNTI process labels; the earlier assembly percentages are retired.",
+  "prohibited_wording": "Do not infer dispersal limitation, homogeneous selection, variable selection, drift, or homogenizing dispersal percentages from the retired betaNTI/RC-Bray analysis.",
+  "schema_version": "1.0",
+  "status": "weak_or_absent_positive_signal"
+}

@@ -1,0 +1,4 @@
+model	n_groups	n_sites	taxon_count	pseudocount	partial_r2	pseudo_f	p	n_observations	residual_df	permutations
+same_cohort_without_ph_adjustment	558	60	200	0.5	0.3582660386791946	15.91092682915177	0.001	60	57	999
+same_cohort_with_ph_adjustment	558	60	200	0.5	0.19592506350977723	6.944457607896782	0.001	60	57	999
+ph_transect_pattern_after_campaign_position	558	60	0		0.8464414545052905	157.0969650414662	0.001	60	57	999

@@ -1,0 +1,89 @@
+{
+  "alpha_primary": {
+    "ci_high": 0.703140516058633,
+    "ci_low": -0.3322843106609017,
+    "estimate_per_ph_unit": 0.18542810269886567,
+    "formula": "shannon ~ ph + log_sequencing_depth + C(trip) + C(compartment) + C(site)",
+    "n_observations": 562,
+    "n_sites": 60,
+    "p": 0.4826812247105965,
+    "std_error": 0.26414384011309233
+  },
+  "composition_primary": {
+    "configuration": "top_200_pseudocount_0.5",
+    "feature_count": 200,
+    "n_observations": 558,
+    "n_sites": 60,
+    "p": 0.126,
+    "partial_r2": 0.0027425505215512153,
+    "permutations": 999,
+    "pseudo_f": 1.3502955598736266,
+    "representation": "Aitchison CLR",
+    "residual_df": 491,
+    "retained_axes": null,
+    "retained_variance_fraction": null
+  },
+  "counts": {
+    "accepted_ph_specimens": 712,
+    "accepted_specimens_with_ecology_profile": 702,
+    "composition_groups": 558,
+    "eligible_genera": 346,
+    "minimum_group_reads": 2000,
+    "retained_groups": 558,
+    "retained_sites": 60,
+    "selected_profile_columns": 715,
+    "selected_unique_specimens": 702,
+    "site_campaign_position_groups": 562,
+    "sites": 60
+  },
+  "dataset_version": "EQ-PH-SHARED-v1.0.0",
+  "geographic_same_cohort": {
+    "descriptive_relative_change": -0.4531296791845342,
+    "with_ph_adjustment_p": 0.001,
+    "with_ph_adjustment_partial_r2": 0.19592506350977723,
+    "without_ph_adjustment_p": 0.001,
+    "without_ph_adjustment_partial_r2": 0.3582660386791946
+  },
+  "ingest_dispositions": {
+    "ADMITTED_MEASUREMENT": 712,
+    "NOT_MEASURED_DEPLETED": 45,
+    "PENDING_MEASUREMENT": 356,
+    "QUARANTINED_DATE": 36,
+    "QUARANTINED_QC": 19
+  },
+  "interpretation_boundary": "pH availability is incomplete and non-random across trips and specimens. These estimates describe the admitted measurements in the frozen shared cohort and do not represent a complete pH survey. Future corrections require a new dataset version.",
+  "maximum_group_influence": {
+    "all_refit_p_values_at_permutation_floor": true,
+    "compartment": "Rhizosphere",
+    "exclude_group_geography_after_partial_r2": 0.18712856915178622,
+    "exclude_group_ph_transect_partial_r2": 0.8261999717823737,
+    "exclude_site_geography_after_partial_r2": 0.18834234907195502,
+    "exclude_site_ph_transect_partial_r2": 0.832700411321767,
+    "n_ph_specimens": 1,
+    "ph": 9.98,
+    "site": 60,
+    "trip": 4
+  },
+  "paired_position_omnibus": {
+    "complete_three_position_site_campaign_blocks": 144,
+    "complete_three_position_sites": 60,
+    "friedman_chi_square": 19.75732217573217,
+    "friedman_p": 5.1256860378210834e-05
+  },
+  "ph_distribution_group_means": {
+    "max": 9.98,
+    "mean": 7.98620699881376,
+    "min": 7.29,
+    "sd": 0.240241410024502
+  },
+  "release_gate": {
+    "canonical_kg_import_allowed": true,
+    "ecology_analysis_frozen": true,
+    "ecology_manuscript_claim_allowed": true,
+    "future_versions_may_add_measurements": true,
+    "shared_with_data_paper": true
+  },
+  "schema_version": "ph-shared-v1.1.0",
+  "source_workbook_sha256": "701db2a771b257da09bb276c8ca29df4408ba5986bd515821ccea275a8c692c1",
+  "status": "FROZEN_ECOLOGY_ANALYSIS"
+}

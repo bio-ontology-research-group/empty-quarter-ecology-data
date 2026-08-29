@@ -1,0 +1,79 @@
+{
+  "analysis_date": "2026-08-05",
+  "analysis_status": "temporally_localized_association_borderline",
+  "campaign_interpretation": "Rainfall is rare and uneven among campaigns. Campaign omission is not a replication or stability requirement; the conditional timing null retains each campaign's observed rain amount and spatial field.",
+  "cohort": "grouped",
+  "cohort_description": "technical replicates averaged within 617 site-campaign-position groups",
+  "community_table_role": "primary_unfiltered",
+  "familywise_inference": {
+    "conditional_lag_rotation_one_sided_p": 0.0909,
+    "conditional_lag_rotation_two_sided_p": 0.67625,
+    "correction_scope": "all candidate peaks and three alpha-diversity endpoints",
+    "n_lag_rotation_draws": 19999,
+    "n_spatial_route_orbit_members": 120,
+    "spatial_route_orbit_one_sided_p": 0.225,
+    "spatial_route_orbit_two_sided_p": 0.16666666666666666
+  },
+  "future_rain_placebo": {
+    "inferential_role": "descriptive negative control only",
+    "maximum_endpoint": "evenness_h_over_log_hurlbert",
+    "maximum_peak_days": 0.5,
+    "maximum_t": 1.768798143778136,
+    "richness_maximum_t": 0.8434369760149355
+  },
+  "half_maximum_day": 5.356746783733919,
+  "kernel": "(lag / peak) * exp(1 - lag / peak)",
+  "kernel_horizon_complete_days": 60,
+  "nuisance_model": "quadratic_longitude_day",
+  "permitted_wording": "Bacterial richness showed a short-lived positive association with antecedent rain, with borderline familywise evidence in this rainfall product.",
+  "ph_adjusted": false,
+  "positive_pulse_hypothesis": true,
+  "post_hoc": true,
+  "prohibited_wording": [
+    "rain caused the diversity change",
+    "the response was replicated across campaigns",
+    "the fitted peak proves an exact biological latency",
+    "campaign omission tests rainfall stability",
+    "a threshold crossing after control filtering strengthens the effect size"
+  ],
+  "sampling_uncertainty": {
+    "boundary": "The bootstrap quantifies sampling variation among sites conditional on the fitted nuisance adjustment and rainfall product. Product and route-model uncertainty are reported separately.",
+    "fixed_effect_95_ci": [
+      -8.145579861617785,
+      207.0640175060514
+    ],
+    "fixed_partial_r2_95_ci": [
+      0.0001132389745232925,
+      0.03789744635615988
+    ],
+    "full_search_endpoint_selection_frequency": {
+      "evenness_h_over_log_hurlbert": 0.048504850485048503,
+      "richness_hurlbert_25000": 0.752975297529753,
+      "shannon": 0.19851985198519853
+    },
+    "half_maximum_95_interval_complete_days": [
+      4.017560087800439,
+      22.766173830869157
+    ],
+    "method": "multinomial site-block percentile bootstrap of nuisance-adjusted outcomes and all candidate rain-exposure curves",
+    "replicates": 9999,
+    "seed": 20260805,
+    "selected_endpoint_peak_95_interval_complete_days": [
+      1.5,
+      8.5
+    ],
+    "ten_percent_95_interval_complete_days": [
+      7.334691673458367,
+      41.563252816264075
+    ]
+  },
+  "schema_version": "1.2",
+  "selected_classical_t": 2.1492707674722147,
+  "selected_endpoint": "richness_hurlbert_25000",
+  "selected_endpoint_label": "Hurlbert expected richness at 25,000 reads",
+  "selected_estimate_per_mm_at_peak": 124.4567421848116,
+  "selected_partial_r2": 0.011008464382383804,
+  "selected_peak_complete_days": 2.0,
+  "ten_percent_day": 9.779588897944489,
+  "weather_product": "nasa_power"
+}

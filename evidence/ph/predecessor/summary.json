@@ -1,0 +1,82 @@
+{
+  "as_of": "2026-08-02",
+  "counts": {
+    "admitted_rows": 653,
+    "dispositions": {
+      "ADMITTED_MEASUREMENT": 653,
+      "NOT_MEASURED_DEPLETED": 51,
+      "PENDING_MEASUREMENT": 421,
+      "QUARANTINED_COLUMN_SHIFT_CANDIDATE": 7,
+      "QUARANTINED_DATE": 36
+    },
+    "rdf_measurement_processes": 653,
+    "rdf_ph_values": 653,
+    "sessions": 26,
+    "source_rows": 1168
+  },
+  "dataset_purpose": "ecology-manuscript",
+  "dataset_version": "EQ-PH-ECOLOGY-v1.0.0",
+  "ontology_iri": "https://rubalkhali.science/kb/rubalkhali_ph_eq_ph_ecology_v1_0_0.owl",
+  "per_trip": {
+    "1": {
+      "admitted_rows": 157,
+      "declared_target_samples": 330,
+      "listed_rows": 319,
+      "not_measured_depleted_rows": 28,
+      "numeric_ph_rows": 157,
+      "pending_rows": 134,
+      "quarantined_rows": 0
+    },
+    "2": {
+      "admitted_rows": 23,
+      "declared_target_samples": 27,
+      "listed_rows": 26,
+      "not_measured_depleted_rows": 3,
+      "numeric_ph_rows": 23,
+      "pending_rows": 0,
+      "quarantined_rows": 0
+    },
+    "3": {
+      "admitted_rows": 156,
+      "declared_target_samples": 450,
+      "listed_rows": 426,
+      "not_measured_depleted_rows": 13,
+      "numeric_ph_rows": 192,
+      "pending_rows": 221,
+      "quarantined_rows": 36
+    },
+    "4": {
+      "admitted_rows": 97,
+      "declared_target_samples": 177,
+      "listed_rows": 177,
+      "not_measured_depleted_rows": 7,
+      "numeric_ph_rows": 97,
+      "pending_rows": 66,
+      "quarantined_rows": 7
+    },
+    "5": {
+      "admitted_rows": 220,
+      "declared_target_samples": 234,
+      "listed_rows": 220,
+      "not_measured_depleted_rows": 0,
+      "numeric_ph_rows": 220,
+      "pending_rows": 0,
+      "quarantined_rows": 0
+    }
+  },
+  "protocol_key": "EQ-PH-CACL2-1G-v1.0.0",
+  "release_gate": {
+    "canonical_kg_imported": false,
+    "ecology_analysis_frozen": true,
+    "future_versions_may_add_measurements": true,
+    "source_complete": false
+  },
+  "schema_version": "ph-measurement-v1",
+  "source": {
+    "bytes": 178875,
+    "path": "data/metadata/samples/ph/versions/EQ-PH-ECOLOGY-v1.0.0/ph_measurements.xlsx",
+    "sha256": "0986fdde4af4635252ead8f601e8725749228c0adf4f906e08b364801ab08398"
+  },
+  "source_complete": false,
+  "status": "FROZEN_ECOLOGY_MANUSCRIPT"
+}

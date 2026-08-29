@@ -1,0 +1,214 @@
+{
+  "analysis_date": "2026-08-05",
+  "bootstrap_seed": 20260805,
+  "campaign_stability_requirement": false,
+  "commands": [
+    [
+      "/home/leechuck/Public/software/empty-quarter/.venv/bin/python",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/rain_pulse_response.py",
+      "--root",
+      "/home/leechuck/Public/software/empty-quarter",
+      "--permutations",
+      "19999",
+      "--bootstraps",
+      "9999",
+      "--bootstrap-seed",
+      "20260805",
+      "--output",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/rain_pulse_response",
+      "--alpha",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v2/review/cache/alpha.tsv"
+    ],
+    [
+      "/home/leechuck/Public/software/empty-quarter/.venv/bin/python",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/rain_pulse_response.py",
+      "--root",
+      "/home/leechuck/Public/software/empty-quarter",
+      "--permutations",
+      "19999",
+      "--bootstraps",
+      "9999",
+      "--bootstrap-seed",
+      "20260805",
+      "--output",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/rain_pulse_response_open_meteo",
+      "--alpha",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v2/review/cache/alpha.tsv",
+      "--nasa-weather",
+      "/home/leechuck/Public/software/empty-quarter/data/processed/climate/daily_weather_canonical.tsv",
+      "--weather-product",
+      "open_meteo"
+    ],
+    [
+      "/home/leechuck/Public/software/empty-quarter/.venv/bin/python",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/rain_pulse_response.py",
+      "--root",
+      "/home/leechuck/Public/software/empty-quarter",
+      "--permutations",
+      "19999",
+      "--bootstraps",
+      "9999",
+      "--bootstrap-seed",
+      "20260805",
+      "--output",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/rain_pulse_sensitivities/control_filtered",
+      "--alpha",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/control_audit/sensitivity_inputs/alpha.tsv",
+      "--community-table-role",
+      "control_filtered_sensitivity"
+    ],
+    [
+      "/home/leechuck/Public/software/empty-quarter/.venv/bin/python",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/rain_pulse_response.py",
+      "--root",
+      "/home/leechuck/Public/software/empty-quarter",
+      "--permutations",
+      "19999",
+      "--bootstraps",
+      "9999",
+      "--bootstrap-seed",
+      "20260805",
+      "--output",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/rain_pulse_sensitivities/paired",
+      "--alpha",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v2/review/cache/alpha.tsv",
+      "--cohort",
+      "paired"
+    ],
+    [
+      "/home/leechuck/Public/software/empty-quarter/.venv/bin/python",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/rain_pulse_response.py",
+      "--root",
+      "/home/leechuck/Public/software/empty-quarter",
+      "--permutations",
+      "19999",
+      "--bootstraps",
+      "9999",
+      "--bootstrap-seed",
+      "20260805",
+      "--output",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/rain_pulse_sensitivities/ph_adjusted",
+      "--alpha",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v2/review/cache/alpha.tsv",
+      "--adjust-ph"
+    ],
+    [
+      "/home/leechuck/Public/software/empty-quarter/.venv/bin/python",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/rain_pulse_response.py",
+      "--root",
+      "/home/leechuck/Public/software/empty-quarter",
+      "--permutations",
+      "19999",
+      "--bootstraps",
+      "9999",
+      "--bootstrap-seed",
+      "20260805",
+      "--output",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/rain_pulse_sensitivities/quadratic_longitude",
+      "--alpha",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v2/review/cache/alpha.tsv",
+      "--nuisance-model",
+      "quadratic_longitude"
+    ],
+    [
+      "/home/leechuck/Public/software/empty-quarter/.venv/bin/python",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/rain_pulse_response.py",
+      "--root",
+      "/home/leechuck/Public/software/empty-quarter",
+      "--permutations",
+      "19999",
+      "--bootstraps",
+      "9999",
+      "--bootstrap-seed",
+      "20260805",
+      "--output",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/rain_pulse_sensitivities/quadratic_longitude_day",
+      "--alpha",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v2/review/cache/alpha.tsv",
+      "--nuisance-model",
+      "quadratic_longitude_day"
+    ],
+    [
+      "/home/leechuck/Public/software/empty-quarter/.venv/bin/python",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/rain_pulse_response.py",
+      "--root",
+      "/home/leechuck/Public/software/empty-quarter",
+      "--permutations",
+      "19999",
+      "--bootstraps",
+      "9999",
+      "--bootstrap-seed",
+      "20260805",
+      "--output",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v3/rain_pulse_sensitivities/cubic_longitude",
+      "--alpha",
+      "/home/leechuck/Public/software/empty-quarter/analysis/v2/review/cache/alpha.tsv",
+      "--nuisance-model",
+      "cubic_longitude"
+    ]
+  ],
+  "consolidated_interpretation": {
+    "control_filtered_familywise_one_sided_p": 0.0485,
+    "fitted_peak_complete_days_across_weather_products": [
+      2.0,
+      1.0
+    ],
+    "open_meteo_familywise_one_sided_p": 0.04315,
+    "permitted_main_text": "Bacterial richness showed a short-lived positive association with recent rain, strongest during the first several complete days after rainfall.",
+    "primary_unfiltered_familywise_one_sided_p": 0.056,
+    "reason": "The declared unfiltered NASA POWER analysis is borderline, while the Open-Meteo and control-filtered sensitivities retain the same early positive pattern. The threshold change after filtering is not accompanied by a material effect-size change.",
+    "reporting_verdict": "bounded_observational_association",
+    "required_boundary": "Report the primary and sensitivity probabilities and state that the model does not establish causation or an exact response latency."
+  },
+  "correction_scope_per_run": "all candidate peak times and all three alpha-diversity endpoints",
+  "permutations_per_run": 19999,
+  "reason": "Rain is rare and uneven among campaigns; the conditional lag-rotation null retains each campaign's observed rain amount and spatial field.",
+  "runs": [
+    {
+      "decision_sha256": "9d37f48a996a635075bc40d1c94e170245d49df14b366205aaf1677fddfbb3b8",
+      "output": "analysis/v3/rain_pulse_response",
+      "run_id": "primary_nasa_power"
+    },
+    {
+      "decision_sha256": "50e4a3eebd1539781a17d6d7295494ea4dfcee4e17f7fbfab302d7dd7c6ea50a",
+      "output": "analysis/v3/rain_pulse_response_open_meteo",
+      "run_id": "open_meteo_product"
+    },
+    {
+      "decision_sha256": "698c3270b4a25dbacd18ec4c6837ce9ef5501fd2dc3906119cf410c9650ffe24",
+      "output": "analysis/v3/rain_pulse_sensitivities/control_filtered",
+      "run_id": "control_filtered"
+    },
+    {
+      "decision_sha256": "abb8aa6f71d92c824d434255e1b6b559021271eff53a88e0a81a431da8665b8b",
+      "output": "analysis/v3/rain_pulse_sensitivities/paired",
+      "run_id": "paired_bulk"
+    },
+    {
+      "decision_sha256": "e4df7ffd1ed6771ec458dbe1ab5d9ec3cd92bb9e89d2d2b9be9884d205f65c10",
+      "output": "analysis/v3/rain_pulse_sensitivities/ph_adjusted",
+      "run_id": "ph_adjusted"
+    },
+    {
+      "decision_sha256": "8a781cd8cfc75ecb3cf4856e02acd8a10dc31555d1e3be53dfe05fd614249e5f",
+      "output": "analysis/v3/rain_pulse_sensitivities/quadratic_longitude",
+      "run_id": "quadratic_longitude"
+    },
+    {
+      "decision_sha256": "937da270448f53f79d07cbb487a3769a54137df35c83d85ea843758c9bc22549",
+      "output": "analysis/v3/rain_pulse_sensitivities/quadratic_longitude_day",
+      "run_id": "quadratic_longitude_and_day"
+    },
+    {
+      "decision_sha256": "14758bcef4146be0742a000733e60952832f3377e7ad4d539223ca4a82950d17",
+      "output": "analysis/v3/rain_pulse_sensitivities/cubic_longitude",
+      "run_id": "cubic_longitude"
+    }
+  ],
+  "schema_version": "1.1",
+  "site_block_bootstraps_per_run": 9999,
+  "summary": {
+    "path": "analysis/v3/rain_pulse_sensitivities/summary.tsv",
+    "sha256": "0b24dbd8ea5e0846e14013de6a7789783aad2e901b199052f75b114ec19198ed"
+  }
+}

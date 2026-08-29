@@ -1,0 +1,24 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rak: <https://rubalkhali.science/kb/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+
+rak:wrong_stage_material
+    a rak:RAK_0000300, rak:RAK_0000302 ;
+    rdfs:label "wrong-stage extraction blank" ;
+    dcterms:identifier "wrong-stage-material" .
+
+rak:wrong_stage_role
+    a rak:RAK_0000306 ;
+    rdfs:label "extraction blank role realized in the wrong stage" ;
+    dcterms:identifier "wrong-stage-role" ;
+    sio:SIO_000227 rak:wrong_stage_material ;
+    sio:SIO_000356 rak:wrong_stage_process .
+
+rak:wrong_stage_process
+    a rak:RAK_0000311, sio:SIO_000006 ;
+    rdfs:label "PCR process incorrectly realizing an extraction blank" ;
+    dcterms:identifier "wrong-stage-process" ;
+    sio:SIO_000230 rak:wrong_stage_material ;
+    sio:SIO_000291 rak:wrong_stage_material ;
+    sio:SIO_000229 rak:wrong_stage_output .

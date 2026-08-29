@@ -1,0 +1,742 @@
+{
+  "counting_policy": {
+    "ecology_primary_site_profile": "One retained row in analysis/v2/review/cache/alpha.tsv whose Site value is an integer from 1 through 60.",
+    "ecology_sample": "One row in analysis/v2/review/cache/alpha.tsv.",
+    "kg_sample_eligible": "A non-control source row with sample identifier, site, compartment and either a site label represented in rubalkhali_sites.owl or a confirmed coordinate-identity alias to an existing named site individual.",
+    "source_record": "One row in Sample_Mastersheet.xlsx or plants.tsv.",
+    "sra_record": "One row/run accession in submission-sheet.tsv.",
+    "trip1_only_nonrevisited": "A genuine sample from numeric sites 61\u201364, which were sampled only in Trip 1 and omitted from the revisit frame because the regions were subsequently inaccessible."
+  },
+  "discrepancies": {
+    "expected_vs_generated_dna": 0,
+    "feature_vs_ecology_profiles": 34,
+    "resolved_sra_vs_generated_fastq": 0,
+    "source_vs_generated_samples": 0
+  },
+  "duplicate_source_sample_ids": {
+    "- Ctrl 1": 4,
+    "- Ctrl 2": 4,
+    "- Ctrl 3": 4,
+    "=+ Ctrl 1": 4,
+    "=+ Ctrl 2": 4,
+    "=+ Ctrl 3": 4,
+    "Extraction Ctrl": 4,
+    "PCR Ctrl": 3
+  },
+  "environmental_metadata_audit": {
+    "campaign_date_audit": {
+      "evidence": "Trip_Metadata.xlsx sheet Trip3 rows 67--81 records March 2023; commit ffc330ee changed only the year to 2024.",
+      "trip1_auxiliary_end": "2023-03-20",
+      "trip1_auxiliary_records_from_legacy_trip3_sheet": 15,
+      "trip1_auxiliary_start": "2023-03-17",
+      "trip3_end": "2024-02-21",
+      "trip3_records": 65,
+      "trip3_start": "2024-02-17"
+    },
+    "correction_ledger": {
+      "applied": 24,
+      "entries": 24,
+      "path": "data/metadata/samples/environmental_measurement_corrections.tsv",
+      "sha256": "cf3ef3b4627daeab6185c8ab2a7bb1d3e6ef8ad4530ff3859979a95388ae27d5",
+      "status_counts": {
+        "confirmed_shifted_column": 8,
+        "confirmed_source_workbook": 15,
+        "quarantined_out_of_range": 1
+      }
+    },
+    "curated_records": 274,
+    "generated_outputs": {
+      "curated_tsv_sha256": "1b8cb5c71fa05f6d15cee34c489105d755a0c42b900ec36fe4007f7cd19c5559",
+      "latex_sha256": "90fb40aee9b20b7d5533b5830a2c02079e81b22cf8ffb9da94cdb64d4acf9380"
+    },
+    "method": "Raw field sheets are retained unchanged; exact-cell correction ledger entries are verified before use; curated temperature, pressure and relative-humidity values must pass declared ranges.",
+    "range_checks": {
+      "humidity": {
+        "maximum": 100.0,
+        "minimum": 0.0
+      },
+      "pressure": {
+        "maximum": 1100.0,
+        "minimum": 800.0
+      },
+      "temperature": {
+        "maximum": 60.0,
+        "minimum": -50.0
+      }
+    },
+    "row_qc_status_counts": {
+      "confirmed_shifted_column": 8,
+      "confirmed_source_workbook": 15,
+      "quarantined_out_of_range": 1,
+      "source_as_recorded": 250
+    },
+    "source_files": [
+      {
+        "measurements_retained": {
+          "humidity": 64,
+          "pressure": 63,
+          "temperature": 64
+        },
+        "nonblank_records": 64,
+        "path": "data/metadata/samplesheets/trip1-2023.tsv",
+        "record_roles": {
+          "named_special_record": 4,
+          "primary_transect_site": 60
+        },
+        "sha256": "b8589609285fb7f4f443ae3926b14dad1e2dade8912dea03724d017d8b620fb6"
+      },
+      {
+        "measurements_retained": {
+          "temperature": 8
+        },
+        "nonblank_records": 8,
+        "path": "data/metadata/samplesheets/trip2-2023.tsv",
+        "record_roles": {
+          "primary_transect_site": 8
+        },
+        "sha256": "ef8669ed00262aa7a82005f343dea27f394be2f0a6b2768cdff71f7cc41be960"
+      },
+      {
+        "measurements_retained": {
+          "humidity": 79,
+          "pressure": 76,
+          "temperature": 79
+        },
+        "nonblank_records": 80,
+        "path": "data/metadata/samplesheets/trip3-2024.tsv",
+        "record_roles": {
+          "named_special_record": 5,
+          "primary_transect_site": 60,
+          "trip1_auxiliary_or_revisit_record": 15
+        },
+        "sha256": "1e4f72e4a15b7e2779bbe8f6a6d30aaa99ef3cb987836fc2e85ac39141a72ccd"
+      },
+      {
+        "measurements_retained": {
+          "humidity": 60,
+          "temperature": 60
+        },
+        "nonblank_records": 60,
+        "path": "data/metadata/samplesheets/trip4-2024.tsv",
+        "record_roles": {
+          "primary_transect_site": 60
+        },
+        "sha256": "7c0496c356a46e60363ce6ae9397c656cb3f2f023364a388b4e72d68f3d92639"
+      },
+      {
+        "measurements_retained": {
+          "humidity": 61,
+          "pressure": 62,
+          "temperature": 62
+        },
+        "nonblank_records": 62,
+        "path": "data/metadata/samplesheets/trip5-2025.tsv",
+        "record_roles": {
+          "named_special_record": 2,
+          "primary_transect_site": 60
+        },
+        "sha256": "57a9274dab7edb8426fc238dc065c2274a5bec3df2ba22d43c7ab1517ea511d8"
+      }
+    ],
+    "status": "passed",
+    "trip3_site21_humidity_pct": "31.321",
+    "trip3_site21_primary_source_corroboration": "data/metadata/obsolete/Trip_Metadata.xlsx stores 0.31321; the current percent representation is therefore 31.321."
+  },
+  "generated_kg_counts": {
+    "amplicon_libraries": 1242,
+    "dna_extracts": 1647,
+    "fastq_datasets": 1242,
+    "samples": 2516
+  },
+  "invalid_or_unresolved_sample_rows": [
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": false,
+      "sample_id": "- Ctrl 1",
+      "site": "Control",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip1"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": false,
+      "sample_id": "- Ctrl 2",
+      "site": "Control",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip1"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": false,
+      "sample_id": "- Ctrl 3",
+      "site": "Control",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip1"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": false,
+      "sample_id": "=+ Ctrl 1",
+      "site": "Control",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip1"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": false,
+      "sample_id": "=+ Ctrl 2",
+      "site": "Control",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip1"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": false,
+      "sample_id": "=+ Ctrl 3",
+      "site": "Control",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip1"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": false,
+      "sample_id": "- Ctrl PCR",
+      "site": "Control",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip1"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": false,
+      "sample_id": "Extraction Ctrl",
+      "site": "Control",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip1"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": false,
+      "sample_id": "- Ctrl PCR 2",
+      "site": "Control",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip1"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": false,
+      "sample_id": "Extraction Ctrl 2",
+      "site": "Control",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip1"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Deep",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "- Ctrl 1",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip3"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Deep",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "- Ctrl 2",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip3"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Deep",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "- Ctrl 3",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip3"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Surface",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "=+ Ctrl 1",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip3"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Surface",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "=+ Ctrl 2",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip3"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Surface",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "=+ Ctrl 3",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip3"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Rhizosphere",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "Extraction Ctrl",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip3"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Rhizosphere",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "PCR Ctrl",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip3"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Deep",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "- Ctrl 1",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip4"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Deep",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "- Ctrl 2",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip4"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Deep",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "- Ctrl 3",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip4"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Surface",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "=+ Ctrl 1",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip4"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Surface",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "=+ Ctrl 2",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip4"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Surface",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "=+ Ctrl 3",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip4"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Rhizosphere",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "Extraction Ctrl",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip4"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Rhizosphere",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "PCR Ctrl",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip4"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Deep",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "- Ctrl 1",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip5"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Deep",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "- Ctrl 2",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip5"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Deep",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "- Ctrl 3",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip5"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Surface",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "=+ Ctrl 1",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip5"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Surface",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "=+ Ctrl 2",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip5"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Surface",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "=+ Ctrl 3",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip5"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Rhizosphere",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "Extraction Ctrl",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip5"
+    },
+    {
+      "campaign_role": "laboratory_control",
+      "compartment": "Rhizosphere",
+      "is_control": true,
+      "kg_exclusion_reason": "control_requires_explicit_control_model",
+      "metadata_complete": true,
+      "sample_id": "PCR Ctrl",
+      "site": "61",
+      "site_resolves_in_kg": false,
+      "source": "Sample_Mastersheet.xlsx",
+      "trip": "Trip5"
+    }
+  ],
+  "profile_duplicate_audit": {
+    "ecology_duplicate_normalized_ids": 28,
+    "ecology_extra_profiles_from_repeated_ids": 28,
+    "feature_duplicate_normalized_ids": 29,
+    "feature_duplicate_profile_pairs": 29,
+    "feature_exact_equal_profile_pairs": 0,
+    "feature_extra_profiles_from_repeated_ids": 29,
+    "interpretation": "Repeated normalized identifiers are distinct export profiles, not byte-identical count-vector copies. Their laboratory or sequencing mechanism is not documented, so they remain separate profiles and are aggregated only at the declared biological analysis unit."
+  },
+  "release_manifest_status": "PRE-RELEASE: checksums describe the current local working data, not a published immutable release.",
+  "schema_version": "1.0",
+  "site_alias_provenance": {
+    "confirmed_aliases": 4,
+    "path": "data/metadata/samples/site_aliases.tsv",
+    "policy": "Aliases change only KG site and visit resolution. Numeric source site IDs and trip1_only_nonrevisited ecology status are preserved.",
+    "sample_rows_resolved_by_alias": 36,
+    "sha256": "eba7c55b7ce3344be91077ec2226e5af8a76d8b3aa683beac0926eedc637de2b"
+  },
+  "source_counts": {
+    "all_source_rows": 2550,
+    "confirmed_site_aliases": 4,
+    "dna_expected_by_generator": 1647,
+    "ecology_analysis_profiles": 1237,
+    "ecology_duplicate_normalized_ids": 28,
+    "ecology_extra_profiles_from_repeated_ids": 28,
+    "ecology_numeric_sites": 64,
+    "ecology_primary_site_profiles": 1227,
+    "ecology_unique_field_ids": 1209,
+    "feature_duplicate_normalized_ids": 29,
+    "feature_duplicate_profile_pairs": 29,
+    "feature_exact_equal_profile_pairs": 0,
+    "feature_extra_profiles_from_repeated_ids": 29,
+    "feature_table_profiles": 1271,
+    "feature_table_unique_field_ids": 1242,
+    "kg_sample_eligible_rows": 2516,
+    "master_controls": 34,
+    "master_non_controls": 2268,
+    "master_rows": 2302,
+    "metadata_complete_rows": 2540,
+    "plant_rows": 248,
+    "site_alias_sample_rows": 36,
+    "sra_resolved_rows": 1242,
+    "sra_submission_rows": 1268,
+    "sra_unique_submitted_samples": 1238,
+    "sra_unresolved_rows": 26,
+    "trip1_only_site_ecology_profiles": 10,
+    "trip1_only_site_feature_profiles": 11,
+    "trip1_only_site_rows": 36
+  },
+  "unresolved_sra_records": [
+    {
+      "biosample_accession": "ERS28392121",
+      "run_accession": "ERR16061177",
+      "sample_name": "T_Neg_Ctrl1"
+    },
+    {
+      "biosample_accession": "ERS28392122",
+      "run_accession": "ERR16061178",
+      "sample_name": "T_Neg_Ctrl2"
+    },
+    {
+      "biosample_accession": "ERS29439729",
+      "run_accession": "ERR16783284",
+      "sample_name": "EB10"
+    },
+    {
+      "biosample_accession": "ERS29439730",
+      "run_accession": "ERR16783285",
+      "sample_name": "EB11"
+    },
+    {
+      "biosample_accession": "ERS29439731",
+      "run_accession": "ERR16783286",
+      "sample_name": "EB12"
+    },
+    {
+      "biosample_accession": "ERS29439732",
+      "run_accession": "ERR16783287",
+      "sample_name": "EB13"
+    },
+    {
+      "biosample_accession": "ERS29439733",
+      "run_accession": "ERR16783288",
+      "sample_name": "EB14"
+    },
+    {
+      "biosample_accession": "ERS29439734",
+      "run_accession": "ERR16783289",
+      "sample_name": "EB15"
+    },
+    {
+      "biosample_accession": "ERS29439735",
+      "run_accession": "ERR16783290",
+      "sample_name": "EB16"
+    },
+    {
+      "biosample_accession": "ERS29439736",
+      "run_accession": "ERR16783291",
+      "sample_name": "EB17"
+    },
+    {
+      "biosample_accession": "ERS29439737",
+      "run_accession": "ERR16783292",
+      "sample_name": "EB18"
+    },
+    {
+      "biosample_accession": "ERS29439728",
+      "run_accession": "ERR16783283",
+      "sample_name": "EB1"
+    },
+    {
+      "biosample_accession": "ERS29439738",
+      "run_accession": "ERR16783293",
+      "sample_name": "EB2"
+    },
+    {
+      "biosample_accession": "ERS29439739",
+      "run_accession": "ERR16783294",
+      "sample_name": "EB3"
+    },
+    {
+      "biosample_accession": "ERS29439740",
+      "run_accession": "ERR16783295",
+      "sample_name": "EB4"
+    },
+    {
+      "biosample_accession": "ERS29439741",
+      "run_accession": "ERR16783296",
+      "sample_name": "EB5"
+    },
+    {
+      "biosample_accession": "ERS29439742",
+      "run_accession": "ERR16783297",
+      "sample_name": "EB6"
+    },
+    {
+      "biosample_accession": "ERS29439743",
+      "run_accession": "ERR16783298",
+      "sample_name": "EB7"
+    },
+    {
+      "biosample_accession": "ERS29439744",
+      "run_accession": "ERR16783299",
+      "sample_name": "EB8"
+    },
+    {
+      "biosample_accession": "ERS29439745",
+      "run_accession": "ERR16783300",
+      "sample_name": "EB9"
+    },
+    {
+      "biosample_accession": "ERS29439746",
+      "run_accession": "ERR16783301",
+      "sample_name": "Negative1"
+    },
+    {
+      "biosample_accession": "ERS29439747",
+      "run_accession": "ERR16783302",
+      "sample_name": "Negative2"
+    },
+    {
+      "biosample_accession": "ERS29439748",
+      "run_accession": "ERR16783304",
+      "sample_name": "Negative4"
+    },
+    {
+      "biosample_accession": "ERS29439749",
+      "run_accession": "ERR16783305",
+      "sample_name": "Negative5"
+    },
+    {
+      "biosample_accession": "ERS29439750",
+      "run_accession": "ERR16783306",
+      "sample_name": "Negative6"
+    },
+    {
+      "biosample_accession": "ERS29439751",
+      "run_accession": "ERR16783307",
+      "sample_name": "Negative7"
+    }
+  ]
+}

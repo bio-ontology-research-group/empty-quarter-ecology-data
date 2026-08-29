@@ -1,0 +1,20 @@
+workflow	trip_scope	compartment_scope	metadata_field	value	sample_or_session_count	status
+field	5	not_encoded	Duration	N/A	71	encoded_in_instrument_export
+field	5	not_encoded	Method	Geochem(3-Beam)	71	encoded_in_instrument_export
+field	5	not_encoded	Mode	NORMAL	71	encoded_in_instrument_export
+lab	1-4	Deep;Surface;Rhizosphere	Diameter		547	not_encoded_in_consolidated_workbook_or_table
+lab	1-4	Deep;Surface;Rhizosphere	Material		547	not_encoded_in_consolidated_workbook_or_table
+lab	1-4	Deep;Surface;Rhizosphere	Method		547	not_encoded_in_consolidated_workbook_or_table
+lab	1-4	Deep;Surface;Rhizosphere	Mode		547	not_encoded_in_consolidated_workbook_or_table
+lab	5	Deep	Diameter	8mm	60	encoded_in_workbook
+lab	5	Deep	Material	Oxides	60	encoded_in_workbook
+lab	5	Deep	Method	Fast Screening-He8mm	60	encoded_in_workbook
+lab	5	Deep	Mode	He	60	encoded_in_workbook
+lab	5	Rhizosphere	Diameter	8mm	58	encoded_in_workbook
+lab	5	Rhizosphere	Material	Oxides	58	encoded_in_workbook
+lab	5	Rhizosphere	Method	Fast Screening-He8mm	58	encoded_in_workbook
+lab	5	Rhizosphere	Mode	He	58	encoded_in_workbook
+lab	5	Surface	Diameter	8mm	60	encoded_in_workbook
+lab	5	Surface	Material	Oxides	60	encoded_in_workbook
+lab	5	Surface	Method	Fast Screening-He8mm	60	encoded_in_workbook
+lab	5	Surface	Mode	He	60	encoded_in_workbook

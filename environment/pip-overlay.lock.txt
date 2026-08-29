@@ -1,0 +1,8 @@
+# Pip-only packages layered onto environment/conda-linux-64.lock.
+# Install with --no-deps so Conda's compiled scientific stack is not replaced.
+pandas-flavor==0.8.1 \
+    --hash=sha256:255fa5851833ee0132c4fdd6c1565ec1e938a8c2671c37e408006da6b2bdc366 \
+    --hash=sha256:6a74c48a7014e27117a164b687c23ca9f7da46c5b198a516ab4ebaa22435292b
+pingouin==0.5.5 \
+    --hash=sha256:2aac834128e99a4df8cffd8151c21adc7c42fe493e389c6fc2581b84e436ddd9 \
+    --hash=sha256:3156afe44ee5541131200848ee905937930757b615aca8eed8438ad4d4e20ef1

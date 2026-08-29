@@ -1,0 +1,2 @@
+model	n_observations	n_sites	estimate_ph_units_per_pc1	std_error	ci_low	ci_high	p	formula
+site_fixed_ph_vs_xrf_axis	503	60	0.0045346431735437676	0.006373419081031039	-0.007957028683657436	0.01702631503074497	0.4767787762288106	ph ~ elemental_pc1 + C(trip) + C(compartment) + C(site)

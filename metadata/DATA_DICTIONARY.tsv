@@ -1,0 +1,610 @@
+path	field_or_pattern	data_type	unit	missing_convention	description
+PRE_RELEASE_MANIFEST.tsv	bytes	integer	bytes	never blank	Exact file size.
+PRE_RELEASE_MANIFEST.tsv	category	string	not applicable	never blank	Artifact category assigned by the fail-closed manifest classifier.
+PRE_RELEASE_MANIFEST.tsv	license_gate	string	not applicable	never blank	Evidence required to close the licence gate.
+PRE_RELEASE_MANIFEST.tsv	license_status	string	not applicable	never blank	Open project or third-party licence gate.
+PRE_RELEASE_MANIFEST.tsv	path	path	not applicable	never blank	Path relative to the package root.
+PRE_RELEASE_MANIFEST.tsv	record_scope	string	not applicable	never blank	One-line description of the artifact and its reuse boundary.
+PRE_RELEASE_MANIFEST.tsv	release_status	string	not applicable	never blank	Canonical, audit, legacy-excluded, derived-review, or operational disposition.
+PRE_RELEASE_MANIFEST.tsv	sha256	hexadecimal string	not applicable	never blank	SHA-256 digest of the exact staged bytes.
+evidence/control-audit/control_analysis_roles.tsv	assay	string	not applicable	never blank	Molecular assay to which the record is applicable.
+evidence/control-audit/control_analysis_roles.tsv	control_role	string	not applicable	never blank	Control role as defined by the file-specific audit method.
+evidence/control-audit/control_analysis_roles.tsv	extraction_date	date	ISO 8601 calendar date	blank means unknown or not applicable as bounded by row status	Extraction date as defined by the file-specific audit method.
+evidence/control-audit/control_analysis_roles.tsv	profile_id	string	not applicable	never blank	Feature-table profile identifier.
+evidence/control-audit/control_analysis_roles.tsv	source	string	not applicable	never blank	Source as defined by the file-specific audit method.
+evidence/control-audit/control_analysis_roles.tsv	use	string	not applicable	never blank	Use as defined by the file-specific audit method.
+evidence/control-audit/positive_control_dominant_taxa.tsv	profile_id	string	not applicable	never blank	Feature-table profile identifier.
+evidence/control-audit/positive_control_dominant_taxa.tsv	rank	integer	not applicable	never blank	Rank as defined by the file-specific audit method.
+evidence/control-audit/positive_control_dominant_taxa.tsv	read_fraction	number	proportion (0 to 1)	never blank	Read fraction as defined by the file-specific audit method.
+evidence/control-audit/positive_control_dominant_taxa.tsv	reads	integer	read count	never blank	Reads as defined by the file-specific audit method.
+evidence/control-audit/positive_control_dominant_taxa.tsv	taxonomy	string	not applicable	never blank	Taxonomy as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	biological_profiles_present	integer	count	never blank	Biological profiles present as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	biological_reads	integer	read count	never blank	Biological reads as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	feature_id	string	not applicable	never blank	Amplicon sequence variant identifier.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	interpretation	string	not applicable	never blank	Interpretation as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	maximum_biological_profile_fraction	number	proportion (0 to 1)	never blank	Maximum biological profile fraction as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	maximum_nearest_index_profile_fraction	number	proportion (0 to 1)	never blank	Maximum nearest index profile fraction as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	maximum_negative_profile_fraction	number	proportion (0 to 1)	never blank	Maximum negative profile fraction as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	nearest_index_profile_ids	string	not applicable	blank means unknown or not applicable as bounded by row status	Nearest index profile ids as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	nearest_index_profiles_present	integer	count	never blank	Nearest index profiles present as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	nearest_index_reads	integer	read count	never blank	Nearest index reads as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	negative_profile_ids	string	not applicable	blank means unknown or not applicable as bounded by row status	Negative profile ids as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	negative_profiles_present	integer	count	never blank	Negative profiles present as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	negative_reads	integer	read count	never blank	Negative reads as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	positive_profile_id	string	not applicable	never blank	Positive profile id as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	product	string	not applicable	never blank	Product as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	source_read_fraction	number	proportion (0 to 1)	never blank	Source read fraction as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	source_reads	integer	read count	never blank	Source reads as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	taxonomy	string	not applicable	never blank	Taxonomy as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_asv_occurrences.tsv	trip	string	not applicable	never blank	Trip as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_taxon_recovery.tsv	comparison_name	string	not applicable	never blank	Comparison name as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_taxon_recovery.tsv	comparison_rank	string	not applicable	never blank	Comparison rank as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_taxon_recovery.tsv	expected_species	string	not applicable	never blank	Expected species as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_taxon_recovery.tsv	manufacturer_expected_basis	string	not applicable	never blank	Manufacturer expected basis as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_taxon_recovery.tsv	manufacturer_expected_value	number	not applicable	never blank	Manufacturer expected value as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_taxon_recovery.tsv	observed_read_fraction	number	proportion (0 to 1)	never blank	Observed read fraction as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_taxon_recovery.tsv	observed_reads_at_genus	integer	read count	never blank	Observed reads at genus as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_taxon_recovery.tsv	organism_group	string	not applicable	never blank	Organism group as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_taxon_recovery.tsv	product	string	not applicable	never blank	Product as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_taxon_recovery.tsv	product_assignment_status	string	not applicable	never blank	Evidence boundary for a positive-labelled library/product mapping; the July mappings are provisional trip-design hypotheses.
+evidence/control-audit/positive_control_expected_taxon_recovery.tsv	profile_id	string	not applicable	never blank	Feature-table profile identifier.
+evidence/control-audit/positive_control_expected_taxon_recovery.tsv	quantitative_interpretation	string	not applicable	never blank	Quantitative interpretation as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_taxon_recovery.tsv	recovery_call	string	not applicable	never blank	Recovery call as defined by the file-specific audit method.
+evidence/control-audit/positive_control_expected_taxon_recovery.tsv	trip	string	not applicable	never blank	Trip as defined by the file-specific audit method.
+evidence/control-audit/positive_control_index_neighbours.tsv	absolute_numeric_index_distance	integer	not applicable	never blank	Absolute numeric index distance as defined by the file-specific audit method.
+evidence/control-audit/positive_control_index_neighbours.tsv	index_family	string	not applicable	never blank	Index family as defined by the file-specific audit method.
+evidence/control-audit/positive_control_index_neighbours.tsv	lane	integer	not applicable	never blank	Three-digit sequencing-lane code parsed from the frozen FASTQ path.
+evidence/control-audit/positive_control_index_neighbours.tsv	neighbour_control_class	string	not applicable	never blank	Neighbour control class as defined by the file-specific audit method.
+evidence/control-audit/positive_control_index_neighbours.tsv	neighbour_index_number	integer	not applicable	never blank	Neighbour index number as defined by the file-specific audit method.
+evidence/control-audit/positive_control_index_neighbours.tsv	neighbour_profile_id	string	not applicable	never blank	Neighbour profile id as defined by the file-specific audit method.
+evidence/control-audit/positive_control_index_neighbours.tsv	positive_index_number	integer	not applicable	never blank	Positive index number as defined by the file-specific audit method.
+evidence/control-audit/positive_control_index_neighbours.tsv	positive_profile_id	string	not applicable	never blank	Positive profile id as defined by the file-specific audit method.
+evidence/control-audit/positive_control_profiles.tsv	evaluable_stage	string	not applicable	never blank	Evaluable stage as defined by the file-specific audit method.
+evidence/control-audit/positive_control_profiles.tsv	expected_bacterial_genera	integer	not applicable	never blank	Expected bacterial genera as defined by the file-specific audit method.
+evidence/control-audit/positive_control_profiles.tsv	expected_bacterial_genera_recovered	integer	not applicable	never blank	Expected bacterial genera recovered as defined by the file-specific audit method.
+evidence/control-audit/positive_control_profiles.tsv	expected_bacterial_genus_read_fraction	number	proportion (0 to 1)	never blank	Expected bacterial genus read fraction as defined by the file-specific audit method.
+evidence/control-audit/positive_control_profiles.tsv	expected_bacterial_genus_reads	integer	read count	never blank	Expected bacterial genus reads as defined by the file-specific audit method.
+evidence/control-audit/positive_control_profiles.tsv	observed_asvs	integer	count	never blank	Observed asvs as defined by the file-specific audit method.
+evidence/control-audit/positive_control_profiles.tsv	product	string	not applicable	never blank	Product as defined by the file-specific audit method.
+evidence/control-audit/positive_control_profiles.tsv	product_assignment_status	string	not applicable	never blank	Evidence boundary for a positive-labelled library/product mapping; the July mappings are provisional trip-design hypotheses.
+evidence/control-audit/positive_control_profiles.tsv	product_form	string	not applicable	never blank	Product form as defined by the file-specific audit method.
+evidence/control-audit/positive_control_profiles.tsv	profile_id	string	not applicable	never blank	Feature-table profile identifier.
+evidence/control-audit/positive_control_profiles.tsv	profile_interpretation	string	not applicable	never blank	Profile interpretation as defined by the file-specific audit method.
+evidence/control-audit/positive_control_profiles.tsv	reads	integer	read count	never blank	Reads as defined by the file-specific audit method.
+evidence/control-audit/positive_control_profiles.tsv	role_in_contaminant_model	string	not applicable	never blank	Role in contaminant model as defined by the file-specific audit method.
+evidence/control-audit/positive_control_profiles.tsv	status	string	not applicable	never blank	Evidence or curation status of the record.
+evidence/control-audit/positive_control_profiles.tsv	trip	string	not applicable	never blank	Trip as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	biological_profiles_with_traced_asv	integer	count	never blank	Biological profiles with traced asv as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	expected_genus_asvs_traced	integer	count	never blank	Expected genus asvs traced as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	expected_genus_reads_in_source	integer	read count	never blank	Expected genus reads in source as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	interpretation	string	not applicable	never blank	Interpretation as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	nearest_index_profiles	string	count	never blank	Nearest index profiles as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	nearest_index_profiles_with_traced_asv	integer	count	never blank	Nearest index profiles with traced asv as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	negative_control_profiles_with_traced_asv	integer	count	never blank	Negative control profiles with traced asv as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	positive_profile_id	string	not applicable	never blank	Positive profile id as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	product	string	not applicable	never blank	Product as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	source_reads	integer	read count	never blank	Source reads as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	traced_asv_reads_in_biological_profiles	integer	read count	never blank	Traced asv reads in biological profiles as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	traced_asv_reads_in_nearest_indices	integer	read count	never blank	Traced asv reads in nearest indices as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	traced_asv_reads_in_negative_controls	integer	read count	never blank	Traced asv reads in negative controls as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	traced_asvs_detected_in_biological_profiles	integer	count	never blank	Traced asvs detected in biological profiles as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	traced_asvs_detected_in_nearest_indices	integer	count	never blank	Traced asvs detected in nearest indices as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	traced_asvs_detected_in_negative_controls	integer	count	never blank	Traced asvs detected in negative controls as defined by the file-specific audit method.
+evidence/control-audit/positive_control_spillover_summary.tsv	trip	string	not applicable	never blank	Trip as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha.tsv		string	not applicable	never blank	 as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha.tsv	Season	string	not applicable	never blank	Season as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha.tsv	Site	integer	not applicable	never blank	Site as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha.tsv	Trip	integer	not applicable	never blank	Trip as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha.tsv	Type	string	not applicable	never blank	Type as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha.tsv	depth	number	not applicable	never blank	Depth as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha.tsv	pielou	number	not applicable	blank means unknown or not applicable as bounded by row status	Pielou as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha.tsv	richness_rare	number	not applicable	blank means unknown or not applicable as bounded by row status	Richness rare as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha.tsv	richness_raw	integer	not applicable	never blank	Richness raw as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha.tsv	shannon	number	not applicable	never blank	Shannon as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha_diversity_sensitivity.tsv	extraction_blank	string	not applicable	never blank	Extraction blank as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha_diversity_sensitivity.tsv	position	string	not applicable	never blank	Position as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha_diversity_sensitivity.tsv	profile_id	string	not applicable	never blank	Feature-table profile identifier.
+evidence/control-audit/sensitivity_inputs/alpha_diversity_sensitivity.tsv	reads_after	integer	read count	never blank	Reads after as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha_diversity_sensitivity.tsv	reads_before	integer	read count	never blank	Reads before as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha_diversity_sensitivity.tsv	removed_read_fraction	number	proportion (0 to 1)	never blank	Removed read fraction as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha_diversity_sensitivity.tsv	richness_after	integer	not applicable	never blank	Richness after as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha_diversity_sensitivity.tsv	richness_before	integer	not applicable	never blank	Richness before as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha_diversity_sensitivity.tsv	richness_change	integer	not applicable	never blank	Richness change as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha_diversity_sensitivity.tsv	shannon_after	number	not applicable	never blank	Shannon after as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha_diversity_sensitivity.tsv	shannon_before	number	not applicable	never blank	Shannon before as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha_diversity_sensitivity.tsv	shannon_change	number	not applicable	never blank	Shannon change as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/alpha_diversity_sensitivity.tsv	site	integer	not applicable	never blank	Site as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/trip5_paired_compartment_sensitivity.tsv	bh_q_across_six_sensitivity_tests	number	not applicable	never blank	Bh q across six sensitivity tests as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/trip5_paired_compartment_sensitivity.tsv	contrast	string	not applicable	never blank	Contrast as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/trip5_paired_compartment_sensitivity.tsv	mean_difference	number	not applicable	never blank	Mean difference as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/trip5_paired_compartment_sensitivity.tsv	median_difference	number	not applicable	never blank	Median difference as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/trip5_paired_compartment_sensitivity.tsv	n_paired_sites	integer	not applicable	never blank	N paired sites as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/trip5_paired_compartment_sensitivity.tsv	state	string	not applicable	never blank	State as defined by the file-specific audit method.
+evidence/control-audit/sensitivity_inputs/trip5_paired_compartment_sensitivity.tsv	wilcoxon_p	number	not applicable	never blank	Wilcoxon p as defined by the file-specific audit method.
+evidence/control-audit/trip5_extraction_batch_summary.tsv	blank_asvs	integer	count	never blank	Blank asvs as defined by the file-specific audit method.
+evidence/control-audit/trip5_extraction_batch_summary.tsv	blank_reads	integer	read count	never blank	Blank reads as defined by the file-specific audit method.
+evidence/control-audit/trip5_extraction_batch_summary.tsv	canonical_missing_sample_count	integer	not applicable	never blank	Canonical missing sample count as defined by the file-specific audit method.
+evidence/control-audit/trip5_extraction_batch_summary.tsv	canonical_sample_count	integer	not applicable	never blank	Canonical sample count as defined by the file-specific audit method.
+evidence/control-audit/trip5_extraction_batch_summary.tsv	extraction_blank	string	not applicable	never blank	Extraction blank as defined by the file-specific audit method.
+evidence/control-audit/trip5_extraction_batch_summary.tsv	extraction_date	date	ISO 8601 calendar date	never blank	Extraction date as defined by the file-specific audit method.
+evidence/control-audit/trip5_extraction_batch_summary.tsv	index_code	string	not applicable	never blank	Index code as defined by the file-specific audit method.
+evidence/control-audit/trip5_extraction_batch_summary.tsv	maximum_biological_removal_fraction	number	proportion (0 to 1)	never blank	Maximum biological removal fraction as defined by the file-specific audit method.
+evidence/control-audit/trip5_extraction_batch_summary.tsv	median_biological_removal_fraction	number	proportion (0 to 1)	never blank	Median biological removal fraction as defined by the file-specific audit method.
+evidence/control-audit/trip5_extraction_batch_summary.tsv	workbook_sample_count	integer	not applicable	never blank	Workbook sample count as defined by the file-specific audit method.
+evidence/control-audit/trip5_filter_sensitivity.tsv	biological_reads_in_called_features	integer	read count	never blank	Biological reads in called features as defined by the file-specific audit method.
+evidence/control-audit/trip5_filter_sensitivity.tsv	called_features	integer	count	never blank	Called features as defined by the file-specific audit method.
+evidence/control-audit/trip5_filter_sensitivity.tsv	control_reads_in_called_features	integer	read count	never blank	Control reads in called features as defined by the file-specific audit method.
+evidence/control-audit/trip5_filter_sensitivity.tsv	minimum_blank_prevalence_count	integer	not applicable	never blank	Minimum blank prevalence count as defined by the file-specific audit method.
+evidence/control-audit/trip5_filter_sensitivity.tsv	prevalence_score_threshold	number	not applicable	never blank	Prevalence score threshold as defined by the file-specific audit method.
+evidence/control-audit/trip5_primary_contaminant_calls.tsv	biological_prevalence	number	proportion (0 to 1)	never blank	Biological prevalence as defined by the file-specific audit method.
+evidence/control-audit/trip5_primary_contaminant_calls.tsv	blank_prevalence	number	proportion (0 to 1)	never blank	Blank prevalence as defined by the file-specific audit method.
+evidence/control-audit/trip5_primary_contaminant_calls.tsv	blank_reads	integer	read count	never blank	Blank reads as defined by the file-specific audit method.
+evidence/control-audit/trip5_primary_contaminant_calls.tsv	call	string	not applicable	never blank	Call as defined by the file-specific audit method.
+evidence/control-audit/trip5_primary_contaminant_calls.tsv	extraction_blanks_present	integer	not applicable	never blank	Extraction blanks present as defined by the file-specific audit method.
+evidence/control-audit/trip5_primary_contaminant_calls.tsv	extraction_blanks_total	integer	not applicable	never blank	Extraction blanks total as defined by the file-specific audit method.
+evidence/control-audit/trip5_primary_contaminant_calls.tsv	feature_id	string	not applicable	never blank	Amplicon sequence variant identifier.
+evidence/control-audit/trip5_primary_contaminant_calls.tsv	mapped_biological_profiles_present	integer	count	never blank	Mapped biological profiles present as defined by the file-specific audit method.
+evidence/control-audit/trip5_primary_contaminant_calls.tsv	mapped_biological_profiles_total	integer	count	never blank	Mapped biological profiles total as defined by the file-specific audit method.
+evidence/control-audit/trip5_primary_contaminant_calls.tsv	mapped_biological_reads	integer	read count	never blank	Mapped biological reads as defined by the file-specific audit method.
+evidence/control-audit/trip5_primary_contaminant_calls.tsv	prevalence_score	number	not applicable	never blank	One-sided Fisher prevalence-enrichment probability used by the declared screen.
+evidence/control-audit/trip5_primary_contaminant_calls.tsv	taxonomy	string	not applicable	never blank	Taxonomy as defined by the file-specific audit method.
+evidence/control-audit/trip5_removal_fraction_by_campaign.tsv	biological_profile_count	integer	not applicable	never blank	Number of compatible biological profiles in the aggregate.
+evidence/control-audit/trip5_removal_fraction_by_campaign.tsv	candidate_contaminant_reads	integer	read count	never blank	Candidate contaminant reads as defined by the file-specific audit method.
+evidence/control-audit/trip5_removal_fraction_by_campaign.tsv	group_type	string	not applicable	never blank	Aggregation dimension for a control-removal summary.
+evidence/control-audit/trip5_removal_fraction_by_campaign.tsv	group_value	integer	not applicable	never blank	Campaign or compartment value used for aggregation.
+evidence/control-audit/trip5_removal_fraction_by_campaign.tsv	maximum_candidate_contaminant_read_fraction	number	proportion (0 to 1)	never blank	Maximum candidate contaminant read fraction as defined by the file-specific audit method.
+evidence/control-audit/trip5_removal_fraction_by_campaign.tsv	median_candidate_contaminant_read_fraction	number	proportion (0 to 1)	never blank	Median candidate contaminant read fraction as defined by the file-specific audit method.
+evidence/control-audit/trip5_removal_fraction_by_campaign.tsv	pooled_candidate_contaminant_read_fraction	number	proportion (0 to 1)	never blank	Candidate-contaminant reads divided by all reads across the aggregate.
+evidence/control-audit/trip5_removal_fraction_by_campaign.tsv	total_reads	integer	read count	never blank	Total reads as defined by the file-specific audit method.
+evidence/control-audit/trip5_removal_fraction_by_compartment.tsv	biological_profile_count	integer	not applicable	never blank	Number of compatible biological profiles in the aggregate.
+evidence/control-audit/trip5_removal_fraction_by_compartment.tsv	candidate_contaminant_reads	integer	read count	never blank	Candidate contaminant reads as defined by the file-specific audit method.
+evidence/control-audit/trip5_removal_fraction_by_compartment.tsv	group_type	string	not applicable	never blank	Aggregation dimension for a control-removal summary.
+evidence/control-audit/trip5_removal_fraction_by_compartment.tsv	group_value	string	not applicable	never blank	Campaign or compartment value used for aggregation.
+evidence/control-audit/trip5_removal_fraction_by_compartment.tsv	maximum_candidate_contaminant_read_fraction	number	proportion (0 to 1)	never blank	Maximum candidate contaminant read fraction as defined by the file-specific audit method.
+evidence/control-audit/trip5_removal_fraction_by_compartment.tsv	median_candidate_contaminant_read_fraction	number	proportion (0 to 1)	never blank	Median candidate contaminant read fraction as defined by the file-specific audit method.
+evidence/control-audit/trip5_removal_fraction_by_compartment.tsv	pooled_candidate_contaminant_read_fraction	number	proportion (0 to 1)	never blank	Candidate-contaminant reads divided by all reads across the aggregate.
+evidence/control-audit/trip5_removal_fraction_by_compartment.tsv	total_reads	integer	read count	never blank	Total reads as defined by the file-specific audit method.
+evidence/control-audit/trip5_removal_fraction_by_profile.tsv	application_scope	string	not applicable	never blank	Application scope as defined by the file-specific audit method.
+evidence/control-audit/trip5_removal_fraction_by_profile.tsv	candidate_contaminant_asvs	integer	count	never blank	Candidate contaminant asvs as defined by the file-specific audit method.
+evidence/control-audit/trip5_removal_fraction_by_profile.tsv	candidate_contaminant_read_fraction	number	proportion (0 to 1)	never blank	Fraction of profile reads assigned to candidate contaminant ASVs.
+evidence/control-audit/trip5_removal_fraction_by_profile.tsv	candidate_contaminant_reads	integer	read count	never blank	Candidate contaminant reads as defined by the file-specific audit method.
+evidence/control-audit/trip5_removal_fraction_by_profile.tsv	extraction_blank	string	not applicable	blank means unknown or not applicable as bounded by row status	Extraction blank as defined by the file-specific audit method.
+evidence/control-audit/trip5_removal_fraction_by_profile.tsv	profile_id	string	not applicable	never blank	Feature-table profile identifier.
+evidence/control-audit/trip5_removal_fraction_by_profile.tsv	role	string	not applicable	never blank	Role as defined by the file-specific audit method.
+evidence/control-audit/trip5_removal_fraction_by_profile.tsv	total_asvs	integer	count	never blank	Total asvs as defined by the file-specific audit method.
+evidence/control-audit/trip5_removal_fraction_by_profile.tsv	total_reads	integer	read count	never blank	Total reads as defined by the file-specific audit method.
+evidence/control-sensitivity/headline_result_sensitivity.tsv	absolute_change	number	not applicable	never blank	Absolute change as defined by the file-specific audit method.
+evidence/control-sensitivity/headline_result_sensitivity.tsv	canonical_value	number	not applicable	never blank	Canonical value as defined by the file-specific audit method.
+evidence/control-sensitivity/headline_result_sensitivity.tsv	canonical_verdict	string	not applicable	never blank	Canonical verdict as defined by the file-specific audit method.
+evidence/control-sensitivity/headline_result_sensitivity.tsv	claim	string	not applicable	never blank	Claim as defined by the file-specific audit method.
+evidence/control-sensitivity/headline_result_sensitivity.tsv	control_adjusted_value	number	not applicable	never blank	Control adjusted value as defined by the file-specific audit method.
+evidence/control-sensitivity/headline_result_sensitivity.tsv	control_adjusted_verdict	string	not applicable	never blank	Control adjusted verdict as defined by the file-specific audit method.
+evidence/control-sensitivity/headline_result_sensitivity.tsv	metric	string	not applicable	never blank	Metric as defined by the file-specific audit method.
+evidence/control-sensitivity/headline_result_sensitivity.tsv	verdict_stable	boolean	not applicable	never blank	Whether the scientific verdict is identical before and after bounded filtering.
+evidence/controls/control_ground_truth.tsv	assay	string	not applicable	never blank	Molecular assay to which the record is applicable.
+evidence/controls/control_ground_truth.tsv	control_class	string	not applicable	never blank	Positive, negative, extraction-blank, PCR-blank, inventory-only or no-positive-control classification.
+evidence/controls/control_ground_truth.tsv	control_scope	string	not applicable	never blank	Trip, batch, assay or inventory scope to which the control statement applies.
+evidence/controls/control_ground_truth.tsv	evidence	string	not applicable	never blank	Evidence as defined by the file-specific audit method.
+evidence/controls/control_ground_truth.tsv	limitation	string	not applicable	never blank	Boundary that prevents broader interpretation or reuse.
+evidence/controls/control_ground_truth.tsv	material_form	string	not applicable	blank means unknown or not applicable as bounded by row status	Material form as defined by the file-specific audit method.
+evidence/controls/control_ground_truth.tsv	material_or_product	string	not applicable	never blank	Material or product as defined by the file-specific audit method.
+evidence/controls/control_ground_truth.tsv	record_id	string	not applicable	never blank	Stable identifier for one author-confirmed control-design record.
+evidence/controls/control_ground_truth.tsv	status	string	not applicable	never blank	Evidence or curation status of the record.
+evidence/controls/control_ground_truth.tsv	workflow_stage	string	not applicable	never blank	Processing stage or stages in which the control participates.
+evidence/release/sample_ledger.tsv	amplicon_flag	Boolean	not applicable	never blank	Whether amplicon sequencing is recorded.
+evidence/release/sample_ledger.tsv	amplicon_sequencer	string	not applicable	blank when amplicon sequencing is absent or unspecified	Recorded amplicon sequencing platform category.
+evidence/release/sample_ledger.tsv	campaign_role	string	not applicable	never blank	Repeated-transect, Trip-1-only, or control role used in release accounting.
+evidence/release/sample_ledger.tsv	canonical_site_iri	IRI	not applicable	blank for unresolved controls	Canonical knowledge-graph IRI of the linked site.
+evidence/release/sample_ledger.tsv	canonical_site_label	string	not applicable	blank for unresolved controls	Preferred label of the linked site individual.
+evidence/release/sample_ledger.tsv	compartment	string	not applicable	blank for laboratory controls	Source compartment: Surface, Shallow, Deep, Rhizosphere, or plant, as applicable.
+evidence/release/sample_ledger.tsv	dna_concentration	number	ng/µL	blank when not measured	Recorded DNA concentration.
+evidence/release/sample_ledger.tsv	dna_expected_by_generator	Boolean	not applicable	never blank	Whether the DNA generator should create an extraction from this row.
+evidence/release/sample_ledger.tsv	dna_kit	string	not applicable	blank when undocumented	Recorded DNA extraction kit.
+evidence/release/sample_ledger.tsv	dna_status	string	not applicable	blank when no extraction status was recorded	Source DNA extraction/status value.
+evidence/release/sample_ledger.tsv	ecology_repeated_campaign_eligible	Boolean	not applicable	never blank	Whether the record belongs to sites 1–60 and is eligible for repeated-campaign inference.
+evidence/release/sample_ledger.tsv	has_sra_run	Boolean	not applicable	never blank	Whether at least one run accession is linked.
+evidence/release/sample_ledger.tsv	in_ecology_analysis	Boolean	not applicable	never blank	Whether the normalized identifier occurs in the ecology analysis cache.
+evidence/release/sample_ledger.tsv	in_feature_table	Boolean	not applicable	never blank	Whether the normalized identifier occurs in the canonical Trips 1–5 feature table.
+evidence/release/sample_ledger.tsv	is_control	Boolean	not applicable	never blank	Whether the row is labelled as a laboratory control.
+evidence/release/sample_ledger.tsv	kg_exclusion_reason	string	not applicable	blank when eligible	Explicit reason that an ineligible row is not generated.
+evidence/release/sample_ledger.tsv	kg_sample_eligible	Boolean	not applicable	never blank	Whether the row is eligible for specimen generation.
+evidence/release/sample_ledger.tsv	metadata_complete	Boolean	not applicable	never blank	Whether the current specimen-ingest metadata rule is satisfied.
+evidence/release/sample_ledger.tsv	sample_id	string	not applicable	never blank	Source-preserving specimen or control identifier.
+evidence/release/sample_ledger.tsv	site	string	not applicable	blank for laboratory controls	Normalized numeric or named site identifier.
+evidence/release/sample_ledger.tsv	site_alias_applied	Boolean	not applicable	never blank	Whether the Trip 1 site-alias ledger supplied the canonical site link.
+evidence/release/sample_ledger.tsv	site_corrected	Boolean	not applicable	never blank	Whether a reviewed correction changed the source site value.
+evidence/release/sample_ledger.tsv	site_resolves_in_kg	Boolean	not applicable	never blank	Whether the site value resolves to a declared site individual.
+evidence/release/sample_ledger.tsv	site_source_value	string	not applicable	blank when the source cell is empty	Unmodified site value from the source metadata.
+evidence/release/sample_ledger.tsv	source	string	not applicable	never blank	Source workbook or table from which the ledger row was derived.
+evidence/release/sample_ledger.tsv	source_row	integer	one-based row number	never blank	Row number in the source table, including its header convention.
+evidence/release/sample_ledger.tsv	source_sheet	string	not applicable	blank only when the source has no sheet	Worksheet or source partition.
+evidence/release/sample_ledger.tsv	sra_run_count	integer	run accessions	never blank	Number of reconciled run accessions for the row.
+evidence/release/sample_ledger.tsv	trip	string	not applicable	never blank	Project campaign identifier, Trip1 through Trip5.
+evidence/release/sample_ledger.tsv	wgs_flag	Boolean	not applicable	never blank	Whether whole-genome shotgun sequencing is recorded.
+evidence/release/sample_ledger.tsv	wgs_library_kit	string	not applicable	blank when WGS is absent or the kit is undocumented	Recorded WGS library-preparation kit.
+metadata/amplicon/combined_samplesheet_accessions.tsv	bioproject	string	not applicable	blank when no project mapping is available	Submitted amplicon BioProject identifier.
+metadata/amplicon/combined_samplesheet_accessions.tsv	biosample_accession	string	not applicable	blank when no public mapping is available	Submitted BioSample accession.
+metadata/amplicon/combined_samplesheet_accessions.tsv	campaign	string	not applicable	blank for unresolved controls	Ledger-derived campaign.
+metadata/amplicon/combined_samplesheet_accessions.tsv	compartment	string	not applicable	blank for controls or unresolved records	Ledger-derived compartment.
+metadata/amplicon/combined_samplesheet_accessions.tsv	experiment_accession	string	not applicable	blank when no public mapping is available	Submitted experiment accession.
+metadata/amplicon/combined_samplesheet_accessions.tsv	in_ledger	Boolean	not applicable	never blank	Whether the run resolves to the release sample ledger.
+metadata/amplicon/combined_samplesheet_accessions.tsv	is_control	Boolean	not applicable	never blank	Whether the run is control-labelled.
+metadata/amplicon/combined_samplesheet_accessions.tsv	library_name	string	not applicable	blank when no public mapping is available	Submitted library name.
+metadata/amplicon/combined_samplesheet_accessions.tsv	source_sample_name	string	not applicable	never blank	Sample name in the submitted archive metadata before local normalization.
+metadata/amplicon/combined_samplesheet_accessions.tsv	umbrella_project	string	not applicable	blank when no project mapping is available	Submitted umbrella-project identifier.
+metadata/amplicon/combined_samplesheet_portable.csv	forwardReads	path	not applicable	never blank	Portable forward-read path rooted at ${EQ_READS_DIR}.
+metadata/amplicon/combined_samplesheet_portable.csv	reverseReads	path	not applicable	blank only for a single-end library	Portable reverse-read path rooted at ${EQ_READS_DIR}.
+metadata/amplicon/combined_samplesheet_portable.csv	run	string	not applicable	never blank	ENA/SRA run accession used as the local FASTQ basename.
+metadata/amplicon/combined_samplesheet_portable.csv	sampleID	string	not applicable	never blank	Ampliseq sample identifier.
+metadata/climate/climate_fetch_key_ledger.tsv	daily_rows	integer	source rows	never blank	Daily source-row count for the fetch key.
+metadata/climate/climate_fetch_key_ledger.tsv	disposition	string	not applicable	never blank	Exact-key resolution or quarantine disposition.
+metadata/climate/climate_fetch_key_ledger.tsv	fetch_key	string	not applicable	never blank	Original location key in the fetched climate tables.
+metadata/climate/climate_fetch_key_ledger.tsv	geodata_rows	integer	source rows	never blank	Number of geodata records available for the key.
+metadata/climate/climate_fetch_key_ledger.tsv	monthly_rows	integer	source rows	never blank	Monthly source-row count for the fetch key.
+metadata/climate/climate_fetch_key_ledger.tsv	rationale	string	not applicable	never blank	Evidence for the resolution or quarantine.
+metadata/climate/climate_fetch_key_ledger.tsv	resolved_site_iri	IRI	not applicable	blank when quarantined	Canonical site IRI assigned by exact-key resolution.
+metadata/climate/climate_fetch_key_ledger.tsv	resolved_site_label	string	not applicable	blank when quarantined	Canonical site label assigned by exact-key resolution.
+metadata/climate/daily_weather.tsv	Date	ISO date	YYYY-MM-DD	never blank	Daily observation date.
+metadata/climate/daily_weather.tsv	Mean_Temp_C	number	degrees Celsius	blank when unavailable	Daily mean near-surface air temperature from the frozen API request.
+metadata/climate/daily_weather.tsv	Precip_mm	number	millimetres	blank when unavailable	Daily total precipitation sum.
+metadata/climate/daily_weather.tsv	Rain_mm	number	millimetres	blank when unavailable	Daily rain sum.
+metadata/climate/daily_weather.tsv	Site	string	not applicable	never blank	Original climate fetch key; join through climate_fetch_key_ledger.tsv.
+metadata/climate/daily_weather_canonical.tsv	Date	string	not applicable	never blank	Date as defined by the file-specific audit method.
+metadata/climate/daily_weather_canonical.tsv	Mean_Temp_C	number	not applicable	never blank	Mean temp c as defined by the file-specific audit method.
+metadata/climate/daily_weather_canonical.tsv	Precip_mm	number	not applicable	never blank	Precip mm as defined by the file-specific audit method.
+metadata/climate/daily_weather_canonical.tsv	Rain_mm	number	not applicable	never blank	Rain mm as defined by the file-specific audit method.
+metadata/climate/daily_weather_canonical.tsv	Site	string	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/climate/monthly_weather_averages.tsv	Avg_Humidity_Percent	number	percent relative humidity	never blank	Source mean monthly relative humidity.
+metadata/climate/monthly_weather_averages.tsv	Avg_Temp_C	number	degrees Celsius	never blank	Source mean of daily mean temperature for the site-month.
+metadata/climate/monthly_weather_averages.tsv	Avg_Total_Precip_mm	number	millimetres	never blank	Source mean monthly total precipitation for the site-month.
+metadata/climate/monthly_weather_averages.tsv	Avg_Total_Rain_mm	number	millimetres	never blank	Source mean monthly rain total for the site-month.
+metadata/climate/monthly_weather_averages.tsv	Month	integer	1–12	never blank	Calendar month.
+metadata/climate/monthly_weather_averages.tsv	Site	string	not applicable	never blank	Original climate fetch key; join through climate_fetch_key_ledger.tsv.
+metadata/climate/monthly_weather_averages.tsv	Year	integer	year	never blank	Calendar year.
+metadata/climate/monthly_weather_averages_canonical.tsv	Avg_Humidity_Percent	number	not applicable	never blank	Avg humidity percent as defined by the file-specific audit method.
+metadata/climate/monthly_weather_averages_canonical.tsv	Avg_Temp_C	number	not applicable	never blank	Avg temp c as defined by the file-specific audit method.
+metadata/climate/monthly_weather_averages_canonical.tsv	Avg_Total_Precip_mm	number	not applicable	never blank	Avg total precip mm as defined by the file-specific audit method.
+metadata/climate/monthly_weather_averages_canonical.tsv	Avg_Total_Rain_mm	number	not applicable	never blank	Avg total rain mm as defined by the file-specific audit method.
+metadata/climate/monthly_weather_averages_canonical.tsv	Month	integer	not applicable	never blank	Month as defined by the file-specific audit method.
+metadata/climate/monthly_weather_averages_canonical.tsv	Site	string	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/climate/monthly_weather_averages_canonical.tsv	Year	integer	not applicable	never blank	Year as defined by the file-specific audit method.
+metadata/controls/control_aliases.tsv	alias	string	not applicable	never blank	Alias as defined by the file-specific audit method.
+metadata/controls/control_aliases.tsv	alias_type	string	not applicable	never blank	Alias type as defined by the file-specific audit method.
+metadata/controls/control_aliases.tsv	entity_id	string	not applicable	never blank	Deterministic project identifier for the normalized entity.
+metadata/controls/control_aliases.tsv	source_row	string	not applicable	blank means unknown or not applicable as bounded by row status	Source row as defined by the file-specific audit method.
+metadata/controls/control_aliases.tsv	source_snapshot_id	string	not applicable	never blank	Repository-relative identifier of the source that contains the represented value.
+metadata/controls/control_assertions.tsv	assertion_id	string	not applicable	never blank	Deterministic identifier of the reified metadata or expected-taxon assertion.
+metadata/controls/control_assertions.tsv	confidence	string	not applicable	never blank	Confidence as defined by the file-specific audit method.
+metadata/controls/control_assertions.tsv	evidence_id	string	not applicable	never blank	Identifier of the evidence record supporting the row.
+metadata/controls/control_assertions.tsv	object_datatype	string	not applicable	blank means unknown or not applicable as bounded by row status	Object datatype as defined by the file-specific audit method.
+metadata/controls/control_assertions.tsv	object_iri	string	not applicable	never blank	Object iri as defined by the file-specific audit method.
+metadata/controls/control_assertions.tsv	object_literal	string	not applicable	blank means unknown or not applicable as bounded by row status	Object literal as defined by the file-specific audit method.
+metadata/controls/control_assertions.tsv	predicate_iri	string	not applicable	never blank	Predicate iri as defined by the file-specific audit method.
+metadata/controls/control_assertions.tsv	rationale	string	not applicable	never blank	Rationale as defined by the file-specific audit method.
+metadata/controls/control_assertions.tsv	status	string	not applicable	never blank	Evidence or curation status of the record.
+metadata/controls/control_assertions.tsv	subject_iri	string	not applicable	never blank	Subject iri as defined by the file-specific audit method.
+metadata/controls/control_composition.tsv	assertion_id	string	not applicable	never blank	Deterministic identifier of the reified metadata or expected-taxon assertion.
+metadata/controls/control_composition.tsv	assertion_status	string	not applicable	never blank	Controlled assertion state, including confirmed, provisional or unresolved.
+metadata/controls/control_composition.tsv	composition_basis	string	not applicable	never blank	Basis of the manufacturer composition, such as genomic-DNA percentage; it must be interpreted with expected_unit_iri.
+metadata/controls/control_composition.tsv	composition_specification_id	string	not applicable	never blank	Composition specification id as defined by the file-specific audit method.
+metadata/controls/control_composition.tsv	control_material_or_product_id	string	not applicable	never blank	Control material or product id as defined by the file-specific audit method.
+metadata/controls/control_composition.tsv	evidence_id	string	not applicable	never blank	Identifier of the evidence record supporting the row.
+metadata/controls/control_composition.tsv	expected_unit_iri	string	not applicable	never blank	Unit IRI applying to expected_value in the normalized manufacturer-composition table.
+metadata/controls/control_composition.tsv	expected_value	integer	specified by expected_unit_iri	never blank	Manufacturer-stated composition value retained in the normalized table; a genomic-DNA percentage is not an expected 16S read percentage.
+metadata/controls/control_composition.tsv	lot	string	not applicable	blank means unknown or not applicable as bounded by row status	Lot as defined by the file-specific audit method.
+metadata/controls/control_composition.tsv	product	string	not applicable	never blank	Product as defined by the file-specific audit method.
+metadata/controls/control_composition.tsv	taxon_iri	string	not applicable	never blank	NCBI Taxonomy IRI for an expected organism.
+metadata/controls/control_composition.tsv	version	string	not applicable	never blank	Version as defined by the file-specific audit method.
+metadata/controls/control_entity_registry.tsv	canonical_key	string	not applicable	never blank	Canonical typed key used to mint the deterministic entity IRI.
+metadata/controls/control_entity_registry.tsv	curation_status	string	not applicable	never blank	Curation status as defined by the file-specific audit method.
+metadata/controls/control_entity_registry.tsv	entity_id	string	not applicable	never blank	Deterministic project identifier for the normalized entity.
+metadata/controls/control_entity_registry.tsv	entity_kind	string	not applicable	never blank	Material, role, process, batch, dataset, assertion or evidence category.
+metadata/controls/control_entity_registry.tsv	iri_scheme_version	string	not applicable	never blank	Iri scheme version as defined by the file-specific audit method.
+metadata/controls/control_entity_registry.tsv	key_sha256	string	not applicable	never blank	SHA-256 digest of the canonical typed entity key.
+metadata/controls/control_entity_registry.tsv	primary_identifier	string	not applicable	never blank	Primary identifier as defined by the file-specific audit method.
+metadata/controls/control_entity_registry.tsv	primary_label	string	not applicable	never blank	Primary label as defined by the file-specific audit method.
+metadata/controls/control_entity_registry.tsv	source_row	string	not applicable	blank means unknown or not applicable as bounded by row status	Source row as defined by the file-specific audit method.
+metadata/controls/control_entity_registry.tsv	source_snapshot_id	string	not applicable	never blank	Repository-relative identifier of the source that contains the represented value.
+metadata/controls/control_entity_registry.tsv	stable_key	string	not applicable	never blank	Stable key as defined by the file-specific audit method.
+metadata/controls/control_entity_registry.tsv	stable_key_type	string	not applicable	never blank	Stable key type as defined by the file-specific audit method.
+metadata/controls/control_metadata_dispositions.tsv	about_entity_id	string	not applicable	never blank	About entity id as defined by the file-specific audit method.
+metadata/controls/control_metadata_dispositions.tsv	description	string	not applicable	never blank	Description as defined by the file-specific audit method.
+metadata/controls/control_metadata_dispositions.tsv	disposition	string	not applicable	never blank	Controlled outcome for an uncertain or inapplicable metadata claim.
+metadata/controls/control_metadata_dispositions.tsv	disposition_id	string	not applicable	never blank	Disposition id as defined by the file-specific audit method.
+metadata/controls/control_metadata_dispositions.tsv	evidence_id	string	not applicable	never blank	Identifier of the evidence record supporting the row.
+metadata/controls/control_metadata_dispositions.tsv	metadata_field	string	not applicable	never blank	Metadata field as defined by the file-specific audit method.
+metadata/controls/control_roles.tsv	assertion_status	string	not applicable	never blank	Controlled assertion state, including confirmed, provisional or unresolved.
+metadata/controls/control_roles.tsv	bearer_material_id	string	not applicable	never blank	Material entity that bears this occurrence-specific role.
+metadata/controls/control_roles.tsv	evidence_id	string	not applicable	never blank	Identifier of the evidence record supporting the row.
+metadata/controls/control_roles.tsv	realized_in_process_id	string	not applicable	blank means unknown or not applicable as bounded by row status	Laboratory process in which the role is realized.
+metadata/controls/control_roles.tsv	role_id	string	not applicable	never blank	Occurrence-specific control-role identifier.
+metadata/controls/control_roles.tsv	role_type	string	not applicable	never blank	Role type as defined by the file-specific audit method.
+metadata/controls/control_sequence_occurrences.tsv	biosample_accession	string	not applicable	blank means unknown or not applicable as bounded by row status	Biosample accession as defined by the file-specific audit method.
+metadata/controls/control_sequence_occurrences.tsv	facility_run_id	string	not applicable	blank means unknown or not applicable as bounded by row status	Facility run id as defined by the file-specific audit method.
+metadata/controls/control_sequence_occurrences.tsv	fastq_entity_id	string	not applicable	never blank	Fastq entity id as defined by the file-specific audit method.
+metadata/controls/control_sequence_occurrences.tsv	index_code	integer	not applicable	never blank	Index code as defined by the file-specific audit method.
+metadata/controls/control_sequence_occurrences.tsv	index_sequence	string	not applicable	blank means unknown or not applicable as bounded by row status	Index sequence as defined by the file-specific audit method.
+metadata/controls/control_sequence_occurrences.tsv	lane	integer	not applicable	never blank	Three-digit sequencing-lane code parsed from the frozen FASTQ path.
+metadata/controls/control_sequence_occurrences.tsv	library_accession	string	not applicable	blank means unknown or not applicable as bounded by row status	Library accession as defined by the file-specific audit method.
+metadata/controls/control_sequence_occurrences.tsv	library_entity_id	string	not applicable	never blank	Library entity id as defined by the file-specific audit method.
+metadata/controls/control_sequence_occurrences.tsv	read_1_file	string	not applicable	never blank	Read 1 file as defined by the file-specific audit method.
+metadata/controls/control_sequence_occurrences.tsv	read_2_file	string	not applicable	never blank	Read 2 file as defined by the file-specific audit method.
+metadata/controls/control_sequence_occurrences.tsv	run_accession	string	not applicable	blank means unknown or not applicable as bounded by row status	Run accession as defined by the file-specific audit method.
+metadata/controls/control_sequence_occurrences.tsv	run_entity_id	string	not applicable	never blank	Run entity id as defined by the file-specific audit method.
+metadata/controls/control_sequence_occurrences.tsv	source_row	string	not applicable	never blank	Source row as defined by the file-specific audit method.
+metadata/controls/control_sequence_occurrences.tsv	source_snapshot_id	string	not applicable	never blank	Repository-relative identifier of the source that contains the represented value.
+metadata/controls/laboratory_processes.tsv	agent_id	string	not applicable	blank means unknown or not applicable as bounded by row status	Agent id as defined by the file-specific audit method.
+metadata/controls/laboratory_processes.tsv	batch_id	string	not applicable	blank means unknown or not applicable as bounded by row status	Laboratory processing batch containing this process; never a field trip.
+metadata/controls/laboratory_processes.tsv	input_entity_id	string	not applicable	never blank	Material or data entity consumed by the process.
+metadata/controls/laboratory_processes.tsv	kit_id	string	not applicable	blank means unknown or not applicable as bounded by row status	Kit id as defined by the file-specific audit method.
+metadata/controls/laboratory_processes.tsv	output_entity_id	string	not applicable	blank means unknown or not applicable as bounded by row status	Material or data entity produced by the process.
+metadata/controls/laboratory_processes.tsv	process_date	date	ISO 8601 calendar date	blank means unknown or not applicable as bounded by row status	Process date as defined by the file-specific audit method.
+metadata/controls/laboratory_processes.tsv	process_id	string	not applicable	never blank	Deterministic laboratory-process identifier.
+metadata/controls/laboratory_processes.tsv	process_type	string	not applicable	never blank	Process type as defined by the file-specific audit method.
+metadata/controls/laboratory_processes.tsv	protocol_id	string	not applicable	blank means unknown or not applicable as bounded by row status	Protocol id as defined by the file-specific audit method.
+metadata/controls/laboratory_processes.tsv	source_row	string	not applicable	blank means unknown or not applicable as bounded by row status	Source row as defined by the file-specific audit method.
+metadata/controls/laboratory_processes.tsv	source_snapshot_id	string	not applicable	never blank	Repository-relative identifier of the source that contains the represented value.
+metadata/environmental/environmental_measurements_curated.tsv	coordinates	string	not applicable	never blank	Coordinates as defined by the file-specific audit method.
+metadata/environmental/environmental_measurements_curated.tsv	date	string	not applicable	never blank	Date as defined by the file-specific audit method.
+metadata/environmental/environmental_measurements_curated.tsv	expedition	string	not applicable	never blank	Expedition as defined by the file-specific audit method.
+metadata/environmental/environmental_measurements_curated.tsv	notes	string	not applicable	blank means unknown or not applicable as bounded by row status	Notes as defined by the file-specific audit method.
+metadata/environmental/environmental_measurements_curated.tsv	pressure_mbar	integer	not applicable	blank means unknown or not applicable as bounded by row status	Pressure mbar as defined by the file-specific audit method.
+metadata/environmental/environmental_measurements_curated.tsv	qc_action	string	not applicable	blank means unknown or not applicable as bounded by row status	Qc action as defined by the file-specific audit method.
+metadata/environmental/environmental_measurements_curated.tsv	qc_status	string	not applicable	never blank	Qc status as defined by the file-specific audit method.
+metadata/environmental/environmental_measurements_curated.tsv	record_role	string	not applicable	never blank	Record role as defined by the file-specific audit method.
+metadata/environmental/environmental_measurements_curated.tsv	relative_humidity_pct	number	not applicable	blank means unknown or not applicable as bounded by row status	Relative humidity pct as defined by the file-specific audit method.
+metadata/environmental/environmental_measurements_curated.tsv	site	string	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/environmental/environmental_measurements_curated.tsv	source_file	string	not applicable	never blank	Source file as defined by the file-specific audit method.
+metadata/environmental/environmental_measurements_curated.tsv	source_row	integer	not applicable	never blank	Source row as defined by the file-specific audit method.
+metadata/environmental/environmental_measurements_curated.tsv	temperature_c	number	not applicable	blank means unknown or not applicable as bounded by row status	Temperature c as defined by the file-specific audit method.
+metadata/environmental/environmental_measurements_curated.tsv	time	string	not applicable	never blank	Time as defined by the file-specific audit method.
+metadata/geochemistry/xrf_field_table.tsv	<analyte>	number	undocumented in source	blank or zero as exported	Instrument-reported elemental, oxide, or pseudo-analyte value; do not interpret as percent.
+metadata/geochemistry/xrf_field_table.tsv	<analyte>_error	number	undocumented in source	blank or zero as exported	Instrument-reported uncertainty paired with the named analyte; do not interpret as percent.
+metadata/geochemistry/xrf_field_table.tsv	SiteID	string	not applicable	never blank	Site identifier for an in-situ XRF session; not a specimen identifier.
+metadata/geochemistry/xrf_field_table.tsv	TestID	string	not applicable	never blank	Instrument session/test identifier.
+metadata/geochemistry/xrf_lab_table_filtered.tsv	<analyte>	number	undocumented in source	blank or zero as exported	Last-reported instrument value for the named elemental or oxide channel; do not interpret as percent.
+metadata/geochemistry/xrf_lab_table_filtered.tsv	Diameter	string	see source value	blank when undocumented	Instrument/sample diameter setting as exported.
+metadata/geochemistry/xrf_lab_table_filtered.tsv	Material	string	not applicable	blank when undocumented	Instrument material mode as exported.
+metadata/geochemistry/xrf_lab_table_filtered.tsv	Method	string	not applicable	blank when undocumented	Instrument method as exported.
+metadata/geochemistry/xrf_lab_table_filtered.tsv	Mode	string	not applicable	blank when undocumented	Instrument atmosphere/mode as exported.
+metadata/geochemistry/xrf_lab_table_filtered.tsv	SampleID	string	not applicable	never blank	Specimen identifier for Trip 5 laboratory XRF.
+metadata/geochemistry/xrf_lab_table_filtered.tsv	SoilType	string	not applicable	blank when undocumented	Source soil/compartment label.
+metadata/geochemistry/xrf_lab_table_trips1-4.tsv	<analyte>	number	undocumented in source	blank or zero as exported	Maximum-positive reduced instrument value for the named elemental or oxide channel; do not interpret as percent.
+metadata/geochemistry/xrf_lab_table_trips1-4.tsv	Diameter	string	not applicable	blank when undocumented	Instrument/sample diameter setting as exported.
+metadata/geochemistry/xrf_lab_table_trips1-4.tsv	Material	string	not applicable	blank when undocumented	Instrument material mode as exported.
+metadata/geochemistry/xrf_lab_table_trips1-4.tsv	Method	string	not applicable	blank when undocumented	Instrument method as exported.
+metadata/geochemistry/xrf_lab_table_trips1-4.tsv	Mode	string	not applicable	blank when undocumented	Instrument atmosphere/mode as exported.
+metadata/geochemistry/xrf_lab_table_trips1-4.tsv	SampleID	string	not applicable	never blank	Specimen identifier for Trips 1–4 laboratory XRF.
+metadata/geochemistry/xrf_lab_table_trips1-4.tsv	SoilType	string	not applicable	blank when undocumented	Source soil/compartment label.
+metadata/geodata/site_altitudes.tsv	Altitude	number	not applicable	never blank	Altitude as defined by the file-specific audit method.
+metadata/geodata/site_altitudes.tsv	Latitude	number	not applicable	never blank	Latitude as defined by the file-specific audit method.
+metadata/geodata/site_altitudes.tsv	Longitude	number	not applicable	never blank	Longitude as defined by the file-specific audit method.
+metadata/geodata/site_altitudes.tsv	Site	string	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/geodata/trip1_geodata.tsv	AnnualMeanTemp	number	not applicable	never blank	Annualmeantemp as defined by the file-specific audit method.
+metadata/geodata/trip1_geodata.tsv	AnnualTotalPrecip	number	not applicable	never blank	Annualtotalprecip as defined by the file-specific audit method.
+metadata/geodata/trip1_geodata.tsv	AnnualTotalRain	number	not applicable	never blank	Annualtotalrain as defined by the file-specific audit method.
+metadata/geodata/trip1_geodata.tsv	CenterDate	string	not applicable	never blank	Centerdate as defined by the file-specific audit method.
+metadata/geodata/trip1_geodata.tsv	EndDate	string	not applicable	never blank	Enddate as defined by the file-specific audit method.
+metadata/geodata/trip1_geodata.tsv	Latitude	number	not applicable	never blank	Latitude as defined by the file-specific audit method.
+metadata/geodata/trip1_geodata.tsv	Longitude	number	not applicable	never blank	Longitude as defined by the file-specific audit method.
+metadata/geodata/trip1_geodata.tsv	Site	string	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/geodata/trip1_geodata.tsv	StartDate	string	not applicable	never blank	Startdate as defined by the file-specific audit method.
+metadata/geodata/trip2_geodata.tsv	AnnualMeanTemp	number	not applicable	never blank	Annualmeantemp as defined by the file-specific audit method.
+metadata/geodata/trip2_geodata.tsv	AnnualTotalPrecip	number	not applicable	never blank	Annualtotalprecip as defined by the file-specific audit method.
+metadata/geodata/trip2_geodata.tsv	AnnualTotalRain	number	not applicable	never blank	Annualtotalrain as defined by the file-specific audit method.
+metadata/geodata/trip2_geodata.tsv	CenterDate	string	not applicable	never blank	Centerdate as defined by the file-specific audit method.
+metadata/geodata/trip2_geodata.tsv	EndDate	string	not applicable	never blank	Enddate as defined by the file-specific audit method.
+metadata/geodata/trip2_geodata.tsv	Latitude	number	not applicable	never blank	Latitude as defined by the file-specific audit method.
+metadata/geodata/trip2_geodata.tsv	Longitude	number	not applicable	never blank	Longitude as defined by the file-specific audit method.
+metadata/geodata/trip2_geodata.tsv	Site	integer	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/geodata/trip2_geodata.tsv	StartDate	string	not applicable	never blank	Startdate as defined by the file-specific audit method.
+metadata/geodata/trip3_geodata.tsv	AnnualMeanTemp	number	not applicable	never blank	Annualmeantemp as defined by the file-specific audit method.
+metadata/geodata/trip3_geodata.tsv	AnnualTotalPrecip	number	not applicable	never blank	Annualtotalprecip as defined by the file-specific audit method.
+metadata/geodata/trip3_geodata.tsv	AnnualTotalRain	number	not applicable	never blank	Annualtotalrain as defined by the file-specific audit method.
+metadata/geodata/trip3_geodata.tsv	CenterDate	string	not applicable	never blank	Centerdate as defined by the file-specific audit method.
+metadata/geodata/trip3_geodata.tsv	EndDate	string	not applicable	never blank	Enddate as defined by the file-specific audit method.
+metadata/geodata/trip3_geodata.tsv	Latitude	number	not applicable	never blank	Latitude as defined by the file-specific audit method.
+metadata/geodata/trip3_geodata.tsv	Longitude	number	not applicable	never blank	Longitude as defined by the file-specific audit method.
+metadata/geodata/trip3_geodata.tsv	Site	string	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/geodata/trip3_geodata.tsv	StartDate	string	not applicable	never blank	Startdate as defined by the file-specific audit method.
+metadata/geodata/trip4_geodata.tsv	AnnualMeanTemp	number	not applicable	never blank	Annualmeantemp as defined by the file-specific audit method.
+metadata/geodata/trip4_geodata.tsv	AnnualTotalPrecip	number	not applicable	never blank	Annualtotalprecip as defined by the file-specific audit method.
+metadata/geodata/trip4_geodata.tsv	AnnualTotalRain	number	not applicable	never blank	Annualtotalrain as defined by the file-specific audit method.
+metadata/geodata/trip4_geodata.tsv	CenterDate	string	not applicable	never blank	Centerdate as defined by the file-specific audit method.
+metadata/geodata/trip4_geodata.tsv	EndDate	string	not applicable	never blank	Enddate as defined by the file-specific audit method.
+metadata/geodata/trip4_geodata.tsv	Latitude	number	not applicable	never blank	Latitude as defined by the file-specific audit method.
+metadata/geodata/trip4_geodata.tsv	Longitude	number	not applicable	never blank	Longitude as defined by the file-specific audit method.
+metadata/geodata/trip4_geodata.tsv	Site	integer	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/geodata/trip4_geodata.tsv	StartDate	string	not applicable	never blank	Startdate as defined by the file-specific audit method.
+metadata/geodata/trip5_geodata.tsv	CenterDate	string	not applicable	never blank	Centerdate as defined by the file-specific audit method.
+metadata/geodata/trip5_geodata.tsv	Latitude	number	not applicable	never blank	Latitude as defined by the file-specific audit method.
+metadata/geodata/trip5_geodata.tsv	Longitude	number	not applicable	never blank	Longitude as defined by the file-specific audit method.
+metadata/geodata/trip5_geodata.tsv	Site	string	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/ph/ph_accepted_measurements.tsv	calibration_pass	boolean	not applicable	never blank	Calibration pass as defined by the file-specific audit method.
+metadata/ph/ph_accepted_measurements.tsv	calibration_recorded	string	not applicable	never blank	Calibration recorded as defined by the file-specific audit method.
+metadata/ph/ph_accepted_measurements.tsv	compartment	string	not applicable	never blank	Compartment as defined by the file-specific audit method.
+metadata/ph/ph_accepted_measurements.tsv	date_status	string	not applicable	never blank	Date status as defined by the file-specific audit method.
+metadata/ph/ph_accepted_measurements.tsv	disposition	string	not applicable	never blank	Controlled outcome for an uncertain or inapplicable metadata claim.
+metadata/ph/ph_accepted_measurements.tsv	ecology_eligible	boolean	not applicable	never blank	Whether the audited row is admitted to the ecology analysis.
+metadata/ph/ph_accepted_measurements.tsv	kg_eligible	boolean	not applicable	never blank	Whether the audited row is admitted to the pH knowledge-graph module.
+metadata/ph/ph_accepted_measurements.tsv	measurement_date	date	ISO 8601 calendar date	never blank	Accepted ISO 8601 measurement date; blank for a quarantined date.
+metadata/ph/ph_accepted_measurements.tsv	measurement_date_raw	string	not applicable	never blank	Verbatim date representation from the source workbook.
+metadata/ph/ph_accepted_measurements.tsv	metadata_match	boolean	not applicable	never blank	Metadata match as defined by the file-specific audit method.
+metadata/ph/ph_accepted_measurements.tsv	notes	string	not applicable	blank means unknown or not applicable as bounded by row status	Notes as defined by the file-specific audit method.
+metadata/ph/ph_accepted_measurements.tsv	ph10_check	number	pH (UO:0000196 where represented in RDF)	never blank	Recorded pH-10 buffer read-back for the measurement session.
+metadata/ph/ph_accepted_measurements.tsv	ph10_check_pass	boolean	not applicable	never blank	Ph10 check pass as defined by the file-specific audit method.
+metadata/ph/ph_accepted_measurements.tsv	ph_value	number	pH (UO:0000196 where represented in RDF)	never blank	Admitted or audited archived-soil pH reading under the declared CaCl2 protocol.
+metadata/ph/ph_accepted_measurements.tsv	ph_value_raw	number	pH (UO:0000196 where represented in RDF)	never blank	Verbatim content of the workbook pH-reading cell.
+metadata/ph/ph_accepted_measurements.tsv	reason_codes	string	not applicable	blank means unknown or not applicable as bounded by row status	Semicolon-delimited machine-readable reasons for the row disposition.
+metadata/ph/ph_accepted_measurements.tsv	replicate	integer	not applicable	never blank	Replicate as defined by the file-specific audit method.
+metadata/ph/ph_accepted_measurements.tsv	sample_id	string	not applicable	never blank	Sample id as defined by the file-specific audit method.
+metadata/ph/ph_accepted_measurements.tsv	site	integer	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/ph/ph_accepted_measurements.tsv	slope_pass	boolean	not applicable	never blank	Slope pass as defined by the file-specific audit method.
+metadata/ph/ph_accepted_measurements.tsv	slope_percent	number	percent	never blank	Workbook-reported electrode slope percentage.
+metadata/ph/ph_accepted_measurements.tsv	source_row	integer	not applicable	never blank	Source row as defined by the file-specific audit method.
+metadata/ph/ph_accepted_measurements.tsv	source_sheet	string	not applicable	never blank	Source sheet as defined by the file-specific audit method.
+metadata/ph/ph_accepted_measurements.tsv	specimen_iri	string	not applicable	never blank	Specimen iri as defined by the file-specific audit method.
+metadata/ph/ph_accepted_measurements.tsv	trip	integer	not applicable	never blank	Trip as defined by the file-specific audit method.
+metadata/ph/ph_accepted_measurements.tsv	value_range_pass	boolean	not applicable	never blank	Value range pass as defined by the file-specific audit method.
+metadata/ph/ph_entity_registry.tsv	canonical_key	string	not applicable	never blank	Canonical typed key used to mint the deterministic entity IRI.
+metadata/ph/ph_entity_registry.tsv	entity_iri	string	not applicable	never blank	Entity iri as defined by the file-specific audit method.
+metadata/ph/ph_entity_registry.tsv	entity_role	string	not applicable	never blank	Entity role as defined by the file-specific audit method.
+metadata/ph/ph_entity_registry.tsv	key_sha256	string	not applicable	never blank	SHA-256 digest of the canonical typed entity key.
+metadata/ph/ph_entity_registry.tsv	sample_id	string	not applicable	blank means unknown or not applicable as bounded by row status	Sample id as defined by the file-specific audit method.
+metadata/ph/ph_entity_registry.tsv	source_row	integer	not applicable	blank means unknown or not applicable as bounded by row status	Source row as defined by the file-specific audit method.
+metadata/ph/ph_entity_registry.tsv	source_sheet	string	not applicable	blank means unknown or not applicable as bounded by row status	Source sheet as defined by the file-specific audit method.
+metadata/ph/ph_measurement_sessions.tsv	device_iri	string	not applicable	never blank	Device iri as defined by the file-specific audit method.
+metadata/ph/ph_measurement_sessions.tsv	measurement_date	date	ISO 8601 calendar date	never blank	Accepted ISO 8601 measurement date; blank for a quarantined date.
+metadata/ph/ph_measurement_sessions.tsv	ph10_check	number	pH (UO:0000196 where represented in RDF)	never blank	Recorded pH-10 buffer read-back for the measurement session.
+metadata/ph/ph_measurement_sessions.tsv	protocol_iri	string	not applicable	never blank	Protocol iri as defined by the file-specific audit method.
+metadata/ph/ph_measurement_sessions.tsv	session_iri	string	not applicable	never blank	Session iri as defined by the file-specific audit method.
+metadata/ph/ph_measurement_sessions.tsv	slope_percent	number	percent	never blank	Workbook-reported electrode slope percentage.
+metadata/ph/ph_measurement_sessions.tsv	trip	integer	not applicable	never blank	Trip as defined by the file-specific audit method.
+metadata/ph/ph_observation_audit.tsv	calibration_pass	boolean	not applicable	never blank	Calibration pass as defined by the file-specific audit method.
+metadata/ph/ph_observation_audit.tsv	calibration_recorded	string	not applicable	blank means unknown or not applicable as bounded by row status	Calibration recorded as defined by the file-specific audit method.
+metadata/ph/ph_observation_audit.tsv	compartment	string	not applicable	never blank	Compartment as defined by the file-specific audit method.
+metadata/ph/ph_observation_audit.tsv	date_status	string	not applicable	never blank	Date status as defined by the file-specific audit method.
+metadata/ph/ph_observation_audit.tsv	disposition	string	not applicable	never blank	Controlled outcome for an uncertain or inapplicable metadata claim.
+metadata/ph/ph_observation_audit.tsv	ecology_eligible	boolean	not applicable	never blank	Whether the audited row is admitted to the ecology analysis.
+metadata/ph/ph_observation_audit.tsv	kg_eligible	boolean	not applicable	never blank	Whether the audited row is admitted to the pH knowledge-graph module.
+metadata/ph/ph_observation_audit.tsv	measurement_date	date	ISO 8601 calendar date	blank means unknown or not applicable as bounded by row status	Accepted ISO 8601 measurement date; blank for a quarantined date.
+metadata/ph/ph_observation_audit.tsv	measurement_date_raw	string	not applicable	blank means unknown or not applicable as bounded by row status	Verbatim date representation from the source workbook.
+metadata/ph/ph_observation_audit.tsv	metadata_match	boolean	not applicable	never blank	Metadata match as defined by the file-specific audit method.
+metadata/ph/ph_observation_audit.tsv	notes	string	not applicable	blank means unknown or not applicable as bounded by row status	Notes as defined by the file-specific audit method.
+metadata/ph/ph_observation_audit.tsv	ph10_check	number	pH (UO:0000196 where represented in RDF)	blank means unknown or not applicable as bounded by row status	Recorded pH-10 buffer read-back for the measurement session.
+metadata/ph/ph_observation_audit.tsv	ph10_check_pass	boolean	not applicable	never blank	Ph10 check pass as defined by the file-specific audit method.
+metadata/ph/ph_observation_audit.tsv	ph_value	number	pH (UO:0000196 where represented in RDF)	blank means unknown or not applicable as bounded by row status	Admitted or audited archived-soil pH reading under the declared CaCl2 protocol.
+metadata/ph/ph_observation_audit.tsv	ph_value_raw	string	pH (UO:0000196 where represented in RDF)	blank means unknown or not applicable as bounded by row status	Verbatim content of the workbook pH-reading cell.
+metadata/ph/ph_observation_audit.tsv	reason_codes	string	not applicable	blank means unknown or not applicable as bounded by row status	Semicolon-delimited machine-readable reasons for the row disposition.
+metadata/ph/ph_observation_audit.tsv	replicate	integer	not applicable	never blank	Replicate as defined by the file-specific audit method.
+metadata/ph/ph_observation_audit.tsv	sample_id	string	not applicable	never blank	Sample id as defined by the file-specific audit method.
+metadata/ph/ph_observation_audit.tsv	site	integer	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/ph/ph_observation_audit.tsv	slope_pass	boolean	not applicable	never blank	Slope pass as defined by the file-specific audit method.
+metadata/ph/ph_observation_audit.tsv	slope_percent	number	percent	blank means unknown or not applicable as bounded by row status	Workbook-reported electrode slope percentage.
+metadata/ph/ph_observation_audit.tsv	source_row	integer	not applicable	never blank	Source row as defined by the file-specific audit method.
+metadata/ph/ph_observation_audit.tsv	source_sheet	string	not applicable	never blank	Source sheet as defined by the file-specific audit method.
+metadata/ph/ph_observation_audit.tsv	specimen_iri	string	not applicable	never blank	Specimen iri as defined by the file-specific audit method.
+metadata/ph/ph_observation_audit.tsv	trip	integer	not applicable	never blank	Trip as defined by the file-specific audit method.
+metadata/ph/ph_observation_audit.tsv	value_range_pass	boolean	not applicable	never blank	Value range pass as defined by the file-specific audit method.
+metadata/relic-dna/PMA_ASV_table.tsv	<sample column>	non-negative integer	read counts	blank is not expected	ASV count for a treated, untreated, or control aliquot.
+metadata/relic-dna/PMA_ASV_table.tsv	ASV_ID	string	not applicable	never blank	ASV identifier in the paired PMA experiment.
+metadata/samples/environmental_measurement_corrections.tsv	corrected_field	string	not applicable	never blank	Corrected field as defined by the file-specific audit method.
+metadata/samples/environmental_measurement_corrections.tsv	corrected_value	string	not applicable	blank means unknown or not applicable as bounded by row status	Corrected value as defined by the file-specific audit method.
+metadata/samples/environmental_measurement_corrections.tsv	original_field	string	not applicable	never blank	Original field as defined by the file-specific audit method.
+metadata/samples/environmental_measurement_corrections.tsv	original_value	string	not applicable	never blank	Original value as defined by the file-specific audit method.
+metadata/samples/environmental_measurement_corrections.tsv	rationale	string	not applicable	never blank	Rationale as defined by the file-specific audit method.
+metadata/samples/environmental_measurement_corrections.tsv	site	string	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/samples/environmental_measurement_corrections.tsv	source_file	string	not applicable	never blank	Source file as defined by the file-specific audit method.
+metadata/samples/environmental_measurement_corrections.tsv	source_row	integer	not applicable	never blank	Source row as defined by the file-specific audit method.
+metadata/samples/environmental_measurement_corrections.tsv	status	string	not applicable	never blank	Evidence or curation status of the record.
+metadata/samples/plants.tsv	Compartment	string	not applicable	never blank	Record type; plant for this table.
+metadata/samples/plants.tsv	Identifier	string	not applicable	never blank	Plant-record identifier.
+metadata/samples/plants.tsv	Site	string	not applicable	never blank	Source site identifier.
+metadata/samples/plants.tsv	Trip	string	not applicable	never blank	Field campaign.
+metadata/samples/sample_corrections.tsv	corrected_value	string	not applicable	blank when the reviewed value is empty	Reviewed replacement value.
+metadata/samples/sample_corrections.tsv	field	string	not applicable	never blank	Field to which the correction applies.
+metadata/samples/sample_corrections.tsv	original_value	string	not applicable	blank when the source cell was empty	Exact source value before correction.
+metadata/samples/sample_corrections.tsv	rationale	string	not applicable	never blank	Evidence and boundary for the correction.
+metadata/samples/sample_corrections.tsv	sample_id	string	not applicable	never blank	Source-preserving sample identifier.
+metadata/samples/sample_corrections.tsv	status	string	not applicable	never blank	Review disposition.
+metadata/samples/site_aliases.tsv	campaign_role	string	not applicable	never blank	Non-revisited Trip 1 role used to bound repeated-campaign inference.
+metadata/samples/site_aliases.tsv	canonical_site_iri	IRI	not applicable	never blank	IRI of the coordinate-matched named site.
+metadata/samples/site_aliases.tsv	canonical_site_label	string	not applicable	never blank	Label of the coordinate-matched named site.
+metadata/samples/site_aliases.tsv	canonical_wkt	WKT point	degrees, WGS84	never blank	Canonical point geometry in longitude-latitude order.
+metadata/samples/site_aliases.tsv	confirmed_on	ISO date	YYYY-MM-DD	never blank	Confirmation date.
+metadata/samples/site_aliases.tsv	evidence	string	not applicable	never blank	Source and confirmation evidence.
+metadata/samples/site_aliases.tsv	source_*	string	see field name	never blank	Trip 1 source sheet, numeric site, and WGS84 coordinates preserved for the alias.
+metadata/samples/site_aliases.tsv	status	string	not applicable	never blank	Author confirmation status.
+metadata/samples/site_iri_registry.tsv	note	string	not applicable	never blank	Reason the stable identity is retained.
+metadata/samples/site_iri_registry.tsv	site_iri	IRI	not applicable	never blank	Stable site IRI assigned to the label.
+metadata/samples/site_iri_registry.tsv	site_label	string	not applicable	never blank	Exact named-site label consumed by the site generator.
+metadata/samples/site_iri_registry.tsv	status	string	not applicable	never blank	Registry disposition.
+metadata/samplesheets/additional_fastqs_v2.tsv	FASTQ Paths	string	not applicable	never blank	Fastq paths as defined by the file-specific audit method.
+metadata/samplesheets/additional_fastqs_v2.tsv	Sample Name	string	not applicable	never blank	Sample name as defined by the file-specific audit method.
+metadata/samplesheets/trip1-2023.tsv	biome	string	not applicable	never blank	Biome as defined by the file-specific audit method.
+metadata/samplesheets/trip1-2023.tsv	coordinates	string	not applicable	never blank	Coordinates as defined by the file-specific audit method.
+metadata/samplesheets/trip1-2023.tsv	date	string	not applicable	never blank	Date as defined by the file-specific audit method.
+metadata/samplesheets/trip1-2023.tsv	feature	string	not applicable	never blank	Feature as defined by the file-specific audit method.
+metadata/samplesheets/trip1-2023.tsv	humidity	number	not applicable	never blank	Humidity as defined by the file-specific audit method.
+metadata/samplesheets/trip1-2023.tsv	notes	string	not applicable	blank means unknown or not applicable as bounded by row status	Notes as defined by the file-specific audit method.
+metadata/samplesheets/trip1-2023.tsv	pressure	integer	not applicable	blank means unknown or not applicable as bounded by row status	Pressure as defined by the file-specific audit method.
+metadata/samplesheets/trip1-2023.tsv	site	string	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/samplesheets/trip1-2023.tsv	temperature	number	not applicable	never blank	Temperature as defined by the file-specific audit method.
+metadata/samplesheets/trip1-2023.tsv	time	string	not applicable	never blank	Time as defined by the file-specific audit method.
+metadata/samplesheets/trip2-2023.tsv	biome	string	not applicable	never blank	Biome as defined by the file-specific audit method.
+metadata/samplesheets/trip2-2023.tsv	coordinates	string	not applicable	never blank	Coordinates as defined by the file-specific audit method.
+metadata/samplesheets/trip2-2023.tsv	date	string	not applicable	never blank	Date as defined by the file-specific audit method.
+metadata/samplesheets/trip2-2023.tsv	feature	string	not applicable	never blank	Feature as defined by the file-specific audit method.
+metadata/samplesheets/trip2-2023.tsv	humidity	number	not applicable	never blank	Humidity as defined by the file-specific audit method.
+metadata/samplesheets/trip2-2023.tsv	notes	string	not applicable	blank means unknown or not applicable as bounded by row status	Notes as defined by the file-specific audit method.
+metadata/samplesheets/trip2-2023.tsv	site	integer	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/samplesheets/trip2-2023.tsv	temperature	string	not applicable	blank means unknown or not applicable as bounded by row status	Temperature as defined by the file-specific audit method.
+metadata/samplesheets/trip2-2023.tsv	time	string	not applicable	never blank	Time as defined by the file-specific audit method.
+metadata/samplesheets/trip3-2024.tsv	biome	string	not applicable	never blank	Biome as defined by the file-specific audit method.
+metadata/samplesheets/trip3-2024.tsv	coordinates	string	not applicable	never blank	Coordinates as defined by the file-specific audit method.
+metadata/samplesheets/trip3-2024.tsv	date	string	not applicable	never blank	Date as defined by the file-specific audit method.
+metadata/samplesheets/trip3-2024.tsv	feature	string	not applicable	never blank	Feature as defined by the file-specific audit method.
+metadata/samplesheets/trip3-2024.tsv	humidity	number	not applicable	blank means unknown or not applicable as bounded by row status	Humidity as defined by the file-specific audit method.
+metadata/samplesheets/trip3-2024.tsv	notes	string	not applicable	blank means unknown or not applicable as bounded by row status	Notes as defined by the file-specific audit method.
+metadata/samplesheets/trip3-2024.tsv	pressure	integer	not applicable	blank means unknown or not applicable as bounded by row status	Pressure as defined by the file-specific audit method.
+metadata/samplesheets/trip3-2024.tsv	site	string	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/samplesheets/trip3-2024.tsv	temperature	number	not applicable	blank means unknown or not applicable as bounded by row status	Temperature as defined by the file-specific audit method.
+metadata/samplesheets/trip3-2024.tsv	time	string	not applicable	never blank	Time as defined by the file-specific audit method.
+metadata/samplesheets/trip4-2024.tsv	biome	string	not applicable	never blank	Biome as defined by the file-specific audit method.
+metadata/samplesheets/trip4-2024.tsv	coordinates	string	not applicable	never blank	Coordinates as defined by the file-specific audit method.
+metadata/samplesheets/trip4-2024.tsv	date	string	not applicable	never blank	Date as defined by the file-specific audit method.
+metadata/samplesheets/trip4-2024.tsv	feature	string	not applicable	never blank	Feature as defined by the file-specific audit method.
+metadata/samplesheets/trip4-2024.tsv	humidity	number	not applicable	never blank	Humidity as defined by the file-specific audit method.
+metadata/samplesheets/trip4-2024.tsv	notes	string	not applicable	blank means unknown or not applicable as bounded by row status	Notes as defined by the file-specific audit method.
+metadata/samplesheets/trip4-2024.tsv	pressure	string	not applicable	blank means unknown or not applicable as bounded by row status	Pressure as defined by the file-specific audit method.
+metadata/samplesheets/trip4-2024.tsv	site	integer	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/samplesheets/trip4-2024.tsv	temperature	number	not applicable	never blank	Temperature as defined by the file-specific audit method.
+metadata/samplesheets/trip4-2024.tsv	time	string	not applicable	never blank	Time as defined by the file-specific audit method.
+metadata/samplesheets/trip5-2025.tsv	biome	string	not applicable	never blank	Biome as defined by the file-specific audit method.
+metadata/samplesheets/trip5-2025.tsv	coordinates	string	not applicable	never blank	Coordinates as defined by the file-specific audit method.
+metadata/samplesheets/trip5-2025.tsv	date	string	not applicable	never blank	Date as defined by the file-specific audit method.
+metadata/samplesheets/trip5-2025.tsv	feature	string	not applicable	never blank	Feature as defined by the file-specific audit method.
+metadata/samplesheets/trip5-2025.tsv	humidity	number	not applicable	never blank	Humidity as defined by the file-specific audit method.
+metadata/samplesheets/trip5-2025.tsv	notes	string	not applicable	blank means unknown or not applicable as bounded by row status	Notes as defined by the file-specific audit method.
+metadata/samplesheets/trip5-2025.tsv	pressure	integer	not applicable	never blank	Pressure as defined by the file-specific audit method.
+metadata/samplesheets/trip5-2025.tsv	site	string	not applicable	never blank	Site as defined by the file-specific audit method.
+metadata/samplesheets/trip5-2025.tsv	temperature	number	not applicable	never blank	Temperature as defined by the file-specific audit method.
+metadata/samplesheets/trip5-2025.tsv	time	string	not applicable	never blank	Time as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet-trip5.tsv	bioproject	string	not applicable	never blank	Bioproject as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet-trip5.tsv	biosample_accession	string	not applicable	never blank	Biosample accession as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet-trip5.tsv	experiment_accession	string	not applicable	never blank	Experiment accession as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet-trip5.tsv	library_name	string	not applicable	never blank	Library name as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet-trip5.tsv	library_strategy	string	not applicable	never blank	Library strategy as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet-trip5.tsv	run_accession	string	not applicable	never blank	Run accession as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet-trip5.tsv	sample_describtion	string	not applicable	never blank	Sample describtion as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet-trip5.tsv	sample_name	string	not applicable	never blank	Sample name as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet-trip5.tsv	sample_title	string	not applicable	never blank	Sample title as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet-trip5.tsv	target_gene	string	not applicable	never blank	Target gene as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet-trip5.tsv	umbrella_project	string	not applicable	never blank	Umbrella project as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet.tsv	bioproject	string	not applicable	never blank	Bioproject as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet.tsv	biosample_accession	string	not applicable	never blank	Biosample accession as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet.tsv	experiment_accession	string	not applicable	never blank	Experiment accession as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet.tsv	library_name	string	not applicable	never blank	Library name as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet.tsv	library_strategy	string	not applicable	never blank	Library strategy as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet.tsv	run_accession	string	not applicable	never blank	Run accession as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet.tsv	sample_describtion	string	not applicable	never blank	Sample describtion as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet.tsv	sample_name	string	not applicable	never blank	Sample name as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet.tsv	sample_title	string	not applicable	never blank	Sample title as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet.tsv	target_gene	string	not applicable	never blank	Target gene as defined by the file-specific audit method.
+metadata/sra-submissions/submission-sheet.tsv	umbrella_project	string	not applicable	never blank	Umbrella project as defined by the file-specific audit method.
+metadata/taxonomy/feature-table-trips1-5.tsv	<profile column>	non-negative integer	read counts	blank is not expected	Raw ASV read count for the named exported profile.
+metadata/taxonomy/feature-table-trips1-5.tsv	Feature ID	string	not applicable	never blank	ASV identifier; each subsequent column is one exported profile.
+metadata/taxonomy/feature_table_filtered_normalized.tsv	<normalized profile column>	number	relative proportion	blank is not expected	Normalized relative abundance for one campaign-site-compartment profile.
+metadata/taxonomy/feature_table_filtered_normalized.tsv	OTU_ID	string	not applicable	never blank	ASV identifier after the documented ecology dimension-reduction step.
+metadata/taxonomy/feature_table_filtered_raw_w_reps.tsv	<profile column>	non-negative integer	read counts	blank is not expected	Raw count for one retained exported profile.
+metadata/taxonomy/feature_table_filtered_raw_w_reps.tsv	OTU_ID	string	not applicable	never blank	ASV identifier after the documented ecology dimension-reduction step.
+metadata/taxonomy/taxonomy-trips1-5.tsv	Feature ID	string	not applicable	never blank	ASV identifier linking to the feature table and sequence FASTA.
+metadata/taxonomy/taxonomy-trips1-5.tsv	Taxon	string	not applicable	never blank	Semicolon-delimited seven-rank lineage followed by the classifier confidence.
+metadata/taxonomy/taxonomy-trips1-5.tsv	Unnamed Column 1	string	not applicable	blank in the canonical export	Empty legacy export column retained byte-for-byte for provenance.
+ontology/mapped_taxonomy_corrected.tsv	Is Inherited	boolean	not applicable	never blank	Whether the mapping was inherited from a resolved ancestral rank.
+ontology/mapped_taxonomy_corrected.tsv	Is RAK	boolean	not applicable	never blank	Whether Mapped ID denotes a project-local RAK contextual taxon.
+ontology/mapped_taxonomy_corrected.tsv	Mapped ID	identifier	not applicable	never blank	Resolved NCBI Taxonomy identifier or project-local RAK contextual taxon identifier.
+ontology/mapped_taxonomy_corrected.tsv	Name	string	not applicable	never blank	Taxon name at the represented rank.
+ontology/mapped_taxonomy_corrected.tsv	Rank	string	not applicable	never blank	One of the seven represented taxonomic ranks.
+ontology/mapped_taxonomy_corrected.tsv	Taxon String	string	not applicable	never blank	Source semicolon-delimited lineage to which this rank-level mapping belongs.
+ontology/rubalkhali_measurements.owl	RAK_2000004	number	pascals (UO:0000110)	absent when source pressure is unrecorded	Field atmospheric pressure converted from the source pressure_mbar value by multiplying by 100.

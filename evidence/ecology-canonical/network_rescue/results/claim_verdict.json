@@ -1,0 +1,18 @@
+{
+  "calibration_status": "calibrated",
+  "campaign_comparison_status": "not_estimable",
+  "campaign_reason": "Matched campaign sizes are 42, 2, 53, 56, 17; no common campaign-specific network comparison meets the predeclared observation rule. Campaigns were not pooled into wet/dry labels.",
+  "comparative_density_contrasts_passing": 0,
+  "descriptive_association_status": "stable_associations_without_robust_density_ordering",
+  "maximum_expected_false_fraction_gate": 0.1,
+  "mechanistic_interpretation_permitted": false,
+  "minimum_stable_edges_gate": 10,
+  "original_claim": "Compartment/season network complexity, resilience, and hub-taxon interpretation from thresholded Spearman correlations",
+  "original_claim_status": "retire",
+  "permitted_wording": "Stable null-calibrated conditional associations were recoverable within each compartment, but comparative network density ordering was not robust.",
+  "reason": "The original near-all-positive pattern and comparative density ordering were not supported by the matched compositional analysis, and a campaign/season comparison was not estimable. Only null-calibrated, site-cluster-stable conditional associations are retained descriptively.",
+  "schema_version": "1.0",
+  "selected_alpha": 0.2,
+  "selected_combined_null_edge_ratio": 0.05373645179691957,
+  "stable_network_gate_passed": true
+}

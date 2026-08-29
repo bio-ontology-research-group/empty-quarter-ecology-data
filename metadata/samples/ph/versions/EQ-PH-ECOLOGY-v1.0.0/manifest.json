@@ -1,0 +1,31 @@
+{
+  "dataset_version": "EQ-PH-ECOLOGY-v1.0.0",
+  "purpose": "ecology-manuscript",
+  "status": "FROZEN",
+  "frozen_on": "2026-08-03",
+  "measurement_cutoff": "2026-08-02",
+  "source_complete": false,
+  "source": {
+    "path": "data/metadata/samples/ph/versions/EQ-PH-ECOLOGY-v1.0.0/ph_measurements.xlsx",
+    "sha256": "0986fdde4af4635252ead8f601e8725749228c0adf4f906e08b364801ab08398",
+    "bytes": 178875
+  },
+  "admission_policy": {
+    "version": "ph-measurement-v1",
+    "requires_exact_specimen_reconciliation": true,
+    "requires_numeric_ph_in_declared_column": true,
+    "requires_range_0_to_14": true,
+    "requires_calibration_yes": true,
+    "requires_slope_percent_95_to_102": true,
+    "requires_ph10_check_9_9_to_10_1": true,
+    "requires_unambiguous_measurement_date_by_cutoff": true,
+    "imputation_allowed": false,
+    "silent_source_correction_allowed": false
+  },
+  "version_policy": {
+    "ecology_analysis_may_change": false,
+    "successor_data_paper_version_may_add_measurements": true,
+    "successor_may_overwrite_this_source": false,
+    "cross_version_consistency_audit_required": true
+  }
+}

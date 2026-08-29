@@ -1,0 +1,113 @@
+source	identifier	campaign	source_locator	site_field	has_sequence_run	in_feature_table	biosample	archive_title
+sample_ledger	- Ctrl 1	Trip1	Trip1:row 578	Control	False	False		
+sample_ledger	- Ctrl 2	Trip1	Trip1:row 579	Control	False	False		
+sample_ledger	- Ctrl 3	Trip1	Trip1:row 580	Control	False	False		
+sample_ledger	=+ Ctrl 1	Trip1	Trip1:row 581	Control	False	False		
+sample_ledger	=+ Ctrl 2	Trip1	Trip1:row 582	Control	False	False		
+sample_ledger	=+ Ctrl 3	Trip1	Trip1:row 583	Control	False	False		
+sample_ledger	- Ctrl PCR	Trip1	Trip1:row 584	Control	False	False		
+sample_ledger	Extraction Ctrl	Trip1	Trip1:row 585	Control	False	False		
+sample_ledger	- Ctrl PCR 2	Trip1	Trip1:row 586	Control	False	False		
+sample_ledger	Extraction Ctrl 2	Trip1	Trip1:row 587	Control	False	False		
+sample_ledger	- Ctrl 1	Trip3	Trip3:row 542	61	False	False		
+sample_ledger	- Ctrl 2	Trip3	Trip3:row 543	61	False	False		
+sample_ledger	- Ctrl 3	Trip3	Trip3:row 544	61	False	False		
+sample_ledger	=+ Ctrl 1	Trip3	Trip3:row 545	61	False	False		
+sample_ledger	=+ Ctrl 2	Trip3	Trip3:row 546	61	False	False		
+sample_ledger	=+ Ctrl 3	Trip3	Trip3:row 547	61	False	False		
+sample_ledger	Extraction Ctrl	Trip3	Trip3:row 548	61	False	False		
+sample_ledger	PCR Ctrl	Trip3	Trip3:row 549	61	False	False		
+sample_ledger	- Ctrl 1	Trip4	Trip4:row 542	61	False	False		
+sample_ledger	- Ctrl 2	Trip4	Trip4:row 543	61	False	False		
+sample_ledger	- Ctrl 3	Trip4	Trip4:row 544	61	False	False		
+sample_ledger	=+ Ctrl 1	Trip4	Trip4:row 545	61	False	False		
+sample_ledger	=+ Ctrl 2	Trip4	Trip4:row 546	61	False	False		
+sample_ledger	=+ Ctrl 3	Trip4	Trip4:row 547	61	False	False		
+sample_ledger	Extraction Ctrl	Trip4	Trip4:row 548	61	False	False		
+sample_ledger	PCR Ctrl	Trip4	Trip4:row 549	61	False	False		
+sample_ledger	- Ctrl 1	Trip5	Trip5:row 542	61	False	False		
+sample_ledger	- Ctrl 2	Trip5	Trip5:row 543	61	False	False		
+sample_ledger	- Ctrl 3	Trip5	Trip5:row 544	61	False	False		
+sample_ledger	=+ Ctrl 1	Trip5	Trip5:row 545	61	False	False		
+sample_ledger	=+ Ctrl 2	Trip5	Trip5:row 546	61	False	False		
+sample_ledger	=+ Ctrl 3	Trip5	Trip5:row 547	61	False	False		
+sample_ledger	Extraction Ctrl	Trip5	Trip5:row 548	61	False	False		
+sample_ledger	PCR Ctrl	Trip5	Trip5:row 549	61	False	False		
+sequence_submission	T_Neg_Ctrl1		ERR16061177		True		ERS28392121	
+sequence_submission	T_Neg_Ctrl2		ERR16061178		True		ERS28392122	
+sequence_submission	EB10		ERR16783284		True		ERS29439729	
+sequence_submission	EB11		ERR16783285		True		ERS29439730	
+sequence_submission	EB12		ERR16783286		True		ERS29439731	
+sequence_submission	EB13		ERR16783287		True		ERS29439732	
+sequence_submission	EB14		ERR16783288		True		ERS29439733	
+sequence_submission	EB15		ERR16783289		True		ERS29439734	
+sequence_submission	EB16		ERR16783290		True		ERS29439735	
+sequence_submission	EB17		ERR16783291		True		ERS29439736	
+sequence_submission	EB18		ERR16783292		True		ERS29439737	
+sequence_submission	EB1		ERR16783283		True		ERS29439728	
+sequence_submission	EB2		ERR16783293		True		ERS29439738	
+sequence_submission	EB3		ERR16783294		True		ERS29439739	
+sequence_submission	EB4		ERR16783295		True		ERS29439740	
+sequence_submission	EB5		ERR16783296		True		ERS29439741	
+sequence_submission	EB6		ERR16783297		True		ERS29439742	
+sequence_submission	EB7		ERR16783298		True		ERS29439743	
+sequence_submission	EB8		ERR16783299		True		ERS29439744	
+sequence_submission	EB9		ERR16783300		True		ERS29439745	
+sequence_submission	Negative1		ERR16783301		True		ERS29439746	
+sequence_submission	Negative2		ERR16783302		True		ERS29439747	
+sequence_submission	Negative4		ERR16783304		True		ERS29439748	
+sequence_submission	Negative5		ERR16783305		True		ERS29439749	
+sequence_submission	Negative6		ERR16783306		True		ERS29439750	
+sequence_submission	Negative7		ERR16783307		True		ERS29439751	
+public_archive	Neg Ctrl (PCR)		PRJNA1065643/SRR27587568		True		SAMN39465999	Negative control – PCR
+public_archive	+ Zymo		PRJNA1065643/SRR27587611		True		SAMN39465917	Positive control – PCR (Zymo D6305)
+public_archive	- Ctrl 3		PRJNA1065643/SRR27587623		True		SAMN39465915	Negative control – sampling trip
+public_archive	+ Ctrl 1		PRJNA1065643/SRR27587622		True		SAMN39465916	Positive control – sampling trip (Zymo D6305)
+multiqc	M-25-0323_Ctrl-1-Trip1_UDP0371-UDP0371_L002_R1_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0323_Ctrl-1-Trip1_UDP0371-UDP0371_L002_R2_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0553_Ctrl-2_UDP0372-UDP0372_L002_R1_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0553_Ctrl-2_UDP0372-UDP0372_L002_R2_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0554_Ctrl-3_UDP0373-UDP0373_L002_R1_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0554_Ctrl-3_UDP0373-UDP0373_L002_R2_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0555_PCR-Ctrl-Trip1_UDP0374-UDP0374_L002_R1_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0555_PCR-Ctrl-Trip1_UDP0374-UDP0374_L002_R2_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0770_EB1_SU0216-SU0216_L002_R1_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0770_EB1_SU0216-SU0216_L002_R2_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0771_EB2_SU0228-SU0228_L002_R1_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0771_EB2_SU0228-SU0228_L002_R2_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0772_EB3_SU0240-SU0240_L002_R1_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0772_EB3_SU0240-SU0240_L002_R2_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0773_EB4_SU0252-SU0252_L002_R1_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0773_EB4_SU0252-SU0252_L002_R2_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0774_EB5_SU0264-SU0264_L002_R1_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0774_EB5_SU0264-SU0264_L002_R2_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0870_Neg-Ctrl-1-Trip2_SU0335-SU0335_L002_R1_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0870_Neg-Ctrl-1-Trip2_SU0335-SU0335_L002_R2_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0871_Neg-Ctrl-2-Trip2_SU0347-SU0347_L002_R1_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0871_Neg-Ctrl-2-Trip2_SU0347-SU0347_L002_R2_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0929_Extraction-Ctrl-Pro-Trip1_UDP0384-UDP0384_L002_R1_001		multiqc_general_stats.txt		True			
+multiqc	M-25-0929_Extraction-Ctrl-Pro-Trip1_UDP0384-UDP0384_L002_R2_001		multiqc_general_stats.txt		True			
+feature_table	EB10		feature-table-trips1-5.tsv			True		
+feature_table	EB11		feature-table-trips1-5.tsv			True		
+feature_table	EB12		feature-table-trips1-5.tsv			True		
+feature_table	EB13		feature-table-trips1-5.tsv			True		
+feature_table	EB14		feature-table-trips1-5.tsv			True		
+feature_table	EB15		feature-table-trips1-5.tsv			True		
+feature_table	EB16		feature-table-trips1-5.tsv			True		
+feature_table	EB17		feature-table-trips1-5.tsv			True		
+feature_table	EB18		feature-table-trips1-5.tsv			True		
+feature_table	EB1		feature-table-trips1-5.tsv			True		
+feature_table	EB2		feature-table-trips1-5.tsv			True		
+feature_table	EB3		feature-table-trips1-5.tsv			True		
+feature_table	EB4		feature-table-trips1-5.tsv			True		
+feature_table	EB5		feature-table-trips1-5.tsv			True		
+feature_table	EB6		feature-table-trips1-5.tsv			True		
+feature_table	EB7		feature-table-trips1-5.tsv			True		
+feature_table	EB8		feature-table-trips1-5.tsv			True		
+feature_table	EB9		feature-table-trips1-5.tsv			True		
+feature_table	Negative1		feature-table-trips1-5.tsv			True		
+feature_table	Negative2		feature-table-trips1-5.tsv			True		
+feature_table	Negative4		feature-table-trips1-5.tsv			True		
+feature_table	Negative5		feature-table-trips1-5.tsv			True		
+feature_table	Negative6		feature-table-trips1-5.tsv			True		
+feature_table	Negative7		feature-table-trips1-5.tsv			True		

@@ -1,0 +1,5 @@
+source_sheet	source_site_id	source_latitude	source_longitude	canonical_site_label	canonical_site_iri	canonical_wkt	campaign_role	status	evidence	confirmed_on
+Trip1	61	20.7158697	54.7996974	Site water well (location 2)	https://rubalkhali.science/kb/RAK_1000067	POINT(54.7996974 20.7158697)	trip1_only_nonrevisited	confirmed	Trip 1 field coordinate and project-owner confirmation	2026-07-24
+Trip1	62	20.82577583333333	54.988932500000004	Site road (location 1)	https://rubalkhali.science/kb/RAK_1000068	POINT(54.988932500000004 20.82577583333333)	trip1_only_nonrevisited	confirmed	Trip 1 field coordinate and project-owner confirmation	2026-07-24
+Trip1	63	20.93405111111111	55.12609	Site road (location 2)	https://rubalkhali.science/kb/RAK_1000069	POINT(55.12609 20.93405111111111)	trip1_only_nonrevisited	confirmed	Trip 1 field coordinate and project-owner confirmation	2026-07-24
+Trip1	64	21.031050555555556	55.159842777777776	Site camground	https://rubalkhali.science/kb/RAK_1000070	POINT(55.159842777777776 21.031050555555556)	trip1_only_nonrevisited	confirmed	Trip 1 field coordinate and project-owner confirmation	2026-07-24

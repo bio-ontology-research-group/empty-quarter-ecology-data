@@ -1,0 +1,61 @@
+{
+  "artifact_root": "analysis/v3/results",
+  "files": [
+    {
+      "bytes": 1430,
+      "path": "README.md",
+      "sha256": "1e1c214e0629d024d1fac27ce98c2c37cd0bec1a502c581e9179132639b8e0fd"
+    },
+    {
+      "bytes": 637,
+      "path": "SUPERSEDED_RAIN_ANALYSIS.md",
+      "sha256": "5611a386b3937a1009600209b7eb0c63032d546b2a71173fbe6ed8a70e4c85c9"
+    },
+    {
+      "bytes": 2818,
+      "path": "campaign_compartment_model.tsv",
+      "sha256": "78f55be73d3cd6c324c9a82e8d002b5cb4c6d98581ca996ce1b0a06e79fa37cc"
+    },
+    {
+      "bytes": 6860,
+      "path": "claim_ledger.json",
+      "sha256": "48a63ec4242edf9a1c619763c361b9ae3b2d9382fb40f5012a735c1d663c3bd4"
+    },
+    {
+      "bytes": 5586,
+      "path": "claim_ledger.tsv",
+      "sha256": "66a15331265537f9141c4d7187dc0d30fc2fc86a65caef571537bdbb10ba302d"
+    },
+    {
+      "bytes": 21798,
+      "path": "claim_rescue_summary.pdf",
+      "sha256": "05bc6fba9914e4190b3478292c4bdb93b9d1c6720f3ce9dc48cbf13e9bedd0a0"
+    },
+    {
+      "bytes": 445,
+      "path": "cohort_accounting.tsv",
+      "sha256": "03e7f56bde0c17503e3d4b2fd71e3c9d5d812d6214d0c63ec1c6480ef6dcebf4"
+    },
+    {
+      "bytes": 6377,
+      "path": "paired_compartment_effects.tsv",
+      "sha256": "5841c45fe8c6c5d79f018814100dfa0455b817bb6a41201df2d693cec86b0d65"
+    },
+    {
+      "bytes": 37284,
+      "path": "rain_leave_one_campaign.tsv",
+      "sha256": "8c70918b6ebd9b98721b84a2b4e78bbc62fb08d7f93d2a5c27ae38f03c020135"
+    },
+    {
+      "bytes": 9263,
+      "path": "rain_window_models.tsv",
+      "sha256": "df95a558bf85b02e8220ba9ae6f1940a69f7e771789647b28e3105f1c62ca6fe"
+    },
+    {
+      "bytes": 48973,
+      "path": "site_campaign_compartment_observations.tsv",
+      "sha256": "61a96c0859a0ad658bba5363606056f3fdbef53a8baeacb9f2a7207b0d9a9754"
+    }
+  ],
+  "schema_version": "1.0"
+}
