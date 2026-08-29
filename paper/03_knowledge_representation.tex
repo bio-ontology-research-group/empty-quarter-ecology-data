@@ -22,10 +22,10 @@ and a taxonomy reference graph containing the aligned taxonomy module.
 \subsection{Prefixes used in listings}\label{subsec:prefixes}
 
 For brevity, the Turtle and SPARQL listings throughout the paper use the prefix declarations of Table~\ref{tab:prefixes}; these declarations should be prepended to any listing that the reader wishes to execute against the public endpoint. With these
-declarations in place, identifiers such as \texttt{rak:P100001}
-are abbreviated to \texttt{rak:P100001} and
-\texttt{sio:SIO\_000291} to \texttt{sio:000291} without loss of
-information.
+declarations in place, identifiers such as
+\texttt{https://rubalkhali.science/kb/RAK\_P100001} are abbreviated to
+\texttt{rak:P100001} and \texttt{http://semanticscience.org/resource/SIO\_000291}
+to \texttt{sio:000291} without loss of information.
 
 \begin{table}[h]
 \centering
@@ -212,7 +212,7 @@ the target of each observation. Listing~\ref{lst:ttl_tax} shows how we
 map an entire sample's feature table row into the knowledge graph.
 
 For instance, the sequence analysis for a specific sample yields an absolute sequence count associated with a taxonomic class from the NCBI Taxonomy. We construct an abundance quality that targets the explicit taxonomic identifier, binding the observational count back to the biological workflow. Formally, the pattern instantiates SIO's
-\emph{Collection--hasMember--Thing} and \emph{Quantity--refersTo--Quality}
+\emph{Collection--hasMember--Thing} and \emph{Quantity--isMeasurementValueOf--Quality}
 idioms:
 
 {\small
@@ -226,7 +226,7 @@ idioms:
 	\text{TaxonomicDataset} & \sqsubseteq \forall
 	    \text{hasMember}.\text{AbundanceObservation} \\
 	\text{AbundanceObservation} & \sqsubseteq \text{Quantity} \sqcap
-	    \exists \text{refersTo}.\text{AbundanceQuality} \\
+	    \exists \text{isMeasurementValueOf}.\text{AbundanceQuality} \\
 	\text{AbundanceQuality} & \sqsubseteq \exists
 	    \text{isAttributeOf}.\text{Taxon}
 \end{align}
@@ -241,7 +241,7 @@ rak:7290001 a rak:0000074 ; # Taxonomic Dataset
   sio:000059 rak:4400001 . # hasMember (Observation Value)
 
 rak:4400001 a sio:000070 ; # Quantity (Absolute Count)
-  sio:000215 rak:5400001 ; # refersTo
+  sio:000215 rak:5400001 ; # isMeasurementValueOf
   rak:2000021 "15"^^xsd:integer . # absolute read count
 
 rak:5400001 a rak:0000078 ; # Absolute Abundance Quality
@@ -278,7 +278,7 @@ an analyte-specific quality:
 	    \text{hasTarget}.\text{SoilSample} \sqcap \exists
 	    \text{hasOutput}.\text{ConcentrationQuantity} \\
 	\text{ConcentrationQuantity} & \sqsubseteq \text{Quantity} \sqcap
-	    \exists \text{refersTo}.\text{AnalyteQuality} \\
+	    \exists \text{isMeasurementValueOf}.\text{AnalyteQuality} \\
 	\text{AnalyteQuality} & \sqsubseteq \exists
 	    \text{isAttributeOf}.\text{SoilSample}
 \end{align}
@@ -293,7 +293,7 @@ rak:P300001 a rak:0000080 ; # XRF Measuring Process
   sio:000229 rak:4300001 . # hasOutput
 
 rak:4300001 a sio:000070 ; # Quantity
-  sio:000215 rak:5300001 ; # refersTo
+  sio:000215 rak:5300001 ; # isMeasurementValueOf
   sio:000221 uo:0000187 ; # Percent unit
   rak:2000012 "58.2"^^xsd:double . # Concentration
 
@@ -426,7 +426,7 @@ provenance of paired-end runs is preserved.
 	    \text{hasInput}.\text{FASTQDataset} \sqcap \exists
 	    \text{hasOutput}.\text{QCMeasurementValue} \\
 	\text{QCMeasurementValue} & \sqsubseteq \text{Quantity} \sqcap
-	    \exists \text{refersTo}.\text{QCQuality} \\
+	    \exists \text{isMeasurementValueOf}.\text{QCQuality} \\
 	\text{QCQuality} & \sqsubseteq \exists
 	    \text{isAttributeOf}.\text{FASTQDataset}
 \end{align}
@@ -438,7 +438,7 @@ rak:P350001 a rak:0000047 ; # Sequencing QC Process
   sio:000229 rak:4500001 . # hasOutput (QC Value)
 
 rak:4500001 a rak:0000086 ; # GC Content Value
-  sio:000215 rak:5500001 ; # refersTo
+  sio:000215 rak:5500001 ; # isMeasurementValueOf
   sio:000221 uo:0000187 ; # Percent
   rak:2000073 "54.2"^^xsd:double . # has GC content
 

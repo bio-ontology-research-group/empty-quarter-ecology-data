@@ -38,8 +38,8 @@ and endosphere communities \cite{mousa2024}.
 %These studies establish that a Saudi arid-soil survey is not itself new.
 These studies establish that a survey of hyperarid soils in Saudi Arabia is not itself new.
 What remains missing
-is a repeated, multi-expedition transect in which every community profile %, is connected to its provenance across locations, physical specimens, molecular products, environmental observations, climate, and geochemistry.
-the sample it came from, and the measurements taken alongside it form a connected record that can be queried directly rather than asssembled from different data records.
+is a repeated, multi-expedition transect in which every community profile, %is connected to its provenance across locations, physical specimens, molecular products, environmental observations, climate, and geochemistry.
+the sample it came from, and the measurements taken alongside it form a connected record that can be queried directly rather than assembled from separate data records.
 
 To characterize complex ecosystems, researchers must integrate
 heterogeneous and multi-scale data: microbial community profiles
@@ -118,9 +118,11 @@ construction alone.
 
 Here, we describe a versioned, provenance-preserving knowledge graph
 integrating repeated desert microbiome, environmental, climate, pH, 
-and geochemical observations across the Rub’ al-Khali.
- We present an OWL 2 DL knowledge graph
-\cite{owl2} built from RDF instance data \cite{rdf}. This
+and geochemical observations across the Rub' al-Khali.
+The knowledge graph is expressed in OWL 2 DL \cite{owl2} and built from
+RDF instance data \cite{rdf}; because reasoning over the full graph in
+OWL 2 DL is infeasible, its consistency is checked under the OWL 2 EL
+profile with the ELK reasoner (Section~\ref{valid}). This
 knowledge graph integrates data from five field expeditions
 (2023--2025) along a transect of more than 1,000 km across the Saudi
 Rub' al-Khali, from the western escarpment to the eastern border with
@@ -153,19 +155,15 @@ contexts in the Environment Ontology (ENVO) \cite{envo}, and taxonomic
 identifiers in the NCBI Taxonomy \cite{ncbitaxon}.
 
 Because it encodes the full provenance chain from physical sample
-collection to digital data products, the knowledge graph is the key
-foundation for implementing the FAIR data principles for the Rub'
-al-Khali digital twin. This semantic integration eliminates the data
-fragmentation that typically limits ecological models, and it
-guarantees that observations, models, and workflows remain fully
-interoperable \cite{islam2026}. Consequently, the knowledge graph acts
-as the operational foundation for the Rub' al-Khali digital twin. It
+collection to digital data products, the knowledge graph is designed
+as a FAIR foundation for a future Rub' al-Khali digital twin; building
+and validating such a twin is beyond the scope of this paper. The graph
 allows researchers to execute cross-domain queries that otherwise
 demand complex joins across multiple heterogeneous tables in a
-conventional database. Therefore, this resource serves as a
-foundational infrastructure for computational ecology, which
-facilitates hypothesis generation, intervention simulation, and
-evidence-based policy.
+conventional database, and it keeps observations, models, and
+workflows interoperable through shared identifiers and vocabularies
+\cite{islam2026}. We expect this to support hypothesis generation,
+intervention simulation, and evidence-based policy in future work.
 
 This resource makes several contributions. On the scientific side,
 it provides a coordinated multi-trip desert microbiome and
@@ -183,8 +181,8 @@ products. We formalize reusable ontology design patterns for sampling,
 measurement, taxonomic abundance, and provenance aligned with SIO's
 core idioms. A ShEx-based ingest validation workflow enforces
 structural shapes on every RDF batch before loading, and the ELK
-reasoner is used to validate logical consistency of the knowledge
-graph. A set of competency questions documents the intended query
+reasoner is used to check the logical consistency of the tractable
+modules under the OWL 2 EL profile. A set of competency questions documents the intended query
 workload and serves as regression tests, and a web portal with an
 interactive map, per-site dashboards, and a SPARQL editor exposes the
 knowledge graph to domain scientists without requiring SPARQL fluency.

@@ -48,8 +48,7 @@ separate workflows that are not interchangeable replicates: handheld
 in-situ measurements during Trip~5, and laboratory measurements of
 archived material from all five expeditions. 
 We compiled an environmental table from the original field sheets, recording every correction individually rather than editing the sheets, and retained all 274 non-blank records.
-%We curated an environmental table from the immutable field sheets through an exact-cell correction ledger and retained all 274
-nonblank records.
+%We curated an environmental table from the immutable field sheets through an exact-cell correction ledger and retained all 274 nonblank records.
 
 \begin{table}[h]
   \centering
@@ -97,55 +96,177 @@ using an Engel MR040F portable freezer. At the end of each expedition,
 we transferred samples to an $-80$\degree C freezer in the laboratory.
 
 We included positive and negative controls for each sampling campaign
-to mitigate and control for contamination artifacts. The
-positive control design differed by expedition. Trips~1 and 2 used the
-ZymoBIOMICS HMW DNA Standard D6322, supplied as purified
-high-molecular-weight DNA, which we extracted along with the samples after the trip.
-Trip~3 used the whole-cell ZymoBIOMICS Microbial Community Standard
-D6300, which we also later extracted. Trip~4 had no positive
-control. Trip~5 used D6300, but its positive and negative control pair
-were sequenced by shotgun metagenomics rather than by the 16S assay.
-D6322 contains seven bacterial genomes at 14\,\% genomic DNA each and
-\emph{Saccharomyces cerevisiae} at 2\,\%; D6300 contains eight
-bacterial genomes at 12\,\% each and two yeasts at 2\,\% each. These
-manufacturer genomic-DNA fractions are composition specifications, not
-expected 16S read fractions.
+to mitigate and control for contamination artifacts. One extraction
+blank was processed with each extraction-day batch, using the same
+extraction procedure as for the biological specimens, to control for
+contamination introduced during nucleic acid extraction. Because
+extraction days were trip-specific (samples from more than one
+expedition were never extracted together on the same day, though
+multiple sites from the same expedition could be), each extraction
+blank is associated with a single expedition, its extraction date, and
+its batch. Where a corresponding library was successfully generated,
+the extraction blank was subjected to 16S rRNA gene amplification,
+indexing, and sequencing.
 
-Negative controls included distinct extraction blanks and PCR blanks.
-One extraction blank was included per extraction day, and an
-extraction day could contain samples from several expeditions, so an
-extraction blank is linked to its extraction batch and %never 
-not directly to a trip. Trip~4 records five numbered blanks and one
-unnumbered blank, but the blank covering a three-day extraction was
-not sequenced, leaving all or part of 23 sites without a sequenced
-blank. Author-confirmed controls are recorded in a ground-truth
-table; identity, batch-membership and assay-applicability claims that
-await laboratory confirmation are represented in the graph as
+The complete ASV table contained 23 sequenced extraction-blank
+profiles: 17 from Trip~5 and 6 from Trip~4. The 17 Trip~5 extraction
+blanks were linked to 217 biological profiles processed in the same
+extraction batches. The 6 Trip~4 extraction blanks (EB, EB1--EB5) were
+linked to 97 biological profiles processed in the same extraction
+batches, and were characterized separately from the Trip~5 blanks. For
+Trip~4, three of the trip's nine extraction batches were not
+sequenced, leaving 28 of Trip~4's 60 sites without a sequenced
+extraction blank for the corresponding samples.
+
+Two types of PCR-stage negative controls were used to evaluate
+contamination introduced during amplification and library
+preparation. No-template controls (``negative controls'') consisted of
+PCR reagents with molecular-grade water substituted for extracted
+template DNA, evaluating contamination from reagents, water, and the
+amplification process. PCR blanks consisted of PCR reagents alone,
+without added water or template. One PCR blank was generated per
+amplification plate. Across trips, most PCR blanks showed low or
+undetectable concentration on TapeStation quality control, with
+profiles dominated by adapter dimer, and were accordingly excluded
+from sequencing. In Trip~5, none of the PCR blanks were carried
+through to sequencing, attributed to evaporation of the material
+during handling. In Trip~4, one PCR blank was generated and
+successfully sequenced, alongside a water-based negative control.
+Trip~3 also included PCR blanks.\todo{Marwa: Trip~3 PCR blank details
+pending Rund's input.}
+
+A second, field-based negative control consisted of sterile soil,
+tested prior to each expedition to confirm the absence of PCR
+amplification, then taken to the field, extracted, amplified, and
+sequenced alongside the biological specimens for that trip. This soil
+negative control was paired with the trip's positive-control standard
+as a campaign-control set. Trip~4 did not include this control.
+
+Positive-control material and its handling differed among
+expeditions. Positive controls were generally carried into the field
+alongside the biological specimens, to validate library amplification
+and sequencing performance, assess recovery of the expected taxa, and
+identify whether taxa outside the standard's known composition
+appeared within the standard's own sequencing profile; since that
+composition is fully known, any such unexpected taxa would indicate
+contamination introduced during storage, the expedition, or laboratory
+processing. Trips~1 and 2 used the ZymoBIOMICS HMW DNA Standard
+(D6322), a purified-DNA standard added directly at the PCR step rather
+than passed through extraction. Trip~3 used the whole-cell ZymoBIOMICS
+Microbial Community Standard (D6300). Trip~4 was not accompanied by a
+positive standard or a soil-based negative control in the field, and
+no mock community was taken on this expedition. Laboratory-based
+controls for Trip~4 consisted of an extraction blank, a water-based
+negative control, a reagent-only PCR blank, and a positive control
+used to confirm amplification success, checked by gel electrophoresis
+after first-round PCR and by TapeStation after the second-round
+(indexing) PCR. Trip~5 used the D6300 standard, and a sterile-soil
+negative control was also taken into the field, but both were
+processed by shotgun metagenomics rather than 16S. Trips~4 and 5
+therefore both lack 16S-specific positive-control validation, for
+different reasons: Trip~4 had no field-based standard at all (though a
+PCR-stage-only control was run), and Trip~5's field-based standard was
+captured only in the shotgun data.
+
+The purified-DNA D6322 standard could be used to assess downstream
+amplification, library preparation, and sequencing, and, because it
+was taken into the field, potential contamination from field handling
+and storage. Because it was introduced directly into PCR, it could not
+assess cell lysis or extraction recovery. The whole-cell D6300
+standard could additionally assess extraction efficiency and
+differential cell lysis. D6322 contains seven bacterial genomes at
+14\,\% genomic DNA each and \emph{Saccharomyces cerevisiae} at 2\,\%;
+D6300 contains eight bacterial genomes at 12\,\% each and two yeasts
+at 2\,\% each. These manufacturer genomic-DNA fractions are
+composition specifications, not expected 16S read fractions. Positive
+standards were not used as ecological samples, nor to train the
+extraction-blank contaminant screen. Seven positive control samples
+from Trips~1--3 were used to evaluate genus-level recovery.
+
+Author-confirmed controls are recorded in a ground-truth table;
+identity, batch-membership and assay-applicability claims that await
+laboratory confirmation are represented in the graph as
 evidence-bearing dispositions rather than as ground truth, and no
 field-blank instance is asserted because no sterile-bag inventory was
 recovered.
 
 \subsection{DNA extraction and sequencing}
 
-We utilized 0.9--1.2 g of soil for DNA extraction using the PowerLyzer
-PowerSoil Kit (QIAGEN, catalog \#12855-50) or the DNeasy PowerSoil Pro
-Kit (QIAGEN, catalog \#47014). We homogenized all samples with the
-PowerLyzer 24 Homogenizer and completed extraction either manually or
-via the automated QIACube Connect system. We quantified the eluted DNA
-using the Qubit HS dsDNA kit.
+Genomic DNA was extracted from 0.9--1.2~g of soil using either the
+QIAGEN PowerLyzer PowerSoil Kit (catalogue no.\ 12855-50) or the QIAGEN
+DNeasy PowerSoil Pro Kit (catalogue no.\ 47014). The PowerLyzer
+PowerSoil Kit was used for the initial extraction of samples from
+Trips~1 and 2. From Trip~3 onward, samples were extracted using the
+DNeasy PowerSoil Pro Kit. The QIAcube Connect was introduced for
+routine extraction starting with Trip~4; samples from Trips~1--3 were
+also processed using the QIAcube Connect when re-extraction was
+required. The extraction method and re-extraction history were
+recorded for each specimen when available.
 
-We amplified bacterial DNA using the Bakt\_341F
-(\texttt{CCTACGGGNGGCWGCAG}) and Bakt\_785R
-(\texttt{GACTACHVGGGTATCTAATCC}) primer pair
-\cite{klindworth2013primers} to target the V3--V4 region of the 16S
-rRNA gene. Both primers carried Illumina overhang adapter sequences.
-We performed amplification using the Multiplex PCR kit
-(QIAGEN, catalog 206143) with an initial activation at
-95\,\textdegree C for 15\,min, 35 cycles of 94\,\textdegree C for
-30\,s, 57\,\textdegree C for 90\,s and 72\,\textdegree C for 90\,s,
-and a final extension at 72\,\textdegree C for 10\,min, and sequenced
-the resulting pools on an Illumina NovaSeq~6000 platform.
-We processed all samples in the PI's laboratory at KAUST.
+Frozen soil samples were thawed on ice and processed immediately after
+thawing. Before homogenization, samples were incubated at 65\degree C
+for 10~min with agitation at 1,200~rpm, then homogenized using a
+PowerLyzer 24 Homogenizer according to the manufacturer's
+protocol. The remaining purification steps were performed either
+manually or using a QIAcube Connect instrument, following the
+manufacturer's protocol. DNA was eluted in 50~\textmu L of the elution
+buffer supplied with the respective kit.
+
+One extraction blank was processed alongside each extraction-day batch
+and carried through the same extraction procedure as the biological
+samples. Because extraction days were trip-specific, each extraction
+blank is associated with a single expedition. Extraction blanks were
+quantified and included in the downstream 16S rRNA gene amplification
+and sequencing workflow when a corresponding library was generated;
+exceptions are described above.
+
+Extracted DNA was quantified using the Qubit dsDNA High Sensitivity
+assay, with fluorescence measured using a Varioskan LUX multimode
+plate reader (Thermo Fisher Scientific). A numerical concentration was
+recorded for every extract. Progression to indexing and sequencing was
+determined by the presence of an amplicon of the expected size after
+first-round PCR, rather than by a minimum extracted DNA concentration
+threshold. DNA concentrations and processing information were recorded
+in a central project spreadsheet. Extracted DNA was stored at
+$-20$\degree C until PCR amplification.
+
+The V3--V4 region of the bacterial 16S rRNA gene was amplified using
+the Bakt\_341F (\texttt{CCTACGGGNGGCWGCAG}) and Bakt\_785R
+(\texttt{GACTACHVGGGTATCTAATCC}) primers \cite{klindworth2013primers},
+both carrying Illumina overhang adapters. First-round PCR was
+performed using TaKaRa Ex Taq DNA Polymerase (catalogue no.\
+RR001B). Each reaction had a total volume of 50~\textmu L and
+contained 5~\textmu L of extracted DNA and 2~\textmu L of each
+10~\textmu M primer stock, giving a final concentration of
+0.4~\textmu M per primer. Cycling conditions were: initial
+denaturation at 95\degree C for 3~min; 30 cycles of 95\degree C for
+30~s, 63\degree C for 30~s and 72\degree C for 1~min; and a final
+extension at 72\degree C for 6~min.
+
+First-round PCR products were assessed by electrophoresis on a 1\%
+agarose gel. Samples showing an amplicon at the expected size of
+approximately 500~bp were classified as passing and were then
+indexed. Samples without a visible product were classified as failed;
+these were first re-amplified with an increased DNA input, and samples
+that still failed were re-extracted at the end of the workflow.
+
+Dual indices and Illumina sequencing adapters were added in a
+second-round PCR using the QIAGEN Multiplex PCR Kit (catalogue no.\
+206143), following the Illumina 16S Metagenomic Sequencing Library
+Preparation protocol \cite{illumina16S}: initial activation at
+94\degree C for 15~min; 8 cycles of 94\degree C for 30~s, 55\degree C
+for 30~s and 72\degree C for 30~s; final extension at 72\degree C for
+5~min.
+
+Indexed libraries were purified using Agencourt AMPure XP beads,
+quantified using the Qubit dsDNA High Sensitivity assay, and assessed
+for fragment size using an Agilent 4200 TapeStation with the D5000
+ScreenTape assay. Libraries were pooled by concentration and fragment
+size. Amplicon pools were sequenced on an Illumina NovaSeq~6000 using
+an S1 v1.5 500-cycle reagent kit to generate $2 \times 250$~bp
+paired-end reads. Sample processing and library preparation were
+performed in the PI's laboratory and sequencing was conducted at the
+Bioscience Core Lab at KAUST.
 
 % The reverse primer identity is a correction to the previously recorded
 % protocol, which named the Apprill 806RB primer
@@ -177,7 +298,7 @@ presence in at least two blanks. Because each extraction batch is represented by
 This resulted in a candidate set of 351 ASVs, %resulting 351-ASV candidate set is 
 applied only to the 217 %canonical
 biological samples linked to those batches. %Seven unambiguously positive-labelled 16S profiles from Trips~1--3 are used
-We used seven positive control samples from Trips~1-3
+We used seven positive control samples from Trips~1--3
 to evaluate %expected bacterial-genus
 genus-level recovery, %never
 but not to train the contaminant classifier.
@@ -251,7 +372,7 @@ We measured archived dry soil after sieving below 2~mm. Each assay used an indep
 %All measurements available when laboratory follow-up ended were frozen as the versioned dataset \texttt{EQ-PH-SHARED-v1.0.0}, the sole pH version used by this descriptor and the companion ecology paper.
 
 %The audit accounts for all
-This resulted in 1,168 recordings of which 712 measurements were admitted. The remaider consisted of 356 rows that lacked measurement, 45 marked as depleted, 36 with ambiguous dates, and 19 numeric rows with incomplete quality control records.
+This resulted in 1,168 recordings of which 712 measurements were admitted. The remainder consisted of 356 rows that lacked measurement, 45 marked as depleted, 36 with ambiguous dates, and 19 numeric rows with incomplete quality control records.
 %source rows: it admits 712 measurements, retains 356 rows without a measurement, marks 45 as depleted, quarantines 36 with ambiguous dates, and excludes 19 numeric rows with incomplete recorded quality control.
 We neither inferred missing quality-control fields nor imputed unavailable values. The workbook has no recorded session identifier. We therefore reconstructed 29 sessions
 from the unique combinations of trip, accepted measurement
