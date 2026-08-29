@@ -1,15 +1,15 @@
 # Rub' al-Khali multimodal dataset and knowledge graph
 
-This private BORG repository is the reproducible companion to the Scientific
-Data manuscript *A multimodal field dataset and semantic knowledge graph for
-the Rub' al-Khali desert microbiome*. It contains the active manuscript,
+This public BORG repository is the reproducible companion to the Scientific
+Data manuscript *A formal knowledge base for amplicon sequencing data and
+geochemistry of the Rub' al Khali desert*. It contains the active manuscript,
 source metadata, ontology and ShEx sources, generated tractable modules,
 analysis code, validation evidence, an explicit Linux environment lock, a
 hash-locked Python environment, and the Nextflow workflow.
 
 Start with [REPRODUCE.md](REPRODUCE.md). Files too large for ordinary Git are
 identified in [BULK_ARTIFACTS.tsv](BULK_ARTIFACTS.tsv) and are retrieved from a
-private, checksum-pinned pre-release. `make verify`, `make test` and
+checksum-pinned pre-release. `make verify`, `make test` and
 `make paper` provide the short verification path.
 
 For the exact Linux/x86-64 runtime used to render the reviewed figures and run
