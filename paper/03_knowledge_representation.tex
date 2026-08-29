@@ -21,10 +21,7 @@ and a taxonomy reference graph containing the aligned taxonomy module.
 
 \subsection{Prefixes used in listings}\label{subsec:prefixes}
 
-For brevity, the Turtle and SPARQL listings throughout the paper use
-the prefix declarations of Table~\ref{tab:prefixes}; these
-declarations should be prepended to any listing that the reader
-wishes to execute against the public endpoint. With these
+For brevity, the Turtle and SPARQL listings throughout the paper use the prefix declarations of Table~\ref{tab:prefixes}; these declarations should be prepended to any listing that the reader wishes to execute against the public endpoint. With these
 declarations in place, identifiers such as \texttt{rak:P100001}
 are abbreviated to \texttt{rak:P100001} and
 \texttt{sio:SIO\_000291} to \texttt{sio:000291} without loss of
@@ -67,8 +64,8 @@ classes to SIO and maintained full semantic mappings in our public
 repository (see Section~\ref{code}).
 
 The canonical terminology module declares 333 classes: 297
-project-local classes and 36 referenced classes (32 SIO and four
-PATO). It also declares 20 object properties (11 project-local and
+local project classes and 36 referenced classes (32 SIO and four
+PATO \cite{pato}). It also declares 20 object properties (11 project-local and
 nine SIO) and 35 datatype properties (34 project-local and one SIO).
 These are declaration counts from the staged canonical module, not
 counts of the imported ontologies or of whole-graph axioms. This
@@ -94,7 +91,7 @@ We identified all units with classes from the Units Ontology (UO)
 \cite{uo}. Qualities are expressed using the Phenotype and Trait
 Ontology (PATO) \cite{pato} and linked to SIO as subclasses of the
 {\em Quality} class. To illustrate this pattern, we provide an
-examples represented in Turtle format. The example
+example represented in Turtle format. The example
 (Listing~\ref{lst:ttl_temp}) demonstrates an environmental temperature
 measurement taken at a sampling site.
 
@@ -106,7 +103,7 @@ rak:P000001 a rak:0000006 ; # Measurement Process
 rak:4000001 a rak:0000010 ; # Quantity
   sio:000221 uo:0000027 ; # hasUnit (degree Celsius)
   rak:2000003 "20.7"^^xsd:double ; # hasValue
-  sio:000215 rak:5000001 . # refersTo (Quality)
+  sio:000215 rak:5000001 . # isMeasurementValueOf (Quality)
 
 rak:5000001 a pato:0000146 ; # Temperature Quality
   sio:000011 rak:1000001 . # isAttributeOf
@@ -268,7 +265,7 @@ We model XRF analysis as a process that targets a soil sample and
 produces multiple measurement values, each corresponding to the
 concentration of a specific chemical analyte. We map each analyte to
 the Chemical Entities of Biological Interest (ChEBI) ontology
-\cite{chebi} as well as to the PubChem database \cite{pubchem}. Out of 93 monitored geochemical parameters, we mapped 80 analytes directly to corresponding ChEBI classes and aligned 92 parameters to PubChem Compound Identifiers. The XRF pattern is a specialization of
+\cite{chebi} as well as to the PubChem database \cite{pubchem} (Section~\ref{methods:xrf}). Out of 93 monitored geochemical parameters, we mapped 80 analytes directly to corresponding ChEBI classes and aligned 92 parameters to PubChem Compound Identifiers. The XRF pattern is a specialization of
 the measurement pattern (Equation~\ref{eq:measurement}), with the
 target restricted to a soil sample and the produced quantity bound to
 an analyte-specific quality:

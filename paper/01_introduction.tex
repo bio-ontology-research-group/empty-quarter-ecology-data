@@ -1,23 +1,22 @@
 \section{Background and summary}\label{intro}
 
-The Rub' al-Khali (Empty Quarter) is the largest contiguous sand
-desert on Earth, a hyper-arid sand sea of approximately 500,000
-km$^2$ across the southern Arabian Peninsula
-\cite{mandaville_1986}. Air temperatures recorded during our
-expeditions spanned 20.0--49.4\degree C across 273 field
-observations, and the region receives negligible and highly irregular
-rainfall. Despite these extremes, this
-environment harbors microbial communities whose composition,
-diversity, and ecological drivers remain poorly characterized
-\cite{makhalanyane2015}. To predict ecosystem responses to climate
+The Rub' al-Khali (Empty Quarter) is the largest contiguous sand desert on Earth, a hyper-arid environment that spans approximately 500,000
+km$^2$ of the southern Arabian Peninsula
+\cite{mandaville_1986}. The region is characterized by extreme atmospheric temperatures that fluctuate, 
+%recorded during our expeditions spanned 20.0--49.4\degree C across 273 field observations,
+%and the region receives
+negligible and highly irregular
+rainfall \cite{nelli2024wind}, and high humidity in the western edge \cite{yasir2015saudi}. Despite these abiotic stresses, hyper-arid desert soils
+harbor diverse microbial communities \cite{makhalanyane2015}. %whose composition, diversity, and ecological drivers remain poorly characterized \cite{makhalanyane2015}.
+To predict ecosystem responses to climate
 change and to inform conservation and land-use policy, researchers
 require deep knowledge of the biogeochemistry of such extreme
 environments \cite{fierer2017}.
 
-Saudi Arabia already has a substantial arid-soil microbiome
+Saudi Arabia already has a substantial arid soil microbiome
 literature. Previous studies examined elevation gradients
 \cite{yasir2015saudi}, rainfall responses across soil compartments
-\cite{aslam2016rainfall}, open and rhizosphere soils across three
+\cite{aslam2016rainfall}, bulk and rhizosphere soils across three
 regions \cite{khan2020saudi}, rhizosphere bacteria of pioneer sand
 plants near Jizan \cite{osman2016jizan}, and bacteria associated with
 native desert plants \cite{eida2018plants}. More recent surveys
@@ -27,20 +26,20 @@ artificial water points \cite{alawthan2024reserve}, rhizosphere and
 endosphere communities across northern reserves
 \cite{alhasani2026reserve}, and Red Sea coastal sabkhas
 \cite{gopi2026sabkha}. Fungal studies progressed from a small number
-of western-coastal and open-sand samples
+of bulk soil samples from the western coast
 \cite{moussa2017fungi,murgia2019sandfungi} to a standardized
-single-visit survey of 85 locations across Saudi Arabia
+single survey of 85 locations across Saudi Arabia
 \cite{mani2026mycobiome}, and a recent synthesis identifies
 substantial geographic and taxonomic gaps in Arabian
-biological-soil-crust research \cite{blancosacristan2025biocrust}. In
+biological soil crust research \cite{blancosacristan2025biocrust}. In
 the United Arab Emirates, related studies profiled a Rub' al-Khali
 interdune microbial mat \cite{mckay2016} and desert-plant rhizosphere
-and endosphere communities \cite{mousa2024}. These studies establish
-that a Saudi arid-soil survey is not itself new. What remains missing
-is a repeated, multi-expedition transect in which every community
-profile stays joined to its provenance across locations, physical
-specimens, molecular products, environmental observations, climate,
-and geochemistry.
+and endosphere communities \cite{mousa2024}.
+%These studies establish that a Saudi arid-soil survey is not itself new.
+These studies establish that a survey of hyperarid soils in Saudi Arabia is not itself new.
+What remains missing
+is a repeated, multi-expedition transect in which every community profile %, is connected to its provenance across locations, physical specimens, molecular products, environmental observations, climate, and geochemistry.
+the sample it came from, and the measurements taken alongside it form a connected record that can be queried directly rather than asssembled from different data records.
 
 To characterize complex ecosystems, researchers must integrate
 heterogeneous and multi-scale data: microbial community profiles
@@ -70,18 +69,17 @@ Findable, Accessible, Interoperable, and Reusable (FAIR) principles
 regions have digital representations \cite{biodigitaltwin},
 researchers have not yet developed semantic representations of entire
 desert ecosystems. Furthermore, ecosystem digital twins largely focus
-on macroscopic scale and do not go across levels of granularity.
+on macroscopic scale and do not cover different levels of granularity; modeling entire landscapes and environments, but not microbial communities.
 
 Constructing such a resource for an entire desert ecosystem requires
 addressing several interlocking challenges that have shaped the design
 of this work. First, the data are produced by heterogeneous
 instruments and protocols (16S amplicon sequencing, X-ray
 fluorescence, GPS-tagged field notes, gridded climate
-reanalysis), so a \emph{unified data model} is needed that can
+records), so a \emph{unified data model} is needed that can
 represent samples, processes, qualities, and quantities under a
 common upper-level vocabulary rather than as disconnected tables.
-Second, taxonomic labels are reported by multiple primer choices and
-classifier workflows and must be \emph{harmonized} against a single
+Second, taxonomic labels are reported by multiple classifier workflows as text strings, and the same label can denote different taxa across reference databases and releases, so they must be harmonized against a single
 reference taxonomy without losing the original assertions. Third,
 because data are deposited in batches over five field expeditions,
 \emph{schema validation at ingest} is required to catch
@@ -118,21 +116,26 @@ sequence runs, quality control and taxon observations from a single
 landscape survey, rather than vocabulary coverage or graph
 construction alone.
 
-Here, we develop a knowledge graph of large parts of the Rub' al-Khali
-desert ecosystem to serve as the semantic foundation of the Rub'
-al-Khali digital twin. We present an OWL 2 DL knowledge graph
+Here, we describe a versioned, provenance-preserving knowledge graph
+integrating repeated desert microbiome, environmental, climate, pH, 
+and geochemical observations across the Rub’ al-Khali.
+ We present an OWL 2 DL knowledge graph
 \cite{owl2} built from RDF instance data \cite{rdf}. This
 knowledge graph integrates data from five field expeditions
 (2023--2025) along a transect of more than 1,000 km across the Saudi
 Rub' al-Khali, from the western escarpment to the eastern border with
-Oman. A versioned source ledger of 2,550 rows (2,302 master-sheet rows
-and 248 plant rows) links field specimens to their downstream
+Oman. A versioned source ledger of 2,550 rows 
+%(2,302 master-sheet rows and 248 plant rows)
+links field specimens to their downstream
 products; 2,516 non-control rows are represented as sample individuals
-in the graph. The canonical 16S rRNA gene amplicon feature table
+in the graph. An amplicon feature table
 contains 1,271 profiles, of which 1,237 pass ecological filtering
 across 64 numeric site labels. We incorporated X-ray fluorescence
-(XRF) measurements from two complementary workflows: 71 complete
-in-situ handheld field sessions at 58 Trip~5 sites, and 725 processed
+(XRF) measurements from two complementary workflows: 
+%71 complete
+in-situ handheld field sessions %at 58 Trip~5 sites
+, and %725
+processed
 laboratory records of archived material from all five expeditions. We
 further integrated site-specific environmental metadata recorded at
 each visit (274 field logs), 712 admitted archived-soil pH

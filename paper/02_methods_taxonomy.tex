@@ -1,32 +1,33 @@
 \subsection{Taxonomy normalization and mapping}
 \label{methods:taxonomy}
 
-Amplicon classifications were assigned against SILVA 138.2. We retain
-the original classifier lineage and ASV identifier as the primary
-evidence. The combined Trips~1--5 export contains two source
-encodings: the seven SILVA rank fields alone, or those seven fields
-followed by a separate species-assignment field and a numeric
-confidence. QIIME artifact provenance identifies the latter as an
-appended species assignment rather than an eighth rank. We therefore
-normalize only the ordered domain--species fields: rank prefixes are
-removed, empty and unclassified values are represented explicitly, and
-the separate species assignment is retained in a provenance ledger but
-never promoted into the asserted lineage.
 
-A fail-closed normalization step evaluates the historical
-SILVA-to-NCBI candidates against a pinned NCBI Taxonomy release (the
-OBO Foundry NCBITaxon release \texttt{2025-03-13}, built from the NCBI
-organismal taxonomy of 2025-03-01). An NCBI identifier is retained
-only when it resolves, has a compatible rank and label or documented
-synonym, and its ancestor chain is compatible with all retained
+%we attach stable identifiers from NCBI Taxonomy \cite{ncbitaxon} to SILVA lineages \cite{silva} where it can be justified. We created a mapping in which every assertion of taxonomic identity is traceable and verified.
+%We retain
+Taxonomic labels are text strings, and the same string can denote different taxa across databases and releases, and one taxon can be referred to by several strings \cite{balvovciute2017silva}. We therefore map NCBI Taxonomy \cite{ncbitaxon} identifiers to SILVA lineages alongside every assignment.
+Taxonomic assignments come from SILVA v138.2 (Section~\ref{methods}), and we treat the original classifier lineage and ASV identifier as the primary evidence.
+%The combined Trips~1--5 taxonomic assignment pipeline export contains two source encodings:
+These assignments are seven rank fields (domain--species), and some are followed by a separate species assignment field and a numeric confidence. We assert the species from the ranked lineage and retain the additional species call in a provenance ledger.
+% QIIME artifact provenance identifies the latter as an appended species assignment rather than an eighth rank.
+We normalize the seven ordered rank 
+%(domain to species)
+fields by removing rank prefixes and representing empty and unclassified entries explicitly.
+%: rank prefixes are removed, empty and unclassified values are represented explicitly, and the separate species assignment is retained in a provenance ledger but never promoted into the asserted lineage.
+
+A fail-closed normalization step evaluates the historical SILVA-to-NCBI candidates against a pinned NCBI Taxonomy release (the OBO Foundry NCBITaxon release \texttt{2025-03-13}, built from the NCBI
+organismal taxonomy of 2025-03-01).
+% , GTDB \cite{gtdb}, and iNaturalist.
+%We resolve each rank field against this backbone through lexical matching, where each class is indexed by a normalized label. Normalizing involves lowercasing the strings, removing rank prefixes and suffixes, and the \emph{Candidatus} qualifier. 
+An identifier is retained only when it resolves, has a compatible rank and label or documented synonym, and its ancestor chain is compatible with all retained
 higher-rank identifiers in that source lineage. A missing, ambiguous
 or incompatible candidate is replaced by a deterministic project class
 scoped to the complete truncated source lineage and rank, rather than
 by the nearest ancestor's identifier, which would conflate a named
 child with its broader ancestor. Each decision records the source
 lineage and rank, candidate identifier, validation outcome, final
-identifier and reason. The output mapping must cover every canonical
-lineage represented in both the Trips~1--5 taxonomy export and the
+identifier and reason. The output mapping covers every 
+%canonical
+lineage represented in both the taxonomy export and the
 feature table; otherwise generation stops.
 
 Existing project identifiers are retained only when all explicit
@@ -45,7 +46,7 @@ iNaturalist separately from this SILVA-to-NCBI layer, in an earlier
 exploration whose candidate tables are not part of the release. The
 conclusion that exploration supports is a negative one: homonyms,
 \emph{Candidatus} names, placeholder taxa, GTDB split taxa, rank
-conflicts and database-version drift can all produce identical labels
+conflicts and database version changes can all produce identical labels
 for non-identical concepts, so label agreement alone does not
 establish extensional identity. The canonical release modules
 therefore contain no \texttt{owl:equivalentClass} assertions generated

@@ -209,7 +209,9 @@ all 4,293 reported Trip~5 cells under the last-reported rule, with no
 mismatched reported cells, and verified that the canonical laboratory
 input comprises all 725 processed records. An independent
 chemical-identifier gate checked all 93 instrument channels against
-the pinned ChEBI v247 release and a checksummed PubChem snapshot; all
+the pinned ChEBI 
+%v247
+release and a checksummed PubChem snapshot; all
 rows passed, and audited nulls are retained for the unmapped LE
 pseudo-analyte and unsupported oxides rather than being replaced by
 lexical matches. The pH reconciliation independently accounts for all
@@ -228,7 +230,7 @@ records, and taxonomy observations. We bound each shape to its
 corresponding class instances via a Shape Map.
 
 We implemented the validation using the Apache Jena ShEx library
-(version 4.10.0) invoked from Groovy scripts. We integrated ShEx
+(v4.10.0) invoked from Groovy scripts. We integrated ShEx
 validation into the automated deployment workflow: each time the
 workflow regenerates an ABox module, the validation step tests
 instances of the relevant class against their ShEx shape before
@@ -273,8 +275,7 @@ HermiT \cite{hermit} because the size of the knowledge graph
 made reasoning in the full OWL 2 DL profile computationally
 infeasible.
 
-We implemented the ELK consistency check via the OWL API (version
-4.5.26) with the ELK OWL API module (version 0.4.3) in a Groovy
+We implemented the ELK consistency check via the OWL API (v4.5.26) with the ELK OWL API module (v0.4.3) in a Groovy
 script. A clean rerun on the current tractable modules loaded 781,293
 axioms from 10 distinct ontology IRIs and reported the resulting
 merged ontology as consistent; the generated ecosystem and

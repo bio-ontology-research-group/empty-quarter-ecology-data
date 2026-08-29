@@ -19,29 +19,37 @@ illustrates the altitude profile across this transect.
   \label{fig:transect}
 \end{figure}
 
-The planned repeated transect encompasses 60 primary sampling sites at
-predetermined geographic coordinates, alongside 10 named sites of
-special interest (water wells, a hot spring, an oil spill site). Four
-additional numeric identifiers (61--64) were used only on Trip~1;
-coordinate matching against the field records establishes that these
-denote four of the named catalogue locations rather than additional
-physical sites. We retain the numeric identifiers as source provenance
-but do not count them as four additional locations, and we exclude
-their records from inference over the intended repeated-campaign frame
-of sites~1--60 because those regions could not be revisited.
+The 
+%planned repeated
+transect comprises 60 primary sampling sites at
+predetermined geographic coordinates, and 10 named sites of
+special interest (water wells, a hot spring, and an oil spill site).
+Trip~1 additionally used the numeric identifiers 61--64. Matching their coordinates against the field records shows that these refer to four of the sites of special interest rather than further locations, so we
+%Four additional numeric identifiers (61--64) were used only in Trip~1; coordinate matching against the field records establishes that these denote four of the named catalogue locations rather than additional physical sites. We 
+retain the numeric identifiers as source provenance
+but do not count them as four additional locations. Because these locations were not revisited on later trips,
+%, and 
+we exclude
+their records from 
+analyses on the repeated campaign
+%inference over the intended repeated-campaign frame
+of sites~1--60.
+%because those regions could not be revisited.
 
 To capture temporal variability, we conducted expeditions across
 different seasons: late winter 2023 (Trip 1, 64 sites visited), summer
 2023 (Trip 2, truncated to 8 sites due to extreme temperatures),
 winter 2024 (Trip 3, 65 sites visited), summer 2024 (Trip 4, 60 sites
-visited), and autumn 2025 (Trip 5, 62 sites visited). We summarize the
-observational coverage in Table~\ref{tab:env_summary}. We recorded
-temperature, atmospheric pressure, and relative humidity at each
-visited site, although the available measurements differ by
-expedition. We acquired X-ray fluorescence (XRF) data through two
+visited), and autumn 2025 (Trip 5, 62 sites visited). We recorded
+temperature, atmospheric pressure, and relative humidity at each visited site in each expedition. We summarize the
+observational coverage in Table~\ref{tab:env_summary}. %, although the available measurements differ by expedition.
+We acquired X-ray fluorescence (XRF) data through two
 separate workflows that are not interchangeable replicates: handheld
 in-situ measurements during Trip~5, and laboratory measurements of
-archived material from all five expeditions.
+archived material from all five expeditions. 
+We compiled an environmental table from the original field sheets, recording every correction individually rather than editing the sheets, and retained all 274 non-blank records.
+%We curated an environmental table from the immutable field sheets through an exact-cell correction ledger and retained all 274
+nonblank records.
 
 \begin{table}[h]
   \centering
@@ -66,27 +74,21 @@ archived material from all five expeditions.
     observations.}
 \end{table}
 
-The curated environmental table is generated from the immutable field
-sheets through an exact-cell correction ledger and retains all 274
-nonblank records. Where the source is unambiguous, the ledger restores
-it: the Trip~2 sheet records eight values in the humidity column while
-the temperature column is empty, and the field note that the trip
-ended because of extreme temperature supports reading them as
-temperatures. The Trip~5 site~40 source humidity of 194\% is outside
-the physical range and remains missing until a primary source
-establishes a correction. The graph generator links 260 of the 274
-records to catalogue site visits, yielding 260 temperature, 187
-pressure and 251 humidity values; the remaining 14 auxiliary or
-revisit labels denote offset or special-purpose locations and remain
-table-only, because coincident coordinates are not treated as evidence
-that they are identical to a catalogue site.
+
+%Where the source is unambiguous, the ledger restores it: the Trip~2 sheet records eight values in the humidity column while the temperature column is empty, and the field note that the trip ended because of extreme temperature supports reading them as temperatures.
+%The Trip~5 site~40 source humidity of 194\% is outside the physical range and remains missing until a primary source establishes a correction.
+% The graph generator links 260 of the 274
+% records to catalogue site visits, yielding 260 temperature, 187
+% pressure and 251 humidity values; the remaining 14 auxiliary or
+% revisit labels denote offset or special-purpose locations and remain
+% table-only, because coincident coordinates are not treated as evidence
+% that they are identical to a catalogue site.
 
 At each site, we collected samples from three distinct soil
 compartments: bulk surface soil (0 cm depth), bulk subsurface soil
 (5--10 cm depth, hereafter ``deep''), and subsurface soil collected
-near roots (5--10 cm depth, hereafter ``root-adjacent''). The legacy
-label ``deep'' and the class label ``Deep Soil Sample'' denote the
-5--10~cm bulk compartment and do not imply a greater sampling depth.
+near roots (5--10 cm depth, hereafter ``root-adjacent''). 
+%The legacy label ``deep'' and the class label ``Deep Soil Sample'' denote the 5--10~cm bulk compartment and do not imply a greater sampling depth.
 We obtained three co-located field replicates per compartment by
 placing soil into sterile tubes, either by scooping soil directly into
 the tube or using sterile plastic spoons; these replicates are not
@@ -96,13 +98,13 @@ we transferred samples to an $-80$\degree C freezer in the laboratory.
 
 We included positive and negative controls for each sampling campaign
 to mitigate and control for contamination artifacts. The
-positive-control design differed by expedition. Trips~1 and 2 used the
+positive control design differed by expedition. Trips~1 and 2 used the
 ZymoBIOMICS HMW DNA Standard D6322, supplied as purified
-high-molecular-weight DNA and therefore entering after extraction.
+high-molecular-weight DNA, which we extracted along with the samples after the trip.
 Trip~3 used the whole-cell ZymoBIOMICS Microbial Community Standard
-D6300 and carried it through extraction. Trip~4 had no positive
+D6300, which we also later extracted. Trip~4 had no positive
 control. Trip~5 used D6300, but its positive and negative control pair
-was sequenced by shotgun metagenomics rather than by the 16S assay.
+were sequenced by shotgun metagenomics rather than by the 16S assay.
 D6322 contains seven bacterial genomes at 14\,\% genomic DNA each and
 \emph{Saccharomyces cerevisiae} at 2\,\%; D6300 contains eight
 bacterial genomes at 12\,\% each and two yeasts at 2\,\% each. These
@@ -112,11 +114,11 @@ expected 16S read fractions.
 Negative controls included distinct extraction blanks and PCR blanks.
 One extraction blank was included per extraction day, and an
 extraction day could contain samples from several expeditions, so an
-extraction blank is linked to its extraction batch and never directly
-to a trip. The Trip~4 workbook records five numbered blanks and one
+extraction blank is linked to its extraction batch and %never 
+not directly to a trip. Trip~4 records five numbered blanks and one
 unnumbered blank, but the blank covering a three-day extraction was
 not sequenced, leaving all or part of 23 sites without a sequenced
-blank. Author-confirmed control facts are frozen in a ground-truth
+blank. Author-confirmed controls are recorded in a ground-truth
 table; identity, batch-membership and assay-applicability claims that
 await laboratory confirmation are represented in the graph as
 evidence-bearing dispositions rather than as ground truth, and no
@@ -145,142 +147,115 @@ and a final extension at 72\,\textdegree C for 10\,min, and sequenced
 the resulting pools on an Illumina NovaSeq~6000 platform.
 We processed all samples in the PI's laboratory at KAUST.
 
-The reverse primer identity is a correction to the previously recorded
-protocol, which named the Apprill 806RB primer
-(\texttt{GGACTACNVGGGTWTCTAAT}). A bounded audit of the raw reads
-resolves the discrepancy against the recorded value: streaming the
-first 10,000 reads of three Trips~1--4 and three Trip~5 biological
-read pairs, 56,891 of 60,000 forward reads (94.82\%) begin with
-Bakt\_341F and 55,057 of 60,000 reverse reads (91.76\%) begin with
-Bakt\_785R, whereas 11 reverse reads (0.018\%) match the 806RB
-sequence. The staged protocol record carries the corrected pair
-together with the superseded entry, so the change is auditable rather
-than silent.
+% The reverse primer identity is a correction to the previously recorded
+% protocol, which named the Apprill 806RB primer
+% (\texttt{GGACTACNVGGGTWTCTAAT}). A bounded audit of the raw reads
+% resolves the discrepancy against the recorded value: streaming the
+% first 10,000 reads of three Trips~1--4 and three Trip~5 biological
+% read pairs, 56,891 of 60,000 forward reads (94.82\%) begin with
+% Bakt\_341F and 55,057 of 60,000 reverse reads (91.76\%) begin with
+% Bakt\_785R, whereas 11 reverse reads (0.018\%) match the 806RB
+% sequence. The staged protocol record carries the corrected pair
+% together with the superseded entry, so the change is auditable rather
+% than silent.
 
 \subsection{Sequencing data processing}
 
-We processed raw amplicon reads employing nf-core/ampliseq (v2.14.0)
+We processed raw amplicon reads with nf-core/ampliseq (v2.14.0)
 \cite{nfcore, ampliseq}, applying the DADA2 algorithm for error
-correction and denoising and assigning taxonomy against the SILVA
-138.2 reference database \cite{silva}. A portable samplesheet
-regenerated from the deposited submission records covers 1,268
-submitted run rows over 1,238 distinct sample identifiers, of which 30
-carry a second library.
+correction and denoising, and assigning taxonomy against the SILVA
+database (v138.2) \cite{silva}. The dataset comprises 1,268 sequencing libraries from 1,238 samples; 30 samples were sequenced twice.
+%A portable samplesheet regenerated from the deposited submission records covers 1,268 submitted run rows over 1,238 distinct sample identifiers, of which 30 carry a second library.
+This resulted in a canonical feature table of 351,472 amplicon sequence
+variants (ASVs) prior to contaminant removal, covering samples from Trips~1--5 and 24 control samples.
 
-The canonical Trips~1--5 feature table is the direct output of that
-pipeline. It is unfiltered: it retains all 351,472 amplicon sequence
-variants (ASVs) and still contains the 24 control profiles, and no
-contaminant removal has been applied to it. A QIIME2 \cite{qiime2}
-\emph{decontam} branch exists in the analysis tree, but it operated on
-a different and smaller table, and in the form that survives the
-command that would have produced the contaminant table is commented
-out while a later step consumes that missing artifact. No removal
-fraction from that branch is defensible, and we do not restate a
-prevalence threshold as an applied filter.
+%A QIIME2 \cite{qiime2} \emph{decontam} branch exists in the analysis tree, but it operated on a different and smaller table, and in the form that survives the command that would have produced the contaminant table is commented out while a later step consumes that missing artifact. No removal fraction from that branch is defensible, and we do not restate a prevalence threshold as an applied filter.
 
-We instead generated an assay-aware audit following low-biomass
-control recommendations \cite{fierer2025controls}. The primary test
-pools the 17 extraction-day blanks with frozen links to Trip~5
-profiles and uses an uncorrected one-sided Fisher $p<0.1$, requiring
-presence in at least two blanks; because one blank represents each
-extraction batch, within-batch prevalence estimation is impossible.
-The resulting 351-ASV candidate set is applied only to the 217
-canonical biological profiles linked to those batches. Seven
-unambiguously positive-labelled 16S profiles from Trips~1--3 are used
-to evaluate expected bacterial-genus recovery, never to train the
-contaminant classifier. The primary table remains unfiltered, and the
+We applied an assay-aware contamination audit following recommendations for low biomass studies \cite{fierer2025controls}. We pooled 17 extraction day blanks that were processed on the same day as Trip~5 samples, and tested each ASV for enrichment in extraction blanks %The primary test pools the 17 extraction-day blanks with frozen links to Trip~5 profiles and uses an uncorrected
+using a one-sided Fisher's exact test ($p<0.1$, uncorrected), requiring
+presence in at least two blanks. Because each extraction batch is represented by a single blank, within-batch prevalence could not be estimated. %estimation is impossible.
+This resulted in a candidate set of 351 ASVs, %resulting 351-ASV candidate set is 
+applied only to the 217 %canonical
+biological samples linked to those batches. %Seven unambiguously positive-labelled 16S profiles from Trips~1--3 are used
+We used seven positive control samples from Trips~1-3
+to evaluate %expected bacterial-genus
+genus-level recovery, %never
+but not to train the contaminant classifier.
+The primary table remains unfiltered, and the
 candidate set is used only in a bounded sensitivity analysis
 (Section~\ref{usage}).
 
-Genome-encoded functional potential used for the companion analysis
-was predicted with PICRUSt2 v2.4.1; its execution manifest, with the
+We calculated genome-level %-encoded
+functional potential with PICRUSt2 (v2.4.1) and used it for the companion analysis.
+%was predicted with PICRUSt2 v2.4.1; its
+The execution manifest with the
 exact commands, hidden-state method, edge exponent, seed and
 thresholds, is archived with the release.
 
-All deterministic metadata corrections are recorded without
-overwriting the source values. For example, in three records the value
-\texttt{NEBNext} had shifted into the site column while the other
-populated cells remained aligned; the confirmed correction ledger
-restores site~46, records \texttt{NEBNext} as the displaced
-library-preparation kit value and retains the original cell value and
-rationale.
+% All deterministic metadata corrections are recorded without
+% overwriting the source values. For example, in three records the value
+% \texttt{NEBNext} had shifted into the site column while the other
+% populated cells remained aligned; the confirmed correction ledger
+% restores site~46, records \texttt{NEBNext} as the displaced
+% library-preparation kit value and retains the original cell value and
+% rationale.
 
 \input{02_methods_taxonomy}
 
 \subsection{Environmental and climate data}
 
 We retrieved historical climate data from the Open-Meteo archive
-endpoint \cite{openmeteo} for each recorded field location, yielding
+endpoint \cite{openmeteo} for each sampling site using its geographic coordinates, yielding
 12,936 monthly records encompassing temperature, total precipitation,
-rainfall and relative humidity, together with annual source fields.
-Retrieval keyed on the \texttt{Site} column of the per-trip geodata
-sheets, a field-notebook column rather than an integer primary key. Of
-the 81 distinct fetch keys, 66 resolve to a site individual (all 60
-numbered sites and six named ones), which gives the released
-denominator of $66 \times 49$ months $\times$ four variables $=$
-12,936 monthly records. The remaining 15 keys carry an unrecorded
-offset or free-text label (for example \texttt{47+grass}, which
-records a reading taken near site~47 rather than a reading of it) and
-are quarantined rather than mapped onto their numeric stem. Exact
-site-key resolution retains 582 annual values in the graph and
-quarantines 54 values attached to unresolved field-notebook labels.
-Furthermore, field researchers
-manually classified each site according to its biome (e.g., desert
-biome) and specific environmental features (e.g., sand dune, saline
-pan, gravel, desert oasis). We subsequently mapped these
+rainfall and relative humidity, as well as annual records.
+%source fields.
+%Retrieval keyed on the \texttt{Site} column of the per-trip geodata sheets, a field-notebook column rather than an integer primary key. Of the 81 distinct fetch keys, 66 resolve to a site individual (all 60 numbered sites and six named ones), which gives the released denominator of $66 \times 49$ months $\times$ four variables $=$ 12,936 monthly records. The remaining 15 keys carry an unrecorded offset or free-text label (for example \texttt{47+grass}, which records a reading taken near site~47 rather than a reading of it) and are quarantined rather than mapped onto their numeric stem
+% Exact site-key resolution retains 582 annual values in the graph and quarantines 54 values attached to unresolved field-notebook labels.
+Furthermore, field researchers manually classified each site according to its biome (e.g., desert
+biome) and specific environmental features (e.g., sand dune, saline pan, gravel, desert oasis). We subsequently mapped these
 classifications to the Environment Ontology (ENVO) \cite{envo}.
 
 \subsection{XRF acquisition, processing and reconciliation}\label{methods:xrf}
 
 We acquired XRF data through two complementary workflows. During
-Trip~5, researchers used a Vanta handheld instrument to perform
+Trip~5, field researchers used a Vanta handheld instrument to perform
 in-situ field measurements. The source log contains 106 entries across
 59 sites; 71 complete sessions at 58 sites were retained, and nine of
-those sites have repeated complete sessions. The field log carries no
-physical-specimen, compartment or depth identifier, so field and
-laboratory linkage is site-level rather than a same-aliquot
+those sites have repeated complete sessions. The field 
+%log carries no physical specimen, compartment or depth identifier, 
+measurements do not refer to a specific specimen,
+so field and
+laboratory linkage is site-level rather than a same aliquot
 comparison. Archived material from all five expeditions was
-subsequently measured in the laboratory. The canonical laboratory
+subsequently measured in the laboratory. The laboratory
 inputs contain 547 selected sample records from Trips~1--4 and 178
-from Trip~5 (725 records in total), and all 725 enter the analyses. A
-former 158-row Trip~5 table and the resulting 705-row cross-trip table
-are retired legacy artifacts and are not analytical inputs.
+from Trip~5 (725 records in total).
+%, and all 725 enter the analyses. A former 158-row Trip~5 table and the resulting 705-row cross-trip table are retired legacy artifacts and are not analytical inputs.
 
-The provenance audit reproduced all 13,390 reported Trips~1--4 cells
-under the current largest-positive-value rule and all 4,293 reported
-Trip~5 cells under the parser's different last-reported-value rule.
-Neither rule is treated as instrument-prescribed, and the release
-discloses the two source-specific policies rather than implying a
-common calibrated procedure. All instrument channels were mapped
-against a pinned ChEBI release and a dated PubChem snapshot; an
-executable audit rejects missing, deprecated or formula-mismatched
-records, and unsupported mappings remain null. For a descriptive
-cross-workflow diagnostic, repeated field sessions were reduced by
-their site median and matched to the Trip~5 laboratory record at 58
-sites; rank agreement was generally modest. No cross-workflow
-calibration is inferred, and no analysis assumes that field and
-laboratory values have the same scale.
+The provenance audit reproduced all 13,390 reported Trips~1--4 cells under the current largest-positive-value rule and all 4,293 reported Trip~5 cells under the parser's different last-reported-value rule. Neither rule is treated as instrument-prescribed, and the release discloses the two source-specific policies rather than implying a common calibrated procedure.
+
+
+All XRF instrument channels (e.g. element, oxide) were mapped
+to a chemical identifier in a pinned ChEBI \cite{chebi} release and cross-checked against a PubChem \cite{pubchem} snapshot. An
+executable audit rejects identifiers that cannot be found, that have been deprecated, or whose formula does not match the channel.
+%missing, deprecated or formula-mismatched records, and unsupported mappings remain null.
+For a descriptive
+cross-workflow diagnostic, we took the median of repeated field sessions at each site and compared it with the Trip~5 Deep laboratory record at the 58 sites measured by both workflows.
+Rank agreement was modest. We do not infer calibration between the two workflows, and no analysis treats field and laboratory values as being on the same scale.
+%repeated field sessions were reduced by their site median and matched to the Trip~5 laboratory record at 58 sites; rank agreement was generally modest. No cross-workflow calibration is inferred, and no analysis assumes that field and laboratory values have the same scale.
 
 \subsection{Archived-soil pH acquisition and admission}\label{methods:ph}
 
-We measured archived dry soil after sieving below 2~mm. Each assay
-used an independent 1~g scoop suspended in 2.5~mL 0.01~M CaCl$_2$,
-with a two-point pH 7/10 calibration, electrode slope and pH-10 buffer
-read-back recorded per session; admission required calibration marked
-yes, slope 95--102\,\% and a read-back within 0.1 pH units of nominal.
-All measurements available when laboratory follow-up ended were frozen
-as the versioned dataset \texttt{EQ-PH-SHARED-v1.0.0}, the sole pH
-version used by this descriptor and the companion ecology paper.
+We measured archived dry soil after sieving below 2~mm. Each assay used an independent 1~g scoop suspended in 2.5~mL 0.01~M CaCl$_2$. Electrodes were calibrated at two points (pH 7 and 10), and we recorded the electrode slope and pH-10 buffer read-back for every session. A measurement was admitted only if its session was calibrated, the electrode slope was between 95\% and 102\%, and the read-back was within 0.1 pH units of nominal.
+%with a two-point pH 7/10 calibration, electrode slope and pH-10 buffer read-back recorded per session; admission required calibration marked yes, slope 95--102\,\% and a read-back within 0.1 pH units of nominal.
+%All measurements available when laboratory follow-up ended were frozen as the versioned dataset \texttt{EQ-PH-SHARED-v1.0.0}, the sole pH version used by this descriptor and the companion ecology paper.
 
-The audit accounts for all 1,168 source rows: it admits 712
-measurements, retains 356 rows without a measurement, marks 45 as
-depleted, quarantines 36 with ambiguous dates, and excludes 19 numeric
-rows with incomplete recorded quality control. We neither inferred
-missing quality-control fields nor imputed unavailable values. The
-workbook has no session identifier, so we reconstructed 29 session
-individuals from unique combinations of trip, accepted measurement
-date, electrode slope and pH-10 read-back; these groupings preserve
-the available quality-control context but are not directly recorded
+%The audit accounts for all
+This resulted in 1,168 recordings of which 712 measurements were admitted. The remaider consisted of 356 rows that lacked measurement, 45 marked as depleted, 36 with ambiguous dates, and 19 numeric rows with incomplete quality control records.
+%source rows: it admits 712 measurements, retains 356 rows without a measurement, marks 45 as depleted, quarantines 36 with ambiguous dates, and excludes 19 numeric rows with incomplete recorded quality control.
+We neither inferred missing quality-control fields nor imputed unavailable values. The workbook has no recorded session identifier. We therefore reconstructed 29 sessions
+from the unique combinations of trip, accepted measurement
+date, electrode slope, and pH-10 read-back, as these groupings preserve the quality-control context available in the source, but are inferred rather than recorded
 laboratory batch identifiers.
 
 \subsection{Schema validation}
@@ -304,7 +279,7 @@ schema. It terminates the deployment if it detects missing mandatory
 properties (e.g., GPS coordinates for a sampling site) or invalid
 datatypes. This constraint application guarantees that all generated
 data conforms to the expected structural properties.
-We implemented this validation using the Apache Jena ShEx library (version 4.10.0) invoked from custom Groovy scripts.
+We implemented this validation using the Apache Jena ShEx library (v4.10.0) invoked from custom Groovy scripts.
 The multi-gigabyte taxonomy ABox is excluded from this memory-bounded
 ShEx run; the exact generated file is instead parsed in full with an
 independent Turtle parser and checked by a streaming validator over
