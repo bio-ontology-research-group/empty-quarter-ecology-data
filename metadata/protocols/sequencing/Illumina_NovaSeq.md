@@ -3,7 +3,7 @@ id: Illumina_novaseq
 category: sequencing
 version: 1.0
 kits:
-  - name: NovaSeq Reagent Kit v??
+  - name: NovaSeq 6000 SP Reagent Kit v1.5 (500 cycles)
     vendor: Illumina
     catalog: ??
 equipment:
