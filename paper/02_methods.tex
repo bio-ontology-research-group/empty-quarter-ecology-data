@@ -99,24 +99,28 @@ We included positive and negative controls for each sampling campaign
 to mitigate and control for contamination artifacts. One extraction
 blank was processed with each extraction-day batch, using the same
 extraction procedure as for the biological specimens, to control for
-contamination introduced during nucleic acid extraction. Because
-extraction days were trip-specific (samples from more than one
+contamination introduced during nucleic acid extraction. For Trips~4
+and 5, extraction days were trip-specific (samples from more than one
 expedition were never extracted together on the same day, though
-multiple sites from the same expedition could be), each extraction
-blank is associated with a single expedition, its extraction date, and
-its batch. Where a corresponding library was successfully generated,
+multiple sites from the same expedition could be), so each of their
+extraction blanks is associated with a single expedition, its
+extraction date, and its batch; for Trips~1--3, some extractions were
+repeated and may have combined samples from different trips on one
+day.\todo{Marwa/Rund: confirm the Trips~1--3 extraction days.} Where a corresponding library was successfully generated,
 the extraction blank was subjected to 16S rRNA gene amplification,
 indexing, and sequencing.
 
-The complete ASV table contained 23 sequenced extraction-blank
-profiles: 17 from Trip~5 and 6 from Trip~4. The 17 Trip~5 extraction
-blanks were linked to 217 biological profiles processed in the same
-extraction batches. The 6 Trip~4 extraction blanks (EB, EB1--EB5) were
-linked to 97 biological profiles processed in the same extraction
-batches, and were characterized separately from the Trip~5 blanks. For
-Trip~4, three of the trip's nine extraction batches were not
-sequenced, leaving 28 of Trip~4's 60 sites without a sequenced
-extraction blank for the corresponding samples.
+The complete ASV table contained 18 sequenced Trip~5 extraction-blank
+profiles (EB1--EB18), of which 17 were linked by extraction day to 217
+biological profiles processed in the same batches, together with six
+Trip~5 no-template controls (Negative1, Negative2, Negative4--Negative7).
+The six Trip~4 extraction blanks (SEB, EB1--EB5; one per extraction
+day, covering 97 biological samples) were sequenced on a separate run
+shared with other projects but were not included in the denoising run
+that produced the canonical table. For Trip~4, three of the trip's
+nine extraction batches were not sequenced, leaving 28 of Trip~4's 60
+sites (one of them partially) without a sequenced extraction blank for
+the corresponding samples.
 
 Two types of PCR-stage negative controls were used to evaluate
 contamination introduced during amplification and library
@@ -130,17 +134,27 @@ undetectable concentration on TapeStation quality control, with
 profiles dominated by adapter dimer, and were accordingly excluded
 from sequencing. In Trip~5, none of the PCR blanks were carried
 through to sequencing, attributed to evaporation of the material
-during handling. In Trip~4, one PCR blank was generated and
-successfully sequenced, alongside a water-based negative control.
+during handling, but six no-template controls were sequenced. In
+Trip~4, one PCR blank and one no-template control were generated but
+neither was sequenced: the run was shared with samples from
+Trips~1--3, their index pairs conflicted with biological samples, and
+the samples were retained.
 Trip~3 also included PCR blanks.\todo{Marwa: Trip~3 PCR blank details
 pending Rund's input.}
 
 A second, field-based negative control consisted of sterile soil,
-tested prior to each expedition to confirm the absence of PCR
-amplification, then taken to the field, extracted, amplified, and
-sequenced alongside the biological specimens for that trip. This soil
-negative control was paired with the trip's positive-control standard
-as a campaign-control set. Trip~4 did not include this control.
+extracted and amplified before the expedition to confirm the absence
+of PCR product, then taken to the field with the biological specimens.
+This soil negative control was paired with the trip's positive-control
+standard as a campaign-control set. Trip~4 did not include this
+control; for Trip~5 it was sequenced by shotgun metagenomics only. For
+Trips~1--3, seven control libraries (Extraction-Ctrl-Pro-Trip1,
+PCR-Ctrl-Trip1, Ctrl-1-Trip1, Ctrl-2, Ctrl-3, Neg-Ctrl-1-Trip2 and
+Neg-Ctrl-2-Trip2) were sequenced on the same shared run as the Trip~4
+extraction blanks but were not included in the canonical denoising
+run; their roles (field negative, extraction blank or PCR control) and
+plate links are pending.\todo{Rund: roles and batch links of the seven
+Trips~1--3 control libraries.}
 
 Positive-control material and its handling differed among
 expeditions. Positive controls were generally carried into the field
@@ -156,11 +170,12 @@ than passed through extraction. Trip~3 used the whole-cell ZymoBIOMICS
 Microbial Community Standard (D6300). Trip~4 was not accompanied by a
 positive standard or a soil-based negative control in the field, and
 no mock community was taken on this expedition. Laboratory-based
-controls for Trip~4 consisted of an extraction blank, a water-based
-negative control, a reagent-only PCR blank, and a positive control
-used to confirm amplification success, checked by gel electrophoresis
-after first-round PCR and by TapeStation after the second-round
-(indexing) PCR. Trip~5 used the D6300 standard, and a sterile-soil
+controls for Trip~4 consisted of extraction blanks (one per extraction
+day), a water-based no-template control, a reagent-only PCR blank, and
+a positive control used to confirm amplification success, checked by
+gel electrophoresis after first-round PCR and by TapeStation after the
+second-round (indexing) PCR; only the extraction blanks were
+sequenced. Trip~5 used the D6300 standard, and a sterile-soil
 negative control was also taken into the field, but both were
 processed by shotgun metagenomics rather than 16S. Trips~4 and 5
 therefore both lack 16S-specific positive-control validation, for
