@@ -97,8 +97,11 @@ measurement taken at a sampling site.
 
 \begin{lstlisting}[caption={Turtle representation of an environmental temperature measurement.}, label={lst:ttl_temp}, basicstyle=\ttfamily\scriptsize, frame=single]
 rak:P000001 a rak:0000006 ; # Measurement Process
-  sio:000291 rak:1000001 ; # hasTarget
+  sio:000068 rak:3000001 ; # isPartOf (site visit)
   sio:000229 rak:4000001 . # hasOutput (Value)
+
+rak:3000001 a rak:0000003 ; # Site Visit
+  sio:000291 rak:1000001 . # hasTarget (Sampling Site)
 
 rak:4000001 a rak:0000010 ; # Quantity
   sio:000221 uo:0000027 ; # hasUnit (degree Celsius)
@@ -106,12 +109,14 @@ rak:4000001 a rak:0000010 ; # Quantity
   sio:000215 rak:5000001 . # isMeasurementValueOf (Quality)
 
 rak:5000001 a pato:0000146 ; # Temperature Quality
-  sio:000011 rak:1000001 . # isAttributeOf
+  sio:000011 rak:1000001 ; # isAttributeOf
+  sio:000216 rak:4000001 . # hasMeasurementValue
 \end{lstlisting}
 
 In words, an instance \texttt{rak:P000001} of a measurement
-process has as its target the sampling site \texttt{rak:1000001}
-and produces as output the quantity \texttt{rak:4000001}. That
+process is part of the site visit \texttt{rak:3000001} that targets
+the sampling site \texttt{rak:1000001}, and produces as output the
+quantity \texttt{rak:4000001}. That
 quantity carries the literal value \texttt{20.7}, is reported in
 degrees Celsius (\texttt{uo:UO\_0000027}), and refers to a temperature
 quality \texttt{rak:5000001} which is in turn an attribute of the
@@ -144,7 +149,7 @@ rak:P100001 a rak:0000024 ; # Sampling Process
   sio:000229 rak:7000001 . # hasOutput (Collection)
 
 rak:6000001 a rak:0000021 ; # Deep Soil Sample
-  sio:000252 rak:1000001 . # isDerivedFrom
+  sio:000244 rak:1000001 . # isDerivedFrom
 \end{lstlisting}
 
 Read in prose, an instance \texttt{rak:P100001} of a sampling
@@ -240,9 +245,9 @@ rak:P290001 a rak:0000071 ; # Bioinformatic Workflow
 rak:7290001 a rak:0000074 ; # Taxonomic Dataset
   sio:000059 rak:4400001 . # hasMember (Observation Value)
 
-rak:4400001 a sio:000070 ; # Quantity (Absolute Count)
+rak:4400001 a rak:0000076 ; # Absolute Abundance Measurement Value
   sio:000215 rak:5400001 ; # isMeasurementValueOf
-  rak:2000021 "15"^^xsd:integer . # absolute read count
+  rak:2000026 "15"^^xsd:integer . # hasAbsoluteAbundanceValue
 
 rak:5400001 a rak:0000078 ; # Absolute Abundance Quality
   sio:000011 ncbitaxon:286 . # isAttributeOf (Pseudomonas)
@@ -288,23 +293,23 @@ Listing~\ref{lst:ttl_xrf} illustrates an XRF measurement
 for a specific analyte.
 
 \begin{lstlisting}[caption={Turtle representation of an XRF geochemistry measurement.}, label={lst:ttl_xrf}, basicstyle=\ttfamily\scriptsize, frame=single]
-rak:P300001 a rak:0000080 ; # XRF Measuring Process
-  sio:000291 rak:6000001 ; # hasTarget
+rak:P300001 a rak:0000025 ; # XRF Measuring Process (laboratory)
+  sio:000230 rak:6000001 ; # hasInput (Soil Sample)
   sio:000229 rak:4300001 . # hasOutput
 
-rak:4300001 a sio:000070 ; # Quantity
+rak:4300001 a rak:0000567 ; # CaO Concentration Measurement Value
   sio:000215 rak:5300001 ; # isMeasurementValueOf
-  sio:000221 uo:0000187 ; # Percent unit
-  rak:2000012 "58.2"^^xsd:double . # Concentration
+  rak:2000012 "58.2"^^xsd:double . # hasConcentrationValue (no unit)
 
-rak:5300001 a rak:0000167 ; # Analyte Quality Class
+rak:5300001 a rak:0000167 ; # CaO Concentration Quality
   sio:000011 rak:6000001 . # isAttributeOf
 \end{lstlisting}
 
 In words, the XRF measurement process \texttt{rak:P300001}
-targets the soil sample \texttt{rak:6000001} and produces the
-quantity \texttt{rak:4300001}, which records a concentration of
-\texttt{58.2}~percent (\texttt{uo:UO\_0000187}) and refers to an
+takes the soil sample \texttt{rak:6000001} as its input and
+produces the quantity \texttt{rak:4300001}, which records a
+concentration value of \texttt{58.2} (the instrument exports document
+no unit, so none is asserted) and refers to an
 analyte-specific quality \texttt{rak:5300001}. Because the
 analyte quality is typed with a dedicated subclass per element, the
 same pattern instance can be reused unchanged across all 91
@@ -331,15 +336,20 @@ the closed-world intent of the field record.
 
 \begin{lstlisting}[caption={Turtle representation of a sampling site grounded in ENVO.}, label={lst:ttl_site}, basicstyle=\ttfamily\scriptsize, frame=single]
 rak:1000001 a rak:0000002 ; # Sampling Site
-  rdfs:label "Site 11" ;
-  geo:asWKT "POINT(50.123 22.456)"^^geo:wktLiteral ;
-  rak:2000050 envo:01000219 ; # hasBiome (desert biome)
-  rak:2000051 envo:00000086 . # hasEnvironmentalFeature (sand dune)
+  rdfs:label "Site 1" ;
+  geo:asWKT
+    "POINT(45.166511388888885 19.149770555555556)"^^geo:wktLiteral ;
+  a [ a owl:Restriction ;
+      owl:onProperty rak:2000001 ;        # hasBiome
+      owl:someValuesFrom envo:01000179 ], # desert biome
+    [ a owl:Restriction ;
+      owl:onProperty rak:2000002 ;        # hasEnvironmentalFeature
+      owl:someValuesFrom envo:01000018 ]. # gravel
 \end{lstlisting}
 
 In words, the sampling site \texttt{rak:1000001} carries a label,
 a WKT geometry, and is asserted both to belong to the ENVO desert
-biome and to exhibit a sand-dune environmental feature. The combined
+biome and to exhibit a gravel environmental feature. The combined
 existential and universal restriction on \texttt{hasBiome} (Equation~\ref{eq:site})
 ensures that any reasoner treats the asserted biome as the only
 admissible value for that site.
@@ -378,21 +388,21 @@ Equation~\ref{eq:protocol}.
 }
 
 \begin{lstlisting}[caption={Turtle representation of the sequencing workflow from soil sample to FASTQ dataset.}, label={lst:ttl_sequencing}, basicstyle=\ttfamily\scriptsize, frame=single]
-rak:P200001 a rak:0000044 ; # DNA Extraction Process
+rak:P200001 a rak:0000309 ; # DNA Extraction Process
   sio:000339 rak:L000001 ; # isSpecifiedBy (PowerSoil protocol)
   sio:000230 rak:6000001 ; # hasInput (Soil Sample)
   sio:000229 rak:6800001 . # hasOutput (DNA Extract)
 
-rak:P250001 a rak:0000045 ; # Library Preparation Process
+rak:P250001 a rak:0000065 ; # Library Preparation Process
   sio:000339 rak:L000010 ; # Illumina 16S Prep Guide
   sio:000230 rak:6800001 ; # hasInput (DNA Extract)
   sio:000229 rak:6900001 . # hasOutput (Amplicon Library)
 
-rak:P280001 a rak:0000046 ; # Sequencing Process
+rak:P280001 a rak:0000066 ; # Sequencing Process
   sio:000230 rak:6900001 ; # hasInput (Amplicon Library)
   sio:000229 rak:7900001 . # hasOutput (FASTQ Dataset)
 
-rak:7900001 a rak:0000064 ; # FASTQ Dataset
+rak:7900001 a rak:0000063 ; # FASTQ Dataset
   rdfs:seeAlso <https://www.ebi.ac.uk/ena/browser/view/ERR1234567> .
 \end{lstlisting}
 
@@ -433,16 +443,16 @@ provenance of paired-end runs is preserved.
 }
 
 \begin{lstlisting}[caption={Turtle representation of a sequencing QC measurement (forward-read GC content).}, label={lst:ttl_qc}, basicstyle=\ttfamily\scriptsize, frame=single]
-rak:P350001 a rak:0000047 ; # Sequencing QC Process
+rak:P350001 a rak:0000200 ; # Sequencing QC Process
   sio:000230 rak:7900001 ; # hasInput (FASTQ Dataset)
   sio:000229 rak:4500001 . # hasOutput (QC Value)
 
-rak:4500001 a rak:0000086 ; # GC Content Value
+rak:4500001 a rak:0000217 ; # Forward GC Content Value
   sio:000215 rak:5500001 ; # isMeasurementValueOf
   sio:000221 uo:0000187 ; # Percent
-  rak:2000073 "54.2"^^xsd:double . # has GC content
+  rak:2000074 "54.2"^^xsd:double . # hasForwardGCContent
 
-rak:5500001 a rak:0000074 ; # GC Content Quality (Forward)
+rak:5500001 a rak:0000205 ; # Forward GC Content Quality
   sio:000011 rak:7900001 . # isAttributeOf (FASTQ Dataset)
 \end{lstlisting}
 
@@ -494,19 +504,19 @@ as a class membership keeps each physical control distinct even when
 labels are reused across expeditions.
 
 \begin{lstlisting}[caption={Turtle representation of an extraction-blank control and its role realization.}, label={lst:ttl_control}, basicstyle=\ttfamily\scriptsize, frame=single]
-rak:C000001 a rak:0000300 ; # Extraction Blank Material
+rak:C000001 a rak:0000302 ; # Blank Control Material
   sio:000228 rak:R000001 . # hasRole
 
-rak:R000001 a rak:0000301 ; # Extraction Blank Role
+rak:R000001 a rak:0000306 ; # Extraction Blank Role
   sio:000227 rak:C000001 . # isRoleOf
 
-rak:P400001 a rak:0000302 ; # Extraction Process
+rak:P400001 a rak:0000309 ; # DNA Extraction Process
   sio:000230 rak:C000001 ; # hasInput
   sio:000291 rak:C000001 ; # hasTarget
   sio:000355 rak:R000001 ; # realizes
   sio:000068 rak:B000001 . # isPartOf (Batch)
 
-rak:B000001 a rak:0000310 . # Extraction Batch
+rak:B000001 a rak:0000308 . # Laboratory Processing Batch
 \end{lstlisting}
 
 Uncertain identity, batch membership and assay applicability are

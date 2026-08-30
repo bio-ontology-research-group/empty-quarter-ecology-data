@@ -459,6 +459,8 @@ def render_latex(
 ) -> str:
     lines = [
         r"\begin{scriptsize}",
+        r"\setlength{\LTleft}{-\landexcess}",
+        r"\setlength{\LTright}{0pt plus 1fill}",
         r"\begin{longtable}{llllllll}",
         (
             r"\caption{Site-specific field environmental observations across "

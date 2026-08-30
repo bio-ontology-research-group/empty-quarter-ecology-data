@@ -53,41 +53,42 @@ retrieves XRF measurements for a specific site, requiring traversal of
 the measurement process, quality, and value entities.
 
 \begin{lstlisting}[caption={SPARQL query to retrieve field XRF
-    measurements for Site 10. The query traverses from sample to
-    measurement process to individual analyte concentrations.},
+    measurements for Site 10. The query starts from the field-XRF
+    measuring processes whose target is the site and walks to the
+    individual analyte concentrations.},
   label={lst:sparql_xrf}, basicstyle=\ttfamily\scriptsize,
   frame=single]
 PREFIX rak: <https://rubalkhali.science/kb/RAK_>
 PREFIX sio: <http://semanticscience.org/resource/SIO_>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?processLabel ?analyte ?concentration ?unitLabel
+
+SELECT ?processLabel ?siteLabel ?analyte ?concentration
 WHERE {
-  ?sample a rak:0000021 ;
-          rdfs:label ?sampleLabel .
-  FILTER(REGEX(?sampleLabel, "Site 10"))
-  ?value sio:000232 ?process .
-  ?process rdfs:label ?processLabel .
-  FILTER(REGEX(?processLabel, "Field", "i"))
-  ?sample sio:000008 ?quality .
-  ?quality sio:000215 ?value .
-  ?value rak:2000012 ?concentration .
-  ?value sio:000221 ?unit .
-  ?unit rdfs:label ?unitLabel .
+  ?process a rak:0000025 ;
+           rdfs:label ?processLabel ;
+           sio:000291 ?site ;
+           sio:000229 ?value .
+  FILTER(CONTAINS(LCASE(STR(?processLabel)), "field xrf"))
+  ?site rdfs:label ?siteLabel .
+  FILTER(?siteLabel = "Site 10")
+  ?value sio:000215 ?quality ;
+         rak:2000012 ?concentration .
   ?quality a ?qualityClass .
   ?qualityClass rdfs:label ?analyte .
-  FILTER(?qualityClass != rak:0000029)
+  FILTER(?qualityClass != rak:0000032)
 }
-ORDER BY ?processLabel ?analyte LIMIT 100
+ORDER BY ?processLabel ?analyte
 \end{lstlisting}
 
-Read in prose, the query first selects every soil sample whose label
-matches \texttt{Site~10}, then walks back from each measurement value
-to its producing process and forwards from the sample through its
-quality and value to the recorded concentration and unit. The final
-filter excludes the Light Elements pseudo-analyte
-(\texttt{rak:0000029}) so that only individually quantified
-elements appear in the result, and the query returns one row per
-process and analyte combination.
+Read in prose, the query first selects every field-XRF measuring
+process whose target site is labelled \texttt{Site~10}, then walks
+from each output value of that process to the quality it measures and
+to the recorded concentration. Field XRF is linked to the site rather
+than to a specimen, so no sample appears in the pattern, and no unit
+is bound because the XRF exports document none. The final filter
+excludes the Light Elements pseudo-analyte (\texttt{rak:0000032}) so
+that only individually quantified elements appear in the result, and
+the query returns one row per process and analyte combination.
 
 Listing~\ref{lst:sparql_taxon} retrieves taxonomic abundance profiles,
 joining across bioinformatic workflows, FASTQ datasets, and taxon
@@ -110,13 +111,13 @@ WHERE {
   ?fastq rdfs:label ?runLabel .
   BIND(REPLACE(?runLabel, "FASTQ dataset for ", "") AS ?run)
   ?dsAbs sio:000059 ?valAbs .
-  ?valAbs rak:2000021 ?count .
+  ?valAbs rak:2000026 ?count .
   ?valAbs sio:000215 ?qualAbs .
   ?qualAbs sio:000011 ?taxon .
   ?taxon rdfs:label ?taxonLabel .
   ?qualRel sio:000011 ?taxon ;
            a rak:0000072 ;
-           sio:000214 ?valRel .
+           sio:000216 ?valRel .
   ?valRel rak:2000020 ?relativeAbundance .
   FILTER(?taxon != ?fastq)
 }
@@ -147,20 +148,19 @@ WHERE {
   ?site a rak:0000002 ;
         rdfs:label ?siteLabel .
   
-  # Environmental Temperature
-  ?tempProcess sio:000291 ?site ;
-               sio:000229 ?tempVal .
-  ?tempVal rak:2000012 ?temp ;
-           sio:000215 ?tempQual .
-  ?tempQual a pato:0000146 .
+  # Environmental Temperature (site hasAttribute quality)
+  ?site sio:000008 ?tempQual .
+  ?tempQual a pato:0000146 ;
+            sio:000216 ?tempVal .
+  ?tempVal rak:2000003 ?temp .
   FILTER(?temp > 35.0)
 
   # Derived Sample and Taxon Abundance
-  ?sample sio:000252 ?site .
-  ?ext sio:000230 ?sample ; a rak:0000041 ; sio:000229 ?dna .
-  ?libPrep sio:000230 ?dna ; a rak:0000062 ; sio:000229 ?lib .
-  ?seq sio:000230 ?lib ; a rak:0000064 ; sio:000229 ?fastq .
-  
+  ?sample sio:000244 ?site .
+  ?ext a rak:0000309 ; sio:000230 ?sample ; sio:000229 ?dna .
+  ?libPrep a rak:0000065 ; sio:000230 ?dna ; sio:000229 ?lib .
+  ?seq a rak:0000066 ; sio:000230 ?lib ; sio:000229 ?fastq .
+
   ?bioinf a rak:0000071 ;
           sio:000230 ?fastq ;
           sio:000229 ?dsRel .

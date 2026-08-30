@@ -1,44 +1,53 @@
 {
-  "bibliography": "data-paper/sn-bibliography.bib",
-  "bibliography_entries": 93,
-  "bibliography_sha256": "76e3e91d292fd0ab1c2c09e05bea423ad849d2ce3b0ba687e466846a89f23131",
-  "cited_keys": 55,
+  "bibliography": "paper/sn-bibliography.bib",
+  "bibliography_entries": 96,
+  "bibliography_sha256": "382f77e0f8e2fae0b917e7c0701451565f587053f094730c89f729b22d8966cf",
+  "cited_keys": 64,
   "keys_missing_from_bibliography": [],
   "keys_without_local_copy": [
     "ampliseq",
+    "balvovciute2017silva",
+    "biodigitaltwin",
     "chebi",
+    "destinationearth",
+    "digitaltwin2021",
     "dlhandbook",
     "ecology_companion",
+    "eggnog",
     "elk",
     "envo",
     "fair",
     "fierer2017",
     "gopi2026sabkha",
     "gtdb",
+    "hermit",
     "hitzler_modularity",
+    "illumina16S",
     "klindworth2013primers",
     "mandaville_1986",
     "ncbitaxon",
+    "nelli2024wind",
     "nfcore",
     "nmdc2026",
-    "obi",
     "openmeteo",
     "owl2",
     "owlapi",
     "owlhorst",
     "pato",
-    "provo",
     "pubchem",
     "qiime2",
+    "rdf",
     "shex",
     "silva",
     "sio",
+    "sparql",
+    "sulo2025",
     "uo",
     "virtuoso"
   ],
   "libraries_searched": [
-    "data-paper/resource",
-    "review-literature"
+    "review-literature",
+    "data-paper/resource"
   ],
   "note": "Matching is by DOI plus title context or strong title-token overlap against PDF filenames and the first 4,000 characters of text files; bibliography mentions deep in unrelated files are not matches. A key reported as covered is not a guarantee that the local copy is the exact cited version; where a preprint and a final version differ, the archived copy should be checked against the bibliography entry before submission.",
   "records": [
@@ -94,6 +103,28 @@
     },
     {
       "cited_in": [
+        "02_methods_taxonomy.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "balvovciute2017silva",
+      "local_copies": [],
+      "title": "SILVA, RDP, Greengenes, NCBI and OTT\u2014how do these taxonomies compare?"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "biodigitaltwin",
+      "local_copies": [],
+      "title": "Towards a digital twin for plant biology"
+    },
+    {
+      "cited_in": [
         "01_introduction.tex"
       ],
       "custody": "local",
@@ -108,6 +139,8 @@
     {
       "cited_in": [
         "01_introduction.tex",
+        "02_methods.tex",
+        "03_knowledge_representation.tex",
         "kr_supplement.tex"
       ],
       "custody": "no_local_copy",
@@ -116,6 +149,28 @@
       "key": "chebi",
       "local_copies": [],
       "title": "{ChEBI}: a database and ontology for chemical entities of biological interest"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "destinationearth",
+      "local_copies": [],
+      "title": "Destination {Earth}: a digital twin of {Earth} for the green transition"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "digitaltwin2021",
+      "local_copies": [],
+      "title": "Digital twins: State of the art theory and practice, challenges, and open research questions"
     },
     {
       "cited_in": [
@@ -141,6 +196,17 @@
     },
     {
       "cited_in": [
+        "02_methods.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.1093/molbev/msab293",
+      "in_bibliography": true,
+      "key": "eggnog",
+      "local_copies": [],
+      "title": "{eggNOG-mapper} v2: functional annotation, orthology assignments, and domain prediction at the metagenomic scale"
+    },
+    {
+      "cited_in": [
         "01_introduction.tex"
       ],
       "custody": "local",
@@ -155,7 +221,6 @@
     {
       "cited_in": [
         "02_methods.tex",
-        "05_validation.tex",
         "06_usage.tex"
       ],
       "custody": "no_local_copy",
@@ -179,7 +244,8 @@
     },
     {
       "cited_in": [
-        "01_introduction.tex"
+        "01_introduction.tex",
+        "05_validation.tex"
       ],
       "custody": "no_local_copy",
       "doi": "",
@@ -201,8 +267,7 @@
     },
     {
       "cited_in": [
-        "02_methods.tex",
-        "06_usage.tex"
+        "02_methods.tex"
       ],
       "custody": "local",
       "doi": "10.1038/s41564-025-02035-2",
@@ -237,6 +302,17 @@
     },
     {
       "cited_in": [
+        "02_methods.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "hermit",
+      "local_copies": [],
+      "title": "{HermiT}: an {OWL} 2 reasoner"
+    },
+    {
+      "cited_in": [
         "03_knowledge_representation.tex"
       ],
       "custody": "no_local_copy",
@@ -245,6 +321,31 @@
       "key": "hitzler_modularity",
       "local_copies": [],
       "title": "A survey on ontology modularization"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "local",
+      "doi": "10.1016/j.ecoinf.2026.103635",
+      "in_bibliography": true,
+      "key": "iglesias2026",
+      "local_copies": [
+        "data-paper/resource/1-s2.0-S1574954126000415-main.txt",
+        "review-literature/2026-07-23/opus/EcolInf2026_B_digital-twin.txt"
+      ],
+      "title": "A conceptual architecture for {AI}-assisted Digital Twins in natural resource management"
+    },
+    {
+      "cited_in": [
+        "02_methods.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "illumina16S",
+      "local_copies": [],
+      "title": "Preparing 16S ribosomal RNA gene amplicons for the Illumina MiSeq system"
     },
     {
       "cited_in": [
@@ -465,7 +566,8 @@
     },
     {
       "cited_in": [
-        "01_introduction.tex"
+        "01_introduction.tex",
+        "02_methods_taxonomy.tex"
       ],
       "custody": "no_local_copy",
       "doi": "",
@@ -473,6 +575,17 @@
       "key": "ncbitaxon",
       "local_copies": [],
       "title": "{NCBI} {Taxonomy}: a comprehensive update on curation, resources and tools"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "nelli2024wind",
+      "local_copies": [],
+      "title": "The wind-blown sand experiment in the Empty Quarter Desert: Roughness length and saltation characteristics"
     },
     {
       "cited_in": [
@@ -495,17 +608,6 @@
       "key": "nmdc2026",
       "local_copies": [],
       "title": "National Microbiome Data Collaborative: Data Standards"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1371/journal.pone.0154556",
-      "in_bibliography": true,
-      "key": "obi",
-      "local_copies": [],
-      "title": "The {Ontology for Biomedical Investigations}"
     },
     {
       "cited_in": [
@@ -548,6 +650,7 @@
     },
     {
       "cited_in": [
+        "01_introduction.tex",
         "03_knowledge_representation.tex"
       ],
       "custody": "no_local_copy",
@@ -594,17 +697,8 @@
     },
     {
       "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "",
-      "in_bibliography": true,
-      "key": "provo",
-      "local_copies": [],
-      "title": "{PROV-O}: The {PROV} Ontology"
-    },
-    {
-      "cited_in": [
+        "02_methods.tex",
+        "03_knowledge_representation.tex",
         "kr_supplement.tex"
       ],
       "custody": "no_local_copy",
@@ -627,9 +721,19 @@
     },
     {
       "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "rdf",
+      "local_copies": [],
+      "title": "{RDF} 1.1 concepts and abstract syntax"
+    },
+    {
+      "cited_in": [
         "02_methods.tex",
-        "03_knowledge_representation.tex",
-        "05_validation.tex"
+        "03_knowledge_representation.tex"
       ],
       "custody": "no_local_copy",
       "doi": "",
@@ -640,7 +744,8 @@
     },
     {
       "cited_in": [
-        "02_methods.tex"
+        "02_methods.tex",
+        "02_methods_taxonomy.tex"
       ],
       "custody": "no_local_copy",
       "doi": "10.1093/nar/gks1219",
@@ -663,16 +768,14 @@
     },
     {
       "cited_in": [
-        "01_introduction.tex"
+        "05_validation.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "",
       "in_bibliography": true,
-      "key": "sosa",
-      "local_copies": [
-        "review-literature/2026-07-23/opus/FINAL_REVIEW_PROMPT.txt"
-      ],
-      "title": "{Semantic Sensor Network Ontology}"
+      "key": "sparql",
+      "local_copies": [],
+      "title": "{SPARQL} 1.1 {Query} {Language}"
     },
     {
       "cited_in": [
@@ -686,6 +789,17 @@
         "review-literature/2026-07-23/self/LITERATURE_AUDIT.txt"
       ],
       "title": "{STREAMS} guidelines: standards for technical reporting in environmental and host-associated microbiome studies"
+    },
+    {
+      "cited_in": [
+        "06_usage.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "sulo2025",
+      "local_copies": [],
+      "title": "{SULO} -- a simplified upper-level ontology"
     },
     {
       "cited_in": [

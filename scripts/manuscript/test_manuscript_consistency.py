@@ -61,13 +61,13 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             ("7", "Michel", "Dumontier"),
             ("6", "Raik", r"Gr\"unberg"),
             ("1", "Maxat", "Kulmanov"),
-            ("1", "Alejandra", "Lopez Velazquez"),
+            ("1", "Alejandra", "Lopez-Velazquez"),
             ("2", "Susana", "Martinez Arbas"),
             ("1", "Kexin", "Niu"),
             ("1", "Krishnakumar", "Sivakumar"),
             ("5", "Tiannyu", "Wang"),
             ("4", "Xiang", "Zhao"),
-            ("1", "Jood Kamal", "Zubair"),
+            ("1", "Jood", "Zubair"),
             ("5", "Magnus", "Rueping"),
             ("1", "Robert", "Hoehndorf"),
         ]
@@ -693,9 +693,14 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             "kr_supplement.tex"
         )
         validation = self.text("05_validation.tex")
+        # Only the field-XRF listing is in scope: later listings legitimately
+        # consume a sample (DNA extraction has the specimen as its input).
+        start = validation.index("label={lst:sparql_xrf}")
+        xrf_listing = validation[start:validation.index(r"\end{lstlisting}", start)]
         self.assertIn(r"\text{hasTarget}.\text{SamplingSite}", representation)
-        self.assertIn("sio:000291 ?site", validation)
-        self.assertNotIn("sio:000230 ?sample", validation)
+        self.assertIn("sio:000291 ?site", xrf_listing)
+        self.assertNotIn("sio:000230 ?sample", xrf_listing)
+        self.assertNotIn("?sample", xrf_listing)
         self.assertNotIn(
             "field-XRF process consumes the Trip~5 deep-soil specimen",
             representation,

@@ -22,7 +22,7 @@
   "curated_records": 274,
   "generated_outputs": {
     "curated_tsv_sha256": "1b8cb5c71fa05f6d15cee34c489105d755a0c42b900ec36fe4007f7cd19c5559",
-    "latex_sha256": "90fb40aee9b20b7d5533b5830a2c02079e81b22cf8ffb9da94cdb64d4acf9380"
+    "latex_sha256": "86b949dc652d1b34a3e7690aac7c8ef6b62dab4a472a9c5d2f021bc397710b9a"
   },
   "method": "Raw field sheets are retained unchanged; exact-cell correction ledger entries are verified before use; curated temperature, pressure and relative-humidity values must pass declared ranges.",
   "range_checks": {
