@@ -141,22 +141,28 @@ Trip~4, one PCR blank and one no-template control were generated but
 neither was sequenced: the run was shared with samples from
 Trips~1--3, their index pairs conflicted with biological samples, and
 the samples were retained.
-Trip~3 also included PCR blanks.\todo{Marwa: Trip~3 PCR blank details
-pending Rund's input.}
+Trip~3 included one sequenced PCR blank (PCRCtrl) and Trips~1 and 2
+one each (PCR-Ctrl-Trip1 and the no-template control NTC-2).
 
 A second, field-based negative control consisted of sterile soil,
 extracted and amplified before the expedition to confirm the absence
 of PCR product, then taken to the field with the biological specimens.
 This soil negative control was paired with the trip's positive-control
 standard as a campaign-control set. Trip~4 did not include this
-control; for Trip~5 it was sequenced by shotgun metagenomics only. For
-Trips~1--3, seven control libraries (Extraction-Ctrl-Pro-Trip1,
-PCR-Ctrl-Trip1, Ctrl-1-Trip1, Ctrl-2, Ctrl-3, Neg-Ctrl-1-Trip2 and
-Neg-Ctrl-2-Trip2) were sequenced on the same shared run as the Trip~4
-extraction blanks but were not included in the canonical denoising
-run; their roles (field negative, extraction blank or PCR control) and
-plate links are pending.\todo{Rund: roles and batch links of the seven
-Trips~1--3 control libraries.}
+control; for Trip~5 it was sequenced by shotgun metagenomics only. The
+sequenced controls of Trips~1--3 (Trip~1: one extraction blank, one PCR
+blank and three labelled standards; Trip~2: two negative controls, one
+no-template control and two standards; Trip~3: two field negatives, one
+negative control, one PCR blank and two standards) were denoised with
+the biological libraries in the July 2025 run and are recorded in the
+control registry with their labelled roles; the canonical feature table
+excludes them and retains only the Trip~5 controls. A re-denoising of
+the Trip~1 and 2 controls on 30 August 2026 showed that Ctrl-1-Trip1,
+labelled negative, is dominated by the ZymoBIOMICS genera (99.99\,\%
+of reads, 24 ASVs), whereas Ctrl-2 and Ctrl-3, labelled positive, and
+Extraction-Ctrl-Pro-Trip1, labelled extraction blank, carry soil-like
+profiles; their identities are under review with the laboratory and
+none of them was used to train the contaminant screen.
 
 Positive-control material and its handling differed among
 expeditions. Positive controls were generally carried into the field
