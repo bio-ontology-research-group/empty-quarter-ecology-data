@@ -1,35 +1,58 @@
 {
   "bibliography": "paper/sn-bibliography.bib",
   "bibliography_entries": 96,
-  "bibliography_sha256": "382f77e0f8e2fae0b917e7c0701451565f587053f094730c89f729b22d8966cf",
+  "bibliography_sha256": "f4c2fbc17b91cdb7809151aeb7d32da71b40c380d426734bcce2f9c5f603e85c",
   "cited_keys": 64,
   "keys_missing_from_bibliography": [],
   "keys_without_local_copy": [
+    "alawthan2024reserve",
+    "alhasani2026reserve",
     "ampliseq",
+    "aslam2016rainfall",
     "balvovciute2017silva",
     "biodigitaltwin",
+    "blancosacristan2025biocrust",
     "chebi",
     "destinationearth",
     "digitaltwin2021",
     "dlhandbook",
     "ecology_companion",
     "eggnog",
+    "eida2018plants",
     "elk",
     "envo",
     "fair",
     "fierer2017",
+    "fierer2025controls",
     "gopi2026sabkha",
     "gtdb",
     "hermit",
     "hitzler_modularity",
+    "iglesias2026",
     "illumina16S",
+    "islam2026",
+    "kgmicrobe2026",
+    "khan2020saudi",
+    "khan2025",
     "klindworth2013primers",
+    "makhalanyane2015",
     "mandaville_1986",
+    "mani2026mycobiome",
+    "maurice2023fertility",
+    "maurice2024",
+    "mckay2016",
+    "metagenomickg2026",
+    "mixs",
+    "mousa2024",
+    "moussa2017fungi",
+    "murgia2019sandfungi",
     "ncbitaxon",
     "nelli2024wind",
     "nfcore",
     "nmdc2026",
     "openmeteo",
+    "osman2016jizan",
+    "ovaskainen2026",
     "owl2",
     "owlapi",
     "owlhorst",
@@ -41,40 +64,35 @@
     "silva",
     "sio",
     "sparql",
+    "streams2025",
     "sulo2025",
     "uo",
-    "virtuoso"
+    "virtuoso",
+    "yasir2015saudi"
   ],
-  "libraries_searched": [
-    "review-literature",
-    "data-paper/resource"
-  ],
+  "libraries_searched": [],
   "note": "Matching is by DOI plus title context or strong title-token overlap against PDF filenames and the first 4,000 characters of text files; bibliography mentions deep in unrelated files are not matches. A key reported as covered is not a guarantee that the local copy is the exact cited version; where a preprint and a final version differ, the archived copy should be checked against the bibliography entry before submission.",
   "records": [
     {
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.3390/life14121692",
       "in_bibliography": true,
       "key": "alawthan2024reserve",
-      "local_copies": [
-        "review-literature/2026-07-23/self/saudi-update/29-alawthan-reserve-2024.txt"
-      ],
+      "local_copies": [],
       "title": "Metagenome Analysis Identified Novel Microbial Diversity of Sandy Soils Surrounded by Natural Lakes and Artificial Water Points in {King Salman Bin Abdulaziz Royal Natural Reserve}, {Saudi Arabia}"
     },
     {
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.25259/JKSUS_1695_2025",
       "in_bibliography": true,
       "key": "alhasani2026reserve",
-      "local_copies": [
-        "review-literature/2026-07-23/self/saudi-update/31-alhasani-reserve-plants-2026.txt"
-      ],
+      "local_copies": [],
       "title": "Diversity and ecological drivers of rhizospheric and endophytic microbiomes of desert plants in {King Salman Reserve}, {Saudi Arabia}"
     },
     {
@@ -92,13 +110,11 @@
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1111/1462-2920.13474",
       "in_bibliography": true,
       "key": "aslam2016rainfall",
-      "local_copies": [
-        "review-literature/2026-07-23/self/saudi-update/21-aslam-rainfall-2016.txt"
-      ],
+      "local_copies": [],
       "title": "Soil compartment is a major determinant of the impact of simulated rainfall on desert microbiota"
     },
     {
@@ -127,13 +143,11 @@
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1017/dry.2025.10007",
       "in_bibliography": true,
       "key": "blancosacristan2025biocrust",
-      "local_copies": [
-        "review-literature/2026-07-23/self/saudi-update/48-biocrust-arabian-peninsula-review-2025.txt"
-      ],
+      "local_copies": [],
       "title": "Biological soil crusts in the {Arabian Peninsula}: Ecological functions, current knowledge and research gaps"
     },
     {
@@ -209,13 +223,11 @@
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1371/journal.pone.0208223",
       "in_bibliography": true,
       "key": "eida2018plants",
-      "local_copies": [
-        "review-literature/2026-07-23/self/saudi-update/22-eida-desert-plants-2018.txt"
-      ],
+      "local_copies": [],
       "title": "Desert plant bacteria reveal host influence and beneficial plant growth properties"
     },
     {
@@ -269,13 +281,11 @@
       "cited_in": [
         "02_methods.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1038/s41564-025-02035-2",
       "in_bibliography": true,
       "key": "fierer2025controls",
-      "local_copies": [
-        "review-literature/2026-07-30/control-consensus/guidelines-preventing-reporting-contamination-low-biomass-microbiome-studies_s41564-025-02035-2.pdf"
-      ],
+      "local_copies": [],
       "title": "Guidelines for preventing and reporting contamination in low-biomass microbiome studies"
     },
     {
@@ -326,14 +336,11 @@
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1016/j.ecoinf.2026.103635",
       "in_bibliography": true,
       "key": "iglesias2026",
-      "local_copies": [
-        "data-paper/resource/1-s2.0-S1574954126000415-main.txt",
-        "review-literature/2026-07-23/opus/EcolInf2026_B_digital-twin.txt"
-      ],
+      "local_copies": [],
       "title": "A conceptual architecture for {AI}-assisted Digital Twins in natural resource management"
     },
     {
@@ -351,58 +358,44 @@
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1038/s44185-025-00116-3",
       "in_bibliography": true,
       "key": "islam2026",
-      "local_copies": [
-        "data-paper/resource/s44185-025-00116-3.txt",
-        "review-literature/2026-07-23/opus/Islam2026_npjBiodiversity_FAIR-digital-twins.txt"
-      ],
+      "local_copies": [],
       "title": "{FAIR} digital twins for biodiversity: enabling data, model, and workflow integration"
     },
     {
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1093/gigascience/giag077",
       "in_bibliography": true,
       "key": "kgmicrobe2026",
-      "local_copies": [
-        "review-literature/2026-07-23/self/LITERATURE_AUDIT.txt"
-      ],
+      "local_copies": [],
       "title": "{KG-Microbe} -- Building Modular and Scalable Knowledge Graphs for Microbiome and Microbial Sciences"
     },
     {
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.5194/soil-6-513-2020",
       "in_bibliography": true,
       "key": "khan2020saudi",
-      "local_copies": [
-        "review-literature/2026-07-23/opus/SaudiArabia2020_arid-soil-microbiome.txt",
-        "review-literature/2026-07-23/self/05-saudi-arid-soil-2020.txt",
-        "review-literature/2026-07-23/self/LITERATURE_AUDIT.txt",
-        "review-literature/2026-07-23/self/saudi-update/31-alhasani-reserve-plants-2026.txt",
-        "review-literature/2026-07-23/self/saudi-update/39-alsaedi-senna-2023.txt"
-      ],
+      "local_copies": [],
       "title": "Microbial communities and their predictive functional profiles in the arid soil of {Saudi Arabia}"
     },
     {
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1016/j.ecoinf.2025.103407",
       "in_bibliography": true,
       "key": "khan2025",
-      "local_copies": [
-        "data-paper/resource/1-s2.0-S1574954125004169-main.txt",
-        "review-literature/2026-07-23/opus/EcolInf2025_A_digital-twin.txt"
-      ],
+      "local_copies": [],
       "title": "{TwinEco}: a unified framework for dynamic data-driven digital twins in ecology"
     },
     {
@@ -420,14 +413,11 @@
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "",
       "in_bibliography": true,
       "key": "makhalanyane2015",
-      "local_copies": [
-        "review-literature/2026-07-23/opus/AEM2025_habitat-heterogeneity-extremely-arid_FULLTEXT.txt",
-        "review-literature/2026-07-23/self/saudi-update/50-mani-saudi-mycobiome-2026.txt"
-      ],
+      "local_copies": [],
       "title": "Microbial ecology of hot desert edaphic systems"
     },
     {
@@ -445,123 +435,99 @@
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.3897/mycokeys.130.176937",
       "in_bibliography": true,
       "key": "mani2026mycobiome",
-      "local_copies": [
-        "review-literature/2026-07-23/self/saudi-update/43-elhady-water-vegetation-preprint-2025.txt",
-        "review-literature/2026-07-23/self/saudi-update/50-mani-saudi-mycobiome-2026.txt"
-      ],
+      "local_copies": [],
       "title": "Desert mycobiome of {Saudi Arabia} is driven by vegetation patterns"
     },
     {
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1016/j.jaridenv.2023.105074",
       "in_bibliography": true,
       "key": "maurice2023fertility",
-      "local_copies": [
-        "review-literature/2026-07-23/self/saudi-update/38-maurice-fertility-islands-2023.txt"
-      ],
+      "local_copies": [],
       "title": "Fertility islands, keys to the establishment of plant and microbial diversity in a highly alkaline hot desert"
     },
     {
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1186/s40793-024-00610-4",
       "in_bibliography": true,
       "key": "maurice2024",
-      "local_copies": [
-        "review-literature/2026-07-23/self/18-saudi-plant-microbiome-2024.txt"
-      ],
+      "local_copies": [],
       "title": "Networking the desert plant microbiome, bacterial and fungal symbionts structure and assortativity in co-occurrence networks"
     },
     {
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1371/journal.pone.0150342",
       "in_bibliography": true,
       "key": "mckay2016",
-      "local_copies": [
-        "review-literature/2026-07-23/opus/McKay2016_PLOSONE_RubAlKhali-inverted-mat.txt",
-        "review-literature/2026-07-23/self/06-rub-al-khali-microbial-mat-2016.txt",
-        "review-literature/2026-07-23/self/LITERATURE_AUDIT.txt"
-      ],
+      "local_copies": [],
       "title": "An Unusual Inverted Saline Microbial Mat Community in an Interdune Sabkha in the {Rub' al-Khali} (the {Empty Quarter}), {United Arab Emirates}"
     },
     {
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1093/bioinformatics/btag421",
       "in_bibliography": true,
       "key": "metagenomickg2026",
-      "local_copies": [
-        "review-literature/2026-07-23/self/LITERATURE_AUDIT.txt"
-      ],
+      "local_copies": [],
       "title": "{MetagenomicKG}: a knowledge graph for metagenomic applications"
     },
     {
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1038/nbt.1823",
       "in_bibliography": true,
       "key": "mixs",
-      "local_copies": [
-        "review-literature/2026-07-23/self/LITERATURE_AUDIT.txt"
-      ],
+      "local_copies": [],
       "title": "Minimum information about a marker gene sequence ({MIMARKS}) and minimum information about any ({x}) sequence ({MIxS}) specifications"
     },
     {
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.3389/fpls.2024.1294173",
       "in_bibliography": true,
       "key": "mousa2024",
-      "local_copies": [
-        "review-literature/2026-07-23/opus/2024_desert-microbiome-climate.txt",
-        "review-literature/2026-07-23/self/saudi-update/49-mousa-arabian-plant-endophytes-2026.txt"
-      ],
+      "local_copies": [],
       "title": "High-throughput sequencing reveals the structure and metabolic resilience of desert microbiome confronting climate change"
     },
     {
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1371/journal.pone.0185096",
       "in_bibliography": true,
       "key": "moussa2017fungi",
-      "local_copies": [
-        "review-literature/2026-07-23/self/saudi-update/51-moussa-western-fungi-2017.txt"
-      ],
+      "local_copies": [],
       "title": "Comparative metagenomics approaches to characterize the soil fungal communities of western coastal region, {Saudi Arabia}"
     },
     {
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1002/mbo3.595",
       "in_bibliography": true,
       "key": "murgia2019sandfungi",
-      "local_copies": [
-        "review-literature/2026-07-23/self/saudi-update/33-osman-jizan-2016.txt",
-        "review-literature/2026-07-23/self/saudi-update/50-mani-saudi-mycobiome-2026.txt",
-        "review-literature/2026-07-23/self/saudi-update/52-murgia-hot-desert-fungi-2019.xml"
-      ],
+      "local_copies": [],
       "title": "Biodiversity of fungi in hot desert sands"
     },
     {
@@ -625,27 +591,22 @@
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.2174/2210289201607020070",
       "in_bibliography": true,
       "key": "osman2016jizan",
-      "local_copies": [
-        "review-literature/2026-07-23/self/saudi-update/33-osman-jizan-2016.txt"
-      ],
+      "local_copies": [],
       "title": "Bacterial rhizosphere biodiversity from several pioneer desert sand\n    plants near {Jizan}, Saudi Arabia"
     },
     {
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1038/s41559-025-02966-3",
       "in_bibliography": true,
       "key": "ovaskainen2026",
-      "local_copies": [
-        "data-paper/resource/s41559-025-02966-3.txt",
-        "review-literature/2026-07-23/opus/Ovaskainen2026_NatEcolEvol_digital-twin-biodiversity-forecast.txt"
-      ],
+      "local_copies": [],
       "title": "A digital twin for real-time biodiversity forecasting with citizen science data"
     },
     {
@@ -781,13 +742,11 @@
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1038/s41564-025-02186-2",
       "in_bibliography": true,
       "key": "streams2025",
-      "local_copies": [
-        "review-literature/2026-07-23/self/LITERATURE_AUDIT.txt"
-      ],
+      "local_copies": [],
       "title": "{STREAMS} guidelines: standards for technical reporting in environmental and host-associated microbiome studies"
     },
     {
@@ -827,13 +786,11 @@
       "cited_in": [
         "01_introduction.tex"
       ],
-      "custody": "local",
+      "custody": "no_local_copy",
       "doi": "10.1186/s12866-015-0398-4",
       "in_bibliography": true,
       "key": "yasir2015saudi",
-      "local_copies": [
-        "review-literature/2026-07-23/self/saudi-update/20-yasir-elevation-2015.txt"
-      ],
+      "local_copies": [],
       "title": "Composition of soil microbiome along elevation gradients in southwestern highlands of {Saudi Arabia}"
     }
   ]
