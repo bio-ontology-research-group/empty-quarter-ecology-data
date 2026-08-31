@@ -60,7 +60,6 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             ("4", "Daniela I.", "Drautz-Moses"),
             ("7", "Michel", "Dumontier"),
             ("6", "Raik", r"Gr\"unberg"),
-            ("1", "Maxat", "Kulmanov"),
             ("1", "Alejandra", "Lopez-Velazquez"),
             ("2", "Susana", "Martinez Arbas"),
             ("1", "Kexin", "Niu"),
