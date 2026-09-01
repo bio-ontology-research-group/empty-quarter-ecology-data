@@ -14,7 +14,7 @@ the terminology (Terminological Box, TBox, or ontology) from the
 observed facts (Assertion Box, ABox, or domain knowledge). The TBox
 defines the ontology of the knowledge graph using OWL 2 DL
 \cite{owl2}, while the ABox contains the instance data generated from
-the expedition. We deployed the complete knowledge base across three
+the campaign. We deployed the complete knowledge base across three
 named RDF graphs: an ontology graph (17,025 triples) containing the
 TBox, a knowledge base graph containing the asserted instance data,
 and a taxonomy reference graph containing the aligned taxonomy module.
@@ -468,13 +468,13 @@ paired-end QC metrics can be queried independently per orientation.
 \subsubsection{Laboratory-control pattern}
 
 A laboratory control is an occurrence-specific material entity, not a
-property of an expedition and not the string used to label a library.
+property of a campaign and not the string used to label a library.
 Each physical control carries its own instance of a positive,
 negative, extraction-blank or PCR-blank role, and a laboratory process
 realizes that role while consuming the material as input and target
 and producing a derived material or dataset. Processes are grouped
 into batches, and, because an extraction day can contain samples from
-several expeditions, neither the control nor its batch is linked
+several campaigns, neither the control nor its batch is linked
 directly to a trip.
 
 \begin{align}
@@ -501,7 +501,7 @@ extraction-blank role \texttt{rak:R000001} through
 role through \texttt{sio:000355}, and is part of the extraction batch
 \texttt{rak:B000001}. Asserting the role as an individual rather than
 as a class membership keeps each physical control distinct even when
-labels are reused across expeditions.
+labels are reused across campaigns.
 
 \begin{lstlisting}[caption={Turtle representation of an extraction-blank control and its role realization.}, label={lst:ttl_control}, basicstyle=\ttfamily\scriptsize, frame=single]
 rak:C000001 a rak:0000302 ; # Blank Control Material

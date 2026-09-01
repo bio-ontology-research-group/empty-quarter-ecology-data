@@ -2,7 +2,7 @@
 
 \subsection{Study area and sampling design}
 
-We conducted five sampling expeditions across the Rub' al-Khali along
+We conducted five sampling campaigns across the Rub' al-Khali along
 a transect from the western escarpment (19.15\degree N, 45.17\degree
 E) to the eastern border of Saudi Arabia with Oman (20.71\degree N,
 54.73\degree E). The 60 ordered sampling sites yield a 1,043-km
@@ -36,17 +36,17 @@ analyses on the repeated campaign
 of sites~1--60.
 %because those regions could not be revisited.
 
-To capture temporal variability, we conducted expeditions across
+To capture temporal variability, we conducted campaigns across
 different seasons: late winter 2023 (Trip 1, 64 sites visited), summer
 2023 (Trip 2, truncated to 8 sites due to extreme temperatures),
 winter 2024 (Trip 3, 65 sites visited), summer 2024 (Trip 4, 60 sites
 visited), and autumn 2025 (Trip 5, 62 sites visited). We recorded
-temperature, atmospheric pressure, and relative humidity at each visited site in each expedition. We summarize the
-observational coverage in Table~\ref{tab:env_summary}. %, although the available measurements differ by expedition.
+temperature, atmospheric pressure, and relative humidity at each visited site in each campaign. We summarize the
+observational coverage in Table~\ref{tab:env_summary}. %, although the available measurements differ by campaign.
 We acquired X-ray fluorescence (XRF) data through two
 separate workflows that are not interchangeable replicates: handheld
 in-situ measurements during Trip~5, and laboratory measurements of
-archived material from all five expeditions. 
+archived material from all five campaigns. 
 We compiled an environmental table from the original field sheets, recording every correction individually rather than editing the sheets, and retained all 274 non-blank records.
 %We curated an environmental table from the immutable field sheets through an exact-cell correction ledger and retained all 274 nonblank records.
 
@@ -58,7 +58,7 @@ We compiled an environmental table from the original field sheets, recording eve
   \label{tab:env_summary}
   \begin{tabular}{lllc}
     \toprule
-    Expedition & Season & Field-log records & Measurements available \\
+    Campaign & Season & Field-log records & Measurements available \\
     \midrule
     Trip 1 & Late Winter 2023 & 1--60; 4 named; 15 auxiliary$^\ast$ & Temp, Press, Hum. \\
     Trip 2 & Summer 2023 & 1--8 & Temp. \\
@@ -92,7 +92,7 @@ We obtained three co-located field replicates per compartment by
 placing soil into sterile tubes, either by scooping soil directly into
 the tube or using sterile plastic spoons; these replicates are not
 independent sites. We preserved samples at $-20$\degree C in the field
-using an Engel MR040F portable freezer. At the end of each expedition,
+using an Engel MR040F portable freezer. At the end of each campaign,
 we transferred samples to an $-80$\degree C freezer in the laboratory.
 
 We included positive and negative controls for each sampling campaign
@@ -101,9 +101,9 @@ blank was processed with each extraction-day batch, using the same
 extraction procedure as for the biological specimens, to control for
 contamination introduced during nucleic acid extraction. For Trips~4
 and 5, extraction days were trip-specific (samples from more than one
-expedition were never extracted together on the same day, though
-multiple sites from the same expedition could be), so each of their
-extraction blanks is associated with a single expedition, its
+campaign were never extracted together on the same day, though
+multiple sites from the same campaign could be), so each of their
+extraction blanks is associated with a single campaign, its
 extraction date, and its batch; for Trips~1--3, some extractions were
 repeated and may have combined samples from different trips on one
 day.\todo{Marwa/Rund: confirm the Trips~1--3 extraction days.} Where a corresponding library was successfully generated,
@@ -147,7 +147,7 @@ Trip~3 included one sequenced PCR blank (PCRCtrl) and Trips~1 and 2
 one each (PCR-Ctrl-Trip1 and the no-template control NTC-2).
 
 A second, field-based negative control consisted of sterile soil,
-extracted and amplified before the expedition to confirm the absence
+extracted and amplified before the campaign to confirm the absence
 of PCR product, then taken to the field with the biological specimens.
 This soil negative control was paired with the trip's positive-control
 standard as a campaign-control set. Trip~4 did not include this
@@ -167,19 +167,19 @@ profiles; their identities are under review with the laboratory and
 none of them was used to train the contaminant screen.
 
 Positive-control material and its handling differed among
-expeditions. Positive controls were generally carried into the field
+campaigns. Positive controls were generally carried into the field
 alongside the biological specimens, to validate library amplification
 and sequencing performance, assess recovery of the expected taxa, and
 identify whether taxa outside the standard's known composition
 appeared within the standard's own sequencing profile; since that
 composition is fully known, any such unexpected taxa would indicate
-contamination introduced during storage, the expedition, or laboratory
+contamination introduced during storage, the campaign, or laboratory
 processing. Trips~1 and 2 used the ZymoBIOMICS HMW DNA Standard
 (D6322), a purified-DNA standard added directly at the PCR step rather
 than passed through extraction. Trip~3 used the whole-cell ZymoBIOMICS
 Microbial Community Standard (D6300). Trip~4 was not accompanied by a
 positive standard or a soil-based negative control in the field, and
-no mock community was taken on this expedition. Laboratory-based
+no mock community was taken on this campaign. Laboratory-based
 controls for Trip~4 consisted of extraction blanks (one per extraction
 day), a water-based no-template control, a reagent-only PCR blank, and
 a positive control used to confirm amplification success, checked by
@@ -240,7 +240,7 @@ buffer supplied with the respective kit.
 One extraction blank was processed alongside each extraction-day batch
 and carried through the same extraction procedure as the biological
 samples. Because extraction days were trip-specific, each extraction
-blank is associated with a single expedition. Extraction blanks were
+blank is associated with a single campaign. Extraction blanks were
 quantified and included in the downstream 16S rRNA gene amplification
 and sequencing workflow when a corresponding library was generated;
 exceptions are described above.
@@ -309,7 +309,7 @@ Bioscience Core Lab at KAUST.
 \subsection{Sequencing data processing}
 
 We processed raw amplicon reads with nf-core/ampliseq (v2.14.0)
-\cite{nfcore, ampliseq}, applying the DADA2 algorithm for error
+\cite{nfcore, ampliseq}, applying the DADA2 algorithm \cite{dada2} for error
 correction and denoising, and assigning taxonomy against the SILVA
 database (v138.2) \cite{silva}. The dataset comprises 1,268 sequencing libraries from 1,238 samples; 30 samples were sequenced twice.
 %A portable samplesheet regenerated from the deposited submission records covers 1,268 submitted run rows over 1,238 distinct sample identifiers, of which 30 carry a second library.
@@ -333,7 +333,7 @@ candidate set is used only in a bounded sensitivity analysis
 (Section~\ref{usage}).
 
 We calculated genome-level %-encoded
-functional potential with PICRUSt2 (v2.4.1) and used it for the companion analysis.
+functional potential with PICRUSt2 (v2.4.1) \cite{picrust2} and used it for the companion analysis.
 %was predicted with PICRUSt2 v2.4.1; its
 The execution manifest with the
 exact commands, hidden-state method, edge exponent, seed and
@@ -353,13 +353,13 @@ thresholds, is archived with the release.
 
 Two of the tabular companion-analysis inputs distributed with the
 deposit (Section~\ref{records}) derive from a separate shotgun
-metagenomic study of the same expeditions rather than from the 16S
+metagenomic study of the same campaigns rather than from the 16S
 workflow above. A catalogue of metagenome-assembled genomes was
 assembled, binned and dereplicated in that study; its assembly and
 binning parameters and its read accessions are reported there and
 are not yet recorded in this deposit \todo{assembly, binning and CoverM
 versions; shotgun read accessions}. From that catalogue we distribute
-(i) 150 per-library CoverM genome-relative-abundance tables (one
+(i) 150 per-library CoverM \cite{coverm} genome-relative-abundance tables (one
 column per shotgun library, in percent of reads, with the unmapped
 fraction retained as its own row) and (ii) the eggNOG-mapper v2.1.12
 annotation table \cite{eggnog} of the concatenated predicted proteome,
@@ -394,7 +394,7 @@ those sites have repeated complete sessions. The field
 measurements do not refer to a specific specimen,
 so field and
 laboratory linkage is site-level rather than a same aliquot
-comparison. Archived material from all five expeditions was
+comparison. Archived material from all five campaigns was
 subsequently measured in the laboratory. The laboratory
 inputs contain 547 selected sample records from Trips~1--4 and 178
 from Trip~5 (725 records in total).

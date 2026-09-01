@@ -3,7 +3,7 @@
 The Rub' al-Khali (Empty Quarter) is the largest contiguous sand desert on Earth, a hyper-arid environment that spans approximately 500,000
 km$^2$ of the southern Arabian Peninsula
 \cite{mandaville_1986}. The region is characterized by extreme atmospheric temperatures that fluctuate, 
-%recorded during our expeditions spanned 20.0--49.4\degree C across 273 field observations,
+%recorded during our campaigns spanned 20.0--49.4\degree C across 273 field observations,
 %and the region receives
 negligible and highly irregular
 rainfall \cite{nelli2024wind}, and high humidity in the western edge \cite{yasir2015saudi}. Despite these abiotic stresses, hyper-arid desert soils
@@ -38,7 +38,7 @@ and endosphere communities \cite{mousa2024}.
 %These studies establish that a Saudi arid-soil survey is not itself new.
 These studies establish that a survey of hyperarid soils in Saudi Arabia is not itself new.
 What remains missing
-is a repeated, multi-expedition transect in which every community profile, %is connected to its provenance across locations, physical specimens, molecular products, environmental observations, climate, and geochemistry.
+is a repeated, multi-campaign transect in which every community profile, %is connected to its provenance across locations, physical specimens, molecular products, environmental observations, climate, and geochemistry.
 the sample it came from, and the measurements taken alongside it form a connected record that can be queried directly rather than assembled from separate data records.
 
 To characterize complex ecosystems, researchers must integrate
@@ -73,7 +73,7 @@ on macroscopic scale and do not cover different levels of granularity; modeling 
 
 Constructing such a resource for an entire desert ecosystem requires
 addressing several interlocking challenges that have shaped the design
-of this work. First, the data are produced by heterogeneous
+of this work. First, data are produced by heterogeneous
 instruments and protocols (16S amplicon sequencing, X-ray
 fluorescence, GPS-tagged field notes, gridded climate
 records), so a \emph{unified data model} is needed that can
@@ -81,7 +81,7 @@ represent samples, processes, qualities, and quantities under a
 common upper-level vocabulary rather than as disconnected tables.
 Second, taxonomic labels are reported by multiple classifier workflows as text strings, and the same label can denote different taxa across reference databases and releases, so they must be harmonized against a single
 reference taxonomy without losing the original assertions. Third,
-because data are deposited in batches over five field expeditions,
+because data are deposited in batches over five field campaigns,
 \emph{schema validation at ingest} is required to catch
 structural errors before they propagate into the graph. Fourth, the
 knowledge graph must support \emph{semantic query answering at
@@ -110,7 +110,7 @@ microbial taxa with traits, environments and growth preferences
 functional and biomedical sources for metagenomic applications
 \cite{metagenomickg2026}. These resources establish that a microbiome
 knowledge graph is not itself novel. The contribution of the present
-resource is the joined, expedition-level provenance of locations,
+resource is the joined, campaign-level provenance of locations,
 physical specimens, laboratory processes, geochemistry, climate,
 sequence runs, quality control and taxon observations from a single
 landscape survey, rather than vocabulary coverage or graph
@@ -123,7 +123,7 @@ The knowledge graph is expressed in OWL 2 DL \cite{owl2} and built from
 RDF instance data \cite{rdf}; because reasoning over the full graph in
 OWL 2 DL is infeasible, its consistency is checked under the OWL 2 EL
 profile with the ELK reasoner (Section~\ref{valid}). This
-knowledge graph integrates data from five field expeditions
+knowledge graph integrates data from five field campaigns
 (2023--2025) along a transect of more than 1,000 km across the Saudi
 Rub' al-Khali, from the western escarpment to the eastern border with
 Oman. A versioned source ledger of 2,550 rows 
@@ -138,7 +138,7 @@ across 64 numeric site labels. We incorporated X-ray fluorescence
 in-situ handheld field sessions %at 58 Trip~5 sites
 , and %725
 processed
-laboratory records of archived material from all five expeditions. We
+laboratory records of archived material from all five campaigns. We
 further integrated site-specific environmental metadata recorded at
 each visit (274 field logs), 712 admitted archived-soil pH
 observations, and monthly climate records derived from the Open-Meteo
@@ -169,7 +169,7 @@ This resource makes several contributions. On the scientific side,
 it provides a coordinated multi-trip desert microbiome and
 geochemistry dataset---16S rRNA amplicon profiles, XRF elemental
 measurements, archived-soil pH, GPS-tagged field metadata, and monthly
-climate records---for 2{,}516 sample individuals from five expeditions
+climate records---for 2{,}516 sample individuals from five campaigns
 across a 1{,}043~km transect of the Rub' al-Khali, together with a
 harmonized taxonomic abundance table that maps amplicon sequence
 variants onto NCBI Taxonomy while preserving the original assertions.

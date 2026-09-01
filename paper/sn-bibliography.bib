@@ -1,10 +1,16 @@
 % ===== Bioinformatics tools =====
 
 @article{illumina16S,
-  title={Preparing 16S ribosomal RNA gene amplicons for the Illumina MiSeq system},
-  author={Illumina},
-  journal={Illumina technical note},
-  year={2011}
+  author       = {{Illumina}},
+  title        = {16S Metagenomic Sequencing Library Preparation:
+                  Preparing 16S Ribosomal RNA Gene Amplicons for the
+                  Illumina MiSeq System},
+  howpublished = {Illumina technical documentation,
+                  Part No.\ 15044223 Rev.\ B},
+  year         = {2013},
+  note         = {Available at
+            \url{https://support.illumina.com/documents/documentation/chemistry_documentation/16s/16s-metagenomic-library-prep-guide-15044223-b.pdf};
+                  accessed 27 August 2026},
 }
 
 @article{qiime2,
@@ -16,6 +22,18 @@
   pages={852--857},
   year={2019},
   publisher={Nature Publishing Group}
+}
+
+@article{picrust2,
+  title={{PICRUSt2} for prediction of metagenome functions},
+  author={Douglas, Gavin M. and Maffei, Vincent J. and Zaneveld, Jesse R. and Yurgel, Svetlana N. and Brown, James R. and Taylor, Christopher M. and Huttenhower, Curtis and Langille, Morgan G. I.},
+  journal={Nature Biotechnology},
+  volume={38},
+  number={6},
+  pages={685--688},
+  year={2020},
+  publisher={Nature Publishing Group},
+  doi={10.1038/s41587-020-0548-6}
 }
 
 @article{ampliseq,
@@ -36,7 +54,8 @@
   number={3},
   pages={276--278},
   year={2020},
-  publisher={Nature Publishing Group}
+  publisher={Nature Publishing Group},
+  doi={10.1038/s41587-020-0439-x}
 }
 
 @article{dada2,
@@ -57,7 +76,7 @@
   journal={Nucleic Acids Research},
   volume={50},
   number={D1},
-  pages={D199--D207},
+  pages={D785--D794},
   year={2022},
   publisher={Oxford University Press},
   doi={10.1093/nar/gkab776}
@@ -83,7 +102,19 @@
   number={17},
   pages={i884--i890},
   year={2018},
-  publisher={Oxford University Press}
+  publisher={Oxford University Press},
+  doi={10.1093/bioinformatics/bty560}
+}
+
+@article{coverm,
+  title={{CoverM}: read alignment statistics for metagenomics},
+  author={Aroney, Samuel T. N. and Newell, Rhys J. P. and Nissen, Jakob N. and Camargo, Antonio Pedro and Tyson, Gene W. and Woodcroft, Ben J.},
+  journal={Bioinformatics},
+  volume={41},
+  number={4},
+  pages={btaf147},
+  year={2025},
+  doi={10.1093/bioinformatics/btaf147}
 }
 
 @article{megahit,
@@ -243,23 +274,26 @@
 
 % ===== Ontologies and semantic web =====
 
-@article{owl2,
-  title={{OWL} 2 {Web} {Ontology} {Language} document overview},
-  author={Motik, Boris and Grau, Bernardo Cuenca and Horrocks, Ian and Wu, Zhe and Fokoue, Achille and Lutz, Carsten},
-  journal={W3C Recommendation},
+@techreport{owl2,
+  title={{OWL} 2 {Web} {Ontology} {Language} {Document} {Overview} ({Second} {Edition})},
+  author={{W3C OWL Working Group}},
+  institution={W3C},
+  type={W3C Recommendation},
   year={2012},
+  month=dec,
   note={\url{https://www.w3.org/TR/owl2-overview/}}
 }
 
 @article{sio,
   title={The {Semanticscience} {Integrated} {Ontology} ({SIO}) for biomedical research and knowledge discovery},
-  author={Dumontier, Michel and Baker, Christopher JO and Baran, Joachim and Callahan, Alison and Chepelev, Leonid and Cruz-Toledo, Jos{\'e} and Del Rio, Nicholas R and Duck, Geraint and Furlong, Laura I and Keast, Nichealla and others},
+  author={Dumontier, Michel and Baker, Christopher JO and Baran, Joachim and Callahan, Alison and Chepelev, Leonid and Cruz-Toledo, Jos{\'e} and Del Rio, Nicholas R and Duck, Geraint and Furlong, Laura I and Keath, Nichealla and others},
   journal={Journal of Biomedical Semantics},
   volume={5},
   number={1},
   pages={14},
   year={2014},
-  publisher={BioMed Central}
+  publisher={BioMed Central},
+  doi={10.1186/2041-1480-5-14}
 }
 
 @article{envo,
@@ -279,9 +313,10 @@
   journal={Nucleic Acids Research},
   volume={36},
   number={suppl\_1},
-  pages={D453--D462},
+  pages={D344--D350},
   year={2008},
-  publisher={Oxford University Press}
+  publisher={Oxford University Press},
+  doi={10.1093/nar/gkm791}
 }
 
 @article{pato,
@@ -306,12 +341,13 @@
 
 @article{ncbitaxon,
   title={{NCBI} {Taxonomy}: a comprehensive update on curation, resources and tools},
-  author={Schoch, Conrad L and Ciufo, Stacy and Domrachev, Mikhail and Hotton, Carol L and Kannan, Sivakumar and Khovanskaya, Oksana and Leipe, Detlef and Mcveigh, Richard and O'Neill, Kathleen and Robbertse, Barbara and others},
+  author={Schoch, Conrad L and Ciufo, Stacy and Domrachev, Mikhail and Hotton, Carol L and Kannan, Sivakumar and Khovanskaya, Rogneda and Leipe, Detlef and Mcveigh, Richard and O'Neill, Kathleen and Robbertse, Barbara and others},
   journal={Database},
   volume={2020},
   pages={baaa062},
   year={2020},
-  publisher={Oxford University Press}
+  publisher={Oxford University Press},
+  doi={10.1093/database/baaa062}
 }
 
 @article{owlapi,
@@ -325,12 +361,15 @@
   publisher={IOS Press}
 }
 
-@article{shex,
+@inproceedings{shex,
   title={Shape {Expressions}: an {RDF} validation and transformation language},
   author={Prud'hommeaux, Eric and Labra Gayo, Jose Emilio and Solbrig, Harold},
-  journal={Proceedings of the 10th International Conference on Semantic Systems},
+  booktitle={Proceedings of the 10th International Conference on Semantic Systems ({SEM} '14)},
   pages={32--40},
-  year={2014}
+  year={2014},
+  address={Leipzig, Germany},
+  publisher={ACM},
+  doi={10.1145/2660517.2660523}
 }
 
 @article{hermit,
@@ -354,11 +393,13 @@
   doi={10.1017/CBO9780511711787}
 }
 
-@article{sparql,
+@techreport{sparql,
   title={{SPARQL} 1.1 {Query} {Language}},
-  author={Harris, Steve and Seaborne, Andy and Prud'hommeaux, Eric},
-  journal={W3C Recommendation},
+  author={Harris, Steve and Seaborne, Andy},
+  institution={W3C},
+  type={W3C Recommendation},
   year={2013},
+  month=mar,
   note={\url{https://www.w3.org/TR/sparql11-query/}}
 }
 
@@ -408,23 +449,25 @@
 
 @article{digitaltwin2021,
   title={Digital twins: State of the art theory and practice, challenges, and open research questions},
-  author={Jones, David and Snider, Chris and Nassehi, Aydin and Yon, Jason and Hicks, Ben},
-  journal={Journal of Manufacturing Systems},
-  volume={60},
-  pages={411--432},
-  year={2021},
-  publisher={Elsevier}
+  author={Sharma, Angira and Kosasih, Edward and Zhang, Jie and Brintrup, Alexandra and Calinescu, Anisoara},
+  journal={Journal of Industrial Information Integration},
+  volume={30},
+  pages={100383},
+  year={2022},
+  publisher={Elsevier},
+  doi={10.1016/j.jii.2022.100383}
 }
 
 @article{destinationearth,
-  title={Destination {Earth}: a digital twin of {Earth} for the green transition},
+  title={A digital twin of {Earth} for the green transition},
   author={Bauer, Peter and Stevens, Bj{\"o}rn and Hazeleger, Wilco},
   journal={Nature Climate Change},
   volume={11},
   number={2},
   pages={80--83},
   year={2021},
-  publisher={Nature Publishing Group}
+  publisher={Nature Publishing Group},
+  doi={10.1038/s41558-021-00986-y}
 }
 
 @article{biodigitaltwin,
@@ -441,7 +484,7 @@
 % ===== Digital twin and ecology =====
 
 @article{khan2025,
-  title={{TwinEco}: a unified framework for dynamic data-driven digital twins in ecology},
+  title={{TwinEco}: A unified framework for dynamic data-driven digital twins in ecology},
   author={Khan, Taimur and de Koning, Koen and Endresen, Dag and Chala, Desalegn and Kusch, Erik},
   journal={Ecological Informatics},
   volume={91},
@@ -467,6 +510,7 @@
   author={Ovaskainen, Otso and Winter, Steven and Tikhonov, Gleb and Lauha, Patrik and Lehti{\"o}, Ari and Nokelainen, Ossi and Abrego, Nerea and Aroluoma, Anni and Harrison, Jesse Patrick and Heikkinen, Mikko and others},
   journal={Nature Ecology \& Evolution},
   volume={10},
+  number={3},
   pages={481--495},
   year={2026},
   publisher={Nature Publishing Group},
@@ -478,7 +522,8 @@
   author={Islam, Sharif and Koivula, Hanna and Andrew, Carrie and Lopez Gordillo, Julian and Weiland, Claus and Schigel, Dmitry and Endresen, Dag and Arvanitidis, Christos and Chadwick, Eli and Soiland-Reyes, Stian},
   journal={npj Biodiversity},
   volume={5},
-  number={5},
+  number={1},
+  pages={5},
   year={2026},
   publisher={Nature Publishing Group},
   doi={10.1038/s44185-025-00116-3}
@@ -493,7 +538,8 @@
   number={6},
   pages={e2024EA003512},
   year={2024},
-  publisher={Wiley Online Library}
+  publisher={Wiley Online Library},
+  doi={10.1029/2024EA003512}
 }
 
 @article{mandaville_1986,
@@ -506,12 +552,15 @@
   doi={10.1017/s0269727000008988}
 }
 
-@article{thomas2000deserts,
-  title={Arid zone geomorphology: process, form and change in drylands},
-  author={Thomas, David SG},
+@book{thomas2000deserts,
+  title={Arid zone geomorphology: Process, form and change in drylands},
+ editor={Thomas, David S. G.},
+  edition={3rd},
   year={2011},
   publisher={John Wiley \& Sons},
-  edition={3rd}
+  address={Chichester, UK},
+  isbn={9780470519097},
+  doi={10.1002/9780470710777}
 }
 
 @article{antonsanddesert,
@@ -531,7 +580,8 @@
   number={2},
   pages={203--221},
   year={2015},
-  publisher={Oxford University Press}
+  publisher={Oxford University Press},
+  doi={10.1093/femsre/fuu011}
 }
 
 @article{fierer2017,
@@ -542,7 +592,8 @@
   number={10},
   pages={579--590},
   year={2017},
-  publisher={Nature Publishing Group}
+  publisher={Nature Publishing Group},
+  doi={10.1038/nrmicro.2017.87}
 }
 
 @article{fierer2025controls,
@@ -752,11 +803,13 @@
   publisher={ACM}
 }
 
-@article{rdf,
-  title={{RDF} 1.1 concepts and abstract syntax},
+@techreport{rdf,
+  title={{RDF} 1.1 {Concepts} and {Abstract} {Syntax}},
   author={Cyganiak, Richard and Wood, David and Lanthaler, Markus},
-  journal={W3C Recommendation},
+  institution={W3C},
+  type={W3C Recommendation},
   year={2014},
+  month=feb,
   note={\url{https://www.w3.org/TR/rdf11-concepts/}}
 }
 
@@ -785,6 +838,7 @@
   author={Kelliher, Julia M. and Mirzayi, Chloe and Bordenstein, Sarah R. and Oliver, Aaron and Kellogg, Christina A. and Hatcher, Eneida L. and Berg, Maureen and Baldrian, Petr and Aljumaah, Mashael and others},
   journal={Nature Microbiology},
   volume={10},
+  number={12},
   pages={3059--3068},
   year={2025},
   doi={10.1038/s41564-025-02186-2}
@@ -823,9 +877,10 @@
   journal={Journal of Automated Reasoning},
   publisher={Springer Science and Business Media LLC},
   author={Kazakov, Yevgeny and Kr\"otzsch, Markus and Siman\v{c}\'ik, Franti\v{s}ek},
-  year={2013},
+  year={2014},
   month=nov,
-  pages={1--61}
+  pages={1--61},
+  doi={10.1007/s10817-013-9296-3}
 }
 
 @inproceedings{sulo2025,
