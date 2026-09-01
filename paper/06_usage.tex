@@ -6,6 +6,47 @@ The semantic structure of the knowledge graph enables cross-domain queries. For 
 
 The modular OWL architecture permits extending the knowledge graph with new data types, such as metabolomics or remote sensing data. Users can introduce new classes as subclasses of existing SIO entities and generate corresponding ABox modules. We automate the entire lifecycle---from data generation through validation to database loading---using the provided deployment workflow (\texttt{deploy\_onto.sh}).
 
+\subsection{Use cases}
+
+Two worked use cases illustrate how the graph supports analyses that
+its individual source tables do not, following the practice of
+resource papers such as Tara Oceans \cite{taraoceans2015} and
+MetagenomicKG \cite{metagenomickg2026} of demonstrating utility on
+concrete questions.
+
+\paragraph{Use case 1: environmental context for a community
+observation.} A reuser studying thermotolerance wants the bacterial
+genera observed at the hottest sampled sites, together with the
+geochemical and climate context of those sites. Because field
+measurements, XRF sessions, climate records and taxon observations
+all instantiate the same measurement idiom around the same site
+individuals (Section~\ref{ontology}), this is a single SPARQL query
+rather than a chain of table joins keyed on inconsistent site labels:
+Listing~\ref{lst:sparql_env_tax} retrieves \textit{Pseudomonas}
+relative abundance at sites whose recorded field temperature exceeds
+a threshold, and the same pattern extended with the geochemistry
+fragment of Listing~\ref{lst:sparql_xrf} adds, for example, calcium
+concentrations or monthly precipitation for the returned sites. The
+competency questions of Table~\ref{tab:cq} are regression-tested
+variants of exactly these traversals, so the query routes shown here
+are re-validated whenever the graph is rebuilt.
+
+\paragraph{Use case 2: batch-aware contamination sensitivity.} The
+laboratory-control pattern (Section~\ref{ontology}) links every
+extraction blank to its extraction batch, and every biological
+profile to the batch that produced it. The companion ecology analysis
+\cite{ecology_companion} consumed these frozen links directly: the
+351 candidate contaminant ASVs identified from the Trip~5 blanks were
+removed only from the 217 batch-linked Trip~5 profiles (and the
+corresponding Trip~4 screen only from its linked profiles), never
+from unlinked ones, and the analysis then re-evaluated its tracked
+headline conclusions on the filtered table; every verdict was
+retained. The candidate tables, filtered-table builder and per-metric
+outcomes are archived as evidence bundles in the reproducibility
+repository, so a reuser can repeat the sensitivity analysis under a
+different candidate set or link stringency without re-deriving the
+batch structure from laboratory records.
+
 \subsection{Design rationale}
 
 We adopted the Semanticscience Integrated Ontology (SIO) as the

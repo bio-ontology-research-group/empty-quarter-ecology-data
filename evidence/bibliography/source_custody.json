@@ -1,8 +1,8 @@
 {
   "bibliography": "paper/sn-bibliography.bib",
-  "bibliography_entries": 96,
-  "bibliography_sha256": "f4c2fbc17b91cdb7809151aeb7d32da71b40c380d426734bcce2f9c5f603e85c",
-  "cited_keys": 64,
+  "bibliography_entries": 99,
+  "bibliography_sha256": "e2e597306edb1eafa4f97dace77273df63c433c1ec43829ce7f2ed1ecc3e350d",
+  "cited_keys": 68,
   "keys_missing_from_bibliography": [],
   "keys_without_local_copy": [
     "alawthan2024reserve",
@@ -13,6 +13,8 @@
     "biodigitaltwin",
     "blancosacristan2025biocrust",
     "chebi",
+    "coverm",
+    "dada2",
     "destinationearth",
     "digitaltwin2021",
     "dlhandbook",
@@ -57,6 +59,7 @@
     "owlapi",
     "owlhorst",
     "pato",
+    "picrust2",
     "pubchem",
     "qiime2",
     "rdf",
@@ -66,6 +69,7 @@
     "sparql",
     "streams2025",
     "sulo2025",
+    "taraoceans2015",
     "uo",
     "virtuoso",
     "yasir2015saudi"
@@ -158,7 +162,7 @@
         "kr_supplement.tex"
       ],
       "custody": "no_local_copy",
-      "doi": "",
+      "doi": "10.1093/nar/gkm791",
       "in_bibliography": true,
       "key": "chebi",
       "local_copies": [],
@@ -166,21 +170,43 @@
     },
     {
       "cited_in": [
-        "01_introduction.tex"
+        "02_methods.tex"
       ],
       "custody": "no_local_copy",
-      "doi": "",
+      "doi": "10.1093/bioinformatics/btaf147",
       "in_bibliography": true,
-      "key": "destinationearth",
+      "key": "coverm",
       "local_copies": [],
-      "title": "Destination {Earth}: a digital twin of {Earth} for the green transition"
+      "title": "{CoverM}: read alignment statistics for metagenomics"
+    },
+    {
+      "cited_in": [
+        "02_methods.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.1038/nmeth.3869",
+      "in_bibliography": true,
+      "key": "dada2",
+      "local_copies": [],
+      "title": "{DADA2}: high-resolution sample inference from {Illumina} amplicon data"
     },
     {
       "cited_in": [
         "01_introduction.tex"
       ],
       "custody": "no_local_copy",
-      "doi": "",
+      "doi": "10.1038/s41558-021-00986-y",
+      "in_bibliography": true,
+      "key": "destinationearth",
+      "local_copies": [],
+      "title": "A digital twin of {Earth} for the green transition"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.1016/j.jii.2022.100383",
       "in_bibliography": true,
       "key": "digitaltwin2021",
       "local_copies": [],
@@ -199,7 +225,8 @@
     },
     {
       "cited_in": [
-        "01_introduction.tex"
+        "01_introduction.tex",
+        "06_usage.tex"
       ],
       "custody": "no_local_copy",
       "doi": "",
@@ -271,7 +298,7 @@
         "01_introduction.tex"
       ],
       "custody": "no_local_copy",
-      "doi": "",
+      "doi": "10.1038/nrmicro.2017.87",
       "in_bibliography": true,
       "key": "fierer2017",
       "local_copies": [],
@@ -352,7 +379,7 @@
       "in_bibliography": true,
       "key": "illumina16S",
       "local_copies": [],
-      "title": "Preparing 16S ribosomal RNA gene amplicons for the Illumina MiSeq system"
+      "title": "16S Metagenomic Sequencing Library Preparation:\n                  Preparing 16S Ribosomal RNA Gene Amplicons for the\n                  Illumina MiSeq System"
     },
     {
       "cited_in": [
@@ -396,7 +423,7 @@
       "in_bibliography": true,
       "key": "khan2025",
       "local_copies": [],
-      "title": "{TwinEco}: a unified framework for dynamic data-driven digital twins in ecology"
+      "title": "{TwinEco}: A unified framework for dynamic data-driven digital twins in ecology"
     },
     {
       "cited_in": [
@@ -414,7 +441,7 @@
         "01_introduction.tex"
       ],
       "custody": "no_local_copy",
-      "doi": "",
+      "doi": "10.1093/femsre/fuu011",
       "in_bibliography": true,
       "key": "makhalanyane2015",
       "local_copies": [],
@@ -477,7 +504,8 @@
     },
     {
       "cited_in": [
-        "01_introduction.tex"
+        "01_introduction.tex",
+        "06_usage.tex"
       ],
       "custody": "no_local_copy",
       "doi": "10.1093/bioinformatics/btag421",
@@ -536,7 +564,7 @@
         "02_methods_taxonomy.tex"
       ],
       "custody": "no_local_copy",
-      "doi": "",
+      "doi": "10.1093/database/baaa062",
       "in_bibliography": true,
       "key": "ncbitaxon",
       "local_copies": [],
@@ -547,7 +575,7 @@
         "01_introduction.tex"
       ],
       "custody": "no_local_copy",
-      "doi": "",
+      "doi": "10.1029/2024EA003512",
       "in_bibliography": true,
       "key": "nelli2024wind",
       "local_copies": [],
@@ -558,7 +586,7 @@
         "02_methods.tex"
       ],
       "custody": "no_local_copy",
-      "doi": "",
+      "doi": "10.1038/s41587-020-0439-x",
       "in_bibliography": true,
       "key": "nfcore",
       "local_copies": [],
@@ -619,7 +647,7 @@
       "in_bibliography": true,
       "key": "owl2",
       "local_copies": [],
-      "title": "{OWL} 2 {Web} {Ontology} {Language} document overview"
+      "title": "{OWL} 2 {Web} {Ontology} {Language} {Document} {Overview} ({Second} {Edition})"
     },
     {
       "cited_in": [
@@ -658,6 +686,17 @@
     },
     {
       "cited_in": [
+        "02_methods.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.1038/s41587-020-0548-6",
+      "in_bibliography": true,
+      "key": "picrust2",
+      "local_copies": [],
+      "title": "{PICRUSt2} for prediction of metagenome functions"
+    },
+    {
+      "cited_in": [
         "02_methods.tex",
         "03_knowledge_representation.tex",
         "kr_supplement.tex"
@@ -689,7 +728,7 @@
       "in_bibliography": true,
       "key": "rdf",
       "local_copies": [],
-      "title": "{RDF} 1.1 concepts and abstract syntax"
+      "title": "{RDF} 1.1 {Concepts} and {Abstract} {Syntax}"
     },
     {
       "cited_in": [
@@ -697,7 +736,7 @@
         "03_knowledge_representation.tex"
       ],
       "custody": "no_local_copy",
-      "doi": "",
+      "doi": "10.1145/2660517.2660523",
       "in_bibliography": true,
       "key": "shex",
       "local_copies": [],
@@ -721,7 +760,7 @@
         "03_knowledge_representation.tex"
       ],
       "custody": "no_local_copy",
-      "doi": "",
+      "doi": "10.1186/2041-1480-5-14",
       "in_bibliography": true,
       "key": "sio",
       "local_copies": [],
@@ -759,6 +798,18 @@
       "key": "sulo2025",
       "local_copies": [],
       "title": "{SULO} -- a simplified upper-level ontology"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex",
+        "06_usage.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.1038/sdata.2015.23",
+      "in_bibliography": true,
+      "key": "taraoceans2015",
+      "local_copies": [],
+      "title": "Open science resources for the discovery and analysis of {Tara} {Oceans} data"
     },
     {
       "cited_in": [

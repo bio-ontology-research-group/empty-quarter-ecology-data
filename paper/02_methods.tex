@@ -315,6 +315,10 @@ database (v138.2) \cite{silva}. The dataset comprises 1,268 sequencing libraries
 %A portable samplesheet regenerated from the deposited submission records covers 1,268 submitted run rows over 1,238 distinct sample identifiers, of which 30 carry a second library.
 This resulted in a canonical feature table of 351,472 amplicon sequence
 variants (ASVs) prior to contaminant removal, covering samples from Trips~1--5 and 24 control samples.
+Of its 1,271 profiles, 1,247 are biological; quality filtering excludes
+the 24 control profiles and 10 biological profiles with fewer than
+1,000 reads, leaving the 1,237 profiles used by the companion ecology
+analysis. The complete table is distributed unfiltered.
 
 %A QIIME2 \cite{qiime2} \emph{decontam} branch exists in the analysis tree, but it operated on a different and smaller table, and in the form that survives the command that would have produced the contaminant table is commented out while a later step consumes that missing artifact. No removal fraction from that branch is defensible, and we do not restate a prevalence threshold as an applied filter.
 
@@ -355,10 +359,11 @@ Two of the tabular companion-analysis inputs distributed with the
 deposit (Section~\ref{records}) derive from a separate shotgun
 metagenomic study of the same campaigns rather than from the 16S
 workflow above. A catalogue of metagenome-assembled genomes was
-assembled, binned and dereplicated in that study; its assembly and
-binning parameters and its read accessions are reported there and
-are not yet recorded in this deposit \todo{assembly, binning and CoverM
-versions; shotgun read accessions}. From that catalogue we distribute
+assembled, binned and dereplicated in that study. The shotgun data
+raise their own assembly, binning and profiling challenges and will be
+reported later as a separate study; its assembly and binning
+parameters and its read accessions belong to that report and are not
+recorded in this deposit. From that catalogue we distribute
 (i) 150 per-library CoverM \cite{coverm} genome-relative-abundance tables (one
 column per shotgun library, in percent of reads, with the unmapped
 fraction retained as its own row) and (ii) the eggNOG-mapper v2.1.12
