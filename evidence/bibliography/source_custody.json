@@ -1,8 +1,8 @@
 {
   "bibliography": "paper/sn-bibliography.bib",
-  "bibliography_entries": 99,
-  "bibliography_sha256": "e2e597306edb1eafa4f97dace77273df63c433c1ec43829ce7f2ed1ecc3e350d",
-  "cited_keys": 68,
+  "bibliography_entries": 100,
+  "bibliography_sha256": "72af91cfde530ac1ff7a9d35d83546055f97ab2e501fae743cd350c0a4c759af",
+  "cited_keys": 69,
   "keys_missing_from_bibliography": [],
   "keys_without_local_copy": [
     "alawthan2024reserve",
@@ -10,10 +10,11 @@
     "ampliseq",
     "aslam2016rainfall",
     "balvovciute2017silva",
-    "biodigitaltwin",
     "blancosacristan2025biocrust",
     "chebi",
     "coverm",
+    "cropsinsilico2017",
+    "cuencagrau2008modular",
     "dada2",
     "destinationearth",
     "digitaltwin2021",
@@ -26,10 +27,11 @@
     "fair",
     "fierer2017",
     "fierer2025controls",
+    "ganapathysubramanian2025twins",
+    "gkoutos2018anatomy",
     "gopi2026sabkha",
     "gtdb",
     "hermit",
-    "hitzler_modularity",
     "iglesias2026",
     "illumina16S",
     "islam2026",
@@ -58,7 +60,6 @@
     "owl2",
     "owlapi",
     "owlhorst",
-    "pato",
     "picrust2",
     "pubchem",
     "qiime2",
@@ -137,17 +138,6 @@
         "01_introduction.tex"
       ],
       "custody": "no_local_copy",
-      "doi": "",
-      "in_bibliography": true,
-      "key": "biodigitaltwin",
-      "local_copies": [],
-      "title": "Towards a digital twin for plant biology"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
       "doi": "10.1017/dry.2025.10007",
       "in_bibliography": true,
       "key": "blancosacristan2025biocrust",
@@ -178,6 +168,28 @@
       "key": "coverm",
       "local_copies": [],
       "title": "{CoverM}: read alignment statistics for metagenomics"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.3389/fpls.2017.00786",
+      "in_bibliography": true,
+      "key": "cropsinsilico2017",
+      "local_copies": [],
+      "title": "Crops In Silico: Generating Virtual Crops Using an Integrative and Multi-scale Modeling Platform"
+    },
+    {
+      "cited_in": [
+        "03_knowledge_representation.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.1613/jair.2375",
+      "in_bibliography": true,
+      "key": "cuencagrau2008modular",
+      "local_copies": [],
+      "title": "Modular reuse of ontologies: theory and practice"
     },
     {
       "cited_in": [
@@ -320,6 +332,28 @@
         "01_introduction.tex"
       ],
       "custody": "no_local_copy",
+      "doi": "10.1016/j.tplants.2024.12.013",
+      "in_bibliography": true,
+      "key": "ganapathysubramanian2025twins",
+      "local_copies": [],
+      "title": "Digital twins for the plant sciences"
+    },
+    {
+      "cited_in": [
+        "03_knowledge_representation.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "10.1093/bib/bbx035",
+      "in_bibliography": true,
+      "key": "gkoutos2018anatomy",
+      "local_copies": [],
+      "title": "The anatomy of phenotype ontologies: principles, properties and applications"
+    },
+    {
+      "cited_in": [
+        "01_introduction.tex"
+      ],
+      "custody": "no_local_copy",
       "doi": "10.1016/j.egg.2026.100448",
       "in_bibliography": true,
       "key": "gopi2026sabkha",
@@ -347,17 +381,6 @@
       "key": "hermit",
       "local_copies": [],
       "title": "{HermiT}: an {OWL} 2 reasoner"
-    },
-    {
-      "cited_in": [
-        "03_knowledge_representation.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "",
-      "in_bibliography": true,
-      "key": "hitzler_modularity",
-      "local_copies": [],
-      "title": "A survey on ontology modularization"
     },
     {
       "cited_in": [
@@ -672,17 +695,6 @@
       "key": "owlhorst",
       "local_copies": [],
       "title": "Completeness, decidability and complexity of entailment for RDF Schema and a semantic extension involving the OWL vocabulary"
-    },
-    {
-      "cited_in": [
-        "03_knowledge_representation.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "",
-      "in_bibliography": true,
-      "key": "pato",
-      "local_copies": [],
-      "title": "The {Phenotype} {And} {Trait} {Ontology} ({PATO}): a standard for cross-species phenotype data integration"
     },
     {
       "cited_in": [
