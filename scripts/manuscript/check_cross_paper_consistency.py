@@ -152,8 +152,7 @@ def main() -> int:
     findings: list[dict] = []
 
     expected_ecology_title = (
-        "Landscape-scale bacterial biogeography across the Rub' al-Khali "
-        "reveals recurring spatial and soil-position structure"
+        "Landscape-scale bacterial biogeography across the Rub' al-Khali"
     )
     ecology_flat = re.sub(
         r"\s+",

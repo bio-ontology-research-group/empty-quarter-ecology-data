@@ -1,7 +1,7 @@
 {
   "bibliography": "paper/sn-bibliography.bib",
   "bibliography_entries": 100,
-  "bibliography_sha256": "72af91cfde530ac1ff7a9d35d83546055f97ab2e501fae743cd350c0a4c759af",
+  "bibliography_sha256": "3ef55f1a0849fec2b8c2296786728a0605d83e878b7aa99b66c69868fe264362",
   "cited_keys": 69,
   "keys_missing_from_bibliography": [],
   "keys_without_local_copy": [
@@ -238,6 +238,7 @@
     {
       "cited_in": [
         "01_introduction.tex",
+        "02_methods.tex",
         "06_usage.tex"
       ],
       "custody": "no_local_copy",
@@ -245,7 +246,7 @@
       "in_bibliography": true,
       "key": "ecology_companion",
       "local_copies": [],
-      "title": "Landscape-scale bacterial biogeography across the {Rub' al-Khali} reveals recurring spatial and soil-position structure"
+      "title": "Landscape-scale bacterial biogeography across the {Rub' al-Khali}"
     },
     {
       "cited_in": [

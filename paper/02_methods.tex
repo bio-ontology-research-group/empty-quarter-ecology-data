@@ -34,6 +34,11 @@ their records from
 analyses on the repeated campaign
 %inference over the intended repeated-campaign frame
 of sites~1--60.
+Deterministic corrections to the sample metadata are likewise recorded
+in a ledger without overwriting the source: in the records
+\texttt{F46Dr2}, \texttt{S46Dr2} and \texttt{V46Dr2}, the WGS library
+kit value \texttt{NEBNext} had shifted into the site column, and the
+ledger restores site~46 while retaining the original cell value.
 %because those regions could not be revisited.
 
 To capture temporal variability, we conducted campaigns across
@@ -48,6 +53,16 @@ separate workflows that are not interchangeable replicates: handheld
 in-situ measurements during Trip~5, and laboratory measurements of
 archived material from all five campaigns. 
 We compiled an environmental table from the original field sheets, recording every correction individually rather than editing the sheets, and retained all 274 non-blank records.
+The ledger records, for example, that the eight Trip~2 values
+34.5--41.9 stood in the humidity column of the source sheet while the
+temperature column was empty; the field note that the trip ended
+because of extreme temperature supports reading them as temperatures,
+and we do not infer Trip~2 pressure or humidity. It also records that
+the Trip~3 site~21 humidity of 31.321\% reproduces the fraction
+0.31321 in the original workbook, and that the Trip~5 site~40 source
+humidity of 194\% lies outside the physical range, so its
+curated value remains missing and the raw value is preserved only in
+the ledger.
 %We curated an environmental table from the immutable field sheets through an exact-cell correction ledger and retained all 274 nonblank records.
 
 \begin{table}[h]
@@ -87,7 +102,10 @@ At each site, we collected samples from three distinct soil
 compartments: bulk surface soil (0 cm depth), bulk subsurface soil
 (5--10 cm depth, hereafter ``deep''), and subsurface soil collected
 near roots (5--10 cm depth, hereafter ``root-adjacent''). 
-%The legacy label ``deep'' and the class label ``Deep Soil Sample'' denote the 5--10~cm bulk compartment and do not imply a greater sampling depth.
+The companion ecology analysis \cite{ecology_companion} calls the same
+5--10~cm bulk compartment ``shallow-subsurface''; the class label
+``Deep Soil Sample'' denotes that compartment and does not imply a
+greater sampling depth.
 We obtained three co-located field replicates per compartment by
 placing soil into sterile tubes, either by scooping soil directly into
 the tube or using sterile plastic spoons; these replicates are not
@@ -341,7 +359,10 @@ functional potential with PICRUSt2 (v2.4.1) \cite{picrust2} and used it for the 
 %was predicted with PICRUSt2 v2.4.1; its
 The execution manifest with the
 exact commands, hidden-state method, edge exponent, seed and
-thresholds, is archived with the release.
+thresholds, is archived with the release. The predictions came from
+two separately executed input sets, the Trips~1--4 ampliseq output and
+the corrected Trip~5 ampliseq output (330,830 ASVs); they were not generated from the
+later 351,472-ASV combined canonical table.
 
 % All deterministic metadata corrections are recorded without
 % overwriting the source values. For example, in three records the value
@@ -364,10 +385,13 @@ raise their own assembly, binning and profiling challenges and will be
 reported later as a separate study; its assembly and binning
 parameters and its read accessions belong to that report and are not
 recorded in this deposit. From that catalogue we distribute
-(i) 150 per-library CoverM \cite{coverm} genome-relative-abundance tables (one
+(i) 150 per-library CoverM \cite{coverm} genome-relative-abundance tables
+(\path{metadata/metagenome/coverm_profiles.tar.gz}; one
 column per shotgun library, in percent of reads, with the unmapped
 fraction retained as its own row) and (ii) the eggNOG-mapper v2.1.12
-annotation table \cite{eggnog} of the concatenated predicted proteome,
+annotation table \cite{eggnog}
+(\path{metadata/metagenome/eq.emapper.annotations.gz}) of the
+concatenated predicted proteome,
 run on the KAUST Ibex cluster on 14 June 2026, from which a
 990-genome by KEGG Orthology copy-number matrix is built for the
 genomes present in both inputs. These files are provided as records
@@ -380,7 +404,11 @@ the upstream assembly, binning or mapping reproducible.
 We retrieved historical climate data from the Open-Meteo archive
 endpoint \cite{openmeteo} for each sampling site using its geographic coordinates, yielding
 12,936 monthly records encompassing temperature, total precipitation,
-rainfall and relative humidity, as well as annual records.
+rainfall and relative humidity, as well as annual records. We ran two
+separately configured acquisitions: the monthly product covers
+1~January 2022 to 20~January 2026 and includes mean relative humidity,
+whereas the daily product covers 1~January 2022 to 1~February 2026 and
+reports temperature, total precipitation and rainfall, but not humidity.
 %source fields.
 %Retrieval keyed on the \texttt{Site} column of the per-trip geodata sheets, a field-notebook column rather than an integer primary key. Of the 81 distinct fetch keys, 66 resolve to a site individual (all 60 numbered sites and six named ones), which gives the released denominator of $66 \times 49$ months $\times$ four variables $=$ 12,936 monthly records. The remaining 15 keys carry an unrecorded offset or free-text label (for example \texttt{47+grass}, which records a reading taken near site~47 rather than a reading of it) and are quarantined rather than mapped onto their numeric stem
 % Exact site-key resolution retains 582 annual values in the graph and quarantines 54 values attached to unresolved field-notebook labels.
@@ -402,7 +430,9 @@ laboratory linkage is site-level rather than a same aliquot
 comparison. Archived material from all five campaigns was
 subsequently measured in the laboratory. The laboratory
 inputs contain 547 selected sample records from Trips~1--4 and 178
-from Trip~5 (725 records in total).
+from Trip~5 (725 records in total), and all 725 are used in the analyses;
+the retired 158- and 705-row artifacts (an earlier Trip~5 table and the
+cross-trip table built from it) are not analytical inputs.
 %, and all 725 enter the analyses. A former 158-row Trip~5 table and the resulting 705-row cross-trip table are retired legacy artifacts and are not analytical inputs.
 
 Both laboratory sources occasionally report the same formula more than once for one sample: the Trips~1--4 workbooks list a formula under several reporting sections (for example the element and oxide sections), and the Trip~5 workbook contains one sample (V14Dr1) with two readings. The two source-specific parsers resolve these repeats differently, taking the largest positive value for Trips~1--4 and the last reported row for Trip~5; neither policy is instrument-prescribed. The provenance audit reproduced all 13,390 reported Trips~1--4 cells and all 4,293 reported Trip~5 cells under these rules. In practice the two rules give the same value everywhere except three analyte cells (Al, Na and Si) of that one Trip~5 record, because repeated Trips~1--4 rows always carry identical values; a single rule would therefore change one of the 725 laboratory records, and the release discloses both policies rather than implying a common calibrated procedure.

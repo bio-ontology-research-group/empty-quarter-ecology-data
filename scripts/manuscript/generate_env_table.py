@@ -464,7 +464,7 @@ def render_latex(
         r"\begin{longtable}{llllllll}",
         (
             r"\caption{Site-specific field environmental observations across "
-            r"all expeditions. Values are generated from the immutable source "
+            r"all campaigns. Values are generated from the immutable source "
             r"sheets and the versioned correction ledger; a dash denotes an "
             r"unrecorded or quarantined value. Altitude was not recorded in "
             r"these field sheets.} \label{tab:env_data} \\"

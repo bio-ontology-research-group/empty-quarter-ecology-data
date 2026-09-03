@@ -3,7 +3,15 @@
 The resource is distributed as a single directory tree in which every
 payload file is declared in a machine-readable manifest
 (\texttt{PRE\_RELEASE\_MANIFEST.tsv}) with its byte size, SHA-256
-checksum, category, release status and licence gate. The raw
+checksum, category, release status and licence gate. The package
+builder adds \path{PRE_RELEASE_MANIFEST.tsv} itself explicitly rather
+than listing its own checksum recursively. Three payloads exceed
+256~MiB (\path{metadata/metagenome/eq.emapper.annotations.gz},
+\path{metadata/taxonomy/feature-table-trips1-5.tsv} and
+\path{ontology/rubalkhali_taxonomy_abox.ttl}); the downloadable
+reviewer archive omits them and lists them with byte size and SHA-256
+checksum in a separate bulk manifest, and a complete deposit supplies
+the byte-identical files. The raw
 sequencing data are deposited in the European Nucleotide Archive (ENA)
 under the umbrella project accession {\tt PRJEB104209}, with amplicon
 sequencing under project {\tt PRJEB106069}. The knowledge graph is
@@ -55,14 +63,30 @@ ledger linking site and trip to specimen, extraction, library,
 sequence run, quality-control decision and derived community; the
 canonical Trips~1--5 amplicon feature table and its taxonomy mapping;
 the correction and alias ledgers that record every deterministic
-metadata repair without overwriting source values; the curated field
+metadata repair without overwriting source values (the alias ledger
+maps the 36 genuine Trip-1-only records of numeric sites 61--64 to the
+four existing named site individuals); the curated field
 environmental table; the field and laboratory XRF tables together with
 the audited chemical-mapping ledger; and the versioned archived-soil
-pH dataset \texttt{EQ-PH-SHARED-v1.0.0}. The four derived
-companion-analysis inputs (the paired PMA table, the CoverM
-genome-abundance profiles, the eggNOG annotations and the
-measured-function input archive) are distributed as records for
-downstream statistical re-execution rather than as graph modules.
+pH dataset \texttt{EQ-PH-SHARED-v1.0.0}. The canonical feature table
+holds 1,271 profiles, of which the ecological analysis retains 1,237
+(1,227 profiles from the primary frame of sites~1--60); the 34 excluded
+profiles are the 24 controls, nine biological profiles
+below the declared 1,000-read ecological threshold and one additional
+\texttt{T1Dr1} run with 934 reads. The four derived
+companion-analysis inputs are distributed as records for downstream
+statistical re-execution rather than as graph modules: the paired PMA
+table (\path{metadata/relic-dna/PMA_ASV_table.tsv}; 18 analytical
+columns from nine aliquot pairs, PMA-treated and untreated, with
+controls kept separately), the 150 CoverM profiles
+(\path{metadata/metagenome/coverm_profiles.tar.gz}), the eggNOG
+annotations (\path{metadata/metagenome/eq.emapper.annotations.gz})
+behind the 990-genome analytical subset, and the measured-function
+input archive (\path{metadata/metagenome/measured_function_inputs.tar.gz})
+with the six exact source tables of the genome-derived versus PICRUSt2
+comparison. These inputs do not reproduce raw shotgun or PMA read
+processing, assembly, binning, dereplication, annotation or profile
+generation.
 
 \subsection{Validation schemas, queries and evidence}
 
@@ -72,12 +96,14 @@ family, the positive and negative structural fixtures, the archived
 competency SPARQL queries, and the machine-readable evidence bundles
 (reconciliation summaries, audit tables, validation records and
 checksum manifests) produced by the release workflow. A companion data
-dictionary (\texttt{metadata/DATA\_DICTIONARY.tsv}) records the field
+dictionary (\path{metadata/DATA_DICTIONARY.tsv}) records the field
 names, data types, units, missing-value conventions and definitions
 for the curated canonical tabular records. Quantities carry units only
 where a unit is documented at the source: environmental source tables
-retain degrees Celsius, hectopascals and percent relative humidity; in
-the graph, pressure magnitudes are asserted in pascals, climate
+retain degrees Celsius, hectopascals (millibars) and percent relative
+humidity; in the graph, pressure magnitudes are
+multiplied by 100 and asserted in pascals (\texttt{obo:UO\_0000110}),
+climate
 records use degrees Celsius and millimetres, and DNA concentrations
 are in nanograms per microlitre. XRF concentrations carry no
 documented unit assertion and must not be treated as percentages.

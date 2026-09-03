@@ -90,6 +90,16 @@ excludes the Light Elements pseudo-analyte (\texttt{rak:0000032}) so
 that only individually quantified elements appear in the result, and
 the query returns one row per process and analyte combination.
 
+The release workflow executes this exact query
+(\path{sparql/field_xrf_site10.rq}) against the checksummed base, site
+and XRF modules and requires the fixed expected cardinality of
+46 analyte-value rows; it returned exactly 46 rows for Site~10,
+24 from field process Test~5847 and 22 from Test~5848, and the result
+table and validation record are archived under
+\path{evidence/competency-query/}.
+No broader competency-query pass rate is claimed: only this query
+carries a fixed expected cardinality in the release workflow.
+
 Listing~\ref{lst:sparql_taxon} retrieves taxonomic abundance profiles,
 joining across bioinformatic workflows, FASTQ datasets, and taxon
 observations.
@@ -239,7 +249,12 @@ scanned by a streaming structural validator, which accounted for
 44,528,482 triples in 5,953,690 subject blocks with zero structural
 violations. This establishes full-file syntax and generator-specific
 structural validation, not a claim that the taxonomy ABox passed the
-unexecuted ShEx shapes.
+unexecuted ShEx shapes. The Turtle listings of Section~\ref{ontology}
+are checked mechanically as well:
+\path{scripts/validation/verify_manuscript_listings.py} parses each
+listing and resolves every printed triple and every prose IRI against
+the staged modules, so a drifted listing fails the workflow instead of
+reaching a reader as an unusable pattern.
 
 \subsection{Logical consistency}
 
@@ -257,6 +272,10 @@ other constructs used by imported modules, and the excluded ABoxes
 were not covered; likewise, the selected forward-rule program of
 Section~\ref{subsec:owl_rdf} has not been demonstrated to reach a
 fixed point and is not complete OWL-Horst closure \cite{owlhorst}.
+A separate label gate merged 782,229 triples from the 11 current files
+and confirmed exactly one label for each of 104,697 labelled
+\texttt{RAK\_} subjects; the log, input hashes and validator hashes of
+both gates are archived under \path{evidence/semantic-validation/}.
 
 \subsection{Compute-time metrics}\label{sec:compute_metrics}
 

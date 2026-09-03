@@ -29,7 +29,10 @@ fragment of Listing~\ref{lst:sparql_xrf} adds, for example, calcium
 concentrations or monthly precipitation for the returned sites. The
 competency questions of Table~\ref{tab:cq} are regression-tested
 variants of exactly these traversals, so the query routes shown here
-are re-validated whenever the graph is rebuilt.
+are re-validated whenever the graph is rebuilt. Of these routes, the
+field-XRF retrieval of Listing~\ref{lst:sparql_xrf} is
+workflow-validated at a fixed cardinality of 46 rows
+(Section~\ref{valid}).
 
 \paragraph{Use case 2: batch-aware contamination sensitivity.} The
 laboratory-control pattern (Section~\ref{ontology}) links every
@@ -58,7 +61,9 @@ Sample collection, XRF analysis, DNA extraction, sequencing, and
 taxonomic classification are all instantiations of the same
 \texttt{Process--hasInput/hasOutput--Object} idiom; quantitative
 results are uniformly represented as \texttt{Quantity
-isMeasurementValueOf Quality} pairs with explicit units. This uniformity enables
+isMeasurementValueOf Quality} pairs, with a unit asserted where the
+source documents one; XRF concentration values
+have no unit assertion because the XRF exports document none. This uniformity enables
 cross-domain SPARQL queries that traverse from a climate observation
 through a sampling site to a taxon abundance without per-domain
 join logic. Recent work on simplified upper-level ontologies, such as
@@ -145,4 +150,4 @@ an umbrella study (``The genome of the Rub' al Khali (Empty Quarter)'').
 
 \section{Code availability}\label{code}
 
-All source code for data processing, ontology engineering, RDF generation, validation, and the web portal is openly available at \url{https://github.com/bio-ontology-research-group/empty-quarter}. The repository includes Groovy scripts utilizing the OWL API 5 for OWL/RDF generation, Python scripts for data processing and statistical analysis, ShEx shape definitions for structural validation, SPARQL competency queries, React/FastAPI web application source code, Docker Compose configurations for deployment, and the \texttt{main.nf} Nextflow entry point with its pinned software environment.
+All source code for data processing, ontology engineering, RDF generation, validation, and the web portal is openly available at \url{https://github.com/bio-ontology-research-group/empty-quarter}. The repository includes Groovy scripts utilizing the OWL API 5 for OWL/RDF generation, Python scripts for data processing and statistical analysis, ShEx shape definitions for structural validation, SPARQL competency queries, React/FastAPI web application source code and Docker Compose configurations for deployment. The manuscript, RDF generators, source metadata and reproducibility workflow are maintained in the companion repository at \url{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data}, which holds the \texttt{main.nf} entry point, execution profiles, workflow tests, a pinned Conda recipe and a hash-locked Python environment.

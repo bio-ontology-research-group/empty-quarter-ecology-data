@@ -55,7 +55,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             ("1", "Marwa", "Abdelhakim"),
             ("3", "Sulaiman M.", "Alajel"),
             ("1", "Mohammed", "Alarawi"),
-            ("1", "Hind", "Aldakhil"),
+            ("8", "Hind", "Aldakhil"),
             ("1", "Abderahmane", "Derouiche"),
             ("4", "Daniela I.", "Drautz-Moses"),
             ("7", "Michel", "Dumontier"),
@@ -73,8 +73,9 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertEqual(expected, authors)
         self.assertIn("Bio-Ontology Research Group (BORG)", source)
         self.assertIn("Physical Science and Engineering (PSE) Division", source)
+        self.assertIn("Biomedical Sciences Division (BioMed)", source)
         self.assertIn(
-            "Biological and Environmental Science and Engineering (BESE)",
+            "National Livestock \\& Fisheries Development Program (NLFDP)",
             source,
         )
         self.assertIn(
@@ -212,8 +213,10 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             + self.text("04_data_records.tex")
             + self.text("05_validation.tex")
         )
-        self.assertIn("Field-XRF", source)
-        self.assertIn("Laboratory-XRF", source)
+        self.assertIn("in-situ field measurements", source)
+        self.assertRegex(
+            source, r"laboratory measurements of\s+archived material"
+        )
         self.assertRegex(source, r"106 entries across\s+59 sites")
         self.assertRegex(source, r"71 complete sessions at 58 sites")
         self.assertRegex(source, r"725 records in total")
@@ -221,7 +224,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertRegex(source, r"retired 158- and 705-row artifacts")
         self.assertNotRegex(source, r"incomplete 705-record")
         self.assertNotRegex(source, r"20 omitted")
-        self.assertIn("not treated as interchangeable", source)
+        self.assertIn("not interchangeable replicates", source)
 
         audit = json.loads(
             (
@@ -479,7 +482,9 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             r"do not\s+infer Trip~2 pressure or humidity",
         )
         self.assertIn("31.321", methods)
-        self.assertIn("15 appended auxiliary or revisit records", methods)
+        self.assertRegex(
+            methods, r"15 records are appended\s+to the legacy Trip~3 worksheet"
+        )
         self.assertIn("curated value remains missing", methods)
 
     def test_pressure_unit_conversion_is_staged_and_documented(self) -> None:
@@ -517,21 +522,30 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertNotIn("no control-sample community records", combined)
         self.assertNotIn("no contamination assessment has been performed", combined)
         self.assertIn("351 of 351,472 ASVs", usage)
-        self.assertIn(r"2.19\,\% of reads", usage)
-        self.assertIn("The unfiltered table remains canonical", usage)
-        self.assertIn("generated SIO-patterned control graph", records)
+        self.assertRegex(usage, r"2\.19\\,\\% of\s+reads")
+        self.assertIn("the unfiltered table remains canonical", usage)
+        self.assertRegex(
+            records,
+            r"rubalkhali\\_controls\.ttl\} & Laboratory-control materials, "
+            r"roles, batches and sequence occurrences",
+        )
         self.assertIn("Trips~1 and 2 used", methods)
-        self.assertIn("HMW DNA Standard D6322", methods)
         self.assertIn(
-            "Microbial Community Standard D6300",
+            "HMW DNA Standard (D6322)",
             " ".join(methods.split()),
         )
         self.assertIn(
-            r"\texttt{EB1}--\texttt{EB18}",
+            "Microbial Community Standard (D6300)",
+            " ".join(methods.split()),
+        )
+        self.assertIn("EB1--EB18", methods)
+        self.assertIn(
+            "One extraction\nblank was processed with each extraction-day batch",
             methods,
         )
-        self.assertIn("One EB was included per extraction day", methods)
-        self.assertIn("never directly to a trip", methods)
+        self.assertRegex(
+            usage, r"links every\s+extraction blank to its extraction batch"
+        )
         self.assertRegex(
             release_readme,
             r"linked to its batch,\s+never directly to a trip",
@@ -588,9 +602,10 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertIn(r"\texttt{T1Dr1} run with 934 reads", records)
         self.assertNotIn("without an explicit QC reason", records)
         self.assertNotIn("requires explicit QC dispositions", readme)
-        self.assertIn("all 99 printed triples", validation)
+        self.assertIn("resolves every printed triple", validation)
         self.assertNotIn("all 86 printed triples", validation)
-        self.assertIn("781,293 axioms", validation)
+        self.assertNotIn("all 99 printed triples", validation)
+        self.assertRegex(validation, r"781,293\s+axioms")
         self.assertIn("782,229 triples", validation)
         self.assertIn("104,697 labelled", validation)
         self.assertIn("evidence/semantic-validation/", validation)
@@ -711,13 +726,15 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         validation = self.text("05_validation.tex")
         usage = self.text("06_usage.tex")
 
-        self.assertIn("shallow\nsubsurface", methods)
+        self.assertIn("shallow-subsurface", methods)
         self.assertIn("Deep Soil Sample", methods)
         self.assertNotRegex(
             methods,
             r"ELK reported no\s+unsatisfiable named classes",
         )
-        self.assertIn("did not precompute the class hierarchy", methods)
+        self.assertRegex(
+            methods + validation, r"did not\s+precompute the class hierarchy"
+        )
         self.assertIn("46 analyte-value rows", validation)
         self.assertRegex(
             validation,
@@ -861,7 +878,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
 
         for phrase in (
             "333 classes",
-            "297\nproject-local",
+            "297\nlocal project classes",
             "36 referenced classes",
             "20 object properties",
             "35 datatype properties",
@@ -891,7 +908,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         # the abstract. The requirement is that it is stated, not where.
         scope_text = records + usage + methods
         for phrase in (
-            "nine paired PMA aliquots",
+            "nine aliquot pairs, PMA-treated and untreated",
             "150 CoverM profiles",
             "990-genome",
             "measured-function",
@@ -906,19 +923,19 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             "metadata/metagenome/measured_function_inputs.tar.gz",
         )
         for path in expected_paths:
-            self.assertIn(path, methods)
+            self.assertIn(path, scope_text)
             self.assertIn(f"`{path}`", readme)
 
-        for source in (methods, records, usage, readme):
+        for source in (scope_text, readme):
             self.assertRegex(source, r"\b150\b")
             self.assertRegex(source, r"\b990\b|990-genome")
             self.assertRegex(source, r"\bnine\b|\b9\b")
             self.assertRegex(source, r"\b18\b")
 
-        self.assertIn("six exact source tables", methods)
-        for source in (methods, usage, readme):
-            self.assertNotIn("5,438-genome catalogue", source)
+        self.assertIn("six exact source tables", scope_text)
         for source in (methods, records, usage, readme):
+            self.assertNotIn("5,438-genome catalogue", source)
+        for source in (scope_text, readme):
             self.assertRegex(
                 source,
                 r"(?i)raw shotgun|underlying shotgun",
@@ -963,7 +980,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         )
         self.assertEqual(len(rows), sum(licence_counts.values()))
         records = self.text("04_data_records.tex")
-        self.assertIn("one row for each candidate payload", records)
+        self.assertRegex(records, r"every\s+payload file is declared")
         self.assertNotRegex(records, r"\b270 candidate files\b")
         self.assertNotRegex(records, r"\b261 files are project-produced\b")
 
@@ -1074,7 +1091,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         # cap; the full accounting is in the Introduction and Data Records.
         self.assertIn("2,550-row source ledger", abstract)
         self.assertIn("2,516 non-control records", abstract)
-        self.assertIn("1,271 profiles", abstract)
+        self.assertIn("1,271 taxonomic profiles", abstract)
         self.assertIn("1,237", abstract)
         self.assertIn("1,227 profiles", records + introduction)
 
