@@ -114,19 +114,26 @@ using an Engel MR040F portable freezer. At the end of each campaign,
 we transferred samples to an $-80$\degree C freezer in the laboratory.
 
 We included positive and negative controls for each sampling campaign
-to mitigate and control for contamination artifacts. One extraction
-blank was processed with each extraction-day batch, using the same
-extraction procedure as for the biological specimens, to control for
-contamination introduced during nucleic acid extraction. For Trips~4
-and 5, extraction days were trip-specific (samples from more than one
-campaign were never extracted together on the same day, though
-multiple sites from the same campaign could be), so each of their
-extraction blanks is associated with a single campaign, its
-extraction date, and its batch; for Trips~1--3, some extractions were
-repeated and may have combined samples from different trips on one
-day.\todo{Marwa/Rund: confirm the Trips~1--3 extraction days.} Where a corresponding library was successfully generated,
-the extraction blank was subjected to 16S rRNA gene amplification,
-indexing, and sequencing.
+to mitigate and control for contamination artifacts. Extraction
+blanks used the same extraction procedure as the biological
+specimens, to control for contamination introduced during nucleic
+acid extraction. For Trips~4 and 5, one extraction blank was
+processed with each extraction-day batch, and extraction days were
+trip-specific (samples from more than one campaign were never
+extracted together on the same day, though multiple sites from the
+same campaign could be), so each of their extraction blanks is
+associated with a single campaign, its extraction date, and its
+batch. For Trips~1--3, one extraction blank was processed per
+extraction kit (one for the PowerLyzer PowerSoil Kit and one for the
+DNeasy PowerSoil Pro Kit) rather than per day; extractions were
+repeated, Trips~1 and 2 were extracted on the same days, and no
+sequencing took place on extraction days, so no day-linked blank
+exists for these campaigns. Only the PowerSoil Pro kit blank was
+sequenced (Extraction-Ctrl-Pro-Trip1, library M-25-0929); the
+PowerSoil kit blank appears in the laboratory sample record but on no
+sequencing sample sheet. Where a corresponding library was
+successfully generated, the extraction blank was subjected to 16S
+rRNA gene amplification, indexing, and sequencing.
 
 The complete ASV table contained 18 sequenced Trip~5 extraction-blank
 profiles (EB1--EB18), of which 17 were linked by extraction day to 217
@@ -161,28 +168,50 @@ Trip~4, one PCR blank and one no-template control were generated but
 neither was sequenced: the run was shared with samples from
 Trips~1--3, their index pairs conflicted with biological samples, and
 the samples were retained.
-Trip~3 included one sequenced PCR blank (PCRCtrl) and Trips~1 and 2
-one each (PCR-Ctrl-Trip1 and the no-template control NTC-2).
+Trip~3 included one sequenced PCR blank (PCRCtrl, index pair 728,
+sequenced on the Trip~3 run together with all Trip~3 libraries), Trip~1
+a nuclease-free water control (PCR-Ctrl-Trip1) and Trip~2 the
+no-template control NTC-2.
 
-A second, field-based negative control consisted of sterile soil,
-extracted and amplified before the campaign to confirm the absence
-of PCR product, then taken to the field with the biological specimens.
+A second, field-based negative control consisted of sterile soil
+(treated with UV light for more than two hours), extracted and
+amplified before the campaign to confirm the absence of PCR product,
+then taken to the field with the biological specimens.
 This soil negative control was paired with the trip's positive-control
 standard as a campaign-control set. Trip~4 did not include this
 control; for Trip~5 it was sequenced by shotgun metagenomics only. The
-sequenced controls of Trips~1--3 (Trip~1: one extraction blank, one PCR
-blank and three labelled standards; Trip~2: two negative controls, one
-no-template control and two standards; Trip~3: two field negatives, one
-negative control, one PCR blank and two standards) were denoised with
-the biological libraries in the July 2025 run and are recorded in the
-control registry with their labelled roles; the canonical feature table
-excludes them and retains only the Trip~5 controls. A re-denoising of
-the Trip~1 and 2 controls on 30 August 2026 showed that Ctrl-1-Trip1,
-labelled negative, is dominated by the ZymoBIOMICS genera (99.99\,\%
-of reads, 24 ASVs), whereas Ctrl-2 and Ctrl-3, labelled positive, and
-Extraction-Ctrl-Pro-Trip1, labelled extraction blank, carry soil-like
-profiles; their identities are under review with the laboratory and
-none of them was used to train the contaminant screen.
+sequenced controls of Trips~1--3 (Trip~1: the PowerSoil Pro extraction
+blank, a water PCR control and three numbered controls, one labelled
+negative and two labelled positive; Trip~2: two negative controls, one
+no-template control and two standards; Trip~3: three sterile-soil
+negatives, one PCR blank and three standards, all sequenced on the
+Trip~3 run, NovaSeq~6000 A01018 run 321, flowcell HVJY5DRX3) were
+denoised with the biological libraries in the July 2025 run and are
+recorded in the control registry with their labelled roles; the
+canonical feature table excludes them and retains only the Trip~5
+controls. A re-denoising of the Trip~1 and 2 controls on 30 August
+2026, compared with the laboratory record on 6 September 2026, showed
+that Ctrl-1-Trip1, prepared as the first Trip~1 sterile-soil negative,
+is dominated by the ZymoBIOMICS genera (99.99\,\% of reads, 24 ASVs)
+and had a library DNA concentration of 25.7~ng/\textmu L; the tube
+held the D6322 standard, and the exchange occurred before
+quantification. Ctrl-2 and Ctrl-3, labelled positive, carry soil-like
+profiles with library concentrations of 3.9 and 19.0~ng/\textmu L and
+resemble the Trip~2 negative controls (Bray--Curtis 0.45--0.75); their
+contents could not be confirmed. Extraction-Ctrl-Pro-Trip1, the
+PowerSoil Pro kit blank (1.11~ng/\textmu L at library submission,
+re-prepared in the library series M-25-0925 to M-25-0929), carries a
+soil profile whose nearest canonical profile is 46Dr1 (M-25-0917, same
+series; Bray--Curtis 0.39); it is neither a copy of 60Dr3 (M-25-0928,
+whose index UDP0383 the original submission sheet had assigned to the
+blank) nor a mixture of the four co-prepared libraries, so an index
+swap is excluded and the blank is contaminated. For FPosCtrl1
+(M-23-8294) the laboratory sheet records an impossible index-well
+combination, a different index plate and a 550 rather than 500~bp
+fragment size, so its identity is unresolved. None of these libraries
+was used to train the contaminant screen; the registry keeps their
+labelled roles, with the confirmation status recorded in the control
+evidence.
 
 Positive-control material and its handling differed among
 campaigns. Positive controls were generally carried into the field
@@ -237,10 +266,13 @@ recovered.
 
 Genomic DNA was extracted from 0.9--1.2~g of soil using either the
 QIAGEN PowerLyzer PowerSoil Kit (catalogue no.\ 12855-50) or the QIAGEN
-DNeasy PowerSoil Pro Kit (catalogue no.\ 47014). The PowerLyzer
-PowerSoil Kit was used for the initial extraction of samples from
-Trips~1 and 2. From Trip~3 onward, samples were extracted using the
-DNeasy PowerSoil Pro Kit. The QIAcube Connect was introduced for
+DNeasy PowerSoil Pro Kit (catalogue no.\ 47014). Both kits were used
+in Trips~1--3: among the sequenced profiles, the sample ledger records
+the PowerLyzer PowerSoil Kit for 77 Trip~1, 10 Trip~2 and 359 Trip~3
+profiles (54 of the Trip~3 records name the MoBio PowerSoil kit) and
+the DNeasy PowerSoil Pro Kit for 217 Trip~1, 11 Trip~2 and 87 Trip~3
+profiles; 46 Trips~1--3 profiles have no recorded kit. The QIAcube
+Connect was introduced for
 routine extraction starting with Trip~4; samples from Trips~1--3 were
 also processed using the QIAcube Connect when re-extraction was
 required. The extraction method and re-extraction history were
@@ -255,10 +287,12 @@ manually or using a QIAcube Connect instrument, following the
 manufacturer's protocol. DNA was eluted in 50~\textmu L of the elution
 buffer supplied with the respective kit.
 
-One extraction blank was processed alongside each extraction-day batch
-and carried through the same extraction procedure as the biological
-samples. Because extraction days were trip-specific, each extraction
-blank is associated with a single campaign. Extraction blanks were
+For Trips~4 and 5, one extraction blank was processed alongside each
+extraction-day batch and carried through the same extraction procedure
+as the biological samples; because their extraction days were
+trip-specific, each of these blanks is associated with a single
+campaign. For Trips~1--3, one blank was processed per extraction kit.
+Extraction blanks were
 quantified and included in the downstream 16S rRNA gene amplification
 and sequencing workflow when a corresponding library was generated;
 exceptions are described above.

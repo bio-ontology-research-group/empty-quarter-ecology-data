@@ -19,6 +19,13 @@ applicability facts without inferring a trip from an extraction-blank label:
   generic labels to PCR batches awaits laboratory confirmation.
 - No sterile-bag field-blank instance is asserted because no inventory record
   is available.
+- Trips 1-3 had one extraction blank per extraction kit, not per day; only the
+  PowerSoil Pro blank (e0929_Extraction_Ctrl_Pro_Trip1) was sequenced, and it
+  is contaminated with soil template (nearest profile 46Dr1), so no usable
+  Trips 1-3 extraction blank exists. Ctrl-1-Trip1 held the D6322 standard
+  although prepared as a UV-treated soil negative; Ctrl-2, Ctrl-3 and
+  FPosCtrl1 have unresolved contents. See
+  `author_control_confirmation_20260906.md`.
 
 The files dated 2026-07-29 in this directory are retained as historical audit
 evidence. Their preliminary product candidates and statements that composition
