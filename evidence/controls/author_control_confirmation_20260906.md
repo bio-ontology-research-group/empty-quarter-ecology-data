@@ -45,7 +45,8 @@ nearest-neighbour comparison of 6 September 2026 (ecology ledger).
   Trips 1-3 were prepared following a general protocol, but the laboratory
   never confirmed that they were blank (no sequencing before or after the
   trips; UV efficacy may have varied). Their sterility is therefore not
-  established; the papers describe their contents as unconfirmed.
+  established. Robert's decision (7 Sep): the papers do not describe or use
+  these controls at all; they stay in the control registry only.
 
 ## Analysis result recorded with the confirmation (6 September 2026)
 
