@@ -98,6 +98,37 @@ registryLines.drop(1).each { line ->
     specialSiteIris[label] = iri
 }
 
+// Exact-cell coordinate corrections shared with the environmental curation
+// ledger.  Field sheets stay immutable; a coordinate cell may only be moved
+// by a reviewed ledger row whose site and original value match the sheet.
+def correctionFile = new File("data/metadata/samples/environmental_measurement_corrections.tsv")
+if (!correctionFile.exists()) {
+    throw new IllegalStateException("Missing environmental correction ledger: ${correctionFile}")
+}
+def correctionLines = correctionFile.readLines()
+def correctionHeader = correctionLines[0].split("\t", -1)*.trim()
+def coordinateCorrections = [:]
+correctionLines.drop(1).eachWithIndex { line, index ->
+    if (!line.trim()) return
+    def parts = line.split("\t", -1)
+    if (parts.size() != correctionHeader.size()) {
+        throw new IllegalStateException("Malformed correction-ledger row ${index + 2}")
+    }
+    def row = [:]
+    correctionHeader.eachWithIndex { name, column -> row[name] = parts[column].trim() }
+    if (row.original_field != "coordinates") return
+    def key = "${row.source_file}|${row.source_row}"
+    if (row.corrected_field != "coordinates" ||
+        !row.status.startsWith("confirmed_") || !row.rationale) {
+        throw new IllegalStateException("Unreviewed coordinate correction ${key}")
+    }
+    if (coordinateCorrections.containsKey(key)) {
+        throw new IllegalStateException("Duplicate coordinate correction ${key}")
+    }
+    coordinateCorrections[key] = row
+}
+def usedCoordinateCorrections = [] as Set
+
 def allEntries = []
 new File("data/metadata/samplesheets").listFiles()
     .findAll { f -> f.name.startsWith("trip") && f.name.endsWith(".tsv") }
@@ -110,13 +141,27 @@ new File("data/metadata/samplesheets").listFiles()
     def colBiome = header.findIndexOf { it.trim().equalsIgnoreCase("biome") }
     def colFeature = header.findIndexOf { it.trim().equalsIgnoreCase("feature") }
 
-    lines.drop(1).each { line ->
+    lines.drop(1).eachWithIndex { line, rowIndex ->
         if (!line.trim()) return
+        def sourceRow = rowIndex + 2
         def parts = line.split("\t"); if (parts.size() <= colSite) return
         def siteId = parts[colSite].trim(); if (!siteId) return
         def entry = new RawEntry(originalId: siteId)
-        if (colCoords != -1 && parts.size() > colCoords) {
-            def m = parts[colCoords] =~ /([-+]?\d+\.\d+)\s*N?\s*,\s*([-+]?\d+\.\d+)\s*E?/
+        def coordinateText =
+            (colCoords != -1 && parts.size() > colCoords) ? parts[colCoords].trim() : ""
+        def correctionKey = "${f.name}|${sourceRow}"
+        def correction = coordinateCorrections[correctionKey]
+        if (correction) {
+            if (correction.site != siteId || correction.original_value != coordinateText) {
+                throw new IllegalStateException(
+                    "${correctionKey}: coordinate correction does not match source cell"
+                )
+            }
+            coordinateText = correction.corrected_value
+            usedCoordinateCorrections << correctionKey
+        }
+        if (coordinateText) {
+            def m = coordinateText =~ /([-+]?\d+\.\d+)\s*N?\s*,\s*([-+]?\d+\.\d+)\s*E?/
             if (m) { entry.lat = m[0][1].toDouble(); entry.lon = m[0][2].toDouble() }
         }
         if (colBiome != -1 && parts.size() > colBiome && parts[colBiome].trim()) {
@@ -129,6 +174,13 @@ new File("data/metadata/samplesheets").listFiles()
         }
         allEntries << entry
     }
+}
+
+def unusedCoordinateCorrections = coordinateCorrections.keySet() - usedCoordinateCorrections
+if (unusedCoordinateCorrections) {
+    throw new IllegalStateException(
+        "Unused coordinate correction-ledger entries: ${unusedCoordinateCorrections.sort()}"
+    )
 }
 
 def finalSites = [] 

@@ -50,7 +50,7 @@ Trip 1 (2023)	trip1-2023.tsv	49	primary_transect_site	48	19/03/2023	17:00	20.568
 Trip 1 (2023)	trip1-2023.tsv	50	primary_transect_site	49	19/03/2023	17:30	20.644662222222223 N,53.28794 E	35	986	21.7	source_as_recorded		
 Trip 1 (2023)	trip1-2023.tsv	51	primary_transect_site	50	20/03/2023	07:14	20.71385 N, 53.41230 E	29.8	988	31.3	source_as_recorded		
 Trip 1 (2023)	trip1-2023.tsv	52	primary_transect_site	51	20/03/2023	07:37	20.79870 N, 53.48700 E	30.2	992	32.5	source_as_recorded		
-Trip 1 (2023)	trip1-2023.tsv	53	primary_transect_site	52	20/03/2023	08:02	20.851514166666668 N,53.75788444444444 E	31.1	992	29.7	source_as_recorded		no plants
+Trip 1 (2023)	trip1-2023.tsv	53	primary_transect_site	52	20/03/2023	08:02	20.82784 N,53.57835 E	31.1	992	29.7	confirmed_copied_adjacent_site	confirmed_copied_adjacent_site:coordinates->coordinates	no plants
 Trip 1 (2023)	trip1-2023.tsv	54	primary_transect_site	53	20/03/2023	09:03	20.851514166666668 N,53.75788444444444 E	34.8	992	26.0	source_as_recorded		dune beside sabkhah
 Trip 1 (2023)	trip1-2023.tsv	55	primary_transect_site	54	20/03/2023	10:03	20.92017888888889 N,53.962204444444446 E	32.1	992	26.7	source_as_recorded		sample 2 from air root,sample 3 from actual root near water, water salinity 0.5, pH 5.5
 Trip 1 (2023)	trip1-2023.tsv	56	primary_transect_site	55	20/03/2023	10:24	20.9022725 N,54.0024376 E	33.2	990	27.9	source_as_recorded		glumat althhayf. now dry sabkhah most plants dead sampled alive one
@@ -122,7 +122,7 @@ Trip 3 (2024)	trip3-2024.tsv	49	primary_transect_site	48	20/02/2024	12:54	20.568
 Trip 3 (2024)	trip3-2024.tsv	50	primary_transect_site	49	20/02/2024	14:21	20.644662222222223 N,53.28794 E	34	994	13.4	source_as_recorded		
 Trip 3 (2024)	trip3-2024.tsv	51	primary_transect_site	50	20/02/2024	14:51	20.71385 N, 53.41230 E	31.5	996	21.6	source_as_recorded		
 Trip 3 (2024)	trip3-2024.tsv	52	primary_transect_site	51	20/02/2024	16:11	20.79870 N, 53.48700 E	35.9	994	16.5	source_as_recorded		
-Trip 3 (2024)	trip3-2024.tsv	53	primary_transect_site	52	20/02/2024	06:57	20.851514166666668 N,53.75788444444444 E	34.3	994	17.5	source_as_recorded		
+Trip 3 (2024)	trip3-2024.tsv	53	primary_transect_site	52	20/02/2024	06:57	20.82784 N,53.57835 E	34.3	994	17.5	confirmed_copied_adjacent_site	confirmed_copied_adjacent_site:coordinates->coordinates	
 Trip 3 (2024)	trip3-2024.tsv	54	primary_transect_site	53	21/02/2024	06:06	20.851514166666668 N,53.75788444444444 E	21.9	990	35	source_as_recorded		
 Trip 3 (2024)	trip3-2024.tsv	55	primary_transect_site	54	21/02/2024	15:58	20.92017888888889 N,53.962204444444446 E	32.2	998	23.5	source_as_recorded		
 Trip 3 (2024)	trip3-2024.tsv	56	primary_transect_site	55	21/02/2024	15:41	20.9022725 N,54.0024376 E	31.3	998	14.3	source_as_recorded		
@@ -146,7 +146,7 @@ Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	73	trip1_auxiliary_or_revisit_rec
 Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	74	trip1_auxiliary_or_revisit_record	47+grass	19/03/2023	15:00	20.54181555555556 N,52.868785833333334 E	37.3	986	20.3	confirmed_source_workbook	confirmed_source_workbook:date->date	
 Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	75	trip1_auxiliary_or_revisit_record	48+	19/03/2023	17:00	20.568648333333332 N,53.09404833333333 E	35.3	984	23.7	confirmed_source_workbook	confirmed_source_workbook:date->date	biofilm between plants and running water
 Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	76	trip1_auxiliary_or_revisit_record	48+	19/03/2023	17:00	20.568648333333332 N,53.09404833333333 E	35.3	984	23.7	confirmed_source_workbook	confirmed_source_workbook:date->date	extra plant from same site
-Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	77	trip1_auxiliary_or_revisit_record	52AD	20/03/2023	08:02	20.851514166666668 N,53.75788444444444 E	31.1	992	29.7	confirmed_source_workbook	confirmed_source_workbook:date->date	dug two holes, collected triplicate from every 10 cm in each hole, starting from surface (1). samples with AD(2) are f4om second hole
+Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	77	trip1_auxiliary_or_revisit_record	52AD	20/03/2023	08:02	20.82784 N,53.57835 E	31.1	992	29.7	confirmed_copied_adjacent_site,confirmed_source_workbook	confirmed_source_workbook:date->date;confirmed_copied_adjacent_site:coordinates->coordinates	dug two holes, collected triplicate from every 10 cm in each hole, starting from surface (1). samples with AD(2) are f4om second hole
 Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	78	trip1_auxiliary_or_revisit_record	54F	20/03/2023	10:16	20.92017888888889 N,53.962204444444446 E	34.8	990	26.9	confirmed_source_workbook	confirmed_source_workbook:date->date	2 0.22 filters 60 ml each. um fatimah
 Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	79	trip1_auxiliary_or_revisit_record	35 + WaterWellRestStop	18/03/2023	18:48	20.397223055555553 N,50.96570472222223 E		976		confirmed_source_workbook	confirmed_source_workbook:date->date	water well, sulfuric water, no soil samples taken, filter size 0.22, 8750ml water filtered
 Trip 1 auxiliary/revisit (2023)	trip3-2024.tsv	80	trip1_auxiliary_or_revisit_record	35 + hot spring filter1	19/03/2023	08:03	20.397223055555553 N,50.96570472222223 E	28.3	980	17.7	confirmed_source_workbook	confirmed_source_workbook:date->date	8350ml of water, 6.4ph,0.4g/100g salinity

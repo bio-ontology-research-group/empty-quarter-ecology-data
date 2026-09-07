@@ -1452,8 +1452,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000279"/>
             </owl:Restriction>
         </rdf:type>
-        <terms:description>Sampling site located at 20.83967708333333, 53.66811722222222. Biome: desert biome. Features: saline pan.</terms:description>
-        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(53.66811722222222 20.83967708333333)</geosparql:asWKT>
+        <terms:description>Sampling site located at 20.82784, 53.57835. Biome: desert biome. Features: saline pan.</terms:description>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(53.57835 20.82784)</geosparql:asWKT>
         <rdfs:label>Site 52</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1476,13 +1476,7 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000170"/>
             </owl:Restriction>
         </rdf:type>
-        <rdf:type>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://rubalkhali.science/kb/RAK_2000002"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000279"/>
-            </owl:Restriction>
-        </rdf:type>
-        <terms:description>Sampling site located at 20.851514166666668, 53.75788444444444. Biome: desert biome. Features: sand dune, saline pan.</terms:description>
+        <terms:description>Sampling site located at 20.851514166666668, 53.75788444444444. Biome: desert biome. Features: sand dune.</terms:description>
         <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(53.75788444444444 20.851514166666668)</geosparql:asWKT>
         <rdfs:label>Site 53</rdfs:label>
     </owl:NamedIndividual>

@@ -54,7 +54,7 @@ EXPECTED_ROLE_COUNTS = {
     },
 }
 MEASUREMENT_FIELDS = ("temperature", "pressure", "humidity")
-CORRECTABLE_FIELDS = MEASUREMENT_FIELDS + ("date",)
+CORRECTABLE_FIELDS = MEASUREMENT_FIELDS + ("date", "coordinates")
 RANGES = {
     "temperature": (-50.0, 60.0),
     "pressure": (800.0, 1100.0),
@@ -247,6 +247,7 @@ def curate(
                 field: row.get(field, "") for field in MEASUREMENT_FIELDS
             }
             values["date"] = row.get("date", "")
+            values["coordinates"] = row.get("coordinates", "")
             row_actions: list[str] = []
             for original_field in CORRECTABLE_FIELDS:
                 key = (source_file, source_row, original_field)
@@ -308,7 +309,7 @@ def curate(
                     "site": site,
                     "date": values["date"],
                     "time": row.get("time", ""),
-                    "coordinates": row.get("coordinates", ""),
+                    "coordinates": values["coordinates"],
                     "temperature_c": values["temperature"],
                     "pressure_mbar": values["pressure"],
                     "relative_humidity_pct": values["humidity"],
@@ -534,6 +535,11 @@ def render_latex(
             r"Trip~3 worksheet are dated 2023 in that workbook; the curated "
             r"table therefore labels them Trip~1 auxiliary/revisit records, "
             r"and Trip~3 ends on 21 February 2024. "
+            r"The Trip~1 and Trip~3 Site~52 rows (and the appended "
+            r"52AD record) repeat the Site~53 coordinates; the ledger "
+            r"restores the Site~52 location recorded in Trips~4 and~5 "
+            r"(20.8278\degree N, 53.5784\degree E), which the Trip~3 "
+            r"GPS track corroborates. "
             + site40_note,
             r"\end{scriptsize}",
         ]

@@ -35,7 +35,7 @@ def curated_rows() -> list[dict[str, str]]:
 def test_generated_environmental_artifacts_are_current() -> None:
     rows, audit, corrections = GENERATOR.curate(ROOT)
     assert len(rows) == 274
-    assert len(corrections) == 24
+    assert len(corrections) == 27
     assert (
         GENERATOR.render_curated_tsv(rows)
         == (
@@ -264,3 +264,19 @@ def test_auxiliary_rows_require_an_exact_site_label() -> None:
         )
         for label in labels
     )
+
+
+def test_site52_coordinates_are_the_trip4_trip5_location_in_every_campaign() -> None:
+    rows, _audit, corrections = GENERATOR.curate(ROOT)
+    coordinate_fixes = [
+        row for row in corrections if row["original_field"] == "coordinates"
+    ]
+    assert len(coordinate_fixes) == 3
+    assert {row["site"] for row in coordinate_fixes} == {"52", "52AD"}
+    site52 = [row for row in rows if row["site"] in {"52", "52AD"}]
+    assert len(site52) == 5
+    assert {row["coordinates"] for row in site52} == {"20.82784 N,53.57835 E"}
+    site53 = [row for row in rows if row["site"] == "53"]
+    assert {row["coordinates"] for row in site53} == {
+        "20.851514166666668 N,53.75788444444444 E"
+    }

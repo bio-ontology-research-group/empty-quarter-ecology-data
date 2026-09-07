@@ -291,7 +291,7 @@ ADDITIONS = {
     "metadata/samples/environmental_measurement_corrections.tsv": (
         "environmental-curation",
         "canonical-candidate",
-        "24 exact-cell dispositions: 8 shifted values, 15 dates, 1 quarantine",
+        "27 exact-cell dispositions: 8 shifted values, 15 dates, 3 coordinates, 1 quarantine",
     ),
     "metadata/environmental/environmental_measurements_curated.tsv": (
         "environmental-derived",
@@ -307,6 +307,11 @@ ADDITIONS = {
         "environmental-source",
         "audit-evidence",
         "legacy workbook supporting Trip 3 humidity and campaign-date curation",
+    ),
+    "evidence/environmental/site52_coordinate_correction.json": (
+        "environmental-evidence",
+        "audit-evidence",
+        "Open-Meteo re-derivation of the Trip 1 and Trip 3 site 52 geodata rows at the ledger-corrected coordinates",
     ),
     "scripts/metadata/generate_env_table.py": (
         "release-code",

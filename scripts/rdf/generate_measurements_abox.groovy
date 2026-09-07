@@ -197,8 +197,9 @@ correctionLines.drop(1).eachWithIndex { line, index ->
     if (environmentalCorrections.containsKey(key)) {
         throw new IllegalStateException("Duplicate environmental correction ${key}")
     }
-    if (!(row.original_field in ["temperature", "pressure", "humidity", "date"]) ||
-        !(row.corrected_field in ["temperature", "pressure", "humidity", "date"])) {
+    def correctableFields = ["temperature", "pressure", "humidity", "date", "coordinates"]
+    if (!(row.original_field in correctableFields) ||
+        !(row.corrected_field in correctableFields)) {
         throw new IllegalStateException("Unsupported environmental correction field in ${key}")
     }
     if (!(row.status.startsWith("confirmed_") || row.status.startsWith("quarantined_")) ||
@@ -302,9 +303,11 @@ trips.each { filename ->
             temperature: (colTemp != -1 && parts.size() > colTemp) ? parts[colTemp].trim() : "",
             pressure: (colPress != -1 && parts.size() > colPress) ? parts[colPress].trim() : "",
             humidity: (colHum != -1 && parts.size() > colHum) ? parts[colHum].trim() : "",
-            date: (colDate != -1 && parts.size() > colDate) ? parts[colDate].trim() : ""
+            date: (colDate != -1 && parts.size() > colDate) ? parts[colDate].trim() : "",
+            coordinates: (colCoordinates != -1 && parts.size() > colCoordinates) ?
+                parts[colCoordinates].trim() : ""
         ]
-        ["temperature", "pressure", "humidity", "date"].each { originalField ->
+        ["temperature", "pressure", "humidity", "date", "coordinates"].each { originalField ->
             def key = "${filename}|${sourceRow}|${originalField}"
             def correction = environmentalCorrections[key]
             if (!correction) return
@@ -328,9 +331,10 @@ trips.each { filename ->
             validateEnvironmentalValue(field, values[field], "${filename}:${sourceRow} site ${site}")
         }
 
-        def coordinateText =
-            (colCoordinates != -1 && parts.size() > colCoordinates) ?
-            parts[colCoordinates].trim() : ""
+        // Coordinate corrections from the ledger (for example the copied
+        // Site 53 coordinates on the Trip 1 and Trip 3 Site 52 rows) are
+        // applied before any coordinate-based site resolution.
+        def coordinateText = values.coordinates
         def isAuxiliaryRecord =
             filename == "trip3-2024.tsv" && values.date.endsWith("/2023")
         // Coordinate fallback is limited to primary field-log records.  The

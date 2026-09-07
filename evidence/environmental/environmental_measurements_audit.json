@@ -9,11 +9,12 @@
     "trip3_start": "2024-02-17"
   },
   "correction_ledger": {
-    "applied": 24,
-    "entries": 24,
+    "applied": 27,
+    "entries": 27,
     "path": "data/metadata/samples/environmental_measurement_corrections.tsv",
-    "sha256": "cf3ef3b4627daeab6185c8ab2a7bb1d3e6ef8ad4530ff3859979a95388ae27d5",
+    "sha256": "56aa149c1504dc339206fcce26d52f9aecd2be13ad1cd41e2d678f27adc4dcf7",
     "status_counts": {
+      "confirmed_copied_adjacent_site": 3,
       "confirmed_shifted_column": 8,
       "confirmed_source_workbook": 15,
       "quarantined_out_of_range": 1
@@ -21,8 +22,8 @@
   },
   "curated_records": 274,
   "generated_outputs": {
-    "curated_tsv_sha256": "1b8cb5c71fa05f6d15cee34c489105d755a0c42b900ec36fe4007f7cd19c5559",
-    "latex_sha256": "f741585bd6e87da36d49c2c2ef09f36114e63a18e8a595341d75a2db18253b23"
+    "curated_tsv_sha256": "51177fb6b21e4b10712daaa731cdf3783d0fc351c536f562851efd233386573f",
+    "latex_sha256": "547fcfc6787b989ac2a25ee46071d5d6bd63af2886eb14e48f6b97497e1eebc2"
   },
   "method": "Raw field sheets are retained unchanged; exact-cell correction ledger entries are verified before use; curated temperature, pressure and relative-humidity values must pass declared ranges.",
   "range_checks": {
@@ -40,10 +41,12 @@
     }
   },
   "row_qc_status_counts": {
+    "confirmed_copied_adjacent_site": 2,
+    "confirmed_copied_adjacent_site,confirmed_source_workbook": 1,
     "confirmed_shifted_column": 8,
-    "confirmed_source_workbook": 15,
+    "confirmed_source_workbook": 14,
     "quarantined_out_of_range": 1,
-    "source_as_recorded": 250
+    "source_as_recorded": 248
   },
   "source_files": [
     {
