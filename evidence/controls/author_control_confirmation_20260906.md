@@ -41,6 +41,11 @@ nearest-neighbour comparison of 6 September 2026 (ecology ledger).
 - Trip 3 "+ Ctrl 1" (M-23-8294, FPosCtrl1): the sheet records index pair 374
   at well 1H, which is not possible; it is on a different index plate and has
   a 550 bp rather than 500 bp fragment size. Data-entry error, unresolved.
+- 7 September 2026 (same thread, 10:13 CEST): the UV-treated soil negatives of
+  Trips 1-3 were prepared following a general protocol, but the laboratory
+  never confirmed that they were blank (no sequencing before or after the
+  trips; UV efficacy may have varied). Their sterility is therefore not
+  established; the papers describe their contents as unconfirmed.
 
 ## Analysis result recorded with the confirmation (6 September 2026)
 
