@@ -24,7 +24,7 @@ A measurement reifies into **four** named individuals:
 | **Measuring process** (the act of measuring) | `RAK_PXXXXXX` | sub-class of `sio:SIO_001054` (measuring) |
 
 The literal value (`xsd:double` etc.) and the unit (`uo:…`) live on the
-**measurement value**, never on the quality. The quality is a BFO-realist
+**measurement value**, never on the quality. The quality is a PATO
 quality individual that *inheres in* the bearer; the value is its numeric
 record produced by the process.
 
@@ -56,7 +56,7 @@ quality   a   <rak:DomainQualityClass>     .   # ⊑ pato:0000033 (or analogue)
 value     a   <rak:DomainValueClass>       .   # ⊑ sio:SIO_000070
 process   a   <rak:DomainMeasuringProcess> .   # ⊑ sio:SIO_001054
 
-# Bidirectional bearer ↔ quality (BFO-realist inherence)
+# Bidirectional bearer ↔ quality (inherence)
 bearer    sio:SIO_000008  quality .            # has attribute
 quality   sio:SIO_000011  bearer  .            # is attribute of
 
