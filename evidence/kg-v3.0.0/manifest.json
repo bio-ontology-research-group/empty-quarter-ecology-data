@@ -1,0 +1,115 @@
+{
+  "version": "3.0.0",
+  "release_mode": "asserted-only",
+  "version_iri": "https://rubalkhali.science/kb/v3.0.0/",
+  "released_at": "2026-09-12T18:51:47.020728+00:00",
+  "files": [
+    {
+      "name": "rubalkhali-kg-3.0.0-source.tar.gz",
+      "url": "/downloads/kg/3.0.0/rubalkhali-kg-3.0.0-source.tar.gz",
+      "bytes": 129095989,
+      "sha256": "22a85a792c5828f579cf9bec3c0be0cc83a0c527fb7ebcde1d842b95a70f0d5c",
+      "media_type": "application/gzip",
+      "kind": "source",
+      "description": "Frozen scientific inputs, producer code, pinned runtime and current sixteen-module replay proof."
+    },
+    {
+      "name": "rubalkhali-kg-3.0.0-modules.tar.gz",
+      "url": "/downloads/kg/3.0.0/rubalkhali-kg-3.0.0-modules.tar.gz",
+      "bytes": 372523592,
+      "sha256": "25210e4c011b07c7f0d48bb4880a2e0f3f64b34908264c99a1e4e5ea085d9879",
+      "media_type": "application/gzip",
+      "kind": "modules",
+      "description": "Sixteen original asserted RDF modules with checksums and offline import catalogue."
+    },
+    {
+      "name": "rubalkhali-kg-3.0.0-asserted.nq.gz",
+      "url": "/downloads/kg/3.0.0/rubalkhali-kg-3.0.0-asserted.nq.gz",
+      "bytes": 330556313,
+      "sha256": "1a1fc275ef8665926b0091af31f3a4043f79137a5c929a9a54f0943ffbcb9cf4",
+      "uncompressed_sha256": "2a97b88ae12d38a6bf6be4e084c493a219427579cc0ec85722432c8ca81af837",
+      "triples": 45706977,
+      "graph": "https://rubalkhali.science/graph/asserted/3.0.0",
+      "description": "Deduplicated asserted union; no inferred triples.",
+      "kind": "asserted",
+      "media_type": "application/gzip"
+    }
+  ],
+  "graphs": {
+    "asserted": "https://rubalkhali.science/graph/asserted/3.0.0"
+  },
+  "counts": {
+    "asserted": 45706977
+  },
+  "default_graph": "https://rubalkhali.science/graph/asserted/3.0.0",
+  "available_modes": [
+    "asserted"
+  ],
+  "query_time_inference": false,
+  "graph_semantics": {
+    "asserted": "Deduplicated union of sixteen freshly regenerated scientific and pinned reference modules."
+  },
+  "reasoning": {
+    "status": "not-included",
+    "scope": "Inference runs separately; no inferred or materialized graph is part of this immutable release."
+  },
+  "query_contract": "The public dataset contains only the asserted graph. Unreleased graphs and materialized mode are unavailable.",
+  "coordinate_import": {
+    "method": "fresh-source-preserving-import",
+    "files": [
+      {
+        "name": "input-modules-manifest.json",
+        "url": "/downloads/kg/3.0.0/input-modules-manifest.json",
+        "bytes": 8141,
+        "sha256": "ec04bcb5c7b96e8e000de0a7d9b62360b28af3b202c10f02ba61f16dc0f1b72f"
+      },
+      {
+        "name": "asserted-loader-report.json",
+        "url": "/downloads/kg/3.0.0/asserted-loader-report.json",
+        "bytes": 353,
+        "sha256": "3342eeb86d5abecb93d0a3f49a249f7bdaf874a9d774cfa7e9979f8f99efd66c"
+      },
+      {
+        "name": "site-import-adaptations.json",
+        "url": "/downloads/kg/3.0.0/site-import-adaptations.json",
+        "bytes": 490,
+        "sha256": "543629021c1edb3946d2097dd01485834a5547669679d038e695d9363d27ab0f"
+      },
+      {
+        "name": "native-export-fixture.json",
+        "url": "/downloads/kg/3.0.0/native-export-fixture.json",
+        "bytes": 354,
+        "sha256": "27904ec3be34af59266e621591a1dd33245f2641c2fb3b22264537d7207d63cf"
+      },
+      {
+        "name": "prepare_wkt_import.py",
+        "url": "/downloads/kg/3.0.0/prepare_wkt_import.py",
+        "bytes": 3212,
+        "sha256": "7429bdbcdf19145301fd8778cc55da5290e36fce93523c6eb888ee95d1612a48"
+      },
+      {
+        "name": "source-rebuild-verification.json",
+        "url": "/downloads/kg/3.0.0/source-rebuild-verification.json",
+        "bytes": 4013,
+        "sha256": "e25890eaa7585b1270d5d7ccc96dc4832c09f1405945d5517930440d89269c67"
+      }
+    ],
+    "loader_code_sha256": "f10d73add763e00baec4d7212175b57d5460cb01ef0b889cf5d6314d833daed8",
+    "adapter_code_sha256": "7429bdbcdf19145301fd8778cc55da5290e36fce93523c6eb888ee95d1612a48",
+    "scope": "The separately hashed POINT whitespace adapter was applied before the fresh asserted load; no historical post-inference repair is claimed."
+  },
+  "validation_url": "/downloads/kg/3.0.0/validation.json",
+  "project_data_licence": null,
+  "licence_statement": "No new licence is granted. Preserve existing third-party terms and annotations.",
+  "reproducibility_scope": "Rebuild all sixteen asserted modules from bundled frozen scientific tables; historical raw-read reconstruction and public sequence access are separate.",
+  "evidence": {
+    "input_manifest_sha256": "ec04bcb5c7b96e8e000de0a7d9b62360b28af3b202c10f02ba61f16dc0f1b72f",
+    "private_loader_report_sha256": "9f2245c80889900900446ac663ad66cc3ad129aede3b56ed2ae6e6dbd305e31f",
+    "export_report_sha256": "27f04d1c8759506043434028caa593d9859f770ad5b0c74d189588d25d78b875",
+    "source_rebuild_report_sha256": "e25890eaa7585b1270d5d7ccc96dc4832c09f1405945d5517930440d89269c67",
+    "native_export_fixture_sha256": "27904ec3be34af59266e621591a1dd33245f2641c2fb3b22264537d7207d63cf",
+    "rdf_syntax_validation": "Full HTTP download, RDF syntax and graph-context validation required before activation.",
+    "http_download_validation": "Not performed by this packaging step."
+  },
+  "immutable_release_policy": "These three artifacts and this manifest must never change. Publish any later entailed release under a new semantic version."
+}

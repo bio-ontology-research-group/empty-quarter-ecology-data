@@ -2,31 +2,23 @@
 \label{methods:taxonomy}
 
 
-%we attach stable identifiers from NCBI Taxonomy \cite{ncbitaxon} to SILVA lineages \cite{silva} where it can be justified. We created a mapping in which every assertion of taxonomic identity is traceable and verified.
-%We retain
-Taxonomic labels are text strings, and the same string can denote different taxa across databases and releases, and one taxon can be referred to by several strings \cite{balvovciute2017silva}. We therefore map NCBI Taxonomy \cite{ncbitaxon} identifiers to SILVA lineages alongside every assignment.
+A taxonomic label can denote different taxa across databases and
+releases, and a taxon can have several labels \cite{balvovciute2017silva}.
+We therefore retain the original SILVA lineage alongside a validated
+NCBI Taxonomy identifier or a lineage-scoped project identifier.
 Taxonomic assignments come from SILVA v138.2 (Section~\ref{methods}), and we treat the original classifier lineage and ASV identifier as the primary evidence.
-%The combined Trips~1--5 taxonomic assignment pipeline export contains two source encodings:
 These assignments are seven rank fields (domain--species), and some are followed by a separate species assignment field and a numeric confidence. We assert the species from the ranked lineage and retain the additional species call in a provenance ledger.
-% QIIME artifact provenance identifies the latter as an appended species assignment rather than an eighth rank.
 We normalize the seven ordered rank 
-%(domain to species)
 fields by removing rank prefixes and representing empty and unclassified entries explicitly.
-%: rank prefixes are removed, empty and unclassified values are represented explicitly, and the separate species assignment is retained in a provenance ledger but never promoted into the asserted lineage.
 
-A fail-closed normalization step evaluates the historical SILVA-to-NCBI candidates against a pinned NCBI Taxonomy release (the OBO Foundry NCBITaxon release \texttt{2025-03-13}, built from the NCBI
+The mapping procedure evaluates the historical SILVA-to-NCBI candidates against a pinned NCBI Taxonomy release (the OBO Foundry NCBITaxon release \texttt{2025-03-13}, built from the NCBI
 organismal taxonomy of 2025-03-01).
-% , GTDB \cite{gtdb}, and iNaturalist.
-%We resolve each rank field against this backbone through lexical matching, where each class is indexed by a normalized label. Normalizing involves lowercasing the strings, removing rank prefixes and suffixes, and the \emph{Candidatus} qualifier. 
 An identifier is retained only when it resolves, has a compatible rank and label or documented synonym, and its ancestor chain is compatible with all retained
 higher-rank identifiers in that source lineage. A missing, ambiguous
 or incompatible candidate is replaced by a deterministic project class
-scoped to the complete truncated source lineage and rank, rather than
-by the nearest ancestor's identifier, which would conflate a named
-child with its broader ancestor. Each decision records the source
+scoped to the complete truncated source lineage and rank. Each decision records the source
 lineage and rank, candidate identifier, validation outcome, final
 identifier and reason. The output mapping covers every 
-%canonical
 lineage represented in both the taxonomy export and the
 feature table; otherwise generation stops.
 
@@ -34,30 +26,14 @@ Existing project identifiers are retained only when all explicit
 historical uses share one normalized rank, label and nearest explicit
 parent context; a reused identifier that acquires more than one
 corrected context is replaced in every affected use by contextual
-classes. Conflicting historical evidence is therefore contextualized
-rather than resolved according to file order. The mapping builder emits
+classes. Each resulting class retains one rank, label and parent context. The mapping builder emits
 corrected mappings, a decision ledger, a clean project taxonomy module
 and a manifest containing input and output checksums, and the
 abundance-ABox generator accepts only a passing, checksum-matched
 manifest.
 
-We evaluated cross-resource alignment to GTDB \cite{gtdb} and
-iNaturalist separately from this SILVA-to-NCBI layer, in an earlier
-exploration whose candidate tables are not part of the release.
-iNaturalist enters this evaluation because the plant specimens sampled
-alongside the rhizosphere profiles were identified with it, so its
-taxon labels supply the host-plant context for those samples rather
-than an alternative prokaryotic taxonomy. The
-conclusion that exploration supports is a negative one: homonyms,
-\emph{Candidatus} names, placeholder taxa, GTDB split taxa, rank
-conflicts and database version changes can all produce identical labels
-for non-identical concepts, so label agreement alone does not
-establish extensional identity. The canonical release modules
-therefore contain no \texttt{owl:equivalentClass} assertions generated
-from those lexical candidates. Unreviewed GTDB and iNaturalist
-candidates are excluded from the asserted crosswalk, and we claim no
-mapping precision or recall because a stratified manual gold standard
-has not been completed. This conservative representation permits
-queries over the original SILVA lineage and validated NCBI classes
-without turning lexical similarity, a shared label or a supplementary
-species call into unsupported taxonomic identity.
+Queries retain the original SILVA lineage and independently validated
+NCBI or project identifiers. The decision ledger reports rejected
+candidates and their reasons. Algorithmic checks establish consistency
+with the specified name, rank and ancestry rules; semantic mapping
+accuracy requires a separately annotated validation sample.

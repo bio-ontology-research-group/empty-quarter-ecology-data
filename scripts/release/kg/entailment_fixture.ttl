@@ -1,0 +1,54 @@
+@prefix ex: <urn:eq:release-test:entity:> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix rak: <https://rubalkhali.science/kb/> .
+
+# Real project measurement-chain shape; the final attribute edge is omitted.
+sio:SIO_000011 owl:propertyChainAxiom
+    (sio:SIO_000216 sio:SIO_000232 sio:SIO_000291) .
+ex:quality sio:SIO_000216 ex:value .
+ex:value sio:SIO_000232 ex:measurement .
+ex:measurement sio:SIO_000291 ex:specimen .
+sio:SIO_000291 owl:propertyChainAxiom (sio:SIO_000068 sio:SIO_000291) .
+ex:measurementPart sio:SIO_000068 ex:measurement .
+
+ex:p rdfs:subPropertyOf ex:q .
+ex:q rdfs:domain ex:Domain ; rdfs:range ex:Range ; owl:inverseOf ex:inverse .
+ex:s ex:p ex:o .
+ex:s ex:symmetric ex:o .
+ex:symmetric a owl:SymmetricProperty .
+ex:cycle a owl:TransitiveProperty .
+ex:a ex:cycle ex:b . ex:b ex:cycle ex:a .
+ex:Equivalent owl:equivalentClass ex:Domain .
+ex:peq owl:equivalentProperty ex:q .
+
+ex:HasValue owl:onProperty ex:fixed ; owl:hasValue ex:chosen .
+ex:s a ex:HasValue .
+ex:Existential owl:onProperty ex:missing ; owl:someValuesFrom ex:Filler .
+ex:unwitnessed a ex:Existential .
+ex:KnownSome owl:onProperty ex:p ; owl:someValuesFrom ex:Range .
+ex:AllRange owl:onProperty ex:p ; owl:allValuesFrom ex:UniversalFiller .
+ex:s a ex:AllRange .
+ex:Intersection owl:intersectionOf (ex:Domain ex:Equivalent) .
+ex:Union owl:unionOf (ex:Domain ex:Other) .
+ex:Enumeration owl:oneOf (ex:s ex:o) .
+
+# The canonical PCR role is negative, distinct from an extraction blank.
+rak:RAK_0000307 rdfs:subClassOf rak:RAK_0000305 ;
+    owl:disjointWith rak:RAK_0000306 .
+rak:RAK_0000306 rdfs:subClassOf rak:RAK_0000305 .
+rak:RAK_0000304 owl:disjointWith rak:RAK_0000305 .
+ex:pcr_role a rak:RAK_0000307 .
+ex:extraction_role a rak:RAK_0000306 .
+
+# Explicitly excluded equality/cardinality must not be silently applied.
+ex:s owl:sameAs ex:alias .
+ex:functional a owl:FunctionalProperty .
+ex:s ex:functional ex:o, ex:chosen .
+@prefix chain: <urn:eq:release-test:inverse-chain:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+chain:result owl:propertyChainAxiom (chain:forward [ owl:inverseOf chain:backward ]) .
+chain:start chain:forward chain:middle .
+chain:end chain:backward chain:middle .

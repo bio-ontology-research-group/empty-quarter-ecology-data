@@ -164,6 +164,73 @@ def read_sample_iris(path: Path) -> dict[str, URIRef]:
     return {key: next(iter(values)) for key, values in candidates.items()}
 
 
+def apply_specimen_reconciliation(
+    rows: list[dict[str, object]], mapping_path: Path, version_manifest: dict[str, Any],
+    sample_ledger: dict[tuple[int, str], dict[str, str]], sample_iris: dict[str, URIRef],
+    workbook_sha: str,
+) -> dict[str, object]:
+    """Apply the explicit successor mapping without altering workbook observations."""
+    if version_manifest.get("dataset_version") != "EQ-PH-SHARED-v1.0.1":
+        raise ValueError("Specimen reconciliation is restricted to the declared successor version")
+    reconciliation = version_manifest["specimen_reconciliation"]
+    if sha256_file(mapping_path) != reconciliation["mapping_sha256"]:
+        raise ValueError("Specimen reconciliation mapping hash mismatch")
+    if workbook_sha != version_manifest["source"]["sha256"]:
+        raise ValueError("Specimen reconciliation workbook hash mismatch")
+    evidence_path = mapping_path.parent / reconciliation["evidence_file"]
+    if sha256_file(evidence_path) != reconciliation["evidence_sha256"]:
+        raise ValueError("Specimen reconciliation evidence hash mismatch")
+    evidence = json.loads(evidence_path.read_text())
+    if evidence["evidence_id"] != reconciliation["evidence_id"]:
+        raise ValueError("Specimen reconciliation evidence identity mismatch")
+    with mapping_path.open() as handle:
+        mapping_rows = list(csv.DictReader(handle, delimiter="\t"))
+    mapping = {(item["source_sheet"], int(item["source_row"])): item for item in mapping_rows}
+    target_rows = [row for row in rows if row["trip"] == 4]
+    keys = {(str(row["source_sheet"]), int(row["source_row"])) for row in target_rows}
+    if len(mapping_rows) != len(mapping) or set(mapping) != keys or len(keys) != 177:
+        raise ValueError("Reconciliation must cover every Trip 4 source row exactly once")
+    changed = admitted = admitted_changed = 0
+    for row in target_rows:
+        item = mapping[(str(row["source_sheet"]), int(row["source_row"]))]
+        for field in ("sample_id", "site", "compartment", "disposition"):
+            if str(row[field]) != item[field]:
+                raise ValueError("Reconciliation source row mismatch: " + field)
+        if (item["recorded_specimen_iri"] != row["specimen_iri"]
+                or item["recorded_replicate"] != str(row["replicate"])
+                or item["evidence_id"] != evidence["evidence_id"]):
+            raise ValueError("Reconciliation predecessor identity/evidence mismatch")
+        target_id = item["confirmed_sample_id"]
+        parsed = parse_sample_id(target_id)
+        target = sample_ledger.get((4, target_id))
+        if (parsed is None or parsed["trip"] != 4 or parsed["replicate"] != 2
+                or parsed["site"] != row["site"] or parsed["compartment"] != row["compartment"]
+                or item["confirmed_replicate"] != "2" or target is None
+                or target["site"] != str(row["site"]) or target["compartment"] != row["compartment"]
+                or str(sample_iris.get(target_id, "")) != item["confirmed_specimen_iri"]):
+            raise ValueError("Confirmed physical specimen fails exact ledger/ABox reconciliation")
+        if row["ph_value"] is None:
+            row.update(recorded_specimen_iri=row["specimen_iri"],
+                       specimen_reconciliation_status="not_assayed_no_physical_assignment")
+            continue
+        is_changed = row["specimen_iri"] != item["confirmed_specimen_iri"]
+        changed += is_changed
+        admitted += row["disposition"] == ADMITTED
+        admitted_changed += is_changed and row["disposition"] == ADMITTED
+        row.update(recorded_specimen_iri=row["specimen_iri"],
+                   specimen_iri=item["confirmed_specimen_iri"],
+                   confirmed_specimen_id=target_id, confirmed_replicate=2,
+                   specimen_reconciliation_status="assay_specimen_confirmed",
+                   specimen_reconciliation_evidence=evidence["evidence_id"])
+    if (changed, admitted, admitted_changed) != (174, 156, 155):
+        raise ValueError("Unexpected reconciliation/admission change counts")
+    return {"mapping_sha256": sha256_file(mapping_path), "evidence_sha256": sha256_file(evidence_path),
+            "evidence_id": evidence["evidence_id"], "source_rows": 177,
+            "source_row_identity_changes": changed, "accepted_trip4_measurements": admitted,
+            "unassayed_rows_without_physical_assignment": 2,
+            "accepted_identity_changes": admitted_changed, "accepted_values_changed": 0}
+
+
 def write_tsv(path: Path, columns: list[str], rows: Iterable[dict[str, object]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as handle:
@@ -509,10 +576,21 @@ def build_graph(
         specimen_iri = URIRef(str(row["specimen_iri"]))
         session_iri = sessions[session_key_values]
         label_tail = f"{row['sample_id']} on {row['measurement_date']}"
+        quality_specimen_label = str(row["sample_id"])
+        if row.get("confirmed_specimen_id") and row["confirmed_specimen_id"] != row["sample_id"]:
+            label_tail = (f"workbook {row['sample_id']} (confirmed specimen "
+                          f"{row['confirmed_specimen_id']}) on {row['measurement_date']}")
+            quality_specimen_label = (f"{row['confirmed_specimen_id']} "
+                                      f"(recorded workbook ID {row['sample_id']})")
 
         graph.add((process_iri, RDF.type, SIO.SIO_001054))
         graph.add((process_iri, RDFS.label, Literal(f"Soil pH measuring process for {label_tail}")))
         graph.add((process_iri, DCTERMS.identifier, Literal(base_key)))
+        if row.get("specimen_reconciliation_evidence"):
+            graph.add((process_iri, DCTERMS.description,
+                       Literal("Physical specimen reconciled using laboratory confirmation "
+                               + str(row["specimen_reconciliation_evidence"])
+                               + "; the original workbook identifier is preserved in the source key.")))
         graph.add((process_iri, DCTERMS.date, Literal(row["measurement_date"], datatype=XSD.date)))
         graph.add((process_iri, SIO.SIO_000230, specimen_iri))
         graph.add((process_iri, SIO.SIO_000291, specimen_iri))
@@ -524,7 +602,7 @@ def build_graph(
         graph.add((dataset_iri, SIO.SIO_000773, process_iri))
 
         graph.add((quality_iri, RDF.type, PATO.PATO_0001842))
-        graph.add((quality_iri, RDFS.label, Literal(f"Acidity quality of {row['sample_id']} under CaCl2 protocol")))
+        graph.add((quality_iri, RDFS.label, Literal(f"Acidity quality of {quality_specimen_label} under CaCl2 protocol")))
         graph.add((quality_iri, SIO.SIO_000011, specimen_iri))
         graph.add((quality_iri, SIO.SIO_000216, value_iri))
         graph.add((specimen_iri, SIO.SIO_000008, quality_iri))
@@ -586,6 +664,8 @@ AUDIT_COLUMNS = [
     "kg_eligible",
     "reason_codes",
 ]
+RECONCILIATION_COLUMNS = ["recorded_specimen_iri", "confirmed_specimen_id", "confirmed_replicate",
+                          "specimen_reconciliation_evidence", "specimen_reconciliation_status"]
 
 
 def main() -> None:
@@ -611,6 +691,7 @@ def main() -> None:
     )
     parser.add_argument("--source-complete", action="store_true")
     parser.add_argument("--measurement-campaign-closed", action="store_true")
+    parser.add_argument("--specimen-reconciliation", type=Path)
     args = parser.parse_args()
 
     root = args.project_root.resolve()
@@ -626,6 +707,16 @@ def main() -> None:
     sample_abox = root / "data/processed/semantics/ontology/rubalkhali_samples.owl"
     sample_iris = read_sample_iris(sample_abox)
     rows = audit_workbook(workbook_path, ledger, sample_iris, args.as_of)
+    reconciliation_summary = None
+    reconciliation_path = args.specimen_reconciliation.resolve() if args.specimen_reconciliation else None
+    if args.dataset_version == "EQ-PH-SHARED-v1.0.1" and reconciliation_path is None:
+        raise ValueError("The corrected successor requires its explicit specimen reconciliation")
+    if reconciliation_path:
+        if args.dataset_version != "EQ-PH-SHARED-v1.0.1":
+            raise ValueError("The predecessor must remain unchanged")
+        reconciliation_summary = apply_specimen_reconciliation(
+            rows, reconciliation_path, json.loads((workbook_path.parent / "manifest.json").read_text()),
+            ledger, sample_iris, workbook_sha)
     graph, registry, sessions, ontology_iri = build_graph(
         rows,
         workbook_sha,
@@ -640,10 +731,11 @@ def main() -> None:
     registry_path = normalized_dir / "ph_entity_registry.tsv"
     graph_path = kg_dir / "rubalkhali_ph_measurements.ttl"
     graph_rdfxml_path = kg_dir / "rubalkhali_ph_measurements.owl"
-    write_tsv(audit_path, AUDIT_COLUMNS, rows)
+    audit_columns = AUDIT_COLUMNS + (RECONCILIATION_COLUMNS if reconciliation_summary else [])
+    write_tsv(audit_path, audit_columns, rows)
     write_tsv(
         accepted_path,
-        AUDIT_COLUMNS,
+        audit_columns,
         [row for row in rows if row["disposition"] == ADMITTED],
     )
     write_tsv(
@@ -723,6 +815,8 @@ def main() -> None:
             }
         )
     summary_path = output_dir / "summary.json"
+    if reconciliation_summary:
+        summary["specimen_reconciliation"] = reconciliation_summary
     summary_path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
     version_manifest = workbook_path.parent / "manifest.json"
@@ -737,6 +831,9 @@ def main() -> None:
         shape_path,
         Path(__file__).resolve(),
     ]
+    if reconciliation_path:
+        input_paths.extend([reconciliation_path, reconciliation_path.parent /
+                            json.loads(version_manifest.read_text())["specimen_reconciliation"]["evidence_file"]])
     manifest_paths = [
         *input_paths,
         audit_path,

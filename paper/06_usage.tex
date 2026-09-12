@@ -1,153 +1,118 @@
 \section{Usage notes}\label{usage}
 
-The knowledge graph is publicly accessible via the SPARQL endpoint at \url{https://rubalkhali.science/sparql}. Users can submit SPARQL 1.1 queries using standard clients (e.g., \texttt{curl}, Python's \texttt{SPARQLWrapper}, R's \texttt{SPARQL} package). The web portal at \url{https://rubalkhali.science/} provides a graphical interface for browsing sites, samples, and measurements without requiring SPARQL expertise.
+The portal at \url{https://rubalkhali.science/} provides site pages and
+a SPARQL editor. The endpoint
+\url{https://rubalkhali.science/sparql} accepts SPARQL~1.1 queries.
+For a local, low-memory example, load the base, site and XRF modules
+listed in Table~\ref{tab:modules} and execute
+\path{sparql/field_xrf_site10.rq}. The archived Site~10 result contains
+46 rows; compare both the returned process/analyte identifiers and
+their values with \path{evidence/competency-query/}. Taxonomic
+queries additionally require the taxonomy ABox and its mapping
+dependencies. The named-run example retrieves the complete genus
+profile for \texttt{ERR16061083}. For all-run exports, execute
+\path{scripts/release/kg/taxonomy_all_runs.rq} on a locally loaded
+snapshot and allow for a long-running join. The release's \path{REPRODUCE.md} describes payload
+retrieval, checksums, environments and workflow commands.
 
-The semantic structure of the knowledge graph enables cross-domain queries. For example, researchers investigating the relationship between soil geochemistry and microbial diversity can construct a single query that retrieves calcium concentrations alongside Shannon diversity indices computed from taxon abundances. Executing this query in a relational database would necessitate joining at least four separate tables.
+\subsection{Choosing observations for reuse}
 
-The modular OWL architecture permits extending the knowledge graph with new data types, such as metabolomics or remote sensing data. Users can introduce new classes as subclasses of existing SIO entities and generate corresponding ABox modules. We automate the entire lifecycle---from data generation through validation to database loading---using the provided deployment workflow (\texttt{deploy\_onto.sh}).
+Use specimen, collection-visit and assay identifiers when joining
+observations. The primary repeated-campaign frame comprises sites
+1--60; the source identifiers 61--64 refer to four named catalogue
+locations sampled in Trip~1. Several feature profiles share a source
+specimen identifier. Analyses should group these profiles by their
+documented specimen and processing relationships.
 
-\subsection{Use cases}
+The control registry distinguishes assay, processing stage,
+extraction group and identity evidence. The Trip~5 candidate screen
+uses 17 extraction blanks linked to 217 biological profiles and
+identifies 351 ASVs. The canonical feature table retains these ASVs;
+the companion sensitivity analysis applies their removal to the linked
+profiles. Trip~4 has six separately denoised extraction blanks and
+three batches with unsequenced blanks, leaving complete or partial
+coverage gaps at 28 sites. Concentration measurements exist in the
+source records; any concentration-based screen requires a matched
+specimen--extraction--measurement ledger. Four Trips~2--3 standards
+support genus-recovery evaluation. Trips~4--5 have extraction controls
+but no sequenced 16S positive-standard profiles.
 
-Two worked use cases illustrate how the graph supports analyses that
-its individual source tables do not, following the practice of
-resource papers such as Tara Oceans \cite{taraoceans2015} and
-MetagenomicKG \cite{metagenomickg2026} of demonstrating utility on
-concrete questions.
+Archived-soil pH describes specimens measured in CaCl$_2$ under the
+admission rules of Section~\ref{methods:ph}. Coverage varies by
+campaign and compartment. All Trip~4 assays used archived field
+replicate~2. Their supported comparison with community profiles is at
+campaign, site and compartment level. The versioned reconciliation
+links measurements to the confirmed specimens as described in Methods.
 
-\paragraph{Use case 1: environmental context for a community
-observation.} A reuser studying thermotolerance wants the bacterial
-genera observed at the hottest sampled sites, together with the
-geochemical and climate context of those sites. Because field
-measurements, XRF sessions, climate records and taxon observations
-all instantiate the same measurement idiom around the same site
-individuals (Section~\ref{ontology}), this is a single SPARQL query
-rather than a chain of table joins keyed on inconsistent site labels:
-Listing~\ref{lst:sparql_env_tax} retrieves \textit{Pseudomonas}
-relative abundance at sites whose recorded field temperature exceeds
-a threshold, and the same pattern extended with the geochemistry
-fragment of Listing~\ref{lst:sparql_xrf} adds, for example, calcium
-concentrations or monthly precipitation for the returned sites. The
-competency questions of Table~\ref{tab:cq} are regression-tested
-variants of exactly these traversals, so the query routes shown here
-are re-validated whenever the graph is rebuilt. Of these routes, the
-field-XRF retrieval of Listing~\ref{lst:sparql_xrf} is
-workflow-validated at a fixed cardinality of 46 rows
-(Section~\ref{valid}).
+Field and laboratory XRF observations have separate acquisition
+provenance and undocumented concentration units. The released values
+support within-workflow descriptive comparisons; cross-workflow
+calibration requires documented units, paired aliquots and reference
+materials. Site~4 field readings include different substrates, so a
+site-level summary combines that local heterogeneity with instrument
+repeatability.
 
-\paragraph{Use case 2: batch-aware contamination sensitivity.} The
-laboratory-control pattern (Section~\ref{ontology}) links every
-extraction blank to its extraction batch, and every biological
-profile to the batch that produced it. The companion ecology analysis
-\cite{ecology_companion} consumed these frozen links directly: the
-351 candidate contaminant ASVs identified from the Trip~5 blanks were
-removed only from the 217 batch-linked Trip~5 profiles (and the
-corresponding Trip~4 screen only from its linked profiles), never
-from unlinked ones, and the analysis then re-evaluated its tracked
-headline conclusions on the filtered table; every verdict was
-retained. The candidate tables, filtered-table builder and per-metric
-outcomes are archived as evidence bundles in the reproducibility
-repository, so a reuser can repeat the sensitivity analysis under a
-different candidate set or link stringency without re-deriving the
-batch structure from laboratory records.
+The PMA table contains three site-compartment groups at two campsites.
+Each group has one parent collection tube, from which three separate
+slurries supplied treated/untreated pairs. Descriptive paired summaries
+retain this preparation structure and compare dye treatment under
+matched dark and light exposure.
 
-\subsection{Design rationale}
+\subsection{Versioning and supported operations}
 
-We adopted the Semanticscience Integrated Ontology (SIO) as the
-upper-level framework because it offers a small set of relations
-(\texttt{hasInput}/\texttt{hasOutput}, \texttt{hasTarget},
-\texttt{hasMember}, \texttt{isMeasurementValueOf}, \texttt{hasValue}) that
-generalize across sampling, measurement, and provenance patterns.
-Sample collection, XRF analysis, DNA extraction, sequencing, and
-taxonomic classification are all instantiations of the same
-\texttt{Process--hasInput/hasOutput--Object} idiom; quantitative
-results are uniformly represented as \texttt{Quantity
-isMeasurementValueOf Quality} pairs, with a unit asserted where the
-source documents one; XRF concentration values
-have no unit assertion because the XRF exports document none. This uniformity enables
-cross-domain SPARQL queries that traverse from a climate observation
-through a sampling site to a taxon abundance without per-domain
-join logic. Recent work on simplified upper-level ontologies, such as
-SULO \cite{sulo2025}, takes this argument further by strengthening
-fundamental relations and reducing reliance on specialized
-predicates; our patterns are compatible with this direction.
+The deposited source and checksum manifests identify the inputs used
+to generate each module. Preserve these files when reproducing a
+reported result. Rebuilding against a newer external ontology requires
+identifier and mapping validation, followed by regeneration of the
+affected modules and query results. The repository changelog records
+source corrections and superseded artifacts.
 
-We chose ShEx for ingest validation because the ETL is
-batch-oriented and the validator runs in the same Groovy/Jena
-toolchain that produces the RDF. SHACL is an obvious alternative
-supported in-database by several triple stores; a future port of the
-shapes from ShEx to SHACL would enable in-database validation at load
-time. We deployed Virtuoso as the triple store because it is
-available as free software under the GNU General Public License,
-supports OWL-Horst forward-chaining materialization, and has
-demonstrated operational maturity in large-scale linked-data
-deployments.
+KG v3.0.0 serves the asserted graph at
+\url{https://rubalkhali.science/graph/asserted/3.0.0}.
+This graph is the default dataset for portal and SPARQL queries.
+Explicit \texttt{FROM}, \texttt{FROM NAMED} and SPARQL protocol
+dataset parameters select the dataset for an individual request.
+The service evaluates stored assertions directly and rejects
+unavailable query modes.
 
-Full OWL 2 DL reasoning over the combined TBox and the ABox is not
-computationally feasible with HermiT on commodity hardware. We
-therefore use ELK \cite{elk} to validate the logical consistency of
-the knowledge graph. For query answering, we rely on a selected
-forward-rule expansion in Virtuoso, which physically expands the graph
-by applying subclass, subproperty,
-inverse, symmetric, equivalence, and transitivity rules; this
-expansion has not been demonstrated to reach a fixed point and is not
-complete OWL-Horst closure \cite{owlhorst}. Two decades
-of work on scaling OWL reasoning---materialization-based approaches
-\cite{owlhorst}, query rewriting, modular reasoning, and
-consequence-based calculi such as ELK itself---provide several
-alternative points in the design space, and a more expressive reasoner
-could be applied to a sub-module of the TBox in future work.
+The bundled finite-rule implementation supports the separate
+reasoning workflow described in Section~\ref{subsec:owl_rdf}.
+Publication of its output requires completion and validation of that
+workflow. Changes to released artifacts require a new semantic version.
 
-\subsection{Limitations and outstanding challenges}
-
-Several challenges remain open. First, the assay-aware control screen
-identifies 351 of 351,472 ASVs using 17 extraction-day blanks with
-batch links to Trip~5 profiles. Removing these candidates only from
-the 217 co-extracted Trip~5 biological profiles removes 2.19\,\% of
-reads in aggregate, and the unfiltered table remains canonical.
-Inference is bounded because the design provides only one blank per
-extraction batch, concentration data are absent, Trip~4 has no
-positive control and has an unsequenced blank affecting all or part of
-23 sites, and Trip~5 has no 16S positive control. A reuser should use
-the control module and audit tables to select compatible controls by
-assay, stage and batch, and should not treat contamination as
-eliminated. Second, archived-soil pH is available for 712 admitted
-specimens under the specified CaCl$_2$ protocol, but coverage is
-incomplete and non-random and should not be interpreted as an in-situ
-field map. Third, the XRF sources lack machine-readable unit and
-non-detect semantics, and Trips~1--4 and Trip~5 use disclosed but
-different repeat-formula rules; field and laboratory XRF values cannot
-be assumed interchangeable, and their current comparison is site-level
-rather than same-aliquot. Fourth, more complex reasoning---for
-example over disjunctions arising from ENVO biome classifications or
-negative axioms about taxon absence---would require either a different
-reasoner or the extraction of a sub-module amenable to a more
-expressive calculus. Finally, the resource depends on upstream
-ontologies (SIO, ChEBI, ENVO, NCBI Taxonomy) that evolve
-independently; keeping the deployed graph aligned with their releases
-is an ongoing maintenance task and a known reproducibility risk for any
-SPARQL query that bottoms out in a specific external IRI.
-
-\subsection{Sustainability and updates}
-
-The dataset is versioned and archived on Zenodo, and the deployment
-workflow is reproducible from the public repository. We intend to
-extend the resource as additional field campaigns are processed: new
-trips will be added as additional ABox modules without changes to the
-upper-level patterns. Upstream ontology updates will be tracked at
-scheduled intervals; re-materialization is scripted and runs as part of
-the deployment workflow, so an upstream release can be absorbed by
-re-running the workflow. Where an upstream change would alter the
-semantics of an existing query, we will record the affected competency
-questions in the changelog so that downstream users can audit the
-impact.
+For reproduction, retain the source package, module manifest,
+loader provenance and checksums together. The release instructions
+specify the pinned generation environment and coordinate-preserving
+import adapter. The asserted N-Quads provides the released union;
+the source package regenerates all 16 original module hashes.
+Local module loading provides access to fixed inputs independently
+of the portal's deployed version. Analyses requiring additional OWL
+consequences need a reasoner and validation workload suited to those
+constructs.
 
 \section{Data availability}\label{data_availability}
 
-%Three project accessions appear in the project records, resolved against the live European Nucleotide Archive on 28~July 2026. The accessions are not yet reconciled, and none is currently a usable route to the data described here. \texttt{PRJEB106069} is the project against which all 1,268 submitted amplicon run rows are registered, but it returns no public record. 
-Sequencing data for this project are deposited in the European Nucleotide Archive (ENA) under accession \texttt{PRJEB104209}, %is a public
-an umbrella study (``The genome of the Rub' al Khali (Empty Quarter)'').
-%, secondary accession \texttt{ERP185514}) but carries no read runs of its own. \texttt{PRJNA1065643} is public and holds 85 amplicon read runs on Illumina MiSeq, an earlier partial deposition on a different instrument that is not the five-campaign release described here. Every run accession the project holds was checked individually, and none yet resolves to a public record; establishing the sample-level mapping requires \texttt{PRJEB106069} and its runs to be released. The staged release candidate contains the derived companion-analysis inputs (the paired PMA table, 150 CoverM profiles, eggNOG annotations for the 990-genome analytical subset and the measured-function input archive), which support their named downstream endpoints but do not reproduce raw-read processing, assembly, binning, dereplication, annotation or profile generation. Public deposition of the checksummed package and the underlying sequence resources remains an availability gate for submission.
+The project uses ENA umbrella study \texttt{PRJEB104209}; its submitted
+amplicon run records are associated with \texttt{PRJEB106069}. On
+10~September 2026, the anonymous ENA read-run file report for
+\texttt{PRJEB106069} returned no public run/file rows. Release of the
+raw reads or a complete anonymous reviewer download remains required.
+The source and derived-data package is maintained at
+\url{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data}.
+Its manifests distinguish included files, separately retrieved bulk
+payloads and unresolved release gates. KG v3.0.0 and its source package
+are available through the versioned website downloads. The broader
+dataset's archival accession, sequence access and project-data licence
+remain separate publication requirements.
 
 \section{Code availability}\label{code}
 
-All source code for data processing, ontology engineering, RDF generation, validation, and the web portal is openly available at \url{https://github.com/bio-ontology-research-group/empty-quarter}. The repository includes Groovy scripts utilizing the OWL API 5 for OWL/RDF generation, Python scripts for data processing and statistical analysis, ShEx shape definitions for structural validation, SPARQL competency queries, React/FastAPI web application source code and Docker Compose configurations for deployment. The manuscript, RDF generators, source metadata and reproducibility workflow are maintained in the companion repository at \url{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data}, which holds the \texttt{main.nf} entry point, execution profiles, workflow tests, a pinned Conda recipe and a hash-locked Python environment.
+The web application and ontology-development code are available at
+\url{https://github.com/bio-ontology-research-group/empty-quarter}.
+The data repository
+\url{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data}
+contains the manuscript sources, RDF generators, metadata and
+\texttt{main.nf} workflow. RDF generation uses Groovy scripts with
+OWL API v5.1.20 \cite{owlapi}; the ELK validation wrapper uses
+OWL API v4.5.26. The repository supplies execution profiles, workflow
+tests, a pinned Conda recipe and a hash-locked Python environment.

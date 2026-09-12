@@ -42,6 +42,7 @@ def write_fixture(root: Path) -> tuple[Path, Path]:
         "kr_supplement.tex",
         "env_table.tex",
         "xrf_table.tex",
+        "sample_coverage_table.tex",
         "sn-bibliography.bib",
         "sn-jnl.cls",
         "sn-mathphys-num.bst",

@@ -1,7 +1,6 @@
 %Version 3.1 December 2024
 \documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
 
-\usepackage{todonotes}
 \usepackage{gensymb}
 \usepackage{graphicx}
 \usepackage{multirow}
@@ -23,6 +22,7 @@
 \usetikzlibrary{shapes,arrows.meta,positioning}
 \lstset{breaklines=true,breakatwhitespace=false,columns=fullflexible}
 
+\hypersetup{hypertexnames=false}
 \raggedbottom
 
 \begin{document}
@@ -31,21 +31,21 @@
 
 \author[1]{\fnm{Rund} \sur{Tawfiq}}
 \author[1]{\fnm{Marwa} \sur{Abdelhakim}}
-\author[3]{\fnm{Sulaiman M.} \sur{Alajel}}
+\author[2]{\fnm{Sulaiman M.} \sur{Alajel}}
 \author[1]{\fnm{Mohammed} \sur{Alarawi}}
-\author[8]{\fnm{Hind} \sur{Aldakhil}}
+\author[3]{\fnm{Hind} \sur{Aldakhil}}
 \author[1]{\fnm{Abderahmane} \sur{Derouiche}}
 \author[4]{\fnm{Daniela I.} \sur{Drautz-Moses}}
-\author[7]{\fnm{Michel} \sur{Dumontier}}
+\author[5]{\fnm{Michel} \sur{Dumontier}}
 \author[6]{\fnm{Raik} \sur{Gr\"unberg}}
 \author[1]{\fnm{Alejandra} \sur{Lopez-Velazquez}}
-\author[2]{\fnm{Susana} \sur{Martinez Arbas}}
+\author[7]{\fnm{Susana} \sur{Martinez Arbas}}
 \author[1]{\fnm{Kexin} \sur{Niu}}
 \author[1]{\fnm{Krishnakumar} \sur{Sivakumar}}
-\author[5]{\fnm{Tiannyu} \sur{Wang}}
+\author[8]{\fnm{Tiannyu} \sur{Wang}}
 \author[4]{\fnm{Xiang} \sur{Zhao}}
 \author[1]{\fnm{Jood} \sur{Zubair}}
-\author[5]{\fnm{Magnus} \sur{Rueping}}
+\author[8]{\fnm{Magnus} \sur{Rueping}}
 \author*[1]{\fnm{Robert} \sur{Hoehndorf}}\email{robert.hoehndorf@kaust.edu.sa}
 %% ORCIDs received from co-authors (August 2026), for the submission system.
 %% sn-jnl's \orcid{} macro needs Orcidlogo.eps, which is not in this project,
@@ -65,38 +65,36 @@
 %%   Raik Gr\"unberg             0000-0001-9532-6043
 %%   Robert Hoehndorf           0000-0001-8149-5890
 
+
 \affil[1]{\orgdiv{Bio-Ontology Research Group (BORG), Computer, Electrical and Mathematical Sciences and Engineering (CEMSE) Division}, \orgname{King Abdullah University of Science and Technology (KAUST)}, \orgaddress{\city{Thuwal}, \country{Saudi Arabia}}}
-\affil[2]{\orgname{NIUM}, \orgaddress{\city{Esch-sur-Alzette}, \country{Luxembourg}}}
-\affil[3]{\orgname{Ministry of Environment, Water and Agriculture}, \country{Saudi Arabia}}
+\affil[2]{\orgname{Ministry of Environment, Water and Agriculture}, \country{Saudi Arabia}}
+\affil[3]{\orgdiv{National Livestock \& Fisheries Development Program (NLFDP)}, \orgname{Ministry of Environment, Water and Agriculture (MEWA)}, \orgaddress{\city{Riyadh}, \postcode{13413}, \country{Saudi Arabia}}}
 \affil[4]{\orgdiv{Bioscience Core Lab}, \orgname{King Abdullah University of Science and Technology}, \orgaddress{\city{Thuwal}, \country{Saudi Arabia}}}
-\affil[5]{\orgdiv{Physical Science and Engineering (PSE) Division}, \orgname{King Abdullah University of Science and Technology (KAUST)}, \orgaddress{\city{Thuwal}, \country{Saudi Arabia}}}
+\affil[5]{\orgdiv{Institute of Data Science, Department of Advanced Computing Sciences, Faculty of Science and Engineering}, \orgname{Maastricht University}, \orgaddress{\city{Maastricht}, \country{The Netherlands}}}
 \affil[6]{\orgdiv{Biomedical Sciences Division (BioMed)}, \orgname{King Abdullah University of Science and Technology (KAUST)}, \orgaddress{\city{Thuwal}, \country{Saudi Arabia}}}
-\affil[7]{\orgdiv{Institute of Data Science, Department of Advanced Computing Sciences, Faculty of Science and Engineering}, \orgname{Maastricht University}, \orgaddress{\city{Maastricht}, \country{The Netherlands}}}
-\affil[8]{\orgdiv{National Livestock \& Fisheries Development Program (NLFDP)}, \orgname{Ministry of Environment, Water and Agriculture (MEWA)}, \orgaddress{\city{Riyadh}, \postcode{13413}, \country{Saudi Arabia}}}
+\affil[7]{\orgname{NIUM}, \orgaddress{\city{Esch-sur-Alzette}, \country{Luxembourg}}}
+\affil[8]{\orgdiv{Physical Science and Engineering (PSE) Division}, \orgname{King Abdullah University of Science and Technology (KAUST)}, \orgaddress{\city{Thuwal}, \country{Saudi Arabia}}}
 
-\abstract{Integrating microbiome sequence data with environmental and geochemical metadata remains a significant challenge due to the heterogeneity of data formats and a lack of standardized semantic representations. Building such an integrated resource requires addressing several interlocking challenges: defining a unified data model across instruments and observation types, harmonizing taxonomic identifiers across reference databases, validating incoming data against shared schemas, and supporting semantic query answering at scale under a tractable reasoning regime. Here, we present a high-resolution microbiome dataset from five campaigns across a 1,043~km transect of the Empty Quarter (Rub' al Khali) of Saudi Arabia, comprising 2,516 individual samples from 60 primary sampling sites and special-interest locations. A 2,550-row source ledger (2,516 non-control records) connects specimens, DNA extractions, libraries, sequencing runs and community profiles; the canonical feature table contains 1,271 taxonomic profiles, of which 1,237 pass quality filtering. These biological sequences are joined to 274 field environmental logs, 12,936 monthly climate measurements, 712 archived-soil pH observations, and two X-ray fluorescence workflows (71 field sessions and 725 laboratory records). We augment these data with a formal knowledge base expressed in OWL 2 DL using the Semanticscience Integrated Ontology (SIO), with ShEx-based ingest validation and consistency of the tractable modules checked under the OWL 2 EL profile with ELK. This semantic layer enables complex cross-domain queries and provides a comparative baseline for studying microbial adaptation in extreme environments.}
+\abstract{We collected soil and plant material during five campaigns across a 1,043~km transect of the Saudi Rub' al-Khali (Empty Quarter). The resource links 2,516 non-control specimen entries with laboratory processing and a canonical amplicon table of 1,271 profiles, of which 1,237 pass control and read-depth exclusions. Associated observations comprise 274 field environmental logs, 712 archived-soil pH measurements, 71 field X-ray fluorescence sessions, 725 laboratory X-ray fluorescence records and 3,234 site-month climate summaries. We represent sites, specimens, processes and measurement values in a modular RDF knowledge base using the Semanticscience Integrated Ontology and validated chemical, environmental and taxonomic references. Source ledgers preserve corrections, aliases and assay-specific provenance. Validation checks source reconciliation, measurement admission, identifier mappings, structural constraints and query outputs. The graph supports retrieval across these linked observations through a web portal and SPARQL endpoint. Versioned source tables, graph modules and workflow code support reuse, with raw-read availability and missing acquisition metadata identified as release dependencies.}
 
-\keywords{Knowledge Graph, Metagenomics, Rub' al Khali, SIO, Semantic Web}
+\keywords{Knowledge graph, Amplicon sequencing, Rub' al Khali, SIO, Semantic web}
 
 \maketitle
 
 \input{01_introduction.tex}
 \input{02_methods.tex}
-\input{03_knowledge_representation.tex}
 \input{04_data_records.tex}
 \input{05_validation.tex}
 \input{06_usage.tex}
 
-\section*{Acknowledgements}
-\todo[inline]{Add acknowledgements.}
+% Author-approved acknowledgements remain to be supplied.
 
 \section*{Funding}
-SMA was supported by the Fonds National de la Recherche (FNR), Luxembourg
+Susana Martinez Arbas was supported by the Fonds National de la Recherche (FNR), Luxembourg
 (Project Ref.\ 18047750).
-\todo[inline]{Add the KAUST and any other grant numbers supporting this work.}
+% Additional author-confirmed funding remains to be supplied.
 
-\section*{Author contributions}
-\todo[inline]{Add CRediT author contribution statements}
+% Author-confirmed CRediT contributions remain to be supplied.
 
 \section*{Competing interests}
 The authors declare no competing interests.

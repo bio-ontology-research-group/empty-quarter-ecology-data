@@ -1,0 +1,56 @@
+[
+  {
+    "material": "https://rubalkhali.science/kb/RAK_CTL_43f740d71d2dff8487b372651f61bd984388fac41fc5f59a784e0a277ebfe210",
+    "identifier": "Negative1",
+    "label": "Trip 5 16S PCR no-template control Negative1",
+    "role": "https://rubalkhali.science/kb/RAK_CTL_738d1f7e08af625a8a358370fb0023d3ec92ba44271b1eaa3834215fe7b4daf1",
+    "roleClass": "https://rubalkhali.science/kb/RAK_0000307",
+    "forbiddenRoleClass": "https://rubalkhali.science/kb/RAK_0000306",
+    "realizedIn": "https://rubalkhali.science/kb/RAK_CTL_c49c8f3d3f41e2fd823a806e55b82d66041f2788d3030d2e864fd7e76b85e619"
+  },
+  {
+    "material": "https://rubalkhali.science/kb/RAK_CTL_5d645e9e2e96f374d7b336a4b0a78abb6c76b6b10574951b67a4e90a847a08e8",
+    "identifier": "Negative2",
+    "label": "Trip 5 16S PCR no-template control Negative2",
+    "role": "https://rubalkhali.science/kb/RAK_CTL_c4079d57d60f114d7f3992598af1f98d47a2ad43194e916568c197fe12d8d79c",
+    "roleClass": "https://rubalkhali.science/kb/RAK_0000307",
+    "forbiddenRoleClass": "https://rubalkhali.science/kb/RAK_0000306",
+    "realizedIn": "https://rubalkhali.science/kb/RAK_CTL_f6adc61177a293d499b6ac64706afb0662d0664db757129fe1a7e3aaef1ff3b2"
+  },
+  {
+    "material": "https://rubalkhali.science/kb/RAK_CTL_292a1a1b28b9b11134dd7c561df5849efce29f8abcbbf0783cb264fb2c0cb231",
+    "identifier": "Negative4",
+    "label": "Trip 5 16S PCR no-template control Negative4",
+    "role": "https://rubalkhali.science/kb/RAK_CTL_044e01c49af2cfb86b6af2c1c59cb5bf072fb9a9817ea4c1649f56d5a6ffa88f",
+    "roleClass": "https://rubalkhali.science/kb/RAK_0000307",
+    "forbiddenRoleClass": "https://rubalkhali.science/kb/RAK_0000306",
+    "realizedIn": "https://rubalkhali.science/kb/RAK_CTL_631e1609983edf48d7c5a87909bf9ddb9616a6884e93b20c6da6339a8c568e20"
+  },
+  {
+    "material": "https://rubalkhali.science/kb/RAK_CTL_34128a2b4f102fe5bcb93a0260c064246b40cc945b31c3c5b948c8432469119f",
+    "identifier": "Negative5",
+    "label": "Trip 5 16S PCR no-template control Negative5",
+    "role": "https://rubalkhali.science/kb/RAK_CTL_97c02faa52bd0a237d2707cd116a6ea955ca78e77b9497cc9f3e92a39ad4ef8b",
+    "roleClass": "https://rubalkhali.science/kb/RAK_0000307",
+    "forbiddenRoleClass": "https://rubalkhali.science/kb/RAK_0000306",
+    "realizedIn": "https://rubalkhali.science/kb/RAK_CTL_9697bb4dfe5b36abb125f23f43e5981d3dd97187c1dffbf329b59eb3a03788bc"
+  },
+  {
+    "material": "https://rubalkhali.science/kb/RAK_CTL_6cf9c6feb1e64f03302d0065ea04caeb95b6687abaf1795ea6620c7c936f0e06",
+    "identifier": "Negative6",
+    "label": "Trip 5 16S PCR no-template control Negative6",
+    "role": "https://rubalkhali.science/kb/RAK_CTL_c4257c3df1b28ff0034c357271472f86b8c8305a7d526a4836cebcdd8301f5aa",
+    "roleClass": "https://rubalkhali.science/kb/RAK_0000307",
+    "forbiddenRoleClass": "https://rubalkhali.science/kb/RAK_0000306",
+    "realizedIn": "https://rubalkhali.science/kb/RAK_CTL_25d271a4a873478719c711c5ef107286a90ac9aa78da25c82ff5b68089a1af31"
+  },
+  {
+    "material": "https://rubalkhali.science/kb/RAK_CTL_a257fdc1ec52a0bd13e4b97fb596775e19fc570683fc7f58dd4c275397192470",
+    "identifier": "Negative7",
+    "label": "Trip 5 16S PCR no-template control Negative7",
+    "role": "https://rubalkhali.science/kb/RAK_CTL_bdcf87482adc0fa8db6a16d2a61865bbdc4e3bf3ad89ce7763270fd6af13868d",
+    "roleClass": "https://rubalkhali.science/kb/RAK_0000307",
+    "forbiddenRoleClass": "https://rubalkhali.science/kb/RAK_0000306",
+    "realizedIn": "https://rubalkhali.science/kb/RAK_CTL_30bfab732ad4e8f33601d19cd16d3ce04c2d3fbdac1b0365e3f6787c5c7aeb08"
+  }
+]

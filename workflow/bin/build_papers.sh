@@ -52,6 +52,7 @@ for required in \
   "$competency_query/field_xrf_site10.rq" \
   "$competency_query/SHA256SUMS" \
   "$data_paper_figures/transect_altitude.png" \
+  "$data_paper_figures/transect_altitude.pdf" \
   "$data_paper_figures/transect_altitude_profile.tsv" \
   "$data_paper_figures/transect_altitude_summary.json" \
   "$data_paper_figures/SHA256SUMS"
@@ -140,12 +141,16 @@ cp \
   "$project_root/data-paper/supplement.tex" \
   "$project_root/data-paper/kr_supplement.tex" \
   "$project_root/data-paper/xrf_table.tex" \
+  "$project_root/data-paper/sample_coverage_table.tex" \
   "$project_root/data-paper/sn-bibliography.bib" \
   "$project_root/data-paper/sn-jnl.cls" \
   "$project_root/data-paper/sn-mathphys-num.bst" \
   "$task_root/data-paper/"
 cp "$data_paper_figures/transect_altitude.png" \
   "$task_root/data-paper/"
+mkdir -p "$task_root/data-paper/figures/transect"
+cp "$data_paper_figures/transect_altitude.pdf" \
+  "$task_root/data-paper/figures/transect/"
 cp "$environmental_metadata/env_table.tex" "$task_root/data-paper/"
 cp \
   "$environmental_metadata/environmental_measurements_curated.tsv" \

@@ -1,0 +1,8 @@
+{
+  "confirmed_at": "2026-09-10T13:16:33Z",
+  "evidence_id": "EQ-PH-TRIP4-REPLICATE-CONFIRMATION-20260910",
+  "fact": "Field replicate 2 was used for every Trip 4 pH assay because replicate 1 had been depleted.",
+  "scope": "Trip 4 physical specimen identity; original workbook cells and assay values remain preserved",
+  "source_role": "Laboratory author reporting the laboratory operator confirmation",
+  "supersedes": "Earlier same-day replicate-1 assignment for the 14 July assays"
+}

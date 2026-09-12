@@ -1,0 +1,7 @@
+# Observed version numbers; see inference_runtime.json for distribution-build caveat.
+# Use a separate Python3.8.10 environment, not the scientific-generation environment.
+setuptools==45.2.0
+rdflib==4.2.2
+pyparsing==2.4.6
+isodate==0.6.0
+six==1.14.0

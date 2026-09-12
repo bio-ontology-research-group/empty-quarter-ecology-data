@@ -49,7 +49,7 @@ def test_author_ground_truth_freezes_products_stage_and_assay_boundaries():
         row["record_id"]: row
         for row in read_tsv(SOURCE_CONTROLS / "control_ground_truth.tsv")
     }
-    assert set(rows) == {f"CGT-{number:03d}" for number in range(1, 12)}
+    assert set(rows) == {f"CGT-{number:03d}" for number in range(1, 13)}
     assert rows["CGT-001"]["material_or_product"].endswith("D6322")
     assert rows["CGT-002"]["material_form"] == "purified high-molecular-weight DNA"
     assert "extraction" not in rows["CGT-002"]["workflow_stage"].lower()
@@ -72,12 +72,14 @@ def test_extraction_blanks_are_batch_scoped_and_unmapped_blanks_stay_bounded():
     assert "not a field trip" in mapped["limitation"]
     unresolved = rows["CGT-008"]
     assert "characterization-only" in unresolved["limitation"]
-    assert "Negative1" in unresolved["control_scope"]
+    assert unresolved["control_scope"] == "Trip 5 EB18"
+    assert "Negative1" in rows["CGT-012"]["control_scope"]
+    assert rows["CGT-012"]["workflow_stage"].startswith("PCR;")
     assert rows["CGT-006"]["status"] == "CONFIRMED_AUTHOR"
-    assert "23 sites" in rows["CGT-006"]["limitation"]
+    assert "28 sites" in rows["CGT-006"]["limitation"]
 
 
-def test_explicit_pcr_blank_records_are_present_while_complete_map_is_pending():
+def test_confirmed_pcr_blank_records_include_trip5_no_template_controls():
     aliases = read_tsv(NORMALIZED / "control_aliases.tsv")
     roles = read_tsv(NORMALIZED / "control_roles.tsv")
     occurrences = read_tsv(NORMALIZED / "control_sequence_occurrences.tsv")
@@ -86,7 +88,7 @@ def test_explicit_pcr_blank_records_are_present_while_complete_map_is_pending():
         for row in roles
         if row["role_type"] == "pcr_blank"
     }
-    assert len(pcr_bearers) == 4
+    assert len(pcr_bearers) == 10
     represented_labels = {
         row["alias"] for row in aliases if row["entity_id"] in pcr_bearers
     }
@@ -95,7 +97,13 @@ def test_explicit_pcr_blank_records_are_present_while_complete_map_is_pending():
         "e0875_NTC_2",
         "e8667_PCRCtrl",
         "PCR Blank",
+        "Negative1", "Negative2", "Negative4", "Negative5", "Negative6", "Negative7",
     } <= represented_labels
+    trip5_bearers = {row["entity_id"] for row in aliases
+                     if row["alias"] in {"Negative1", "Negative2", "Negative4", "Negative5", "Negative6", "Negative7"}}
+    assert len(trip5_bearers) == 6
+    assert all(row["role_type"] != "extraction_blank" for row in roles
+               if row["bearer_material_id"] in trip5_bearers)
     sequenced = {row["facility_run_id"] for row in occurrences}
     assert {
         "IBEX:e0555_PCR_Ctrl_Trip1",
@@ -103,9 +111,7 @@ def test_explicit_pcr_blank_records_are_present_while_complete_map_is_pending():
         "IBEX:e8667_PCRCtrl",
     } <= sequenced
     readme = (SOURCE_CONTROLS / "README.md").read_text(encoding="utf-8")
-    assert "complete" in readme.lower()
-    assert "awaits laboratory" in readme
-    assert "confirmation" in readme
+    assert "PCR-stage no-template controls" in readme
 
 
 def test_ambiguous_e0323_library_is_not_promoted_to_positive_ground_truth():

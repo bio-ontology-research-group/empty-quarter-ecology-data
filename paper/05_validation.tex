@@ -1,36 +1,69 @@
 \section{Technical validation}\label{valid}
 
-We validated the knowledge graph using four complementary approaches,
-each targeting a distinct aspect of data quality: competency question
-evaluation via SPARQL queries, structural validation using Shape
-Expressions (ShEx), logical consistency checking with the ELK
-reasoner, and usability assessment through a web portal.
+Technical validation separates source reconciliation and measurement
+checks from structural constraints, executable queries and the
+operational ELK check. The evidence bundles identify the input
+snapshot and checks executed.
+
+\subsection{Assay validation}
+
+The PowerSoil Pro extraction-control profile contained 1,165 ASVs,
+with 84\% of reads assigned to ASVs shared with biological profiles.
+Its nearest canonical profile was 46Dr1, with Bray--Curtis
+dissimilarity 0.39. We excluded this control from the contaminant
+screen. A library-order test compared nearby library numbers with
+different-site pairs matched by geographic-distance decile and
+compartment, using 999 library-order permutations. The Trip~1 and
+Trip~3 Bray--Curtis contrasts were $-0.003$ ($p=0.15$) and
+$+0.007$ ($p=1.0$), respectively. These contrasts summarize the
+tested preparation-order association.
+
+For XRF, the source audit reproduces 13,390 Trips~1--4 and 4,293
+Trip~5 reported cells under their stated selection rules.
+Repeated field sessions were reduced to site medians and paired
+with the Trip~5 subsurface laboratory observation at 58 sites.
+Among 12 analytes with positive values in both workflows at more
+than 10 paired sites, the median Spearman correlation was 0.21
+(range $-0.40$ to 0.48;
+\path{evidence/xrf_audit/xrf_field_lab_agreement.tsv}).
+This diagnostic describes site-level rank agreement among the
+retained positive pairs.
 
 \subsection{Competency questions and SPARQL queries}
 
-To validate whether the full knowledge graph can be used to answer
-queries about the Rub' al-Khali, we defined competency questions
-expressed as SPARQL queries \cite{sparql} with known expected
-answers. We automated this validation process to enable regression
-testing during ontology updates. The validated competency questions
-include retrieving XRF measurements, listing sampling sites with
-coordinates, extracting DNA extraction data, tracing provenance from
-soil samples to sequencing runs, and querying taxonomic
-composition. The competency questions are designed to test questions
-that are needed for operating the website, and to support different
-types of queries within our dataset.
+Competency questions define the intended retrieval tasks
+(Table~\ref{tab:cq}). The archived query workload covers site,
+geochemical, molecular-provenance and taxonomic data. The
+Site~10 XRF query has an archived 46-row result. Source-derived
+expected result tuples also specify the complete 48-observation
+genus profile for run \texttt{ERR16061083},
+360-row environment--taxon join, 70 site coordinates and six
+PCR no-template control roles. The release validator compares full
+result multisets, preserving duplicate rows and requiring exact
+identifiers. Numeric comparisons use absolute and relative
+tolerances of $10^{-12}$; coordinate comparisons use an absolute
+tolerance of $10^{-10}$ degrees. The 26 checks cover the printed
+queries across direct and application-mediated transports, default
+and explicit datasets, and a 20-row taxonomic API result.
 
-Table~\ref{tab:cq} lists the competency questions we predefined for
-validation. Each is expressed as a SPARQL query with a known expected
-answer and is run as a regression test whenever the knowledge graph is
-regenerated. Together they cover every core module: geochemistry
-(CQ1, CQ4), the site catalogue and its biome grounding (CQ2, CQ3),
-the molecular provenance chain (CQ5, CQ6), and taxonomic composition
-(CQ7).
+Six additional checks verify the advertised asserted-only dataset,
+the rejection of unavailable query modes, the absence of unreleased
+graphs, the default graph cardinality and all 712 pH
+process--specimen links against the reconciled source module.
+Fourteen protocol checks cover dataset selection, read-only access
+and preservation of RDF terms across the supported graph and
+SELECT serializations. Browser validation executes all nine portal
+examples and checks the three versioned download links. Full HTTP
+downloads verify artifact sizes and checksums; the complete asserted
+N-Quads export is parsed and checked for its graph context and triple
+count. All checks passed on the candidate and public service. The
+\href{https://rubalkhali.science/downloads/kg/3.0.0/post-deployment-validation.json}{public validation report}
+binds these results to the release manifest.
+Separate structural tests cover additional module types.
 
 \begin{table}[h]
 \centering
-\caption{Predefined competency questions used for validation.}
+\caption{Competency questions defining the retrieval workload.}
 \label{tab:cq}
 \small
 \begin{tabular}{p{0.08\textwidth} p{0.84\textwidth}}
@@ -40,10 +73,10 @@ the molecular provenance chain (CQ5, CQ6), and taxonomic composition
 CQ1 & What are the XRF analyte concentrations measured at a given sampling site? \\
 CQ2 & Which sampling sites are recorded, and what are their GPS coordinates? \\
 CQ3 & Which biome and environmental features are assigned to each sampling site? \\
-CQ4 & What are the Light Elements percentages across the XRF measurements? \\
+CQ4 & What are the instrument-reported Light Elements values across the XRF measurements? \\
 CQ5 & Which DNA extraction records (extract, concentration, protocol) exist for a given sample? \\
 CQ6 & What is the full provenance chain from a soil sample to its sequencing run? \\
-CQ7 & What is the taxonomic composition and abundance of a given sample or run? \\
+CQ7 & What are the complete genus-level read counts and relative read abundance for run \texttt{ERR16061083}? \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -80,15 +113,10 @@ WHERE {
 ORDER BY ?processLabel ?analyte
 \end{lstlisting}
 
-Read in prose, the query first selects every field-XRF measuring
-process whose target site is labelled \texttt{Site~10}, then walks
-from each output value of that process to the quality it measures and
-to the recorded concentration. Field XRF is linked to the site rather
-than to a specimen, so no sample appears in the pattern, and no unit
-is bound because the XRF exports document none. The final filter
-excludes the Light Elements pseudo-analyte (\texttt{rak:0000032}) so
-that only individually quantified elements appear in the result, and
-the query returns one row per process and analyte combination.
+The query selects field-XRF processes targeting Site~10, then
+retrieves each output and its analyte quality. It returns one row
+per process/analyte combination, excluding the aggregate Light
+Elements channel. The concentration units are undocumented.
 
 The release workflow executes this exact query
 (\path{sparql/field_xrf_site10.rq}) against the checksummed base, site
@@ -97,55 +125,59 @@ and XRF modules and requires the fixed expected cardinality of
 24 from field process Test~5847 and 22 from Test~5848, and the result
 table and validation record are archived under
 \path{evidence/competency-query/}.
-No broader competency-query pass rate is claimed: only this query
-carries a fixed expected cardinality in the release workflow.
+This execution checks the archived query's cardinality; release
+validation also requires comparison of stable identifiers and values
+with the expected table.
 
-Listing~\ref{lst:sparql_taxon} retrieves taxonomic abundance profiles,
+Listing~\ref{lst:sparql_taxon} retrieves the complete genus profile for
+run \texttt{ERR16061083},
 joining across bioinformatic workflows, FASTQ datasets, and taxon
 observations.
 
-\begin{lstlisting}[caption={SPARQL query to retrieve taxonomic
-    composition and abundance for all samples.},
-  label={lst:sparql_taxon}, basicstyle=\ttfamily\scriptsize,
-  frame=single]
+\begin{lstlisting}[caption={Complete genus-level profile for run ERR16061083, ordered by descending read count and lineage.},label={lst:sparql_taxon},basicstyle=\ttfamily\scriptsize,frame=single]
 PREFIX rak: <https://rubalkhali.science/kb/RAK_>
 PREFIX sio: <http://semanticscience.org/resource/SIO_>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT DISTINCT ?run ?taxonLabel ?count ?relativeAbundance
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?proc ?fastq ?runLabel ?lineage ?taxon ?taxonLabel
+       ?count ?relativeAbundance
 WHERE {
+  VALUES ?runLabel { "FASTQ dataset for ERR16061083" }
   ?proc a rak:0000071 ;
         sio:000230 ?fastq ;
-        sio:000229 ?dsAbs , ?dsRel .
-  ?dsAbs a rak:0000074 .
-  ?dsRel a rak:0000075 .
+        sio:000229 ?dsAbs, ?dsRel .
   ?fastq rdfs:label ?runLabel .
-  BIND(REPLACE(?runLabel, "FASTQ dataset for ", "") AS ?run)
-  ?dsAbs sio:000059 ?valAbs .
-  ?valAbs rak:2000026 ?count .
-  ?valAbs sio:000215 ?qualAbs .
-  ?qualAbs sio:000011 ?taxon .
+  ?dsAbs a rak:0000074 ; rdfs:label ?absLabel ;
+         sio:000059 ?valAbs .
+  ?dsRel a rak:0000075 ; rdfs:label ?relLabel ;
+         sio:000059 ?valRel .
+  FILTER(STRENDS(STR(?absLabel), "(Genus)"))
+  FILTER(STRENDS(STR(?relLabel), "(Genus)"))
+  ?valAbs rak:2000026 ?count ;
+          rak:2000025 ?lineage ;
+          sio:000215 ?qualAbs .
+  ?valRel rak:2000020 ?relativeAbundance ;
+          rak:2000025 ?lineage ;
+          sio:000215 ?qualRel .
+  ?qualAbs sio:000011 ?taxon, ?fastq .
+  ?qualRel sio:000011 ?taxon, ?fastq .
   ?taxon rdfs:label ?taxonLabel .
-  ?qualRel sio:000011 ?taxon ;
-           a rak:0000072 ;
-           sio:000216 ?valRel .
-  ?valRel rak:2000020 ?relativeAbundance .
   FILTER(?taxon != ?fastq)
 }
-ORDER BY ?run DESC(?count) LIMIT 100
+ORDER BY ?runLabel DESC(xsd:double(?count)) ?lineage ?proc
 \end{lstlisting}
 
-In words, the query identifies every bioinformatic workflow that
-produces both an absolute and a relative taxonomic dataset for the
-same FASTQ input, then for each absolute observation it retrieves the
-read count, the associated taxon label, and the matching relative
-abundance from the parallel relative dataset. Results are grouped by
-sequencing run and ordered by descending count, so the most abundant
-taxa per run appear first.
-
-We added an additional query (Listing~\ref{lst:sparql_env_tax}) to
-retrieve specific taxa abundances alongside environmental constraints,
-demonstrating the ability to cross-reference biological and
-environmental properties.
+The query binds both count and relative-abundance values to the same
+workflow, source FASTQ dataset, taxon and classifier lineage. Dataset
+labels currently encode rank through the suffix \texttt{(Genus)}.
+The query uses that emitted convention explicitly and returns all
+48 observations for the named run. The source-derived expected table
+contains the complete profile, including each classifier lineage.
+The separate \path{scripts/release/kg/taxonomy_all_runs.rq} retrieves
+all runs from a locally loaded snapshot. That unrestricted export
+is a long-running operation. The environmental example below additionally binds
+field temperature and specimen collection to the same site visit.
 
 \begin{lstlisting}[caption={SPARQL query to retrieve Pseudomonas relative abundance at sites with high temperature.}, label={lst:sparql_env_tax}, basicstyle=\ttfamily\scriptsize, frame=single]
 PREFIX rak: <https://rubalkhali.science/kb/RAK_>
@@ -153,50 +185,56 @@ PREFIX sio: <http://semanticscience.org/resource/SIO_>
 PREFIX pato: <http://purl.obolibrary.org/obo/PATO_>
 PREFIX ncbitaxon: <http://purl.obolibrary.org/obo/NCBITaxon_>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?siteLabel ?temp ?relAbundance
+SELECT ?visit ?visitLabel ?site ?siteLabel ?sample ?fastq
+       ?temperatureProcess ?tempVal ?temp ?lineage ?relAbundance
 WHERE {
-  ?site a rak:0000002 ;
-        rdfs:label ?siteLabel .
-  
-  # Environmental Temperature (site hasAttribute quality)
-  ?site sio:000008 ?tempQual .
-  ?tempQual a pato:0000146 ;
-            sio:000216 ?tempVal .
-  ?tempVal rak:2000003 ?temp .
+  ?visit a rak:0000003 ; rdfs:label ?visitLabel ;
+         sio:000291 ?site .
+  ?site rdfs:label ?siteLabel .
+  ?temperatureProcess sio:000068 ?visit ;
+                      sio:000229 ?tempVal .
+  ?tempVal rak:2000003 ?temp ; sio:000215 ?tempQual .
+  ?tempQual a pato:0000146 ; sio:000011 ?site .
   FILTER(?temp > 35.0)
-
-  # Derived Sample and Taxon Abundance
-  ?sample sio:000244 ?site .
-  ?ext a rak:0000309 ; sio:000230 ?sample ; sio:000229 ?dna .
-  ?libPrep a rak:0000065 ; sio:000230 ?dna ; sio:000229 ?lib .
-  ?seq a rak:0000066 ; sio:000230 ?lib ; sio:000229 ?fastq .
-
-  ?bioinf a rak:0000071 ;
-          sio:000230 ?fastq ;
+  ?sampling a rak:0000024 ; sio:000068 ?visit ;
+            sio:000291 ?site ; sio:000229 ?collection .
+  ?collection sio:000059 ?sample .
+  ?ext sio:000230 ?sample ; sio:000229 ?dna .
+  ?libPrep a rak:0000065 ; sio:000230 ?dna ;
+           sio:000229 ?lib .
+  ?seq a rak:0000066 ; sio:000230 ?lib ;
+       sio:000229 ?fastq .
+  ?bioinf a rak:0000071 ; sio:000230 ?fastq ;
           sio:000229 ?dsRel .
-  ?dsRel a rak:0000075 ;
+  ?dsRel a rak:0000075 ; rdfs:label ?datasetLabel ;
          sio:000059 ?valRel .
+  FILTER(STRENDS(STR(?datasetLabel), "(Genus)"))
   ?valRel rak:2000020 ?relAbundance ;
-          sio:000215 ?qualRel .
-  ?qualRel sio:000011 ncbitaxon:286 . # Pseudomonas
+          rak:2000025 ?lineage ; sio:000215 ?qualRel .
+  ?qualRel sio:000011 ncbitaxon:286, ?fastq .
 }
+ORDER BY ?visit ?sample ?fastq ?tempVal ?lineage
 \end{lstlisting}
 
-In words, the query first selects every sampling site at which the
-recorded environmental temperature exceeds 35\,$^{\circ}$C, then for
-each such site it walks the full provenance chain --- soil sample,
-DNA extract, library preparation, sequencing run, FASTQ dataset,
-bioinformatic workflow, relative abundance dataset --- down to the
-relative abundance value of \emph{Pseudomonas}
-(\texttt{ncbitaxon:286}). Each row of the result therefore reports a
-single hot site together with its corresponding \emph{Pseudomonas}
-relative abundance, demonstrating a join that crosses the
-environmental, geochemical, and biological domains in a single SPARQL
-query.
+Each result retains the collection visit, specimen, sequence dataset,
+temperature observation and genus lineage. A site's visits are joined
+through their process provenance. This provides an environmental
+temperature associated with the collection visit of each returned
+microbial profile.
+
+Regression fixtures execute both queries on deliberately confusable
+inputs. The taxonomy fixture assigns the same genus different
+abundances in two profiles and adds a species-rank observation; the
+query returns exactly the two matching genus observations. The visit
+fixture gives one site two visits at 40 and 20\degree C; the
+temperature-filtered query returns only the specimen collected during
+the 40\degree C visit. These tests check the implemented joins;
+release-level validation additionally requires expected result tables
+for the complete modules.
 
 \subsection{Source reconciliation and measurement validation}
 
-The executed evidence workflow produced a row-level sample ledger and
+The archived evidence workflow produced a row-level sample ledger and
 reconciliation summaries for specimens, extracts, libraries, runs and
 community profiles. The 2,516 eligible source rows reconcile exactly
 to 2,516 generated sample individuals; the 1,647 extraction-eligible
@@ -221,79 +259,85 @@ input comprises all 725 processed records. An independent
 chemical-identifier gate checked all 93 instrument channels against
 the pinned ChEBI release 247 and the checksummed PubChem snapshot of
 23 July 2026 (Section~\ref{methods:xrf}); all
-rows passed, and audited nulls are retained for the unmapped LE
-pseudo-analyte and unsupported oxides rather than being replaced by
-lexical matches. The pH reconciliation independently accounts for all
-1,168 workbook rows, matches every admitted row to exactly one
-existing specimen, and reproduces the five dispositions reported in
-Section~\ref{records}.
+rows passed the declared rules, with explicit nulls for the aggregate
+LE channel and unsupported oxides. The pH reconciliation accounts for 1,168 workbook rows and
+reproduces the five admission dispositions in
+Section~\ref{methods:ph}. The string-based join associates each
+admitted row with a specimen identifier; the Trip~4 physical-replicate
+correction requires the separate provenance reconciliation described
+there.
 
 \subsection{ShEx schema validation}
 
-We ran the ShEx validation described in Section~\ref{methods}
-(shapes defined in Section~\ref{subsec:schema_def}) over every
-regenerated ABox module before loading into Virtuoso. The tractable
-modules passed their assigned ShEx shapes. The pH module was
+The archived ShEx run used the shapes described in
+Section~\ref{subsec:schema_def}. Its tractable modules passed their
+assigned shapes. The pH module was
 validated separately over all 712 measurement processes, values and
 acidity qualities and all 29 sessions, and the laboratory-control
-module passed its shape and scientific-invariant checks. The ShEx
-suite also tests rejection, not only conformance: negative fixtures
-that differ from a valid instance in exactly one respect (a sampling
-site without coordinates, a value with an invalid datatype, a reversed
-value-to-quality direction, and an XRF process with neither an input
-nor a target) are each rejected by the released shapes, so a passing
-negative test identifies the constraint that caught it. The
+module passed its shape and scientific-invariant checks. Four negative
+fixtures each alter one constraint: missing site coordinates, an invalid
+value datatype, reversed value-to-quality direction, or an XRF process
+with neither input nor target. The released shapes reject all four
+fixtures. The
 multi-gigabyte taxonomy ABox remains outside this memory-bounded run;
 it is instead parsed in full by an independent Turtle parser and
 scanned by a streaming structural validator, which accounted for
 44,528,482 triples in 5,953,690 subject blocks with zero structural
-violations. This establishes full-file syntax and generator-specific
-structural validation, not a claim that the taxonomy ABox passed the
-unexecuted ShEx shapes. The Turtle listings of Section~\ref{ontology}
-are checked mechanically as well:
-\path{scripts/validation/verify_manuscript_listings.py} parses each
-listing and resolves every printed triple and every prose IRI against
-the staged modules, so a drifted listing fails the workflow instead of
-reaching a reader as an unusable pattern.
+violations. This checks full-file syntax and the generator's declared structural
+relationships. The separate listing validator checks printed Turtle
+against the modules available for that run. Taxonomy and external
+reference checks require the corresponding pinned payloads.
 
 \subsection{Logical consistency}
 
-The ELK consistency check described in Section~\ref{methods} was
-re-run whenever the TBox changed or a new ABox module was introduced.
-A clean rerun on the current tractable modules loaded 781,293
-axioms from 10 distinct ontology IRIs and reported the resulting
-merged ontology as consistent; the generated ecosystem and
-laboratory-control modules were included. The run excluded the
-multi-gigabyte taxonomy ABox and large reference modules and did not
-precompute the class hierarchy, so it establishes bounded consistency
-of the included modules rather than whole-graph OWL~2~DL consistency.
-ELK is incomplete for universal restrictions, inverse properties and
-other constructs used by imported modules, and the excluded ABoxes
-were not covered; likewise, the selected forward-rule program of
-Section~\ref{subsec:owl_rdf} has not been demonstrated to reach a
-fixed point and is not complete OWL-Horst closure \cite{owlhorst}.
-A separate label gate merged 782,229 triples from the 11 current files
-and confirmed exactly one label for each of 104,697 labelled
-\texttt{RAK\_} subjects; the log, input hashes and validator hashes of
-both gates are archived under \path{evidence/semantic-validation/}.
+The 9 September validation loaded 781,044 asserted axioms from eleven
+ontology IRIs and ELK returned \texttt{true} for its consistency check.
+The checked union included the ecosystem, pH and laboratory-control
+modules. It excluded the taxonomy ABox and large reference modules;
+imported axioms were not added to the asserted union, and class-hierarchy
+precomputation was omitted. An import-order regression confirmed that
+modules loaded through imports and then encountered explicitly retain
+their asserted axioms exactly once.
+
+The generated assertions include \texttt{xsd:double} literals, placing
+the asserted graph outside OWL~2~EL's datatype restrictions
+\cite{owl2profiles}. An OWLAPI profile diagnostic on the tractable
+asserted core found 40,482 illegal-datarange occurrences, including
+40,481 uses of \texttt{xsd:double}. Diagnostics caused by missing
+import declarations were recorded separately. ELK's operational
+result describes the asserted union under the constructs processed
+by this ELK configuration.
+
+Validation of the separate finite-rule implementation uses synthetic examples for long
+hierarchies, transitive cycles, both project property-chain lengths,
+restriction and intersection classification, and PCR-control ancestry.
+The tests compare bounded, class-partitioned execution with an
+unbounded reference closure and check recovery from an interrupted
+run. Release-specific checks compare the complete control-role
+inventory with its source, retrieve consequences of the measurement
+chains and require the inferred graph to be disjoint from the
+asserted graph. Completion requires the zero-addition pass specified
+in Section~\ref{subsec:owl_rdf}, followed by the explicit clash
+diagnostics.
+
+The separate label gate merged 800,026 triples and confirmed exactly
+one label for each of 106,833 labelled \texttt{RAK\_} subjects.
+Current logs, input hashes and validator sources are preserved under
+\path{evidence/final-validation-20260909/}; the earlier run remains
+under \path{evidence/semantic-validation/}.
 
 \subsection{Compute-time metrics}\label{sec:compute_metrics}
 
-Table~\ref{tab:compute} summarizes the computational cost of
-the key deployment steps of the reference Virtuoso deployment. The
-selected forward-rule expansion (three passes; see
-Section~\ref{subsec:owl_rdf}) runs in approximately 114~minutes. ELK
-consistency checking over the asserted modules takes under
-2~seconds. Competency
-question latency on the Virtuoso endpoint ranges from 5~ms for
-simple site look-ups (CQ2) to over 1~second for queries that
-traverse inverse properties across the entire DNA extraction
-workflow (CQ5).
+Table~\ref{tab:compute} preserves development timings for a
+nine-ABox snapshot. The original benchmark lacks the complete
+hardware, repetition and cache information needed for a portable
+performance comparison. It differs from the current module set.
+The query timings range from 5~ms to a timeout above 300~s.
 
 \begin{table}[h]
 \centering
-\caption{Compute-time metrics for key deployment and validation
-  steps.}
+\caption{Historical development timings; these describe an earlier
+  nine-ABox snapshot.}
 \label{tab:compute}
 \small
 \begin{tabular}{lr}
@@ -302,11 +346,11 @@ workflow (CQ5).
 \midrule
 RDF module loading (Virtuoso, 9 ABox files)  & 140\,s \\
 Selected rule expansion (3 passes)           & 114\,min \\
-ELK classification (asserted only)           & 1.6\,s \\
+ELK check (historical benchmark)           & 1.6\,s \\
 CQ1 -- XRF measurements, Site 10            & 23\,ms \\
 CQ2 -- Sampling sites + GPS                 & 5\,ms \\
 CQ3 -- Biomes per site                      & 5\,ms \\
-CQ4 -- Light Elements percentages           & 8\,ms \\
+CQ4 -- Light Elements reported values       & 8\,ms \\
 CQ5 -- DNA extraction records               & 1{,}342\,ms \\
 CQ6 -- Provenance chain                     & 255\,ms \\
 CQ7 -- Taxonomic composition                & $>$300\,s \\
@@ -314,70 +358,32 @@ CQ7 -- Taxonomic composition                & $>$300\,s \\
 \end{tabular}
 \end{table}
 
-The taxonomy composition query (CQ7) exceeds a 5-minute timeout
-because it joins absolute and relative abundance datasets across
-1.4~million observations. This query is not used by the web portal;
-the portal retrieves taxonomic data per sample rather than across all
-runs, which completes in sub-second time.
+CQ7 exceeded the five-minute timeout in that benchmark. A subsequent
+global 100-row preview and an equivalent two-branch formulation also
+exceeded 300~s on the idle release candidate. These runs are archived
+with their exact queries. The current CQ7 demonstrates a complete
+profile for a named run; its acceptance test compares all observations
+with an independently derived source table. Performance measurements
+must identify the query and graph snapshot used.
 
-\subsection{Usability validation (web portal)}
+\subsection{Portal access}
 
-We developed a web portal (\url{https://rubalkhali.science/}) to
-provide user-friendly access to the data. The application architecture
-provides an end-to-end validation of the knowledge graph: the backend
-dynamically generates SPARQL queries to fetch content directly from
-the knowledge graph in real time without maintaining a separate
-relational database. Every page rendered constitutes a functional test
-of the underlying data. This architecture ensures that the website
-always reflects the current state of the knowledge graph, and any data
-integrity problem manifests as a visible error on the portal.
+The portal (\url{https://rubalkhali.science/}) retrieves data through
+backend SPARQL queries and renders site and specimen views. This is
+an access interface. Independent validation compares query results
+with source-derived expected values; a user study would additionally
+measure task completion, errors and usability.
 
-\subsection{FAIR compliance}
+\subsection{Identifiers and reuse metadata}
 
-The design decisions described in the preceding sections collectively
-implement the FAIR Data Principles \cite{fair}. We describe how the
-resource addresses each principle in turn.
+Each named entity has a project-domain IRI. The manifest identifies
+payload files, and the data dictionary specifies curated fields,
+units and missing-value conventions. RDF provenance links travel
+with the modules and support reuse through SIO, ENVO, ChEBI, PATO,
+UO and validated taxonomic identifiers \cite{fair}.
 
-To make the data \emph{findable}, we assigned a globally unique and
-persistent IRI under the \texttt{https://rubalkhali.science/kb/}
-namespace to every named individual, so that each site, specimen,
-process, value and dataset is directly and stably addressable rather
-than identified only by a row in a table. The sequencing data are
-registered with the European Nucleotide Archive under the umbrella
-accession PRJEB104209, and the resource is described with rich
-metadata: the machine-readable manifest indexes every payload file,
-and the data dictionary defines every curated field. Because the
-knowledge graph encodes its own terminology, the metadata and the data
-share one namespace and can be retrieved together.
-
-To make the data \emph{accessible}, we expose the knowledge graph
-through a standard SPARQL~1.1 endpoint and a web interface, both of
-which use open, universally implementable protocols and require no
-authentication for read access. The raw sequences are retrievable from
-ENA through their accessions, and the deposited modules can be
-downloaded and loaded into any RDF store, so access does not depend on
-the continued operation of our endpoint.
-
-To make the data \emph{interoperable}, we represent all content with
-established shared vocabularies: SIO as the upper-level framework,
-ENVO for environmental context, ChEBI for chemical entities, PATO for
-qualities, UO for units, and NCBI Taxonomy for taxa. The graph uses
-the standard formal languages OWL~2~DL, RDF/Turtle and SPARQL, and
-because domain entities are grounded in these widely used ontologies,
-the resource can be joined with other datasets that use the same
-vocabularies. The qualified references between modules (for example
-from a specimen to its site or from a value to its producing process)
-are themselves asserted as RDF, so the cross-references that give the
-data their meaning travel with the data.
-
-To make the data \emph{reusable}, we describe the resource with
-detailed and accurate provenance that records the complete chain from
-physical sample collection through DNA extraction, library
-preparation, sequencing and quality control to the derived community
-profiles, together with the correction and alias ledgers that document
-every deterministic repair to the source records. The data are
-released under CC-BY~4.0, the generation and validation code is
-open-sourced, and the release is versioned and archived so that a
-cited version remains stable. These attributes let a reuser understand
-the origin and limitations of each observation and integrate the
-resource into new work with confidence.
+The public endpoint provides read access to the deployed graph.
+A fixed archival package additionally requires a versioned deposit,
+verified payload access, a persistence policy and explicit licences
+for project data, code and externally sourced material. Data
+Availability identifies the remaining sequence-release gate.

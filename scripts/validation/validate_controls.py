@@ -29,6 +29,16 @@ def fail(message: str, failures: list[str]) -> None:
     failures.append(message)
 
 
+def ground_truth_id_failures(rows: list[dict[str, str]]) -> list[str]:
+    """Require the twelve source-backed records, including the Trip-5 PCR update."""
+    identifiers = [row["record_id"] for row in rows]
+    if len(identifiers) != len(set(identifiers)):
+        return ["control ground-truth ledger has duplicate IDs"]
+    if set(identifiers) != {f"CGT-{number:03d}" for number in range(1, 13)}:
+        return ["control ground-truth ledger is incomplete or has unexpected IDs"]
+    return []
+
+
 def control_graph_invariant_failures(
     graph: Graph,
     assertions: list[dict[str, str]],
@@ -183,10 +193,7 @@ def main() -> int:
     ground_truth_rows = read_tsv(ground_truth)
     g = Graph().parse(graph_path)
 
-    if {row["record_id"] for row in ground_truth_rows} != {
-        f"CGT-{number:03d}" for number in range(1, 12)
-    }:
-        fail("control ground-truth ledger is incomplete or has duplicate IDs", failures)
+    failures.extend(ground_truth_id_failures(ground_truth_rows))
     allowed_ground_truth_status = {
         "CONFIRMED_AUTHOR",
         "CONFIRMED_CLASS_AUTHOR",
@@ -633,10 +640,12 @@ def main() -> int:
     ):
         fail("positive-control spillover interpretation is not bounded", failures)
 
-    # Known source conflicts must stay explicit.
+    # Remaining source limitations must stay explicit. The corrected 30-August
+    # Trip-4 workbook resolves the old duplicate batch assignments; do not demand
+    # obsolete conflict prose. The membership invariant above still rejects any
+    # process promoted into more than one batch.
     disposition_text = "\n".join(row["description"] for row in dispositions)
     for fragment in [
-        "more than one Trip-4 extraction blank",
         "no positive control travelled with Trip 4",
         "shotgun metagenomics",
         "sterile-bag field-control inventory was requested",

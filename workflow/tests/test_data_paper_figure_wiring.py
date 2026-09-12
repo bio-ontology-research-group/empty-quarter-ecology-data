@@ -24,6 +24,8 @@ def test_transect_figure_is_generated_and_consumed() -> None:
         'cp "$data_paper_figures/transect_altitude.png"'
         in BUILDER
     )
+    assert 'cp "$data_paper_figures/transect_altitude.pdf"' in BUILDER
+    assert '"$project_root/data-paper/sample_coverage_table.tex"' in BUILDER
 
 
 def test_staged_transect_png_is_not_mislabelled_as_source() -> None:
@@ -79,7 +81,8 @@ def test_ecology_supplement_inputs_are_staged_and_snapshotted() -> None:
         "ECOLOGY_PAPER_AUTHORITATIVE_FILES = (", 1
     )[1].split(")", 1)[0]
     for name in required:
-        assert name in BUILDER
+        assert name in BUILDER or (name.startswith("generated/") and
+                                  'cp -a "$ecology_paper/generated/."' in BUILDER)
         assert f'"{name}"' in authoritative_block
 
 

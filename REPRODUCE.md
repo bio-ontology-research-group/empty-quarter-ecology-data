@@ -1,12 +1,18 @@
 # Reproducing the data descriptor
 
+For the deployed **KG v3.0.0**, follow
+[the release guide](docs/KG_V3_0_0_RELEASE.md). Its immutable source archive
+contains the frozen inputs and pinned runtime for all 16 module hashes.
+The sections below describe the broader manuscript/analytical workflow,
+including separately restricted bulk inputs.
+
 This repository identifies every manuscript input, generator, environment and
 validation rule needed to reproduce the submitted data descriptor. Small and
 medium inputs are committed directly. Files that exceed normal Git limits are
 listed in `BULK_ARTIFACTS.tsv` with their uncompressed byte count and SHA-256.
 
-The repository is a private pre-release candidate. It does not claim a DOI,
-immutable public deposit, or public raw-read availability. The reported tables,
+The broader dataset remains a pre-release candidate with pending archival and
+raw-read access requirements. The reported tables,
 knowledge-graph modules and manuscript can nevertheless be reproduced from the
 frozen derived inputs. Rebuilding those inputs from raw sequencing reads remains
 blocked until the run records named in the manuscript become publicly usable.
@@ -16,8 +22,8 @@ blocked until the run records named in the manuscript become publicly usable.
 Authenticate `gh` for the BORG private repository, then run:
 
 ```bash
-git clone git@github.com:bio-ontology-research-group/empty-quarter-data-paper.git
-cd empty-quarter-data-paper
+git clone git@github.com:bio-ontology-research-group/empty-quarter-ecology-data.git
+cd empty-quarter-ecology-data
 bash scripts/release/download_bulk_artifacts.sh
 bash scripts/release/bootstrap_package_layout.sh .
 python3 scripts/release/verify_repository.py .

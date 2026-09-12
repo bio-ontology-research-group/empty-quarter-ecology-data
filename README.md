@@ -1,8 +1,27 @@
 # Rub' al-Khali multimodal dataset and knowledge graph
 
+## KG v3.0.0
+
+The asserted-only KG is deployed at [rubalkhali.science](https://rubalkhali.science/data).
+It contains **45,706,977 triples from 16 modules**, including the reconciled
+pH dataset EQ-PH-SHARED-v1.0.1. All 712 admitted pH values are preserved.
+
+- [Downloads and checksums](https://rubalkhali.science/downloads/kg/3.0.0/manifest.json):
+  frozen scientific source, original RDF modules and the asserted N-Quads export.
+- [Public acceptance evidence](https://rubalkhali.science/downloads/kg/3.0.0/post-deployment-validation.json):
+  exact query results, protocol semantics, specimen links, browser examples and
+  complete download/hash/RDF checks.
+- [Release and reproduction guide](docs/KG_V3_0_0_RELEASE.md).
+
+The immutable source archive is the self-contained input for rebuilding this
+release. The Git checkout also contains the manuscript and broader analytical
+workflow. Public sequencing access, the archival accession and the project-data
+licence remain separate publication requirements. Entailment runs separately;
+later reasoning output requires a new KG version.
+
 This public BORG repository is the reproducible companion to the Scientific
-Data manuscript *A formal knowledge base for amplicon sequencing data and
-geochemistry of the Rub' al Khali desert*. It contains the active manuscript,
+Data manuscript *A multimodal field dataset and semantic knowledge graph for
+the Rub' al-Khali desert microbiome*. It contains the active manuscript,
 source metadata, ontology and ShEx sources, generated tractable modules,
 analysis code, validation evidence, an explicit Linux environment lock, a
 hash-locked Python environment, and the Nextflow workflow.
@@ -23,17 +42,17 @@ but are not a supported execution target for KG generation. The remote workflow
 records the source state, environment, commands, checksums, and validation
 results needed to audit the build.
 
-## Pre-release status
+## Broader dataset pre-release status
 
-This directory is a **staging snapshot**, not a published or immutable release.
+The broader analytical dataset remains a staging snapshot. The separately
+versioned KG artifacts above are immutable.
 It accompanies the working manuscript:
 
 > **A multimodal field dataset and semantic knowledge graph for the Rub' al-Khali desert microbiome**
 
-The generated modules, source tables, checksums, and evidence files here have
-been reconciled to the current manuscript analysis. A Zenodo DOI,
-release date, final per-file licences, and public-access claims must not be
-added until the remaining release gates below have passed.
+The broader workflow retains its source tables, generated modules and evidence.
+A dataset DOI, final per-file licences and public raw-read access remain
+publication requirements.
 
 `PRE_RELEASE_MANIFEST.tsv` is the package-level source of truth for whether a
 staged artifact is a canonical candidate, audit evidence, legacy material
@@ -55,9 +74,10 @@ make test
 The environmental replay must reproduce the staged 274-row curated table
 byte for byte. The bootstrap command refuses to replace an existing path.
 
-## Current accounting
+## Broader workflow accounting
 
-These are generated development counts, not frozen publication statistics.
+These development counts refer to their individual workflow layers. For the
+released union, use the v3.0.0 module inventory and public validation report.
 
 | Layer | Current count | Counting unit |
 |---|---:|---|

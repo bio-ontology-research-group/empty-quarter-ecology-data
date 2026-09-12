@@ -28,14 +28,91 @@
 \setlength{\landexcess}{\textheight}
 \addtolength{\landexcess}{-\textwidth}
 
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\AtBeginDocument{\renewcommand{\thelstlisting}{S\arabic{lstlisting}}}
 \begin{document}
 
-\title{Supplementary Material: A formal knowledge base for metagenomics and geochemistry of the Rub' al Khali desert}
+\title{Supplementary material: A formal knowledge base for amplicon sequencing data and geochemistry of the Rub' al Khali desert}
 \maketitle
 
 \input{kr_supplement.tex}
 
-\section{Supplementary Tables}
+\section{Library preparation and archived-soil pH}
+\label{supp:laboratory_protocol}
+
+First-round PCR used 50~\textmu L reactions with 1$\times$
+Mg$^{2+}$-containing buffer, 0.2~mM of each dNTP,
+0.4~\textmu M of each primer and 1.25~U of TaKaRa Ex Taq.
+The programme comprised 95\degree C for 3~min, followed by
+35 cycles of 95\degree C for 10~s, 65\degree C for 30~s and
+72\degree C for 1~min, with a final extension at 75\degree C
+for 5~min. Initial DNA input was 5~\textmu L; repeat attempts
+used 8 and 12~\textmu L while retaining the 50~\textmu L total
+reaction volume. Indexed libraries underwent 0.8:1 AMPure XP cleanup.
+The retained indexing protocol specifies the kit and thermal
+programme; its reaction-specific reagent volumes remain undocumented.
+
+Pooling used library molarity derived from measured DNA concentration
+and fragment length. The retained template calculates aliquot volumes
+using a pooling-volume factor of the
+form $VC/N$, where $V$ is target pool volume, $C$ is target molarity
+and $N$ is the number of libraries; dividing this factor by a library's
+molarity gives that library's aliquot volume. The retained template
+leaves the target values and library measurements blank. The actual
+pooling volumes therefore require the completed run-specific sheet.
+
+Both PMA-treated and untreated aliquots underwent 10~min in darkness
+and 35~min of illumination at 450~nm. Each of three parent collection
+tubes supplied three separately prepared slurries, with each slurry
+split into a treated and an untreated aliquot.
+
+Archived-soil pH suspensions were mixed for 30~min on a HulaMixer,
+then stood for 30~min at room temperature. Measurements used an
+accumet AB315 meter and Fisher Scientific accumet electrode
+13-620-112, with the green stability indicator as the reading endpoint.
+All Trip~4 assays used archived field replicate~2. The
+\texttt{EQ-PH-SHARED-v1.0.1} derivative links admitted measurements
+to the confirmed specimens and preserves the original workbook
+identifiers and assay values.
+
+\section{XRF acquisition evidence}\label{supp:xrf_acquisition}
+
+The source workbooks retain 547 selected specimens from Trips~1--4
+and 178 from Trip~5. All laboratory measurements used Fast Mode,
+as confirmed by the project lead on 9 September 2026. For Trip~5,
+each selected specimen has the workbook settings Fast Screening-He8mm,
+He, 8mm and Oxides. The deep-soil workbook contains 58 ordinary
+specimen sheets and two method comparisons, for V4Dr3 and V18Dr3.
+The parser retains the Fast Screening sheet from each comparison,
+giving 60 deep-soil specimens. The surface and root-adjacent
+workbooks contribute 60 and 58 specimens, respectively. The two
+Best Detection sheets remain in the original workbook.
+
+The Trips~1--4 consolidation preserves 28 export columns. Its index
+names the pre-consolidation workbooks, while acquisition metadata
+rows remain unavailable. The all-campaign confirmation establishes
+the Fast Mode method family; the exact method label, gas and
+diameter for Trips~1--4 remain undocumented. The handheld field
+exports specify Geochem(3-Beam) and NORMAL, with duration recorded
+as N/A. These field settings belong to the Olympus Vanta analyser.
+
+Concentration and calculated-concentration columns retain their
+original numeric magnitudes. Trip~5 uses the spreadsheet format
+General for these columns. Percent formats occur in the statistical-error
+columns and four lower-limit-of-detection cells; PPM labels occur
+in lower-limit-of-detection columns. Concentration units, laboratory
+instrument identity, exposure settings, sample preparation and
+calibration remain undocumented in the recovered workbooks.
+The sheet-level audit, source checksums and project-lead confirmation
+are linked from \path{docs/XRF_ACQUISITION.md}. The command
+\path{scripts/xrf/audit_xrf_workbook_metadata.py} reproduces the
+workbook audit; its regression tests check all 178 selected Trip~5
+specimens, method-comparison selection and unit evidence.
+
+\section{Supplementary tables}
 
 Table~\ref{tab:env_data} reports the curated field observations, and
 Table~\ref{tab:chebi_mapping} reports the audited XRF channel cross-references.

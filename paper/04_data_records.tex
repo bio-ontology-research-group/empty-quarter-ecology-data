@@ -1,39 +1,34 @@
 \section{Data records}\label{records}
 
-The resource is distributed as a single directory tree in which every
-payload file is declared in a machine-readable manifest
-(\texttt{PRE\_RELEASE\_MANIFEST.tsv}) with its byte size, SHA-256
-checksum, category, release status and licence gate. The package
-builder adds \path{PRE_RELEASE_MANIFEST.tsv} itself explicitly rather
-than listing its own checksum recursively. Three payloads exceed
-256~MiB (\path{metadata/metagenome/eq.emapper.annotations.gz},
-\path{metadata/taxonomy/feature-table-trips1-5.tsv} and
-\path{ontology/rubalkhali_taxonomy_abox.ttl}); the downloadable
-reviewer archive omits them and lists them with byte size and SHA-256
-checksum in a separate bulk manifest, and a complete deposit supplies
-the byte-identical files. The raw
-sequencing data are deposited in the European Nucleotide Archive (ENA)
-under the umbrella project accession {\tt PRJEB104209}, with amplicon
-sequencing under project {\tt PRJEB106069}. The knowledge graph is
-accessible via a public SPARQL endpoint at
-\url{https://rubalkhali.science/sparql} and through a web interface at
-\url{https://rubalkhali.science/}, and all source code for data
-processing, ontology generation, and validation is maintained at
-\url{https://github.com/bio-ontology-research-group/empty-quarter}.
+The source and derived-data package contains graph modules, curated
+tables, source and correction ledgers, validation evidence and workflow
+code. The machine-readable manifest
+\path{PRE_RELEASE_MANIFEST.tsv} identifies payload sizes, checksums,
+categories and release/licence status. Separately retrieved bulk
+payloads are listed in the bulk manifest. Data Availability reports
+the current access routes and outstanding sequence-release gate.
+
+KG v3.0.0 contains 45,706,977 asserted triples from 16 manifested
+modules. The website distributes three versioned artifacts: the
+scientific source package, the original RDF modules and the
+deduplicated asserted graph in compressed N-Quads format.
+The \href{https://rubalkhali.science/downloads/kg/3.0.0/manifest.json}{release manifest}
+identifies their contents, sizes and checksums.
 
 \subsection{Knowledge-graph modules}
 
 The primary artifacts are the knowledge-graph modules, distributed as
-OWL/XML and Turtle files and structured by data type
+RDF/XML and Turtle files and structured by data type
 (Table~\ref{tab:modules}). The base ontology
-(\texttt{rubalkhali.owl}) holds the terminology; each remaining module
-holds the instance data for one domain and shares the same site,
-specimen and process identifiers, so the modules can be loaded
-together into any RDF store or used individually.
+(\texttt{rubalkhali.owl}) holds the project terminology. Domain modules
+share site, specimen and process identifiers; the release also includes
+the generated taxonomic vocabulary and four pinned reference ontologies.
+These modules load together into an RDF store. Domain queries require the corresponding
+shared terminology and linked site, specimen or process modules.
 
 \begin{table}[h]
 \centering
-\caption{Knowledge-graph modules in the deposit.}
+\caption{The 16 RDF modules included in KG v3.0.0.}
 \label{tab:modules}
 \small
 \begin{tabular}{p{0.38\textwidth} p{0.54\textwidth}}
@@ -49,8 +44,13 @@ together into any RDF store or used individually.
 \texttt{rubalkhali\_sra.owl} & Sequencing run records linked to ENA accessions \\
 \texttt{rubalkhali\_qc.owl} & Sequencing quality metrics (GC content, duplicate rate, sequence counts) \\
 \texttt{rubalkhali\_controls.ttl} & Laboratory-control materials, roles, batches and sequence occurrences \\
-\path{rubalkhali_ph_eq_ph_shared_v1_0_0.ttl} & Archived-soil pH measurements and sessions \\
-\texttt{rubalkhali\_taxonomy\_abox.ttl} & Taxon abundance observations over the feature profiles \\
+\path{rubalkhali_ph_eq_ph_shared_v1_0_1.ttl} & Archived-soil pH measurements, sessions and reconciled specimen links \\
+\texttt{rubalkhali\_taxonomy\_abox.ttl} & Taxon observations over feature profiles \\
+\texttt{ecosystem\_module.ttl} & Vocabulary supporting canonical taxonomic mappings \\
+\texttt{sio.owl} & Semanticscience Integrated Ontology v1.59 \\
+\texttt{envo.owl} & Environment Ontology, 20 October 2025 \\
+\texttt{pato.owl} & Phenotype and Trait Ontology, 14 May 2025 \\
+\texttt{uo.owl} & Units Ontology, 25 May 2023 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -68,14 +68,14 @@ maps the 36 genuine Trip-1-only records of numeric sites 61--64 to the
 four existing named site individuals); the curated field
 environmental table; the field and laboratory XRF tables together with
 the audited chemical-mapping ledger; and the versioned archived-soil
-pH dataset \texttt{EQ-PH-SHARED-v1.0.0}. The canonical feature table
+pH dataset \texttt{EQ-PH-SHARED-v1.0.1}. The canonical feature table
 holds 1,271 profiles, of which the ecological analysis retains 1,237
 (1,227 profiles from the primary frame of sites~1--60); the 34 excluded
 profiles are the 24 controls, nine biological profiles
 below the declared 1,000-read ecological threshold and one additional
 \texttt{T1Dr1} run with 934 reads. The four derived
 companion-analysis inputs are distributed as records for downstream
-statistical re-execution rather than as graph modules: the paired PMA
+statistical re-execution: the paired PMA
 table (\path{metadata/relic-dna/PMA_ASV_table.tsv}; 18 analytical
 columns from nine aliquot pairs, PMA-treated and untreated, with
 controls kept separately), the 150 CoverM profiles
@@ -84,9 +84,9 @@ annotations (\path{metadata/metagenome/eq.emapper.annotations.gz})
 behind the 990-genome analytical subset, and the measured-function
 input archive (\path{metadata/metagenome/measured_function_inputs.tar.gz})
 with the six exact source tables of the genome-derived versus PICRUSt2
-comparison. These inputs do not reproduce raw shotgun or PMA read
-processing, assembly, binning, dereplication, annotation or profile
-generation.
+comparison. These are fixed inputs for downstream analyses. Methods identifies
+the additional raw reads, upstream workflows and acquisition metadata
+needed for end-to-end reproduction.
 
 \subsection{Validation schemas, queries and evidence}
 
@@ -105,8 +105,9 @@ humidity; in the graph, pressure magnitudes are
 multiplied by 100 and asserted in pascals (\texttt{obo:UO\_0000110}),
 climate
 records use degrees Celsius and millimetres, and DNA concentrations
-are in nanograms per microlitre. XRF concentrations carry no
-documented unit assertion and must not be treated as percentages.
+are in nanograms per microlitre. XRF values are instrument-reported magnitudes with undocumented
+concentration units.
 
-The data and source code to generate the Rub' al-Khali knowledge graph
-is available at \todo{Add Zenodo DOI URL here}.
+The manifests and data dictionary provide the versioned file-level
+inventory. The final archival dataset citation remains a release gate
+(Section~\ref{data_availability}).

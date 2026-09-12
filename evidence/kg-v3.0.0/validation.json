@@ -1,0 +1,45 @@
+{
+  "version": "3.0.0",
+  "release_mode": "asserted-only",
+  "scope": "Candidate-only acceptance before production cutover; no public deployment acceptance is claimed.",
+  "candidate_acceptance_passed": true,
+  "public_acceptance_passed": false,
+  "manifest_sha256": "9597bc71d9d2603f2a401ba9ccfc834376cc02795db103ace0c824889b618475",
+  "check_counts": {
+    "queries": 26,
+    "protocol": 14,
+    "isolation": 6,
+    "browser_examples": 9,
+    "browser_download_ranges": 3,
+    "full_downloads": 3,
+    "fresh_import_proof_downloads": 6
+  },
+  "gates": {
+    "query": {
+      "passed": true,
+      "report_sha256": "12f23effe4b6cbea77685b3b4334cc3bb0fd574322406e91880d0b7b0d54c713"
+    },
+    "protocol": {
+      "passed": true,
+      "report_sha256": "7c3f4e43fa9b6b9846b51738e0eeafedb3d4ff1d5dd087c217b3b0af3184c987"
+    },
+    "isolation": {
+      "passed": true,
+      "report_sha256": "65d6fb7ca726045e062b3321cd67f701944b14f8852592ee4b2ebb6414dd1503"
+    },
+    "browser": {
+      "passed": true,
+      "report_sha256": "fc4d7e64d2d9f978b8062e2eddfa21246436f74c98e7b1152dca0562491d6ec0"
+    },
+    "downloads": {
+      "passed": true,
+      "report_sha256": "d223bdaba26bf399a6e850428e1c189a988f5928ff1790f99136cf30fba89574"
+    }
+  },
+  "live_graph_counts": {
+    "asserted": 45706977,
+    "inferred": 0,
+    "materialized": 0
+  },
+  "post_deployment_evidence": "Any later public acceptance is recorded separately in post-deployment-validation.json."
+}

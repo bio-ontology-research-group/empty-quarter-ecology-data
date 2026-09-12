@@ -1,0 +1,13 @@
+{
+  "unit": "non-control source-specimen rows in three soil compartments",
+  "fields": [
+    "kg_sample_eligible",
+    "dna_expected_by_generator",
+    "has_sra_run",
+    "in_feature_table",
+    "in_ecology_analysis"
+  ],
+  "input_sha256": "cf7affd4d58803417fc5cf03ab71e6455e7fe190db449b0eb7ebaedfb4d1c99f",
+  "output_sha256": "598d47c92ae96dd0c23b82376da428fc7da48772efde53bec2c9142441d88618",
+  "exclusions": "control rows and rows outside Surface, Deep, Rhizosphere; no site-range restriction"
+}

@@ -602,13 +602,30 @@ class Builder:
         }
         for sample_id, row in sheet_rows.items():
             key = f"trip5_16S|{sample_id}|{parse_index(row['forwardReads'])}"
+            is_ntc = sample_id.startswith("Negative")
+            material_label = "PCR no-template control" if is_ntc else "extraction blank"
             material = self.entity(
                 "control_material", "assay_sample_and_index", key, sample_id,
-                f"Trip 5 16S extraction blank {sample_id}", sample_source, sample_id
+                f"Trip 5 16S {material_label} {sample_id}", sample_source, sample_id
             )
             self.add_alias(material, sample_id, "laboratory_label", sample_source, sample_id)
             self.graph.add((material, RDF.type, BASE.RAK_0000300))
             self.graph.add((material, RDF.type, BASE.RAK_0000302))
+            if is_ntc:
+                # Marwa's 30 August confirmation: water replaces template at
+                # PCR. These libraries did not pass through DNA extraction.
+                self.sequence_lineage(
+                    material, sample_id, sample_source, sample_id,
+                    row["forwardReads"], row["reverseReads"], sra_rows.get(sample_id)
+                )
+                pcr = self.entities[("laboratory_process", "amplicon_pcr", sample_id)]
+                self.add_role(material, "pcr_blank", pcr, GROUND_TRUTH_SOURCE, sample_id)
+                self.disposition(
+                    material, "extraction_batch_membership", "not_applicable",
+                    GROUND_TRUTH_SOURCE,
+                    "PCR-stage no-template control, confirmed 30 August 2026; water replaced extracted template."
+                )
+                continue
             batch = None
             date = ""
             if sample_id in mapped:
@@ -662,6 +679,7 @@ class Builder:
         membership_count: defaultdict[str, int] = defaultdict(int)
         for row in workbook_rows:
             label = str(row[0] or "").strip()
+            label = "EB" if label == "SEB" else label
             if label == "EB" or (label.startswith("EB") and label[2:].isdigit()):
                 for sample in split_ids(row[4]):
                     membership_count[sample] += 1
@@ -693,6 +711,7 @@ class Builder:
         duplicate_dispositions: set[str] = set()
         for row_no, row in enumerate(workbook_rows, start=1):
             label = str(row[0] or "").strip()
+            label = "EB" if label == "SEB" else label
             if label not in manifest_names:
                 continue
             index_text = str(row[1]).strip()
@@ -755,7 +774,10 @@ class Builder:
                         )
         # One physical extraction blank existed for the three-day extraction
         # but was not sequenced.
-        affected = "22,28,35,43,53,46,13,25,54,55,44,38,41,33,2,27,51,16,59,57,56,49,45"
+        affected = next(
+            (str(row[0]) for row in workbook_rows if "wasn't sequenced" in str(row[0])),
+            "Affected sites are listed in the corrected 30 August workbook."
+        )
         material = self.entity(
             "control_material", "workbook_unsequenced_row", source + "|9",
             "Trip4-unsequenced-EB", "unsequenced Trip 4 three-day extraction blank", source, 9
@@ -820,7 +842,7 @@ class Builder:
         )
         self.disposition(
             pcr_material, "control_sequence_occurrence", "unresolved", source,
-            "The workbook records the PCR blank and index 275 but no sequenced count or FASTQ."
+            "The corrected 30 August workbook and author message confirm that the PCR blank at index 275 was not sequenced."
         )
 
     def build_july_controls(self, products: dict[str, URIRef]) -> None:

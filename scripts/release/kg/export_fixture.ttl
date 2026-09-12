@@ -1,0 +1,6 @@
+<urn:eq:export:subject> <urn:eq:export:text> "quoted \"text\"\nnext line"@en ;
+    <urn:eq:export:double> "0.03035258267"^^<http://www.w3.org/2001/XMLSchema#double> ;
+    <urn:eq:export:integer> "42"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+    <urn:eq:export:wkt> "POINT (45.17 19.15)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ;
+    <urn:eq:export:node> _:node .
+_:node <urn:eq:export:label> "soil — تربة" .

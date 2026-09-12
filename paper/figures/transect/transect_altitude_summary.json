@@ -1,0 +1,44 @@
+{
+  "altitude_m": {
+    "maximum": 975.0,
+    "minimum": 73.0
+  },
+  "cohort": {
+    "end_site": 60,
+    "site_range": "1-60",
+    "sites": 60,
+    "start_site": 1
+  },
+  "figure_runtime": {
+    "freetype": "2.14.3",
+    "matplotlib": "3.9.4",
+    "python": "3.11.14",
+    "schema_version": "figure-runtime-v1"
+  },
+  "input": {
+    "bytes": 3418,
+    "file": "site_altitudes.tsv",
+    "repository_path": "data/metadata/geodata/site_altitudes.tsv",
+    "sha256": "c90b546995fec37e1f2e7d96fd6d5ad175fdbe5fb2519082c43fbe0487580ad7"
+  },
+  "outputs": {
+    "figure": {
+      "bytes": 53967,
+      "file": "transect_altitude.png",
+      "sha256": "25e84055b1ad5904204786daaf0bcde2b1a2fd0a1ce5018d3af1e145fd87323a"
+    },
+    "profile": {
+      "bytes": 3036,
+      "file": "transect_altitude_profile.tsv",
+      "sha256": "4c2b4b1daf76212cd12a45fae228847e8e9e545679faea07f6262328bbbf5dc8"
+    },
+    "vector_figure": {
+      "bytes": 20854,
+      "file": "transect_altitude.pdf",
+      "sha256": "0cf00a672300b409318ec66ea5c471abec5782f98b47571f43cde0c8b4ba1a07"
+    }
+  },
+  "schema_version": "1.0",
+  "status": "passed",
+  "total_transect_distance_km": 1043.223055
+}

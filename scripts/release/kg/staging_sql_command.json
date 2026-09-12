@@ -1,0 +1,4 @@
+[
+  "docker", "exec", "-i", "eq_kg_3_0_0_engine7", "sh", "-c",
+  "exec isql localhost:1111 dba \"$DBA_PASSWORD\" VERBOSE=OFF PROMPT=OFF"
+]

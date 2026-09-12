@@ -1,21 +1,18 @@
 \section{Knowledge-representation patterns}\label{supp:kr}
 
-This section specifies the knowledge-representation patterns that are not
-reproduced in the main article: sampling, protocol execution, taxonomic
-abundance, XRF geochemistry, the sequencing chain and sequencing quality
-control, and adds a worked example of the main article's laboratory-control
-pattern. Each pattern is given as its Description Logic axioms followed by a
-worked Turtle example taken from the released modules. Every printed triple
-and every prefixed IRI in this section is resolved against the staged modules
-by \texttt{scripts/validation/verify\_manuscript\_listings.py}, which fails if
-a listing drifts from the graph.
+This section gives formal patterns and connected graph examples for
+the resource described in the main article. The Description Logic
+notation \cite{dlhandbook} uses $\sqsubseteq$ for subclass inclusion,
+$\sqcap$ for conjunction, $\exists R.C$ for at least one relation
+$R$ to a member of class $C$, and $\forall R.C$ for restriction of
+all $R$ fillers to $C$. The displayed patterns describe the intended
+entity relationships; structural admission is checked separately.
 
-Listings use the prefix declarations of Table~\ref{tab:supp_prefixes}; prepend
-them to any listing to be executed against a local or deployed graph. The
-\texttt{rak\_kb:} prefix covers the knowledge-base namespace without the
-\texttt{RAK\_} local-name prefix, which is needed only for the PowerSoil
-extraction protocol \texttt{rak\_kb:DNA\_ext\_powersoil}, the one individual in
-the released graph minted without it.
+Prepend Table~\ref{tab:supp_prefixes}'s declarations when parsing the
+Turtle snippets. The unprefixed knowledge-base namespace is used by
+the PowerSoil protocol. The listing validator checks examples against
+the available module snapshot; full validation additionally requires
+the corresponding taxonomy payload and pinned reference terms.
 
 \begin{table}[h]
 \centering
@@ -46,44 +43,17 @@ the released graph minted without it.
 
 \subsection{Laboratory-control worked example}
 
-Listing~\ref{lst:ttl_control} instantiates the product--specification and
-evidence-bearing expected-taxon pattern for the whole-cell D6300 standard. The
-promoted specification-to-taxon statement supports direct queries, while the
-reified assertion preserves its subject, relation descriptor, taxon, status
-and evidence. Manufacturer genomic-DNA percentages remain in
-\path{metadata/controls/control_composition.tsv}; the RDF does not reinterpret
-them as expected 16S read fractions.
-
-\begin{lstlisting}[caption={Turtle representation of a D6300 composition specification and one expected-taxon assertion.}, label={lst:ttl_control}, basicstyle=\ttfamily\scriptsize, frame=single]
-rak:CTL_24320eab3380ef6d405c590160b8d3310c2d641b7621bcef232f6d05cf4c2e60
-  a rak:0000301 ;
-  sio:000339
-    rak:CTL_99a452c18c4a63a400f55b2fe1abbf512ced2a0248d9952c25e441622268d409 .
-
-rak:CTL_99a452c18c4a63a400f55b2fe1abbf512ced2a0248d9952c25e441622268d409
-  a rak:0000316 ;
-  sio:000338
-    rak:CTL_24320eab3380ef6d405c590160b8d3310c2d641b7621bcef232f6d05cf4c2e60 ;
-  dcterms:source
-    <https://www.zymoresearch.com/products/zymobiomics-microbial-community-standard> ;
-  rak:2000092 ncbitaxon:1280 .
-
-rak:CTL_1393f741397200195c65c9357ce358f08ed0b6368bdb5bfd379bf71b03f832bd
-  a rak:0000317 ;
-  rak:2000093
-    rak:CTL_99a452c18c4a63a400f55b2fe1abbf512ced2a0248d9952c25e441622268d409 ;
-  rak:2000094
-    rak:CTL_56698f459e82fdb69be8ef81d785e212b8b59d6ec4f88b16dc300b69b1c461c3 ;
-  rak:2000095 ncbitaxon:1280 ;
-  rak:2000090
-    rak:CTL_d5aa029f71c6879da7029c52c4aaef883080caf632d3eaa14223a67d0a808d9d ;
-  sio:000772
-    rak:CTL_998abc71455e01cd0175f49f1f32bc70113e47b047b072b30db1f4fe0de5fb13 .
-
-rak:CTL_998abc71455e01cd0175f49f1f32bc70113e47b047b072b30db1f4fe0de5fb13
-  sio:000773
-    rak:CTL_1393f741397200195c65c9357ce358f08ed0b6368bdb5bfd379bf71b03f832bd .
-\end{lstlisting}
+The control module represents the whole-cell D6300 product, its
+composition specification and evidence-bearing expected-taxon
+assertions as separate entities. The specification links directly to
+each supported taxon; a reified assertion additionally preserves the
+subject, relation, taxon, status and source. Manufacturer genomic-DNA
+mass fractions are retained in
+\path{metadata/controls/control_composition.tsv}. Exact occurrence
+identifiers and their source links are distributed in
+\path{ontology/rubalkhali_controls.ttl}. This keeps long machine
+identifiers in the executable resource while exposing the scientific
+relationships here.
 
 \subsection{Sampling pattern}
 
@@ -94,10 +64,12 @@ interest (the site).
 	\label{eq:sampling}
 	\text{SamplingProcess} & \sqsubseteq \text{Process} \\
 	\text{Sample} & \sqsubseteq \text{MaterialEntity} \\
+    \text{SampleCollection} & \sqsubseteq \text{Collection} \sqcap
+        \forall \text{hasMember}.\text{Sample} \\
 	\text{SamplingProcess} & \sqsubseteq \exists
                                  \text{hasTarget}.\text{Site} \sqcap
                                  \exists
-                                 \text{hasOutput}.\text{Sample} \\
+                                 \text{hasOutput}.\text{SampleCollection} \\
 	\text{Sample} & \sqsubseteq \exists \text{isDerivedFrom}.\text{Site}
 \end{align}
 
@@ -116,7 +88,7 @@ rak:6000001 a rak:0000021 ; # Deep Soil Sample
   sio:000244 rak:1000001 . # isDerivedFrom
 \end{lstlisting}
 
-Read in prose, an instance \texttt{rak:P100001} of a sampling
+The instance \texttt{rak:P100001} of a sampling
 process targets the site \texttt{rak:1000001} and yields a
 collection \texttt{rak:7000001} as its output. The collection
 explicitly contains \texttt{rak:6000001}, and this deep-soil sample
@@ -130,8 +102,8 @@ event.
 
 \subsection{Experimental protocol pattern}
 
-We model experimental protocols as processes specified by a protocol
-entity. Each process (e.g., DNA extraction, library preparation)
+A protocol is a reusable information specification. A protocol
+execution is a process specified by that protocol. Each process (e.g., DNA extraction, library preparation)
 consumes inputs and produces outputs, explicitly linking agents and
 devices. The pattern instantiates SIO's general
 \emph{Process--hasInput/hasOutput--Object} idiom and adds a
@@ -144,8 +116,8 @@ specification link to a reusable protocol description.
 	\text{ProtocolExecution} & \sqsubseteq \exists
 	    \text{isSpecifiedBy}.\text{Protocol} \\
 	\text{ProtocolExecution} & \sqsubseteq \exists
-	    \text{hasInput}.\text{MaterialEntity} \sqcap \exists
-	    \text{hasOutput}.\text{MaterialEntity}
+	    \text{hasInput}.\text{Entity} \sqcap \exists
+	    \text{hasOutput}.\text{Entity}
 \end{align}
 
 Listing~\ref{lst:ttl_protocol} demonstrates the formalization
@@ -161,7 +133,7 @@ rak:6800001 a rak:0000040 ; # DNA Extract
   sio:000008 rak:5900001 . # hasAttribute (Concentration Quality)
 \end{lstlisting}
 
-In words, the protocol-execution instance \texttt{rak:P200001}
+The protocol-execution instance \texttt{rak:P200001}
 is specified by the named extraction protocol
 \texttt{rak\_kb:DNA\_ext\_powersoil}, takes the soil sample
 \texttt{rak:6000001} as input, and produces the DNA extract
@@ -169,27 +141,19 @@ is specified by the named extraction protocol
 concentration quality (\texttt{rak:5900001}, class
 \texttt{rak:0000043}) which is itself
 quantified through a separate measurement process following the
-pattern of the measurement pattern of the main article. The measurement value that
+measurement pattern in the main article's Knowledge representation subsection. The measurement value that
 quantifies it is the separate individual \texttt{rak:4900001}
 (class \texttt{rak:0000044}), which points to the quality with
 \texttt{sio:000215} and back from it with \texttt{sio:000216}.
-Value and quality are deliberately distinct individuals in every
-module; conflating them is the single most common way to break the
-traversal described in the Data Records section of the main article.
+Separate value and quality individuals preserve the reciprocal
+measurement links.
 
 \subsection{Taxonomic abundance pattern}
 
-Taxonomic profiles represent collections of taxon observations
-containing associated relative and absolute abundances. Instead of
-modeling the feature table as a flat matrix, we formalize the entire
-table as a bioinformatic workflow that produces a dataset containing
-individual taxonomic observations. Here, we use the conservative
-mapping (Methods, taxonomy normalization) to assign either a validated
-NCBI class, an unambiguous retained project class, or a deterministic
-lineage-scoped contextual class as the target of each observation.
-Unreviewed GTDB candidates are not asserted. Listing~\ref{lst:ttl_tax}
-shows how an aggregated taxon--rank observation from one profile is
-represented in the knowledge graph.
+Taxonomic profiles contain read counts and relative read abundances
+aggregated by rank. The validated mapping assigns NCBI or project
+identifiers to each rank-truncated classifier lineage.
+Listing~\ref{lst:ttl_tax} gives one such observation.
 
 For instance, the sequence analysis for a specific profile yields an
 absolute sequence count associated with an audited taxonomic class. We
@@ -237,7 +201,7 @@ rak:Q00000001 a rak:0000078, pato:0000070 ; # Absolute Abundance Quality
   sio:000216 rak:V00000001 . # hasMeasurementValue
 \end{lstlisting}
 
-Verbalized, the bioinformatic-workflow instance
+The bioinformatic-workflow instance
 \texttt{rak:P290001} consumes the FASTQ dataset of run
 \texttt{ERR16783308} (\texttt{rak:7791009}, profile \texttt{V10Dr1})
 and produces the absolute taxonomic dataset
@@ -249,10 +213,8 @@ read count of \texttt{853{,}814} for the domain-rank record
 (\texttt{ncbitaxon:2}) and the source FASTQ dataset. Each of the
 fourteen datasets produced by one workflow instance holds a single
 rank at one of the two abundance bases, so a rank-restricted query
-never has to filter observations by lineage depth. One aggregated
-taxon--rank entry is therefore
-expanded into a four-node sub-graph that preserves both the
-classifier lineage and its sequence-dataset provenance. Contextual
+never has to filter observations by lineage depth. Each taxon--rank entry adds a value and a quality while referencing
+shared workflow, dataset and taxon objects. Contextual
 lineages use the same pattern with their audited project IRI.
 
 \subsection{XRF geochemistry pattern}
@@ -260,31 +222,23 @@ lineages use the same pattern with their audited project IRI.
 We model every XRF session as a process with multiple
 concentration-value outputs and a workflow-specific protocol. A
 laboratory session has an archived soil specimen as input. The field
-instrument log, by contrast, identifies a test and site but not a
-physical specimen; the regenerated graph therefore links the session
-to the recorded sampling site and does not fabricate a collected
-specimen input. Field-XRF and laboratory-XRF records remain
+instrument log identifies a test and site, and the graph links each
+session to that site. Field-XRF and laboratory-XRF records remain
 distinguishable even when they report the same analyte.
 Analyte cross-references to ChEBI \cite{chebi} and PubChem
 \cite{pubchem} are maintained in a single mapping ledger. The
-fail-closed audit resolves every non-null identifier against pinned
+identifier audit resolves every non-null identifier against pinned
 ChEBI v247 and a dated PubChem snapshot, checking identifier
 existence, label, formula, charge and atom-versus-oxide entity type.
 Of 93 instrument channels, 79 have a supported ChEBI cross-reference
-and 91 have a formula-matching PubChem cross-reference. A missing
-external identifier remains explicitly null rather than being filled
-by label similarity. These are \texttt{rdfs:seeAlso} annotations for
-the reporting channel, not assertions that a particular chemical
-species or mineral occurs in a sample. In particular, the instrument's
-P$_2$O$_5$ channel is an oxide-equivalent reporting basis; its ChEBI
-cross-reference has the same empirical ratio (P$_4$O$_{10}$) and is
-not a molecular-presence claim. The instrument's Light Elements (LE)
-output is an instrument
-pseudo-analyte or mixture, not an individual chemical entity, and is
-therefore not mapped to ChEBI or PubChem as a compound.
+and 91 have a formula-matching PubChem cross-reference. Missing external identifiers remain explicitly null. The \texttt{rdfs:seeAlso} annotations identify chemical references
+for reporting channels. The P$_2$O$_5$ channel reports oxide-equivalent
+magnitudes; its ChEBI cross-reference P$_4$O$_{10}$ shares the
+empirical ratio. Light Elements is an instrument-defined aggregate
+channel with null chemical cross-references.
 
 The shared output pattern specializes the measurement pattern
-(the measurement pattern of the main article); only the laboratory specialization
+(main article, Knowledge representation); only the laboratory specialization
 requires a soil-sample input:
 
 \begin{align}
@@ -319,7 +273,7 @@ rak:5302121 a rak:0000107 ; # Al concentration quality
   sio:000216 rak:4302121 . # hasMeasurementValue
 \end{lstlisting}
 
-In words, this laboratory-XRF process consumes archived specimen
+This laboratory-XRF process consumes archived specimen
 \texttt{rak:6001732} (sample \texttt{V1Sr1}) and produces an aluminium
 concentration value.
 The value points to its aluminium quality using
@@ -331,15 +285,12 @@ and all raw instrument exports)
 declaration attached to any concentration column; the only unit token
 in the exports is \texttt{PPM}, and it belongs to the
 lower-limit-of-detection column. The generated module therefore carries
-no unit assertion for XRF concentrations. Readers should treat them as
-unitless instrument readings on a consistent scale within a workflow
-and must not use them for absolute cross-workflow comparisons. In the
-regenerated module, field sessions use
-\texttt{sio:000291} (\emph{has target}) to identify the recorded site
-and retain the instrument test identifier; they have no constructed
-``field deep soil material'' specimen input. This distinction also
-prevents a shared graph pattern from implying numerical
-interchangeability between workflows.
+no unit assertion for XRF concentrations. These values are
+instrument-reported magnitudes with undocumented concentration units.
+Field sessions use \texttt{sio:000291} to identify their site and
+retain the instrument test identifier; laboratory sessions identify
+their specimen input. Cross-workflow calibration requires documented
+units, paired aliquots and reference materials.
 
 \subsection{Sequencing workflow pattern}
 
@@ -351,8 +302,7 @@ a library preparation process consumes the DNA extract and produces
 an amplicon library; a sequencing process consumes the amplicon
 library and produces a FASTQ dataset whose members are sequence reads.
 Each process is specified by a protocol and may carry agents and
-device participants, reusing the experimental protocol pattern of
-the protocol pattern above.
+device participants, reusing the experimental protocol pattern in Equation~\ref{eq:protocol}.
 
 \begin{small}
 \begin{align}
@@ -396,7 +346,7 @@ rak:7790001 a rak:0000063 ; # FASTQ Dataset
   rdfs:seeAlso <https://identifiers.org/insdc.run/ERR16061083> .
 \end{lstlisting}
 
-Read as a chain, the DNA extraction process
+The DNA extraction process
 \texttt{rak:P200923} consumes the soil sample
 \texttt{rak:6000577} and produces the DNA extract
 \texttt{rak:6800540}; that extract is the input of the library
@@ -414,7 +364,7 @@ chain.
 Sequencing quality control is represented as an additional
 computational process that takes a FASTQ dataset as input and
 produces multiple measurement values, each instantiating the
-generic measurement pattern of the measurement pattern of the main article.
+measurement pattern in the main article's Knowledge representation subsection.
 Metrics (sequence count, GC content, duplicate rate, read length)
 are split into forward (R1) and reverse (R2) subclasses so that the
 provenance of paired-end runs is preserved.
@@ -453,7 +403,7 @@ rak:5550001 a rak:0000205 ; # Forward GC Content Quality
   sio:000216 rak:4450001 . # hasMeasurementValue
 \end{lstlisting}
 
-In words, the QC process \texttt{rak:P350001} takes the FASTQ
+The QC process \texttt{rak:P350001} takes the FASTQ
 dataset \texttt{rak:7790263} as input and produces the
 measurement value \texttt{rak:4450001}, which records a GC
 content of \texttt{58.0}~percent and is the measurement value of a

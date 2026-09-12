@@ -1,0 +1,557 @@
+{
+  "version": "3.0.0",
+  "release_mode": "asserted-only",
+  "status": "passed",
+  "public_acceptance_passed": true,
+  "public_origin": "https://rubalkhali.science",
+  "verified_at_utc": "2026-09-12T21:23:46.920755+00:00",
+  "scope": "All five public acceptance suites passed for the exact published asserted-only manifest. The manifest and three graph counts were rechecked over public HTTPS before this record was written. This is a dated acceptance record, not an entailment certificate or a claim of perpetual availability.",
+  "manifest_sha256": "9597bc71d9d2603f2a401ba9ccfc834376cc02795db103ace0c824889b618475",
+  "evidence_sha256": {
+    "query": "15d57be3e85d54471243914e4093d2d0a4eaf30cc782b5890fff532197f43866",
+    "protocol": "d6410e978eb067683b8ac43b4ef9cd48ced1e4955ea39f516c35f748f5a4f3ff",
+    "isolation": "724a870bc7ce1ef11eba67d40d17718c0fb0f1eb0e59992713b719c6badd3905",
+    "browser": "f3a108e5a064db7018116ab82396348e103ba544fa93785f4e48c5ffc7a4396b",
+    "downloads": "232d33f1f517004045f162de755a6cff0c4c024ce457f29cd5b8c9394ff39735"
+  },
+  "live_graph_counts": {
+    "asserted": 45706977,
+    "inferred": 0,
+    "materialized": 0
+  },
+  "query_result_gates": [
+    {
+      "case": "field_xrf_site10",
+      "variant": "direct_server_default",
+      "status": "passed",
+      "rows": 46,
+      "expected_rows": 46,
+      "expected_sha256": "a1291a242dd6febad10f23ed7087852745725771b03cf61464e43c25fdec8797",
+      "query_sha256": "1ec9a7c4cba9d8c5964e92fec47031d9f62606963469bf70034b8c50b369f32b"
+    },
+    {
+      "case": "field_xrf_site10",
+      "variant": "direct_asserted",
+      "status": "passed",
+      "rows": 46,
+      "expected_rows": 46,
+      "expected_sha256": "a1291a242dd6febad10f23ed7087852745725771b03cf61464e43c25fdec8797",
+      "query_sha256": "1ec9a7c4cba9d8c5964e92fec47031d9f62606963469bf70034b8c50b369f32b"
+    },
+    {
+      "case": "field_xrf_site10",
+      "variant": "api_asserted",
+      "status": "passed",
+      "rows": 46,
+      "expected_rows": 46,
+      "expected_sha256": "a1291a242dd6febad10f23ed7087852745725771b03cf61464e43c25fdec8797",
+      "query_sha256": "1ec9a7c4cba9d8c5964e92fec47031d9f62606963469bf70034b8c50b369f32b"
+    },
+    {
+      "case": "field_xrf_site10",
+      "variant": "direct_explicit_from",
+      "status": "passed",
+      "rows": 46,
+      "expected_rows": 46,
+      "expected_sha256": "a1291a242dd6febad10f23ed7087852745725771b03cf61464e43c25fdec8797",
+      "query_sha256": "0f8a74417e3e8dd182c63329cba3b89712ef368fa340dd78de5d0dc9a0a26a0f"
+    },
+    {
+      "case": "field_xrf_site10",
+      "variant": "api_explicit_from_asserted",
+      "status": "passed",
+      "rows": 46,
+      "expected_rows": 46,
+      "expected_sha256": "a1291a242dd6febad10f23ed7087852745725771b03cf61464e43c25fdec8797",
+      "query_sha256": "0f8a74417e3e8dd182c63329cba3b89712ef368fa340dd78de5d0dc9a0a26a0f"
+    },
+    {
+      "case": "taxonomy_ERR16061083_genus",
+      "variant": "direct_server_default",
+      "status": "passed",
+      "rows": 48,
+      "expected_rows": 48,
+      "expected_sha256": "1adcc322afa6f566394bae5eb63d7ebf9426280ade090a839d85cbc364dccdaf",
+      "query_sha256": "097cf5cc9d17b43628629d215cef1ff0fe66bdb19c1532ac7a3fe53ef131dc68",
+      "numeric_order_checked": true
+    },
+    {
+      "case": "taxonomy_ERR16061083_genus",
+      "variant": "direct_asserted",
+      "status": "passed",
+      "rows": 48,
+      "expected_rows": 48,
+      "expected_sha256": "1adcc322afa6f566394bae5eb63d7ebf9426280ade090a839d85cbc364dccdaf",
+      "query_sha256": "097cf5cc9d17b43628629d215cef1ff0fe66bdb19c1532ac7a3fe53ef131dc68",
+      "numeric_order_checked": true
+    },
+    {
+      "case": "taxonomy_ERR16061083_genus",
+      "variant": "api_asserted",
+      "status": "passed",
+      "rows": 48,
+      "expected_rows": 48,
+      "expected_sha256": "1adcc322afa6f566394bae5eb63d7ebf9426280ade090a839d85cbc364dccdaf",
+      "query_sha256": "097cf5cc9d17b43628629d215cef1ff0fe66bdb19c1532ac7a3fe53ef131dc68",
+      "numeric_order_checked": true
+    },
+    {
+      "case": "taxonomy_ERR16061083_genus",
+      "variant": "direct_explicit_from",
+      "status": "passed",
+      "rows": 48,
+      "expected_rows": 48,
+      "expected_sha256": "1adcc322afa6f566394bae5eb63d7ebf9426280ade090a839d85cbc364dccdaf",
+      "query_sha256": "846bcc74289deef085224530087897ebf755868d90683769bee3f38732bd0f43",
+      "numeric_order_checked": true
+    },
+    {
+      "case": "taxonomy_ERR16061083_genus",
+      "variant": "api_explicit_from_asserted",
+      "status": "passed",
+      "rows": 48,
+      "expected_rows": 48,
+      "expected_sha256": "1adcc322afa6f566394bae5eb63d7ebf9426280ade090a839d85cbc364dccdaf",
+      "query_sha256": "846bcc74289deef085224530087897ebf755868d90683769bee3f38732bd0f43",
+      "numeric_order_checked": true
+    },
+    {
+      "case": "environment_pseudomonas_gt35",
+      "variant": "direct_server_default",
+      "status": "passed",
+      "rows": 360,
+      "expected_rows": 360,
+      "expected_sha256": "05823c4f1aa77f53033cef36e13b5dee7168abe575b41dc501c1af49f4c616b2",
+      "query_sha256": "a47ceb22cde6a4f7da182716727a608caebd6f33b7180380137c1bface10beb5"
+    },
+    {
+      "case": "environment_pseudomonas_gt35",
+      "variant": "direct_asserted",
+      "status": "passed",
+      "rows": 360,
+      "expected_rows": 360,
+      "expected_sha256": "05823c4f1aa77f53033cef36e13b5dee7168abe575b41dc501c1af49f4c616b2",
+      "query_sha256": "a47ceb22cde6a4f7da182716727a608caebd6f33b7180380137c1bface10beb5"
+    },
+    {
+      "case": "environment_pseudomonas_gt35",
+      "variant": "api_asserted",
+      "status": "passed",
+      "rows": 360,
+      "expected_rows": 360,
+      "expected_sha256": "05823c4f1aa77f53033cef36e13b5dee7168abe575b41dc501c1af49f4c616b2",
+      "query_sha256": "a47ceb22cde6a4f7da182716727a608caebd6f33b7180380137c1bface10beb5"
+    },
+    {
+      "case": "environment_pseudomonas_gt35",
+      "variant": "direct_explicit_from",
+      "status": "passed",
+      "rows": 360,
+      "expected_rows": 360,
+      "expected_sha256": "05823c4f1aa77f53033cef36e13b5dee7168abe575b41dc501c1af49f4c616b2",
+      "query_sha256": "f418de8416308c63129be99de3a6c883542508e50781c6db99a1c21524059d20"
+    },
+    {
+      "case": "environment_pseudomonas_gt35",
+      "variant": "api_explicit_from_asserted",
+      "status": "passed",
+      "rows": 360,
+      "expected_rows": 360,
+      "expected_sha256": "05823c4f1aa77f53033cef36e13b5dee7168abe575b41dc501c1af49f4c616b2",
+      "query_sha256": "f418de8416308c63129be99de3a6c883542508e50781c6db99a1c21524059d20"
+    },
+    {
+      "case": "sites70",
+      "variant": "direct_server_default",
+      "status": "passed",
+      "rows": 70,
+      "expected_rows": 70,
+      "expected_sha256": "1bc8cd3d2568157d4df21b9a2007d1caf0c2201402bef325853b9d28d9797003",
+      "query_sha256": "48d11fa7123f09f54d1514ae1c490a524f823aedd76df14989bed5bdf089dcdd"
+    },
+    {
+      "case": "sites70",
+      "variant": "direct_asserted",
+      "status": "passed",
+      "rows": 70,
+      "expected_rows": 70,
+      "expected_sha256": "1bc8cd3d2568157d4df21b9a2007d1caf0c2201402bef325853b9d28d9797003",
+      "query_sha256": "48d11fa7123f09f54d1514ae1c490a524f823aedd76df14989bed5bdf089dcdd"
+    },
+    {
+      "case": "sites70",
+      "variant": "api_asserted",
+      "status": "passed",
+      "rows": 70,
+      "expected_rows": 70,
+      "expected_sha256": "1bc8cd3d2568157d4df21b9a2007d1caf0c2201402bef325853b9d28d9797003",
+      "query_sha256": "48d11fa7123f09f54d1514ae1c490a524f823aedd76df14989bed5bdf089dcdd"
+    },
+    {
+      "case": "sites70",
+      "variant": "direct_explicit_from",
+      "status": "passed",
+      "rows": 70,
+      "expected_rows": 70,
+      "expected_sha256": "1bc8cd3d2568157d4df21b9a2007d1caf0c2201402bef325853b9d28d9797003",
+      "query_sha256": "5f3c01fb679b18239158e430c7b938a5398ec4699ae68167bbc12b4d11a9908e"
+    },
+    {
+      "case": "sites70",
+      "variant": "api_explicit_from_asserted",
+      "status": "passed",
+      "rows": 70,
+      "expected_rows": 70,
+      "expected_sha256": "1bc8cd3d2568157d4df21b9a2007d1caf0c2201402bef325853b9d28d9797003",
+      "query_sha256": "5f3c01fb679b18239158e430c7b938a5398ec4699ae68167bbc12b4d11a9908e"
+    },
+    {
+      "case": "six_pcr_ntcs",
+      "variant": "direct_server_default",
+      "status": "passed",
+      "rows": 6,
+      "expected_rows": 6,
+      "expected_sha256": "182b9705558484147b3fc4d8eeca633e6570aafc3f319f30d933fb50a49a1a2c",
+      "query_sha256": "14e9c9fe5067f68aa290c0861914906fe32b8209e5b0288b15d874e39db02c9f"
+    },
+    {
+      "case": "six_pcr_ntcs",
+      "variant": "direct_asserted",
+      "status": "passed",
+      "rows": 6,
+      "expected_rows": 6,
+      "expected_sha256": "182b9705558484147b3fc4d8eeca633e6570aafc3f319f30d933fb50a49a1a2c",
+      "query_sha256": "14e9c9fe5067f68aa290c0861914906fe32b8209e5b0288b15d874e39db02c9f"
+    },
+    {
+      "case": "six_pcr_ntcs",
+      "variant": "api_asserted",
+      "status": "passed",
+      "rows": 6,
+      "expected_rows": 6,
+      "expected_sha256": "182b9705558484147b3fc4d8eeca633e6570aafc3f319f30d933fb50a49a1a2c",
+      "query_sha256": "14e9c9fe5067f68aa290c0861914906fe32b8209e5b0288b15d874e39db02c9f"
+    },
+    {
+      "case": "six_pcr_ntcs",
+      "variant": "direct_explicit_from",
+      "status": "passed",
+      "rows": 6,
+      "expected_rows": 6,
+      "expected_sha256": "182b9705558484147b3fc4d8eeca633e6570aafc3f319f30d933fb50a49a1a2c",
+      "query_sha256": "6d598fc9aecbb5901169517897f570630779da6c43155c17759bfa12ea0a1fee"
+    },
+    {
+      "case": "six_pcr_ntcs",
+      "variant": "api_explicit_from_asserted",
+      "status": "passed",
+      "rows": 6,
+      "expected_rows": 6,
+      "expected_sha256": "182b9705558484147b3fc4d8eeca633e6570aafc3f319f30d933fb50a49a1a2c",
+      "query_sha256": "6d598fc9aecbb5901169517897f570630779da6c43155c17759bfa12ea0a1fee"
+    },
+    {
+      "case": "taxonomy_api_ERR16061083_top20",
+      "variant": "api_rank_genus_limit20",
+      "status": "passed",
+      "rows": 20,
+      "expected_rows": 20,
+      "expected_sha256": "1adcc322afa6f566394bae5eb63d7ebf9426280ade090a839d85cbc364dccdaf",
+      "numeric_order_checked": true
+    }
+  ],
+  "protocol_graph_fixture": {
+    "sha256": "1d7d1e512c6d40728ba8d0a3b0563711f2c262dbe4d469a9858de8b935426191",
+    "triples": 6,
+    "graph": "urn:eq:release-test:export"
+  },
+  "protocol_gates": [
+    {
+      "name": "default_excludes_fixture_graph",
+      "passed": true,
+      "http_status": 200,
+      "complete_response": true
+    },
+    {
+      "name": "explicit_from_overrides_default",
+      "passed": true,
+      "http_status": 200,
+      "complete_response": true
+    },
+    {
+      "name": "protocol_dataset_overrides_default",
+      "passed": true,
+      "http_status": 200,
+      "complete_response": true
+    },
+    {
+      "name": "explicit_named_dataset",
+      "passed": true,
+      "http_status": 200,
+      "complete_response": true
+    },
+    {
+      "name": "empty_from_does_not_fall_back_to_asserted",
+      "passed": true,
+      "http_status": 200,
+      "complete_response": true
+    },
+    {
+      "name": "empty_protocol_dataset_does_not_fall_back",
+      "passed": true,
+      "http_status": 200,
+      "complete_response": true
+    },
+    {
+      "name": "wkt_datatype",
+      "passed": true,
+      "http_status": 200,
+      "complete_response": true
+    },
+    {
+      "name": "anonymous_update_denied",
+      "passed": true,
+      "http_status": 400
+    },
+    {
+      "name": "construct_turtle_roundtrip",
+      "passed": true,
+      "http_status": 200,
+      "complete_response": true,
+      "triples": 6,
+      "content_type": "text/turtle",
+      "graph_isomorphic": true,
+      "literal_datatypes_preserved": true
+    },
+    {
+      "name": "construct_ntriples_roundtrip",
+      "passed": true,
+      "http_status": 200,
+      "complete_response": true,
+      "triples": 6,
+      "content_type": "application/n-triples",
+      "graph_isomorphic": true,
+      "literal_datatypes_preserved": true
+    },
+    {
+      "name": "construct_rdfxml_roundtrip",
+      "passed": true,
+      "http_status": 200,
+      "complete_response": true,
+      "triples": 6,
+      "content_type": "application/rdf+xml",
+      "graph_isomorphic": true,
+      "literal_datatypes_preserved": true
+    },
+    {
+      "name": "construct_jsonld_roundtrip",
+      "passed": true,
+      "http_status": 200,
+      "complete_response": true,
+      "triples": 6,
+      "content_type": "application/ld+json",
+      "graph_isomorphic": true,
+      "literal_datatypes_preserved": true
+    },
+    {
+      "name": "select_json_literal_roundtrip",
+      "passed": true,
+      "http_status": 200,
+      "complete_response": true,
+      "rows": 6,
+      "content_type": "application/sparql-results+json",
+      "result_multiset_preserved": true,
+      "literal_datatypes_preserved": true
+    },
+    {
+      "name": "select_xml_literal_roundtrip",
+      "passed": true,
+      "http_status": 200,
+      "complete_response": true,
+      "rows": 6,
+      "content_type": "application/sparql-results+xml",
+      "result_multiset_preserved": true,
+      "literal_datatypes_preserved": true
+    }
+  ],
+  "isolation_gates": [
+    {
+      "name": "only_asserted_advertised",
+      "passed": true
+    },
+    {
+      "name": "materialized_mode_rejected",
+      "passed": true
+    },
+    {
+      "name": "inferred_graph_absent",
+      "passed": true
+    },
+    {
+      "name": "materialized_graph_absent",
+      "passed": true
+    },
+    {
+      "name": "asserted_default_count",
+      "passed": true
+    },
+    {
+      "name": "all_712_ph_specimen_links_exact",
+      "passed": true
+    }
+  ],
+  "ph_source_sha256": "4c3af7c30633822e7ce86cedd54247dbaba69a598cc9014cbc2c0cfab8a14811",
+  "browser_gates": [
+    {
+      "name": "asserted",
+      "status": "passed",
+      "rows": 46
+    },
+    {
+      "name": "clicked_light_elements",
+      "status": "passed",
+      "rows": 71
+    },
+    {
+      "name": "All sampling sites and their GPS coordinates",
+      "status": "passed",
+      "rows": 70
+    },
+    {
+      "name": "Biomes associated with each site",
+      "status": "passed",
+      "rows": 70
+    },
+    {
+      "name": "DNA extraction records and concentrations",
+      "status": "passed",
+      "rows": 1647
+    },
+    {
+      "name": "Provenance: soil sample \u2192 DNA \u2192 library \u2192 sequencing run",
+      "status": "passed",
+      "rows": 25
+    },
+    {
+      "name": "Genus-level composition and abundance for ERR16061083",
+      "status": "passed",
+      "rows": 48,
+      "numeric_order_checked": true
+    },
+    {
+      "name": "Pseudomonas abundance at hot sites (cross-domain join)",
+      "status": "passed",
+      "rows": 360
+    },
+    {
+      "name": "Sequencing QC metrics for a specific sample",
+      "status": "passed",
+      "rows": 12
+    }
+  ],
+  "browser_download_gates": [
+    {
+      "name": "rubalkhali-kg-3.0.0-source.tar.gz",
+      "bytes": 129095989,
+      "bounded_range_status": 206
+    },
+    {
+      "name": "rubalkhali-kg-3.0.0-modules.tar.gz",
+      "bytes": 372523592,
+      "bounded_range_status": 206
+    },
+    {
+      "name": "rubalkhali-kg-3.0.0-asserted.nq.gz",
+      "bytes": 330556313,
+      "bounded_range_status": 206
+    }
+  ],
+  "download_gates": [
+    {
+      "name": "rubalkhali-kg-3.0.0-source.tar.gz",
+      "bytes": 129095989,
+      "sha256": "22a85a792c5828f579cf9bec3c0be0cc83a0c527fb7ebcde1d842b95a70f0d5c",
+      "passed": true,
+      "url": "https://rubalkhali.science/downloads/kg/3.0.0/rubalkhali-kg-3.0.0-source.tar.gz"
+    },
+    {
+      "name": "rubalkhali-kg-3.0.0-modules.tar.gz",
+      "bytes": 372523592,
+      "sha256": "25210e4c011b07c7f0d48bb4880a2e0f3f64b34908264c99a1e4e5ea085d9879",
+      "passed": true,
+      "url": "https://rubalkhali.science/downloads/kg/3.0.0/rubalkhali-kg-3.0.0-modules.tar.gz"
+    },
+    {
+      "name": "rubalkhali-kg-3.0.0-asserted.nq.gz",
+      "bytes": 330556313,
+      "sha256": "1a1fc275ef8665926b0091af31f3a4043f79137a5c929a9a54f0943ffbcb9cf4",
+      "passed": true,
+      "url": "https://rubalkhali.science/downloads/kg/3.0.0/rubalkhali-kg-3.0.0-asserted.nq.gz",
+      "rdf_syntax_checked": true,
+      "triples": 45706977,
+      "graph": "https://rubalkhali.science/graph/asserted/3.0.0"
+    }
+  ],
+  "auxiliary_download_gates": [
+    {
+      "name": "input-modules-manifest.json",
+      "url": "/downloads/kg/3.0.0/input-modules-manifest.json",
+      "bytes": 8141,
+      "sha256": "ec04bcb5c7b96e8e000de0a7d9b62360b28af3b202c10f02ba61f16dc0f1b72f",
+      "passed": true,
+      "http_status": 200,
+      "full_read": true
+    },
+    {
+      "name": "asserted-loader-report.json",
+      "url": "/downloads/kg/3.0.0/asserted-loader-report.json",
+      "bytes": 353,
+      "sha256": "3342eeb86d5abecb93d0a3f49a249f7bdaf874a9d774cfa7e9979f8f99efd66c",
+      "passed": true,
+      "http_status": 200,
+      "full_read": true
+    },
+    {
+      "name": "site-import-adaptations.json",
+      "url": "/downloads/kg/3.0.0/site-import-adaptations.json",
+      "bytes": 490,
+      "sha256": "543629021c1edb3946d2097dd01485834a5547669679d038e695d9363d27ab0f",
+      "passed": true,
+      "http_status": 200,
+      "full_read": true
+    },
+    {
+      "name": "native-export-fixture.json",
+      "url": "/downloads/kg/3.0.0/native-export-fixture.json",
+      "bytes": 354,
+      "sha256": "27904ec3be34af59266e621591a1dd33245f2641c2fb3b22264537d7207d63cf",
+      "passed": true,
+      "http_status": 200,
+      "full_read": true
+    },
+    {
+      "name": "prepare_wkt_import.py",
+      "url": "/downloads/kg/3.0.0/prepare_wkt_import.py",
+      "bytes": 3212,
+      "sha256": "7429bdbcdf19145301fd8778cc55da5290e36fce93523c6eb888ee95d1612a48",
+      "passed": true,
+      "http_status": 200,
+      "full_read": true
+    },
+    {
+      "name": "source-rebuild-verification.json",
+      "url": "/downloads/kg/3.0.0/source-rebuild-verification.json",
+      "bytes": 4013,
+      "sha256": "e25890eaa7585b1270d5d7ccc96dc4832c09f1405945d5517930440d89269c67",
+      "passed": true,
+      "http_status": 200,
+      "full_read": true
+    }
+  ],
+  "download_validation_software": {
+    "python": "3.11.14",
+    "raptor": "2.0.15",
+    "validator_sha256": "d1887028840dbe23d2925afde294b2cf720297c3937a580c3b2fbe7c75dfe5f5"
+  },
+  "privacy_scope": "Field-whitelisted result summaries and original report hashes; no private report paths, browser request parameters, raw response bodies, credentials or operator configuration."
+}

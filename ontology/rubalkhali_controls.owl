@@ -7,16 +7,6 @@
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:sio="http://semanticscience.org/resource/">
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_001bfb9a6ad0342e0c190898a5bab92cfd4cda1a7896465c80b8fe80fc45125d">
-    <dcterms:identifier>trip5_16S|Negative4|379:extraction</dcterms:identifier>
-    <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_a00301dd2af8542755e8f25d2c531d249f52c5156492b8b6cd6f0a14f14148b8"/>
-    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_292a1a1b28b9b11134dd7c561df5849efce29f8abcbbf0783cb264fb2c0cb231"/>
-    <sio:SIO_000291 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_292a1a1b28b9b11134dd7c561df5849efce29f8abcbbf0783cb264fb2c0cb231"/>
-    <sio:SIO_000355 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_856fa8819ffc209df4dce2eedfb24a93c9c8dca326985bd26bf682ceccd549d5"/>
-    <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000994"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000309"/>
-    <rdfs:label>DNA extraction process for trip5_16S|Negative4|379</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_0067da507b066461eb8815426222bc6ef30dc7df199a25bfff6613e07d55ca4f">
     <dc:source>/ibex/project/c2014/EmptyQuarter_Data/soil/amplicon_16S/novaseq_14_07_25/raw_reads/M-25-0770_EB1_SU0216-SU0216_L002_R1_001.fastq.gz</dc:source>
     <dc:source>/ibex/project/c2014/EmptyQuarter_Data/soil/amplicon_16S/novaseq_14_07_25/raw_reads/M-25-0770_EB1_SU0216-SU0216_L002_R2_001.fastq.gz</dc:source>
@@ -27,7 +17,7 @@
     <rdfs:label>control-derived FASTQ dataset for Trip4_EB1</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_00730445e1ba1cc21129c104a71254100099283cb8c69091c292eef7791d1152">
-    <dcterms:description>The blank was not sequenced; affected site identifiers: 22,28,35,43,53,46,13,25,54,55,44,38,41,33,2,27,51,16,59,57,56,49,45.</dcterms:description>
+    <dcterms:description>The blank was not sequenced; affected site identifiers: The EB for three days extraction wasn't sequenced  sites 2, 13, 16, 18, 22, 25, 27, 28, 33, 35, 37, 38, 41, 43, 44, 45, 46, 47, 49, 51, 53, 54, 55, 56, 57, 58, 59(PRr1, 59Dr1), 60.</dcterms:description>
     <dcterms:identifier>f749fc9019d7e7ad823f0ae64741086b4448bad9a4273ae4ed9715994cd6a298</dcterms:identifier>
     <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_e7f2212f9e4cb96e07190808584e76cbb1c2739c61286c62ea863893e0e515f1"/>
     <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
@@ -78,6 +68,13 @@
     <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9ad413fa898ccfca6e4bc5518773cbfcde133f71c9fcae38755c16d01d9af862"/>
     <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_3b9976606e7bd3f7faf9572ee2ba9223b1a69919559fb5deeb68e12e58d1a993"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_044e01c49af2cfb86b6af2c1c59cb5bf072fb9a9817ea4c1649f56d5a6ffa88f">
+    <dcterms:identifier>Negative4:pcr_blank</dcterms:identifier>
+    <sio:SIO_000227 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_292a1a1b28b9b11134dd7c561df5849efce29f8abcbbf0783cb264fb2c0cb231"/>
+    <sio:SIO_000356 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_631e1609983edf48d7c5a87909bf9ddb9616a6884e93b20c6da6339a8c568e20"/>
+    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000307"/>
+    <rdfs:label>pcr blank for Negative4</rdfs:label>
+  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_04b679a8d6d1816476abd334dc771c13c8502240143d0975670d3b83f4164842">
     <dcterms:identifier>e0323_Ctrl_1_Trip1:PCR</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5cf48da1a310c896655d58216ced2d74ba2c13c6b252f1de63c172ef21e47c87"/>
@@ -122,16 +119,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000312"/>
     <rdfs:label>control sequencing assay for EB8</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_07c81b4d2c3243b90c6ab6746863493f2b6338a03c461431ea69aaaf39299825">
-    <dcterms:description>S19Sr1 is mapped to more than one Trip-4 extraction blank; no batch link is promoted.</dcterms:description>
-    <dcterms:identifier>cd6606af34a5c20ef28d7a3b8304a5bb01788b420ee216eabdc7e714302cc97d</dcterms:identifier>
-    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_P202161"/>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000320"/>
-    <rdfs:label>unresolved: extraction_batch_membership</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9ad413fa898ccfca6e4bc5518773cbfcde133f71c9fcae38755c16d01d9af862"/>
-    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_082b82aa55499fca07bc264ced464ea3a43c3b7078bc749562c9ae89474fbd36">
     <dcterms:identifier>EB5</dcterms:identifier>
     <sio:SIO_000228 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_67b07ba21f8fe376000d2e5f964af01e56add6b025ca50ac720e697308eb8632"/>
@@ -140,16 +127,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000300"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000302"/>
     <rdfs:label>Trip 4 extraction blank EB5</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_08b696ee857d8f734d0417178308630eb5dc6be2b2ee097977a0c4db887daca8">
-    <dcterms:identifier>trip5_16S|Negative2|180:extraction</dcterms:identifier>
-    <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_1189cb0da50ea40db0ae18dc7531b52a7b2f02e3550f3e6a06ecb54cccef2db9"/>
-    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5d645e9e2e96f374d7b336a4b0a78abb6c76b6b10574951b67a4e90a847a08e8"/>
-    <sio:SIO_000291 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5d645e9e2e96f374d7b336a4b0a78abb6c76b6b10574951b67a4e90a847a08e8"/>
-    <sio:SIO_000355 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_e7df887e091b1dc8cd61e34f26d3089cdf0f089feb5dc1d9adfd7252c7789543"/>
-    <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000994"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000309"/>
-    <rdfs:label>DNA extraction process for trip5_16S|Negative2|180</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_08fa0380075578cb2423cba9cea4499b5ddf8eae825252af5cbd6c3978e90200">
     <dc:source>/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/amplicon_16S/Trip5/reads/M-25-8371_EB2_xGen-10nt-UDI-Index-Pair-410-xGen-10nt-UDI-Index-Pair-410_L001_R1_001.fastq.gz</dc:source>
@@ -210,7 +187,7 @@
     <rdfs:label>control sequencing assay for EB14</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_0b138e066578c6f3d9e1ca171e923a3deba82a77162cabb157a52a3b3d5688d9">
-    <dcterms:description>The workbook records the PCR blank and index 275 but no sequenced count or FASTQ.</dcterms:description>
+    <dcterms:description>The corrected 30 August workbook and author message confirm that the PCR blank at index 275 was not sequenced.</dcterms:description>
     <dcterms:identifier>d619736d684ce229905e3a4ca29fa3d72f1f1544ff523d584f3ed21ec6dbd28b</dcterms:identifier>
     <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_256c4109f961d0845058978794d4d8fdbcd451fba77d189c77be16ead271b0f4"/>
     <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
@@ -298,43 +275,12 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000311"/>
     <rdfs:label>amplicon PCR process for e0871_Neg_Ctrl_2_Trip2</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_0ef8b6db5d579b65878a3226cbe8ca2049902a43793dd457fdd6f982cda7556f">
-    <dcterms:description>Workbook row 7 assigns S19Sr1 to this batch, but the same sample occurs in another EB row.</dcterms:description>
-    <dcterms:identifier>b06110bd31bab51e2d2e9797f844ca7bef0e9d0214da31186c65b532a554663c</dcterms:identifier>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000313"/>
-    <rdfs:label>control metadata assertion</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5374852ca6b02788a214763c5961abe4cfe57742b9c107fad4c3d869299b389c"/>
-    <rak:RAK_2000093 rdf:resource="https://rubalkhali.science/kb/RAK_P202161"/>
-    <rak:RAK_2000094 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6ffa13afd5f8c392879227fe4ba7ea98940eb65aba6eafec633f131596851165"/>
-    <rak:RAK_2000095 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9efef0db378a00eabe193eb35637f9a0887cf76c386e6c60b5f6864f464bbe83"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_0f065fdc5569182c2388478ba3d04cf833afd67ca7aa8251cc7b35cd9e5205c1">
     <dcterms:identifier>ERR16783305</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_f5b02f57b4fbb21092c9d3f91d549f766783e07354e83280b3921f4d9ce7d5d8"/>
     <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_96866e2e0b2e363b2bfe9046a02e7ab18989456b7876dbf40066fb30d5da3c24"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000312"/>
     <rdfs:label>control sequencing assay for Negative5</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_1056fc044fc1897959a92e794c08a002f5f5fd2825b04322515cce73abfec01e">
-    <dcterms:description>S6PRr1 is mapped to more than one Trip-4 extraction blank; no batch link is promoted.</dcterms:description>
-    <dcterms:identifier>5ffe1659754176359d70b72ae7559b371e30a9d9c0e2ce16032effbbc5936b53</dcterms:identifier>
-    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_P202123"/>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000320"/>
-    <rdfs:label>unresolved: extraction_batch_membership</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9ad413fa898ccfca6e4bc5518773cbfcde133f71c9fcae38755c16d01d9af862"/>
-    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_1149a28ad0a883a7f1957eabacf7235e5c02146977dc51dfac467097cdd694a7">
-    <dcterms:description>The library is an author-confirmed extraction blank, but no extraction-day/sample map is frozen.</dcterms:description>
-    <dcterms:identifier>d3e624393acb2d283618ec544172ad79e4c9f4a2f746a8e348163d6c94edcd73</dcterms:identifier>
-    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_a257fdc1ec52a0bd13e4b97fb596775e19fc570683fc7f58dd4c275397192470"/>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_42758abc83258bafa099f565edb9367f8db2b06203271186305c2efade86d290"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000320"/>
-    <rdfs:label>unresolved: extraction_batch_membership</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9ad413fa898ccfca6e4bc5518773cbfcde133f71c9fcae38755c16d01d9af862"/>
-    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_115a012d3ae8d3100d9811b76ae5b65ed07735b84f87ad4f3f57aef58f4db300">
     <dc:source>/ibex/project/c2014/EmptyQuarter_Data/soil/amplicon_16S/novaseq_14_07_25/raw_reads/M-25-0684_SEB_SU0168-SU0168_L002_R1_001.fastq.gz</dc:source>
@@ -352,13 +298,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000060"/>
     <rdfs:label>16S amplicon library for EB3</rdfs:label>
     <rdfs:seeAlso rdf:resource="https://identifiers.org/biosample/ERS29439739"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_1189cb0da50ea40db0ae18dc7531b52a7b2f02e3550f3e6a06ecb54cccef2db9">
-    <dcterms:identifier>trip5_16S|Negative2|180:DNA</dcterms:identifier>
-    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_f6adc61177a293d499b6ac64706afb0662d0664db757129fe1a7e3aaef1ff3b2"/>
-    <sio:SIO_000232 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_08b696ee857d8f734d0417178308630eb5dc6be2b2ee097977a0c4db887daca8"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000040"/>
-    <rdfs:label>DNA extract of trip5_16S|Negative2|180</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_119ddf253fd349f920410dd3195a771273a513205aeb8ea0f0816e4fb9736d04">
     <dcterms:identifier>extraction:2025-10-27</dcterms:identifier>
@@ -425,16 +364,6 @@
     <sio:SIO_000232 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_1e2f2b98bcd9639aa2a649cff37386cc78d5ac93c4cef8ff5b93ef1ebd1f57e4"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000040"/>
     <rdfs:label>DNA extract of trip5_16S|EB12|387</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_14b00471de1fc8166d6f7f3553ed7f2a42062da43075eb17553e9e8c1d6e615f">
-    <dcterms:description>The library is an author-confirmed extraction blank, but no extraction-day/sample map is frozen.</dcterms:description>
-    <dcterms:identifier>9aaf963e5271b538b94a2751e285b7a940880620eb19fb275e3a1d9fd9b9d4ea</dcterms:identifier>
-    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_43f740d71d2dff8487b372651f61bd984388fac41fc5f59a784e0a277ebfe210"/>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_42758abc83258bafa099f565edb9367f8db2b06203271186305c2efade86d290"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000320"/>
-    <rdfs:label>unresolved: extraction_batch_membership</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9ad413fa898ccfca6e4bc5518773cbfcde133f71c9fcae38755c16d01d9af862"/>
-    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_14cde784e94570af3a9415ab47f9549a39ce3fd75ee585aa9bfa7d6d0c2d9663">
     <dcterms:identifier>EB7</dcterms:identifier>
@@ -627,16 +556,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000309"/>
     <rdfs:label>DNA extraction process for trip5_16S|EB12|387</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_1e6e342daec56e557446d7cc0330abbeb69045f19a5a8d69831973dffb14ba85">
-    <dcterms:identifier>trip5_16S|Negative1|13:extraction</dcterms:identifier>
-    <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_f42101d52c87be7e7111b2bb801c2e0136f4d4d3afb42e5cf745e0731f5d81f0"/>
-    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_43f740d71d2dff8487b372651f61bd984388fac41fc5f59a784e0a277ebfe210"/>
-    <sio:SIO_000291 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_43f740d71d2dff8487b372651f61bd984388fac41fc5f59a784e0a277ebfe210"/>
-    <sio:SIO_000355 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_b3a45fcc76a1a100dd448de9f031d813b96599850c3a8683916d5606c098738a"/>
-    <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000994"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000309"/>
-    <rdfs:label>DNA extraction process for trip5_16S|Negative1|13</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_1ea66170294bdb29592639c6bfc3c203289e2508204725e578a93eadc8661f10">
     <dcterms:identifier>Trip4_EB5:PCR</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_545df5d8a2af9552b84316202765e3045facc4a498c86560c0f9c4c855dd45fd"/>
@@ -651,16 +570,6 @@
     <sio:SIO_000232 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_65b4d98a58849e59c57211b48e5f6e1d4a0920801e0cd7d2c86463181ddcf27b"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000040"/>
     <rdfs:label>DNA extract of trip5_16S|EB10|458</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_1efb0e07a4fd45a4754e608fde4a1e5afe5ba5be1c046050834ef2e308b5fa63">
-    <dcterms:description>The library is an author-confirmed extraction blank, but no extraction-day/sample map is frozen.</dcterms:description>
-    <dcterms:identifier>c8b9c52eef30f2a24e65ddefc538853435fb853115a3155f0f5e6ddbefdbf478</dcterms:identifier>
-    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_292a1a1b28b9b11134dd7c561df5849efce29f8abcbbf0783cb264fb2c0cb231"/>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_42758abc83258bafa099f565edb9367f8db2b06203271186305c2efade86d290"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000320"/>
-    <rdfs:label>unresolved: extraction_batch_membership</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9ad413fa898ccfca6e4bc5518773cbfcde133f71c9fcae38755c16d01d9af862"/>
-    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_1f4e6b290d0e4440d51a81e18e61273bf0bea298c8f00bbe43e9cab4bd1f576b">
     <dcterms:identifier>e8672_FNegCtrl1</dcterms:identifier>
@@ -752,17 +661,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000302"/>
     <rdfs:label>Trip 4 PCR blank</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_259703e242596793f9ee0b4aea0729edb0e9aaf52765fe92e1a5439b9d360ecf">
-    <dcterms:description>Workbook row 4 assigns S19Dr1 to this batch, but the same sample occurs in another EB row.</dcterms:description>
-    <dcterms:identifier>7b42764686ca0262e605fcedd20f4f726f32cfd6ea079e7ef05d23e946e484a9</dcterms:identifier>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000313"/>
-    <rdfs:label>control metadata assertion</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5374852ca6b02788a214763c5961abe4cfe57742b9c107fad4c3d869299b389c"/>
-    <rak:RAK_2000093 rdf:resource="https://rubalkhali.science/kb/RAK_P202160"/>
-    <rak:RAK_2000094 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6ffa13afd5f8c392879227fe4ba7ea98940eb65aba6eafec633f131596851165"/>
-    <rak:RAK_2000095 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_419550a63cf2ef7b3215eb311794e6680e9d0d4283c19b83bcd665abffd543e4"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_25b86af92e828ab0b74b9512692c1da4de7121aedf84545f156b5f03b01dde4e">
     <dcterms:description>Manufacturer specification for D6300 lists Cryptococcus neoformans as an expected organism.</dcterms:description>
     <dcterms:identifier>7d941bec3c9e5064336dc66f06d4b1ad42a6790b1fedd7eb2461fdf10f6d348b</dcterms:identifier>
@@ -778,7 +676,8 @@
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_25d271a4a873478719c711c5ef107286a90ac9aa78da25c82ff5b68089a1af31">
     <dcterms:identifier>Negative6:PCR</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_1261945f8191a231430021174c4eac702ed883690d6617568739595d8603bf61"/>
-    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_897ed9255702c81908342091681395224377a4e57e79f551d74db666ebfb2eaa"/>
+    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6cf9c6feb1e64f03302d0065ea04caeb95b6687abaf1795ea6620c7c936f0e06"/>
+    <sio:SIO_000355 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c4257c3df1b28ff0034c357271472f86b8c8305a7d526a4836cebcdd8301f5aa"/>
     <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000994"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000311"/>
     <rdfs:label>amplicon PCR process for Negative6</rdfs:label>
@@ -835,13 +734,12 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_292a1a1b28b9b11134dd7c561df5849efce29f8abcbbf0783cb264fb2c0cb231">
     <dcterms:identifier>Negative4</dcterms:identifier>
-    <sio:SIO_000228 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_856fa8819ffc209df4dce2eedfb24a93c9c8dca326985bd26bf682ceccd549d5"/>
-    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_001bfb9a6ad0342e0c190898a5bab92cfd4cda1a7896465c80b8fe80fc45125d"/>
-    <sio:SIO_000292 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_001bfb9a6ad0342e0c190898a5bab92cfd4cda1a7896465c80b8fe80fc45125d"/>
-    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_1efb0e07a4fd45a4754e608fde4a1e5afe5ba5be1c046050834ef2e308b5fa63"/>
+    <sio:SIO_000228 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_044e01c49af2cfb86b6af2c1c59cb5bf072fb9a9817ea4c1649f56d5a6ffa88f"/>
+    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_631e1609983edf48d7c5a87909bf9ddb9616a6884e93b20c6da6339a8c568e20"/>
+    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_fd54922691dcec8799d449a3af8de0fd6deebc87b7aff7978e83df952d093674"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000300"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000302"/>
-    <rdfs:label>Trip 5 16S extraction blank Negative4</rdfs:label>
+    <rdfs:label>Trip 5 16S PCR no-template control Negative4</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_2989cdbf14df79d970bf028add47e1acf1031772e3412b6ab9bcebb86cdada93">
     <dcterms:description>Manufacturer specification for D6300 lists Pseudomonas aeruginosa as an expected organism.</dcterms:description>
@@ -936,7 +834,8 @@
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_30bfab732ad4e8f33601d19cd16d3ce04c2d3fbdac1b0365e3f6787c5c7aeb08">
     <dcterms:identifier>Negative7:PCR</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_3aab62424f860143f8adffeb22178c333c287bcd889b1d861973356ff87cd68b"/>
-    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c345b03813579dfa1f15a19b11b6537dfcfb78450fa76ba30cac350ebfcc29b4"/>
+    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_a257fdc1ec52a0bd13e4b97fb596775e19fc570683fc7f58dd4c275397192470"/>
+    <sio:SIO_000355 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_bdcf87482adc0fa8db6a16d2a61865bbdc4e3bf3ad89ce7763270fd6af13868d"/>
     <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000994"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000311"/>
     <rdfs:label>amplicon PCR process for Negative7</rdfs:label>
@@ -964,16 +863,6 @@
     <rak:RAK_2000094 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_56698f459e82fdb69be8ef81d785e212b8b59d6ec4f88b16dc300b69b1c461c3"/>
     <rak:RAK_2000095 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1613"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_338b29f910742e7b53ca0a1e65fcb5d1e4642ecd8f35d271cfede634519568c3">
-    <dcterms:description>S6Sr1 is mapped to more than one Trip-4 extraction blank; no batch link is promoted.</dcterms:description>
-    <dcterms:identifier>ebd41e48d536d701f84946d96b9b712bd794c7249ff78648384738e1156e7669</dcterms:identifier>
-    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_P202122"/>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000320"/>
-    <rdfs:label>unresolved: extraction_batch_membership</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9ad413fa898ccfca6e4bc5518773cbfcde133f71c9fcae38755c16d01d9af862"/>
-    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_33d65ad84c256c2e661d99e0dc17c3732da51d682301f58fa6314e5a2414d225">
     <dcterms:identifier>EB17</dcterms:identifier>
     <sio:SIO_000228 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_82098d018d8cd509169ce318665c5b4d1231cbcfc1edff7653229ee69a5f3776"/>
@@ -995,13 +884,12 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_34128a2b4f102fe5bcb93a0260c064246b40cc945b31c3c5b948c8432469119f">
     <dcterms:identifier>Negative5</dcterms:identifier>
-    <sio:SIO_000228 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_48f3f051dea64e035d9a71f0f71f5f82b5cd204bae7b2ecfeda0b2f80af0f9e4"/>
-    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c8bc099946a437ed0bcca379e89d14f7dc16e50f8bd78cfa691bbc5a782ff1e4"/>
-    <sio:SIO_000292 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c8bc099946a437ed0bcca379e89d14f7dc16e50f8bd78cfa691bbc5a782ff1e4"/>
-    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_ef94680e6a6619994a274a1324c0684668ac47c753700b4c5d74efd4d3028ce9"/>
+    <sio:SIO_000228 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_97c02faa52bd0a237d2707cd116a6ea955ca78e77b9497cc9f3e92a39ad4ef8b"/>
+    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9697bb4dfe5b36abb125f23f43e5981d3dd97187c1dffbf329b59eb3a03788bc"/>
+    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c2cc06a04b1e9469433cdc64ce1d4443e6f3c4f766a25c0bceafebc4c2eaf511"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000300"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000302"/>
-    <rdfs:label>Trip 5 16S extraction blank Negative5</rdfs:label>
+    <rdfs:label>Trip 5 16S PCR no-template control Negative5</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_3441bb54f997ca7fa626e3e3b72b13c84e174cd2e818c1552ab0c6de178735c5">
     <dcterms:identifier>e8649_NegCtrl3</dcterms:identifier>
@@ -1044,17 +932,6 @@
     <sio:SIO_000356 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_d8cf730f67605909d083ed5b331eb64ff319b27e1d38323a4fd65ab93216b1a6"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000306"/>
     <rdfs:label>extraction blank for EB7</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_367c59dc24cf3d9dcc0fb394bc931b8e2b7c9004de304c89744317d2649c4f2a">
-    <dcterms:description>Workbook row 6 assigns S6Dr1 to this batch, but the same sample occurs in another EB row.</dcterms:description>
-    <dcterms:identifier>3da6bf86517e601edec1f579711abb94a36e911e0a75013ee58afa9ca3336223</dcterms:identifier>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000313"/>
-    <rdfs:label>control metadata assertion</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5374852ca6b02788a214763c5961abe4cfe57742b9c107fad4c3d869299b389c"/>
-    <rak:RAK_2000093 rdf:resource="https://rubalkhali.science/kb/RAK_P202121"/>
-    <rak:RAK_2000094 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6ffa13afd5f8c392879227fe4ba7ea98940eb65aba6eafec633f131596851165"/>
-    <rak:RAK_2000095 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_d999554fcbe2b36fbfdb2aeeef99cdf75e221b8bfc0594c4d017ed6ab7931c7b"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_37b0cf6798e19e5d5495936a3cb2908f1aa0d44e6ab449d7e4d89c7f4c01df10">
     <dcterms:description>The facility run is known (20260402_LL00134_0018_A23J2Y7LT4), but the exact library identifier, FASTQ path and accession are not frozen.</dcterms:description>
@@ -1140,16 +1017,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000311"/>
     <rdfs:label>amplicon PCR process for EB11</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_3d664b7c8e66476b024120bb653fd2f1fa61df35e8c54dd9d42f2ec03282570c">
-    <dcterms:description>S19Dr1 is mapped to more than one Trip-4 extraction blank; no batch link is promoted.</dcterms:description>
-    <dcterms:identifier>2964f20593440c83444c6f802b72bccaaa72df14c7c00a410bbc493dca0230db</dcterms:identifier>
-    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_P202160"/>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000320"/>
-    <rdfs:label>unresolved: extraction_batch_membership</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9ad413fa898ccfca6e4bc5518773cbfcde133f71c9fcae38755c16d01d9af862"/>
-    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_3d9378f55b3acd4b3049c24e1a2b586f17df61d49b08c9b9dde208f6e757a4b2">
     <dcterms:identifier>EB13:PCR</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_ade3a8a537f65303a5419d01391e1e57cb363e0e8ea1928fbb77ba445758c2e9"/>
@@ -1189,6 +1056,9 @@
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202124"/>
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202125"/>
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202126"/>
+    <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202145"/>
+    <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202146"/>
+    <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202147"/>
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202166"/>
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202167"/>
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202168"/>
@@ -1215,13 +1085,7 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_42758abc83258bafa099f565edb9367f8db2b06203271186305c2efade86d290">
     <dcterms:identifier>data/metadata/samples/controls/source_snapshots/ibex_trip5_16s_samplesheet.tsv</dcterms:identifier>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_1149a28ad0a883a7f1957eabacf7235e5c02146977dc51dfac467097cdd694a7"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_14b00471de1fc8166d6f7f3553ed7f2a42062da43075eb17553e9e8c1d6e615f"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_1efb0e07a4fd45a4754e608fde4a1e5afe5ba5be1c046050834ef2e308b5fa63"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_56a17c3b3107c6a0fcfb2329be87203338a87384d7cab402405c1a1e1b3c6d36"/>
     <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_7abd5c90ba5ed3375e78b451a8ab63d63ffb84ebe00dd8583da6173c6dd0cbe1"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_b30e403db9ed3b9cdbfc3e1a73cf3ec11005607d4a13724292d22ce95a9de827"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_ef94680e6a6619994a274a1324c0684668ac47c753700b4c5d74efd4d3028ce9"/>
     <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000089"/>
     <rdfs:label>Control evidence: data/metadata/samples/controls/source_snapshots/ibex_trip5_16s_samplesheet.tsv</rdfs:label>
   </rdf:Description>
@@ -1242,13 +1106,12 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_43f740d71d2dff8487b372651f61bd984388fac41fc5f59a784e0a277ebfe210">
     <dcterms:identifier>Negative1</dcterms:identifier>
-    <sio:SIO_000228 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_b3a45fcc76a1a100dd448de9f031d813b96599850c3a8683916d5606c098738a"/>
-    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_1e6e342daec56e557446d7cc0330abbeb69045f19a5a8d69831973dffb14ba85"/>
-    <sio:SIO_000292 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_1e6e342daec56e557446d7cc0330abbeb69045f19a5a8d69831973dffb14ba85"/>
-    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_14b00471de1fc8166d6f7f3553ed7f2a42062da43075eb17553e9e8c1d6e615f"/>
+    <sio:SIO_000228 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_738d1f7e08af625a8a358370fb0023d3ec92ba44271b1eaa3834215fe7b4daf1"/>
+    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c49c8f3d3f41e2fd823a806e55b82d66041f2788d3030d2e864fd7e76b85e619"/>
+    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_86b9314f1bf4f70eb47aa9441b07c989a04c0eed23251939c50e67795e7bfac8"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000300"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000302"/>
-    <rdfs:label>Trip 5 16S extraction blank Negative1</rdfs:label>
+    <rdfs:label>Trip 5 16S PCR no-template control Negative1</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_4438263dc020954d4a8ea5d8b91c48726025e3d80f238853189bd1ceb58713e2">
     <dcterms:identifier>e0872_TMC1:positive_microbiome_control</dcterms:identifier>
@@ -1315,13 +1178,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000060"/>
     <rdfs:label>16S amplicon library for EB8</rdfs:label>
     <rdfs:seeAlso rdf:resource="https://identifiers.org/biosample/ERS29439744"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_48f3f051dea64e035d9a71f0f71f5f82b5cd204bae7b2ecfeda0b2f80af0f9e4">
-    <dcterms:identifier>Negative5:extraction_blank</dcterms:identifier>
-    <sio:SIO_000227 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_34128a2b4f102fe5bcb93a0260c064246b40cc945b31c3c5b948c8432469119f"/>
-    <sio:SIO_000356 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c8bc099946a437ed0bcca379e89d14f7dc16e50f8bd78cfa691bbc5a782ff1e4"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000306"/>
-    <rdfs:label>extraction blank for Negative5</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_49d0399352c9c9ef80f855a14c149c2d20d1b0b28263108c8242c855ff028cb8">
     <dcterms:identifier>EB15:PCR</dcterms:identifier>
@@ -1392,16 +1248,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000309"/>
     <rdfs:label>DNA extraction process for 20260402_LL00134_0018_A23J2Y7LT4|positive_microbiome_control</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_4c0f20af162f85d98e5d9d88ec1953c85ae061727d19504f9a047a8470c6953e">
-    <dcterms:description>S19PRr1 is mapped to more than one Trip-4 extraction blank; no batch link is promoted.</dcterms:description>
-    <dcterms:identifier>119e7cebc6807b95f87f49157351fabc132e7b4d4ca0daefffe002b8924de2be</dcterms:identifier>
-    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_P202162"/>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000320"/>
-    <rdfs:label>unresolved: extraction_batch_membership</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9ad413fa898ccfca6e4bc5518773cbfcde133f71c9fcae38755c16d01d9af862"/>
-    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_4c74e772f632a39e2f74ee7392ebcb3241bfb382dee7d6008b8d7eb6a6961eee">
     <dcterms:description>The library is positive-labelled and the trip-level design used D6300, but the library-level product mapping is not author-confirmed.</dcterms:description>
     <dcterms:identifier>dc67c14d61638afa319675f219ca40729bb459298ca9dac037600a842d481143</dcterms:identifier>
@@ -1452,6 +1298,16 @@
     <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000994"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000309"/>
     <rdfs:label>DNA extraction process for trip5_16S|EB8|434</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_515dac1227d21149402e2884d5a7ef23eaab4c57b08d37be83370756859664c4">
+    <dcterms:description>PCR-stage no-template control, confirmed 30 August 2026; water replaced extracted template.</dcterms:description>
+    <dcterms:identifier>e51ef752b96c7291a6e16f0344a912902338b76a6728d590f6af00831b35be6d</dcterms:identifier>
+    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5d645e9e2e96f374d7b336a4b0a78abb6c76b6b10574951b67a4e90a847a08e8"/>
+    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_b0ae4ff7a87b0764aea36899c084ae8ca3d720f25fb8ef82e6cc13dfd144086a"/>
+    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000321"/>
+    <rdfs:label>not_applicable: extraction_batch_membership</rdfs:label>
+    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_16703add90bd8fc43094810e7a367ecdd83c8078b3a9d47a5ee81c72fe65fb59"/>
+    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_51f61c16d421c9a57b621e6613bd034b97c925b95c24f21115b8cc2c3cc22945">
     <dcterms:identifier>e0929_Extraction_Ctrl_Pro_Trip1:PCR</dcterms:identifier>
@@ -1572,9 +1428,7 @@
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202216"/>
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202217"/>
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202218"/>
-    <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202286"/>
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202287"/>
-    <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202288"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000308"/>
     <rdfs:label>Trip 4 extraction batch represented by EB</rdfs:label>
   </rdf:Description>
@@ -1600,16 +1454,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000318"/>
     <rdfs:label>control-derived FASTQ dataset for EB5</rdfs:label>
     <rdfs:seeAlso rdf:resource="https://identifiers.org/insdc.run/ERR16783296"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_56a17c3b3107c6a0fcfb2329be87203338a87384d7cab402405c1a1e1b3c6d36">
-    <dcterms:description>The library is an author-confirmed extraction blank, but no extraction-day/sample map is frozen.</dcterms:description>
-    <dcterms:identifier>2725f9e10b8e1b3e7cd7725a0ea1f9b0ab20e51e226a7810fee0d8ab22f51d05</dcterms:identifier>
-    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5d645e9e2e96f374d7b336a4b0a78abb6c76b6b10574951b67a4e90a847a08e8"/>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_42758abc83258bafa099f565edb9367f8db2b06203271186305c2efade86d290"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000320"/>
-    <rdfs:label>unresolved: extraction_batch_membership</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9ad413fa898ccfca6e4bc5518773cbfcde133f71c9fcae38755c16d01d9af862"/>
-    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_57f9f5cb5e435b837d7ccc0ab18ce01eb2a8e4140d2eded5c16a1bd8582a455b">
     <dc:source>/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/amplicon_16S/Trip5/reads/M-25-8158_Negative1_xGen-10nt-UDI-Index-Pair-13-xGen-10nt-UDI-Index-Pair-13_L001_R1_001.fastq.gz</dc:source>
@@ -1698,13 +1542,12 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_5d645e9e2e96f374d7b336a4b0a78abb6c76b6b10574951b67a4e90a847a08e8">
     <dcterms:identifier>Negative2</dcterms:identifier>
-    <sio:SIO_000228 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_e7df887e091b1dc8cd61e34f26d3089cdf0f089feb5dc1d9adfd7252c7789543"/>
-    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_08b696ee857d8f734d0417178308630eb5dc6be2b2ee097977a0c4db887daca8"/>
-    <sio:SIO_000292 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_08b696ee857d8f734d0417178308630eb5dc6be2b2ee097977a0c4db887daca8"/>
-    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_56a17c3b3107c6a0fcfb2329be87203338a87384d7cab402405c1a1e1b3c6d36"/>
+    <sio:SIO_000228 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c4079d57d60f114d7f3992598af1f98d47a2ad43194e916568c197fe12d8d79c"/>
+    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_f6adc61177a293d499b6ac64706afb0662d0664db757129fe1a7e3aaef1ff3b2"/>
+    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_515dac1227d21149402e2884d5a7ef23eaab4c57b08d37be83370756859664c4"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000300"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000302"/>
-    <rdfs:label>Trip 5 16S extraction blank Negative2</rdfs:label>
+    <rdfs:label>Trip 5 16S PCR no-template control Negative2</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_5dd109e52c31b836a940f6a5c54233d06ca41c3259904acbfc266bcfed0dba4b">
     <dcterms:identifier>ERR16783287</dcterms:identifier>
@@ -1787,7 +1630,8 @@
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_631e1609983edf48d7c5a87909bf9ddb9616a6884e93b20c6da6339a8c568e20">
     <dcterms:identifier>Negative4:PCR</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_58143497c670ad285425f4caec8132f4317b270731a69b4424c55eee2eb3445d"/>
-    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_a00301dd2af8542755e8f25d2c531d249f52c5156492b8b6cd6f0a14f14148b8"/>
+    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_292a1a1b28b9b11134dd7c561df5849efce29f8abcbbf0783cb264fb2c0cb231"/>
+    <sio:SIO_000355 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_044e01c49af2cfb86b6af2c1c59cb5bf072fb9a9817ea4c1649f56d5a6ffa88f"/>
     <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000994"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000311"/>
     <rdfs:label>amplicon PCR process for Negative4</rdfs:label>
@@ -1932,13 +1776,12 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_6cf9c6feb1e64f03302d0065ea04caeb95b6687abaf1795ea6620c7c936f0e06">
     <dcterms:identifier>Negative6</dcterms:identifier>
-    <sio:SIO_000228 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9b24028ee42b03628d63d40de06e8723d307c1310e40feb6dc9187531030c93b"/>
-    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_74e8b252fe262cac103258a585ef42add7246383f1fd88212fdbd716251e2da0"/>
-    <sio:SIO_000292 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_74e8b252fe262cac103258a585ef42add7246383f1fd88212fdbd716251e2da0"/>
-    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_b30e403db9ed3b9cdbfc3e1a73cf3ec11005607d4a13724292d22ce95a9de827"/>
+    <sio:SIO_000228 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c4257c3df1b28ff0034c357271472f86b8c8305a7d526a4836cebcdd8301f5aa"/>
+    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_25d271a4a873478719c711c5ef107286a90ac9aa78da25c82ff5b68089a1af31"/>
+    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_7825e7628d26ebfa71eeee5fa8a97bb9ef3902a4b6865a4dd51b3ab558e0fbe9"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000300"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000302"/>
-    <rdfs:label>Trip 5 16S extraction blank Negative6</rdfs:label>
+    <rdfs:label>Trip 5 16S PCR no-template control Negative6</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_6d596ebe4d6cb5b44c7db75578840677ef2909fa6dad18571a07fb289c2d0cb1">
     <dcterms:identifier>e8672_FNegCtrl1</dcterms:identifier>
@@ -2006,12 +1849,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000302"/>
     <rdfs:label>16S negative control e0555_PCR_Ctrl_Trip1</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_6ffa13afd5f8c392879227fe4ba7ea98940eb65aba6eafec633f131596851165">
-    <dcterms:identifier>http://semanticscience.org/resource/SIO_000068</dcterms:identifier>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000323"/>
-    <rdfs:label>asserted relation: http://semanticscience.org/resource/SIO_000068</rdfs:label>
-    <rak:RAK_2000098 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://semanticscience.org/resource/SIO_000068</rak:RAK_2000098>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_702b65744ebe02d853c9e6952b8f590308f70863f937f1e5202e19a331e09664">
     <dcterms:identifier>EB7:PCR</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_add1d0e23ae1fdfdb8d1485c7240277b96e5c24497241891bd49edbeb64412e7"/>
@@ -2037,6 +1874,13 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000311"/>
     <rdfs:label>amplicon PCR process for e0555_PCR_Ctrl_Trip1</rdfs:label>
   </rdf:Description>
+  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_738d1f7e08af625a8a358370fb0023d3ec92ba44271b1eaa3834215fe7b4daf1">
+    <dcterms:identifier>Negative1:pcr_blank</dcterms:identifier>
+    <sio:SIO_000227 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_43f740d71d2dff8487b372651f61bd984388fac41fc5f59a784e0a277ebfe210"/>
+    <sio:SIO_000356 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c49c8f3d3f41e2fd823a806e55b82d66041f2788d3030d2e864fd7e76b85e619"/>
+    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000307"/>
+    <rdfs:label>pcr blank for Negative1</rdfs:label>
+  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_742138f2e173daf9fbf4a9dcb135c2488058b2f709a982ec4b7609718fefe6fd">
     <dcterms:identifier>EB9:PCR</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_7970aa3ada15524f26f5425c4941fece442567e2ddb1caf30c6b5b35e231d5d5"/>
@@ -2060,26 +1904,6 @@
     <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_09f55f45ca317bd60b2ee6ae4ee33e98a18dba94caec13d90f32f2ce5ef34bc3"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000312"/>
     <rdfs:label>Trip 5 shotgun control sequencing assay</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_74e8b252fe262cac103258a585ef42add7246383f1fd88212fdbd716251e2da0">
-    <dcterms:identifier>trip5_16S|Negative6|332:extraction</dcterms:identifier>
-    <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_897ed9255702c81908342091681395224377a4e57e79f551d74db666ebfb2eaa"/>
-    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6cf9c6feb1e64f03302d0065ea04caeb95b6687abaf1795ea6620c7c936f0e06"/>
-    <sio:SIO_000291 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6cf9c6feb1e64f03302d0065ea04caeb95b6687abaf1795ea6620c7c936f0e06"/>
-    <sio:SIO_000355 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9b24028ee42b03628d63d40de06e8723d307c1310e40feb6dc9187531030c93b"/>
-    <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000994"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000309"/>
-    <rdfs:label>DNA extraction process for trip5_16S|Negative6|332</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_75102413de981c8c089a0f8a945777e900d6b4d15275889eeb773c0efac40ff4">
-    <dcterms:identifier>trip5_16S|Negative7|356:extraction</dcterms:identifier>
-    <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c345b03813579dfa1f15a19b11b6537dfcfb78450fa76ba30cac350ebfcc29b4"/>
-    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_a257fdc1ec52a0bd13e4b97fb596775e19fc570683fc7f58dd4c275397192470"/>
-    <sio:SIO_000291 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_a257fdc1ec52a0bd13e4b97fb596775e19fc570683fc7f58dd4c275397192470"/>
-    <sio:SIO_000355 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_cd13a5a4b81446c366ab2c778fd63016963abafb038c6e2f3b612d5eda7db788"/>
-    <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000994"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000309"/>
-    <rdfs:label>DNA extraction process for trip5_16S|Negative7|356</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_756322c0bc9f3732a7e953dbb79d0353bcfba52efafc37af7bcf3a6736836d67">
     <dcterms:identifier>EB16</dcterms:identifier>
@@ -2123,6 +1947,16 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000300"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000301"/>
     <rdfs:label>16S positive control e0553_Ctrl_2</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_7825e7628d26ebfa71eeee5fa8a97bb9ef3902a4b6865a4dd51b3ab558e0fbe9">
+    <dcterms:description>PCR-stage no-template control, confirmed 30 August 2026; water replaced extracted template.</dcterms:description>
+    <dcterms:identifier>f2e50dbfa4e1274eea7d74b252e1fe4da7eff7f7a615d33cdec17e4902c78770</dcterms:identifier>
+    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6cf9c6feb1e64f03302d0065ea04caeb95b6687abaf1795ea6620c7c936f0e06"/>
+    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_b0ae4ff7a87b0764aea36899c084ae8ca3d720f25fb8ef82e6cc13dfd144086a"/>
+    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000321"/>
+    <rdfs:label>not_applicable: extraction_batch_membership</rdfs:label>
+    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_16703add90bd8fc43094810e7a367ecdd83c8078b3a9d47a5ee81c72fe65fb59"/>
+    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_7970aa3ada15524f26f5425c4941fece442567e2ddb1caf30c6b5b35e231d5d5">
     <dcterms:identifier>EB9_amp_lib1</dcterms:identifier>
@@ -2203,17 +2037,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000308"/>
     <rdfs:label>extraction batch 2025-10-29 (EB6)</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_7e487d65c2ddcff6b6e15851b8a8f9fedca6d33dfa080cd61f8abac2131bfb58">
-    <dcterms:description>Workbook row 6 assigns S6PRr1 to this batch, but the same sample occurs in another EB row.</dcterms:description>
-    <dcterms:identifier>d52545a4fcba8734bf2f456d4ef903c1cf34bc8d89d9e6fc4656320dc731ea67</dcterms:identifier>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000313"/>
-    <rdfs:label>control metadata assertion</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5374852ca6b02788a214763c5961abe4cfe57742b9c107fad4c3d869299b389c"/>
-    <rak:RAK_2000093 rdf:resource="https://rubalkhali.science/kb/RAK_P202123"/>
-    <rak:RAK_2000094 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6ffa13afd5f8c392879227fe4ba7ea98940eb65aba6eafec633f131596851165"/>
-    <rak:RAK_2000095 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_d999554fcbe2b36fbfdb2aeeef99cdf75e221b8bfc0594c4d017ed6ab7931c7b"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_7e5c63f52786f5fc028199ab22c72b5b682314ef4dc6b7f261f5ae26780e2c90">
     <dcterms:identifier>20250714_16S|e0929_Extraction_Ctrl_Pro_Trip1|384:extraction</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_eaa8ba62b9c6da4263daad879c8ecf99089cb840cf7cc7509c22359d867a469c"/>
@@ -2240,16 +2063,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000300"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000301"/>
     <rdfs:label>16S positive control e0872_TMC1</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_7f5d22affd2a001c89811a22f2f9d63e6b1130544449e85de162235f0545cca8">
-    <dcterms:description>S6Dr1 is mapped to more than one Trip-4 extraction blank; no batch link is promoted.</dcterms:description>
-    <dcterms:identifier>4ceeb249283593961e999d6177ad4af550592f2cfbc838f96dc8e698216c4aed</dcterms:identifier>
-    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_P202121"/>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000320"/>
-    <rdfs:label>unresolved: extraction_batch_membership</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9ad413fa898ccfca6e4bc5518773cbfcde133f71c9fcae38755c16d01d9af862"/>
-    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_80838c69ac3f9a42b89581c243fbde0018b070877a23dd55aa262b875c977b8f">
     <dcterms:identifier>trip4_16S|EB2|xGen 10nt UDI Index Pair 228:extraction</dcterms:identifier>
@@ -2316,35 +2129,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000312"/>
     <rdfs:label>control sequencing assay for EB16</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_84e748b1f489361dac552836ffa48272719f9e887155aeefab3c8c623c9ea7ef">
-    <dcterms:description>Workbook row 7 assigns S19Dr1 to this batch, but the same sample occurs in another EB row.</dcterms:description>
-    <dcterms:identifier>10af8f86b2ba9ad1b9ebffa954da627819393bac5bf862c84feeb27a7adbc117</dcterms:identifier>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000313"/>
-    <rdfs:label>control metadata assertion</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5374852ca6b02788a214763c5961abe4cfe57742b9c107fad4c3d869299b389c"/>
-    <rak:RAK_2000093 rdf:resource="https://rubalkhali.science/kb/RAK_P202160"/>
-    <rak:RAK_2000094 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6ffa13afd5f8c392879227fe4ba7ea98940eb65aba6eafec633f131596851165"/>
-    <rak:RAK_2000095 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9efef0db378a00eabe193eb35637f9a0887cf76c386e6c60b5f6864f464bbe83"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_854d9a9571038cd6227cd6b778482e674ae64c1772d8bb65f28ab6489f5e1608">
-    <dcterms:description>Workbook row 3 assigns S6PRr1 to this batch, but the same sample occurs in another EB row.</dcterms:description>
-    <dcterms:identifier>dab4021d93de602a39c3175933391e19d20da3947a0647d1583f028f9a9d15ae</dcterms:identifier>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000313"/>
-    <rdfs:label>control metadata assertion</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5374852ca6b02788a214763c5961abe4cfe57742b9c107fad4c3d869299b389c"/>
-    <rak:RAK_2000093 rdf:resource="https://rubalkhali.science/kb/RAK_P202123"/>
-    <rak:RAK_2000094 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6ffa13afd5f8c392879227fe4ba7ea98940eb65aba6eafec633f131596851165"/>
-    <rak:RAK_2000095 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_869c62baaeca413a3ec67e3a48345fe0bc3351da234f69e8923c880ddfcb3b5a"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_856fa8819ffc209df4dce2eedfb24a93c9c8dca326985bd26bf682ceccd549d5">
-    <dcterms:identifier>Negative4:extraction_blank</dcterms:identifier>
-    <sio:SIO_000227 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_292a1a1b28b9b11134dd7c561df5849efce29f8abcbbf0783cb264fb2c0cb231"/>
-    <sio:SIO_000356 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_001bfb9a6ad0342e0c190898a5bab92cfd4cda1a7896465c80b8fe80fc45125d"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000306"/>
-    <rdfs:label>extraction blank for Negative4</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_858320ea54d391c41c4ebd1601ad8d9e09bfc51dedfd2182c7307c69075f960e">
     <dcterms:identifier>e8665_FPosCtrl3:PCR</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_db83760063a29ffb0119e2d5f16832b4d3f109ba5c5ba0b008b5b79cc87c3749"/>
@@ -2374,6 +2158,9 @@
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_869c62baaeca413a3ec67e3a48345fe0bc3351da234f69e8923c880ddfcb3b5a">
     <dcterms:identifier>trip4-extraction:xGen 10nt UDI Index Pair 216</dcterms:identifier>
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5a1bfb4135384a95e4833c8d1128f8319a4e90b86b0d69babe5642a12af2b455"/>
+    <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202121"/>
+    <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202122"/>
+    <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202123"/>
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202130"/>
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202131"/>
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202132"/>
@@ -2403,6 +2190,16 @@
     <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000994"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000311"/>
     <rdfs:label>amplicon PCR process for EB18</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_86b9314f1bf4f70eb47aa9441b07c989a04c0eed23251939c50e67795e7bfac8">
+    <dcterms:description>PCR-stage no-template control, confirmed 30 August 2026; water replaced extracted template.</dcterms:description>
+    <dcterms:identifier>82e03fcb47aeee54470e725361f80c74af1ff4aefb16410c68d30d3a6b4cc084</dcterms:identifier>
+    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_43f740d71d2dff8487b372651f61bd984388fac41fc5f59a784e0a277ebfe210"/>
+    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_b0ae4ff7a87b0764aea36899c084ae8ca3d720f25fb8ef82e6cc13dfd144086a"/>
+    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000321"/>
+    <rdfs:label>not_applicable: extraction_batch_membership</rdfs:label>
+    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_16703add90bd8fc43094810e7a367ecdd83c8078b3a9d47a5ee81c72fe65fb59"/>
+    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_88169dad145fbf48a7e41e256fabaf318a829a95096592c40d0c2676834ef792">
     <dcterms:identifier>trip5_16S|EB5|422:extraction</dcterms:identifier>
@@ -2447,13 +2244,6 @@
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202425"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000308"/>
     <rdfs:label>extraction batch 2025-10-30 (EB7)</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_897ed9255702c81908342091681395224377a4e57e79f551d74db666ebfb2eaa">
-    <dcterms:identifier>trip5_16S|Negative6|332:DNA</dcterms:identifier>
-    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_25d271a4a873478719c711c5ef107286a90ac9aa78da25c82ff5b68089a1af31"/>
-    <sio:SIO_000232 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_74e8b252fe262cac103258a585ef42add7246383f1fd88212fdbd716251e2da0"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000040"/>
-    <rdfs:label>DNA extract of trip5_16S|Negative6|332</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_89de0bdfe10ca953144e437a0a64a349341a09512e1ffa0798a17173207cca9d">
     <dcterms:identifier>20260402_LL00134_0018_A23J2Y7LT4|positive_microbiome_control:DNA</dcterms:identifier>
@@ -2650,25 +2440,7 @@
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e">
     <dcterms:identifier>data/metadata/samples/EB_Sample_Map_FourthTrip2.xlsx</dcterms:identifier>
     <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_00730445e1ba1cc21129c104a71254100099283cb8c69091c292eef7791d1152"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_07c81b4d2c3243b90c6ab6746863493f2b6338a03c461431ea69aaaf39299825"/>
     <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_0b138e066578c6f3d9e1ca171e923a3deba82a77162cabb157a52a3b3d5688d9"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_0ef8b6db5d579b65878a3226cbe8ca2049902a43793dd457fdd6f982cda7556f"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_1056fc044fc1897959a92e794c08a002f5f5fd2825b04322515cce73abfec01e"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_259703e242596793f9ee0b4aea0729edb0e9aaf52765fe92e1a5439b9d360ecf"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_338b29f910742e7b53ca0a1e65fcb5d1e4642ecd8f35d271cfede634519568c3"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_367c59dc24cf3d9dcc0fb394bc931b8e2b7c9004de304c89744317d2649c4f2a"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_3d664b7c8e66476b024120bb653fd2f1fa61df35e8c54dd9d42f2ec03282570c"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_4c0f20af162f85d98e5d9d88ec1953c85ae061727d19504f9a047a8470c6953e"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_7e487d65c2ddcff6b6e15851b8a8f9fedca6d33dfa080cd61f8abac2131bfb58"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_7f5d22affd2a001c89811a22f2f9d63e6b1130544449e85de162235f0545cca8"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_84e748b1f489361dac552836ffa48272719f9e887155aeefab3c8c623c9ea7ef"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_854d9a9571038cd6227cd6b778482e674ae64c1772d8bb65f28ab6489f5e1608"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_95d69f71f06d6f760b22cbc9e7c305c8f458d010cd4a0009280bb1e2b95a8a6f"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_b78c59e24b1f378d15024d64566ed2957ce85188ae8eeb75446bf77bb7b1de9d"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c425d939a8e35d458c68c4afae8c97be494d89821946316de4a718f11942922c"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c96fdcebbf176ec2842ddbcd5f98eea1b3ae1869a8b83db393b65a45fd4841d7"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_d4633fc5a1f7f73ed53fa5f2d74f4445c62c6bcb73a0253e23ff57e80c66328f"/>
-    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_ec86a9b9f505b8da8f18fa8c059ef09dbf5b5a8875de18b78d68786dcb8547f7"/>
     <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000089"/>
     <rdfs:label>Control evidence: data/metadata/samples/EB_Sample_Map_FourthTrip2.xlsx</rdfs:label>
   </rdf:Description>
@@ -2689,17 +2461,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000312"/>
     <rdfs:label>control sequencing assay for EB10</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_95d69f71f06d6f760b22cbc9e7c305c8f458d010cd4a0009280bb1e2b95a8a6f">
-    <dcterms:description>Workbook row 3 assigns S6Dr1 to this batch, but the same sample occurs in another EB row.</dcterms:description>
-    <dcterms:identifier>d571fcfc52c05c6e54601200d6b810d31693fad095cba3ca8150e0fb3be88ab3</dcterms:identifier>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000313"/>
-    <rdfs:label>control metadata assertion</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5374852ca6b02788a214763c5961abe4cfe57742b9c107fad4c3d869299b389c"/>
-    <rak:RAK_2000093 rdf:resource="https://rubalkhali.science/kb/RAK_P202121"/>
-    <rak:RAK_2000094 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6ffa13afd5f8c392879227fe4ba7ea98940eb65aba6eafec633f131596851165"/>
-    <rak:RAK_2000095 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_869c62baaeca413a3ec67e3a48345fe0bc3351da234f69e8923c880ddfcb3b5a"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_96866e2e0b2e363b2bfe9046a02e7ab18989456b7876dbf40066fb30d5da3c24">
     <dcterms:identifier>Negative5_amp_lib1</dcterms:identifier>
     <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_0f065fdc5569182c2388478ba3d04cf833afd67ca7aa8251cc7b35cd9e5205c1"/>
@@ -2711,7 +2472,8 @@
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_9697bb4dfe5b36abb125f23f43e5981d3dd97187c1dffbf329b59eb3a03788bc">
     <dcterms:identifier>Negative5:PCR</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_96866e2e0b2e363b2bfe9046a02e7ab18989456b7876dbf40066fb30d5da3c24"/>
-    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_af89eaaedbc28ba1fe40e773f94160c0f9ee55ebdf716fb8695166831f328311"/>
+    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_34128a2b4f102fe5bcb93a0260c064246b40cc945b31c3c5b948c8432469119f"/>
+    <sio:SIO_000355 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_97c02faa52bd0a237d2707cd116a6ea955ca78e77b9497cc9f3e92a39ad4ef8b"/>
     <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000994"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000311"/>
     <rdfs:label>amplicon PCR process for Negative5</rdfs:label>
@@ -2724,6 +2486,13 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000063"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000318"/>
     <rdfs:label>control-derived FASTQ dataset for e8672_FNegCtrl1</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_97c02faa52bd0a237d2707cd116a6ea955ca78e77b9497cc9f3e92a39ad4ef8b">
+    <dcterms:identifier>Negative5:pcr_blank</dcterms:identifier>
+    <sio:SIO_000227 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_34128a2b4f102fe5bcb93a0260c064246b40cc945b31c3c5b948c8432469119f"/>
+    <sio:SIO_000356 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9697bb4dfe5b36abb125f23f43e5981d3dd97187c1dffbf329b59eb3a03788bc"/>
+    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000307"/>
+    <rdfs:label>pcr blank for Negative5</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_97d116dee408dd6ffc2a455a0adf58a80c127271b81d7b0df48db25b85178d9b">
     <dcterms:description>Author/laboratory record assigns the D6300 whole-cell standard to Trip 5.</dcterms:description>
@@ -2831,13 +2600,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000306"/>
     <rdfs:label>extraction blank for EB2</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_9b24028ee42b03628d63d40de06e8723d307c1310e40feb6dc9187531030c93b">
-    <dcterms:identifier>Negative6:extraction_blank</dcterms:identifier>
-    <sio:SIO_000227 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6cf9c6feb1e64f03302d0065ea04caeb95b6687abaf1795ea6620c7c936f0e06"/>
-    <sio:SIO_000356 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_74e8b252fe262cac103258a585ef42add7246383f1fd88212fdbd716251e2da0"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000306"/>
-    <rdfs:label>extraction blank for Negative6</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_9bd3302b20f07ffe6a64b9ff9963f4f32f9aadee6b6730043ecc72232f244d7a">
     <dc:source>/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/amplicon_16S/Trip5/reads/M-25-8377_EB16_xGen-10nt-UDI-Index-Pair-435-xGen-10nt-UDI-Index-Pair-435_L001_R1_001.fastq.gz</dc:source>
     <dc:source>/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/amplicon_16S/Trip5/reads/M-25-8377_EB16_xGen-10nt-UDI-Index-Pair-435-xGen-10nt-UDI-Index-Pair-435_L001_R2_001.fastq.gz</dc:source>
@@ -2855,6 +2617,16 @@
     <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000994"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000311"/>
     <rdfs:label>amplicon PCR process for EB12</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_9e80b54a5fe7d57e9d9e8130f4b7746e7507870e3e7465e78aa2d3ac2777f6c6">
+    <dcterms:description>PCR-stage no-template control, confirmed 30 August 2026; water replaced extracted template.</dcterms:description>
+    <dcterms:identifier>0acbce32deba8653c5a4267e7e989c6a790a583287fc5c10eb135be80b476c74</dcterms:identifier>
+    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_a257fdc1ec52a0bd13e4b97fb596775e19fc570683fc7f58dd4c275397192470"/>
+    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_b0ae4ff7a87b0764aea36899c084ae8ca3d720f25fb8ef82e6cc13dfd144086a"/>
+    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000321"/>
+    <rdfs:label>not_applicable: extraction_batch_membership</rdfs:label>
+    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_16703add90bd8fc43094810e7a367ecdd83c8078b3a9d47a5ee81c72fe65fb59"/>
+    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_9ec8e8bea9e10945a9243cf602c024a03e2bd131a8b9cbba47186a066526be5b">
     <dcterms:identifier>EB10_amp_lib1</dcterms:identifier>
@@ -2875,6 +2647,9 @@
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_9efef0db378a00eabe193eb35637f9a0887cf76c386e6c60b5f6864f464bbe83">
     <dcterms:identifier>trip4-extraction:xGen 10nt UDI Index Pair 264</dcterms:identifier>
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5213382cade5a4ef94a8f2aacf4500e21d9ab2331c6bda73cc42da12e3f92e26"/>
+    <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202160"/>
+    <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202161"/>
+    <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202162"/>
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202187"/>
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202188"/>
     <sio:SIO_000028 rdf:resource="https://rubalkhali.science/kb/RAK_P202189"/>
@@ -2890,13 +2665,6 @@
     <sio:SIO_000232 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_bcea812226d1e4d8d083d33ab978ccdb908a6bae6b08c5ee25faee35c9f8d4b2"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000040"/>
     <rdfs:label>DNA extract of trip5_16S|EB14|411</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_a00301dd2af8542755e8f25d2c531d249f52c5156492b8b6cd6f0a14f14148b8">
-    <dcterms:identifier>trip5_16S|Negative4|379:DNA</dcterms:identifier>
-    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_631e1609983edf48d7c5a87909bf9ddb9616a6884e93b20c6da6339a8c568e20"/>
-    <sio:SIO_000232 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_001bfb9a6ad0342e0c190898a5bab92cfd4cda1a7896465c80b8fe80fc45125d"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000040"/>
-    <rdfs:label>DNA extract of trip5_16S|Negative4|379</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_a1a5e275454bd67c2488c5b5843c11073ef5d94152edee01bb99dce7d58dc574">
     <dcterms:identifier>IBEX:e0870_Neg_Ctrl_1_Trip2</dcterms:identifier>
@@ -2930,13 +2698,12 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_a257fdc1ec52a0bd13e4b97fb596775e19fc570683fc7f58dd4c275397192470">
     <dcterms:identifier>Negative7</dcterms:identifier>
-    <sio:SIO_000228 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_cd13a5a4b81446c366ab2c778fd63016963abafb038c6e2f3b612d5eda7db788"/>
-    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_75102413de981c8c089a0f8a945777e900d6b4d15275889eeb773c0efac40ff4"/>
-    <sio:SIO_000292 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_75102413de981c8c089a0f8a945777e900d6b4d15275889eeb773c0efac40ff4"/>
-    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_1149a28ad0a883a7f1957eabacf7235e5c02146977dc51dfac467097cdd694a7"/>
+    <sio:SIO_000228 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_bdcf87482adc0fa8db6a16d2a61865bbdc4e3bf3ad89ce7763270fd6af13868d"/>
+    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_30bfab732ad4e8f33601d19cd16d3ce04c2d3fbdac1b0365e3f6787c5c7aeb08"/>
+    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9e80b54a5fe7d57e9d9e8130f4b7746e7507870e3e7465e78aa2d3ac2777f6c6"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000300"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000302"/>
-    <rdfs:label>Trip 5 16S extraction blank Negative7</rdfs:label>
+    <rdfs:label>Trip 5 16S PCR no-template control Negative7</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_a31c0ac086fa7160acb1ad8528ffcf23238fdcd0d6b202a53b02a399882157fa">
     <dcterms:identifier>Trip4_EB3:PCR</dcterms:identifier>
@@ -3145,13 +2912,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000306"/>
     <rdfs:label>extraction blank for EB12</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_af89eaaedbc28ba1fe40e773f94160c0f9ee55ebdf716fb8695166831f328311">
-    <dcterms:identifier>trip5_16S|Negative5|308:DNA</dcterms:identifier>
-    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9697bb4dfe5b36abb125f23f43e5981d3dd97187c1dffbf329b59eb3a03788bc"/>
-    <sio:SIO_000232 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c8bc099946a437ed0bcca379e89d14f7dc16e50f8bd78cfa691bbc5a782ff1e4"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000040"/>
-    <rdfs:label>DNA extract of trip5_16S|Negative5|308</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_afb902c9ed0ae6ded564b74f8df1afa7d6cf3b0742441639014bec5bfb4542f1">
     <dcterms:identifier>IBEX:Trip4_EB</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_115a012d3ae8d3100d9811b76ae5b65ed07735b84f87ad4f3f57aef58f4db300"/>
@@ -3201,12 +2961,18 @@
     <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_37b0cf6798e19e5d5495936a3cb2908f1aa0d44e6ab449d7e4d89c7f4c01df10"/>
     <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_4aed4d1e40e1e60e4b953412baa043f2faf09384ed1679d26e2175538f0d8722"/>
     <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_4c74e772f632a39e2f74ee7392ebcb3241bfb382dee7d6008b8d7eb6a6961eee"/>
+    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_515dac1227d21149402e2884d5a7ef23eaab4c57b08d37be83370756859664c4"/>
     <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_58e8eeefedc95da1fca6777a43516b7de847f420fcdae1d37e745326f6df7bad"/>
+    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_7825e7628d26ebfa71eeee5fa8a97bb9ef3902a4b6865a4dd51b3ab558e0fbe9"/>
+    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_86b9314f1bf4f70eb47aa9441b07c989a04c0eed23251939c50e67795e7bfac8"/>
     <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_97d116dee408dd6ffc2a455a0adf58a80c127271b81d7b0df48db25b85178d9b"/>
+    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9e80b54a5fe7d57e9d9e8130f4b7746e7507870e3e7465e78aa2d3ac2777f6c6"/>
     <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_ac4945f4ad3fb85841db2d87ab35e812dbd84f898f5fd2094bea90e4516a4cf0"/>
+    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c2cc06a04b1e9469433cdc64ce1d4443e6f3c4f766a25c0bceafebc4c2eaf511"/>
     <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_cf25e128b0560f5ae0d00d95d22acc912d1e7f8186b6eb6a948955f77a417675"/>
     <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_e4723c6f03ba720ed8eca4c0c45e2a378dc163a945828c9b9382d1f77728879a"/>
     <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_e610a9c22e88869514c46e6863b5e6ee3581b6847cff7fcad793b867c4be0ce4"/>
+    <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_fd54922691dcec8799d449a3af8de0fd6deebc87b7aff7978e83df952d093674"/>
     <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000089"/>
     <rdfs:label>Control evidence: data/metadata/samples/controls/control_ground_truth.tsv</rdfs:label>
   </rdf:Description>
@@ -3271,16 +3037,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000060"/>
     <rdfs:label>16S amplicon library for e0553_Ctrl_2</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_b30e403db9ed3b9cdbfc3e1a73cf3ec11005607d4a13724292d22ce95a9de827">
-    <dcterms:description>The library is an author-confirmed extraction blank, but no extraction-day/sample map is frozen.</dcterms:description>
-    <dcterms:identifier>7b0c9bc322b9370b0cfb44c906a0df63a10c39830b9be0c2691fb4e697a5726a</dcterms:identifier>
-    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6cf9c6feb1e64f03302d0065ea04caeb95b6687abaf1795ea6620c7c936f0e06"/>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_42758abc83258bafa099f565edb9367f8db2b06203271186305c2efade86d290"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000320"/>
-    <rdfs:label>unresolved: extraction_batch_membership</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9ad413fa898ccfca6e4bc5518773cbfcde133f71c9fcae38755c16d01d9af862"/>
-    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_b37d7a38649c4bf280b66dbbb6f95dd76f7697727b674ab2cb52ee8f7fd94884">
     <dc:source>/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/amplicon_16S/Trip5/reads/M-25-8385_EB11_xGen-10nt-UDI-Index-Pair-470-xGen-10nt-UDI-Index-Pair-470_L001_R1_001.fastq.gz</dc:source>
     <dc:source>/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/amplicon_16S/Trip5/reads/M-25-8385_EB11_xGen-10nt-UDI-Index-Pair-470-xGen-10nt-UDI-Index-Pair-470_L001_R2_001.fastq.gz</dc:source>
@@ -3290,13 +3046,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000318"/>
     <rdfs:label>control-derived FASTQ dataset for EB11</rdfs:label>
     <rdfs:seeAlso rdf:resource="https://identifiers.org/insdc.run/ERR16783285"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_b3a45fcc76a1a100dd448de9f031d813b96599850c3a8683916d5606c098738a">
-    <dcterms:identifier>Negative1:extraction_blank</dcterms:identifier>
-    <sio:SIO_000227 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_43f740d71d2dff8487b372651f61bd984388fac41fc5f59a784e0a277ebfe210"/>
-    <sio:SIO_000356 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_1e6e342daec56e557446d7cc0330abbeb69045f19a5a8d69831973dffb14ba85"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000306"/>
-    <rdfs:label>extraction blank for Negative1</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_b46f74ce361faac2604d08a0943227998b8254dd2c6d23749ea4c7a020d645f9">
     <dc:source>/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/amplicon_16S/novaseq_14_07_25/raw_reads/M-25-0555_PCR-Ctrl-Trip1_UDP0374-UDP0374_L002_R1_001.fastq.gz</dc:source>
@@ -3332,17 +3081,6 @@
     <rak:RAK_2000093 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_99a452c18c4a63a400f55b2fe1abbf512ced2a0248d9952c25e441622268d409"/>
     <rak:RAK_2000094 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_56698f459e82fdb69be8ef81d785e212b8b59d6ec4f88b16dc300b69b1c461c3"/>
     <rak:RAK_2000095 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1351"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_b78c59e24b1f378d15024d64566ed2957ce85188ae8eeb75446bf77bb7b1de9d">
-    <dcterms:description>Workbook row 4 assigns S19Sr1 to this batch, but the same sample occurs in another EB row.</dcterms:description>
-    <dcterms:identifier>e73b5f8125ba535a75246906a112ad56dd83cfcf7cb41fc227060c1d4a4b0b8c</dcterms:identifier>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000313"/>
-    <rdfs:label>control metadata assertion</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5374852ca6b02788a214763c5961abe4cfe57742b9c107fad4c3d869299b389c"/>
-    <rak:RAK_2000093 rdf:resource="https://rubalkhali.science/kb/RAK_P202161"/>
-    <rak:RAK_2000094 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6ffa13afd5f8c392879227fe4ba7ea98940eb65aba6eafec633f131596851165"/>
-    <rak:RAK_2000095 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_419550a63cf2ef7b3215eb311794e6680e9d0d4283c19b83bcd665abffd543e4"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_b797899c97a6cf91e07c1784580c5a8793a93da408976e3ed94475984a21f28a">
     <dcterms:identifier>Trip4_EB2:PCR</dcterms:identifier>
@@ -3431,6 +3169,13 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000309"/>
     <rdfs:label>DNA extraction process for trip5_16S|EB14|411</rdfs:label>
   </rdf:Description>
+  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_bdcf87482adc0fa8db6a16d2a61865bbdc4e3bf3ad89ce7763270fd6af13868d">
+    <dcterms:identifier>Negative7:pcr_blank</dcterms:identifier>
+    <sio:SIO_000227 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_a257fdc1ec52a0bd13e4b97fb596775e19fc570683fc7f58dd4c275397192470"/>
+    <sio:SIO_000356 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_30bfab732ad4e8f33601d19cd16d3ce04c2d3fbdac1b0365e3f6787c5c7aeb08"/>
+    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000307"/>
+    <rdfs:label>pcr blank for Negative7</rdfs:label>
+  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_be16f2659a0c9302fd8bc5fc89a9178054a7f7f56367906df3958a1202ee9353">
     <dcterms:identifier>IBEX:e8649_NegCtrl3</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_bf507ad600a5193f9c940ba35d6bc75d210ea1d4fdd1e7805640639b89484031"/>
@@ -3491,12 +3236,15 @@
     <rak:RAK_2000094 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_56698f459e82fdb69be8ef81d785e212b8b59d6ec4f88b16dc300b69b1c461c3"/>
     <rak:RAK_2000095 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28901"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_c345b03813579dfa1f15a19b11b6537dfcfb78450fa76ba30cac350ebfcc29b4">
-    <dcterms:identifier>trip5_16S|Negative7|356:DNA</dcterms:identifier>
-    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_30bfab732ad4e8f33601d19cd16d3ce04c2d3fbdac1b0365e3f6787c5c7aeb08"/>
-    <sio:SIO_000232 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_75102413de981c8c089a0f8a945777e900d6b4d15275889eeb773c0efac40ff4"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000040"/>
-    <rdfs:label>DNA extract of trip5_16S|Negative7|356</rdfs:label>
+  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_c2cc06a04b1e9469433cdc64ce1d4443e6f3c4f766a25c0bceafebc4c2eaf511">
+    <dcterms:description>PCR-stage no-template control, confirmed 30 August 2026; water replaced extracted template.</dcterms:description>
+    <dcterms:identifier>5ee9a52eebbd63e0d82cfed6d06ea7a7899bf9f5de3fc17838e22b69aeec142b</dcterms:identifier>
+    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_34128a2b4f102fe5bcb93a0260c064246b40cc945b31c3c5b948c8432469119f"/>
+    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_b0ae4ff7a87b0764aea36899c084ae8ca3d720f25fb8ef82e6cc13dfd144086a"/>
+    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000321"/>
+    <rdfs:label>not_applicable: extraction_batch_membership</rdfs:label>
+    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_16703add90bd8fc43094810e7a367ecdd83c8078b3a9d47a5ee81c72fe65fb59"/>
+    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_c34ddb2d014c70ab19cfccd36e3996b80d995b4ada9e40a8bb1709e123ee1895">
     <dcterms:identifier>trip4_16S|EB4|xGen 10nt UDI Index Pair 252:DNA</dcterms:identifier>
@@ -3532,21 +3280,25 @@
     <rdfs:label>control-derived FASTQ dataset for EB10</rdfs:label>
     <rdfs:seeAlso rdf:resource="https://identifiers.org/insdc.run/ERR16783284"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_c425d939a8e35d458c68c4afae8c97be494d89821946316de4a718f11942922c">
-    <dcterms:description>Workbook row 7 assigns S19PRr1 to this batch, but the same sample occurs in another EB row.</dcterms:description>
-    <dcterms:identifier>d0e35f1928045bb4a6953bf3766ef2fe9acb5fe84d9f24c08e60b61c62b744a0</dcterms:identifier>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000313"/>
-    <rdfs:label>control metadata assertion</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5374852ca6b02788a214763c5961abe4cfe57742b9c107fad4c3d869299b389c"/>
-    <rak:RAK_2000093 rdf:resource="https://rubalkhali.science/kb/RAK_P202162"/>
-    <rak:RAK_2000094 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6ffa13afd5f8c392879227fe4ba7ea98940eb65aba6eafec633f131596851165"/>
-    <rak:RAK_2000095 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9efef0db378a00eabe193eb35637f9a0887cf76c386e6c60b5f6864f464bbe83"/>
+  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_c4079d57d60f114d7f3992598af1f98d47a2ad43194e916568c197fe12d8d79c">
+    <dcterms:identifier>Negative2:pcr_blank</dcterms:identifier>
+    <sio:SIO_000227 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5d645e9e2e96f374d7b336a4b0a78abb6c76b6b10574951b67a4e90a847a08e8"/>
+    <sio:SIO_000356 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_f6adc61177a293d499b6ac64706afb0662d0664db757129fe1a7e3aaef1ff3b2"/>
+    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000307"/>
+    <rdfs:label>pcr blank for Negative2</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_c4257c3df1b28ff0034c357271472f86b8c8305a7d526a4836cebcdd8301f5aa">
+    <dcterms:identifier>Negative6:pcr_blank</dcterms:identifier>
+    <sio:SIO_000227 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6cf9c6feb1e64f03302d0065ea04caeb95b6687abaf1795ea6620c7c936f0e06"/>
+    <sio:SIO_000356 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_25d271a4a873478719c711c5ef107286a90ac9aa78da25c82ff5b68089a1af31"/>
+    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000307"/>
+    <rdfs:label>pcr blank for Negative6</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_c49c8f3d3f41e2fd823a806e55b82d66041f2788d3030d2e864fd7e76b85e619">
     <dcterms:identifier>Negative1:PCR</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_64bee755c949e45e65929da67339fdca192b215f70088d6a893bae4bb81a09a0"/>
-    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_f42101d52c87be7e7111b2bb801c2e0136f4d4d3afb42e5cf745e0731f5d81f0"/>
+    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_43f740d71d2dff8487b372651f61bd984388fac41fc5f59a784e0a277ebfe210"/>
+    <sio:SIO_000355 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_738d1f7e08af625a8a358370fb0023d3ec92ba44271b1eaa3834215fe7b4daf1"/>
     <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000994"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000311"/>
     <rdfs:label>amplicon PCR process for Negative1</rdfs:label>
@@ -3613,27 +3365,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000309"/>
     <rdfs:label>DNA extraction process for trip5_16S|EB4|331</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_c8bc099946a437ed0bcca379e89d14f7dc16e50f8bd78cfa691bbc5a782ff1e4">
-    <dcterms:identifier>trip5_16S|Negative5|308:extraction</dcterms:identifier>
-    <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_af89eaaedbc28ba1fe40e773f94160c0f9ee55ebdf716fb8695166831f328311"/>
-    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_34128a2b4f102fe5bcb93a0260c064246b40cc945b31c3c5b948c8432469119f"/>
-    <sio:SIO_000291 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_34128a2b4f102fe5bcb93a0260c064246b40cc945b31c3c5b948c8432469119f"/>
-    <sio:SIO_000355 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_48f3f051dea64e035d9a71f0f71f5f82b5cd204bae7b2ecfeda0b2f80af0f9e4"/>
-    <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000994"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000309"/>
-    <rdfs:label>DNA extraction process for trip5_16S|Negative5|308</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_c96fdcebbf176ec2842ddbcd5f98eea1b3ae1869a8b83db393b65a45fd4841d7">
-    <dcterms:description>Workbook row 6 assigns S6Sr1 to this batch, but the same sample occurs in another EB row.</dcterms:description>
-    <dcterms:identifier>8cb0e1ba546adc32b4fbba114810edd7bf9f5173e785dd77b81d20d57e943e74</dcterms:identifier>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000313"/>
-    <rdfs:label>control metadata assertion</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5374852ca6b02788a214763c5961abe4cfe57742b9c107fad4c3d869299b389c"/>
-    <rak:RAK_2000093 rdf:resource="https://rubalkhali.science/kb/RAK_P202122"/>
-    <rak:RAK_2000094 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6ffa13afd5f8c392879227fe4ba7ea98940eb65aba6eafec633f131596851165"/>
-    <rak:RAK_2000095 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_d999554fcbe2b36fbfdb2aeeef99cdf75e221b8bfc0594c4d017ed6ab7931c7b"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_c99612d679aabefa129875ec4c8fd6e1854a66c9b816653fd9b410b4ffa91ba6">
     <dcterms:identifier>EB10:extraction_blank</dcterms:identifier>
     <sio:SIO_000227 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_bbb014c1ea29a7f7bbcb52199b6bd96320dacf12c076a7474ee588191ded43e1"/>
@@ -3687,13 +3418,6 @@
     <sio:SIO_000232 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_a61603964f4a377398cc78abcdeebcb5a9f81c8f2f4b1a8c1cff54631993ff02"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000040"/>
     <rdfs:label>DNA extract of trip5_16S|EB11|470</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_cd13a5a4b81446c366ab2c778fd63016963abafb038c6e2f3b612d5eda7db788">
-    <dcterms:identifier>Negative7:extraction_blank</dcterms:identifier>
-    <sio:SIO_000227 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_a257fdc1ec52a0bd13e4b97fb596775e19fc570683fc7f58dd4c275397192470"/>
-    <sio:SIO_000356 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_75102413de981c8c089a0f8a945777e900d6b4d15275889eeb773c0efac40ff4"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000306"/>
-    <rdfs:label>extraction blank for Negative7</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_ce0067125a35c78081536fdb5a86e10253b8eb08c29e18dd9fc002e47fcbbad1">
     <dcterms:identifier>EB16:extraction_blank</dcterms:identifier>
@@ -3762,17 +3486,6 @@
     <sio:SIO_000232 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_717109005f011229eceee760c70aca34c86beaab57f3fd184a13ece62f43a3ba"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000060"/>
     <rdfs:label>16S amplicon library for e0555_PCR_Ctrl_Trip1</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_d4633fc5a1f7f73ed53fa5f2d74f4445c62c6bcb73a0253e23ff57e80c66328f">
-    <dcterms:description>Workbook row 4 assigns S19PRr1 to this batch, but the same sample occurs in another EB row.</dcterms:description>
-    <dcterms:identifier>845300209bbfa809c48bf4010a174032ac0c8839a830fa4b994086d493298870</dcterms:identifier>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000313"/>
-    <rdfs:label>control metadata assertion</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5374852ca6b02788a214763c5961abe4cfe57742b9c107fad4c3d869299b389c"/>
-    <rak:RAK_2000093 rdf:resource="https://rubalkhali.science/kb/RAK_P202162"/>
-    <rak:RAK_2000094 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6ffa13afd5f8c392879227fe4ba7ea98940eb65aba6eafec633f131596851165"/>
-    <rak:RAK_2000095 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_419550a63cf2ef7b3215eb311794e6680e9d0d4283c19b83bcd665abffd543e4"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_d4de317fbd6c64151bd3ab97e23e1c1db44bd0ca31129b80b5f01fa45c3aa988">
     <dc:source>/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/amplicon_16S/Trip5/reads/M-25-8376_EB8_xGen-10nt-UDI-Index-Pair-434-xGen-10nt-UDI-Index-Pair-434_L001_R1_001.fastq.gz</dc:source>
@@ -4087,13 +3800,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000302"/>
     <rdfs:label>Trip 4 extraction blank EB3</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_e7df887e091b1dc8cd61e34f26d3089cdf0f089feb5dc1d9adfd7252c7789543">
-    <dcterms:identifier>Negative2:extraction_blank</dcterms:identifier>
-    <sio:SIO_000227 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5d645e9e2e96f374d7b336a4b0a78abb6c76b6b10574951b67a4e90a847a08e8"/>
-    <sio:SIO_000356 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_08b696ee857d8f734d0417178308630eb5dc6be2b2ee097977a0c4db887daca8"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000306"/>
-    <rdfs:label>extraction blank for Negative2</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_e7f2212f9e4cb96e07190808584e76cbb1c2739c61286c62ea863893e0e515f1">
     <dcterms:identifier>Trip4-unsequenced-EB</dcterms:identifier>
     <sio:SIO_000228 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_a5fe5d4be131a63c0fe5b5d0aa2fab024accf51558a7459a554028cdb4e6960c"/>
@@ -4167,17 +3873,6 @@
     <rak:RAK_2000094 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_56698f459e82fdb69be8ef81d785e212b8b59d6ec4f88b16dc300b69b1c461c3"/>
     <rak:RAK_2000095 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_562"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_ec86a9b9f505b8da8f18fa8c059ef09dbf5b5a8875de18b78d68786dcb8547f7">
-    <dcterms:description>Workbook row 3 assigns S6Sr1 to this batch, but the same sample occurs in another EB row.</dcterms:description>
-    <dcterms:identifier>beb5bb9adcad96f2a4937beae06e2c3e21b42e7eb36a563b1bbfebd28151e29a</dcterms:identifier>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9556a4e68497b7ee5e574bc5347694cc0eba8ac1dd2d7e419e32ff3486eaa34e"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000313"/>
-    <rdfs:label>control metadata assertion</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5374852ca6b02788a214763c5961abe4cfe57742b9c107fad4c3d869299b389c"/>
-    <rak:RAK_2000093 rdf:resource="https://rubalkhali.science/kb/RAK_P202122"/>
-    <rak:RAK_2000094 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_6ffa13afd5f8c392879227fe4ba7ea98940eb65aba6eafec633f131596851165"/>
-    <rak:RAK_2000095 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_869c62baaeca413a3ec67e3a48345fe0bc3351da234f69e8923c880ddfcb3b5a"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_ec9ea6655aeba92eeccabaeba31253285ff4a01b8f80c4142f56653b2633d7b4">
     <dcterms:identifier>ERR16783291</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_47de269814ec8c915d6b40f7ad6981c37c2885fe2b4bca828d9dee7d7f556d2b"/>
@@ -4225,16 +3920,6 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000300"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000302"/>
     <rdfs:label>Trip 5 16S extraction blank EB3</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_ef94680e6a6619994a274a1324c0684668ac47c753700b4c5d74efd4d3028ce9">
-    <dcterms:description>The library is an author-confirmed extraction blank, but no extraction-day/sample map is frozen.</dcterms:description>
-    <dcterms:identifier>a4a1190b9643003db7f896759b711435d5294387f8b53a670451bf6588dd326a</dcterms:identifier>
-    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_34128a2b4f102fe5bcb93a0260c064246b40cc945b31c3c5b948c8432469119f"/>
-    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_42758abc83258bafa099f565edb9367f8db2b06203271186305c2efade86d290"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000320"/>
-    <rdfs:label>unresolved: extraction_batch_membership</rdfs:label>
-    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9ad413fa898ccfca6e4bc5518773cbfcde133f71c9fcae38755c16d01d9af862"/>
-    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_f154a61c121c933fcd4ca63b043af6c69c6dfe84d30a21750c796aa399d12ba3">
     <dcterms:identifier>e0870_Neg_Ctrl_1_Trip2</dcterms:identifier>
@@ -4301,13 +3986,6 @@
     <rdfs:label>control-derived FASTQ dataset for EB13</rdfs:label>
     <rdfs:seeAlso rdf:resource="https://identifiers.org/insdc.run/ERR16783287"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_f42101d52c87be7e7111b2bb801c2e0136f4d4d3afb42e5cf745e0731f5d81f0">
-    <dcterms:identifier>trip5_16S|Negative1|13:DNA</dcterms:identifier>
-    <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c49c8f3d3f41e2fd823a806e55b82d66041f2788d3030d2e864fd7e76b85e619"/>
-    <sio:SIO_000232 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_1e6e342daec56e557446d7cc0330abbeb69045f19a5a8d69831973dffb14ba85"/>
-    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000040"/>
-    <rdfs:label>DNA extract of trip5_16S|Negative1|13</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_f4427c676cbd335c7cf5c3afe02ac34b7081aeccdb1cdadfb3866476fdc197bb">
     <dcterms:identifier>data/metadata/samples/controls/source_snapshots/ibex_20250714_qiime2/controls-metadata.tsv</dcterms:identifier>
     <sio:SIO_000773 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_33f45ee94880b94046b6e1f9795300c3f4a13fdef79ed0b337278e1439a314d7"/>
@@ -4358,7 +4036,8 @@
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_f6adc61177a293d499b6ac64706afb0662d0664db757129fe1a7e3aaef1ff3b2">
     <dcterms:identifier>Negative2:PCR</dcterms:identifier>
     <sio:SIO_000229 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_7e5df0f44676cb481230255ddf1a98405d222e4f379254338b1a62b9809b77e4"/>
-    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_1189cb0da50ea40db0ae18dc7531b52a7b2f02e3550f3e6a06ecb54cccef2db9"/>
+    <sio:SIO_000230 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5d645e9e2e96f374d7b336a4b0a78abb6c76b6b10574951b67a4e90a847a08e8"/>
+    <sio:SIO_000355 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_c4079d57d60f114d7f3992598af1f98d47a2ad43194e916568c197fe12d8d79c"/>
     <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000994"/>
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000311"/>
     <rdfs:label>amplicon PCR process for Negative2</rdfs:label>
@@ -4436,6 +4115,16 @@
     <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000302"/>
     <rdfs:label>Trip 5 16S extraction blank EB18</rdfs:label>
   </rdf:Description>
+  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_fd54922691dcec8799d449a3af8de0fd6deebc87b7aff7978e83df952d093674">
+    <dcterms:description>PCR-stage no-template control, confirmed 30 August 2026; water replaced extracted template.</dcterms:description>
+    <dcterms:identifier>744717c8ff572c909716f21c6377dc4d28aa8d150bbb2ba7f123de61786b4191</dcterms:identifier>
+    <sio:SIO_000332 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_292a1a1b28b9b11134dd7c561df5849efce29f8abcbbf0783cb264fb2c0cb231"/>
+    <sio:SIO_000772 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_b0ae4ff7a87b0764aea36899c084ae8ca3d720f25fb8ef82e6cc13dfd144086a"/>
+    <rdf:type rdf:resource="https://rubalkhali.science/kb/RAK_0000321"/>
+    <rdfs:label>not_applicable: extraction_batch_membership</rdfs:label>
+    <rak:RAK_2000090 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_16703add90bd8fc43094810e7a367ecdd83c8078b3a9d47a5ee81c72fe65fb59"/>
+    <rak:RAK_2000097 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_997f5686faa4ac5a4cd7e296ddc8c87e206fd32c29923724b15b3586c3275c83"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_CTL_feb8b63d3f2fed853bd78bd796eb3b599bcf00095c74a93283116e604f6c9e9e">
     <dcterms:identifier>e8667_PCRCtrl</dcterms:identifier>
     <sio:SIO_000231 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_5a5e2b25204ffdfd25d5576f61e9817bd2852b34879bc30bf7a5f6e65a004175"/>
@@ -4505,13 +4194,13 @@
     <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_d999554fcbe2b36fbfdb2aeeef99cdf75e221b8bfc0594c4d017ed6ab7931c7b"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202121">
-    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_7f5d22affd2a001c89811a22f2f9d63e6b1130544449e85de162235f0545cca8"/>
+    <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_869c62baaeca413a3ec67e3a48345fe0bc3351da234f69e8923c880ddfcb3b5a"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202122">
-    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_338b29f910742e7b53ca0a1e65fcb5d1e4642ecd8f35d271cfede634519568c3"/>
+    <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_869c62baaeca413a3ec67e3a48345fe0bc3351da234f69e8923c880ddfcb3b5a"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202123">
-    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_1056fc044fc1897959a92e794c08a002f5f5fd2825b04322515cce73abfec01e"/>
+    <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_869c62baaeca413a3ec67e3a48345fe0bc3351da234f69e8923c880ddfcb3b5a"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202124">
     <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_419550a63cf2ef7b3215eb311794e6680e9d0d4283c19b83bcd665abffd543e4"/>
@@ -4567,6 +4256,15 @@
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202141">
     <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_869c62baaeca413a3ec67e3a48345fe0bc3351da234f69e8923c880ddfcb3b5a"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202145">
+    <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_419550a63cf2ef7b3215eb311794e6680e9d0d4283c19b83bcd665abffd543e4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202146">
+    <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_419550a63cf2ef7b3215eb311794e6680e9d0d4283c19b83bcd665abffd543e4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202147">
+    <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_419550a63cf2ef7b3215eb311794e6680e9d0d4283c19b83bcd665abffd543e4"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202148">
     <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_869c62baaeca413a3ec67e3a48345fe0bc3351da234f69e8923c880ddfcb3b5a"/>
   </rdf:Description>
@@ -4586,13 +4284,13 @@
     <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_869c62baaeca413a3ec67e3a48345fe0bc3351da234f69e8923c880ddfcb3b5a"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202160">
-    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_3d664b7c8e66476b024120bb653fd2f1fa61df35e8c54dd9d42f2ec03282570c"/>
+    <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9efef0db378a00eabe193eb35637f9a0887cf76c386e6c60b5f6864f464bbe83"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202161">
-    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_07c81b4d2c3243b90c6ab6746863493f2b6338a03c461431ea69aaaf39299825"/>
+    <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9efef0db378a00eabe193eb35637f9a0887cf76c386e6c60b5f6864f464bbe83"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202162">
-    <sio:SIO_000629 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_4c0f20af162f85d98e5d9d88ec1953c85ae061727d19504f9a047a8470c6953e"/>
+    <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_9efef0db378a00eabe193eb35637f9a0887cf76c386e6c60b5f6864f464bbe83"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202163">
     <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_d999554fcbe2b36fbfdb2aeeef99cdf75e221b8bfc0594c4d017ed6ab7931c7b"/>
@@ -4741,13 +4439,7 @@
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202267">
     <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_d999554fcbe2b36fbfdb2aeeef99cdf75e221b8bfc0594c4d017ed6ab7931c7b"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202286">
-    <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_560aa504f285c23bc8ef2d4acd760e2fc8273ff426b38b67e278a80bb45c68e8"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202287">
-    <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_560aa504f285c23bc8ef2d4acd760e2fc8273ff426b38b67e278a80bb45c68e8"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202288">
     <sio:SIO_000068 rdf:resource="https://rubalkhali.science/kb/RAK_CTL_560aa504f285c23bc8ef2d4acd760e2fc8273ff426b38b67e278a80bb45c68e8"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://rubalkhali.science/kb/RAK_P202292">

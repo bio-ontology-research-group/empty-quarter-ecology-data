@@ -1,201 +1,66 @@
 \section{Background and summary}\label{intro}
 
-The Rub' al-Khali (Empty Quarter) is the largest contiguous sand desert on Earth, a hyper-arid environment that spans approximately 500,000
-km$^2$ of the southern Arabian Peninsula
-\cite{mandaville_1986}. The region is characterized by extreme and fluctuating atmospheric temperatures, 
-%recorded during our campaigns spanned 20.0--49.4\degree C across 273 field observations,
-%and the region receives
-negligible and highly irregular
-rainfall \cite{nelli2024wind}, and high humidity at the western edge \cite{yasir2015saudi}. Despite these abiotic stresses, hyper-arid desert soils
-harbor diverse microbial communities \cite{makhalanyane2015}. %whose composition, diversity, and ecological drivers remain poorly characterized \cite{makhalanyane2015}.
-Deep knowledge of the biogeochemistry of such extreme
-environments can predict ecosystem responses to climate
-change and inform conservation and land-use policy\cite{fierer2017}.
+The Rub' al-Khali (Empty Quarter) spans approximately 500,000 km$^2$
+of the southern Arabian Peninsula \cite{mandaville_1986}. Its soils
+experience large temperature fluctuations and irregular rainfall
+\cite{nelli2024wind}, yet support diverse microbial communities
+\cite{makhalanyane2015}. Repeated observations across soil compartments
+and seasons provide a basis for studying these communities together
+with their environmental conditions.
 
-Saudi Arabia already has a substantial arid soil microbiome
-literature. Previous studies examined elevation gradients
+Previous Saudi Arabian surveys examined elevation gradients
 \cite{yasir2015saudi}, rainfall responses across soil compartments
-\cite{aslam2016rainfall}, bulk and rhizosphere soils across three
-regions \cite{khan2020saudi}, rhizosphere bacteria of pioneer sand
-plants near Jizan \cite{osman2016jizan}, and bacteria associated with
-native desert plants \cite{eida2018plants}. More recent surveys
-characterized fertility islands and plant-associated networks
-\cite{maurice2023fertility,maurice2024}, sandy soils near natural and
-artificial water points \cite{alawthan2024reserve}, rhizosphere and
-endosphere communities across northern reserves
-\cite{alhasani2026reserve}, and Red Sea coastal sabkhas
-\cite{gopi2026sabkha}. Fungal studies progressed from a small number
-of bulk soil samples from the western coast
-\cite{moussa2017fungi,murgia2019sandfungi} to a standardized
-single survey of 85 locations across Saudi Arabia
-\cite{mani2026mycobiome}, although a recent synthesis identified
-substantial geographic and taxonomic gaps in Arabian
-biological soil crust research \cite{blancosacristan2025biocrust}. In
-the United Arab Emirates, related studies profiled a Rub' al-Khali
-interdune microbial mat \cite{mckay2016} and desert-plant rhizosphere
-and endosphere communities \cite{mousa2024}.
-%These studies establish that a Saudi arid-soil survey is not itself new.
-These studies establish that a survey of hyperarid soils in Saudi Arabia is not itself new.
-What remains missing
-is a repeated, multi-campaign transect in which every community profile, %is connected to its provenance across locations, physical specimens, molecular products, environmental observations, climate, and geochemistry.
-the sample it came from, and the measurements taken alongside it form a connected record that can be queried directly rather than assembled from separate data records.
+\cite{aslam2016rainfall}, and bulk and rhizosphere soils across regions
+\cite{khan2020saudi}. Studies of desert plants further connected
+microbial profiles with host-associated habitats \cite{eida2018plants}.
+A repeated transect adds a specific data-management requirement:
+each community profile must remain connected to its field specimen,
+collection visit, laboratory processing and associated measurements.
+Site identity alone is insufficient for temporal comparisons because
+a site can have several visits and assays can use different field
+replicates.
 
-To characterize complex ecosystems, researchers must integrate
-heterogeneous and multi-scale data: microbial community profiles
-derived from DNA sequencing, elemental soil composition from
-geochemical analyses, spatiotemporal environmental variables, and
-provenance metadata that link physical samples to their digital
-representations. Traditional approaches store these data types in
-separate, disconnected repositories, which limits cross-domain queries
-and reduces reproducibility.
+Multi-campaign resources such as Tara Oceans link campaign, station
+and sampling-event registries to environmental and sequence data
+\cite{taraoceans2015}. MIxS/MIMARKS specify contextual fields for
+environmental sequence data \cite{mixs}, and STREAMS extends reporting
+guidance for environmental microbiomes \cite{streams2025}. The National
+Microbiome Data Collaborative uses persistent identifiers and shared
+schemas to connect environmental microbiome data \cite{nmdc2026}.
+Knowledge graphs such as KG-Microbe \cite{kgmicrobe2026} and
+MetagenomicKG \cite{metagenomickg2026} organize taxonomic, functional and
+environmental information across sources. We apply these principles
+to the specimen and process provenance of a single landscape survey.
 
-Engineers originally developed the concept of a digital twin, and
-environmental scientists increasingly adopt this approach
-\cite{digitaltwin2021, destinationearth}. Recent frameworks, such as
-TwinEco, standardize the development of dynamic, data-driven digital
-twins in ecology to avoid fragmented software designs
-\cite{khan2025}. Additionally, regional natural resource management
-benefits from artificial intelligence-assisted digital twin
-architectures that unify heterogeneous environmental observations
-\cite{iglesias2026}. Such digital twins show strong predictive
-accuracy when they incorporate continuous data streams, such as
-citizen science observations for real-time biodiversity forecasts
-\cite{ovaskainen2026}. To guarantee that these models remain
-interoperable and reusable across domains, researchers emphasize the
-integration of datasets, models, and computational workflows through
-Findable, Accessible, Interoperable, and Reusable (FAIR) principles
-\cite{islam2026}. However, while crops \cite{cropsinsilico2017} and
-specific regions \cite{destinationearth} have digital representations,
-researchers have not yet developed semantic representations of entire
-desert ecosystems. Digital twins in the plant sciences span cells,
-organs, individual plants, plots, and fields
-\cite{ganapathysubramanian2025twins}; ecosystem digital twins, by
-contrast, model landscapes and environments and leave out the
-microbial communities within them.
+We collected soil and plant material during five campaigns
+(2023--2025) along a 1,043~km transect across the Saudi Rub' al-Khali.
+The catalogue contains 60 primary sites and 10 named locations.
+A 2,550-row source ledger contains 2,516 non-control specimen rows.
+The canonical amplicon table contains 1,271 profiles; the companion
+ecology analysis retains 1,237 after control and read-depth exclusions.
+Associated data comprise 274 field environmental logs, 712 admitted
+archived-soil pH observations, 71 field XRF sessions, 725 laboratory
+XRF records and monthly climate summaries. These counts describe
+different observational units, whose links and coverage are documented
+in the source ledgers.
 
-Constructing such a resource for an entire desert ecosystem requires
-addressing several interlocking challenges that have shaped the design
-of this work. First, data are produced by heterogeneous
-instruments and protocols (16S amplicon sequencing, X-ray
-fluorescence, GPS-tagged field notes, gridded climate
-records), so a \emph{unified data model} is needed that can
-represent samples, processes, qualities, and quantities under a
-common upper-level vocabulary rather than as disconnected tables.
-Second, taxonomic labels are reported by multiple classifier workflows as text strings, and the same label can denote different taxa across reference databases and releases, so they must be harmonized against a single
-reference taxonomy without losing the original assertions. Third,
-because data are deposited in batches over five field campaigns,
-\emph{schema validation at ingest} is required to catch
-structural errors before they propagate into the graph. Fourth, the
-knowledge graph must support \emph{semantic query answering at
-scale}: with tens of millions of triples, expressive OWL 2 DL
-reasoning is computationally infeasible, so a tractable
-reasoning regime must be selected and its trade-offs made
-explicit. Fifth, a \emph{user-facing query and exploration
-interface} is required so that domain scientists who are not
-fluent in SPARQL can interact with the resource. We return to
-each of these challenges in the usage notes
-(Section~\ref{usage}) and link them to the corresponding design
-choices in the methods and knowledge representation sections.
+We encoded sites, specimens, processes, qualities and measurement
+values with the Semanticscience Integrated Ontology (SIO) \cite{sio}.
+ChEBI \cite{chebi}, ENVO \cite{envo} and NCBI Taxonomy
+\cite{ncbitaxon} provide chemical cross-references, environmental
+classes and validated taxonomic identifiers. Original classifier
+lineages and unresolved mappings retain their source provenance.
+The resulting RDF modules support queries across these linked
+observations.
 
-Community reporting standards and knowledge-graph infrastructure
-define the reuse target this resource is built against. The Tara
-Oceans consortium set the model for publishing a multi-campaign
-survey as open registries of campaigns, stations and sampling events,
-with query routes from every registry entry to the environmental and
-sequence data it describes \cite{taraoceans2015}; we follow that model
-at landscape scale and add a semantic layer over the registries. The
-FAIR principles set the criteria a deposited resource is judged
-against \cite{fair}. MIxS/MIMARKS define contextual fields for marker-gene and
-environmental sequence data \cite{mixs}, and the STREAMS guideline
-extends reporting practice to environmental microbiomes
-\cite{streams2025}. The National Microbiome Data Collaborative shows
-how persistent identifiers, standardized metadata and linked-data
-schemas support reuse across environmental microbiome studies
-\cite{nmdc2026}. On the knowledge-graph side, KG-Microbe connects
-microbial taxa with traits, environments and growth preferences
-\cite{kgmicrobe2026}, and MetagenomicKG integrates taxonomic,
-functional and biomedical sources for metagenomic applications
-\cite{metagenomickg2026}. These resources establish that a microbiome
-knowledge graph is not itself novel. The contribution of the present
-resource is the joined, campaign-level provenance of locations,
-physical specimens, laboratory processes, geochemistry, climate,
-sequence runs, quality control and taxon observations from a single
-landscape survey, rather than vocabulary coverage or graph
-construction alone.
-
-Here, we describe a versioned, provenance-preserving knowledge graph
-integrating repeated desert microbiome, environmental, climate, pH, 
-and geochemical observations across the Rub' al-Khali.
-The knowledge graph is expressed in OWL 2 DL \cite{owl2} and built from
-RDF instance data \cite{rdf}; because reasoning over the full graph in
-OWL 2 DL is infeasible, its consistency is checked under the OWL 2 EL
-profile with the ELK reasoner (Section~\ref{valid}). This
-knowledge graph integrates data from five field campaigns
-(2023--2025) along a transect of more than 1,000 km across the Saudi
-Rub' al-Khali, from the western escarpment to the eastern border with
-Oman. A versioned source ledger of 2,550 rows 
-%(2,302 master-sheet rows and 248 plant rows)
-links field specimens to their downstream
-products; 2,516 non-control rows are represented as sample individuals
-in the graph. An amplicon feature table
-contains 1,271 profiles, of which 1,237 pass quality filtering
-across 64 numeric site labels. We incorporated X-ray fluorescence
-(XRF) measurements from two complementary workflows: 
-%71 complete
-in-situ handheld field sessions %at 58 Trip~5 sites
-, and %725
-processed
-laboratory records of archived material from all five campaigns. We
-further integrated site-specific environmental metadata recorded at
-each visit (274 field logs), 712 admitted archived-soil pH
-observations, and monthly climate records derived from the Open-Meteo
-database \cite{openmeteo}.
-
-We structured the knowledge graph with the Semanticscience Integrated
-Ontology (SIO) \cite{sio} as the upper-level framework. This design
-allows interoperability with other SIO-based datasets. We modeled
-domain-specific concepts as subclasses of SIO entities, and all
-measurements follow SIO's ontology design pattern for measurement
-processes. We grounded chemical entities in the Chemical Entities of
-Biological Interest (ChEBI) ontology \cite{chebi}, environmental
-contexts in the Environment Ontology (ENVO) \cite{envo}, and taxonomic
-identifiers in the NCBI Taxonomy \cite{ncbitaxon}.
-
-Because it encodes the full provenance chain from physical sample
-collection to digital data products, the knowledge graph is designed
-as a FAIR foundation for a future Rub' al-Khali digital twin; building
-and validating such a twin is beyond the scope of this paper. The graph
-allows researchers to execute cross-domain queries that otherwise
-demand complex joins across multiple heterogeneous tables in a
-conventional database, and it keeps observations, models, and
-workflows interoperable through shared identifiers and vocabularies
-\cite{islam2026}. We expect this to support hypothesis generation,
-intervention simulation, and evidence-based policy in future work.
-
-This resource makes several contributions. On the scientific side,
-it provides a coordinated multi-trip desert microbiome and
-geochemistry dataset---16S rRNA amplicon profiles, XRF elemental
-measurements, archived-soil pH, GPS-tagged field metadata, and monthly
-climate records---for 2{,}516 sample individuals from five campaigns
-across a 1{,}043~km transect of the Rub' al-Khali, together with a
-harmonized taxonomic abundance table that maps amplicon sequence
-variants onto NCBI Taxonomy while preserving the original assertions.
-On the technical side, the
-resource comprises an OWL~2~DL knowledge graph built on SIO with
-domain classes grounded in ChEBI, ENVO, and NCBI Taxonomy, modelling
-the full provenance chain from field sampling to digital data
-products. We formalize reusable ontology design patterns for sampling,
-measurement, taxonomic abundance, and provenance aligned with SIO's
-core idioms. A ShEx-based ingest validation workflow enforces
-structural shapes on every RDF batch before loading, and the ELK
-reasoner is used to check the logical consistency of the tractable
-modules under the OWL 2 EL profile. A set of competency questions documents the intended query
-workload and serves as regression tests, and a web portal with an
-interactive map, per-site dashboards, and a SPARQL editor exposes the
-knowledge graph to domain scientists without requiring SPARQL fluency.
-The companion ecological analysis reports the inferential results for
-the quality-controlled community profiles, laboratory-XRF gradient,
-rainfall, spatial turnover and association networks
-\cite{ecology_companion}; the present paper describes the reusable
-data products, provenance model, identifier mappings and their
-executable validation.
+Technical validation examines source reconciliation, measurement
+admission, identifier mappings, structural constraints and executable
+query examples. We report the scope of each check separately,
+including the constructs and modules processed by ELK.
+The portal at \url{https://rubalkhali.science/} exposes the graph
+through site pages and a SPARQL endpoint. Data Records and Data
+Availability identify the distributed artifacts and outstanding
+release dependencies. The companion ecology manuscript reports the
+community, environmental-association and functional analyses
+\cite{ecology_companion}; this Data Descriptor documents their source
+data, representation and reuse conditions.

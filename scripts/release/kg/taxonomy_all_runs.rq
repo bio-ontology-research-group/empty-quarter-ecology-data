@@ -1,0 +1,33 @@
+# Complete all-run genus export from a locally loaded frozen snapshot.
+# Long-running join: the historical global100 preview exceeded300s on the
+# idle release candidate. No interactive latency guarantee is made here.
+PREFIX rak: <https://rubalkhali.science/kb/RAK_>
+PREFIX sio: <http://semanticscience.org/resource/SIO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?proc ?fastq ?runLabel ?lineage ?taxon ?taxonLabel
+       ?count ?relativeAbundance
+WHERE {
+  ?proc a rak:0000071 ;
+        sio:000230 ?fastq ;
+        sio:000229 ?dsAbs, ?dsRel .
+  ?fastq rdfs:label ?runLabel .
+  ?dsAbs a rak:0000074 ; rdfs:label ?absLabel ;
+         sio:000059 ?valAbs .
+  ?dsRel a rak:0000075 ; rdfs:label ?relLabel ;
+         sio:000059 ?valRel .
+  FILTER(STRENDS(STR(?absLabel), "(Genus)"))
+  FILTER(STRENDS(STR(?relLabel), "(Genus)"))
+  ?valAbs rak:2000026 ?count ;
+          rak:2000025 ?lineage ;
+          sio:000215 ?qualAbs .
+  ?valRel rak:2000020 ?relativeAbundance ;
+          rak:2000025 ?lineage ;
+          sio:000215 ?qualRel .
+  ?qualAbs sio:000011 ?taxon, ?fastq .
+  ?qualRel sio:000011 ?taxon, ?fastq .
+  ?taxon rdfs:label ?taxonLabel .
+  FILTER(?taxon != ?fastq)
+}
+ORDER BY ?runLabel DESC(xsd:double(?count)) ?lineage ?proc

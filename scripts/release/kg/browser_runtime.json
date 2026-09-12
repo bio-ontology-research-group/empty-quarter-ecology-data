@@ -1,0 +1,18 @@
+{
+  "observed_date": "2026-09-10",
+  "python": "3.10.16",
+  "packages": {
+    "playwright": "1.62.0",
+    "rdflib": "7.6.0",
+    "greenlet": "3.5.5",
+    "pyee": "13.0.1",
+    "typing_extensions": "4.16.0",
+    "pyparsing": "3.3.2",
+    "isodate": "0.7.2"
+  },
+  "chromium": "151.0.7922.173",
+  "chromium_path": "/usr/bin/chromium",
+  "observed_command": "PYTHONDONTWRITEBYTECODE=1 uv run --with playwright --with rdflib python tests/browser_kg_candidate.py ...",
+  "scope": "The browser worker ran earlier cases with uv --with playwright, not the system default Python. The same uv runtime with RDFLib added for the new inference-mode gate was independently inspected. This runtime record does not claim that pending completed-release browser checks already passed.",
+  "recreation": "browser-requirements.lock pins all observed browser-script Python dependency versions. The system Chromium binary/version is recorded separately; its binary is not included in the source archive."
+}

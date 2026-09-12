@@ -1,0 +1,47 @@
+{
+  "scope": "Observed inference-controller and staged-engine runtime for KG3.0.0; separate from the source-generation environment.",
+  "observed_date": "2026-09-10",
+  "controller": {
+    "python": "3.8.10",
+    "rdflib": "4.2.2",
+    "pyparsing": "2.4.6",
+    "isodate": "0.6.0",
+    "six": "1.14.0",
+    "setuptools": "45.2.0",
+    "origin": "Installed system Python packages on the inference host; versions inspected read-only. The accompanying requirements file pins upstream version numbers, not a byte-identical reconstruction of distribution packages."
+  },
+  "engine": {
+    "image": "openlink/virtuoso-opensource-7@sha256:0dbe1ab4fa0cb7bbafc1f6c0c2b0a5d6f22d918dbd17672f2ddb24580aa6756a",
+    "image_id": "sha256:07263730abf06071e50b89b03c0f027cd37e3205df13134ace7dc97bb5817d08",
+    "upstream_release": "7.2.17",
+    "engine_version": "7.20.3243",
+    "hash_join_enable": 1,
+    "configured_construct_triples": 100000000,
+    "observed_construct_triples_cap": 2097150,
+    "construct_memory_bytes": 17179869184,
+    "container_memory_gib": 128,
+    "batch_size": 500000,
+    "transaction_after_image_limit_bytes": 250000000,
+    "transaction_after_image_runtime_setting": "txn_after_image_limit",
+    "transaction_after_image_ini_setting": "Parameters.TransactionAfterImageLimit"
+  },
+  "transaction_limit_recovery": {
+    "previous_limit_bytes": 50000000,
+    "failure": "SR325 in subproperty_fact batch 8; the failed run is not closure evidence.",
+    "preserved_failure_report_sha256": "1de03335f96df797c6a1e07baffd94380e40edfc0206810373b5be9d9a13af3d",
+    "runtime_readback_sha256": "5543e4aba810a66f68c8bf8de57047543a683e6257e8f12b70426a640c9854bc",
+    "configuration_sha256": "12a00ccf435846ac4d4bf4c118d3a718f560207f44478872230f4b4ea7ab79f6",
+    "retained_asserted_triples": 45706821,
+    "retained_inferred_triples": 87678125,
+    "generator_changed": false,
+    "batch_size_changed": false,
+    "restart_performed": false,
+    "scope": "Runtime and persistent configuration readback prove the 250,000,000-byte cap. Retained counts describe the recovery checkpoint, not completed inference."
+  },
+  "source_generation": {
+    "python": "3.11.14",
+    "rdflib": "7.1.4",
+    "environment": "environment/conda-linux-64.lock plus environment/pip-overlay.lock.txt in the source archive"
+  },
+  "evidence_scope": "Exact controller package versions and pinned image identity were inspected; final materialization report supplies actual controller version, batch size, generator/rule hashes and closure outcome. This metadata alone does not establish full-graph completion."
+}

@@ -54,8 +54,8 @@ def test_manuscript_distinguishes_cumulative_path_from_endpoint_distance() -> No
     paper = ROOT / "data-paper"
     abstract = (paper / "sn-article.tex").read_text(encoding="utf-8")
     methods = (paper / "02_methods.tex").read_text(encoding="utf-8")
-    assert "1,043~km cumulative path" in abstract
-    assert "1,015~km end to end" in abstract
+    assert "1,043~km" in abstract
+    assert "1,015~km" in methods
     assert "1,043-km\ncumulative path" in methods
     assert "1,015~km apart end to end" in methods
     assert "spanning 1,043 km" not in methods

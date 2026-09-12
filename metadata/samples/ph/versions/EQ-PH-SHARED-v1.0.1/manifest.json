@@ -1,0 +1,45 @@
+{
+  "dataset_version": "EQ-PH-SHARED-v1.0.1",
+  "purpose": "shared-manuscripts",
+  "status": "FROZEN",
+  "frozen_on": "2026-09-10",
+  "measurement_cutoff": "2026-08-03",
+  "source_complete": false,
+  "collection_status": "COMPLETE_AS_AVAILABLE",
+  "measurement_campaign_closed": true,
+  "source": {
+    "path": "data/metadata/samples/ph/versions/EQ-PH-SHARED-v1.0.1/ph_measurements.xlsx",
+    "sha256": "701db2a771b257da09bb276c8ca29df4408ba5986bd515821ccea275a8c692c1",
+    "bytes": 179809,
+    "content_identical_to": "EQ-PH-SHARED-v1.0.0"
+  },
+  "specimen_reconciliation": {
+    "mapping_file": "trip4_specimen_reconciliation.tsv",
+    "mapping_sha256": "31cc4939c5f62df047d0fb3776fd659d55af2bd3fc3be5cbe3c6ccc3331989b3",
+    "evidence_file": "confirmation.json",
+    "evidence_sha256": "f9e1dbd92c35612fe139db94eb62230d0999cf7df12a78c5763a386d78d2d9a8",
+    "evidence_id": "EQ-PH-TRIP4-REPLICATE-CONFIRMATION-20260910",
+    "trip4_source_rows": 177,
+    "trip4_assay_rows": 175,
+    "accepted_trip4_measurements": 156,
+    "accepted_specimen_identity_changes": 155,
+    "unassayed_rows_without_physical_assignment": 2,
+    "original_workbook_identifiers_preserved": true,
+    "original_measurement_values_preserved": true
+  },
+  "admission_policy": {
+    "version": "ph-measurement-v1",
+    "predecessor_qc_and_admissions_preserved": true,
+    "exact_confirmed_specimen_reconciliation_required": true,
+    "imputation_allowed": false,
+    "silent_source_correction_allowed": false
+  },
+  "version_policy": {
+    "ecology_analysis_may_change": false,
+    "both_manuscripts_use_this_exact_version": true,
+    "predecessor_files_preserved": true,
+    "future_corrections_require_a_new_version": true,
+    "cross_version_consistency_audit_required": true
+  },
+  "supersedes": "EQ-PH-SHARED-v1.0.0"
+}

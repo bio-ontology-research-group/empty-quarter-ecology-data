@@ -1,0 +1,102 @@
+{
+  "mode": "--all",
+  "checks": [
+    {
+      "file": "rubalkhali.owl",
+      "sha256": "46ca6cb6994eada44e936f19ba12f25dbc131fc31f76b4e2a46d61af3dfdf3b6",
+      "expected_sha256": "46ca6cb6994eada44e936f19ba12f25dbc131fc31f76b4e2a46d61af3dfdf3b6",
+      "passed": true
+    },
+    {
+      "file": "rubalkhali_sites.owl",
+      "sha256": "0d1d1996dcb2df292e1302d6cb831e281df90665d6fea4043ed2c661d16cc4c7",
+      "expected_sha256": "0d1d1996dcb2df292e1302d6cb831e281df90665d6fea4043ed2c661d16cc4c7",
+      "passed": true
+    },
+    {
+      "file": "rubalkhali_samples.owl",
+      "sha256": "ab9339969a861920ca8d734294d2a61f1e60e5f291314066f7f6b995987e937f",
+      "expected_sha256": "ab9339969a861920ca8d734294d2a61f1e60e5f291314066f7f6b995987e937f",
+      "passed": true
+    },
+    {
+      "file": "rubalkhali_measurements.owl",
+      "sha256": "804ecd5e500a9537219b4a86dc12155103146ce3573ba09fbb6cb4ab9323dd65",
+      "expected_sha256": "804ecd5e500a9537219b4a86dc12155103146ce3573ba09fbb6cb4ab9323dd65",
+      "passed": true
+    },
+    {
+      "file": "rubalkhali_dna.owl",
+      "sha256": "44a5c549800299e5de1ea4cf725a92224624068210391693c54a3376ea82a608",
+      "expected_sha256": "44a5c549800299e5de1ea4cf725a92224624068210391693c54a3376ea82a608",
+      "passed": true
+    },
+    {
+      "file": "rubalkhali_sra.owl",
+      "sha256": "b33687d3a5c0a2a740e087d431af7ebf723e9e1514af212983ebe9a2ba94617a",
+      "expected_sha256": "b33687d3a5c0a2a740e087d431af7ebf723e9e1514af212983ebe9a2ba94617a",
+      "passed": true
+    },
+    {
+      "file": "rubalkhali_xrf.owl",
+      "sha256": "5c9a7df5fdc53ed221d4a55c005ded8776d6615523a5546de910c7d9415fae5f",
+      "expected_sha256": "5c9a7df5fdc53ed221d4a55c005ded8776d6615523a5546de910c7d9415fae5f",
+      "passed": true
+    },
+    {
+      "file": "rubalkhali_qc.owl",
+      "sha256": "bc858f728e2541f745f4e0107139f79f7e4077fce5d3fd628b803e52d0bc67e0",
+      "expected_sha256": "bc858f728e2541f745f4e0107139f79f7e4077fce5d3fd628b803e52d0bc67e0",
+      "passed": true
+    },
+    {
+      "file": "rubalkhali_controls.ttl",
+      "sha256": "465c23f1f536527dda5e19598d86e94cccc4d0c9edbacd0cbe9df8f728d322cf",
+      "expected_sha256": "465c23f1f536527dda5e19598d86e94cccc4d0c9edbacd0cbe9df8f728d322cf",
+      "passed": true
+    },
+    {
+      "file": "rubalkhali_ph_eq_ph_shared_v1_0_1.ttl",
+      "sha256": "4c3af7c30633822e7ce86cedd54247dbaba69a598cc9014cbc2c0cfab8a14811",
+      "expected_sha256": "4c3af7c30633822e7ce86cedd54247dbaba69a598cc9014cbc2c0cfab8a14811",
+      "passed": true
+    },
+    {
+      "file": "rubalkhali_taxonomy_abox.ttl",
+      "sha256": "d78be36a0fb3f91a28bec4c6489ca1a34d97c576e10cd2c92fc59e4dfd0eb808",
+      "expected_sha256": "d78be36a0fb3f91a28bec4c6489ca1a34d97c576e10cd2c92fc59e4dfd0eb808",
+      "passed": true
+    },
+    {
+      "file": "ecosystem_module.ttl",
+      "sha256": "5c4cc5bb85d0bcf46fbe94959eb89062ced28575cfa4c37f01a86f60f70b51bc",
+      "expected_sha256": "5c4cc5bb85d0bcf46fbe94959eb89062ced28575cfa4c37f01a86f60f70b51bc",
+      "passed": true
+    },
+    {
+      "file": "sio.owl",
+      "sha256": "f868e0601635e1aa20a9407f07a2c671c0cd00331962ee1004ac652a9c4ee925",
+      "expected_sha256": "f868e0601635e1aa20a9407f07a2c671c0cd00331962ee1004ac652a9c4ee925",
+      "passed": true
+    },
+    {
+      "file": "envo.owl",
+      "sha256": "dc624f58cd98dc6d95dfb2c9746f15301b97e6be1dbc6fb8e39db817f000f24c",
+      "expected_sha256": "dc624f58cd98dc6d95dfb2c9746f15301b97e6be1dbc6fb8e39db817f000f24c",
+      "passed": true
+    },
+    {
+      "file": "pato.owl",
+      "sha256": "73a80487130a81a3696f1e03c551288f741ed1be5a07639e69e7ecd8b6f0371c",
+      "expected_sha256": "73a80487130a81a3696f1e03c551288f741ed1be5a07639e69e7ecd8b6f0371c",
+      "passed": true
+    },
+    {
+      "file": "uo.owl",
+      "sha256": "2fbbe9cf8c8c5edd492957ca0ba9754cc6364537209707788a6fbaa28b5fcbeb",
+      "expected_sha256": "2fbbe9cf8c8c5edd492957ca0ba9754cc6364537209707788a6fbaa28b5fcbeb",
+      "passed": true
+    }
+  ],
+  "passed": true
+}
