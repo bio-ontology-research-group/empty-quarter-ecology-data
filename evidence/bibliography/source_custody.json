@@ -1,23 +1,17 @@
 {
   "bibliography": "paper/sn-bibliography.bib",
-  "bibliography_entries": 100,
-  "bibliography_sha256": "3ef55f1a0849fec2b8c2296786728a0605d83e878b7aa99b66c69868fe264362",
-  "cited_keys": 69,
+  "bibliography_entries": 96,
+  "bibliography_sha256": "2191012e7ab4a39bbc80bafc73bfcfb2ee39104ec00480c0620619ed0c7ba7b4",
+  "cited_keys": 40,
   "keys_missing_from_bibliography": [],
   "keys_without_local_copy": [
-    "alawthan2024reserve",
-    "alhasani2026reserve",
     "ampliseq",
     "aslam2016rainfall",
     "balvovciute2017silva",
-    "blancosacristan2025biocrust",
     "chebi",
     "coverm",
-    "cropsinsilico2017",
     "cuencagrau2008modular",
     "dada2",
-    "destinationearth",
-    "digitaltwin2021",
     "dlhandbook",
     "ecology_companion",
     "eggnog",
@@ -25,81 +19,36 @@
     "elk",
     "envo",
     "fair",
-    "fierer2017",
     "fierer2025controls",
-    "ganapathysubramanian2025twins",
-    "gkoutos2018anatomy",
-    "gopi2026sabkha",
-    "gtdb",
-    "hermit",
-    "iglesias2026",
     "illumina16S",
-    "islam2026",
     "kgmicrobe2026",
     "khan2020saudi",
-    "khan2025",
     "klindworth2013primers",
     "makhalanyane2015",
     "mandaville_1986",
-    "mani2026mycobiome",
-    "maurice2023fertility",
-    "maurice2024",
-    "mckay2016",
     "metagenomickg2026",
     "mixs",
-    "mousa2024",
-    "moussa2017fungi",
-    "murgia2019sandfungi",
     "ncbitaxon",
     "nelli2024wind",
     "nfcore",
     "nmdc2026",
     "openmeteo",
-    "osman2016jizan",
-    "ovaskainen2026",
     "owl2",
+    "owl2profiles",
     "owlapi",
-    "owlhorst",
     "picrust2",
     "pubchem",
-    "qiime2",
-    "rdf",
     "shex",
     "silva",
     "sio",
-    "sparql",
     "streams2025",
-    "sulo2025",
     "taraoceans2015",
-    "uo",
     "virtuoso",
     "yasir2015saudi"
   ],
   "libraries_searched": [],
   "note": "Matching is by DOI plus title context or strong title-token overlap against PDF filenames and the first 4,000 characters of text files; bibliography mentions deep in unrelated files are not matches. A key reported as covered is not a guarantee that the local copy is the exact cited version; where a preprint and a final version differ, the archived copy should be checked against the bibliography entry before submission.",
   "records": [
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.3390/life14121692",
-      "in_bibliography": true,
-      "key": "alawthan2024reserve",
-      "local_copies": [],
-      "title": "Metagenome Analysis Identified Novel Microbial Diversity of Sandy Soils Surrounded by Natural Lakes and Artificial Water Points in {King Salman Bin Abdulaziz Royal Natural Reserve}, {Saudi Arabia}"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.25259/JKSUS_1695_2025",
-      "in_bibliography": true,
-      "key": "alhasani2026reserve",
-      "local_copies": [],
-      "title": "Diversity and ecological drivers of rhizospheric and endophytic microbiomes of desert plants in {King Salman Reserve}, {Saudi Arabia}"
-    },
     {
       "cited_in": [
         "02_methods.tex"
@@ -135,20 +84,8 @@
     },
     {
       "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1017/dry.2025.10007",
-      "in_bibliography": true,
-      "key": "blancosacristan2025biocrust",
-      "local_copies": [],
-      "title": "Biological soil crusts in the {Arabian Peninsula}: Ecological functions, current knowledge and research gaps"
-    },
-    {
-      "cited_in": [
         "01_introduction.tex",
         "02_methods.tex",
-        "03_knowledge_representation.tex",
         "kr_supplement.tex"
       ],
       "custody": "no_local_copy",
@@ -168,17 +105,6 @@
       "key": "coverm",
       "local_copies": [],
       "title": "{CoverM}: read alignment statistics for metagenomics"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.3389/fpls.2017.00786",
-      "in_bibliography": true,
-      "key": "cropsinsilico2017",
-      "local_copies": [],
-      "title": "Crops In Silico: Generating Virtual Crops Using an Integrative and Multi-scale Modeling Platform"
     },
     {
       "cited_in": [
@@ -204,29 +130,7 @@
     },
     {
       "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1038/s41558-021-00986-y",
-      "in_bibliography": true,
-      "key": "destinationearth",
-      "local_copies": [],
-      "title": "A digital twin of {Earth} for the green transition"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1016/j.jii.2022.100383",
-      "in_bibliography": true,
-      "key": "digitaltwin2021",
-      "local_copies": [],
-      "title": "Digital twins: State of the art theory and practice, challenges, and open research questions"
-    },
-    {
-      "cited_in": [
-        "03_knowledge_representation.tex"
+        "kr_supplement.tex"
       ],
       "custody": "no_local_copy",
       "doi": "10.1017/CBO9780511711787",
@@ -238,8 +142,7 @@
     {
       "cited_in": [
         "01_introduction.tex",
-        "02_methods.tex",
-        "06_usage.tex"
+        "02_methods.tex"
       ],
       "custody": "no_local_copy",
       "doi": "",
@@ -272,8 +175,7 @@
     },
     {
       "cited_in": [
-        "02_methods.tex",
-        "06_usage.tex"
+        "02_methods.tex"
       ],
       "custody": "no_local_copy",
       "doi": "10.1007/s10817-013-9296-3",
@@ -296,7 +198,6 @@
     },
     {
       "cited_in": [
-        "01_introduction.tex",
         "05_validation.tex"
       ],
       "custody": "no_local_copy",
@@ -305,17 +206,6 @@
       "key": "fair",
       "local_copies": [],
       "title": "The {FAIR} {Guiding} {Principles} for scientific data management and stewardship"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1038/nrmicro.2017.87",
-      "in_bibliography": true,
-      "key": "fierer2017",
-      "local_copies": [],
-      "title": "Embracing the unknown: disentangling the complexities of the soil microbiome"
     },
     {
       "cited_in": [
@@ -330,72 +220,6 @@
     },
     {
       "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1016/j.tplants.2024.12.013",
-      "in_bibliography": true,
-      "key": "ganapathysubramanian2025twins",
-      "local_copies": [],
-      "title": "Digital twins for the plant sciences"
-    },
-    {
-      "cited_in": [
-        "03_knowledge_representation.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1093/bib/bbx035",
-      "in_bibliography": true,
-      "key": "gkoutos2018anatomy",
-      "local_copies": [],
-      "title": "The anatomy of phenotype ontologies: principles, properties and applications"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1016/j.egg.2026.100448",
-      "in_bibliography": true,
-      "key": "gopi2026sabkha",
-      "local_copies": [],
-      "title": "{eDNA} metabarcoding reveals halophilic and halotolerant bacterial assemblages in the salt flats of the northern {Red Sea} coast"
-    },
-    {
-      "cited_in": [
-        "02_methods_taxonomy.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1093/nar/gkab776",
-      "in_bibliography": true,
-      "key": "gtdb",
-      "local_copies": [],
-      "title": "{GTDB}: an ongoing census of bacterial and archaeal diversity through a phylogenetically consistent, rank normalized and complete genome-based taxonomy"
-    },
-    {
-      "cited_in": [
-        "02_methods.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "",
-      "in_bibliography": true,
-      "key": "hermit",
-      "local_copies": [],
-      "title": "{HermiT}: an {OWL} 2 reasoner"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1016/j.ecoinf.2026.103635",
-      "in_bibliography": true,
-      "key": "iglesias2026",
-      "local_copies": [],
-      "title": "A conceptual architecture for {AI}-assisted Digital Twins in natural resource management"
-    },
-    {
-      "cited_in": [
         "02_methods.tex"
       ],
       "custody": "no_local_copy",
@@ -404,17 +228,6 @@
       "key": "illumina16S",
       "local_copies": [],
       "title": "16S Metagenomic Sequencing Library Preparation:\n                  Preparing 16S Ribosomal RNA Gene Amplicons for the\n                  Illumina MiSeq System"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1038/s44185-025-00116-3",
-      "in_bibliography": true,
-      "key": "islam2026",
-      "local_copies": [],
-      "title": "{FAIR} digital twins for biodiversity: enabling data, model, and workflow integration"
     },
     {
       "cited_in": [
@@ -437,17 +250,6 @@
       "key": "khan2020saudi",
       "local_copies": [],
       "title": "Microbial communities and their predictive functional profiles in the arid soil of {Saudi Arabia}"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1016/j.ecoinf.2025.103407",
-      "in_bibliography": true,
-      "key": "khan2025",
-      "local_copies": [],
-      "title": "{TwinEco}: A unified framework for dynamic data-driven digital twins in ecology"
     },
     {
       "cited_in": [
@@ -487,51 +289,6 @@
         "01_introduction.tex"
       ],
       "custody": "no_local_copy",
-      "doi": "10.3897/mycokeys.130.176937",
-      "in_bibliography": true,
-      "key": "mani2026mycobiome",
-      "local_copies": [],
-      "title": "Desert mycobiome of {Saudi Arabia} is driven by vegetation patterns"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1016/j.jaridenv.2023.105074",
-      "in_bibliography": true,
-      "key": "maurice2023fertility",
-      "local_copies": [],
-      "title": "Fertility islands, keys to the establishment of plant and microbial diversity in a highly alkaline hot desert"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1186/s40793-024-00610-4",
-      "in_bibliography": true,
-      "key": "maurice2024",
-      "local_copies": [],
-      "title": "Networking the desert plant microbiome, bacterial and fungal symbionts structure and assortativity in co-occurrence networks"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1371/journal.pone.0150342",
-      "in_bibliography": true,
-      "key": "mckay2016",
-      "local_copies": [],
-      "title": "An Unusual Inverted Saline Microbial Mat Community in an Interdune Sabkha in the {Rub' al-Khali} (the {Empty Quarter}), {United Arab Emirates}"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex",
-        "06_usage.tex"
-      ],
-      "custody": "no_local_copy",
       "doi": "10.1093/bioinformatics/btag421",
       "in_bibliography": true,
       "key": "metagenomickg2026",
@@ -552,40 +309,6 @@
     {
       "cited_in": [
         "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.3389/fpls.2024.1294173",
-      "in_bibliography": true,
-      "key": "mousa2024",
-      "local_copies": [],
-      "title": "High-throughput sequencing reveals the structure and metabolic resilience of desert microbiome confronting climate change"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1371/journal.pone.0185096",
-      "in_bibliography": true,
-      "key": "moussa2017fungi",
-      "local_copies": [],
-      "title": "Comparative metagenomics approaches to characterize the soil fungal communities of western coastal region, {Saudi Arabia}"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1002/mbo3.595",
-      "in_bibliography": true,
-      "key": "murgia2019sandfungi",
-      "local_copies": [],
-      "title": "Biodiversity of fungi in hot desert sands"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex",
-        "02_methods_taxonomy.tex"
       ],
       "custody": "no_local_copy",
       "doi": "10.1093/database/baaa062",
@@ -629,7 +352,6 @@
     },
     {
       "cited_in": [
-        "01_introduction.tex",
         "02_methods.tex"
       ],
       "custody": "no_local_copy",
@@ -641,29 +363,6 @@
     },
     {
       "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.2174/2210289201607020070",
-      "in_bibliography": true,
-      "key": "osman2016jizan",
-      "local_copies": [],
-      "title": "Bacterial rhizosphere biodiversity from several pioneer desert sand\n    plants near {Jizan}, Saudi Arabia"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1038/s41559-025-02966-3",
-      "in_bibliography": true,
-      "key": "ovaskainen2026",
-      "local_copies": [],
-      "title": "A digital twin for real-time biodiversity forecasting with citizen science data"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex",
         "03_knowledge_representation.tex"
       ],
       "custody": "no_local_copy",
@@ -675,7 +374,19 @@
     },
     {
       "cited_in": [
-        "03_knowledge_representation.tex"
+        "05_validation.tex"
+      ],
+      "custody": "no_local_copy",
+      "doi": "",
+      "in_bibliography": true,
+      "key": "owl2profiles",
+      "local_copies": [],
+      "title": "{OWL 2 Web Ontology Language Profiles (Second Edition)}"
+    },
+    {
+      "cited_in": [
+        "03_knowledge_representation.tex",
+        "06_usage.tex"
       ],
       "custody": "no_local_copy",
       "doi": "",
@@ -683,19 +394,6 @@
       "key": "owlapi",
       "local_copies": [],
       "title": "The {OWL} {API}: a {Java} {API} for {OWL} ontologies"
-    },
-    {
-      "cited_in": [
-        "03_knowledge_representation.tex",
-        "05_validation.tex",
-        "06_usage.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "10.1016/j.websem.2005.06.001",
-      "in_bibliography": true,
-      "key": "owlhorst",
-      "local_copies": [],
-      "title": "Completeness, decidability and complexity of entailment for RDF Schema and a semantic extension involving the OWL vocabulary"
     },
     {
       "cited_in": [
@@ -711,7 +409,6 @@
     {
       "cited_in": [
         "02_methods.tex",
-        "03_knowledge_representation.tex",
         "kr_supplement.tex"
       ],
       "custody": "no_local_copy",
@@ -720,28 +417,6 @@
       "key": "pubchem",
       "local_copies": [],
       "title": "{PubChem} 2023 update"
-    },
-    {
-      "cited_in": [
-        "02_methods.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "",
-      "in_bibliography": true,
-      "key": "qiime2",
-      "local_copies": [],
-      "title": "Reproducible, interactive, scalable and extensible microbiome data science using {QIIME} 2"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "",
-      "in_bibliography": true,
-      "key": "rdf",
-      "local_copies": [],
-      "title": "{RDF} 1.1 {Concepts} and {Abstract} {Syntax}"
     },
     {
       "cited_in": [
@@ -757,8 +432,7 @@
     },
     {
       "cited_in": [
-        "02_methods.tex",
-        "02_methods_taxonomy.tex"
+        "02_methods.tex"
       ],
       "custody": "no_local_copy",
       "doi": "10.1093/nar/gks1219",
@@ -781,17 +455,6 @@
     },
     {
       "cited_in": [
-        "05_validation.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "",
-      "in_bibliography": true,
-      "key": "sparql",
-      "local_copies": [],
-      "title": "{SPARQL} 1.1 {Query} {Language}"
-    },
-    {
-      "cited_in": [
         "01_introduction.tex"
       ],
       "custody": "no_local_copy",
@@ -803,19 +466,7 @@
     },
     {
       "cited_in": [
-        "06_usage.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "",
-      "in_bibliography": true,
-      "key": "sulo2025",
-      "local_copies": [],
-      "title": "{SULO} -- a simplified upper-level ontology"
-    },
-    {
-      "cited_in": [
-        "01_introduction.tex",
-        "06_usage.tex"
+        "01_introduction.tex"
       ],
       "custody": "no_local_copy",
       "doi": "10.1038/sdata.2015.23",
@@ -823,17 +474,6 @@
       "key": "taraoceans2015",
       "local_copies": [],
       "title": "Open science resources for the discovery and analysis of {Tara} {Oceans} data"
-    },
-    {
-      "cited_in": [
-        "03_knowledge_representation.tex"
-      ],
-      "custody": "no_local_copy",
-      "doi": "",
-      "in_bibliography": true,
-      "key": "uo",
-      "local_copies": [],
-      "title": "The {Units} {Ontology}: a tool for integrating units of measurement in science"
     },
     {
       "cited_in": [

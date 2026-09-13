@@ -19,6 +19,7 @@ import argparse
 import csv
 import hashlib
 import os
+import re
 import tempfile
 from pathlib import Path
 
@@ -894,8 +895,44 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def refresh_declared(stage: Path, rows: list[dict[str, str]]) -> None:
+    """Refresh existing rows in a source checkout without inventing bulk hashes.
+
+    This is not a new deposit inventory. Absent bulk artifacts retain their
+    recorded checksums only when the separate bulk manifest agrees exactly.
+    Categories, licence gates and the declared inventory remain unchanged.
+    """
+    bulk_path = stage / "BULK_ARTIFACTS.tsv"
+    bulk = {}
+    if bulk_path.is_file():
+        with bulk_path.open(newline="", encoding="utf-8") as handle:
+            for row in csv.DictReader(handle, delimiter="\t"):
+                if row["path"] in bulk:
+                    raise ValueError(f"duplicate bulk declaration: {row['path']}")
+                bulk[row["path"]] = row
+    for row in rows:
+        artifact = stage / row["path"]
+        if artifact.is_file():
+            row["bytes"] = str(artifact.stat().st_size)
+            row["sha256"] = sha256(artifact)
+        else:
+            if not re.fullmatch(r"[0-9]+", row["bytes"]) or not re.fullmatch(
+                r"[0-9a-fA-F]{64}", row["sha256"]
+            ):
+                raise ValueError(f"invalid size or SHA-256 for absent artifact: {row['path']}")
+            if row["path"] not in bulk or any(
+                row[key] != bulk[row["path"]][key] for key in ("bytes", "sha256")
+            ):
+                raise ValueError(f"missing artifact without matching bulk declaration: {row['path']}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--refresh-declared",
+        action="store_true",
+        help="refresh only existing rows; absent bulk must match BULK_ARTIFACTS.tsv",
+    )
     parser.add_argument(
         "--stage",
         type=Path,
@@ -909,17 +946,29 @@ def main() -> int:
         rows = list(csv.DictReader(handle, delimiter="\t"))
     if not rows:
         parser.error(f"empty manifest in {manifest}")
-    rows = [
-        row
-        for row in rows
-        if row["path"] not in RETIRED_PATHS and not is_build_noise(row["path"])
-    ]
+    if not args.refresh_declared:
+        rows = [
+            row
+            for row in rows
+            if row["path"] not in RETIRED_PATHS and not is_build_noise(row["path"])
+        ]
     legacy_columns = [column for column in COLUMNS if column not in ("license_status", "license_gate")]
     if list(rows[0]) not in (COLUMNS, legacy_columns):
         parser.error(f"unexpected manifest schema in {manifest}")
     by_path = {row["path"]: row for row in rows}
     if len(by_path) != len(rows):
         parser.error("manifest contains duplicate paths")
+
+    if args.refresh_declared:
+        if list(rows[0]) != COLUMNS:
+            parser.error("refresh requires existing licence dispositions")
+        try:
+            refresh_declared(stage, rows)
+        except ValueError as error:
+            parser.error(str(error))
+        write_manifest(manifest, rows)
+        print(f"PASS: refreshed {len(rows)} declared artifacts in {manifest}")
+        return 0
 
     for relative, (category, status, scope) in ADDITIONS.items():
         if relative not in by_path:
@@ -996,11 +1045,16 @@ def main() -> int:
         row["sha256"] = sha256(artifact)
 
     rows.sort(key=lambda row: row["path"])
+    write_manifest(manifest, rows)
+    print(f"PASS: checksummed {len(rows)} staged artifacts in {manifest}")
+    return 0
 
+
+def write_manifest(manifest: Path, rows: list[dict[str, str]]) -> None:
     descriptor, temporary_name = tempfile.mkstemp(
         prefix=".PRE_RELEASE_MANIFEST.",
         suffix=".tsv",
-        dir=stage,
+        dir=manifest.parent,
         text=True,
     )
     try:
@@ -1019,9 +1073,6 @@ def main() -> int:
     except BaseException:
         Path(temporary_name).unlink(missing_ok=True)
         raise
-
-    print(f"PASS: checksummed {len(rows)} staged artifacts in {manifest}")
-    return 0
 
 
 if __name__ == "__main__":

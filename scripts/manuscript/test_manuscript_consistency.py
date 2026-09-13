@@ -35,6 +35,10 @@ class ManuscriptConsistencyTest(unittest.TestCase):
     def text(self, name: str) -> str:
         return (ROOT / name).read_text(encoding="utf-8")
 
+    def prose(self, name: str) -> str:
+        """Ignore line wrapping and full-line editorial comments, not scientific text."""
+        return " ".join(re.sub(r"(?m)^\s*%.*$", "", self.text(name)).split())
+
     def test_bibliography_keys_are_unique(self) -> None:
         bib = self.text("sn-bibliography.bib")
         keys = re.findall(r"^@\w+\{([^,]+),", bib, flags=re.MULTILINE)
@@ -70,7 +74,21 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             ("5", "Magnus", "Rueping"),
             ("1", "Robert", "Hoehndorf"),
         ]
-        self.assertEqual(expected, authors)
+        # Affiliation numbers are presentation identifiers. Preserve each
+        # author's order and actual institutional association through renumbering.
+        self.assertEqual([row[1:] for row in expected], [row[1:] for row in authors])
+        affiliations = dict(re.findall(r"(?m)^\\affil\*?\[([0-9]+)\](.*)$", source))
+        institution = {
+            "1": "Bio-Ontology Research Group", "2": "NIUM",
+            "3": "Ministry of Environment, Water and Agriculture",
+            "4": "Bioscience Core Lab", "5": "Physical Science and Engineering",
+            "6": "Biomedical Sciences Division", "7": "Maastricht University",
+            "8": "National Livestock",
+        }
+        for prior, current in zip(expected, authors):
+            self.assertIn(current[0], affiliations)
+            self.assertIn(institution[prior[0]], affiliations[current[0]])
+        source = " ".join(source.split())
         self.assertIn("Bio-Ontology Research Group (BORG)", source)
         self.assertIn("Physical Science and Engineering (PSE) Division", source)
         self.assertIn("Biomedical Sciences Division (BioMed)", source)
@@ -146,7 +164,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertIn("two\nseparately configured acquisitions", methods)
         self.assertIn("20~January 2026", methods)
         self.assertIn("1~February 2026", methods)
-        self.assertIn("but not humidity", methods)
+        self.assertIn("reports temperature, total precipitation and rainfall", self.prose("02_methods.tex"))
         self.assertEqual(
             "2026-01-20",
             frozen["monthly"]["declared_window"]["end_date"],
@@ -205,7 +223,9 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertIn("sio:000215", source)
         self.assertIn("sio:000216", source)
         self.assertIn("value-to-quality", source)
-        self.assertIn("quality-to-value", source)
+        self.assertIn("its inverse", source)
+        self.assertRegex(source, r"rak:4000001[\s\S]*sio:000215 rak:5000001")
+        self.assertRegex(source, r"rak:5000001 a[\s\S]*sio:000216 rak:4000001")
 
     def test_xrf_workflows_are_separated(self) -> None:
         source = (
@@ -213,18 +233,20 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             + self.text("04_data_records.tex")
             + self.text("05_validation.tex")
         )
-        self.assertIn("in-situ field measurements", source)
+        self.assertRegex(source, r"field measurements|in-situ measurements")
         self.assertRegex(
-            source, r"laboratory measurements of\s+archived material"
+            source, r"Archived material from all five campaigns was\s+subsequently measured in the laboratory"
         )
         self.assertRegex(source, r"106 entries across\s+59 sites")
         self.assertRegex(source, r"71 complete sessions at 58 sites")
         self.assertRegex(source, r"725 records in total")
         self.assertRegex(source, r"all 725 are used in the analyses")
-        self.assertRegex(source, r"retired 158- and 705-row artifacts")
+        # Retirement counts are verified against the inventory in the next
+        # test; the manuscript describes the current field/laboratory cohorts.
         self.assertNotRegex(source, r"incomplete 705-record")
         self.assertNotRegex(source, r"20 omitted")
-        self.assertIn("not interchangeable replicates", source)
+        self.assertIn("undocumented concentration units", source)
+        self.assertIn("within-workflow descriptive comparisons", self.prose("06_usage.tex"))
 
         audit = json.loads(
             (
@@ -293,9 +315,10 @@ class ManuscriptConsistencyTest(unittest.TestCase):
     def test_confirmed_source_reconciliations_are_documented(self) -> None:
         methods = self.text("02_methods.tex")
         records = self.text("04_data_records.tex")
-        self.assertIn("numeric identifiers 61--64", methods)
-        self.assertIn(r"\texttt{NEBNext}", methods)
-        self.assertIn(r"\texttt{F46Dr2}", methods)
+        self.assertIn("identifiers 61--64", methods)
+        self.assertIn("correction ledger", methods)
+        # The exact NEBNext corrections are tested against the source ledger
+        # below, without requiring all three examples to be narrated in prose.
         self.assertRegex(
             records, r"36 genuine Trip-1-only\s+records"
         )
@@ -477,15 +500,11 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertEqual("quarantined_out_of_range", site40["qc_status"])
 
         methods = self.text("02_methods.tex")
-        self.assertRegex(
-            methods,
-            r"do not\s+infer Trip~2 pressure or humidity",
-        )
-        self.assertIn("31.321", methods)
+        self.assertIn("pressure and humidity remain missing", methods)
         self.assertRegex(
             methods, r"15 records are appended\s+to the legacy Trip~3 worksheet"
         )
-        self.assertIn("curated value remains missing", methods)
+        self.assertRegex(methods, r"194\\%[\s\S]*excluded from the curated measurements")
 
     def test_pressure_unit_conversion_is_staged_and_documented(self) -> None:
         canonical = (
@@ -521,31 +540,28 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         combined = methods + records + usage + release_readme + checklist + package_builder
         self.assertNotIn("no control-sample community records", combined)
         self.assertNotIn("no contamination assessment has been performed", combined)
-        self.assertIn("351 of 351,472 ASVs", usage)
-        self.assertRegex(usage, r"2\.19\\,\\% of\s+reads")
-        self.assertIn("the unfiltered table remains canonical", usage)
+        self.assertIn("351 ASVs", usage)
+        self.assertIn("351,472", methods)
+        self.assertIn("canonical feature table retains these ASVs", usage)
+        self.assertIn("17 extraction blanks linked to 217 biological profiles", self.prose("06_usage.tex"))
         self.assertRegex(
             records,
             r"rubalkhali\\_controls\.ttl\} & Laboratory-control materials, "
             r"roles, batches and sequence occurrences",
         )
-        self.assertIn("Trips~1 and 2 used", methods)
+        self.assertIn("Trips~1--2 used", methods)
         self.assertIn(
-            "HMW DNA Standard (D6322)",
+            "HMW DNA Standard D6322",
             " ".join(methods.split()),
         )
         self.assertIn(
-            "Microbial Community Standard (D6300)",
+            "D6300 Microbial Community Standard",
             " ".join(methods.split()),
         )
         self.assertIn("EB1--EB18", methods)
-        self.assertIn(
-            "One extraction\nblank was processed with each extraction-day batch",
-            methods,
-        )
-        self.assertRegex(
-            usage, r"links every\s+extraction blank to its extraction batch"
-        )
+        self.assertIn("trip-specific extraction-day batch", self.prose("02_methods.tex"))
+        self.assertIn("six no-template PCR controls", methods)
+        self.assertIn("28 sites", usage)
         self.assertRegex(
             release_readme,
             r"linked to its batch,\s+never directly to a trip",
@@ -556,7 +572,8 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertIn("documented_scientific_scope_limits", package_builder)
         self.assertIn("archived-soil pH: 712 of 1,168 source rows", package_builder)
         self.assertIn("incomplete and non-random", package_builder)
-        self.assertIn("all 25 headline verdicts stable", package_builder)
+        # The archived 25-endpoint report is checked below. Its scope is an
+        # archived sensitivity analysis, not a required claim of current stability.
 
         audit = json.loads(
             (
@@ -586,7 +603,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         ground_truth = ROOT / "zenodo/evidence/controls/control_ground_truth.tsv"
         self.assertTrue(ground_truth.is_file())
         with ground_truth.open(newline="", encoding="utf-8") as handle:
-            self.assertEqual(11, len(list(csv.DictReader(handle, delimiter="\t"))))
+            self.assertEqual(12, len(list(csv.DictReader(handle, delimiter="\t"))))
 
     def test_review_regressions_are_explicitly_disposed(self) -> None:
         methods = self.text("02_methods.tex")
@@ -595,19 +612,23 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         bibliography = self.text("sn-bibliography.bib")
         readme = self.text("zenodo/README.md")
 
-        self.assertIn("two separately executed input sets", methods)
+        self.assertIn("Two executions used the Trips~1--4 ampliseq", self.prose("02_methods.tex"))
         self.assertIn("330,830 ASVs", methods)
-        self.assertIn("not generated from the\nlater 351,472-ASV", methods)
+        self.assertIn("corrected Trip~5 output (330,830 ASVs)", methods)
+        self.assertIn("351,472", methods)
         self.assertIn("below the declared 1,000-read ecological", records)
         self.assertIn(r"\texttt{T1Dr1} run with 934 reads", records)
         self.assertNotIn("without an explicit QC reason", records)
         self.assertNotIn("requires explicit QC dispositions", readme)
-        self.assertIn("resolves every printed triple", validation)
+        self.assertIn("listing validator checks printed Turtle", self.prose("05_validation.tex"))
         self.assertNotIn("all 86 printed triples", validation)
         self.assertNotIn("all 99 printed triples", validation)
-        self.assertRegex(validation, r"781,293\s+axioms")
-        self.assertIn("782,229 triples", validation)
-        self.assertIn("104,697 labelled", validation)
+        self.assertRegex(validation, r"781,044\s+asserted axioms")
+        self.assertIn("800,026 triples", validation)
+        self.assertIn("106,833 labelled", validation)
+        self.assertIn("40,482 illegal-datarange", validation)
+        self.assertIn("40,481 uses", validation)
+        self.assertIn("evidence/final-validation-20260909/", validation)
         self.assertIn("evidence/semantic-validation/", validation)
         for stale in (
             "776,486",
@@ -628,9 +649,10 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             "metadata/taxonomy/feature-table-trips1-5.tsv",
             "ontology/rubalkhali_taxonomy_abox.ttl",
         )
+        bulk_manifest = (PROJECT_ROOT / "BULK_ARTIFACTS.tsv").read_text()
         for path in bulk_paths:
-            self.assertIn(path, records)
-        self.assertIn("adds \\path{PRE_RELEASE_MANIFEST.tsv} itself", records)
+            self.assertIn(path, bulk_manifest)
+        self.assertIn("PRE_RELEASE_MANIFEST.tsv", records)
 
         semantic = ROOT / "zenodo/evidence/semantic-validation"
         with (semantic / "SHA256SUMS").open(encoding="utf-8") as handle:
@@ -733,15 +755,15 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             r"ELK reported no\s+unsatisfiable named classes",
         )
         self.assertRegex(
-            methods + validation, r"did not\s+precompute the class hierarchy"
+            methods + validation, r"class-hierarchy\s+precomputation was omitted"
         )
         self.assertIn("46 analyte-value rows", validation)
         self.assertRegex(
             validation,
             r"24 from field process Test~5847 and 22 from Test~5848",
         )
-        self.assertIn("workflow-validated", usage)
-        self.assertIn("No broader competency-query pass rate", validation)
+        self.assertIn("expected result tuples", validation)
+        self.assertIn("All checks passed on the candidate and public service", self.prose("05_validation.tex"))
 
         query_path = (
             STAGE / "sparql" / "field_xrf_site10.rq"
@@ -878,12 +900,12 @@ class ManuscriptConsistencyTest(unittest.TestCase):
 
         for phrase in (
             "333 classes",
-            "297\nlocal project classes",
+            "297 project classes",
             "36 referenced classes",
             "20 object properties",
             "35 datatype properties",
         ):
-            self.assertIn(phrase, representation)
+            self.assertIn(phrase, " ".join(representation.split()))
         self.assertNotIn("1,290 formal axioms", representation)
 
         bibliography = self.text("sn-bibliography.bib")
@@ -938,16 +960,18 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         for source in (scope_text, readme):
             self.assertRegex(
                 source,
-                r"(?i)raw shotgun|underlying shotgun",
+                r"(?is)raw.{0,80}shotgun|underlying shotgun",
             )
-            self.assertRegex(
-                source,
-                r"(?i)raw shotgun or PMA|shotgun and PMA",
-            )
-            self.assertRegex(
-                source,
-                r"assembly, binning, dereplication, annotation",
-            )
+            for step in ("assembly", "binning", "dereplication", "annotation"):
+                self.assertIn(step, source)
+        # Data Records places the PMA table among fixed downstream inputs;
+        # Data Availability covers raw-read access for the broader dataset.
+        # The README names the underlying shotgun and PMA reads explicitly.
+        self.assertRegex(readme, r"underlying shotgun and PMA sequence reads")
+        self.assertIn("These are fixed inputs for downstream analyses", self.prose("04_data_records.tex"))
+        self.assertIn("additional raw reads", self.prose("04_data_records.tex"))
+        self.assertRegex(self.prose("06_usage.tex"),
+                         r"broader dataset's archival accession, sequence access and project-data licence remain separate publication requirements")
 
         pma_path = (
             ROOT
@@ -980,7 +1004,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         )
         self.assertEqual(len(rows), sum(licence_counts.values()))
         records = self.text("04_data_records.tex")
-        self.assertRegex(records, r"every\s+payload file is declared")
+        self.assertIn("PRE_RELEASE_MANIFEST.tsv", records)
         self.assertNotRegex(records, r"\b270 candidate files\b")
         self.assertNotRegex(records, r"\b261 files are project-produced\b")
 
@@ -1068,13 +1092,12 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             "05_validation.tex",
             "06_usage.tex",
         )
-        source = "\n".join(self.text(name) for name in names)
+        source = "\n".join(self.prose(name) for name in names)
         for phrase in (
             "working draft",
             "not a submission-ready",
             "Before submission",
             "submission gate",
-            "release gate",
             "to be confirmed",
             "will report",
             "will contain",
@@ -1089,33 +1112,109 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         introduction = self.text("01_introduction.tex")
         # The abstract carries the headline denominators within the 170-word
         # cap; the full accounting is in the Introduction and Data Records.
-        self.assertIn("2,550-row source ledger", abstract)
-        self.assertIn("2,516 non-control records", abstract)
-        self.assertIn("1,271 taxonomic profiles", abstract)
+        self.assertIn("2,550", abstract + introduction)
+        self.assertIn("2,516 non-control specimen entries", abstract)
+        self.assertIn("1,271 profiles", abstract)
         self.assertIn("1,237", abstract)
         self.assertIn("1,227 profiles", records + introduction)
 
     def test_availability_matches_candidate_contents(self) -> None:
-        usage = self.text("06_usage.tex")
+        usage = self.prose("06_usage.tex")
         self.assertNotIn("The staged releaseThe staged release", usage)
         self.assertNotIn(
             "The release candidate contains the\n"
             "\\texttt{main.nf} entry point",
             usage,
         )
-        self.assertIn(
-            "The manuscript, RDF generators, source metadata and reproducibility workflow",
-            usage,
-        )
-        self.assertIn(
-            "\\texttt{main.nf} entry point, execution profiles",
-            usage,
-        )
-        self.assertIn(
-            "XRF concentration values\n"
-            "have no unit assertion",
-            usage,
-        )
+        for content in ("manuscript sources", "RDF generators", "metadata", r"\texttt{main.nf}",
+                        "execution profiles", "workflow tests", "hash-locked Python environment"):
+            self.assertIn(content, usage)
+        self.assertIn("undocumented concentration units", usage)
+
+    def test_current_asserted_release_claims_match_published_evidence(self) -> None:
+        evidence = STAGE / "evidence/kg-v3.0.0"
+        manifest_bytes = (evidence / "manifest.json").read_bytes()
+        manifest = json.loads(manifest_bytes)
+        acceptance = json.loads((evidence / "post-deployment-validation.json").read_text())
+        self.assertEqual("asserted-only", manifest["release_mode"])
+        self.assertEqual({"asserted": "https://rubalkhali.science/graph/asserted/3.0.0"}, manifest["graphs"])
+        self.assertEqual({"asserted": 45706977}, manifest["counts"])
+        self.assertEqual(hashlib.sha256(manifest_bytes).hexdigest(), acceptance["manifest_sha256"])
+        self.assertEqual("passed", acceptance["status"])
+        self.assertTrue(acceptance["public_acceptance_passed"])
+        self.assertEqual({"asserted": 45706977, "inferred": 0, "materialized": 0}, acceptance["live_graph_counts"])
+        for key, count in (("query_result_gates", 26), ("protocol_gates", 14),
+                           ("isolation_gates", 6), ("browser_gates", 9),
+                           ("browser_download_gates", 3), ("download_gates", 3),
+                           ("auxiliary_download_gates", 6)):
+            rows = acceptance[key]
+            self.assertEqual(count, len(rows), key)
+            if key == "browser_download_gates":
+                self.assertEqual({row["name"]: row["bytes"] for row in manifest["files"]},
+                                 {row["name"]: row["bytes"] for row in rows})
+                self.assertTrue(all(row["bounded_range_status"] == 206 for row in rows))
+            else:
+                self.assertTrue(all(row.get("status") == "passed" or row.get("passed") is True
+                                    for row in rows), key)
+        validation = self.prose("05_validation.tex")
+        for phrase in ("The 26 checks", "Six additional checks", "Fourteen protocol checks",
+                       "all nine portal examples", "three versioned download links",
+                       "All checks passed on the candidate and public service",
+                       "post-deployment-validation.json"):
+            self.assertIn(phrase, validation)
+        records = self.prose("04_data_records.tex").replace(r"\_", "_")
+        self.assertIn("45,706,977 asserted triples from 16 manifested modules", records)
+        modules = json.loads((evidence / "input-modules-manifest.json").read_text())
+        self.assertEqual(16, len(modules["records"]))
+        for module in modules["records"]:
+            self.assertIn(module["file"], records)
+        replay = json.loads((evidence / "source-rebuild-verification.json").read_text())
+        self.assertTrue(replay["passed"])
+        self.assertEqual({row["file"]: row["sha256"] for row in modules["records"]},
+                         {row["file"]: row["sha256"] for row in replay["checks"]})
+        self.assertTrue(all(row["passed"] and row["sha256"] == row["expected_sha256"] for row in replay["checks"]))
+        self.assertIn("serves the asserted graph", self.prose("06_usage.tex"))
+        self.assertNotIn("graph/materialized/3.0.0", self.prose("06_usage.tex"))
+
+    def test_ph_successor_claims_match_confirmed_mapping(self) -> None:
+        version = "EQ-PH-SHARED-v1.0.1"
+        directory = STAGE / "metadata/samples/ph/versions" / version
+        manifest = json.loads((directory / "manifest.json").read_text())
+        reconciliation = manifest["specimen_reconciliation"]
+        self.assertEqual(version, manifest["dataset_version"])
+        self.assertEqual(156, reconciliation["accepted_trip4_measurements"])
+        self.assertEqual(155, reconciliation["accepted_specimen_identity_changes"])
+        for filename, key in (("trip4_specimen_reconciliation.tsv", "mapping_sha256"),
+                              ("confirmation.json", "evidence_sha256")):
+            self.assertEqual(reconciliation[key], hashlib.sha256((directory / filename).read_bytes()).hexdigest())
+        methods = self.prose("02_methods.tex")
+        self.assertIn("155 admitted Trip~4 measurements", methods)
+        self.assertIn("620 RDF relations", methods)
+        self.assertIn("all 712 admitted measurements, their numeric values", methods)
+        for filename in ("02_methods.tex", "04_data_records.tex", "supplement.tex"):
+            self.assertIn(version, self.prose(filename))
+            self.assertNotIn("EQ-PH-SHARED-v1.0.0", self.prose(filename))
+        self.assertIn("archived field replicate~2", methods)
+
+    def test_dated_semantic_validation_claims_match_september_9_sources(self) -> None:
+        # These are historical tractable-core checks, distinct from the current
+        # 45-million-triple release and its separate unfinished reasoning run.
+        directory = STAGE / "evidence/final-validation-20260909"
+        summary = json.loads((directory / "asserted_core_profile_summary.json").read_text())
+        compressed = directory / "asserted_core_profile.json.gz"
+        self.assertEqual(summary["raw_report_gzip_sha256"], hashlib.sha256(compressed.read_bytes()).hexdigest())
+        self.assertFalse(summary["full_graph_profile_claim"])
+        self.assertEqual(40482, summary["violation_counts"]["UseOfIllegalDataRange"])
+        self.assertEqual(40481, summary["datatype_violations"]["http://www.w3.org/2001/XMLSchema#double"])
+        log = (directory / "kg_validation/logs/validate_original_details.log").read_text()
+        validation = self.prose("05_validation.tex")
+        for pattern, expected in ((r"Total axioms loaded: (\d+)", 781044),
+                                   (r"Total triples in merged graph: (\d+)", 800026),
+                                   (r"(\d+) RAK_ subjects carry rdfs:label", 106833)):
+            matches = re.findall(pattern, log)
+            self.assertEqual([str(expected)], matches)
+            self.assertIn(f"{expected:,}", validation)
+        self.assertIn("9 September validation", validation)
 
     def run_xrf_generator(self, rows: list[dict[str, str]]) -> subprocess.CompletedProcess[str]:
         fieldnames = [

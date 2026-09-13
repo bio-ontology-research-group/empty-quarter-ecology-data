@@ -1,0 +1,69 @@
+{
+  "scope": "Asserted tractable core modules only; imports deliberately not loaded; full taxonomy ABox excluded.",
+  "full_graph_profile_claim": false,
+  "imported_declaration_caveat": "Undeclared-entity violations can reflect the excluded import declarations; structural unsupported axioms are reported separately by type.",
+  "modules": [
+    {
+      "file": "rubalkhali.owl",
+      "axioms": 1199
+    },
+    {
+      "file": "rubalkhali_controls.owl",
+      "axioms": 3549
+    },
+    {
+      "file": "rubalkhali_dna.owl",
+      "axioms": 40166
+    },
+    {
+      "file": "rubalkhali_measurements.owl",
+      "axioms": 274554
+    },
+    {
+      "file": "rubalkhali_ph_eq_ph_shared_v1_0_0.owl",
+      "axioms": 18045
+    },
+    {
+      "file": "rubalkhali_qc.owl",
+      "axioms": 77580
+    },
+    {
+      "file": "rubalkhali_samples.owl",
+      "axioms": 27982
+    },
+    {
+      "file": "rubalkhali_sites.owl",
+      "axioms": 515
+    },
+    {
+      "file": "rubalkhali_sra.owl",
+      "axioms": 39733
+    },
+    {
+      "file": "rubalkhali_xrf.owl",
+      "axioms": 265009
+    }
+  ],
+  "merged_axioms": 743462,
+  "in_owl2_el_profile": false,
+  "violation_counts": {
+    "IllegalPunning": 318742,
+    "UseOfIllegalDataRange": 40482,
+    "UseOfUndeclaredAnnotationProperty": 12555,
+    "UseOfUndeclaredClass": 2852
+  },
+  "datatype_violations": {
+    "http://www.w3.org/2001/XMLSchema#double": 40481,
+    "<http://www.opengis.net/ont/geosparql#wktLiteral>": 1
+  },
+  "intrinsic_profile_witnesses": [
+    "Use of data range not in profile: http://www.w3.org/2001/XMLSchema#double [DataPropertyAssertion(<https://rubalkhali.science/kb/RAK_2000015> <https://rubalkhali.science/kb/RAK_4900775> \"0.03035258267\"^^xsd:double) in OntologyID(Anonymous-0)]",
+    "Use of data range not in profile: http://www.w3.org/2001/XMLSchema#double [DataPropertyAssertion(<https://rubalkhali.science/kb/RAK_2000078> <https://rubalkhali.science/kb/RAK_4453227> \"88.04217865425892\"^^xsd:double) in OntologyID(Anonymous-0)]",
+    "Use of data range not in profile: http://www.w3.org/2001/XMLSchema#double [DataPropertyAssertion(<https://rubalkhali.science/kb/RAK_2000012> <https://rubalkhali.science/kb/RAK_4315226> \"0.82\"^^xsd:double) in OntologyID(Anonymous-0)]",
+    "Use of data range not in profile: http://www.w3.org/2001/XMLSchema#double [DataPropertyAssertion(<https://rubalkhali.science/kb/RAK_2000012> <https://rubalkhali.science/kb/RAK_4316681> \"0.96\"^^xsd:double) in OntologyID(Anonymous-0)]",
+    "Use of data range not in profile: http://www.w3.org/2001/XMLSchema#double [DataPropertyAssertion(<https://rubalkhali.science/kb/RAK_2000015> <https://rubalkhali.science/kb/RAK_4900816> \"0.006393374959\"^^xsd:double) in OntologyID(Anonymous-0)]"
+  ],
+  "profile_reference": "https://www.w3.org/TR/owl2-profiles/#Entities",
+  "interpretation": "The xsd:double assertions are intrinsic OWL2EL datatype violations. Missing imported declarations can affect other diagnostic categories, but cannot make those datatypes legal in OWL2EL.",
+  "raw_report_gzip_sha256": "7b34e955d1cbf4fc5a39cf9f67ab29739ab80df0a03fb06d66d9efdc8f6657a2"
+}
