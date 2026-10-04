@@ -1,0 +1,52 @@
+{
+  "analysis_date": "2026-08-04",
+  "created_utc": "2026-10-04T10:05:47+00:00",
+  "estimand": "Trip 1 rain during four complete calendar days before collection",
+  "output": {
+    "n_records": 300,
+    "path": "analysis/v3/rain_event_product_exposures_site52_corrected_20261004/rain_event_product_exposures.tsv",
+    "sha256": "2f0fb55d73335e7a7557b896805e8c23ca04d41b5e44a86e046de8044f22dcf3"
+  },
+  "products": {
+    "CHIRPS_v2.0": {
+      "resolution": "0.05 degree",
+      "source": "https://www.chc.ucsb.edu/data/chirps",
+      "units": "mm day-1",
+      "version": "CHIRPS v2.0 final daily"
+    },
+    "CMORPH_V1.0_ADJ": {
+      "resolution": "0.25 degree",
+      "source": "https://doi.org/10.25921/w9va-q159",
+      "units": "mm day-1",
+      "version": "CMORPH V1.0 bias-adjusted daily"
+    },
+    "GPM_3IMERGDF_07B": {
+      "resolution": "0.1 degree",
+      "source": "https://doi.org/10.5067/GPM/IMERGDF/DAY/07",
+      "units": "mm day-1",
+      "version": "GPM IMERG Final daily V07B"
+    },
+    "NASA_POWER_PRECTOTCORR": {
+      "resolution": "product grid returned by the point API",
+      "source": "https://power.larc.nasa.gov/",
+      "units": "mm day-1",
+      "version": "NASA POWER daily point API snapshot"
+    },
+    "Open_Meteo_precipitation_sum": {
+      "resolution": "site-specific API response",
+      "source": "https://open-meteo.com/",
+      "units": "mm day-1",
+      "version": "Open-Meteo historical API canonical snapshot"
+    }
+  },
+  "sampling_day_included": false,
+  "schema_version": "1.0",
+  "source_ledger": {
+    "n_records": 23,
+    "path": "analysis/v3/rain_event_product_exposures_site52_corrected_20261004/rain_event_product_sources.tsv",
+    "sha256": "de6a3fc21daf1e369cb18cfbcb134433c699f98128fa4765fa4c76fb64d9dea4"
+  },
+  "spatial_extraction": "nearest product grid cell",
+  "window_end_complete_days": 4,
+  "window_start_complete_days": 1
+}

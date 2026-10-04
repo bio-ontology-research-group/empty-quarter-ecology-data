@@ -67,8 +67,8 @@ identifier and mapping validation, followed by regeneration of the
 affected modules and query results. The repository changelog records
 source corrections and superseded artifacts.
 
-KG v3.0.0 serves the asserted graph at
-\url{https://rubalkhali.science/graph/asserted/3.0.0}.
+KG v3.0.1 serves the asserted graph at
+\url{https://rubalkhali.science/graph/asserted/3.0.1}.
 This graph is the default dataset for portal and SPARQL queries.
 Explicit \texttt{FROM}, \texttt{FROM NAMED} and SPARQL protocol
 dataset parameters select the dataset for an individual request.
@@ -84,7 +84,12 @@ For reproduction, retain the source package, module manifest,
 loader provenance and checksums together. The release instructions
 specify the pinned generation environment and coordinate-preserving
 import adapter. The asserted N-Quads provides the released union;
-the source package regenerates all 16 original module hashes.
+the v3.0.1 rebuild kit verifies and loads the 16 distributed modules.
+Fifteen scientific and reference modules have identical hashes to v3.0.0;
+the updated terminology module supplies definitions and release metadata.
+The separately archived v3.0.0 scientific-source replay documents generation
+of those unchanged modules. Rebuilding the v3.0.1 terminology additionally
+uses the reviewed definitions and ontology builder supplied in the kit.
 Local module loading provides access to fixed inputs independently
 of the portal's deployed version. Analyses requiring additional OWL
 consequences need a reasoner and validation workload suited to those
@@ -94,16 +99,23 @@ constructs.
 
 The project uses ENA umbrella study \texttt{PRJEB104209}; its submitted
 amplicon run records are associated with \texttt{PRJEB106069}. On
-10~September 2026, the anonymous ENA read-run file report for
+4~October 2026, the anonymous ENA read-run file report for
 \texttt{PRJEB106069} returned no public run/file rows. Release of the
 raw reads or a complete anonymous reviewer download remains required.
 The source and derived-data package is maintained at
 \url{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data}.
 Its manifests distinguish included files, separately retrieved bulk
-payloads and unresolved release gates. KG v3.0.0 and its source package
-are available through the versioned website downloads. The broader
-dataset's archival accession, sequence access and project-data licence
-remain separate publication requirements.
+payloads and unresolved upstream provenance. KG v3.0.1, its original modules
+and rebuild kit are archived at
+\url{https://doi.org/10.5281/zenodo.23134168} \cite{rubalkhali_kg301}.
+Project-authored RDF, ontology terms, definitions and dataset metadata in
+this release are licensed under CC BY 4.0. Imported vocabularies retain
+their respective licences, listed in the release's third-party attribution
+file; project software is MIT-licensed. Raw reads and other separately
+licensed materials retain their own access and licensing conditions.
+The broader analytical tables and source ledgers are versioned in the
+reproducibility repository; the KG deposit contains the files enumerated
+in its manifest.
 
 \section{Code availability}\label{code}
 

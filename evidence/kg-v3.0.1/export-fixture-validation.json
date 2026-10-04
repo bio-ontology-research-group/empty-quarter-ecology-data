@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "triples": 6,
+  "graph": "urn:eq:release-test:export",
+  "binary64_preserved": true,
+  "blank_nodes_unicode_language_preserved": true,
+  "wkt_datatype_preserved": true,
+  "lexical_canonicalization": "Native storage serializes double values and WKT in its own lexical form; original source modules are also distributed unchanged."
+}

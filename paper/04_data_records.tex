@@ -8,12 +8,15 @@ categories and release/licence status. Separately retrieved bulk
 payloads are listed in the bulk manifest. Data Availability reports
 the current access routes and outstanding sequence-release gate.
 
-KG v3.0.0 contains 45,706,977 asserted triples from 16 manifested
-modules. The website distributes three versioned artifacts: the
-scientific source package, the original RDF modules and the
-deduplicated asserted graph in compressed N-Quads format.
-The \href{https://rubalkhali.science/downloads/kg/3.0.0/manifest.json}{release manifest}
-identifies their contents, sizes and checksums.
+KG v3.0.1 contains 45,707,660 asserted triples from 16 manifested
+modules and is archived at Zenodo \cite{rubalkhali_kg301}.
+The release distributes the original RDF modules, the deduplicated
+asserted graph in compressed N-Quads format, and a rebuild kit containing
+load/export code, definition provenance and validation evidence.
+The \href{https://bio2vec.net/data/empty-quarter/kg/3.0.1/manifest.json}{release manifest}
+identifies their contents, sizes and checksums. The kit reconstructs the
+asserted union from the distributed modules. Scientific producer code and
+inputs are maintained separately in the reproducibility repository.
 
 \subsection{Knowledge-graph modules}
 
@@ -28,7 +31,7 @@ shared terminology and linked site, specimen or process modules.
 
 \begin{table}[h]
 \centering
-\caption{The 16 RDF modules included in KG v3.0.0.}
+\caption{The 16 RDF modules included in KG v3.0.1.}
 \label{tab:modules}
 \small
 \begin{tabular}{p{0.38\textwidth} p{0.54\textwidth}}
@@ -57,7 +60,7 @@ shared terminology and linked site, specimen or process modules.
 
 \subsection{Tabular data products}
 
-Alongside the graph, the deposit distributes the curated tabular data
+Alongside the graph, the reproducibility repository distributes the curated tabular data
 products from which the modules are generated: the versioned source
 ledger linking site and trip to specimen, extraction, library,
 sequence run, quality-control decision and derived community; the
@@ -71,9 +74,8 @@ the audited chemical-mapping ledger; and the versioned archived-soil
 pH dataset \texttt{EQ-PH-SHARED-v1.0.1}. The canonical feature table
 holds 1,271 profiles, of which the ecological analysis retains 1,237
 (1,227 profiles from the primary frame of sites~1--60); the 34 excluded
-profiles are the 24 controls, nine biological profiles
-below the declared 1,000-read ecological threshold and one additional
-\texttt{T1Dr1} run with 934 reads. The four derived
+profiles are the 24 controls and ten biological profiles with fewer than
+1,000 reads, including one \texttt{T1Dr1} run with 934 reads. The four derived
 companion-analysis inputs are distributed as records for downstream
 statistical re-execution: the paired PMA
 table (\path{metadata/relic-dna/PMA_ASV_table.tsv}; 18 analytical
@@ -90,7 +92,7 @@ needed for end-to-end reproduction.
 
 \subsection{Validation schemas, queries and evidence}
 
-The deposit includes the artifacts needed to re-validate the resource:
+The reproducibility repository includes the artifacts needed to re-validate the resource:
 the ShEx shapes that define the structural contract for each entity
 family, the positive and negative structural fixtures, the archived
 competency SPARQL queries, and the machine-readable evidence bundles
@@ -109,5 +111,6 @@ are in nanograms per microlitre. XRF values are instrument-reported magnitudes w
 concentration units.
 
 The manifests and data dictionary provide the versioned file-level
-inventory. The final archival dataset citation remains a release gate
-(Section~\ref{data_availability}).
+inventory. The KG citation identifies the immutable v3.0.1 deposit
+(Section~\ref{data_availability}); the repository manifests additionally
+cover the broader analytical inputs.

@@ -1,8 +1,8 @@
 {
   "bibliography": "paper/sn-bibliography.bib",
-  "bibliography_entries": 96,
-  "bibliography_sha256": "2191012e7ab4a39bbc80bafc73bfcfb2ee39104ec00480c0620619ed0c7ba7b4",
-  "cited_keys": 40,
+  "bibliography_entries": 97,
+  "bibliography_sha256": "33d25841e1b0239db7ca18bdcb60338b2f922d30f9b90e2e070553a75d7a3963",
+  "cited_keys": 41,
   "keys_missing_from_bibliography": [],
   "keys_without_local_copy": [
     "ampliseq",
@@ -496,6 +496,23 @@
       "key": "yasir2015saudi",
       "local_copies": [],
       "title": "Composition of soil microbiome along elevation gradients in southwestern highlands of {Saudi Arabia}"
+    },
+    {
+      "key": "rubalkhali_kg301",
+      "doi": "10.5281/zenodo.23134168",
+      "title": "The microbial diversity of Rub' al-Khali (Empty Quarter)",
+      "in_bibliography": true,
+      "cited_in": [
+        "04_data_records.tex",
+        "06_usage.tex"
+      ],
+      "custody": "public_release_metadata_verified",
+      "local_copies": [
+        {
+          "path": "evidence/kg-v3.0.1/zenodo-record.json",
+          "sha256": "38632ae3821c97b7274f6d5de304f1a568bb1fa402805175ced39c8f1ba143e1"
+        }
+      ]
     }
   ]
 }

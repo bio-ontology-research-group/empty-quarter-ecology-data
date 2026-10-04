@@ -1,0 +1,16 @@
+{
+  "url": "https://archive-api.open-meteo.com/v1/archive?latitude=20.839677083333335&longitude=53.66811722222222&start_date=2022-01-01&end_date=2026-02-01&daily=temperature_2m_mean%2Crain_sum%2Cprecipitation_sum&timezone=auto",
+  "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+  "latitude": 20.839677083333335,
+  "longitude": 53.66811722222222,
+  "start_date": "2022-01-01",
+  "end_date": "2026-02-01",
+  "daily": [
+    "temperature_2m_mean",
+    "rain_sum",
+    "precipitation_sum"
+  ],
+  "timezone": "auto",
+  "retrieved_at_utc": "2026-10-04T09:39:48+00:00",
+  "response_sha256": "29083240884e77c64f0cca110ea33a382911dcfd76073413802d0274a469fab8"
+}

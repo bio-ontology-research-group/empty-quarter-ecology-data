@@ -1,0 +1,71 @@
+{
+  "version": "3.0.1",
+  "release_mode": "asserted-only",
+  "released_at": "2026-10-04",
+  "version_iri": "https://rubalkhali.science/kb/v3.0.1/",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "license_scope": "Project-authored RDF, ontology terms and metadata; imported content retains source licences.",
+  "third_party_licenses": "https://bio2vec.net/data/empty-quarter/kg/3.0.1/THIRD_PARTY_ATTRIBUTIONS.json",
+  "files": [
+    {
+      "name": "rubalkhali-kg-3.0.1-asserted.nq.gz",
+      "url": "https://bio2vec.net/data/empty-quarter/kg/3.0.1/rubalkhali-kg-3.0.1-asserted.nq.gz",
+      "bytes": 336826681,
+      "sha256": "6f6b3ccd877863f4154d1ee3f2936905964ed1c1d35136fe791e6ea4eef4f271",
+      "uncompressed_sha256": "935b01d0180d6b7c4f31ae6881cae84342b55c0e0db47bff3d13fc70def73d91",
+      "triples": 45707660,
+      "graph": "https://rubalkhali.science/graph/asserted/3.0.1",
+      "kind": "asserted",
+      "media_type": "application/gzip",
+      "description": "Rebuilt deduplicated asserted union of the sixteen checksum-listed KG 3.0.1 inputs; no inferred triples."
+    },
+    {
+      "name": "rubalkhali-kg-3.0.1-kit.tar.gz",
+      "url": "https://bio2vec.net/data/empty-quarter/kg/3.0.1/rubalkhali-kg-3.0.1-kit.tar.gz",
+      "bytes": 63863,
+      "sha256": "66d3339f2cd946b7f75a666b740a96566025ae8b4b6c1d626819b310778cc548",
+      "kind": "source",
+      "media_type": "application/gzip",
+      "description": "Rebuild code, reviewed definition provenance and validation evidence."
+    },
+    {
+      "name": "rubalkhali-kg-3.0.1-modules.tar.gz",
+      "url": "https://bio2vec.net/data/empty-quarter/kg/3.0.1/rubalkhali-kg-3.0.1-modules.tar.gz",
+      "bytes": 372552476,
+      "sha256": "ae468695d013b2345465c27d09061a6e16c9431bccf1881af74618f6539d906c",
+      "kind": "modules",
+      "media_type": "application/gzip",
+      "description": "Sixteen RDF modules, checksum manifest and scoped licence notices."
+    },
+    {
+      "name": "rubalkhali.owl",
+      "url": "https://bio2vec.net/data/empty-quarter/kg/3.0.1/ontology/rubalkhali.owl",
+      "bytes": 251437,
+      "sha256": "188d43d86d3cf236298ac11eb1d763998165531e368d612d1f44924d2ee1ed71",
+      "kind": "ontology",
+      "media_type": "application/rdf+xml",
+      "description": "OWL TBox with 342 English term definitions; reference ontology imports are separately licensed."
+    }
+  ],
+  "graphs": {
+    "asserted": "https://rubalkhali.science/graph/asserted/3.0.1"
+  },
+  "counts": {
+    "asserted": 45707660
+  },
+  "default_graph": "https://rubalkhali.science/graph/asserted/3.0.1",
+  "available_modes": [
+    "asserted"
+  ],
+  "query_time_inference": false,
+  "input_manifest_url": "https://bio2vec.net/data/empty-quarter/kg/3.0.1/input-modules-manifest.json",
+  "input_manifest_sha256": "1b9ff254a044679b8e67bdd86103fac3b2609f1d7e3070a22d4173b4edf990a1",
+  "source_repository": "https://github.com/bio-ontology-research-group/empty-quarter-data-paper",
+  "previous_release": "https://bio2vec.net/data/empty-quarter/kg/3.0.0/manifest.json",
+  "changes": [
+    "CC BY 4.0 for project-authored RDF, terms and dataset metadata; imported licences preserved",
+    "342 Sonnet-drafted and Codex-reviewed definitions",
+    "Resolvable ontology documents, imports and dataset discovery metadata"
+  ],
+  "definition_provenance": "https://bio2vec.net/data/empty-quarter/kg/3.0.1/definition-provenance.json"
+}

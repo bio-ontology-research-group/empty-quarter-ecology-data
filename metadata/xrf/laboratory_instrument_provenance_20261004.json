@@ -1,0 +1,8 @@
+{
+  "instrument_family": "Vanta handheld XRF analyser",
+  "evidence_type": "coauthor_manuscript_report",
+  "source": "Ecology Overleaf project 6a7422eef2624277cf100b3b, main.tex XRF methods and supplement.tex XRF workflow description",
+  "source_commit": "7e745a8fcf12095bc25b325b2fa96af88aac83ea",
+  "limitation": "The original laboratory exports do not establish an exact model variant or serial number. No independent instrument identification is claimed.",
+  "fast_mode": "Project-owner confirmation of 9 September 2026 covers all laboratory campaigns; see acquisition_confirmation_20260909.json."
+}

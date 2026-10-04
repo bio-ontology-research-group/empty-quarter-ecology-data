@@ -1,25 +1,21 @@
 # Reproducing the data descriptor
 
-For the deployed **KG v3.0.0**, follow
-[the release guide](docs/KG_V3_0_0_RELEASE.md). Its immutable source archive
-contains the frozen inputs and pinned runtime for all 16 module hashes.
-The sections below describe the broader manuscript/analytical workflow,
-including separately restricted bulk inputs.
+KG v3.0.1 is publicly archived at https://doi.org/10.5281/zenodo.23134168.
+Its sixteen modules, asserted export and rebuild kit have a checksum-pinned
+reproduction path described in [the release guide](docs/KG_V3_0_1_RELEASE.md).
 
-This repository identifies every manuscript input, generator, environment and
-validation rule needed to reproduce the submitted data descriptor. Small and
-medium inputs are committed directly. Files that exceed normal Git limits are
-listed in `BULK_ARTIFACTS.tsv` with their uncompressed byte count and SHA-256.
-
-The broader dataset remains a pre-release candidate with pending archival and
-raw-read access requirements. The reported tables,
-knowledge-graph modules and manuscript can nevertheless be reproduced from the
-frozen derived inputs. Rebuilding those inputs from raw sequencing reads remains
-blocked until the run records named in the manuscript become publicly usable.
+The broader analytical repository contains scientific producer inputs and
+historical acquisition tables. Current companion-analysis climate packages
+are selected by `metadata/climate/current_analysis_inputs.json` and match the
+ecology repository's corrected inputs. Frozen KG observations retain their
+published module hashes. Small and medium files are committed; larger inputs
+are listed with byte counts and SHA-256 in `BULK_ARTIFACTS.tsv`.
+Raw-read-to-table reconstruction still requires public sequencing access and
+complete upstream processing records.
 
 ## 1. Checkout and install the bulk inputs
 
-Authenticate `gh` for the BORG private repository, then run:
+The GitHub repository and release assets are public. Using `gh`, run:
 
 ```bash
 git clone git@github.com:bio-ontology-research-group/empty-quarter-ecology-data.git
@@ -29,7 +25,7 @@ bash scripts/release/bootstrap_package_layout.sh .
 python3 scripts/release/verify_repository.py .
 ```
 
-The downloader uses the pinned private pre-release `v0.6.0-rc32`, expands the
+The downloader uses the pinned pre-release `v0.6.0-rc32`, expands the
 compressed tables, sequence file and ontology snapshots, and verifies every
 installed byte stream. It never accepts an existing file with the wrong size
 or digest.
@@ -89,7 +85,11 @@ package, and workflow-wiring checks
 that do not generate a KG. The complete generator and semantic-validation suite
 runs on `ws` or Ontolinator in the next step.
 
-## 4. Rebuild the data and knowledge graph remotely
+## 4. Rebuild the broader scientific workflow remotely
+
+For the exact published v3.0.1 asserted union, use its release kit above.
+The producer workflow below covers the broader scientific sources and retains
+its own historical output manifests.
 
 Every real knowledge-graph build must run on `ws` or Ontolinator, not on a local
 workstation. Clone the exact repository revision on the selected host, install
@@ -153,6 +153,6 @@ The package supports:
 - recreation of the manuscript figure and tables; and
 - clean builds of the data descriptor and supplement.
 
-It does not yet support an unauthenticated public download or reconstruction of
-the canonical amplicon, shotgun and PMA inputs from raw reads. Those are release
+Public module and analytical release downloads are available. Reconstruction of
+the canonical amplicon, shotgun and PMA inputs from raw reads remains incomplete. Those are release
 and accession gates, not silently filled provenance steps.

@@ -13,11 +13,12 @@ The Scientific Data submission is built only from these roots:
 section: Scientific Data prescribes a fixed section set, so the knowledge
 representation is folded into Methods and the six patterns that are not
 reproduced in the main text live in `kr_supplement.tex`.
-Author Contributions, Funding, Acknowledgements and Competing Interests are
-not present as sections and no placeholder text is written for them. They are
-author-controlled gates, tracked in `revision/master_revision_ledger.tsv` and
-in the readiness report, and are inserted by the corresponding author before
-submission.
+Funding and Competing Interests contain the current author-confirmed statements.
+Author Contributions and Acknowledgements remain author-controlled items.
+The current Overleaf project is `6a741d888df17653bc201f8a`; the old
+`6923feb98c08b3a931f0b384` project explicitly marks itself replaced.
+The manuscript describes the immutable KG v3.0.1 release and distinguishes
+its evidence from historical v3.0.0 validation.
 
 Both documents use `sn-bibliography.bib`, `sn-jnl.cls`, and
 `sn-mathphys-num.bst`. The article also includes `sample_coverage_table.tex`,

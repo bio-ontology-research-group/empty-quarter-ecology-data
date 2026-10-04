@@ -1,0 +1,382 @@
+diff --git a/paper/02_methods.tex b/paper/02_methods.tex
+index db1f501..a4d0ba0 100644
+--- a/paper/02_methods.tex
++++ b/paper/02_methods.tex
+@@ -78,7 +78,7 @@ ledger and excluded from the curated measurements.
+ 
+ The sampling design targeted three soil
+ compartments: bulk surface soil, bulk subsurface soil
+-(5--10 cm depth, hereafter ``deep''), and subsurface soil collected
++(nominal 5--10 cm depth, hereafter ``deep''), and subsurface soil collected
+ near roots (5--10 cm depth, hereafter ``root-adjacent''). 
+ The legacy class label Deep Soil Sample denotes the 5--10~cm
+ bulk compartment, called shallow-subsurface in the companion
+@@ -87,8 +87,8 @@ co-located field replicates per compartment using sterile tubes and
+ sterile plastic spoons. From Trip~2 onwards, three adjacent tubes
+ were taped or chained together for collection, so adjacent sampling
+ positions were separated by one external tube diameter. Trip~5
+-used larger tubes. Exact tube diameters, surface sampling depth
+-and distance from roots were unrecorded. These co-located
++used larger tubes. Exact tube diameters, surface sampling depth, individual bulk subsurface
++depths and distance from roots were unrecorded. These co-located
+ replicates share a site and compartment.
+ We preserved samples at $-20$\degree C in the field
+ using an Engel MR040F portable freezer. At the end of each campaign,
+@@ -108,7 +108,8 @@ All catalogue sites are included; plant and control rows are excluded.
+ Columns count source rows eligible for specimen representation,
+ expected by the extract generator, linked to at least one run,
+ present in the ASV table and retained in the ecological analysis.
+-Repeated sequencing profiles can share one source-specimen row.}
++Counts apply to source rows with a profile link; sequencing-profile totals
++are reported separately, and repeated profiles can share a specimen row.}
+ \label{tab:sample_coverage}
+ \small
+ \setlength{\tabcolsep}{3pt}
+@@ -375,8 +376,11 @@ annotation table \cite{eggnog}
+ concatenated predicted proteome,
+ run on the KAUST Ibex cluster on 14 June 2026, from which a
+ 990-genome by KEGG Orthology copy-number matrix is built for the
+-genomes present in both inputs. These files supply the genome-derived side of the companion
+-encoded-function comparison.
++genomes present in both inputs. The full catalogue contains 991 genomes. The companion comparison uses
++125 libraries with matched amplicon profiles for whole-profile KO agreement;
++its marker-gene analysis uses 975 genomes and 119 matched libraries under
++the marker-specific annotation and abundance requirements. These files
++supply the genome-derived side of the companion encoded-function comparison.
+ 
+ \subsection{PMA-treated aliquots}
+ 
+@@ -419,6 +423,25 @@ retrieval timestamps and the historical model/product version remain
+ unavailable. Re-execution from these frozen tables preserves the
+ reported inputs; a new API request is a new acquisition.
+ 
++The rainfall analyses in the companion ecology paper use the Site~52
++position $20.82784^\circ$ N, $53.57835^\circ$ E and a daily Open-Meteo
++series acquired there on 4~October 2026. The versioned replacement package
++under \path{metadata/climate/open_meteo_site52_corrected_20261004/}
++retains the request, response and source checksums; daily values for all
++other sites are unchanged. The corresponding five-product Trip~1 exposure
++package uses the corrected grid cells for CHIRPS, CMORPH and IMERG and
++identifies the 21 checksum-verified source files.
++\path{metadata/climate/current_analysis_inputs.json} selects these inputs
++for the companion analysis. The monthly summaries represented in the KG
++retain their frozen acquisition provenance.
++
++Daily NASA POWER \texttt{PRECTOTCORR} precipitation for sites~1--60
++(1~January 2022 to 31~December 2025; 87,660 site-days) is distributed
++as a fixed snapshot under
++\path{metadata/climate/nasa_power_daily_precipitation.tsv.gz}.
++Its original API request metadata were not preserved. Sites~51--55
++share one POWER grid cell, including the corrected Site~52 position.
++
+ Field researchers manually classified each site according to its biome (e.g., desert
+ biome) and specific environmental features (e.g., sand dune, saline pan, gravel, desert oasis). We subsequently mapped these
+ classifications to the Environment Ontology (ENVO) \cite{envo}.
+@@ -444,7 +467,9 @@ sheets remain source material. The Trips~1--4 consolidated workbook
+ preserves 28 export columns, while the exact gas and diameter
+ settings remain undocumented. Supplementary Section~S2
+ gives the acquisition audit and source selection.
+-The laboratory analyser model, measurement duration, tube settings,
++The companion laboratory protocol identifies the instrument family as a
++Vanta handheld XRF analyser \cite{ecology_companion}. The laboratory exports
++leave the exact model variant, serial number, measurement duration, tube settings,
+ sample preparation, concentration units and calibration records
+ remain incomplete. The concentration columns carry no unit
+ declaration. Percent formats occur in statistical-error columns,
+@@ -475,6 +500,9 @@ Technical Validation reports the observed correlations.
+ The frozen pH dataset is \texttt{EQ-PH-SHARED-v1.0.1}, with its
+ source manifest and admission ledger distributed under \path{metadata/ph/} and
+ \path{metadata/samples/ph/versions/EQ-PH-SHARED-v1.0.1/manifest.json}.
++Its measurement workbook is byte-identical to EQ-PH-SHARED-v1.0.0,
++whose values were used in the companion ecology analysis; v1.0.1 records
++the confirmed Trip~4 replicate-2 specimen identities.
+ We measured archived dry soil after sieving below 2~mm. Each assay used an independent 1~g scoop suspended in 2.5~mL 0.01~M CaCl$_2$. Suspensions were mixed on a HulaMixer for 30~min and stood for 30~min at room temperature. We used an accumet AB315 meter with a Fisher Scientific accumet electrode (catalogue no.\ 13-620-112), and recorded the reading when the meter displayed its green stability indicator. The electrode was calibrated each morning at two points (pH 7 and 10), and we recorded the electrode slope and pH-10 buffer read-back for every session. Between samples, the electrode was rinsed along its full length with Milli-Q water, immersed in a separate container of Milli-Q water and dried by gently tapping with Kimwipes. A measurement was admitted only if its session was calibrated, the electrode slope was between 95\% and 102\%, and the read-back was within 0.1 pH units of nominal.
+ 
+ Admission additionally requires a numeric pH between 0 and 14 and an
+diff --git a/paper/03_knowledge_representation.tex b/paper/03_knowledge_representation.tex
+index dc656c9..b622ca3 100644
+--- a/paper/03_knowledge_representation.tex
++++ b/paper/03_knowledge_representation.tex
+@@ -8,7 +8,14 @@ these modules (Table~\ref{tab:modules}). SIO supplies the upper-level
+ classes and relations \cite{sio}. The terminology declares 333
+ classes (297 project classes and 36 referenced classes), 20 object
+ properties and 35 datatype properties. These counts apply to
+-declarations in the terminology module.
++declarations in the terminology module. KG v3.0.1 supplies reviewed English
++definitions for all 342 project terms, recorded as SKOS and IAO definition
++annotations. Claude Sonnet (model identifier \texttt{claude-sonnet-5-5})
++drafted the definitions from term labels, axioms and dataset context;
++OpenAI Codex performed automated review and editing. The release preserves the existing term axioms and identifies
++four reference ontologies as imports; observation modules are linked as
++dataset parts. Definition drafts, model provenance and review dispositions
++are distributed with the release.
+ 
+ \subsubsection{Measurement and provenance}
+ 
+@@ -112,7 +119,7 @@ The modular organization separates domain data from shared terminology
+ \cite{cuencagrau2008modular}. OpenLink Virtuoso \cite{virtuoso}
+ provides RDF storage and SPARQL query execution.
+ 
+-KG v3.0.0 serves the asserted union. A separate reasoning workflow
++KG v3.0.1 serves the asserted union. A separate reasoning workflow
+ uses the bundled rule program, v1.5.0, to compute consequences of a
+ specified set of positive RDF rules. These rules expand equivalent
+ classes and properties, subclass and subproperty hierarchies,
+diff --git a/paper/04_data_records.tex b/paper/04_data_records.tex
+index 5ffac34..066e52d 100644
+--- a/paper/04_data_records.tex
++++ b/paper/04_data_records.tex
+@@ -8,12 +8,15 @@ categories and release/licence status. Separately retrieved bulk
+ payloads are listed in the bulk manifest. Data Availability reports
+ the current access routes and outstanding sequence-release gate.
+ 
+-KG v3.0.0 contains 45,706,977 asserted triples from 16 manifested
+-modules. The website distributes three versioned artifacts: the
+-scientific source package, the original RDF modules and the
+-deduplicated asserted graph in compressed N-Quads format.
+-The \href{https://rubalkhali.science/downloads/kg/3.0.0/manifest.json}{release manifest}
+-identifies their contents, sizes and checksums.
++KG v3.0.1 contains 45,707,660 asserted triples from 16 manifested
++modules and is archived at Zenodo \cite{rubalkhali_kg301}.
++The release distributes the original RDF modules, the deduplicated
++asserted graph in compressed N-Quads format, and a rebuild kit containing
++load/export code, definition provenance and validation evidence.
++The \href{https://bio2vec.net/data/empty-quarter/kg/3.0.1/manifest.json}{release manifest}
++identifies their contents, sizes and checksums. The kit reconstructs the
++asserted union from the distributed modules. Scientific producer code and
++inputs are maintained separately in the reproducibility repository.
+ 
+ \subsection{Knowledge-graph modules}
+ 
+@@ -28,7 +31,7 @@ shared terminology and linked site, specimen or process modules.
+ 
+ \begin{table}[h]
+ \centering
+-\caption{The 16 RDF modules included in KG v3.0.0.}
++\caption{The 16 RDF modules included in KG v3.0.1.}
+ \label{tab:modules}
+ \small
+ \begin{tabular}{p{0.38\textwidth} p{0.54\textwidth}}
+@@ -57,7 +60,7 @@ shared terminology and linked site, specimen or process modules.
+ 
+ \subsection{Tabular data products}
+ 
+-Alongside the graph, the deposit distributes the curated tabular data
++Alongside the graph, the reproducibility repository distributes the curated tabular data
+ products from which the modules are generated: the versioned source
+ ledger linking site and trip to specimen, extraction, library,
+ sequence run, quality-control decision and derived community; the
+@@ -71,9 +74,8 @@ the audited chemical-mapping ledger; and the versioned archived-soil
+ pH dataset \texttt{EQ-PH-SHARED-v1.0.1}. The canonical feature table
+ holds 1,271 profiles, of which the ecological analysis retains 1,237
+ (1,227 profiles from the primary frame of sites~1--60); the 34 excluded
+-profiles are the 24 controls, nine biological profiles
+-below the declared 1,000-read ecological threshold and one additional
+-\texttt{T1Dr1} run with 934 reads. The four derived
++profiles are the 24 controls and ten biological profiles with fewer than
++1,000 reads, including one \texttt{T1Dr1} run with 934 reads. The four derived
+ companion-analysis inputs are distributed as records for downstream
+ statistical re-execution: the paired PMA
+ table (\path{metadata/relic-dna/PMA_ASV_table.tsv}; 18 analytical
+@@ -90,7 +92,7 @@ needed for end-to-end reproduction.
+ 
+ \subsection{Validation schemas, queries and evidence}
+ 
+-The deposit includes the artifacts needed to re-validate the resource:
++The reproducibility repository includes the artifacts needed to re-validate the resource:
+ the ShEx shapes that define the structural contract for each entity
+ family, the positive and negative structural fixtures, the archived
+ competency SPARQL queries, and the machine-readable evidence bundles
+@@ -109,5 +111,6 @@ are in nanograms per microlitre. XRF values are instrument-reported magnitudes w
+ concentration units.
+ 
+ The manifests and data dictionary provide the versioned file-level
+-inventory. The final archival dataset citation remains a release gate
+-(Section~\ref{data_availability}).
++inventory. The KG citation identifies the immutable v3.0.1 deposit
++(Section~\ref{data_availability}); the repository manifests additionally
++cover the broader analytical inputs.
+diff --git a/paper/05_validation.tex b/paper/05_validation.tex
+index 2551c79..cbafcf0 100644
+--- a/paper/05_validation.tex
++++ b/paper/05_validation.tex
+@@ -15,7 +15,7 @@ screen. A library-order test compared nearby library numbers with
+ different-site pairs matched by geographic-distance decile and
+ compartment, using 999 library-order permutations. The Trip~1 and
+ Trip~3 Bray--Curtis contrasts were $-0.003$ ($p=0.15$) and
+-$+0.007$ ($p=1.0$), respectively. These contrasts summarize the
++$+0.006$ ($p=0.99$), respectively. These contrasts summarize the
+ tested preparation-order association.
+ 
+ For XRF, the source audit reproduces 13,390 Trips~1--4 and 4,293
+@@ -42,23 +42,36 @@ PCR no-template control roles. The release validator compares full
+ result multisets, preserving duplicate rows and requiring exact
+ identifiers. Numeric comparisons use absolute and relative
+ tolerances of $10^{-12}$; coordinate comparisons use an absolute
+-tolerance of $10^{-10}$ degrees. The 26 checks cover the printed
++tolerance of $10^{-10}$ degrees. The v3.0.0 acceptance suite's 26 checks covered the printed
+ queries across direct and application-mediated transports, default
+ and explicit datasets, and a 20-row taxonomic API result.
+ 
+-Six additional checks verify the advertised asserted-only dataset,
++Six additional checks verified the advertised asserted-only dataset,
+ the rejection of unavailable query modes, the absence of unreleased
+ graphs, the default graph cardinality and all 712 pH
+ process--specimen links against the reconciled source module.
+-Fourteen protocol checks cover dataset selection, read-only access
++Fourteen protocol checks covered dataset selection, read-only access
+ and preservation of RDF terms across the supported graph and
+-SELECT serializations. Browser validation executes all nine portal
+-examples and checks the three versioned download links. Full HTTP
+-downloads verify artifact sizes and checksums; the complete asserted
+-N-Quads export is parsed and checked for its graph context and triple
+-count. All checks passed on the candidate and public service. The
++SELECT serializations. Browser validation executed all nine portal
++examples and checked the three versioned download links. Full HTTP
++downloads verified artifact sizes and checksums; the complete asserted
++N-Quads export was parsed and checked for its graph context and triple
++count. All checks passed on the v3.0.0 candidate and public service. The
+ \href{https://rubalkhali.science/downloads/kg/3.0.0/post-deployment-validation.json}{public validation report}
+-binds these results to the release manifest.
++binds these results to that release manifest.
++
++For v3.0.1, the archived build evidence verifies all 16 input-module
++hashes and parses the complete 45,707,660-quad export, checking every graph
++context. Fifteen scientific and reference modules match v3.0.0 exactly.
++The ontology builder verifies preservation of existing term axioms and
++one definition per annotation property for each of 342 project
++terms. Public checks verify equivalent ontology content in RDF/XML,
++Turtle, JSON-LD and N-Triples, resolution of the four reference imports,
++VoID/DCAT metadata, dataset discovery and download links.
++The versioned manifest, rebuild-kit reports and public-check record are
++retained under \path{evidence/kg-v3.0.1/}. These checks cover the updated
++ontology and asserted export; the dated v3.0.0 query workload remains
++identified by its original graph version.
+ Separate structural tests cover additional module types.
+ 
+ \begin{table}[h]
+@@ -383,7 +396,6 @@ with the modules and support reuse through SIO, ENVO, ChEBI, PATO,
+ UO and validated taxonomic identifiers \cite{fair}.
+ 
+ The public endpoint provides read access to the deployed graph.
+-A fixed archival package additionally requires a versioned deposit,
+-verified payload access, a persistence policy and explicit licences
+-for project data, code and externally sourced material. Data
+-Availability identifies the remaining sequence-release gate.
++The v3.0.1 Zenodo deposit fixes the released graph, module files and
++rebuild kit, with checksums, scoped licences and a version-specific DOI.
++Data Availability identifies the separate sequence-access requirement.
+diff --git a/paper/06_usage.tex b/paper/06_usage.tex
+index 1ee0839..eaba391 100644
+--- a/paper/06_usage.tex
++++ b/paper/06_usage.tex
+@@ -67,8 +67,8 @@ identifier and mapping validation, followed by regeneration of the
+ affected modules and query results. The repository changelog records
+ source corrections and superseded artifacts.
+ 
+-KG v3.0.0 serves the asserted graph at
+-\url{https://rubalkhali.science/graph/asserted/3.0.0}.
++KG v3.0.1 serves the asserted graph at
++\url{https://rubalkhali.science/graph/asserted/3.0.1}.
+ This graph is the default dataset for portal and SPARQL queries.
+ Explicit \texttt{FROM}, \texttt{FROM NAMED} and SPARQL protocol
+ dataset parameters select the dataset for an individual request.
+@@ -84,7 +84,12 @@ For reproduction, retain the source package, module manifest,
+ loader provenance and checksums together. The release instructions
+ specify the pinned generation environment and coordinate-preserving
+ import adapter. The asserted N-Quads provides the released union;
+-the source package regenerates all 16 original module hashes.
++the v3.0.1 rebuild kit verifies and loads the 16 distributed modules.
++Fifteen scientific and reference modules have identical hashes to v3.0.0;
++the updated terminology module supplies definitions and release metadata.
++The separately archived v3.0.0 scientific-source replay documents generation
++of those unchanged modules. Rebuilding the v3.0.1 terminology additionally
++uses the reviewed definitions and ontology builder supplied in the kit.
+ Local module loading provides access to fixed inputs independently
+ of the portal's deployed version. Analyses requiring additional OWL
+ consequences need a reasoner and validation workload suited to those
+@@ -94,16 +99,23 @@ constructs.
+ 
+ The project uses ENA umbrella study \texttt{PRJEB104209}; its submitted
+ amplicon run records are associated with \texttt{PRJEB106069}. On
+-10~September 2026, the anonymous ENA read-run file report for
++4~October 2026, the anonymous ENA read-run file report for
+ \texttt{PRJEB106069} returned no public run/file rows. Release of the
+ raw reads or a complete anonymous reviewer download remains required.
+ The source and derived-data package is maintained at
+ \url{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data}.
+ Its manifests distinguish included files, separately retrieved bulk
+-payloads and unresolved release gates. KG v3.0.0 and its source package
+-are available through the versioned website downloads. The broader
+-dataset's archival accession, sequence access and project-data licence
+-remain separate publication requirements.
++payloads and unresolved upstream provenance. KG v3.0.1, its original modules
++and rebuild kit are archived at
++\url{https://doi.org/10.5281/zenodo.23134168} \cite{rubalkhali_kg301}.
++Project-authored RDF, ontology terms, definitions and dataset metadata in
++this release are licensed under CC BY 4.0. Imported vocabularies retain
++their respective licences, listed in the release's third-party attribution
++file; project software is MIT-licensed. Raw reads and other separately
++licensed materials retain their own access and licensing conditions.
++The broader analytical tables and source ledgers are versioned in the
++reproducibility repository; the KG deposit contains the files enumerated
++in its manifest.
+ 
+ \section{Code availability}\label{code}
+ 
+diff --git a/paper/AUTHORITATIVE_MANUSCRIPT.md b/paper/AUTHORITATIVE_MANUSCRIPT.md
+index 8b4c020..d744d05 100644
+--- a/paper/AUTHORITATIVE_MANUSCRIPT.md
++++ b/paper/AUTHORITATIVE_MANUSCRIPT.md
+@@ -13,11 +13,12 @@ The Scientific Data submission is built only from these roots:
+ section: Scientific Data prescribes a fixed section set, so the knowledge
+ representation is folded into Methods and the six patterns that are not
+ reproduced in the main text live in `kr_supplement.tex`.
+-Author Contributions, Funding, Acknowledgements and Competing Interests are
+-not present as sections and no placeholder text is written for them. They are
+-author-controlled gates, tracked in `revision/master_revision_ledger.tsv` and
+-in the readiness report, and are inserted by the corresponding author before
+-submission.
++Funding and Competing Interests contain the current author-confirmed statements.
++Author Contributions and Acknowledgements remain author-controlled items.
++The current Overleaf project is `6a741d888df17653bc201f8a`; the old
++`6923feb98c08b3a931f0b384` project explicitly marks itself replaced.
++The manuscript describes the immutable KG v3.0.1 release and distinguishes
++its evidence from historical v3.0.0 validation.
+ 
+ Both documents use `sn-bibliography.bib`, `sn-jnl.cls`, and
+ `sn-mathphys-num.bst`. The article also includes `sample_coverage_table.tex`,
+diff --git a/paper/sn-article.pdf b/paper/sn-article.pdf
+index 9bede86..aef8334 100644
+Binary files a/paper/sn-article.pdf and b/paper/sn-article.pdf differ
+diff --git a/paper/sn-article.tex b/paper/sn-article.tex
+index 72fc221..46e78e1 100644
+--- a/paper/sn-article.tex
++++ b/paper/sn-article.tex
+@@ -92,7 +92,7 @@
+ \section*{Funding}
+ Susana Martinez Arbas was supported by the Fonds National de la Recherche (FNR), Luxembourg
+ (Project Ref.\ 18047750).
+-% Additional author-confirmed funding remains to be supplied.
++No specific funding was received for this project.
+ 
+ % Author-confirmed CRediT contributions remain to be supplied.
+ 
+diff --git a/paper/sn-bibliography.bib b/paper/sn-bibliography.bib
+index 212bf68..f0851eb 100644
+--- a/paper/sn-bibliography.bib
++++ b/paper/sn-bibliography.bib
+@@ -1063,3 +1063,13 @@
+   publisher={Nature Publishing Group},
+   doi={10.1038/sdata.2015.23}
+ }
++
++@misc{rubalkhali_kg301,
++  author = {Tawfiq, Rund and others},
++  title = {The microbial diversity of Rub' al-Khali (Empty Quarter)},
++  year = {2026},
++  version = {3.0.1},
++  publisher = {Zenodo},
++  doi = {10.5281/zenodo.23134168},
++  url = {https://doi.org/10.5281/zenodo.23134168}
++}

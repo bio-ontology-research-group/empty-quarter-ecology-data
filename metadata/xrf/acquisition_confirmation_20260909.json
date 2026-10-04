@@ -1,0 +1,38 @@
+{
+  "schema_version": "xrf-acquisition-confirmation-v1",
+  "confirmation_date": "2026-09-09",
+  "source": "Robert Hoehndorf, direct project-owner confirmation during manuscript revision",
+  "laboratory_all_campaigns": {
+    "method_family": "Fast Mode",
+    "specimen_count": 725,
+    "evidence_type": "project_owner_confirmation"
+  },
+  "laboratory_trip5": {
+    "method": "Fast Screening-He8mm",
+    "mode": "He",
+    "diameter": "8mm",
+    "material_setting": "Oxides",
+    "specimen_count": 178,
+    "evidence_type": "original_workbook_metadata",
+    "audit": "evidence/xrf_audit/workbook_acquisition_20260909.json",
+    "selection": "Retain Fast screening sheets for V4Dr3 and V18Dr3; exclude the two Best Detection sheets."
+  },
+  "laboratory_trips1_4": {
+    "specimen_count": 547,
+    "method_family": "Fast Mode",
+    "exact_method_label": null,
+    "gas_mode": null,
+    "diameter": null,
+    "source_limitation": "The consolidated workbook omits the acquisition metadata rows."
+  },
+  "concentration_unit": null,
+  "concentration_unit_evidence": "Original concentration columns have no unit declaration. Percent number formats apply to statistical-error columns; PPM strings occur in LLD columns.",
+  "unresolved_laboratory_parameters": [
+    "instrument model and serial number",
+    "measurement duration, tube voltage and current",
+    "sample preparation, moisture and mass basis",
+    "calibration and reference-material results",
+    "concentration units"
+  ],
+  "field_instrument_scope": "The Olympus Vanta VMR-XXX-G3-E, serial 841307, identifies the handheld field instrument."
+}

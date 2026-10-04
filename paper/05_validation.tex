@@ -15,7 +15,7 @@ screen. A library-order test compared nearby library numbers with
 different-site pairs matched by geographic-distance decile and
 compartment, using 999 library-order permutations. The Trip~1 and
 Trip~3 Bray--Curtis contrasts were $-0.003$ ($p=0.15$) and
-$+0.007$ ($p=1.0$), respectively. These contrasts summarize the
+$+0.006$ ($p=0.99$), respectively. These contrasts summarize the
 tested preparation-order association.
 
 For XRF, the source audit reproduces 13,390 Trips~1--4 and 4,293
@@ -42,23 +42,36 @@ PCR no-template control roles. The release validator compares full
 result multisets, preserving duplicate rows and requiring exact
 identifiers. Numeric comparisons use absolute and relative
 tolerances of $10^{-12}$; coordinate comparisons use an absolute
-tolerance of $10^{-10}$ degrees. The 26 checks cover the printed
+tolerance of $10^{-10}$ degrees. The v3.0.0 acceptance suite's 26 checks covered the printed
 queries across direct and application-mediated transports, default
 and explicit datasets, and a 20-row taxonomic API result.
 
-Six additional checks verify the advertised asserted-only dataset,
+Six additional checks verified the advertised asserted-only dataset,
 the rejection of unavailable query modes, the absence of unreleased
 graphs, the default graph cardinality and all 712 pH
 process--specimen links against the reconciled source module.
-Fourteen protocol checks cover dataset selection, read-only access
+Fourteen protocol checks covered dataset selection, read-only access
 and preservation of RDF terms across the supported graph and
-SELECT serializations. Browser validation executes all nine portal
-examples and checks the three versioned download links. Full HTTP
-downloads verify artifact sizes and checksums; the complete asserted
-N-Quads export is parsed and checked for its graph context and triple
-count. All checks passed on the candidate and public service. The
+SELECT serializations. Browser validation executed all nine portal
+examples and checked the three versioned download links. Full HTTP
+downloads verified artifact sizes and checksums; the complete asserted
+N-Quads export was parsed and checked for its graph context and triple
+count. All checks passed on the v3.0.0 candidate and public service. The
 \href{https://rubalkhali.science/downloads/kg/3.0.0/post-deployment-validation.json}{public validation report}
-binds these results to the release manifest.
+binds these results to that release manifest.
+
+For v3.0.1, the archived build evidence verifies all 16 input-module
+hashes and parses the complete 45,707,660-quad export, checking every graph
+context. Fifteen scientific and reference modules match v3.0.0 exactly.
+The ontology builder verifies preservation of existing term axioms and
+one definition per annotation property for each of 342 project
+terms. Public checks verify equivalent ontology content in RDF/XML,
+Turtle, JSON-LD and N-Triples, resolution of the four reference imports,
+VoID/DCAT metadata, dataset discovery and download links.
+The versioned manifest, rebuild-kit reports and public-check record are
+retained under \path{evidence/kg-v3.0.1/}. These checks cover the updated
+ontology and asserted export; the dated v3.0.0 query workload remains
+identified by its original graph version.
 Separate structural tests cover additional module types.
 
 \begin{table}[h]
@@ -383,7 +396,6 @@ with the modules and support reuse through SIO, ENVO, ChEBI, PATO,
 UO and validated taxonomic identifiers \cite{fair}.
 
 The public endpoint provides read access to the deployed graph.
-A fixed archival package additionally requires a versioned deposit,
-verified payload access, a persistence policy and explicit licences
-for project data, code and externally sourced material. Data
-Availability identifies the remaining sequence-release gate.
+The v3.0.1 Zenodo deposit fixes the released graph, module files and
+rebuild kit, with checksums, scoped licences and a version-specific DOI.
+Data Availability identifies the separate sequence-access requirement.

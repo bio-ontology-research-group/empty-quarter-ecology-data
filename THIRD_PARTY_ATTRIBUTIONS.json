@@ -1,0 +1,60 @@
+{
+  "scope": "Imported ontology content retains its source licence; project data and ontology additions are CC BY 4.0.",
+  "imports": [
+    {
+      "file": "sio.owl",
+      "name": "Semanticscience Integrated Ontology",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://github.com/MaastrichtU-IDS/semanticscience",
+      "evidence": "Licence annotation in pinned ontology"
+    },
+    {
+      "file": "envo.owl",
+      "name": "Environment Ontology",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://github.com/EnvironmentOntology/envo",
+      "evidence": "Licence annotation in pinned ontology"
+    },
+    {
+      "file": "pato.owl",
+      "name": "Phenotype and Trait Ontology",
+      "license": "https://creativecommons.org/licenses/by/3.0/",
+      "source": "https://github.com/pato-ontology/pato",
+      "evidence": "Licence annotation in pinned ontology"
+    },
+    {
+      "file": "uo.owl",
+      "name": "Units Ontology",
+      "license": "https://creativecommons.org/licenses/by/3.0/",
+      "source": "https://obofoundry.org/ontology/uo.html",
+      "evidence": "OBO Foundry registry; pinned ontology lacks an explicit licence annotation"
+    },
+    {
+      "file": "ecosystem_module.ttl",
+      "name": "NCBI Taxonomy / NCBITaxon",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://obofoundry.org/ontology/ncbitaxon.html",
+      "evidence": "OBO Foundry registry; source taxonomy labels and hierarchy are mapped into the project module. NCBI acknowledgement and disclaimers: https://www.ncbi.nlm.nih.gov/home/about/policies/",
+      "changes": "Selected classes, labels and hierarchy; project lineage mapping recorded separately."
+    },
+    {
+      "files": [
+        "ecosystem_module.ttl",
+        "rubalkhali_taxonomy_abox.ttl"
+      ],
+      "name": "SILVA ribosomal RNA database, release 138.2 taxonomy",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://www.arb-silva.de/silva-license-information/",
+      "evidence": "Canonical taxonomy producer uses the first seven ordered SILVA ranks.",
+      "changes": "Taxon assignments mapped to NCBI identifiers where supported and otherwise to lineage-scoped project classes; sequencing abundance measurements are project data."
+    },
+    {
+      "file": "rubalkhali_measurements.owl",
+      "name": "Open-Meteo historical weather data",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://open-meteo.com/en/licence",
+      "evidence": "Frozen acquisition manifest records https://archive-api.open-meteo.com/v1/archive.",
+      "changes": "Site-resolved weather observations aggregated to monthly/annual summaries and represented in RDF."
+    }
+  ]
+}

@@ -35,7 +35,8 @@ test: bootstrap
 		workflow/tests/test_data_paper_figure_wiring.py \
 		workflow/tests/test_ecology_workflow_wiring.py \
 		workflow/tests/test_environment_lock_alignment.py \
-		workflow/tests/test_release_dictionary.py
+		workflow/tests/test_release_dictionary.py \
+		tests/test_kg301_paper_release.py
 
 paper:
 	cd paper && SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) FORCE_SOURCE_DATE=1 \

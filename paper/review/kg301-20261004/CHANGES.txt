@@ -1,0 +1,47 @@
+Data-paper reconciliation with KG v3.0.1, 4 October 2026
+
+Baseline: active Overleaf 6a741d888df17653bc201f8a at 23769ce, whose TeX sources
+match data GitHub 5a17782. The old eq-data-paper Overleaf project is retired.
+The section order, original figures, authors and confirmed protocols are preserved.
+
+Changes:
+- Describe KG v3.0.1: 45,707,660 asserted triples, sixteen modules, 342 defined
+  project terms, DOI 10.5281/zenodo.23134168, scoped CC BY 4.0 and MIT licences.
+- Distinguish module-based asserted-export replay from upstream scientific-source
+  generation; retain dated v3.0.0 validation as historical evidence.
+- Document Claude Sonnet definition drafting and Codex automated review explicitly.
+- Deposit checksum-verified release metadata, rebuild kit, ontology, parsed-export
+  evidence, Zenodo metadata and a fresh eleven-check public release validation.
+- Share the exact corrected daily Open-Meteo and five-product climate packages
+  with ecology; select current inputs in a hash-pinned metadata manifest.
+- Describe the NASA POWER precipitation snapshot used by ecology.
+- State nominal 5–10 cm bulk subsurface sampling and unrecorded exact depths.
+- Clarify identical pH measurement workbooks between v1.0.0 and v1.0.1, retaining
+  the confirmed Trip 4 replicate-2 specimen links.
+- State 991 catalogue genomes, 990 KO-annotated genomes, 125 matched whole-profile
+  libraries, and the marker-specific 975-genome/119-library subset.
+- Express low-depth exclusions consistently as ten biological profiles and
+  distinguish source-specimen table counts from sequencing-profile totals.
+- Correct the Trip 3 library-order contrast to +0.006, p=0.99, from the corrected
+  coordinate replay; preserve its distinction from the physical well-to-well test.
+- Attribute the laboratory Vanta instrument family to Rund's companion protocol;
+  exact model variant and serial number remain absent from laboratory exports.
+- Add the author-confirmed project funding statement; retain Susana's FNR support.
+- Update authoritative-source documentation, reproduction instructions, manifests
+  and tests. No scientific test was skipped or xfailed.
+
+Companion ecology edits:
+- Name the deposited KG v3.0.1 DOI and clarify the shared rainfall inputs.
+- State that QIAcube was used routinely from Trip 4, also for earlier re-extractions.
+- Fix 'seperate' to 'separate'. No numerical ecology result changes.
+- Update the exact data-repository pin and verify matching climate input hashes.
+
+Validation at preparation: 29 data manuscript tests plus 55 package/workflow
+checks pass; both data-paper PDFs build without unresolved references/citations.
+The existing 1.13 pt table overflow remains. The changed release text was visually
+inspected. Public immutable-version ontology checks and the live asserted graph
+count pass. The archived graph release itself was not altered.
+
+Remaining boundaries: the physical well-to-well test needs Rund's plate map/code;
+raw-read-to-table reconstruction still needs public reads and missing upstream
+processing records. These do not constitute verified results of this revision.

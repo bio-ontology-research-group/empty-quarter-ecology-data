@@ -1,23 +1,19 @@
 # Rub' al-Khali multimodal dataset and knowledge graph
 
-## KG v3.0.0
+## KG v3.0.1
 
-The asserted-only KG is deployed at [rubalkhali.science](https://rubalkhali.science/data).
-It contains **45,706,977 triples from 16 modules**, including the reconciled
-pH dataset EQ-PH-SHARED-v1.0.1. All 712 admitted pH values are preserved.
+The asserted KG contains **45,707,660 triples** from sixteen modules and is
+archived at [Zenodo](https://doi.org/10.5281/zenodo.23134168).
+[Release manifest](https://bio2vec.net/data/empty-quarter/kg/3.0.1/manifest.json)
+provides module, asserted-export and rebuild-kit hashes. Project-authored RDF,
+terms and metadata are CC BY 4.0; imported content retains source licences.
+See [release and reproduction guide](docs/KG_V3_0_1_RELEASE.md).
 
-- [Downloads and checksums](https://rubalkhali.science/downloads/kg/3.0.0/manifest.json):
-  frozen scientific source, original RDF modules and the asserted N-Quads export.
-- [Public acceptance evidence](https://rubalkhali.science/downloads/kg/3.0.0/post-deployment-validation.json):
-  exact query results, protocol semantics, specimen links, browser examples and
-  complete download/hash/RDF checks.
-- [Release and reproduction guide](docs/KG_V3_0_0_RELEASE.md).
-
-The immutable source archive is the self-contained input for rebuilding this
-release. The Git checkout also contains the manuscript and broader analytical
-workflow. Public sequencing access, the archival accession and the project-data
-licence remain separate publication requirements. Entailment runs separately;
-later reasoning output requires a new KG version.
+The companion ecology paper and this manuscript use pH v1.0.1, corrected Site 52
+geometry and the same control/cohort definitions. The current rainfall inputs
+are selected by `metadata/climate/current_analysis_inputs.json`; its two packages
+match the corrected ecology files byte-for-byte. The KG's frozen monthly-climate
+observations retain their published acquisition provenance.
 
 This public BORG repository is the reproducible companion to the Scientific
 Data manuscript *A multimodal field dataset and semantic knowledge graph for

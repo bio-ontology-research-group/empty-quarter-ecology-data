@@ -1,0 +1,26 @@
+{
+  "version": "3.0.1",
+  "started_utc": "2026-10-04T08:10:54.576553+00:00",
+  "completed_utc": "2026-10-04T08:17:10.859330+00:00",
+  "graph": "https://rubalkhali.science/graph/asserted/3.0.1",
+  "module_count": 16,
+  "triples": 45707660,
+  "input_manifest_sha256": "1b9ff254a044679b8e67bdd86103fac3b2609f1d7e3070a22d4173b4edf990a1",
+  "import_adaptations": [
+    {
+      "source": "/mnt/data1/empty-quarter-releases/kg-3.0.1-20261004/inputs/scientific/rubalkhali_sites.owl",
+      "source_sha256": "0d1d1996dcb2df292e1302d6cb831e281df90665d6fea4043ed2c661d16cc4c7",
+      "source_decoded_sha256": "0d1d1996dcb2df292e1302d6cb831e281df90665d6fea4043ed2c661d16cc4c7",
+      "output": "/mnt/data1/empty-quarter-releases/kg-3.0.1-20261004/inputs/loader/rubalkhali_sites.owl",
+      "output_sha256": "6ec2394bd71cb927ccb53ed23a3e335fe4f3157544e15987a85d65d4ceb859e5",
+      "output_bytes": 86944,
+      "rdf_format": "xml",
+      "typed_point_whitespace_changes": 70,
+      "coordinate_digits_changed": false,
+      "datatype_changed": false,
+      "original_source_preserved": true
+    }
+  ],
+  "passed": true,
+  "production_mutated": false
+}

@@ -8,7 +8,14 @@ these modules (Table~\ref{tab:modules}). SIO supplies the upper-level
 classes and relations \cite{sio}. The terminology declares 333
 classes (297 project classes and 36 referenced classes), 20 object
 properties and 35 datatype properties. These counts apply to
-declarations in the terminology module.
+declarations in the terminology module. KG v3.0.1 supplies reviewed English
+definitions for all 342 project terms, recorded as SKOS and IAO definition
+annotations. Claude Sonnet (model identifier \texttt{claude-sonnet-5-5})
+drafted the definitions from term labels, axioms and dataset context;
+OpenAI Codex performed automated review and editing. The release preserves the existing term axioms and identifies
+four reference ontologies as imports; observation modules are linked as
+dataset parts. Definition drafts, model provenance and review dispositions
+are distributed with the release.
 
 \subsubsection{Measurement and provenance}
 
@@ -112,7 +119,7 @@ The modular organization separates domain data from shared terminology
 \cite{cuencagrau2008modular}. OpenLink Virtuoso \cite{virtuoso}
 provides RDF storage and SPARQL query execution.
 
-KG v3.0.0 serves the asserted union. A separate reasoning workflow
+KG v3.0.1 serves the asserted union. A separate reasoning workflow
 uses the bundled rule program, v1.5.0, to compute consequences of a
 specified set of positive RDF rules. These rules expand equivalent
 classes and properties, subclass and subproperty hierarchies,

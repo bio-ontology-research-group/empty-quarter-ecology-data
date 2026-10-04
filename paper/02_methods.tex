@@ -78,7 +78,7 @@ ledger and excluded from the curated measurements.
 
 The sampling design targeted three soil
 compartments: bulk surface soil, bulk subsurface soil
-(5--10 cm depth, hereafter ``deep''), and subsurface soil collected
+(nominal 5--10 cm depth, hereafter ``deep''), and subsurface soil collected
 near roots (5--10 cm depth, hereafter ``root-adjacent''). 
 The legacy class label Deep Soil Sample denotes the 5--10~cm
 bulk compartment, called shallow-subsurface in the companion
@@ -87,8 +87,8 @@ co-located field replicates per compartment using sterile tubes and
 sterile plastic spoons. From Trip~2 onwards, three adjacent tubes
 were taped or chained together for collection, so adjacent sampling
 positions were separated by one external tube diameter. Trip~5
-used larger tubes. Exact tube diameters, surface sampling depth
-and distance from roots were unrecorded. These co-located
+used larger tubes. Exact tube diameters, surface sampling depth, individual bulk subsurface
+depths and distance from roots were unrecorded. These co-located
 replicates share a site and compartment.
 We preserved samples at $-20$\degree C in the field
 using an Engel MR040F portable freezer. At the end of each campaign,
@@ -108,7 +108,8 @@ All catalogue sites are included; plant and control rows are excluded.
 Columns count source rows eligible for specimen representation,
 expected by the extract generator, linked to at least one run,
 present in the ASV table and retained in the ecological analysis.
-Repeated sequencing profiles can share one source-specimen row.}
+Counts apply to source rows with a profile link; sequencing-profile totals
+are reported separately, and repeated profiles can share a specimen row.}
 \label{tab:sample_coverage}
 \small
 \setlength{\tabcolsep}{3pt}
@@ -375,8 +376,11 @@ annotation table \cite{eggnog}
 concatenated predicted proteome,
 run on the KAUST Ibex cluster on 14 June 2026, from which a
 990-genome by KEGG Orthology copy-number matrix is built for the
-genomes present in both inputs. These files supply the genome-derived side of the companion
-encoded-function comparison.
+genomes present in both inputs. The full catalogue contains 991 genomes. The companion comparison uses
+125 libraries with matched amplicon profiles for whole-profile KO agreement;
+its marker-gene analysis uses 975 genomes and 119 matched libraries under
+the marker-specific annotation and abundance requirements. These files
+supply the genome-derived side of the companion encoded-function comparison.
 
 \subsection{PMA-treated aliquots}
 
@@ -419,6 +423,25 @@ retrieval timestamps and the historical model/product version remain
 unavailable. Re-execution from these frozen tables preserves the
 reported inputs; a new API request is a new acquisition.
 
+The rainfall analyses in the companion ecology paper use the Site~52
+position $20.82784^\circ$ N, $53.57835^\circ$ E and a daily Open-Meteo
+series acquired there on 4~October 2026. The versioned replacement package
+under \path{metadata/climate/open_meteo_site52_corrected_20261004/}
+retains the request, response and source checksums; daily values for all
+other sites are unchanged. The corresponding five-product Trip~1 exposure
+package uses the corrected grid cells for CHIRPS, CMORPH and IMERG and
+identifies the 21 checksum-verified source files.
+\path{metadata/climate/current_analysis_inputs.json} selects these inputs
+for the companion analysis. The monthly summaries represented in the KG
+retain their frozen acquisition provenance.
+
+Daily NASA POWER \texttt{PRECTOTCORR} precipitation for sites~1--60
+(1~January 2022 to 31~December 2025; 87,660 site-days) is distributed
+as a fixed snapshot under
+\path{metadata/climate/nasa_power_daily_precipitation.tsv.gz}.
+Its original API request metadata were not preserved. Sites~51--55
+share one POWER grid cell, including the corrected Site~52 position.
+
 Field researchers manually classified each site according to its biome (e.g., desert
 biome) and specific environmental features (e.g., sand dune, saline pan, gravel, desert oasis). We subsequently mapped these
 classifications to the Environment Ontology (ENVO) \cite{envo}.
@@ -444,7 +467,9 @@ sheets remain source material. The Trips~1--4 consolidated workbook
 preserves 28 export columns, while the exact gas and diameter
 settings remain undocumented. Supplementary Section~S2
 gives the acquisition audit and source selection.
-The laboratory analyser model, measurement duration, tube settings,
+The companion laboratory protocol identifies the instrument family as a
+Vanta handheld XRF analyser \cite{ecology_companion}. The laboratory exports
+leave the exact model variant, serial number, measurement duration, tube settings,
 sample preparation, concentration units and calibration records
 remain incomplete. The concentration columns carry no unit
 declaration. Percent formats occur in statistical-error columns,
@@ -475,6 +500,9 @@ Technical Validation reports the observed correlations.
 The frozen pH dataset is \texttt{EQ-PH-SHARED-v1.0.1}, with its
 source manifest and admission ledger distributed under \path{metadata/ph/} and
 \path{metadata/samples/ph/versions/EQ-PH-SHARED-v1.0.1/manifest.json}.
+Its measurement workbook is byte-identical to EQ-PH-SHARED-v1.0.0,
+whose values were used in the companion ecology analysis; v1.0.1 records
+the confirmed Trip~4 replicate-2 specimen identities.
 We measured archived dry soil after sieving below 2~mm. Each assay used an independent 1~g scoop suspended in 2.5~mL 0.01~M CaCl$_2$. Suspensions were mixed on a HulaMixer for 30~min and stood for 30~min at room temperature. We used an accumet AB315 meter with a Fisher Scientific accumet electrode (catalogue no.\ 13-620-112), and recorded the reading when the meter displayed its green stability indicator. The electrode was calibrated each morning at two points (pH 7 and 10), and we recorded the electrode slope and pH-10 buffer read-back for every session. Between samples, the electrode was rinsed along its full length with Milli-Q water, immersed in a separate container of Milli-Q water and dried by gently tapping with Kimwipes. A measurement was admitted only if its session was calibrated, the electrode slope was between 95\% and 102\%, and the read-back was within 0.1 pH units of nominal.
 
 Admission additionally requires a numeric pH between 0 and 14 and an

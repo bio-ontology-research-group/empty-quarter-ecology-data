@@ -616,7 +616,8 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertIn("330,830 ASVs", methods)
         self.assertIn("corrected Trip~5 output (330,830 ASVs)", methods)
         self.assertIn("351,472", methods)
-        self.assertIn("below the declared 1,000-read ecological", records)
+        self.assertIn("ten biological profiles with fewer than", records)
+        self.assertIn("1,000 reads", records)
         self.assertIn(r"\texttt{T1Dr1} run with 934 reads", records)
         self.assertNotIn("without an explicit QC reason", records)
         self.assertNotIn("requires explicit QC dispositions", readme)
@@ -763,7 +764,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             r"24 from field process Test~5847 and 22 from Test~5848",
         )
         self.assertIn("expected result tuples", validation)
-        self.assertIn("All checks passed on the candidate and public service", self.prose("05_validation.tex"))
+        self.assertIn("All checks passed on the v3.0.0 candidate and public service", self.prose("05_validation.tex"))
 
         query_path = (
             STAGE / "sparql" / "field_xrf_site10.rq"
@@ -971,7 +972,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertIn("These are fixed inputs for downstream analyses", self.prose("04_data_records.tex"))
         self.assertIn("additional raw reads", self.prose("04_data_records.tex"))
         self.assertRegex(self.prose("06_usage.tex"),
-                         r"broader dataset's archival accession, sequence access and project-data licence remain separate publication requirements")
+                         r"Raw reads and other separately licensed materials retain their own access and licensing conditions")
 
         pma_path = (
             ROOT
@@ -1131,7 +1132,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             self.assertIn(content, usage)
         self.assertIn("undocumented concentration units", usage)
 
-    def test_current_asserted_release_claims_match_published_evidence(self) -> None:
+    def test_historical_asserted_release_evidence_is_preserved(self) -> None:
         evidence = STAGE / "evidence/kg-v3.0.0"
         manifest_bytes = (evidence / "manifest.json").read_bytes()
         manifest = json.loads(manifest_bytes)
@@ -1157,13 +1158,13 @@ class ManuscriptConsistencyTest(unittest.TestCase):
                 self.assertTrue(all(row.get("status") == "passed" or row.get("passed") is True
                                     for row in rows), key)
         validation = self.prose("05_validation.tex")
-        for phrase in ("The 26 checks", "Six additional checks", "Fourteen protocol checks",
+        for phrase in ("26 checks covered", "Six additional checks", "Fourteen protocol checks",
                        "all nine portal examples", "three versioned download links",
-                       "All checks passed on the candidate and public service",
+                       "All checks passed on the v3.0.0 candidate and public service",
                        "post-deployment-validation.json"):
             self.assertIn(phrase, validation)
         records = self.prose("04_data_records.tex").replace(r"\_", "_")
-        self.assertIn("45,706,977 asserted triples from 16 manifested modules", records)
+        self.assertIn("45,707,660 asserted triples from 16 manifested modules", records)
         modules = json.loads((evidence / "input-modules-manifest.json").read_text())
         self.assertEqual(16, len(modules["records"]))
         for module in modules["records"]:
@@ -1193,7 +1194,14 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertIn("all 712 admitted measurements, their numeric values", methods)
         for filename in ("02_methods.tex", "04_data_records.tex", "supplement.tex"):
             self.assertIn(version, self.prose(filename))
-            self.assertNotIn("EQ-PH-SHARED-v1.0.0", self.prose(filename))
+            if filename != "02_methods.tex":
+                self.assertNotIn("EQ-PH-SHARED-v1.0.0", self.prose(filename))
+        self.assertIn("byte-identical to EQ-PH-SHARED-v1.0.0", methods)
+        self.assertEqual(manifest["source"]["content_identical_to"], "EQ-PH-SHARED-v1.0.0")
+        old = directory.parent / "EQ-PH-SHARED-v1.0.0/ph_measurements.xlsx"
+        new = directory / "ph_measurements.xlsx"
+        self.assertEqual(old.read_bytes(), new.read_bytes())
+        self.assertEqual(hashlib.sha256(new.read_bytes()).hexdigest(), manifest["source"]["sha256"])
         self.assertIn("archived field replicate~2", methods)
 
     def test_dated_semantic_validation_claims_match_september_9_sources(self) -> None:

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "ecology_source_commit": "a9b623c88586a1085ab7f37974498717c95ff1a1",
+  "site52": {
+    "latitude": 20.82784,
+    "longitude": 53.57835
+  },
+  "inputs": {
+    "daily_open_meteo": {
+      "path": "metadata/climate/open_meteo_site52_corrected_20261004/daily_weather_canonical_site52_corrected.tsv",
+      "sha256": "494acfb4b01728d00bdaea3cafc481dab2f4730386f5cd3e6c2734edfd5ac3de"
+    },
+    "trip1_five_product_exposures": {
+      "path": "metadata/climate/rain_event_product_exposures_site52_corrected_20261004/rain_event_product_exposures.tsv",
+      "sha256": "2f0fb55d73335e7a7557b896805e8c23ca04d41b5e44a86e046de8044f22dcf3"
+    }
+  },
+  "scope": "Current companion ecology rainfall analyses. Frozen monthly KG observations retain their published acquisition provenance."
+}
