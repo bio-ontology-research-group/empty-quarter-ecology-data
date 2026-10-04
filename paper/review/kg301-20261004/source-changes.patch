@@ -1,5 +1,5 @@
 diff --git a/paper/02_methods.tex b/paper/02_methods.tex
-index db1f501..a4d0ba0 100644
+index db1f501..780a866 100644
 --- a/paper/02_methods.tex
 +++ b/paper/02_methods.tex
 @@ -78,7 +78,7 @@ ledger and excluded from the curated measurements.
@@ -77,8 +77,8 @@ index db1f501..a4d0ba0 100644
  settings remain undocumented. Supplementary Section~S2
  gives the acquisition audit and source selection.
 -The laboratory analyser model, measurement duration, tube settings,
-+The companion laboratory protocol identifies the instrument family as a
-+Vanta handheld XRF analyser \cite{ecology_companion}. The laboratory exports
++Laboratory XRF measurements used a Vanta handheld analyser
++\cite{ecology_companion}. The laboratory exports
 +leave the exact model variant, serial number, measurement duration, tube settings,
  sample preparation, concentration units and calibration records
  remain incomplete. The concentration columns carry no unit
@@ -346,8 +346,11 @@ index 8b4c020..d744d05 100644
  
  Both documents use `sn-bibliography.bib`, `sn-jnl.cls`, and
  `sn-mathphys-num.bst`. The article also includes `sample_coverage_table.tex`,
+diff --git a/paper/main.pdf b/paper/main.pdf
+index f6552ba..6aed3f1 100644
+Binary files a/paper/main.pdf and b/paper/main.pdf differ
 diff --git a/paper/sn-article.pdf b/paper/sn-article.pdf
-index 9bede86..aef8334 100644
+index 9bede86..c4895a6 100644
 Binary files a/paper/sn-article.pdf and b/paper/sn-article.pdf differ
 diff --git a/paper/sn-article.tex b/paper/sn-article.tex
 index 72fc221..46e78e1 100644

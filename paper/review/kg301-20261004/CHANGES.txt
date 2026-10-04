@@ -24,7 +24,7 @@ Changes:
   distinguish source-specimen table counts from sequencing-profile totals.
 - Correct the Trip 3 library-order contrast to +0.006, p=0.99, from the corrected
   coordinate replay; preserve its distinction from the physical well-to-well test.
-- Attribute the laboratory Vanta instrument family to Rund's companion protocol;
+- State the laboratory Vanta instrument family, confirmed by Robert on 4 October;
   exact model variant and serial number remain absent from laboratory exports.
 - Add the author-confirmed project funding statement; retain Susana's FNR support.
 - Update authoritative-source documentation, reproduction instructions, manifests

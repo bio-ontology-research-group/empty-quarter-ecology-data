@@ -27,7 +27,6 @@ python -m pytest tests/test_xrf_workbook_metadata.py
 
 This audit supplements the archived XRF provenance and unit audits. It preserves the source workbooks, canonical concentrations, specimen selection and downstream numerical results unchanged.
 
-The current coauthor ecology manuscript identifies the laboratory instrument
-family as Vanta. The data descriptor attributes that identification to the
-companion protocol; exact model variant and serial number remain absent from
-the exports. See metadata/xrf/laboratory_instrument_provenance_20261004.json.
+Robert confirmed on 4 October 2026 that laboratory XRF also used a Vanta
+analyser, consistent with the ecology protocol. The exact model variant and
+serial number remain absent from the exports. See metadata/xrf/laboratory_instrument_provenance_20261004.json.
