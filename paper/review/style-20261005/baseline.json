@@ -1,0 +1,10 @@
+{
+  "baseline_commit": "1005a47ca6215fd443a61f6fd73b8762dd7d8a25",
+  "baseline_author": "Rund Tawfiq",
+  "baseline_author_date": "2026-08-28",
+  "baseline_commit_date": "2026-08-29",
+  "baseline_basis": "Latest author-attributed Rund commit in active Overleaf history",
+  "current_commit": "4c5c1c16ab612f8b0cc9d8b7df18a3cff9680e1a",
+  "scope": "Cumulative changes from Rund baseline to current manuscript; no style proposals applied",
+  "project": "6a741d888df17653bc201f8a"
+}

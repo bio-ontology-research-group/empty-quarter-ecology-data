@@ -1,0 +1,196 @@
+Data-paper writing review, 5 October 2026
+
+Reviewed manuscript: active data Overleaf 6a741d888df17653bc201f8a,
+commit 4c5c1c16ab612f8b0cc9d8b7df18a3cff9680e1a.
+Standard: write-edit-scientific-paper/SKILL.md and its complete
+references/robert-scientific-style.md.
+Scope: abstract, all included main-text sections, knowledge-representation
+supplement, supplementary protocol prose and table captions. This is a
+writing review, not a fresh numerical reanalysis or bibliography audit.
+The proposals below have NOT been applied to the manuscript.
+
+Assessment
+
+The paper has a defensible central argument: repeated sampling needs links
+between site visits, physical specimens, processing steps and measurements;
+the graph preserves those links for retrieval and reuse. The introduction
+establishes that problem, and the measurement example explains the quality /
+value distinction well. The current prose generally avoids inflated novelty,
+paragraph-opening bold labels, em dashes and unsupported causal claims.
+Keep the Scientific Data section order, Rund's experimental descriptions,
+scientific qualifications, and the existing figures and formal examples.
+
+The main weakness is competing levels of explanation. Scientific methods,
+source-repair history, deployment instructions and repeated validation
+inventories frequently occupy the same paragraph. This makes the paper read
+like a release audit. Conservative editing should restore a direct account
+of the resource while keeping the detailed provenance in the cited ledgers.
+Do not turn historical v3.0.0 checks into claims of new v3.0.1 validation.
+
+Proposed corrections, in priority order
+
+1. Repair the laboratory XRF sentence and acquisition cross-reference.
+   02_methods.tex, XRF acquisition, processing and reconciliation.
+   The text currently says "The laboratory exports leave ... remain
+   incomplete", which has two competing predicates. Replace with:
+
+   "The laboratory exports lack the exact model variant, serial number,
+   measurement duration, tube settings, sample preparation, concentration
+   units and calibration records."
+
+   In the preceding paragraph, replace "Supplementary Section S2" with
+   "Suppl. Section S3": XRF acquisition evidence is S3; S2 covers library
+   preparation and pH. Retain S2 for the pooling calculation elsewhere.
+   In supplement.tex, distinguish confirmed Vanta family from the missing
+   exact model: add "Laboratory measurements used a Vanta handheld analyser."
+   and replace "laboratory instrument identity" with "exact laboratory
+   model variant and serial number" in the list of missing workbook fields.
+   This uses Robert's 4 October confirmation, without inventing settings.
+
+2. Make the shotgun subsection unambiguously about the available data.
+   02_methods.tex, Shotgun-derived companion inputs.
+   "Companion" is used for inputs, comparisons and encoded function without
+   consistently identifying the ecology analysis. After the correction to
+   the ecology paper, it should not suggest a separate shotgun publication.
+   Rename the subsection "Shotgun-derived data". Open with:
+
+   "We distribute genome-relative-abundance profiles for 150 shotgun
+   libraries and eggNOG-mapper annotations of the genome catalogue for
+   comparison with amplicon-derived functional profiles in the ecology
+   analysis."
+
+   Keep the CoverM and annotation paths, versions, 991/990 catalogue counts,
+   975 marker subset, and 125/119 matching denominators. Replace "companion
+   comparison" with "ecology analysis" and delete the final sentence that
+   repeats the purpose. End with the existing concrete requirements for
+   reproduction from raw reads. These requirements must remain visible.
+
+3. State the pH protocol and matching level without recounting the repair.
+   02_methods.tex, Archived-soil pH acquisition and admission.
+   Preserve workbook equivalence and release IDs where needed to connect
+   the two papers, but move the account of 155 repaired links and 620 RDF
+   relation changes to the reconciliation ledger. Replace the paragraph
+   beginning "All Trip 4 pH assays" with:
+
+   "All 156 admitted Trip 4 pH measurements used archived field replicate 2.
+   The versioned specimen ledger preserves the original workbook identifiers
+   and links each admitted measurement to its physical specimen. Matching
+   with community profiles is at campaign, site and compartment level.
+   The archived RDF protocol identifies an accumet AB315 with Probe 3 and
+   automatic temperature compensation, and specifies mixing without fine
+   grinding."
+
+   The 156 is already in the coverage table (155 reconciled plus one
+   previously linked specimen). No measurement or analytical result changes.
+
+4. Keep current climate provenance; remove revision language.
+   02_methods.tex, Environmental and climate data.
+   Retain the exact coordinate, acquisition dates, request/response evidence,
+   product distinctions and frozen monthly KG provenance. Use "versioned
+   daily-series package" for "versioned replacement package" and name
+   Site 52's grid cells directly instead of repeatedly calling them
+   "corrected". The machine-readable paths retain their exact names.
+   Describe which inputs each analysis uses; put the old-position comparison
+   in the package provenance. Do not imply that the monthly KG observations
+   were regenerated from the daily acquisition.
+
+5. Remove duplicated extraction prose and an editing-history phrase.
+   02_methods.tex, DNA extraction and sequencing.
+   The extract-concentration paragraph says twice that the spreadsheet
+   retains concentration measurements. Suggested wording:
+
+   "We quantified extracted DNA using the Qubit dsDNA High Sensitivity assay,
+   with fluorescence measured on a Varioskan LUX multimode plate reader
+   (Thermo Fisher Scientific). We recorded extract concentrations and
+   processing information in the central project spreadsheet. Progression
+   to indexing and sequencing required an amplicon of the expected size
+   after first-round PCR. Extracted DNA was stored at -20 degrees C until
+   amplification."
+
+   Later, replace "the earlier laboratory account also documents
+   re-extraction" with "the laboratory protocol also included
+   re-extraction". Retain the documented scope; do not imply every failed
+   sample was re-extracted.
+
+6. Split the long Data Records inventory by scientific role.
+   04_data_records.tex, Tabular data products.
+   Its long opening sentence mixes source ledgers, identity repairs, assay
+   tables and downstream analytical inputs. Use three connected paragraphs:
+   (a) the source ledger links specimens to extraction, libraries and runs;
+   (b) assay tables carry taxonomic, environmental, XRF and pH observations;
+   (c) PMA and shotgun-derived files support the ecology analyses.
+   Keep every count, file path and denominator. The existing final paragraph
+   can continue to identify the upstream resources required for full replay.
+   This is paragraph-level editing within the current subsection.
+
+7. Shorten repeated query and validation descriptions.
+   05_validation.tex, Competency questions and SPARQL queries.
+   Explain the Site 10 query once, immediately beside its listing: it traverses
+   site -> measurement process -> output value -> analyte quality, returning
+   46 rows (24 and 22 from the two named processes). The surrounding paragraphs
+   repeat the count, archive location and validation requirement. Consolidate
+   those statements and distinguish the cardinality test from the source-value
+   comparison. Preserve all result counts and exact tolerances.
+   Keep the dated v3.0.0 acceptance results and the separate v3.0.1 evidence;
+   their version distinction is scientific provenance, not expendable history.
+
+8. Reduce implementation detail in the finite-rule description.
+   03_knowledge_representation.tex, OWL and RDF implementation.
+   Keep the rule scope, use of existing RDF terms, fixed-point stopping rule,
+   failure conditions and clash diagnostics. The class-partition inventory
+   refresh and per-batch controller trace can be described in linked workflow
+   documentation. Begin with the operative distinction:
+
+   "The public KG v3.0.1 service queries the asserted union of the distributed
+   modules. A separate finite-rule workflow derives additional consequences
+   over existing RDF terms."
+
+   This explains the reader-visible behavior before the algorithm details.
+   Do not claim a completed reasoned release or unrestricted OWL reasoning.
+
+9. Replace software-audit jargon in prose with the check performed.
+   05_validation.tex: "site-alias gate", "environmental-metadata gate",
+   "chemical-identifier gate" and "label gate" should be "check" or
+   "validation", followed by the concrete operation. Keep exact code and
+   artifact names in paths. 04_data_records.tex's "outstanding
+   sequence-release gate" can be "raw-sequence availability".
+   These changes make the account accessible without weakening requirements.
+
+10. Trim metacommentary and redundant inventory text.
+    kr_supplement.tex, laboratory-control example: delete "This keeps long
+    machine identifiers in the executable resource while exposing the
+    scientific relationships here." It explains a writing choice rather
+    than the model. Keep the paths and the subject/relation/taxon example.
+    05_validation.tex, Portal access: delete "This is an access interface."
+    The preceding sentence already explains its function.
+    The introduction's resource-count paragraph duplicates the abstract and
+    coverage tables. A later shortening pass could retain the primary sites,
+    campaigns and specimen/profile distinction while referring to the tables
+    for assay counts. This is optional, not necessary to correct the paper.
+
+Material to preserve
+
+- The main-section order, authors, figure content and formal definitions.
+- All scientific values, units, inclusion criteria, counts and identifiers.
+- Explicit limitations where records are missing; do not remove them merely
+  because a positive statement of scope would be shorter.
+- The declared scopes of ShEx, the full taxonomy parser, ELK and finite rules.
+- Historical validation versions and the distinction between scientific
+  input regeneration, module loading and raw-read reconstruction.
+- Exact software versions and operational paths needed to reproduce analyses.
+
+Author-controlled items remain unresolved: the source still has comments
+requesting author contributions and acknowledgements. This review does not
+supply them or treat the manuscript as submission-complete.
+
+Comparison baseline
+
+Rund's latest author-attributed revision in the active Overleaf history is
+1005a47ca6215fd443a61f6fd73b8762dd7d8a25 (author date 28 August 2026;
+Overleaf Git commit date 29 August). Later commits include other coauthors'
+comments and Robert's corrections, sometimes incorporating Rund's messages.
+The cumulative comparison therefore includes those changes as well.
+The older kg301-20261004 redline instead used 23769ce, a Robert-authored
+13 September revision; it is not a redline against Rund's own last commit.
+Git authorship identifies the best documented baseline in this history; it
+cannot prove the absence of edits made through another person's account.
