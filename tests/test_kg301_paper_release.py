@@ -49,7 +49,7 @@ def test_corrected_companion_climate_files_are_selected_by_digest():
     assert selected['site52'] == {'latitude':20.82784,'longitude':53.57835}
     for item in selected['inputs'].values():
         assert hashlib.sha256((ROOT/item['path']).read_bytes()).hexdigest() == item['sha256']
-    assert 'current_analysis_inputs.json' in (ROOT/'paper/04_data_records.tex').read_text()
+    assert 'climate inventory' in (ROOT/'paper/04_data_records.tex').read_text()
     # Published ecology inputs, independently pinned in the shared selector.
     assert selected['inputs']['daily_open_meteo']['sha256'] == '494acfb4b01728d00bdaea3cafc481dab2f4730386f5cd3e6c2734edfd5ac3de'
 
@@ -72,7 +72,7 @@ def test_batch_claims_match_corrected_coordinate_replay():
 
 def test_submission_prose_describes_final_data_and_confines_paths_to_data_records():
     import re
-    names = ['sn-article.tex', '01_introduction.tex', '02_methods.tex',
+    names = ['sn-article.tex', '01_introduction.tex', '02_methods.tex', '04_data_records.tex',
              '02_methods_taxonomy.tex', '03_knowledge_representation.tex',
              '05_validation.tex', '06_usage.tex', 'knowledge_examples.tex',
              'env_table.tex']
@@ -82,6 +82,9 @@ def test_submission_prose_describes_final_data_and_confines_paths_to_data_record
         assert not re.search(r'workbook|worksheet|spreadsheet|correction ledger|Site[~ ]+52', text, re.I), name
         assert r'\path{' not in text, name
         assert not re.search(r'\\texttt\{[^}]*\.(?:tsv|csv|json|owl|ttl|nf|rq|md)\}', text), name
+    records = (ROOT/'paper/04_data_records.tex').read_text()
+    assert not re.search(r'\\(?:href|url|path)\{', records)
+    assert 'https://' not in records and 'http://' not in records
     main = (ROOT/'paper/sn-article.tex').read_text()
     title = re.search(r'\\title\[[^]]*\]\{([^}]+)\}', main).group(1)
     abstract = re.search(r'\\abstract\{(.*?)\}\n', main, re.S).group(1)

@@ -44,9 +44,9 @@ The unified text was checked for repeated protocol statements, duplicated
 formalism explanations, stale supplementary references, manuscript-editing
 history, Site 52 correction narratives, workbook terminology and local paths.
 The merger removes repeated prose without changing scientific observations.
-All now-internal references use the unified numbering. File names remain
-confined to the Data Records module table; its data inventories use descriptive
-links. Code examples retain public ontology identifiers and namespaces.
+All now-internal references use the unified numbering. Data Records uses descriptive module names and a short inventory of
+accompanying data. It contains no filenames, paths or embedded access links;
+the Zenodo deposit retains its ordinary bibliographic citation. Code examples retain public ontology identifiers and namespaces.
 
 Data and ecology consistency
 Checked against the current ecology main text and supplement and the shared

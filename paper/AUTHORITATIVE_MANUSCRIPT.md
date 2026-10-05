@@ -8,7 +8,7 @@ It includes `01_introduction.tex`, `02_methods.tex`, `02_methods_taxonomy.tex`,
 
 Protocol details and graph examples are integrated into Methods. There is no
 separate supplement. The complete 93-channel XRF mapping and environmental
-observations are repository data linked from Data Records. `xrf_table.tex`
+observations are repository data listed in Data Records. `xrf_table.tex`
 and `env_table.tex` are retained generated artifacts, not article inputs.
 
 The article uses `sn-bibliography.bib`, `sn-jnl.cls`, `sn-mathphys-num.bst`,

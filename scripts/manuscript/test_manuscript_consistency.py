@@ -545,7 +545,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertIn("17 extraction blanks linked to 217 biological profiles", self.prose("06_usage.tex"))
         self.assertRegex(
             records,
-            r"rubalkhali\\_controls\.ttl\} & Laboratory-control materials, "
+            r"Laboratory controls & Laboratory-control materials, "
             r"roles, batches and sequence occurrences",
         )
         self.assertIn("Trips~1--2 used", methods)
@@ -647,7 +647,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         bulk_manifest = (PROJECT_ROOT / "BULK_ARTIFACTS.tsv").read_text()
         for path in bulk_paths:
             self.assertIn(path, bulk_manifest)
-        self.assertIn("PRE_RELEASE_MANIFEST.tsv", records)
+        self.assertIn("file inventory", records)
 
         semantic = ROOT / "zenodo/evidence/semantic-validation"
         with (semantic / "SHA256SUMS").open(encoding="utf-8") as handle:
@@ -715,7 +715,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         ):
             self.assertIn(required, covered)
         records = self.text("04_data_records.tex")
-        self.assertIn("metadata/DATA_DICTIONARY.tsv", records)
+        self.assertIn("data dictionary", records)
 
     def test_field_xrf_does_not_claim_a_specimen_link(self) -> None:
         # The XRF pattern is included in Methods; the knowledge
@@ -999,7 +999,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         )
         self.assertEqual(len(rows), sum(licence_counts.values()))
         records = self.text("04_data_records.tex")
-        self.assertIn("PRE_RELEASE_MANIFEST.tsv", records)
+        self.assertIn("file inventory", records)
         self.assertNotRegex(records, r"\b270 candidate files\b")
         self.assertNotRegex(records, r"\b261 files are project-produced\b")
 
@@ -1160,8 +1160,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertIn("45,707,660 asserted triples from 16 manifested modules", records)
         modules = json.loads((evidence / "input-modules-manifest.json").read_text())
         self.assertEqual(16, len(modules["records"]))
-        for module in modules["records"]:
-            self.assertIn(module["file"], records)
+        self.assertEqual(16, len(re.findall(r"(?m)^.+ & .+\\\\$", self.text("04_data_records.tex"))) - 1)
         replay = json.loads((evidence / "source-rebuild-verification.json").read_text())
         self.assertTrue(replay["passed"])
         self.assertEqual({row["file"]: row["sha256"] for row in modules["records"]},

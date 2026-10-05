@@ -1,13 +1,11 @@
 \section{Data records}\label{records}
 
 KG v3.0.1 contains 45,707,660 asserted triples from 16 manifested
-modules and is archived at Zenodo \cite{rubalkhali_kg301}. The deposit
-provides the RDF/XML and Turtle modules in Table~\ref{tab:modules},
-a compressed N-Quads export of their deduplicated union, and code to
-load the modules and reproduce that export. Shared site, specimen and
-process identifiers connect observations across modules. The
-\href{https://bio2vec.net/data/empty-quarter/kg/3.0.1/manifest.json}{release manifest}
-identifies each deposited file and its checksum.
+modules and is archived at Zenodo \cite{rubalkhali_kg301}. The deposit contains the modules listed in Table~\ref{tab:modules},
+the combined asserted graph, and a reproducibility package with code,
+term definitions and validation evidence. The modules use RDF/XML and
+Turtle; the combined graph uses compressed N-Quads. Shared site, specimen and
+process identifiers connect observations across modules. The deposit also includes an inventory with checksums.
 
 \begin{table}[h]
 \centering
@@ -18,52 +16,42 @@ identifies each deposited file and its checksum.
 \toprule
 \textbf{Module} & \textbf{Content} \\
 \midrule
-\texttt{rubalkhali.owl} & Base ontology (TBox) \\
-\texttt{rubalkhali\_sites.owl} & Sampling sites with coordinates and biome annotations \\
-\texttt{rubalkhali\_samples.owl} & Soil and plant specimen individuals with compartment types \\
-\texttt{rubalkhali\_measurements.owl} & Field environmental measurements and climate records \\
-\texttt{rubalkhali\_xrf.owl} & XRF measurement values from the field and laboratory workflows \\
-\texttt{rubalkhali\_dna.owl} & DNA extracts with concentration data \\
-\texttt{rubalkhali\_sra.owl} & Sequencing run records linked to ENA accessions \\
-\texttt{rubalkhali\_qc.owl} & Sequencing quality metrics (GC content, duplicate rate, sequence counts) \\
-\texttt{rubalkhali\_controls.ttl} & Laboratory-control materials, roles, batches and sequence occurrences \\
-\path{rubalkhali_ph_eq_ph_shared_v1_0_1.ttl} & Archived-soil pH measurements, sessions and reconciled specimen links \\
-\texttt{rubalkhali\_taxonomy\_abox.ttl} & Taxon observations over feature profiles \\
-\texttt{ecosystem\_module.ttl} & Vocabulary supporting canonical taxonomic mappings \\
-\texttt{sio.owl} & Semanticscience Integrated Ontology v1.59 \\
-\texttt{envo.owl} & Environment Ontology, 20 October 2025 \\
-\texttt{pato.owl} & Phenotype and Trait Ontology, 14 May 2025 \\
-\texttt{uo.owl} & Units Ontology, 25 May 2023 \\
+Project terminology & Base ontology (TBox) \\
+Sampling sites & Sampling sites with coordinates and biome annotations \\
+Specimens & Soil and plant specimen individuals with compartment types \\
+Environmental observations & Field environmental measurements and climate records \\
+XRF measurements & XRF measurement values from the field and laboratory workflows \\
+DNA extracts & DNA extracts with concentration data \\
+Sequencing runs & Sequencing run records linked to ENA accessions \\
+Sequence quality & Sequencing quality metrics (GC content, duplicate rate, sequence counts) \\
+Laboratory controls & Laboratory-control materials, roles, batches and sequence occurrences \\
+Soil pH & Archived-soil pH measurements, sessions and specimen links \\
+Taxonomic observations & Taxon observations over feature profiles \\
+Taxonomic vocabulary & Vocabulary supporting canonical taxonomic mappings \\
+SIO & Semanticscience Integrated Ontology v1.59 \\
+ENVO & Environment Ontology, 20 October 2025 \\
+PATO & Phenotype and Trait Ontology, 14 May 2025 \\
+Units Ontology & Units Ontology, 25 May 2023 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The \href{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data}{data repository}
-provides the specimen catalogue, assay tables and analysis inputs.
-The catalogue links specimens to collection visits, extractions,
-libraries and sequence runs. Tabular products include amplicon counts
-and taxonomic mappings, field environmental observations, laboratory
-and field XRF values, and archived-soil pH measurements
-(\texttt{EQ-PH-SHARED-v1.0.1}). The repository also provides the paired
-PMA profiles, 150 CoverM profiles, eggNOG annotations for the
-990-genome analytical subset, and six source tables for the
-MAG-derived versus PICRUSt2 comparison. Tables are supplied in
-delimited text formats; larger collections are compressed.
-The \href{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data/blob/main/metadata/climate/current_analysis_inputs.json}{climate inventory} identifies daily inputs; monthly climate
-summaries retain separate acquisition metadata.
-
-The \href{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data/blob/main/metadata/DATA_DICTIONARY.tsv}{data dictionary} defines
-fields, data types, units and missing-value conventions for the curated
-tables. Site and campaign identify collection visits; specimen and
-assay identifiers distinguish physical material from its measurements.
-Control roles, processing batches and quality-control dispositions
-support selection of observations for reuse. Missing values and
-unresolved mappings retain the conventions documented for each table.
-The \href{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data/blob/main/PRE_RELEASE_MANIFEST.tsv}{file inventory} gives locations,
-sizes, checksums and licensing status. A separate bulk-data inventory
-gives retrieval information for larger downloads. The repository also supplies
-validation schemas, SPARQL queries, expected query outputs and the
-source comparisons described in Technical Validation. The
-\href{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data/blob/main/evidence/xrf_chemical_mapping_audit/xrf_chemical_mapping_audit.tsv}{chemical mapping table}
-provides all 93 XRF reporting channels, their ChEBI and PubChem
-cross-references, validation status and source evidence.
+The accompanying data repository described in Data Availability contains:
+\begin{itemize}
+\item A specimen catalogue linking collection visits, specimens,
+extractions, libraries and sequence runs.
+\item Amplicon counts and taxonomic mappings, field environmental
+observations, daily climate inputs and monthly climate summaries.
+\item Laboratory and field XRF values, the chemical mapping table for
+93 reporting channels, and archived-soil pH measurements
+(\texttt{EQ-PH-SHARED-v1.0.1}).
+\item The paired PMA profiles, 150 CoverM profiles, eggNOG annotations
+for the 990-genome analytical subset, and six source tables for the
+MAG-derived versus PICRUSt2 comparison.
+\item A data dictionary defining fields, data types, units and missing-value
+conventions; a climate inventory with acquisition metadata; and a file inventory
+with sizes, checksums, licensing status and bulk-data retrieval information.
+\item Validation schemas, SPARQL queries, expected query outputs and
+source comparisons.
+\end{itemize}
+Tabular data use delimited text formats; larger collections are compressed.

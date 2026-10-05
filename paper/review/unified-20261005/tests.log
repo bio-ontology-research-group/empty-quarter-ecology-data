@@ -3,7 +3,7 @@ PASS: package compatibility layout created under /tmp/eq-data-paper-kg301
 /home/leechuck/Public/software/empty-quarter-paper-repos/data-paper/.venv/bin/python scripts/manuscript/test_manuscript_consistency.py
 .............................
 ----------------------------------------------------------------------
-Ran 29 tests in 1.724s
+Ran 29 tests in 1.786s
 
 OK
 /home/leechuck/Public/software/empty-quarter-paper-repos/data-paper/.venv/bin/python -m pytest -q \
@@ -16,4 +16,4 @@ OK
 	workflow/tests/test_release_dictionary.py \
 	tests/test_kg301_paper_release.py
 ..........................................................               [100%]
-58 passed in 1.76s
+58 passed in 1.90s
