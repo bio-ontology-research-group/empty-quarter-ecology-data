@@ -22,7 +22,8 @@
 \usetikzlibrary{shapes,arrows.meta,positioning}
 \lstset{breaklines=true,breakatwhitespace=false,columns=fullflexible}
 
-\hypersetup{hypertexnames=false}
+\hypersetup{hypertexnames=false,linktoc=none}
+\AtBeginDocument{\let\linkedref\ref\renewcommand{\ref}[1]{\linkedref*{#1}}}
 \raggedbottom
 
 \setcitestyle{super,open={},close={}}

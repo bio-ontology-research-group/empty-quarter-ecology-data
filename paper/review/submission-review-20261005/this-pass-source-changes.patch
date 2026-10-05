@@ -1,0 +1,366 @@
+diff --git a/01_introduction.tex b/01_introduction.tex
+index e1ec503..7d636c8 100644
+--- a/01_introduction.tex
++++ b/01_introduction.tex
+@@ -56,9 +56,8 @@ admission, identifier mappings, structural constraints and executable
+ query examples. We report the scope of each check separately,
+ including the constructs and modules processed by ELK.
+ The portal at \url{https://rubalkhali.science/} exposes the graph
+-through site pages and a SPARQL endpoint. Data Records and Data
+-Availability identify the distributed artifacts and outstanding
+-release dependencies. The companion ecology manuscript reports the
++through site pages and a SPARQL endpoint. Data Records describes the distributed datasets and Data Availability
++gives their access conditions. The companion ecology manuscript reports the
+ community, environmental-association and functional analyses
+ \cite{ecology_companion}; this Data Descriptor documents their source
+ data, representation and reuse conditions.
+diff --git a/02_methods.tex b/02_methods.tex
+index 6b0c920..8ec8649 100644
+--- a/02_methods.tex
++++ b/02_methods.tex
+@@ -26,7 +26,8 @@ successive sites, using an Earth radius of 6,371~km.
+ The transect comprises 60 primary sampling sites at predetermined
+ coordinates and 10 named locations, including wells, a hot spring and
+ an oil-spill site. Trip~1 source identifiers 61--64 are aliases for four
+-named catalogue locations, established by coordinate matching.
++named catalogue locations, established by coordinate matching, and
++account for 36 source specimens.
+ The repeated-campaign analytical frame uses sites~1--60.
+ The metadata link each observation to its site, campaign and specimen.
+ 
+@@ -294,9 +295,10 @@ remains unresolved.
+ This resulted in a canonical feature table of 351,472 amplicon sequence
+ variants (ASVs) prior to contaminant removal, covering samples from Trips~1--5 and 24 control samples.
+ Of its 1,271 profiles, 1,247 are biological; quality filtering excludes
+-the 24 control profiles and 10 biological profiles with fewer than
+-1,000 reads, leaving the 1,237 profiles used by the companion ecology
+-analysis. The complete table is distributed unfiltered. The sequencing inventory links all 1,271 canonical profiles to paired-read
++the 24 control profiles and ten biological profiles with fewer than
++1,000 reads, including one \texttt{T1Dr1} run with 934 reads. This leaves
++1,237 profiles, including 1,227 profiles from sites~1--60, for the
++companion ecology analysis. The complete table is distributed unfiltered. The sequencing inventory links all 1,271 canonical profiles to paired-read
+ inputs: 1,013 from the July processing group and 258 from Trip~5. A further
+ 33 July inputs fall outside the canonical feature table. The July execution
+ used pipeline groups A and B. Processing specified the Bakt\_341F/Bakt\_785R
+@@ -388,6 +390,12 @@ these three parent specimens under matched dark and light exposure.
+ 
+ \subsection{Environmental and climate data}
+ 
++Field environmental observations retain degrees Celsius, hectopascals
++(millibars) and percent relative humidity. Pressure magnitudes are
++multiplied by 100 and asserted in pascals (\texttt{obo:UO\_0000110})
++in the graph. Climate observations use degrees Celsius, millimetres
++and percent relative humidity, as applicable to each variable.
++
+ We retrieved historical climate data from the Open-Meteo archive
+ endpoint \cite{openmeteo} for each sampling site using its geographic coordinates, yielding
+ 12,936 monthly values: four variables over 49 months at 66 resolved
+@@ -575,6 +583,5 @@ curated inputs, generation of those inputs from primary records,
+ and replication of the field/laboratory measurements. The package's
+ workflow evidence covers the executed stages; missing upstream
+ sequence-processing inputs and acquisition metadata are stated in
+-their respective Methods subsections. A complete release requires a
+-fresh-checkout execution record, checksum comparisons and successful
+-main/supplement builds against the same inputs.
++their respective Methods subsections. Versioned inputs and execution records identify the data and software
++used for the reported checks.
+diff --git a/03_knowledge_representation.tex b/03_knowledge_representation.tex
+index 45c9ac7..29ae3e6 100644
+--- a/03_knowledge_representation.tex
++++ b/03_knowledge_representation.tex
+@@ -63,7 +63,7 @@ library preparation consumes DNA and produces an amplicon library;
+ sequencing consumes the library and produces a digital FASTQ dataset.
+ Quality-control processes consume FASTQ datasets and produce
+ direction-specific metrics. Suppl. Sections~S1.2--S1.7 give the
+-corresponding formal patterns and graph examples.
++corresponding graph examples.
+ 
+ Site annotations use existential restrictions to relate a site to
+ an ENVO biome or environmental feature. Such a restriction specifies
+@@ -108,9 +108,8 @@ Section~\ref{methods:xrf}.
+ 
+ Archived-soil pH processes consume and target the assayed specimen,
+ produce a pH value linked to its acidity quality and belong to a
+-reconstructed measurement session. Field-replicate substitutions
+-require separate physical identities and an explicit campaign,
+-site and compartment matching level (Section~\ref{methods:ph}).
++reconstructed measurement session. Measurements from different field replicates retain separate physical
++identities and are matched at campaign, site and compartment level (Section~\ref{methods:ph}).
+ 
+ \subsubsection{Formal patterns}
+ 
+diff --git a/04_data_records.tex b/04_data_records.tex
+index 06cd8c4..1981fe9 100644
+--- a/04_data_records.tex
++++ b/04_data_records.tex
+@@ -1,33 +1,13 @@
+ \section{Data records}\label{records}
+ 
+-The source and derived-data package contains graph modules, curated
+-tables, specimen and assay provenance, validation evidence and workflow
+-code. The machine-readable manifest
+-\path{PRE_RELEASE_MANIFEST.tsv} identifies payload sizes, checksums,
+-categories and release/licence status. Separately retrieved bulk
+-payloads are listed in the bulk manifest. Data Availability reports
+-access routes and raw-sequence availability.
+-
+ KG v3.0.1 contains 45,707,660 asserted triples from 16 manifested
+-modules and is archived at Zenodo \cite{rubalkhali_kg301}.
+-The release distributes the original RDF modules, the deduplicated
+-asserted graph in compressed N-Quads format, and a rebuild kit containing
+-load/export code, definition provenance and validation evidence.
+-The \href{https://bio2vec.net/data/empty-quarter/kg/3.0.1/manifest.json}{release manifest}
+-identifies their contents, sizes and checksums. The kit reconstructs the
+-asserted union from the distributed modules. Scientific producer code and
+-inputs are maintained separately in the reproducibility repository.
+-
+-\subsection{Knowledge-graph modules}
+-
+-The primary artifacts are the knowledge-graph modules, distributed as
+-RDF/XML and Turtle files and structured by data type
+-(Table~\ref{tab:modules}). The base ontology
+-(\texttt{rubalkhali.owl}) holds the project terminology. Domain modules
+-share site, specimen and process identifiers; the release also includes
+-the generated taxonomic vocabulary and four pinned reference ontologies.
+-These modules load together into an RDF store. Domain queries require the corresponding
+-shared terminology and linked site, specimen or process modules.
++modules and is archived at Zenodo \cite{rubalkhali_kg301}. The deposit
++provides the RDF/XML and Turtle modules in Table~\ref{tab:modules},
++a compressed N-Quads export of their deduplicated union, and code to
++load the modules and reproduce that export. Shared site, specimen and
++process identifiers connect observations across modules. The
++\href{https://bio2vec.net/data/empty-quarter/kg/3.0.1/manifest.json}{release manifest}
++identifies each deposited file and its checksum.
+ 
+ \begin{table}[h]
+ \centering
+@@ -58,61 +38,29 @@ shared terminology and linked site, specimen or process modules.
+ \end{tabular}
+ \end{table}
+ 
+-\subsection{Tabular data products}
+-
+-The specimen catalogue links site and campaign to specimen, extraction,
+-library, sequence run, quality-control decision and derived community.
+-Identifiers 61--64 denote four named sites sampled only in Trip~1 and
+-account for 36 source specimens. Assay tables provide the canonical amplicon
+-profiles, taxonomic mappings, field environmental observations, laboratory
+-and field XRF measurements, and archived-soil pH values.
+-
+-The canonical feature table contains 1,271 profiles. The ecology analysis
+-retains 1,237 (1,227 profiles from sites~1--60), after excluding 24 controls and ten
+-biological profiles with fewer than 1,000 reads, including one
+-\texttt{T1Dr1} run with 934 reads. The pH release
+-\texttt{EQ-PH-SHARED-v1.0.1} provides 712 measurements and their
+-specimen and session links.
+-
+-Four additional products support downstream ecology analyses: the paired
+-PMA table (\path{metadata/relic-dna/PMA_ASV_table.tsv}; 18 analytical
+-columns from nine treated/untreated pairs, with controls kept separately),
+-150 CoverM profiles (\path{metadata/metagenome/coverm_profiles.tar.gz}),
+-eggNOG annotations (\path{metadata/metagenome/eq.emapper.annotations.gz})
+-for the 990-genome analytical subset, and six source tables for the
+-MAG-derived versus PICRUSt2 comparison
+-(\path{metadata/metagenome/measured_function_inputs.tar.gz}).
+-The daily climate inputs are selected by
+-\path{metadata/climate/current_analysis_inputs.json}; the monthly acquisition
+-is documented in \path{metadata/climate/climate_acquisition_frozen.json}.
+-The complete field environmental observations are provided in
+-\path{metadata/environmental/environmental_measurements_curated.tsv}.
+-The sequence inventory and functional-prediction provenance are distributed
+-under \path{metadata/amplicon/} and \path{metadata/functional/}.
+-Methods identifies the upstream resources required for reproduction from
+-raw reads.
+-
+-\subsection{Validation schemas, queries and evidence}
+-
+-The reproducibility repository includes the artifacts needed to re-validate the resource:
+-the ShEx shapes that define the structural contract for each entity
+-family, the positive and negative structural fixtures, the archived
+-competency SPARQL queries, and the machine-readable evidence bundles
+-(reconciliation summaries, audit tables, validation records and
+-checksum manifests) produced by the release workflow. A companion data
+-dictionary (\path{metadata/DATA_DICTIONARY.tsv}) records the field
+-names, data types, units, missing-value conventions and definitions
+-for the curated canonical tabular records. Quantities carry units only
+-where a unit is documented at the source: environmental source tables
+-retain degrees Celsius, hectopascals (millibars) and percent relative
+-humidity; in the graph, pressure magnitudes are
+-multiplied by 100 and asserted in pascals (\texttt{obo:UO\_0000110}),
+-climate
+-records use degrees Celsius and millimetres, and DNA concentrations
+-are in nanograms per microlitre. XRF values are instrument-reported magnitudes with undocumented
+-concentration units.
++The \href{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data}{data repository}
++provides the specimen catalogue, assay tables and analysis inputs.
++The catalogue links specimens to collection visits, extractions,
++libraries and sequence runs. Tabular products include amplicon counts
++and taxonomic mappings, field environmental observations, laboratory
++and field XRF values, and archived-soil pH measurements
++(\texttt{EQ-PH-SHARED-v1.0.1}). The repository also provides the paired
++PMA profiles, 150 CoverM profiles, eggNOG annotations for the
++990-genome analytical subset, and six source tables for the
++MAG-derived versus PICRUSt2 comparison. Tables are supplied in
++delimited text formats; larger collections are compressed.
++The \href{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data/blob/main/metadata/climate/current_analysis_inputs.json}{climate inventory} identifies daily inputs; monthly climate
++summaries retain separate acquisition metadata.
+ 
+-The manifests and data dictionary provide the versioned file-level
+-inventory. The KG citation identifies the immutable v3.0.1 deposit
+-(Section~\ref{data_availability}); the repository manifests additionally
+-cover the broader analytical inputs.
++The \href{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data/blob/main/metadata/DATA_DICTIONARY.tsv}{data dictionary} defines
++fields, data types, units and missing-value conventions for the curated
++tables. Site and campaign identify collection visits; specimen and
++assay identifiers distinguish physical material from its measurements.
++Control roles, processing batches and quality-control dispositions
++support selection of observations for reuse. Missing values and
++unresolved mappings retain the conventions documented for each table.
++The \href{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data/blob/main/PRE_RELEASE_MANIFEST.tsv}{file inventory} gives locations,
++sizes, checksums and licensing status. A separate bulk-data inventory
++gives retrieval information for larger downloads. The repository also supplies
++validation schemas, SPARQL queries, expected query outputs and the
++source comparisons described in Technical Validation.
+diff --git a/05_validation.tex b/05_validation.tex
+index 02e6882..963e27a 100644
+--- a/05_validation.tex
++++ b/05_validation.tex
+@@ -18,9 +18,8 @@ Trip~3 Bray--Curtis contrasts were $-0.003$ ($p=0.15$) and
+ $+0.006$ ($p=0.99$), respectively. These contrasts summarize the
+ tested preparation-order association.
+ 
+-For XRF, the source audit reproduces 13,390 Trips~1--4 and 4,293
+-Trip~5 reported cells under their stated selection rules.
+-Repeated field sessions were reduced to site medians and paired
++To assess agreement between field and laboratory XRF measurements,
++repeated field sessions were reduced to site medians and paired
+ with the Trip~5 subsurface laboratory observation at 58 sites.
+ Among 12 analytes with positive values in both workflows at more
+ than 10 paired sites, the median Spearman correlation was 0.21
+@@ -74,8 +73,7 @@ CQ7 & What are the complete genus-level read counts and relative read abundance
+ \end{tabular}
+ \end{table}
+ 
+-We show several example SPARQL queries. Listing~\ref{lst:sparql_xrf}
+-retrieves XRF measurements for a specific site, requiring traversal of
++Listing~\ref{lst:sparql_xrf} retrieves XRF measurements for a specific site, requiring traversal of
+ the measurement process, quality, and value entities.
+ 
+ \begin{lstlisting}[caption={SPARQL query to retrieve field XRF
+@@ -297,9 +295,8 @@ versions (Section~\ref{records}).
+ \subsection{Portal access}
+ 
+ The portal (\url{https://rubalkhali.science/}) retrieves data through
+-backend SPARQL queries and renders site and specimen views. Independent validation compares query results
+-with source-derived expected values; a user study would additionally
+-measure task completion, errors and usability.
++SPARQL queries and renders site and specimen views. Validation
++compares query results with source-derived expected values.
+ 
+ \subsection{Identifiers and reuse metadata}
+ 
+diff --git a/06_usage.tex b/06_usage.tex
+index 03a735f..362df47 100644
+--- a/06_usage.tex
++++ b/06_usage.tex
+@@ -58,11 +58,9 @@ matched dark and light exposure.
+ 
+ \subsection{Versioning and supported operations}
+ 
+-The deposited source and checksum manifests identify the inputs used
+-to generate each module. Preserve these files when reproducing a
+-reported result. Rebuilding against a newer external ontology requires
+-identifier and mapping validation, followed by regeneration of the
+-affected modules and query results. Version-specific manifests identify the data used in each release.
++Use the versioned modules and their reference ontologies to reproduce
++queries. Updating an external ontology requires revalidating identifiers
++and mappings before regenerating the affected modules and query results.
+ 
+ KG v3.0.1 serves the asserted graph at
+ \url{https://rubalkhali.science/graph/asserted/3.0.1}.
+@@ -77,24 +75,18 @@ reasoning workflow described in Section~\ref{subsec:owl_rdf}.
+ Publication of its output requires completion and validation of that
+ workflow. Changes to released artifacts require a new semantic version.
+ 
+-For reproduction, retain the source package, module manifest,
+-loader provenance and checksums together. The release instructions
+-specify the pinned generation environment and coordinate-preserving
+-import adapter. The asserted N-Quads provides the released union;
+-the v3.0.1 rebuild kit verifies and loads the 16 distributed modules.
+-The terminology builder uses the definitions and ontology-generation
+-code distributed with the kit. Scientific-module generation uses the
+-source data and code described in Section~\ref{records}.
+-Local module loading provides access to fixed inputs independently
+-of the portal's deployed version. Analyses requiring additional OWL
+-consequences need a reasoner and validation workload suited to those
+-constructs.
++A local copy of the deposited graph provides fixed inputs independently
++of the portal's deployed version. The rebuild kit verifies and loads the
++16 distributed modules; generating the scientific modules uses the source
++data and code described in Section~\ref{records}. Analyses requiring
++additional OWL consequences need a reasoner and validation workload
++suited to those constructs.
+ 
+ \section{Data availability}\label{data_availability}
+ 
+ The project uses ENA umbrella study \texttt{PRJEB104209}; its submitted
+ amplicon run records are associated with \texttt{PRJEB106069}. On
+-4~October 2026, the anonymous ENA read-run file report for
++5~October 2026, the anonymous ENA read-run file report for
+ \texttt{PRJEB106069} returned no public run/file rows. Release of the
+ raw reads or a complete anonymous reviewer download remains required.
+ The source and derived-data package is maintained at
+diff --git a/kr_supplement.tex b/kr_supplement.tex
+index 0a048f0..7d1d7fd 100644
+--- a/kr_supplement.tex
++++ b/kr_supplement.tex
+@@ -1,12 +1,7 @@
+ \section{Knowledge-representation patterns}\label{supp:kr}
+ 
+-This section gives formal patterns and connected graph examples for
+-the resource described in the main article. The Description Logic
+-notation \cite{dlhandbook} uses $\sqsubseteq$ for subclass inclusion,
+-$\sqcap$ for conjunction, $\exists R.C$ for at least one relation
+-$R$ to a member of class $C$, and $\forall R.C$ for restriction of
+-all $R$ fillers to $C$. The main article gives the formal patterns; the examples here instantiate
+-them with observations from the resource.
++The graph examples in this section instantiate the formal patterns
++in the main article with observations from the resource.
+ 
+ Prepend Table~\ref{tab:supp_prefixes}'s declarations when parsing the
+ Turtle snippets. The unprefixed knowledge-base namespace is used by
+diff --git a/sn-article.tex b/sn-article.tex
+index 7795e62..b497c84 100644
+--- a/sn-article.tex
++++ b/sn-article.tex
+@@ -22,7 +22,8 @@
+ \usetikzlibrary{shapes,arrows.meta,positioning}
+ \lstset{breaklines=true,breakatwhitespace=false,columns=fullflexible}
+ 
+-\hypersetup{hypertexnames=false}
++\hypersetup{hypertexnames=false,linktoc=none}
++\AtBeginDocument{\let\linkedref\ref\renewcommand{\ref}[1]{\linkedref*{#1}}}
+ \raggedbottom
+ 
+ \setcitestyle{super,open={},close={}}
+diff --git a/supplement.tex b/supplement.tex
+index 2360b1a..be3f910 100644
+--- a/supplement.tex
++++ b/supplement.tex
+@@ -57,13 +57,11 @@ The retained indexing protocol specifies the kit and thermal
+ programme; its reaction-specific reagent volumes remain undocumented.
+ 
+ Pooling used library molarity derived from measured DNA concentration
+-and fragment length. The pooling calculation calculates aliquot volumes
+-using a pooling-volume factor of the
++and fragment length. Aliquot volumes were calculated using a pooling-volume factor of the
+ form $VC/N$, where $V$ is target pool volume, $C$ is target molarity
+ and $N$ is the number of libraries; dividing this factor by a library's
+-molarity gives that library's aliquot volume. The pooling calculation
+-leaves the target values and library measurements blank. The actual
+-pooling volumes therefore require the completed run-specific measurements.
++molarity gives that library's aliquot volume. Run-specific target volumes, target molarities and individual library
++measurements remain undocumented.
+ 
+ Both PMA-treated and untreated aliquots underwent 10~min in darkness
+ and 35~min of illumination at 450~nm. Each of three parent collection

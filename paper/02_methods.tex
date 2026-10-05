@@ -26,7 +26,8 @@ successive sites, using an Earth radius of 6,371~km.
 The transect comprises 60 primary sampling sites at predetermined
 coordinates and 10 named locations, including wells, a hot spring and
 an oil-spill site. Trip~1 source identifiers 61--64 are aliases for four
-named catalogue locations, established by coordinate matching.
+named catalogue locations, established by coordinate matching, and
+account for 36 source specimens.
 The repeated-campaign analytical frame uses sites~1--60.
 The metadata link each observation to its site, campaign and specimen.
 
@@ -294,9 +295,10 @@ remains unresolved.
 This resulted in a canonical feature table of 351,472 amplicon sequence
 variants (ASVs) prior to contaminant removal, covering samples from Trips~1--5 and 24 control samples.
 Of its 1,271 profiles, 1,247 are biological; quality filtering excludes
-the 24 control profiles and 10 biological profiles with fewer than
-1,000 reads, leaving the 1,237 profiles used by the companion ecology
-analysis. The complete table is distributed unfiltered. The sequencing inventory links all 1,271 canonical profiles to paired-read
+the 24 control profiles and ten biological profiles with fewer than
+1,000 reads, including one \texttt{T1Dr1} run with 934 reads. This leaves
+1,237 profiles, including 1,227 profiles from sites~1--60, for the
+companion ecology analysis. The complete table is distributed unfiltered. The sequencing inventory links all 1,271 canonical profiles to paired-read
 inputs: 1,013 from the July processing group and 258 from Trip~5. A further
 33 July inputs fall outside the canonical feature table. The July execution
 used pipeline groups A and B. Processing specified the Bakt\_341F/Bakt\_785R
@@ -387,6 +389,12 @@ these three parent specimens under matched dark and light exposure.
 % three separately prepared slurries per mother tube, one tube per group.
 
 \subsection{Environmental and climate data}
+
+Field environmental observations retain degrees Celsius, hectopascals
+(millibars) and percent relative humidity. Pressure magnitudes are
+multiplied by 100 and asserted in pascals (\texttt{obo:UO\_0000110})
+in the graph. Climate observations use degrees Celsius, millimetres
+and percent relative humidity, as applicable to each variable.
 
 We retrieved historical climate data from the Open-Meteo archive
 endpoint \cite{openmeteo} for each sampling site using its geographic coordinates, yielding
@@ -575,6 +583,5 @@ curated inputs, generation of those inputs from primary records,
 and replication of the field/laboratory measurements. The package's
 workflow evidence covers the executed stages; missing upstream
 sequence-processing inputs and acquisition metadata are stated in
-their respective Methods subsections. A complete release requires a
-fresh-checkout execution record, checksum comparisons and successful
-main/supplement builds against the same inputs.
+their respective Methods subsections. Versioned inputs and execution records identify the data and software
+used for the reported checks.

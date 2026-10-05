@@ -58,11 +58,9 @@ matched dark and light exposure.
 
 \subsection{Versioning and supported operations}
 
-The deposited source and checksum manifests identify the inputs used
-to generate each module. Preserve these files when reproducing a
-reported result. Rebuilding against a newer external ontology requires
-identifier and mapping validation, followed by regeneration of the
-affected modules and query results. Version-specific manifests identify the data used in each release.
+Use the versioned modules and their reference ontologies to reproduce
+queries. Updating an external ontology requires revalidating identifiers
+and mappings before regenerating the affected modules and query results.
 
 KG v3.0.1 serves the asserted graph at
 \url{https://rubalkhali.science/graph/asserted/3.0.1}.
@@ -77,24 +75,18 @@ reasoning workflow described in Section~\ref{subsec:owl_rdf}.
 Publication of its output requires completion and validation of that
 workflow. Changes to released artifacts require a new semantic version.
 
-For reproduction, retain the source package, module manifest,
-loader provenance and checksums together. The release instructions
-specify the pinned generation environment and coordinate-preserving
-import adapter. The asserted N-Quads provides the released union;
-the v3.0.1 rebuild kit verifies and loads the 16 distributed modules.
-The terminology builder uses the definitions and ontology-generation
-code distributed with the kit. Scientific-module generation uses the
-source data and code described in Section~\ref{records}.
-Local module loading provides access to fixed inputs independently
-of the portal's deployed version. Analyses requiring additional OWL
-consequences need a reasoner and validation workload suited to those
-constructs.
+A local copy of the deposited graph provides fixed inputs independently
+of the portal's deployed version. The rebuild kit verifies and loads the
+16 distributed modules; generating the scientific modules uses the source
+data and code described in Section~\ref{records}. Analyses requiring
+additional OWL consequences need a reasoner and validation workload
+suited to those constructs.
 
 \section{Data availability}\label{data_availability}
 
 The project uses ENA umbrella study \texttt{PRJEB104209}; its submitted
 amplicon run records are associated with \texttt{PRJEB106069}. On
-4~October 2026, the anonymous ENA read-run file report for
+5~October 2026, the anonymous ENA read-run file report for
 \texttt{PRJEB106069} returned no public run/file rows. Release of the
 raw reads or a complete anonymous reviewer download remains required.
 The source and derived-data package is maintained at

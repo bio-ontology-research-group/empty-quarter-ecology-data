@@ -1,33 +1,13 @@
 \section{Data records}\label{records}
 
-The source and derived-data package contains graph modules, curated
-tables, specimen and assay provenance, validation evidence and workflow
-code. The machine-readable manifest
-\path{PRE_RELEASE_MANIFEST.tsv} identifies payload sizes, checksums,
-categories and release/licence status. Separately retrieved bulk
-payloads are listed in the bulk manifest. Data Availability reports
-access routes and raw-sequence availability.
-
 KG v3.0.1 contains 45,707,660 asserted triples from 16 manifested
-modules and is archived at Zenodo \cite{rubalkhali_kg301}.
-The release distributes the original RDF modules, the deduplicated
-asserted graph in compressed N-Quads format, and a rebuild kit containing
-load/export code, definition provenance and validation evidence.
-The \href{https://bio2vec.net/data/empty-quarter/kg/3.0.1/manifest.json}{release manifest}
-identifies their contents, sizes and checksums. The kit reconstructs the
-asserted union from the distributed modules. Scientific producer code and
-inputs are maintained separately in the reproducibility repository.
-
-\subsection{Knowledge-graph modules}
-
-The primary artifacts are the knowledge-graph modules, distributed as
-RDF/XML and Turtle files and structured by data type
-(Table~\ref{tab:modules}). The base ontology
-(\texttt{rubalkhali.owl}) holds the project terminology. Domain modules
-share site, specimen and process identifiers; the release also includes
-the generated taxonomic vocabulary and four pinned reference ontologies.
-These modules load together into an RDF store. Domain queries require the corresponding
-shared terminology and linked site, specimen or process modules.
+modules and is archived at Zenodo \cite{rubalkhali_kg301}. The deposit
+provides the RDF/XML and Turtle modules in Table~\ref{tab:modules},
+a compressed N-Quads export of their deduplicated union, and code to
+load the modules and reproduce that export. Shared site, specimen and
+process identifiers connect observations across modules. The
+\href{https://bio2vec.net/data/empty-quarter/kg/3.0.1/manifest.json}{release manifest}
+identifies each deposited file and its checksum.
 
 \begin{table}[h]
 \centering
@@ -58,61 +38,29 @@ shared terminology and linked site, specimen or process modules.
 \end{tabular}
 \end{table}
 
-\subsection{Tabular data products}
+The \href{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data}{data repository}
+provides the specimen catalogue, assay tables and analysis inputs.
+The catalogue links specimens to collection visits, extractions,
+libraries and sequence runs. Tabular products include amplicon counts
+and taxonomic mappings, field environmental observations, laboratory
+and field XRF values, and archived-soil pH measurements
+(\texttt{EQ-PH-SHARED-v1.0.1}). The repository also provides the paired
+PMA profiles, 150 CoverM profiles, eggNOG annotations for the
+990-genome analytical subset, and six source tables for the
+MAG-derived versus PICRUSt2 comparison. Tables are supplied in
+delimited text formats; larger collections are compressed.
+The \href{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data/blob/main/metadata/climate/current_analysis_inputs.json}{climate inventory} identifies daily inputs; monthly climate
+summaries retain separate acquisition metadata.
 
-The specimen catalogue links site and campaign to specimen, extraction,
-library, sequence run, quality-control decision and derived community.
-Identifiers 61--64 denote four named sites sampled only in Trip~1 and
-account for 36 source specimens. Assay tables provide the canonical amplicon
-profiles, taxonomic mappings, field environmental observations, laboratory
-and field XRF measurements, and archived-soil pH values.
-
-The canonical feature table contains 1,271 profiles. The ecology analysis
-retains 1,237 (1,227 profiles from sites~1--60), after excluding 24 controls and ten
-biological profiles with fewer than 1,000 reads, including one
-\texttt{T1Dr1} run with 934 reads. The pH release
-\texttt{EQ-PH-SHARED-v1.0.1} provides 712 measurements and their
-specimen and session links.
-
-Four additional products support downstream ecology analyses: the paired
-PMA table (\path{metadata/relic-dna/PMA_ASV_table.tsv}; 18 analytical
-columns from nine treated/untreated pairs, with controls kept separately),
-150 CoverM profiles (\path{metadata/metagenome/coverm_profiles.tar.gz}),
-eggNOG annotations (\path{metadata/metagenome/eq.emapper.annotations.gz})
-for the 990-genome analytical subset, and six source tables for the
-MAG-derived versus PICRUSt2 comparison
-(\path{metadata/metagenome/measured_function_inputs.tar.gz}).
-The daily climate inputs are selected by
-\path{metadata/climate/current_analysis_inputs.json}; the monthly acquisition
-is documented in \path{metadata/climate/climate_acquisition_frozen.json}.
-The complete field environmental observations are provided in
-\path{metadata/environmental/environmental_measurements_curated.tsv}.
-The sequence inventory and functional-prediction provenance are distributed
-under \path{metadata/amplicon/} and \path{metadata/functional/}.
-Methods identifies the upstream resources required for reproduction from
-raw reads.
-
-\subsection{Validation schemas, queries and evidence}
-
-The reproducibility repository includes the artifacts needed to re-validate the resource:
-the ShEx shapes that define the structural contract for each entity
-family, the positive and negative structural fixtures, the archived
-competency SPARQL queries, and the machine-readable evidence bundles
-(reconciliation summaries, audit tables, validation records and
-checksum manifests) produced by the release workflow. A companion data
-dictionary (\path{metadata/DATA_DICTIONARY.tsv}) records the field
-names, data types, units, missing-value conventions and definitions
-for the curated canonical tabular records. Quantities carry units only
-where a unit is documented at the source: environmental source tables
-retain degrees Celsius, hectopascals (millibars) and percent relative
-humidity; in the graph, pressure magnitudes are
-multiplied by 100 and asserted in pascals (\texttt{obo:UO\_0000110}),
-climate
-records use degrees Celsius and millimetres, and DNA concentrations
-are in nanograms per microlitre. XRF values are instrument-reported magnitudes with undocumented
-concentration units.
-
-The manifests and data dictionary provide the versioned file-level
-inventory. The KG citation identifies the immutable v3.0.1 deposit
-(Section~\ref{data_availability}); the repository manifests additionally
-cover the broader analytical inputs.
+The \href{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data/blob/main/metadata/DATA_DICTIONARY.tsv}{data dictionary} defines
+fields, data types, units and missing-value conventions for the curated
+tables. Site and campaign identify collection visits; specimen and
+assay identifiers distinguish physical material from its measurements.
+Control roles, processing batches and quality-control dispositions
+support selection of observations for reuse. Missing values and
+unresolved mappings retain the conventions documented for each table.
+The \href{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data/blob/main/PRE_RELEASE_MANIFEST.tsv}{file inventory} gives locations,
+sizes, checksums and licensing status. A separate bulk-data inventory
+gives retrieval information for larger downloads. The repository also supplies
+validation schemas, SPARQL queries, expected query outputs and the
+source comparisons described in Technical Validation.

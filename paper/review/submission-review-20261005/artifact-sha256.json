@@ -1,0 +1,16 @@
+{
+  "README.txt": "8cf4e1ab1cc444c6f31f6a3be7e366cfc17c2a0de78918e98f8dec5a4f897167",
+  "RELATED-MANUSCRIPT-NOTE.txt": "ca0877fb2ba3dcc24894fca2a14fb9bca54a2803f7c8bf6cd00b7424d2bea10f",
+  "REVIEW.txt": "d7c59c790fea31a89b662b4b8db7540e475aa6d11750505aaeb2b80a27bec5a7",
+  "baseline.json": "0e3164f0232c71f6ae4a2699dda93f0a7f61a08dbff3ed7320e17f233b6a28e1",
+  "data-paper-rund-redline.pdf": "011ade11adf7cbaf16da2f47e007e27f510d9c9a2d642bf5aa7ad6bb922574a9",
+  "ena-access-check.json": "6ccc757b044ea688613a4d3b31390b7c9d8ebae7e1c1b815e959206cad8d0bb9",
+  "rund-baseline-main.pdf": "2f8b33c8eb688723adf7ee1f4a967a8ff7f4370003cf5a6ddfda97df3a952cfd",
+  "rund-baseline-supplement.pdf": "a30343dd1288eff4f9ea7074fcb8f210172335a5a8a54f292460a785934651a9",
+  "rund-source-changes.patch": "60474ef44049eb1fc2173360147ea5f44250f5b9383c8d04eba68b88b9b94d85",
+  "rund-source-comparison.html": "dcb2545d6884dbe913d90f8116b5abf5b0993ee04d8137d4f77f313d14d79878",
+  "submission-sources.zip": "56e2de1037bc1db17a57512331bf541bbe931510934768e0e4dc5cbc6342f030",
+  "supplement-rund-redline.pdf": "fd5938c6d02633451fa0a4fa08c17616ca1585b8fd25a348cfa6c93038c4ea08",
+  "this-pass-source-changes.patch": "701967a7da97c2814212d511a38c0da3ba47fe616769ad5f68ba16bf19cbde68",
+  "this-pass-source-comparison.html": "14d71f7848f8db8f20bc7b9978ec5f095634a4116dbe5e3d82941280503918b3"
+}

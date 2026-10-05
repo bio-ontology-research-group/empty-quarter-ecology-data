@@ -1,0 +1,117 @@
+Scientific Data submission review — 5 October 2026
+
+Decision
+The revised manuscript has the Data Descriptor structure and a focused Data
+Records section. Submission readiness remains conditional on data access,
+archiving and author information below. No manuscript has been submitted.
+This review supersedes final-style-20261005 for the current manuscript.
+
+Guidance checked
+https://www.nature.com/sdata/submission-guidelines
+https://www.nature.com/sdata/policies/data-policies
+https://www.nature.com/sdata/policies/editorial-and-publishing-policies
+https://academic.oup.com/ismej/pages/author-guidelines
+
+Scientific Data has no main-section word limits. Data Records describes
+repositories, files, formats and fields; filenames are permitted there.
+Technical validation belongs in its own section. An abstract of up to 170
+words is recommended and titles are limited to 110 characters. Author roles
+are required in SNAPP; its instructions say to omit that section from the
+article. The older MTS system requires it in the article. Data must be
+accessible to reviewers at submission. Related manuscripts must be disclosed.
+ISME additionally requests copies and an explanation of the distinction in
+its cover letter. These requirements do not constitute an acceptance decision.
+
+Edits in this pass
+Data Records now has 298 prose words rather than 608 (TeXcount, excluding
+headings and the module table). It describes the KG deposit, tabular products,
+identifiers, formats and dictionary. The unchanged 16-module table provides
+the exact RDF filenames; prose uses descriptive links for the dictionary and
+inventories. Removed the list of internal download paths and directory names.
+
+Moved the 36-specimen location accounting, community-filtering details and
+pressure-unit conversion into Methods. These facts remain available without
+interrupting the data inventory. Kept all scientific values, acquisition
+qualifications, RDF examples, equations and validation results. Removed
+repeated XRF cell counts from the assay-validation introduction; the full
+counts remain in source reconciliation. Shortened redundant release-manual
+instructions, removed the manuscript-build checklist from Methods, clarified
+pH matching without a substitution narrative, and removed an unperformed
+usability-study digression. Simplified supplementary pooling wording and
+removed a repeated definition of the formal notation. Section and table
+cross-references in the main PDF are now unlinked, following journal guidance;
+external access links remain active.
+
+Whole-manuscript assessment
+The title is 97 characters and the abstract remains under 170 words. The
+main sections are Background and summary, Methods, Data records, Technical
+validation, Usage notes, Data availability and Code availability. Funding and
+competing interests are included. There is no ecological Results/Discussion
+section. The coverage tables describe sampling and admission; XRF agreement,
+control diagnostics and query tests establish technical quality. Community
+associations and ecological interpretations remain in the ISME manuscript.
+No additional Data Overview section is necessary.
+
+Methods retains the laboratory procedures and the specified limitations of
+sequence processing, mappings and OWL validation. The separate finite-rule
+workflow is identified as distinct from the asserted release; its description
+does not establish that its full output was published. Formal equations are
+in Methods. Supplementary material contains worked graph examples, protocol
+details and the chemical cross-reference table. The long environmental table
+remains data in the repository. The main PDF is 31 pages; the supplement is
+12 pages. The journal imposes no shorter main-article page limit.
+
+The prose scan and manual section review found no workbook terminology,
+Site 52 correction narrative, or visible local file paths outside Data
+Records. Namespaces, accessions, ontology identifiers and code listings are
+scientific representation examples and have been retained. Manuscript
+structure and scientific scope are preserved.
+
+Cross-paper consistency
+KG v3.0.1 still contains 45,707,660 asserted triples in 16 modules and 342
+defined project terms. The 1,271 canonical profiles comprise 1,247 biological
+profiles and 24 controls; ten biological profiles fail the depth threshold,
+leaving 1,237 overall and 1,227 at primary sites 1–60. The same confirmed
+nominal depth, 712 pH measurements (156 Trip 4 replicate-2 measurements),
+725 laboratory XRF records and Vanta/Fast Mode acquisition are retained.
+Shotgun inputs remain 150 libraries and 991 catalogue genomes, with the
+990-genome annotation subset, 125 whole-profile matches and 975 genomes/119
+marker matches. PMA comprises nine pairs from three parent specimens.
+Environmental values, daily-climate input hashes and all ecological results
+are unchanged. Numerical tests retain their underlying evidence checks;
+prose-location checks were moved with the relevant facts into Methods.
+
+Requirements still to complete before submission
+1. Confirm author contributions and final author list/order/approval.
+   Supply roles in SNAPP, or add an approved statement if using MTS.
+2. Arrange anonymous reviewer access to the raw amplicon reads. A fresh
+   unauthenticated ENA request on 5 October returned HTTP 200 and only the
+   column header, with zero run/download rows for PRJEB106069. The saved
+   response is included. Any temporary access instructions must accompany
+   the manuscript where reviewers can see them.
+3. Archive the broader analytical tables and specimen/assay data in a
+   suitable durable repository and add its formal data citation. The Zenodo
+   DOI covers the manifested KG deposit; GitHub holds the broader products.
+   Complete formal sequence/data citations against the final deposits and
+   resolved archive metadata; do not assign an invented release date.
+4. Obtain the upstream sequence-processing records and acquisition details
+   identified in Methods where available. Current evidence supports
+   downstream replay; raw-read regeneration and all original measurements
+   cannot yet be independently reproduced. In particular, amplicon execution
+   and paired-column provenance and shotgun assembly/binning/profiling
+   inputs remain incomplete. These limitations are still stated explicitly.
+5. Disclose the related ecology manuscript to Scientific Data and provide a
+   copy. For ISME, disclose the data descriptor in its cover letter, explain
+   the distinct contributions and provide the descriptor. The attached
+   related-manuscript note supplies factual wording, without claiming either
+   paper has already been submitted or accepted.
+
+Validation
+85 checks pass (29 manuscript checks and 56 package/workflow checks).
+Main, supplement and compatibility PDFs compile without undefined references
+or overfull boxes. Data Records was inspected in the rendered PDF. No
+biological analyses or immutable KG deposits were changed in this revision.
+The updated cumulative prose redlines use Rund's latest author-attributed
+commit, 1005a47 (28 August 2026), not a confirmed last-reviewed version.
+An additional source comparison isolates this pass against df54e1f, so the
+large historical comparison is not mistaken for today's changes.

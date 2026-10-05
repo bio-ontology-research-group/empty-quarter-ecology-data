@@ -1,0 +1,19 @@
+Draft disclosure wording for the submission systems; nothing submitted.
+
+For Scientific Data
+A related ecology manuscript using these observations is being prepared for
+The ISME Journal. It reports community structure, environmental associations
+and functional comparisons. This Data Descriptor describes the underlying
+observations, their collection and processing, the knowledge-graph
+representation, technical validation and reuse. A copy of the related
+manuscript should accompany the submission. Update its submission status
+when entering this disclosure.
+
+For The ISME Journal
+A related Data Descriptor, “A formal knowledge base for amplicon sequencing
+data and geochemistry of the Rub' al Khali desert”, is being prepared for
+Scientific Data. It describes the shared dataset, its generation, knowledge-
+graph representation and technical validation. The ecology manuscript
+reports the ecological analyses and interpretations. A copy of the Data
+Descriptor should accompany the submission. Update its submission status
+when entering this disclosure.

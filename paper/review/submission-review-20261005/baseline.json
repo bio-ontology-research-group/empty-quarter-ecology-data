@@ -1,0 +1,10 @@
+{
+  "baseline_commit": "1005a47ca6215fd443a61f6fd73b8762dd7d8a25",
+  "baseline_author": "Rund Tawfiq",
+  "baseline_author_date": "2026-08-28",
+  "baseline_commit_date": "2026-08-29",
+  "baseline_basis": "Latest author-attributed edit in current Overleaf Git history; not evidence of last review or approval",
+  "current_source_commit": "3de7383b7b4a284e41cac1cf575bbcfc3aa44fdd",
+  "incremental_baseline": "df54e1f",
+  "project": "6a741d888df17653bc201f8a"
+}

@@ -18,9 +18,8 @@ Trip~3 Bray--Curtis contrasts were $-0.003$ ($p=0.15$) and
 $+0.006$ ($p=0.99$), respectively. These contrasts summarize the
 tested preparation-order association.
 
-For XRF, the source audit reproduces 13,390 Trips~1--4 and 4,293
-Trip~5 reported cells under their stated selection rules.
-Repeated field sessions were reduced to site medians and paired
+To assess agreement between field and laboratory XRF measurements,
+repeated field sessions were reduced to site medians and paired
 with the Trip~5 subsurface laboratory observation at 58 sites.
 Among 12 analytes with positive values in both workflows at more
 than 10 paired sites, the median Spearman correlation was 0.21
@@ -74,8 +73,7 @@ CQ7 & What are the complete genus-level read counts and relative read abundance 
 \end{tabular}
 \end{table}
 
-We show several example SPARQL queries. Listing~\ref{lst:sparql_xrf}
-retrieves XRF measurements for a specific site, requiring traversal of
+Listing~\ref{lst:sparql_xrf} retrieves XRF measurements for a specific site, requiring traversal of
 the measurement process, quality, and value entities.
 
 \begin{lstlisting}[caption={SPARQL query to retrieve field XRF
@@ -297,9 +295,8 @@ versions (Section~\ref{records}).
 \subsection{Portal access}
 
 The portal (\url{https://rubalkhali.science/}) retrieves data through
-backend SPARQL queries and renders site and specimen views. Independent validation compares query results
-with source-derived expected values; a user study would additionally
-measure task completion, errors and usability.
+SPARQL queries and renders site and specimen views. Validation
+compares query results with source-derived expected values.
 
 \subsection{Identifiers and reuse metadata}
 

@@ -1,0 +1,7 @@
+{
+  "checked_utc": "2026-10-05T09:18:49.045150+00:00",
+  "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB106069&result=read_run&fields=run_accession,fastq_ftp&format=tsv",
+  "http_status": 200,
+  "rows": 0,
+  "response": "run_accession\tfastq_ftp\n"
+}

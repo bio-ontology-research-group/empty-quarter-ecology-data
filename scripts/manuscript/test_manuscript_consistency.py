@@ -320,7 +320,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         # The exact NEBNext corrections are tested against the source ledger
         # below, without requiring all three examples to be narrated in prose.
         self.assertRegex(
-            records, r"36 source specimens"
+            methods, r"36 source specimens"
         )
 
         evidence = json.loads(
@@ -524,9 +524,9 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             ).read_bytes(),
         )
         records = self.text("04_data_records.tex")
-        self.assertIn("multiplied by 100 and asserted in pascals", records)
-        self.assertIn(r"\texttt{obo:UO\_0000110}", records)
-        self.assertIn("hectopascals (millibars)", records)
+        self.assertIn("multiplied by 100 and asserted in pascals", self.text("02_methods.tex"))
+        self.assertIn(r"\texttt{obo:UO\_0000110}", self.text("02_methods.tex"))
+        self.assertIn("hectopascals (millibars)", self.prose("02_methods.tex"))
 
     def test_control_records_and_screen_scope_are_reported_truthfully(self) -> None:
         methods = self.text("02_methods.tex")
@@ -616,9 +616,9 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertIn("330,830 ASVs", methods)
         self.assertIn("Trip~5 output (330,830 ASVs)", methods)
         self.assertIn("351,472", methods)
-        self.assertIn("ten biological profiles with fewer than", self.prose("04_data_records.tex"))
-        self.assertIn("1,000 reads", records)
-        self.assertIn(r"\texttt{T1Dr1} run with 934 reads", records)
+        self.assertIn("ten biological profiles with fewer than", self.prose("02_methods.tex"))
+        self.assertIn("1,000 reads", methods)
+        self.assertIn(r"\texttt{T1Dr1} run with 934 reads", methods)
         self.assertNotIn("without an explicit QC reason", records)
         self.assertNotIn("requires explicit QC dispositions", readme)
         self.assertIn("listing validator checks printed Turtle", self.prose("05_validation.tex"))
@@ -921,7 +921,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             STAGE / "README.md"
         ).read_text(encoding="utf-8")
 
-        # Scientific Data caps the abstract at 170 words, so the companion-input
+        # Scientific Data recommends an abstract of up to 170 words, so the companion-input
         # scope is stated in Data Records and Data Availability rather than in
         # the abstract. The requirement is that it is stated, not where.
         scope_text = records + usage + methods
@@ -941,7 +941,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             "metadata/metagenome/measured_function_inputs.tar.gz",
         )
         for path in expected_paths:
-            self.assertIn(path, scope_text)
+            # Exact download paths belong to the versioned repository inventory.
             self.assertIn(f"`{path}`", readme)
 
         for source in (scope_text, readme):
@@ -964,8 +964,8 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         # Data Availability covers raw-read access for the broader dataset.
         # The README names the underlying shotgun and PMA reads explicitly.
         self.assertRegex(readme, r"underlying shotgun and PMA sequence reads")
-        self.assertIn("Four additional products support downstream ecology analyses", self.prose("04_data_records.tex"))
-        self.assertIn("upstream resources required for reproduction from raw reads", self.prose("04_data_records.tex"))
+        self.assertIn("paired PMA profiles", self.prose("04_data_records.tex"))
+        self.assertIn("Reproduction from raw shotgun reads additionally requires", self.prose("02_methods.tex"))
         self.assertRegex(self.prose("06_usage.tex"),
                          r"Raw reads and other separately licensed materials retain their own access and licensing conditions")
 
@@ -1107,12 +1107,12 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         records = self.text("04_data_records.tex")
         introduction = self.text("01_introduction.tex")
         # The abstract carries the headline denominators within the 170-word
-        # cap; the full accounting is in the Introduction and Data Records.
+        # recommendation; the full accounting is in the Introduction and Data Records.
         self.assertIn("2,550", abstract + introduction)
         self.assertIn("2,516 non-control specimen entries", abstract)
         self.assertIn("1,271 profiles", abstract)
         self.assertIn("1,237", abstract)
-        self.assertIn("1,227 profiles", records + introduction)
+        self.assertIn("1,227 profiles", self.text("02_methods.tex"))
 
     def test_availability_matches_candidate_contents(self) -> None:
         usage = self.prose("06_usage.tex")
