@@ -7,11 +7,11 @@ releases, and a taxon can have several labels \cite{balvovciute2017silva}.
 We therefore retain the original SILVA lineage alongside a validated
 NCBI Taxonomy identifier or a lineage-scoped project identifier.
 Taxonomic assignments come from SILVA v138.2 (Section~\ref{methods}), and we treat the original classifier lineage and ASV identifier as the primary evidence.
-These assignments are seven rank fields (domain--species), and some are followed by a separate species assignment field and a numeric confidence. We assert the species from the ranked lineage and retain the additional species call in a provenance ledger.
+These assignments are seven rank fields (domain--species), and some are followed by a separate species assignment field and a numeric confidence. We assert the species from the ranked lineage and retain the additional species call in a provenance annotation.
 We normalize the seven ordered rank 
 fields by removing rank prefixes and representing empty and unclassified entries explicitly.
 
-The mapping procedure evaluates the historical SILVA-to-NCBI candidates against a pinned NCBI Taxonomy release (the OBO Foundry NCBITaxon release \texttt{2025-03-13}, built from the NCBI
+The mapping procedure evaluates the SILVA-to-NCBI candidates against a pinned NCBI Taxonomy release (the OBO Foundry NCBITaxon release \texttt{2025-03-13}, built from the NCBI
 organismal taxonomy of 2025-03-01).
 An identifier is retained only when it resolves, has a compatible rank and label or documented synonym, and its ancestor chain is compatible with all retained
 higher-rank identifiers in that source lineage. A missing, ambiguous
@@ -22,18 +22,14 @@ identifier and reason. The output mapping covers every
 lineage represented in both the taxonomy export and the
 feature table; otherwise generation stops.
 
-Existing project identifiers are retained only when all explicit
-historical uses share one normalized rank, label and nearest explicit
-parent context; a reused identifier that acquires more than one
-corrected context is replaced in every affected use by contextual
-classes. Each resulting class retains one rank, label and parent context. The mapping builder emits
-corrected mappings, a decision ledger, a clean project taxonomy module
-and a manifest containing input and output checksums, and the
-abundance-ABox generator accepts only a passing, checksum-matched
-manifest.
+Project identifiers are scoped to one normalized rank, label and parent
+context. The mapping builder assigns contextual classes wherever those
+contexts differ. It produces the validated mappings, their decision
+provenance, a project taxonomy module and input/output checksums. The
+abundance generator accepts only mappings that pass these checks.
 
 Queries retain the original SILVA lineage and independently validated
-NCBI or project identifiers. The decision ledger reports rejected
+NCBI or project identifiers. The mapping provenance reports rejected
 candidates and their reasons. Algorithmic checks establish consistency
 with the specified name, rank and ancestry rules; semantic mapping
 accuracy requires a separately annotated validation sample.

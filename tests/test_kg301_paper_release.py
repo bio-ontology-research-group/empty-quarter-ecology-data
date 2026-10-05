@@ -49,7 +49,7 @@ def test_corrected_companion_climate_files_are_selected_by_digest():
     assert selected['site52'] == {'latitude':20.82784,'longitude':53.57835}
     for item in selected['inputs'].values():
         assert hashlib.sha256((ROOT/item['path']).read_bytes()).hexdigest() == item['sha256']
-    assert 'current_analysis_inputs.json' in (ROOT/'paper/02_methods.tex').read_text()
+    assert 'current_analysis_inputs.json' in (ROOT/'paper/04_data_records.tex').read_text()
     # Published ecology inputs, independently pinned in the shared selector.
     assert selected['inputs']['daily_open_meteo']['sha256'] == '494acfb4b01728d00bdaea3cafc481dab2f4730386f5cd3e6c2734edfd5ac3de'
 
@@ -69,3 +69,23 @@ def test_batch_claims_match_corrected_coordinate_replay():
     assert provenance['requested_generator'] == 'Claude Code --model sonnet'
     methods = (ROOT/'paper/03_knowledge_representation.tex').read_text()
     assert 'Claude Sonnet' in methods and 'automated review' in methods
+
+def test_submission_prose_describes_final_data_and_confines_paths_to_data_records():
+    import re
+    names = ['sn-article.tex', '01_introduction.tex', '02_methods.tex',
+             '02_methods_taxonomy.tex', '03_knowledge_representation.tex',
+             '05_validation.tex', '06_usage.tex', 'kr_supplement.tex',
+             'supplement.tex', 'env_table.tex']
+    for name in names:
+        text = (ROOT/'paper'/name).read_text()
+        text = re.sub(r'(?<!\\)%[^\n]*', '', text)
+        assert not re.search(r'workbook|worksheet|spreadsheet|correction ledger|Site[~ ]+52', text, re.I), name
+        assert r'\path{' not in text, name
+        assert not re.search(r'\\texttt\{[^}]*\.(?:tsv|csv|json|owl|ttl|nf|rq|md)\}', text), name
+    main = (ROOT/'paper/sn-article.tex').read_text()
+    title = re.search(r'\\title\[[^]]*\]\{([^}]+)\}', main).group(1)
+    abstract = re.search(r'\\abstract\{(.*?)\}\n', main, re.S).group(1)
+    assert len(title) <= 110 and len(abstract.split()) <= 170
+    assert r'\input{env_table.tex}' not in (ROOT/'paper/supplement.tex').read_text()
+    field_data = ROOT/'metadata/environmental/environmental_measurements_curated.tsv'
+    assert hashlib.sha256(field_data.read_bytes()).hexdigest() == '51177fb6b21e4b10712daaa731cdf3783d0fc351c536f562851efd233386573f'

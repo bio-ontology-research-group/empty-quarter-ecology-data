@@ -24,8 +24,7 @@ Repeated field sessions were reduced to site medians and paired
 with the Trip~5 subsurface laboratory observation at 58 sites.
 Among 12 analytes with positive values in both workflows at more
 than 10 paired sites, the median Spearman correlation was 0.21
-(range $-0.40$ to 0.48;
-\path{evidence/xrf_audit/xrf_field_lab_agreement.tsv}).
+(range $-0.40$ to 0.48).
 This diagnostic describes site-level rank agreement among the
 retained positive pairs.
 
@@ -42,37 +41,18 @@ PCR no-template control roles. The release validator compares full
 result multisets, preserving duplicate rows and requiring exact
 identifiers. Numeric comparisons use absolute and relative
 tolerances of $10^{-12}$; coordinate comparisons use an absolute
-tolerance of $10^{-10}$ degrees. The v3.0.0 acceptance suite's 26 checks covered the printed
-queries across direct and application-mediated transports, default
-and explicit datasets, and a 20-row taxonomic API result.
+tolerance of $10^{-10}$ degrees. The query comparisons test the links between observations and their
+specimen, process and site context.
 
-Six additional checks verified the advertised asserted-only dataset,
-the rejection of unavailable query modes, the absence of unreleased
-graphs, the default graph cardinality and all 712 pH
-process--specimen links against the reconciled source module.
-Fourteen protocol checks covered dataset selection, read-only access
-and preservation of RDF terms across the supported graph and
-SELECT serializations. Browser validation executed all nine portal
-examples and checked the three versioned download links. Full HTTP
-downloads verified artifact sizes and checksums; the complete asserted
-N-Quads export was parsed and checked for its graph context and triple
-count. All checks passed on the v3.0.0 candidate and public service. The
-\href{https://rubalkhali.science/downloads/kg/3.0.0/post-deployment-validation.json}{public validation report}
-binds these results to that release manifest.
-
-For v3.0.1, the archived build evidence verifies all 16 input-module
-hashes and parses the complete 45,707,660-quad export, checking every graph
-context. Fifteen scientific and reference modules match v3.0.0 exactly.
-The ontology builder verifies preservation of existing term axioms and
-one definition per annotation property for each of 342 project
-terms. Public checks verify equivalent ontology content in RDF/XML,
-Turtle, JSON-LD and N-Triples, resolution of the four reference imports,
-VoID/DCAT metadata, dataset discovery and download links.
-The versioned manifest, rebuild-kit reports and public-check record are
-retained under \path{evidence/kg-v3.0.1/}. These checks cover the updated
-ontology and asserted export; the dated v3.0.0 query workload remains
-identified by its original graph version.
-Separate structural tests cover additional module types.
+For KG v3.0.1, release validation verifies all 16 input-module hashes and
+parses the complete 45,707,660-quad export, checking every graph context.
+The terminology validation checks the term axioms and one definition per
+annotation property for each of 342 project terms. Public-release checks
+verify equivalent ontology content in RDF/XML, Turtle, JSON-LD and
+N-Triples, resolution of the four reference imports, manifest integrity,
+the live asserted-graph count and the deposited artifacts.
+Section~\ref{records} identifies the validation evidence and its input
+versions. Structural tests evaluate the scientific modules separately.
 
 \begin{table}[h]
 \centering
@@ -131,16 +111,9 @@ retrieves each output and its analyte quality. It returns one row
 per process/analyte combination, excluding the aggregate Light
 Elements channel. The concentration units are undocumented.
 
-The release workflow executes this exact query
-(\path{sparql/field_xrf_site10.rq}) against the checksummed base, site
-and XRF modules and requires the fixed expected cardinality of
-46 analyte-value rows; it returned exactly 46 rows for Site~10,
-24 from field process Test~5847 and 22 from Test~5848, and the result
-table and validation record are archived under
-\path{evidence/competency-query/}.
-This execution checks the archived query's cardinality; release
-validation also requires comparison of stable identifiers and values
-with the expected table.
+The query returned 46 analyte-value rows for Site~10: 24 from Test~5847
+and 22 from Test~5848. Validation compares the returned identifiers and
+values with the expected observations from the site and XRF data.
 
 Listing~\ref{lst:sparql_taxon} retrieves the complete genus profile for
 run \texttt{ERR16061083},
@@ -183,12 +156,11 @@ ORDER BY ?runLabel DESC(xsd:double(?count)) ?lineage ?proc
 
 The query binds both count and relative-abundance values to the same
 workflow, source FASTQ dataset, taxon and classifier lineage. Dataset
-labels currently encode rank through the suffix \texttt{(Genus)}.
+labels encode rank through the suffix \texttt{(Genus)}.
 The query uses that emitted convention explicitly and returns all
 48 observations for the named run. The source-derived expected table
 contains the complete profile, including each classifier lineage.
-The separate \path{scripts/release/kg/taxonomy_all_runs.rq} retrieves
-all runs from a locally loaded snapshot. That unrestricted export
+The all-run query retrieves profiles from a locally loaded snapshot. That unrestricted export
 is a long-running operation. The environmental example below additionally binds
 field temperature and specimen collection to the same site visit.
 
@@ -247,38 +219,33 @@ for the complete modules.
 
 \subsection{Source reconciliation and measurement validation}
 
-The archived evidence workflow produced a row-level sample ledger and
+The archived evidence workflow produced a specimen catalogue and
 reconciliation summaries for specimens, extracts, libraries, runs and
 community profiles. The 2,516 eligible source rows reconcile exactly
 to 2,516 generated sample individuals; the 1,647 extraction-eligible
 rows reconcile to 1,647 DNA extracts; and 1,242 resolved sequence rows
 reconcile to 1,242 amplicon libraries and 1,242 FASTQ datasets. A
-site-alias gate independently matches each Trip~1 numeric identifier
+site-identity check independently matches each Trip~1 numeric identifier
 61--64 to a named catalogue individual by exact coordinates and
-rejects coordinate or IRI disagreement, accounting for all 36 affected
-source rows.
+rejects coordinate or IRI disagreement, accounting for all 36 corresponding
+source specimens.
 
-The environmental-metadata gate reproduced 274 nonblank source records
-and verified all 24 exact-cell correction-ledger dispositions against
-the corresponding raw cells. All retained field temperatures,
-pressures and relative humidities fell within their declared physical
-ranges; the unresolved Trip~5 site~40 value of 194\% was preserved in
-the ledger but is absent from both the curated table and the
-environmental RDF module. The XRF provenance audit reproduced all
+Environmental validation accounts for 274 field observations and checks
+site identity, temperature, pressure and relative humidity. Values enter
+the curated environmental dataset only when they satisfy the measurement
+range and identity criteria. The XRF provenance audit reproduced all
 13,390 reported Trips~1--4 cells under the maximum-positive rule and
 all 4,293 reported Trip~5 cells under the last-reported rule, with no
 mismatched reported cells, and verified that the canonical laboratory
 input comprises all 725 processed records. An independent
-chemical-identifier gate checked all 93 instrument channels against
+chemical-identifier validation evaluated all 93 instrument channels against
 the pinned ChEBI release 247 and the checksummed PubChem snapshot of
 23 July 2026 (Section~\ref{methods:xrf}); all
 rows passed the declared rules, with explicit nulls for the aggregate
-LE channel and unsupported oxides. The pH reconciliation accounts for 1,168 workbook rows and
-reproduces the five admission dispositions in
-Section~\ref{methods:ph}. The string-based join associates each
-admitted row with a specimen identifier; the Trip~4 physical-replicate
-correction requires the separate provenance reconciliation described
-there.
+LE channel and unsupported oxides. The pH validation accounts for 1,168 specimen-assay entries and
+reproduces the five admission dispositions in Section~\ref{methods:ph}.
+It checks specimen identity for every admitted measurement, including
+field replicate~2 for all 156 Trip~4 measurements.
 
 \subsection{ShEx schema validation}
 
@@ -303,23 +270,13 @@ reference checks require the corresponding pinned payloads.
 
 \subsection{Logical consistency}
 
-The 9 September validation loaded 781,044 asserted axioms from eleven
-ontology IRIs and ELK returned \texttt{true} for its consistency check.
-The checked union included the ecosystem, pH and laboratory-control
-modules. It excluded the taxonomy ABox and large reference modules;
-imported axioms were not added to the asserted union, and class-hierarchy
-precomputation was omitted. An import-order regression confirmed that
-modules loaded through imports and then encountered explicitly retain
-their asserted axioms exactly once.
-
-The generated assertions include \texttt{xsd:double} literals, placing
-the asserted graph outside OWL~2~EL's datatype restrictions
-\cite{owl2profiles}. An OWLAPI profile diagnostic on the tractable
-asserted core found 40,482 illegal-datarange occurrences, including
-40,481 uses of \texttt{xsd:double}. Diagnostics caused by missing
-import declarations were recorded separately. ELK's operational
-result describes the asserted union under the constructs processed
-by this ELK configuration.
+ELK returned \texttt{true} for the tractable scientific-module subset
+loaded for validation, including the ecosystem, pH and laboratory-control
+modules. The checked subset excludes the taxonomy ABox and large reference
+modules. Its execution metadata identify the loaded axioms and import
+handling; class-hierarchy precomputation was omitted. The ontology uses \texttt{xsd:double} literals and constructs
+outside ELK's supported fragment \cite{owl2profiles}; the check therefore
+applies to the constructs processed by that configuration.
 
 Validation of the separate finite-rule implementation uses synthetic examples for long
 hierarchies, transitive cycles, both project property-chain lengths,
@@ -333,57 +290,14 @@ asserted graph. Completion requires the zero-addition pass specified
 in Section~\ref{subsec:owl_rdf}, followed by the explicit clash
 diagnostics.
 
-The separate label gate merged 800,026 triples and confirmed exactly
-one label for each of 106,833 labelled \texttt{RAK\_} subjects.
-Current logs, input hashes and validator sources are preserved under
-\path{evidence/final-validation-20260909/}; the earlier run remains
-under \path{evidence/semantic-validation/}.
-
-\subsection{Compute-time metrics}\label{sec:compute_metrics}
-
-Table~\ref{tab:compute} preserves development timings for a
-nine-ABox snapshot. The original benchmark lacks the complete
-hardware, repetition and cache information needed for a portable
-performance comparison. It differs from the current module set.
-The query timings range from 5~ms to a timeout above 300~s.
-
-\begin{table}[h]
-\centering
-\caption{Historical development timings; these describe an earlier
-  nine-ABox snapshot.}
-\label{tab:compute}
-\small
-\begin{tabular}{lr}
-\toprule
-\textbf{Step} & \textbf{Time} \\
-\midrule
-RDF module loading (Virtuoso, 9 ABox files)  & 140\,s \\
-Selected rule expansion (3 passes)           & 114\,min \\
-ELK check (historical benchmark)           & 1.6\,s \\
-CQ1 -- XRF measurements, Site 10            & 23\,ms \\
-CQ2 -- Sampling sites + GPS                 & 5\,ms \\
-CQ3 -- Biomes per site                      & 5\,ms \\
-CQ4 -- Light Elements reported values       & 8\,ms \\
-CQ5 -- DNA extraction records               & 1{,}342\,ms \\
-CQ6 -- Provenance chain                     & 255\,ms \\
-CQ7 -- Taxonomic composition                & $>$300\,s \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-CQ7 exceeded the five-minute timeout in that benchmark. A subsequent
-global 100-row preview and an equivalent two-branch formulation also
-exceeded 300~s on the idle release candidate. These runs are archived
-with their exact queries. The current CQ7 demonstrates a complete
-profile for a named run; its acceptance test compares all observations
-with an independently derived source table. Performance measurements
-must identify the query and graph snapshot used.
+Label validation checks that each labelled project entity has exactly one
+label. The evidence identifies the input modules, their hashes and validator
+versions (Section~\ref{records}).
 
 \subsection{Portal access}
 
 The portal (\url{https://rubalkhali.science/}) retrieves data through
-backend SPARQL queries and renders site and specimen views. This is
-an access interface. Independent validation compares query results
+backend SPARQL queries and renders site and specimen views. Independent validation compares query results
 with source-derived expected values; a user study would additionally
 measure task completion, errors and usability.
 

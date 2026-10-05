@@ -465,10 +465,9 @@ def render_latex(
         r"\begin{longtable}{llllllll}",
         (
             r"\caption{Site-specific field environmental observations across "
-            r"all campaigns. Values are generated from the immutable source "
-            r"sheets and the versioned correction ledger; a dash denotes an "
-            r"unrecorded or quarantined value. Altitude was not recorded in "
-            r"these field sheets.} \label{tab:env_data} \\"
+            r"all campaigns. A dash denotes an unavailable value. "
+            r"Altitude was not measured with these field observations.} "
+            r"\label{tab:env_data} \\"
         ),
         r"\toprule",
         (
@@ -505,47 +504,7 @@ def render_latex(
         lines.append(" & ".join(display(item) for item in table_row) + r" \\")
     lines.append(r"\end{longtable}")
 
-    site40 = next(
-        row
-        for row in applied_rows
-        if row["source_file"] == "trip5-2025.tsv"
-        and row["site"] == "40"
-        and row["original_field"] == "humidity"
-    )
-    if site40["status"].startswith("quarantined_"):
-        site40_note = (
-            r"Trip~5 site~40 contains the source value 194\% RH, which is "
-            r"outside the physical range. Because no primary source currently "
-            r"establishes a decimal correction, the curated value is missing; "
-            r"194 is preserved in the correction ledger."
-        )
-    else:
-        site40_note = (
-            r"Trip~5 site~40 RH was corrected from 194 to "
-            + latex_escape(site40["corrected_value"])
-            + r"\% using the evidence recorded in the correction ledger."
-        )
-    lines.extend(
-        [
-            r"\noindent\textit{Metadata QC.} "
-            r"For Trip~2, the eight values 34.5--41.9 occur in the source "
-            r"humidity column while the temperature column is empty. The "
-            r"ledger assigns them to temperature; neither pressure nor "
-            r"relative humidity is inferred. Trip~3 site~21 is retained as "
-            r"31.321\% RH because the original workbook records the "
-            r"fraction 0.31321. The 15 March records appended to the legacy "
-            r"Trip~3 worksheet are dated 2023 in that workbook; the curated "
-            r"table therefore labels them Trip~1 auxiliary/revisit records, "
-            r"and Trip~3 ends on 21 February 2024. "
-            r"The Trip~1 and Trip~3 Site~52 rows (and the appended "
-            r"52AD record) repeat the Site~53 coordinates; the ledger "
-            r"restores the Site~52 location recorded in Trips~4 and~5 "
-            r"(20.8278\degree N, 53.5784\degree E), which the Trip~3 "
-            r"GPS track corroborates. "
-            + site40_note,
-            r"\end{scriptsize}",
-        ]
-    )
+    lines.append(r"\end{scriptsize}")
     return "\n".join(lines) + "\n"
 
 

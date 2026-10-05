@@ -12,7 +12,7 @@ declarations in the terminology module. KG v3.0.1 supplies reviewed English
 definitions for all 342 project terms, recorded as SKOS and IAO definition
 annotations. Claude Sonnet (model identifier \texttt{claude-sonnet-5-5})
 drafted the definitions from term labels, axioms and dataset context;
-OpenAI Codex performed automated review and editing. The release preserves the existing term axioms and identifies
+OpenAI Codex performed automated review and editing. The terminology identifies
 four reference ontologies as imports; observation modules are linked as
 dataset parts. Definition drafts, model provenance and review dispositions
 are distributed with the release.
@@ -67,7 +67,7 @@ corresponding formal patterns and graph examples.
 
 Site annotations use existential restrictions to relate a site to
 an ENVO biome or environmental feature. Such a restriction specifies
-a filler of the named class. The source annotation ledger provides
+a filler of the named class. The source annotation metadata provides
 the recorded assignment and its provenance.
 
 Laboratory controls are occurrence-specific materials with
@@ -75,7 +75,7 @@ processing roles. A control-processing execution consumes the control,
 realizes its role and belongs to a documented processing group.
 Trips~4--5 use trip-specific extraction-day batches. Trips~1--3 use
 per-kit controls, and Trips~1--2 include shared extraction days.
-Occurrence-specific identifiers and the identity ledger distinguish
+Occurrence-specific identifiers and the identity metadata distinguish
 reused control labels. Confirmed, provisional, unresolved and
 inapplicable dispositions retain their supporting evidence. The
 D6300 whole-cell and D6322 purified-DNA standards enter the process
@@ -101,7 +101,7 @@ performs the rank aggregation explicitly.
 XRF processes have several concentration-value outputs. A laboratory
 process takes an archived specimen as input; a field process targets
 a site and retains the instrument test identifier. The chemical
-ledger supplies supported ChEBI and PubChem cross-references for
+mapping supplies supported ChEBI and PubChem cross-references for
 reporting channels, including oxide-equivalent channels. Unit
 documentation and acquisition scope are described in
 Section~\ref{methods:xrf}.
@@ -111,6 +111,135 @@ produce a pH value linked to its acidity quality and belong to a
 reconstructed measurement session. Field-replicate substitutions
 require separate physical identities and an explicit campaign,
 site and compartment matching level (Section~\ref{methods:ph}).
+
+\subsubsection{Formal patterns}
+
+The following Description Logic patterns \cite{dlhandbook} specify the
+entity relationships used by the resource. The notation uses
+$\sqsubseteq$ for subclass inclusion, $\sqcap$ for conjunction,
+$\exists R.C$ for at least one relation $R$ to a member of class $C$,
+and $\forall R.C$ to restrict all $R$ fillers to $C$. Structural
+validation checks the corresponding data constraints. Suppl.
+Sections~S1.2--S1.7 provide concrete RDF examples.
+
+The sampling pattern links a process to its target site and output collection,
+whose members are physical samples.
+
+\begin{small}
+\begin{align}
+	\label{eq:sampling}
+	\text{SamplingProcess} & \sqsubseteq \text{Process} \\
+	\text{Sample} & \sqsubseteq \text{MaterialEntity} \\
+    \text{SampleCollection} & \sqsubseteq \text{Collection} \sqcap
+        \forall \text{hasMember}.\text{Sample} \\
+	\text{SamplingProcess} & \sqsubseteq \exists
+                                 \text{hasTarget}.\text{Site} \sqcap
+                                 \exists
+                                 \text{hasOutput}.\text{SampleCollection} \\
+	\text{Sample} & \sqsubseteq \exists \text{isDerivedFrom}.\text{Site}
+\end{align}
+\end{small}
+
+A protocol execution links an information specification to the entities
+consumed and produced by the process.
+
+\begin{small}
+\begin{align}
+	\label{eq:protocol}
+	\text{ProtocolExecution} & \sqsubseteq \text{Process} \\
+	\text{Protocol} & \sqsubseteq \text{InformationContentEntity} \\
+	\text{ProtocolExecution} & \sqsubseteq \exists
+	    \text{isSpecifiedBy}.\text{Protocol} \\
+	\text{ProtocolExecution} & \sqsubseteq \exists
+	    \text{hasInput}.\text{Entity} \sqcap \exists
+	    \text{hasOutput}.\text{Entity}
+\end{align}
+\end{small}
+
+The abundance pattern connects a sequence-analysis workflow to a collection
+of values and to the taxonomic qualities those values quantify.
+
+\begin{small}
+\begin{align}
+	\label{eq:taxabundance}
+	\text{BioinformaticWorkflow} & \sqsubseteq \text{Process} \\
+	\text{TaxonomicDataset} & \sqsubseteq \text{Collection} \\
+	\text{BioinformaticWorkflow} & \sqsubseteq \exists
+	    \text{hasInput}.\text{SequenceDataset} \sqcap \exists
+	    \text{hasOutput}.\text{TaxonomicDataset} \\
+	\text{TaxonomicDataset} & \sqsubseteq \forall
+	    \text{hasMember}.\text{AbundanceObservation} \\
+	\text{AbundanceObservation} & \sqsubseteq \text{Quantity} \sqcap
+	    \exists \text{isMeasurementValueOf}.\text{AbundanceQuality} \\
+	\text{AbundanceQuality} & \sqsubseteq \exists
+	    \text{isAttributeOf}.\text{Taxon} \\
+	\text{AbundanceQuality} & \sqsubseteq \exists
+	    \text{hasMeasurementValue}.\text{AbundanceObservation}
+\end{align}
+\end{small}
+
+XRF specializes the measurement pattern through a specimen input for
+laboratory measurements and a site target for field measurements.
+
+\begin{small}
+\begin{align}
+\label{eq:xrf}
+\text{XRFProcess} & \sqsubseteq \text{MeasurementProcess}
+  \sqcap \exists \text{hasOutput}.\text{Concentration} \\
+\text{LabXRFProcess} & \sqsubseteq
+  \text{XRFProcess} \sqcap \exists
+  \text{hasInput}.\text{SoilSample} \\
+\text{FieldXRFProcess} & \sqsubseteq
+  \text{XRFProcess} \sqcap \exists
+  \text{hasTarget}.\text{SamplingSite} \\
+\text{Concentration} & \sqsubseteq \text{Quantity} \sqcap
+  \exists \text{isMeasurementValueOf}.\text{AnalyteQuality}
+\end{align}
+\end{small}
+
+The sequencing pattern composes extraction, library preparation and
+sequencing through their shared inputs and outputs.
+
+\begin{small}
+\begin{align}
+	\label{eq:sequencing}
+	\text{DNAExtractionProcess} & \sqsubseteq \text{ProtocolExecution} \\
+	\text{DNAExtractionProcess} & \sqsubseteq \exists
+	    \text{hasInput}.\text{SoilSample} \sqcap \exists
+	    \text{hasOutput}.\text{DNAExtract} \\
+	\text{LibraryPreparationProcess} & \sqsubseteq \text{ProtocolExecution} \\
+	\text{LibraryPreparationProcess} & \sqsubseteq \exists
+	    \text{hasInput}.\text{DNAExtract} \sqcap \exists
+	    \text{hasOutput}.\text{AmpliconLibrary} \\
+	\text{SequencingProcess} & \sqsubseteq \text{ProtocolExecution} \\
+	\text{SequencingProcess} & \sqsubseteq \exists
+	    \text{hasInput}.\text{AmpliconLibrary} \sqcap \exists
+	    \text{hasOutput}.\text{FASTQDataset} \\
+	\text{FASTQDataset} & \sqsubseteq \text{Dataset} \\
+	\text{FASTQDataset} & \sqsubseteq \forall
+	    \text{hasMember}.\text{SequenceRead}
+\end{align}
+\end{small}
+
+Quality-control processes attach measurement values to qualities of the
+source sequence dataset.
+
+\begin{small}
+\begin{align}
+	\label{eq:qc}
+	\text{SequencingQCProcess} & \sqsubseteq \text{Process} \\
+	\text{SequencingQCProcess} & \sqsubseteq \exists
+	    \text{hasInput}.\text{FASTQDataset} \sqcap \exists
+	    \text{hasOutput}.\text{QCMeasurementValue} \\
+	\text{QCMeasurementValue} & \sqsubseteq \text{Quantity} \sqcap
+	    \exists \text{isMeasurementValueOf}.\text{QCQuality} \\
+	\text{QCQuality} & \sqsubseteq
+	    \begin{aligned}[t]
+	    &\exists \text{isAttributeOf}.{}\\[-0.25ex]
+	    &\text{FASTQDataset}
+	    \end{aligned}
+\end{align}
+\end{small}
 
 \subsubsection{OWL and RDF implementation}\label{subsec:owl_rdf}
 
@@ -141,13 +270,10 @@ selects a bounded batch of distinct conclusions; each rule repeats
 until its next batch adds zero triples. The complete schedule repeats
 until every rule adds zero triples in one full pass. This stopping
 criterion defines the least fixed point of the emitted rule program.
-The instance-subclass rule is partitioned by instantiated named
-classes, with a separate partition for anonymous classes. The class
-inventory is refreshed each pass, so types introduced later in the
-schedule enter subsequent passes.
+
 
 The controller preserves the rule text, partition inventories,
-per-batch additions, runtime versions and input identifiers.
+derived-triple counts, runtime versions and input identifiers.
 Query truncation, SQL errors and exhaustion of the pass limit
 terminate the run with a failure status. After convergence, separate
 diagnostics test explicit disjoint-class and complement clashes,

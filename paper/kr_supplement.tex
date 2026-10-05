@@ -5,8 +5,8 @@ the resource described in the main article. The Description Logic
 notation \cite{dlhandbook} uses $\sqsubseteq$ for subclass inclusion,
 $\sqcap$ for conjunction, $\exists R.C$ for at least one relation
 $R$ to a member of class $C$, and $\forall R.C$ for restriction of
-all $R$ fillers to $C$. The displayed patterns describe the intended
-entity relationships; structural admission is checked separately.
+all $R$ fillers to $C$. The main article gives the formal patterns; the examples here instantiate
+them with observations from the resource.
 
 Prepend Table~\ref{tab:supp_prefixes}'s declarations when parsing the
 Turtle snippets. The unprefixed knowledge-base namespace is used by
@@ -48,33 +48,19 @@ composition specification and evidence-bearing expected-taxon
 assertions as separate entities. The specification links directly to
 each supported taxon; a reified assertion additionally preserves the
 subject, relation, taxon, status and source. Manufacturer genomic-DNA
-mass fractions are retained in
-\path{metadata/controls/control_composition.tsv}. Exact occurrence
-identifiers and their source links are distributed in
-\path{ontology/rubalkhali_controls.ttl}. This keeps long machine
-identifiers in the executable resource while exposing the scientific
-relationships here.
+mass fractions and control occurrences retain their source provenance.
+The distributed control module links these materials to their processing
+roles and expected taxa (main article, Data records).
 
 \subsection{Sampling pattern}
 
 A sampling event is a process that derives a sample from a feature of
 interest (the site).
 
-\begin{align}
-	\label{eq:sampling}
-	\text{SamplingProcess} & \sqsubseteq \text{Process} \\
-	\text{Sample} & \sqsubseteq \text{MaterialEntity} \\
-    \text{SampleCollection} & \sqsubseteq \text{Collection} \sqcap
-        \forall \text{hasMember}.\text{Sample} \\
-	\text{SamplingProcess} & \sqsubseteq \exists
-                                 \text{hasTarget}.\text{Site} \sqcap
-                                 \exists
-                                 \text{hasOutput}.\text{SampleCollection} \\
-	\text{Sample} & \sqsubseteq \exists \text{isDerivedFrom}.\text{Site}
-\end{align}
+
 
 Listing~\ref{lst:ttl_sampling} is generated from the Trip~1, Site~1
-deep-soil record in the development graph.
+deep-soil observation.
 
 \begin{lstlisting}[caption={Turtle representation of a sampling process.}, label={lst:ttl_sampling}, basicstyle=\ttfamily\scriptsize, frame=single]
 rak:P100001 a rak:0000024 ; # Sampling Process
@@ -109,16 +95,7 @@ devices. The pattern instantiates SIO's general
 \emph{Process--hasInput/hasOutput--Object} idiom and adds a
 specification link to a reusable protocol description.
 
-\begin{align}
-	\label{eq:protocol}
-	\text{ProtocolExecution} & \sqsubseteq \text{Process} \\
-	\text{Protocol} & \sqsubseteq \text{InformationContentEntity} \\
-	\text{ProtocolExecution} & \sqsubseteq \exists
-	    \text{isSpecifiedBy}.\text{Protocol} \\
-	\text{ProtocolExecution} & \sqsubseteq \exists
-	    \text{hasInput}.\text{Entity} \sqcap \exists
-	    \text{hasOutput}.\text{Entity}
-\end{align}
+
 
 Listing~\ref{lst:ttl_protocol} demonstrates the formalization
 of a DNA extraction process.
@@ -159,28 +136,11 @@ For instance, the sequence analysis for a specific profile yields an
 absolute sequence count associated with an audited taxonomic class. We
 construct an abundance quality that is an attribute of both that taxon
 and the source sequence dataset, binding the count back to the
-biological workflow. Formally, the pattern instantiates SIO's
+biological workflow. The pattern uses SIO's
 \emph{Collection--hasMember--Thing} and reciprocal
-\emph{MeasurementValue--isMeasurementValueOf--Quality} idioms:
+\emph{MeasurementValue--isMeasurementValueOf--Quality} idioms.
 
-\begin{small}
-\begin{align}
-	\label{eq:taxabundance}
-	\text{BioinformaticWorkflow} & \sqsubseteq \text{Process} \\
-	\text{TaxonomicDataset} & \sqsubseteq \text{Collection} \\
-	\text{BioinformaticWorkflow} & \sqsubseteq \exists
-	    \text{hasInput}.\text{SequenceDataset} \sqcap \exists
-	    \text{hasOutput}.\text{TaxonomicDataset} \\
-	\text{TaxonomicDataset} & \sqsubseteq \forall
-	    \text{hasMember}.\text{AbundanceObservation} \\
-	\text{AbundanceObservation} & \sqsubseteq \text{Quantity} \sqcap
-	    \exists \text{isMeasurementValueOf}.\text{AbundanceQuality} \\
-	\text{AbundanceQuality} & \sqsubseteq \exists
-	    \text{isAttributeOf}.\text{Taxon} \\
-	\text{AbundanceQuality} & \sqsubseteq \exists
-	    \text{hasMeasurementValue}.\text{AbundanceObservation}
-\end{align}
-\end{small}
+
 
 \begin{lstlisting}[caption={Turtle representation of taxonomic abundance formalized from a feature table.}, label={lst:ttl_tax}, basicstyle=\ttfamily\scriptsize, frame=single]
 rak:P290001 a rak:0000071 ; # Bioinformatic Workflow
@@ -226,7 +186,7 @@ instrument log identifies a test and site, and the graph links each
 session to that site. Field-XRF and laboratory-XRF records remain
 distinguishable even when they report the same analyte.
 Analyte cross-references to ChEBI \cite{chebi} and PubChem
-\cite{pubchem} are maintained in a single mapping ledger. The
+\cite{pubchem} are maintained in a single mapping. The
 identifier audit resolves every non-null identifier against pinned
 ChEBI v247 and a dated PubChem snapshot, checking identifier
 existence, label, formula, charge and atom-versus-oxide entity type.
@@ -239,24 +199,12 @@ channel with null chemical cross-references.
 
 The shared output pattern specializes the measurement pattern
 (main article, Knowledge representation); only the laboratory specialization
-requires a soil-sample input:
+requires a soil-sample input.
 
-\begin{align}
-\label{eq:xrf}
-\text{XRFProcess} & \sqsubseteq \text{MeasurementProcess}
-  \sqcap \exists \text{hasOutput}.\text{Concentration} \\
-\text{LabXRFProcess} & \sqsubseteq
-  \text{XRFProcess} \sqcap \exists
-  \text{hasInput}.\text{SoilSample} \\
-\text{FieldXRFProcess} & \sqsubseteq
-  \text{XRFProcess} \sqcap \exists
-  \text{hasTarget}.\text{SamplingSite} \\
-\text{Concentration} & \sqsubseteq \text{Quantity} \sqcap
-  \exists \text{isMeasurementValueOf}.\text{AnalyteQuality}
-\end{align}
+
 
 Listing~\ref{lst:ttl_xrf} is generated from the aluminium output of
-laboratory-XRF process \texttt{rak:P300072} in the current module.
+laboratory-XRF process \texttt{rak:P300072} in the XRF module.
 
 \begin{lstlisting}[caption={Turtle representation of an XRF geochemistry measurement.}, label={lst:ttl_xrf}, basicstyle=\ttfamily\scriptsize, frame=single]
 rak:P300072 a rak:0000025 ; # XRF Measuring Process
@@ -281,7 +229,7 @@ The value points to its aluminium quality using
 \texttt{sio:000216}. A dedicated scan of every
 XRF source artifact (the processed laboratory table, the field log
 and all raw instrument exports)
-(\path{scripts/xrf/audit_xrf_unit_evidence.py}) finds no unit
+finds no unit
 declaration attached to any concentration column; the only unit token
 in the exports is \texttt{PPM}, and it belongs to the
 lower-limit-of-detection column. The generated module therefore carries
@@ -302,28 +250,9 @@ a library preparation process consumes the DNA extract and produces
 an amplicon library; a sequencing process consumes the amplicon
 library and produces a FASTQ dataset whose members are sequence reads.
 Each process is specified by a protocol and may carry agents and
-device participants, reusing the experimental protocol pattern in Equation~\ref{eq:protocol}.
+device participants, reusing the experimental protocol pattern in the main article.
 
-\begin{small}
-\begin{align}
-	\label{eq:sequencing}
-	\text{DNAExtractionProcess} & \sqsubseteq \text{ProtocolExecution} \\
-	\text{DNAExtractionProcess} & \sqsubseteq \exists
-	    \text{hasInput}.\text{SoilSample} \sqcap \exists
-	    \text{hasOutput}.\text{DNAExtract} \\
-	\text{LibraryPreparationProcess} & \sqsubseteq \text{ProtocolExecution} \\
-	\text{LibraryPreparationProcess} & \sqsubseteq \exists
-	    \text{hasInput}.\text{DNAExtract} \sqcap \exists
-	    \text{hasOutput}.\text{AmpliconLibrary} \\
-	\text{SequencingProcess} & \sqsubseteq \text{ProtocolExecution} \\
-	\text{SequencingProcess} & \sqsubseteq \exists
-	    \text{hasInput}.\text{AmpliconLibrary} \sqcap \exists
-	    \text{hasOutput}.\text{FASTQDataset} \\
-	\text{FASTQDataset} & \sqsubseteq \text{Dataset} \\
-	\text{FASTQDataset} & \sqsubseteq \forall
-	    \text{hasMember}.\text{SequenceRead}
-\end{align}
-\end{small}
+
 
 Listing~\ref{lst:ttl_sequencing} instantiates the complete sequencing chain.
 
@@ -369,22 +298,7 @@ Metrics (sequence count, GC content, duplicate rate, read length)
 are split into forward (R1) and reverse (R2) subclasses so that the
 provenance of paired-end runs is preserved.
 
-\begin{small}
-\begin{align}
-	\label{eq:qc}
-	\text{SequencingQCProcess} & \sqsubseteq \text{Process} \\
-	\text{SequencingQCProcess} & \sqsubseteq \exists
-	    \text{hasInput}.\text{FASTQDataset} \sqcap \exists
-	    \text{hasOutput}.\text{QCMeasurementValue} \\
-	\text{QCMeasurementValue} & \sqsubseteq \text{Quantity} \sqcap
-	    \exists \text{isMeasurementValueOf}.\text{QCQuality} \\
-	\text{QCQuality} & \sqsubseteq
-	    \begin{aligned}[t]
-	    &\exists \text{isAttributeOf}.{}\\[-0.25ex]
-	    &\text{FASTQDataset}
-	    \end{aligned}
-\end{align}
-\end{small}
+
 
 Listing~\ref{lst:ttl_qc} shows the corresponding quality-control pattern.
 

@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-05T08:31:04.047071+00:00",
+  "manifest_sha256": "bcffcf9991b6a505153bcd46e1858046f39f707492a3954858b75ab19e79b606",
+  "live_asserted_triples": 45707660,
+  "checks": [
+    "release manifest and checksum-pinned sixteen-module inventory",
+    "immutable ontology route application/rdf+xml",
+    "immutable ontology route text/turtle",
+    "immutable ontology route application/ld+json",
+    "immutable ontology route application/n-triples",
+    "reference import resolves: https://bio2vec.net/data/empty-quarter/kg/3.0.1/modules/uo.owl",
+    "reference import resolves: https://bio2vec.net/data/empty-quarter/kg/3.0.1/modules/envo.owl",
+    "reference import resolves: https://bio2vec.net/data/empty-quarter/kg/3.0.1/modules/pato.owl",
+    "reference import resolves: https://bio2vec.net/data/empty-quarter/kg/3.0.1/modules/sio.owl",
+    "live named asserted graph count",
+    "Zenodo DOI and manifested artifact sizes"
+  ],
+  "scope": "Immutable version route and release; the unversioned ontology route may serve a later metadata revision."
+}

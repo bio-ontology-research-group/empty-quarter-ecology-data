@@ -19,7 +19,7 @@ successive sites, using an Earth radius of 6,371~km.
     archived altitude values against cumulative great-circle distance
     in site order. Labels identify selected sites. Coordinates and
     altitude come from the versioned site-altitude table; the
-    historical elevation source and vertical datum remain undocumented.}
+    elevation source and vertical datum remain undocumented.}
   \label{fig:transect}
 \end{figure}
 
@@ -28,14 +28,13 @@ coordinates and 10 named locations, including wells, a hot spring and
 an oil-spill site. Trip~1 source identifiers 61--64 are aliases for four
 named catalogue locations, established by coordinate matching.
 The repeated-campaign analytical frame uses sites~1--60.
-We preserve source sheets and apply the versioned correction ledger
-to generate curated metadata.
+The metadata link each observation to its site, campaign and specimen.
 
 To capture temporal variability, we conducted campaigns across
 different seasons: late winter 2023 (Trip 1, 64 sites visited), summer
 2023 (Trip 2, truncated to 8 sites due to extreme temperatures),
 winter 2024 (Trip 3, 65 sites visited), summer 2024 (Trip 4, 60 sites
-visited), and autumn 2025 (Trip 5, 62 sites visited). Field sheets provide temperature, atmospheric pressure and relative
+visited), and autumn 2025 (Trip 5, 62 sites visited). Field observations provide temperature, atmospheric pressure and relative
 humidity with campaign-specific availability. We summarize the
 observational coverage in Table~\ref{tab:env_summary}. %, although the available measurements differ by campaign.
 We acquired handheld field XRF measurements during Trip~5 and
@@ -44,11 +43,11 @@ campaigns. The curated environmental table retains 274 nonblank
 source rows. Of these, 260 resolve to catalogue site visits and
 generate 260 temperature, 187 pressure and 251 humidity values.
 Fourteen auxiliary or revisit labels remain table-only pending
-unambiguous site identification. The correction ledger assigns the
-eight Trip~2 values 34.5--41.9 to temperature using their worksheet
-context and the field note; pressure and humidity remain missing.
-The Trip~5 site~40 humidity value of 194\% is retained in the source
-ledger and excluded from the curated measurements.
+unambiguous site identification. Trip~2 includes eight temperature
+measurements spanning 34.5--41.9\degree C; pressure and humidity were
+unavailable for that campaign. Field observations entered the dataset only
+when their site identity and measurement range could be established.
+
 
 \begin{table}[h]
   \centering
@@ -56,7 +55,7 @@ ledger and excluded from the curated measurements.
     locations and auxiliary observations retain separate source labels.}
   \label{tab:env_summary}
   \small
-  \setlength{\tabcolsep}{3pt}
+  \setlength{\tabcolsep}{2.5pt}
   \begin{tabular}{lllc}
     \toprule
     Campaign & Season & Field-log records & Measurements available \\
@@ -67,11 +66,10 @@ ledger and excluded from the curated measurements.
     Trip 4 & Summer 2024 & 1--60 & Temp, Hum. \\
     Trip 5 & Autumn 2025 & 1--60; 2 named & Temp, Press, Hum. \\
     \bottomrule
-  \end{tabular}
-  \parbox{0.94\columnwidth}{\footnotesize $^\ast$The 15 records are appended
-    to the legacy Trip~3 worksheet but are dated March 2023 in the
-    original workbook and are curated as Trip~1 auxiliary/revisit
-    observations.}
+  \end{tabular}\par
+  \smallskip{\footnotesize $^\ast$The 15 observations
+    dated March 2023 represent Trip~1 auxiliary/revisit
+    observations.\par}
 \end{table}
 
 
@@ -80,7 +78,7 @@ The sampling design targeted three soil
 compartments: bulk surface soil, bulk subsurface soil
 (nominal 5--10 cm depth, hereafter ``deep''), and subsurface soil collected
 near roots (5--10 cm depth, hereafter ``root-adjacent''). 
-The legacy class label Deep Soil Sample denotes the 5--10~cm
+The ontology class Deep Soil Sample denotes the 5--10~cm
 bulk compartment, called shallow-subsurface in the companion
 ecology analysis \cite{ecology_companion}. We collected three
 co-located field replicates per compartment using sterile tubes and
@@ -94,7 +92,7 @@ We preserved samples at $-20$\degree C in the field
 using an Engel MR040F portable freezer. At the end of each campaign,
 we transferred samples to an $-80$\degree C freezer in the laboratory.
 
-The source ledger additionally contains 248 plant entries linked by
+The specimen catalogue additionally contains 248 plant entries linked by
 campaign, site and source identifier. Tissue type, host-identification
 procedure, vouchers and plant-specific storage details are incomplete
 in the archived protocol. These entries preserve plant provenance;
@@ -103,7 +101,7 @@ root-adjacent soil retains its own specimen identity.
 \begin{table}[h]
 \centering
 \caption{Source-specimen coverage by campaign and soil compartment,
-generated from \texttt{evidence/release/sample\_ledger.tsv}.
+linked through the specimen catalogue.
 All catalogue sites are included; plant and control rows are excluded.
 Columns count source rows eligible for specimen representation,
 expected by the extract generator, linked to at least one run,
@@ -126,7 +124,7 @@ extraction kit, and Trips~1--2 included shared extraction days.
 The PowerSoil Pro control has a sequencing record
 (\texttt{Extraction-Ctrl-Pro-Trip1}, library \texttt{M-25-0929});
 the PowerSoil blank is present in laboratory records, with no matching
-sequencing record located in the available sheets.
+sequencing record located in the available records.
 
 \begin{table}[h]
 \centering
@@ -157,8 +155,7 @@ The six Trip~4 extraction blanks (SEB, EB1--EB5) were sequenced on
 a shared run and denoised separately with the same pipeline on
 30~August 2026. Three of the nine Trip~4 extraction batches had
 unsequenced blanks, leaving complete or partial coverage gaps at
-28 sites. The corrected batch workbook supplies specimen-level
-membership; the source-to-profile ledger also excludes unsequenced
+28 sites. Batch assignments identify individual specimens; the profile inventory excludes unsequenced
 S34Dr1 and S40PRr1. S40PRr1 failed three amplification attempts.
 S34Dr1 yielded DNA but was probably missed during pooling.
 
@@ -201,7 +198,7 @@ intended materials, observed profiles and identity evidence separately.
 Genomic DNA was extracted from 0.9--1.2~g of soil using either the
 QIAGEN PowerLyzer PowerSoil Kit (catalogue no.\ 12855-50) or the QIAGEN
 DNeasy PowerSoil Pro Kit (catalogue no.\ 47014). Both kits were used
-in Trips~1--3: among the sequenced profiles, the sample ledger records
+in Trips~1--3: among the sequenced profiles, the specimen metadata identify
 the PowerLyzer PowerSoil Kit for 77 Trip~1, 10 Trip~2 and 359 Trip~3
 profiles (54 of the Trip~3 records name the MoBio PowerSoil kit) and
 the DNeasy PowerSoil Pro Kit for 217 Trip~1, 11 Trip~2 and 87 Trip~3
@@ -225,9 +222,10 @@ Extraction controls followed the campaign-specific scheme above.
 
 Extracted DNA was quantified using the Qubit dsDNA High Sensitivity
 assay, with fluorescence measured using a Varioskan LUX multimode
-plate reader (Thermo Fisher Scientific). The project spreadsheet retains numerical extract concentrations. Progression to indexing and sequencing was
-determined by an amplicon of the expected size after first-round PCR. DNA concentrations and processing information were recorded
-in a central project spreadsheet. Extracted DNA was stored at
+plate reader (Thermo Fisher Scientific). We recorded extract concentrations
+and processing information for each specimen. Progression to indexing and
+sequencing required an amplicon of the expected size after first-round PCR.
+Extracted DNA was stored at
 $-20$\degree C until PCR amplification.
 
 The V3--V4 region of the bacterial 16S rRNA gene was amplified using
@@ -255,8 +253,8 @@ these were re-amplified with 8~\textmu L and then 12~\textmu L of DNA,
 with water reduced to 28.75~\textmu L and 24.75~\textmu L,
 respectively. DNA input was set by volume because most extracts had low
 or undetectable concentrations. Samples without a product after three
-attempts were classified as failed; the earlier laboratory account also
-documents re-extraction at the end of the workflow.
+attempts were classified as failed; the laboratory protocol also
+included re-extraction at the end of the workflow.
 
 Dual indices and Illumina sequencing adapters were added in a
 second-round PCR using the QIAGEN Multiplex PCR Kit (catalogue no.\
@@ -271,7 +269,7 @@ Indexed libraries were purified using Agencourt AMPure XP beads at a
 quantified using the Qubit dsDNA High Sensitivity assay, and assessed
 for fragment size using an Agilent 4200 TapeStation with the D5000
 ScreenTape assay. Libraries were pooled by molarity calculated from
-concentration and fragment size in the Core Lab pooling sheet.
+concentration and fragment size in the Core Lab pooling calculation.
 Supplementary Section~S2 specifies the
 pooling calculation and the remaining run-specific metadata gaps.
 Amplicon pools were sequenced on an Illumina NovaSeq~6000 using
@@ -290,8 +288,7 @@ correction and denoising, and assigning taxonomy against the SILVA
 database (v138.2) \cite{silva}. The submission records contain 1,268 run rows over 1,238 sample
 identifiers, including 30 repeated identifiers. The feature-table
 export separately contains 29 identifiers with nonidentical paired
-columns; 28 retain both profiles after depth filtering. The source
-ledger distinguishes submitted runs, physical libraries and analytical
+columns; 28 retain both profiles after depth filtering. The data model distinguishes submitted runs, physical libraries and analytical
 profiles; the processing relationship of the paired export columns
 remains unresolved.
 This resulted in a canonical feature table of 351,472 amplicon sequence
@@ -299,22 +296,14 @@ variants (ASVs) prior to contaminant removal, covering samples from Trips~1--5 a
 Of its 1,271 profiles, 1,247 are biological; quality filtering excludes
 the 24 control profiles and 10 biological profiles with fewer than
 1,000 reads, leaving the 1,237 profiles used by the companion ecology
-analysis. The complete table is distributed unfiltered. The reconstructed
-input sheet and accession map are
-\path{metadata/amplicon/combined_samplesheet_portable.csv} and
-\path{metadata/amplicon/combined_samplesheet_accessions.tsv}.
-The archived command specifies the Bakt\_341F/Bakt\_785R primers,
-the NovaSeq option, DADA2 SILVA v138.2 assignment and skipped QIIME
-steps; \path{metadata/amplicon/README.md} gives the full invocation
-and resource configuration. The archived paired-read source sheets
-identify all 1,271 canonical profiles: 1,013 occur in the July
-sheet and 258 in the Trip~5 sheet. A further 33 July-sheet entries
-fall outside the frozen feature table. The July sheet records
-pipeline groups A and B. The profile-level reconciliation is
-\path{metadata/amplicon/current_inventory/canonical_profile_read_inventory.tsv}.
-The container digest, denoising parameters, physical run allocation
-and export/merge provenance remain incomplete for exact table
-regeneration.
+analysis. The complete table is distributed unfiltered. The sequencing inventory links all 1,271 canonical profiles to paired-read
+inputs: 1,013 from the July processing group and 258 from Trip~5. A further
+33 July inputs fall outside the canonical feature table. The July execution
+used pipeline groups A and B. Processing specified the Bakt\_341F/Bakt\_785R
+primers, the NovaSeq option, DADA2 SILVA v138.2 assignment and skipped QIIME
+steps. The container digest, full denoising parameters, physical run
+allocation and profile-merging provenance remain incomplete for exact
+regeneration from raw reads.
 
 
 We compared ASV prevalence in the 17 eligible Trip~5 extraction
@@ -329,9 +318,7 @@ It identifies 351 candidates and applies their removal only to the
 217 linked biological profiles. Prevalence is estimated across batches,
 each represented by one blank; the canonical table remains unfiltered.
 
-The threshold sensitivity table
-(\path{evidence/control-audit/trip5_filter_sensitivity.tsv}) also
-reports $p<0.01$ and $p<0.05$, yielding 221 and 300 candidates with
+Threshold sensitivity analysis also evaluated $p<0.01$ and $p<0.05$, yielding 221 and 300 candidates with
 the two-blank rule. At $p<0.1$, requiring one or three blanks gives
 12,051 or 175 candidates. This sensitivity documents the role of the
 minimum-blank requirement. The control-recovery analysis separately
@@ -341,46 +328,42 @@ The Trip~4 screen applies the same rule independently to six mapped
 blanks and 95 biological profiles: one-sided Fisher $p<0.1$, presence
 in at least two blanks and greater prevalence in blanks. It identifies
 seven candidates, whose removal is restricted to these 95 profiles.
-Replay with the corrected Trip~4 batch workbook reproduced the
-combined 312-profile filtered matrix byte-for-byte after decompression.
-The corrected source membership therefore preserves the archived
-sensitivity-analysis input.
+Together, the Trip~4 and Trip~5 screens cover 312 biological profiles.
 
 We inferred gene and pathway profiles from marker genes with PICRUSt2
 v2.4.1 \cite{picrust2}. Two executions used the Trips~1--4 ampliseq
-output and corrected Trip~5 output (330,830 ASVs). KO hidden-state
+output and Trip~5 output (330,830 ASVs). KO hidden-state
 prediction used the PIC method, edge exponent 0.5 and seed 100.
 EC/KO metagenome prediction required 100 reads; pathway inference
 used the EC predictions. The command sequence and output identities
-are documented in \path{metadata/functional/PICRUST2.md}.
+are included in the functional-prediction provenance described in
+Section~\ref{records}.
 The Trips~1--4 input sequences/table and their checksums remain
 unavailable. The merged products contain 1,270 profile columns, whose
 mapping is distributed with the functional tables.
 
 \input{02_methods_taxonomy}
 
-\subsection{Shotgun-derived companion inputs}
+\subsection{Shotgun-derived data}
 
-The shotgun-derived companion inputs support downstream re-execution
-from a genome catalogue and its annotations. Reproduction from raw
-shotgun reads additionally requires the sequence accessions, genome
-and proteome catalogues, and the assembly, binning, dereplication and
-profiling workflows. These upstream inputs and parameters remain
-missing from this package. We distribute
-(i) 150 per-library CoverM \cite{coverm} genome-relative-abundance tables
-(\path{metadata/metagenome/coverm_profiles.tar.gz}; one
-column per shotgun library, in percent of reads, with the unmapped
-fraction retained as its own row) and (ii) the eggNOG-mapper v2.1.12
-annotation table \cite{eggnog}
-(\path{metadata/metagenome/eq.emapper.annotations.gz}) of the
-concatenated predicted proteome,
-run on the KAUST Ibex cluster on 14 June 2026, from which a
-990-genome by KEGG Orthology copy-number matrix is built for the
-genomes present in both inputs. The full catalogue contains 991 genomes. The companion comparison uses
-125 libraries with matched amplicon profiles for whole-profile KO agreement;
-its marker-gene analysis uses 975 genomes and 119 matched libraries under
-the marker-specific annotation and abundance requirements. These files
-supply the genome-derived side of the companion encoded-function comparison.
+We distribute genome-relative-abundance profiles for 150 shotgun libraries
+and eggNOG-mapper annotations of the genome catalogue for comparison with
+amplicon-derived functional profiles in the ecology analysis. CoverM
+\cite{coverm} reports each genome's abundance as a percentage of reads,
+retaining the unmapped fraction separately. The catalogue contains 991
+genomes. We annotated the concatenated predicted proteome with eggNOG-mapper
+v2.1.12 \cite{eggnog} on the KAUST Ibex cluster on 14 June 2026. The
+intersection of annotation and abundance data yields a 990-genome by KEGG
+Orthology copy-number matrix.
+
+The ecology analysis compares whole-profile KO abundances in 125 libraries
+with matched amplicon profiles. Its marker-gene comparison uses 975 genomes
+and 119 matched libraries under the marker-specific annotation and
+abundance requirements. These data support downstream re-execution.
+Reproduction from raw shotgun reads additionally requires sequence
+accessions, genome and proteome catalogues, and the assembly, binning,
+dereplication and profiling workflows. These upstream inputs and parameters
+remain unavailable in the distributed resource.
 
 \subsection{PMA-treated aliquots}
 
@@ -416,31 +399,23 @@ separately configured acquisitions: the monthly product covers
 whereas the daily product covers 1~January 2022 to 1~February 2026 and
 reports temperature, total precipitation and rainfall.
 January 2026 is a partial month in the monthly acquisition.
-The frozen acquisition manifest
-(\path{metadata/climate/climate_acquisition_frozen.json}) identifies
-the query configuration and retained tables. Original response bodies,
-retrieval timestamps and the historical model/product version remain
-unavailable. Re-execution from these frozen tables preserves the
-reported inputs; a new API request is a new acquisition.
+The acquisition metadata identify the query configuration and the retained
+climate values. Original response bodies, retrieval timestamps and the
+model/product version remain unavailable for the monthly acquisition.
+Reproduction uses the distributed climate observations; a new API request
+constitutes a new acquisition.
 
-The rainfall analyses in the companion ecology paper use the Site~52
-position $20.82784^\circ$ N, $53.57835^\circ$ E and a daily Open-Meteo
-series acquired there on 4~October 2026. The versioned replacement package
-under \path{metadata/climate/open_meteo_site52_corrected_20261004/}
-retains the request, response and source checksums; daily values for all
-other sites are unchanged. The corresponding five-product Trip~1 exposure
-package uses the corrected grid cells for CHIRPS, CMORPH and IMERG and
-identifies the 21 checksum-verified source files.
-\path{metadata/climate/current_analysis_inputs.json} selects these inputs
-for the companion analysis. The monthly summaries represented in the KG
-retain their frozen acquisition provenance.
+Daily rainfall exposures in the ecology analysis use the sampling-site
+coordinates and the distributed Open-Meteo time series. A five-product
+comparison combines Open-Meteo with CHIRPS, CMORPH, IMERG and NASA POWER;
+its provenance identifies the grid cells and 21 source datasets used.
+The daily exposures and monthly summaries are distinct data products with
+their own acquisition metadata.
 
-Daily NASA POWER \texttt{PRECTOTCORR} precipitation for sites~1--60
-(1~January 2022 to 31~December 2025; 87,660 site-days) is distributed
-as a fixed snapshot under
-\path{metadata/climate/nasa_power_daily_precipitation.tsv.gz}.
+Daily NASA POWER \texttt{PRECTOTCORR} precipitation covers sites~1--60
+from 1~January 2022 to 31~December 2025 (87,660 site-days).
 Its original API request metadata were not preserved. Sites~51--55
-share one POWER grid cell, including the corrected Site~52 position.
+share one POWER grid cell.
 
 Field researchers manually classified each site according to its biome (e.g., desert
 biome) and specific environmental features (e.g., sand dune, saline pan, gravel, desert oasis). We subsequently mapped these
@@ -458,27 +433,28 @@ subsequently measured in the laboratory. The laboratory
 inputs contain 547 selected sample records from Trips~1--4 and 178
 from Trip~5 (725 records in total), and all 725 are used in the analyses.
 
-All laboratory measurements used Fast Mode. The original Trip~5
-workbooks specify Fast Screening-He8mm, helium and an 8~mm diameter
-for all 178 canonical specimens. They retain element and oxide
-reporting sections. For V4Dr3 and V18Dr3, the canonical table uses
-the Fast Screening measurements; the two additional Best Detection
-sheets remain source material. The Trips~1--4 consolidated workbook
-preserves 28 export columns, while the exact gas and diameter
-settings remain undocumented. Supplementary Section~S2
-gives the acquisition audit and source selection.
-Laboratory XRF measurements used a Vanta handheld analyser
-\cite{ecology_companion}. The laboratory exports
-leave the exact model variant, serial number, measurement duration, tube settings,
-sample preparation, concentration units and calibration records
-remain incomplete. The concentration columns carry no unit
-declaration. Percent formats occur in statistical-error columns,
-and PPM labels occur in lower-limit-of-detection cells. We retain
+Laboratory measurements used a Vanta handheld analyser in Fast Mode
+\cite{ecology_companion}. All 178 Trip~5 specimens used Fast
+Screening-He8mm with helium and an 8~mm diameter. Element and
+oxide-equivalent channels are retained separately. The analytical dataset
+uses the Fast Screening observations for V4Dr3 and V18Dr3. The exact gas
+and diameter settings for Trips~1--4 remain undocumented.
+Suppl. Section~S3 describes acquisition and observation selection.
+
+The laboratory acquisition metadata lack the exact model variant, serial
+number, measurement duration, tube settings, sample preparation,
+concentration units and calibration results. Statistical-error percentages
+and detection-limit units are distinct from concentration units. We retain
 instrument-reported magnitudes with undocumented concentration units.
 At Site~4, field readings targeted soil and a second substrate described
-as salt or oil; the source retains this unresolved substrate identity.
+as salt or oil; its substrate identity remains unresolved.
 
-Both laboratory sources occasionally report the same formula more than once for one sample: the Trips~1--4 workbooks list a formula under several reporting sections (for example the element and oxide sections), and the Trip~5 workbook contains one sample (V14Dr1) with two readings. The two source-specific parsers resolve these repeats differently, taking the largest positive value for Trips~1--4 and the last reported row for Trip~5; these are processing rules adopted for the archived exports. The provenance audit reproduced all 13,390 reported Trips~1--4 cells and all 4,293 reported Trip~5 cells under these rules. In practice the two rules give the same value everywhere except three analyte cells (Al, Na and Si) of that one Trip~5 record, because repeated Trips~1--4 rows always carry identical values; a single rule would therefore change one of the 725 laboratory records, and the release discloses both source-specific policies.
+Repeated analyte entries are combined using the maximum positive value
+for Trips~1--4 and the last reported value for Trip~5. Repeated Trips~1--4
+entries have identical values. Trip~5 contains repeated Al, Na and Si
+measurements for V14Dr1, for which the last reported value is retained.
+These rules define the 725-record laboratory dataset and are evaluated
+against the acquisition data in Technical Validation.
 
 
 The chemical audit evaluates 93 reporting channels against ChEBI
@@ -497,31 +473,24 @@ Technical Validation reports the observed correlations.
 
 \subsection{Archived-soil pH acquisition and admission}\label{methods:ph}
 
-The frozen pH dataset is \texttt{EQ-PH-SHARED-v1.0.1}, with its
-source manifest and admission ledger distributed under \path{metadata/ph/} and
-\path{metadata/samples/ph/versions/EQ-PH-SHARED-v1.0.1/manifest.json}.
-Its measurement workbook is byte-identical to EQ-PH-SHARED-v1.0.0,
-whose values were used in the companion ecology analysis; v1.0.1 records
-the confirmed Trip~4 replicate-2 specimen identities.
+The archived-soil pH dataset contains admitted measurements linked to their
+physical specimens and assay sessions. The ecology analysis uses the same
+measurement values.
 We measured archived dry soil after sieving below 2~mm. Each assay used an independent 1~g scoop suspended in 2.5~mL 0.01~M CaCl$_2$. Suspensions were mixed on a HulaMixer for 30~min and stood for 30~min at room temperature. We used an accumet AB315 meter with a Fisher Scientific accumet electrode (catalogue no.\ 13-620-112), and recorded the reading when the meter displayed its green stability indicator. The electrode was calibrated each morning at two points (pH 7 and 10), and we recorded the electrode slope and pH-10 buffer read-back for every session. Between samples, the electrode was rinsed along its full length with Milli-Q water, immersed in a separate container of Milli-Q water and dried by gently tapping with Kimwipes. A measurement was admitted only if its session was calibrated, the electrode slope was between 95\% and 102\%, and the read-back was within 0.1 pH units of nominal.
 
 Admission additionally requires a numeric pH between 0 and 14 and an
-accepted measurement date on or before 3~August 2026. Dates are read
-from Excel date cells or parsed as ISO or day-first dates; unparseable
-and post-cutoff dates remain quarantined. Threshold endpoints are
+accepted measurement date on or before 3~August 2026. Assay dates must resolve unambiguously to calendar dates; observations
+with ambiguous or post-cutoff dates are excluded. Threshold endpoints are
 inclusive. Accepted measurements span 13~July to 2~August 2026.
-The audit accounts for 1,168 workbook rows and admits 712 measurements. The remainder consisted of 356 rows without a measurement, 45 marked as depleted, 36 with ambiguous dates, and 19 numeric rows with incomplete quality control records.
+Of 1,168 specimen-assay entries, 712 measurements met the admission criteria. The remainder consisted of 356 rows without a measurement, 45 marked as depleted, 36 with ambiguous dates, and 19 numeric rows with incomplete quality control records.
 Rows with unavailable values or incomplete admission evidence retain
 their audit dispositions. We reconstructed 29 sessions from trip,
 accepted date, electrode slope and pH-10 read-back.
 
-All Trip~4 pH assays used archived field replicate~2. We reconciled
-the specimen links for 155 admitted Trip~4 measurements against the
-confirmed replicate-2 identifiers; one admitted measurement already
-linked to replicate~2. The correction updates 620 RDF relations while
-preserving all 712 admitted measurements, their numeric values and
-the original workbook identifiers. The supported matching level with
-community profiles is campaign, site and compartment.
+All 156 admitted Trip~4 pH measurements used archived field replicate~2.
+Each admitted measurement is linked to its physical specimen and retains
+its original assay identifier. Matching with community profiles is at
+campaign, site and compartment level.
 The archived RDF protocol identifies an accumet AB315 with Probe~3
 and automatic temperature compensation, and specifies mixing without
 fine grinding.
@@ -529,8 +498,7 @@ fine grinding.
 \begin{table}[h]
 \centering
 \caption{Admitted archived-soil pH observations by campaign and
-compartment. The specimen identifiers reflect the current admission
-ledger; Trip~4 physical-replicate identity is discussed in the text.}
+compartment. Trip~4 measurements use field replicate~2.}
 \label{tab:ph_coverage}
 \small
 \begin{tabular}{lrrrr}
@@ -586,19 +554,19 @@ universal restrictions, inverse properties and other constructs
 outside that support. An explicit OWL profile report and checked
 projection are required to establish the logical scope of the result.
 The run excludes the multi-gigabyte taxonomy ABox and large
-reference modules. We report the loaded axioms and the return value
+reference modules. We report the checked subset and the return value
 separately from structural validation in Technical Validation.
 
 \subsection{Reproducible workflow}
 
-The Nextflow entry point \texttt{main.nf} orchestrates module
+The Nextflow workflow orchestrates module
 generation, validation and manuscript-derived statistics. Local and
 cluster profiles configure execution infrastructure. The versioned KG
 release workflow regenerates the scientific modules, checks their
 hashes against the frozen manifest, loads a fresh asserted database
 and validates source-derived query results before switching the public
 service.
-Upstream sequence processing has its own samplesheets, workflow
+Upstream sequence processing has its own sample inventories, workflow
 parameters and environments.
 
 The release manifests identify fixed source artifacts and generated

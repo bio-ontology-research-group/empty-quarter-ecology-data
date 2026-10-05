@@ -4,16 +4,14 @@ The portal at \url{https://rubalkhali.science/} provides site pages and
 a SPARQL editor. The endpoint
 \url{https://rubalkhali.science/sparql} accepts SPARQL~1.1 queries.
 For a local, low-memory example, load the base, site and XRF modules
-listed in Table~\ref{tab:modules} and execute
-\path{sparql/field_xrf_site10.rq}. The archived Site~10 result contains
-46 rows; compare both the returned process/analyte identifiers and
-their values with \path{evidence/competency-query/}. Taxonomic
-queries additionally require the taxonomy ABox and its mapping
-dependencies. The named-run example retrieves the complete genus
-profile for \texttt{ERR16061083}. For all-run exports, execute
-\path{scripts/release/kg/taxonomy_all_runs.rq} on a locally loaded
-snapshot and allow for a long-running join. The release's \path{REPRODUCE.md} describes payload
-retrieval, checksums, environments and workflow commands.
+listed in Table~\ref{tab:modules} and execute the Site~10 query in
+Listing~\ref{lst:sparql_xrf}. Compare its 46 returned observations with
+the distributed expected identifiers and values. Taxonomic queries also
+require the taxonomy module and its mapping dependencies. The named-run
+example retrieves the complete genus profile for \texttt{ERR16061083};
+all-run exports require a locally loaded snapshot and a long-running join.
+The reproduction instructions accompanying the data provide retrieval,
+checksum, environment and execution details (Section~\ref{records}).
 
 \subsection{Choosing observations for reuse}
 
@@ -32,8 +30,8 @@ the companion sensitivity analysis applies their removal to the linked
 profiles. Trip~4 has six separately denoised extraction blanks and
 three batches with unsequenced blanks, leaving complete or partial
 coverage gaps at 28 sites. Concentration measurements exist in the
-source records; any concentration-based screen requires a matched
-specimen--extraction--measurement ledger. Four Trips~2--3 standards
+source records; any concentration-based screen requires
+links between specimens, extractions and concentration measurements. Four Trips~2--3 standards
 support genus-recovery evaluation. Trips~4--5 have extraction controls
 but no sequenced 16S positive-standard profiles.
 
@@ -41,7 +39,7 @@ Archived-soil pH describes specimens measured in CaCl$_2$ under the
 admission rules of Section~\ref{methods:ph}. Coverage varies by
 campaign and compartment. All Trip~4 assays used archived field
 replicate~2. Their supported comparison with community profiles is at
-campaign, site and compartment level. The versioned reconciliation
+campaign, site and compartment level. The versioned specimen mapping
 links measurements to the confirmed specimens as described in Methods.
 
 Field and laboratory XRF observations have separate acquisition
@@ -64,8 +62,7 @@ The deposited source and checksum manifests identify the inputs used
 to generate each module. Preserve these files when reproducing a
 reported result. Rebuilding against a newer external ontology requires
 identifier and mapping validation, followed by regeneration of the
-affected modules and query results. The repository changelog records
-source corrections and superseded artifacts.
+affected modules and query results. Version-specific manifests identify the data used in each release.
 
 KG v3.0.1 serves the asserted graph at
 \url{https://rubalkhali.science/graph/asserted/3.0.1}.
@@ -85,11 +82,9 @@ loader provenance and checksums together. The release instructions
 specify the pinned generation environment and coordinate-preserving
 import adapter. The asserted N-Quads provides the released union;
 the v3.0.1 rebuild kit verifies and loads the 16 distributed modules.
-Fifteen scientific and reference modules have identical hashes to v3.0.0;
-the updated terminology module supplies definitions and release metadata.
-The separately archived v3.0.0 scientific-source replay documents generation
-of those unchanged modules. Rebuilding the v3.0.1 terminology additionally
-uses the reviewed definitions and ontology builder supplied in the kit.
+The terminology builder uses the definitions and ontology-generation
+code distributed with the kit. Scientific-module generation uses the
+source data and code described in Section~\ref{records}.
 Local module loading provides access to fixed inputs independently
 of the portal's deployed version. Analyses requiring additional OWL
 consequences need a reasoner and validation workload suited to those
@@ -113,7 +108,7 @@ this release are licensed under CC BY 4.0. Imported vocabularies retain
 their respective licences, listed in the release's third-party attribution
 file; project software is MIT-licensed. Raw reads and other separately
 licensed materials retain their own access and licensing conditions.
-The broader analytical tables and source ledgers are versioned in the
+The broader analytical tables and specimen and assay provenance are versioned in the
 reproducibility repository; the KG deposit contains the files enumerated
 in its manifest.
 
@@ -124,7 +119,7 @@ The web application and ontology-development code are available at
 The data repository
 \url{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data}
 contains the manuscript sources, RDF generators, metadata and
-\texttt{main.nf} workflow. RDF generation uses Groovy scripts with
+Nextflow workflow. RDF generation uses Groovy scripts with
 OWL API v5.1.20 \cite{owlapi}; the ELK validation wrapper uses
 OWL API v4.5.26. The repository supplies execution profiles, workflow
 tests, a pinned Conda recipe and a hash-locked Python environment.

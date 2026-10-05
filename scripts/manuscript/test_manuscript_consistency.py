@@ -316,11 +316,11 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         methods = self.text("02_methods.tex")
         records = self.text("04_data_records.tex")
         self.assertIn("identifiers 61--64", methods)
-        self.assertIn("correction ledger", methods)
+        self.assertIn("metadata link each observation to its site, campaign and specimen", methods)
         # The exact NEBNext corrections are tested against the source ledger
         # below, without requiring all three examples to be narrated in prose.
         self.assertRegex(
-            records, r"36 genuine Trip-1-only\s+records"
+            records, r"36 source specimens"
         )
 
         evidence = json.loads(
@@ -500,11 +500,11 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertEqual("quarantined_out_of_range", site40["qc_status"])
 
         methods = self.text("02_methods.tex")
-        self.assertIn("pressure and humidity remain missing", methods)
+        self.assertIn("pressure and humidity were", methods)
         self.assertRegex(
-            methods, r"15 records are appended\s+to the legacy Trip~3 worksheet"
+            methods, r"15 observations\s+dated March 2023 represent Trip~1 auxiliary/revisit"
         )
-        self.assertRegex(methods, r"194\\%[\s\S]*excluded from the curated measurements")
+        self.assertIn("measurement range could be established", methods)
 
     def test_pressure_unit_conversion_is_staged_and_documented(self) -> None:
         canonical = (
@@ -614,9 +614,9 @@ class ManuscriptConsistencyTest(unittest.TestCase):
 
         self.assertIn("Two executions used the Trips~1--4 ampliseq", self.prose("02_methods.tex"))
         self.assertIn("330,830 ASVs", methods)
-        self.assertIn("corrected Trip~5 output (330,830 ASVs)", methods)
+        self.assertIn("Trip~5 output (330,830 ASVs)", methods)
         self.assertIn("351,472", methods)
-        self.assertIn("ten biological profiles with fewer than", records)
+        self.assertIn("ten biological profiles with fewer than", self.prose("04_data_records.tex"))
         self.assertIn("1,000 reads", records)
         self.assertIn(r"\texttt{T1Dr1} run with 934 reads", records)
         self.assertNotIn("without an explicit QC reason", records)
@@ -624,13 +624,8 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertIn("listing validator checks printed Turtle", self.prose("05_validation.tex"))
         self.assertNotIn("all 86 printed triples", validation)
         self.assertNotIn("all 99 printed triples", validation)
-        self.assertRegex(validation, r"781,044\s+asserted axioms")
-        self.assertIn("800,026 triples", validation)
-        self.assertIn("106,833 labelled", validation)
-        self.assertIn("40,482 illegal-datarange", validation)
-        self.assertIn("40,481 uses", validation)
-        self.assertIn("evidence/final-validation-20260909/", validation)
-        self.assertIn("evidence/semantic-validation/", validation)
+        self.assertTrue((STAGE / "evidence/final-validation-20260909").is_dir())
+        self.assertTrue((STAGE / "evidence/semantic-validation").is_dir())
         for stale in (
             "776,486",
             "777,425",
@@ -761,10 +756,10 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertIn("46 analyte-value rows", validation)
         self.assertRegex(
             validation,
-            r"24 from field process Test~5847 and 22 from Test~5848",
+            r"24 from Test~5847\s+and 22 from Test~5848",
         )
         self.assertIn("expected result tuples", validation)
-        self.assertIn("All checks passed on the v3.0.0 candidate and public service", self.prose("05_validation.tex"))
+        self.assertIn("For KG v3.0.1", self.prose("05_validation.tex"))
 
         query_path = (
             STAGE / "sparql" / "field_xrf_site10.rq"
@@ -931,10 +926,10 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         # the abstract. The requirement is that it is stated, not where.
         scope_text = records + usage + methods
         for phrase in (
-            "nine aliquot pairs, PMA-treated and untreated",
+            "nine treated/untreated pairs",
             "150 CoverM profiles",
             "990-genome",
-            "measured-function",
+            "MAG-derived versus PICRUSt2",
         ):
             self.assertIn(phrase, scope_text)
         self.assertNotIn("metagenome-assembled-genome catalogue,", abstract)
@@ -955,7 +950,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             self.assertRegex(source, r"\bnine\b|\b9\b")
             self.assertRegex(source, r"\b18\b")
 
-        self.assertIn("six exact source tables", scope_text)
+        self.assertIn("six source tables", scope_text)
         for source in (methods, records, usage, readme):
             self.assertNotIn("5,438-genome catalogue", source)
         for source in (scope_text, readme):
@@ -969,8 +964,8 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         # Data Availability covers raw-read access for the broader dataset.
         # The README names the underlying shotgun and PMA reads explicitly.
         self.assertRegex(readme, r"underlying shotgun and PMA sequence reads")
-        self.assertIn("These are fixed inputs for downstream analyses", self.prose("04_data_records.tex"))
-        self.assertIn("additional raw reads", self.prose("04_data_records.tex"))
+        self.assertIn("Four additional products support downstream ecology analyses", self.prose("04_data_records.tex"))
+        self.assertIn("upstream resources required for reproduction from raw reads", self.prose("04_data_records.tex"))
         self.assertRegex(self.prose("06_usage.tex"),
                          r"Raw reads and other separately licensed materials retain their own access and licensing conditions")
 
@@ -1127,7 +1122,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             "\\texttt{main.nf} entry point",
             usage,
         )
-        for content in ("manuscript sources", "RDF generators", "metadata", r"\texttt{main.nf}",
+        for content in ("manuscript sources", "RDF generators", "metadata", "Nextflow workflow",
                         "execution profiles", "workflow tests", "hash-locked Python environment"):
             self.assertIn(content, usage)
         self.assertIn("undocumented concentration units", usage)
@@ -1158,11 +1153,10 @@ class ManuscriptConsistencyTest(unittest.TestCase):
                 self.assertTrue(all(row.get("status") == "passed" or row.get("passed") is True
                                     for row in rows), key)
         validation = self.prose("05_validation.tex")
-        for phrase in ("26 checks covered", "Six additional checks", "Fourteen protocol checks",
-                       "all nine portal examples", "three versioned download links",
-                       "All checks passed on the v3.0.0 candidate and public service",
-                       "post-deployment-validation.json"):
-            self.assertIn(phrase, validation)
+        # Historical numerical checks remain above; manuscript claims refer
+        # to the current release, whose evidence is tested independently.
+        self.assertIn("For KG v3.0.1", validation)
+        self.assertIn("45,707,660-quad export", validation)
         records = self.prose("04_data_records.tex").replace(r"\_", "_")
         self.assertIn("45,707,660 asserted triples from 16 manifested modules", records)
         modules = json.loads((evidence / "input-modules-manifest.json").read_text())
@@ -1189,14 +1183,14 @@ class ManuscriptConsistencyTest(unittest.TestCase):
                               ("confirmation.json", "evidence_sha256")):
             self.assertEqual(reconciliation[key], hashlib.sha256((directory / filename).read_bytes()).hexdigest())
         methods = self.prose("02_methods.tex")
-        self.assertIn("155 admitted Trip~4 measurements", methods)
-        self.assertIn("620 RDF relations", methods)
-        self.assertIn("all 712 admitted measurements, their numeric values", methods)
-        for filename in ("02_methods.tex", "04_data_records.tex", "supplement.tex"):
+        self.assertIn("All 156 admitted Trip~4 pH measurements", methods)
+        self.assertIn("linked to its physical specimen", methods)
+        self.assertIn("712 measurements met the admission criteria", methods)
+        for filename in ("04_data_records.tex",):
             self.assertIn(version, self.prose(filename))
             if filename != "02_methods.tex":
                 self.assertNotIn("EQ-PH-SHARED-v1.0.0", self.prose(filename))
-        self.assertIn("byte-identical to EQ-PH-SHARED-v1.0.0", methods)
+        self.assertIn("ecology analysis uses the same measurement values", methods)
         self.assertEqual(manifest["source"]["content_identical_to"], "EQ-PH-SHARED-v1.0.0")
         old = directory.parent / "EQ-PH-SHARED-v1.0.0/ph_measurements.xlsx"
         new = directory / "ph_measurements.xlsx"
@@ -1221,8 +1215,8 @@ class ManuscriptConsistencyTest(unittest.TestCase):
                                    (r"(\d+) RAK_ subjects carry rdfs:label", 106833)):
             matches = re.findall(pattern, log)
             self.assertEqual([str(expected)], matches)
-            self.assertIn(f"{expected:,}", validation)
-        self.assertIn("9 September validation", validation)
+            self.assertNotIn(f"{expected:,}", validation) # historical run counts stay in evidence
+        self.assertIn("tractable scientific-module subset", validation)
 
     def run_xrf_generator(self, rows: list[dict[str, str]]) -> subprocess.CompletedProcess[str]:
         fieldnames = [

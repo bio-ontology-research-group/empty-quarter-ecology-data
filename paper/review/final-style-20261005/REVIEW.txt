@@ -1,0 +1,104 @@
+Data Descriptor revision and full review, 5 October 2026
+
+Disposition of the writing review
+
+Applied the ten recommendations from the earlier writing review and Robert's
+additional instructions. The manuscript presents the final observations and
+methods. It does not single out Site 52, recount coordinate or pH-identity
+repairs, or describe workbooks, worksheets or spreadsheets. Specific file
+and directory names occur only in Data Records. Exact ontology terms,
+software versions, public accessions and chemical labels retain their
+scientific meaning. Correction history remains in repository provenance.
+
+Revised the abstract and introduction to reduce repeated inventories;
+removed the duplicate extraction-concentration sentence; corrected the XRF
+grammatical error and S3 reference; described shotgun-derived data directly;
+separated tabular products by scientific role; shortened repeated query
+validation and finite-rule implementation detail. Removed historical compute
+benchmarks and historical ELK axiom/label totals from the manuscript; their
+original evidence and numerical tests remain in the repository. The paper
+states the limited scope of ELK and distinguishes the asserted release from
+the separate finite-rule workflow.
+
+Scientific Data review
+
+Checked the current official submission guidance and data/editorial policies:
+https://www.nature.com/sdata/submission-guidelines
+https://www.nature.com/sdata/policies/data-policies
+https://www.nature.com/sdata/policies/editorial-and-publishing-policies
+
+The title is within 110 characters and the abstract within 170 words. The
+Data Descriptor sections are retained and citations use superscript numbers.
+Moved the formal equations into Methods; concrete RDF examples remain in
+the supplement. The 274-row environmental table is supplied as deposited
+tabular data, identified in Data Records, instead of a long supplementary
+table. The main text describes the observations, generation methods and
+validation without adding an ecological Results or Discussion section.
+The dataset DOI is formally cited and the scoped licences are stated.
+These checks address manuscript presentation, not a journal acceptance claim.
+
+Scientific and cross-paper review
+
+The canonical table has 1,271 profiles: 1,247 biological profiles plus
+24 controls. Removing ten biological profiles below 1,000 reads yields
+1,237 retained profiles; the ecology paper's primary sites 1–60 use 1,227.
+These are distinct denominators, not conflicting counts.
+
+Both papers retain the same nominal 5–10 cm bulk subsurface depth and
+unrecorded exact individual depths; QIAcube routine use from Trip 4 with
+earlier-campaign re-extractions; 712 admitted pH measurements, including
+156 Trip 4 measurements on field replicate 2; 725 laboratory XRF records;
+confirmed laboratory Vanta family and Fast Mode; and the distinct field
+and laboratory acquisition contexts.
+
+The shotgun counts remain 150 libraries and 991 catalogue genomes,
+990 genomes for whole-profile annotation, 125 matched whole-profile
+libraries, and 975 genomes/119 matched libraries for the marker subset.
+PMA retains nine treated/untreated pairs from three parent specimens.
+The Trip 3 library-order contrast remains +0.006, p=0.99; it is distinct
+from the physical well-to-well result awaiting source material.
+
+Both repositories retain the same checksum-selected daily and five-product
+rainfall inputs. Monthly climate observations and daily rainfall exposures
+remain separately identified products. The environmental data values have
+not changed: their SHA-256 remains
+51177fb6b21e4b10712daaa731cdf3783d0fc351c536f562851efd233386573f.
+Only the generated presentation and its recorded digest changed.
+
+KG v3.0.1 remains 45,707,660 asserted triples, 16 modules and 342 defined
+project terms. Its immutable release has not been modified. All eleven
+read-only public-release checks passed again on 5 October; the fresh report
+is included here. Historical source-module validation retains its original
+input identifiers. No full raw-read regeneration or new biological analysis
+is claimed for this prose revision.
+
+Remaining submission requirements and evidence limits
+
+1. Author-approved contribution statements are still absent. Robert asked
+   that this be reported at the end; no roles have been invented.
+2. Confirm whether acknowledgements are needed and obtain final author
+   approval of the submission. Funding and competing interests retain the
+   confirmed statements.
+3. Provide public raw-read access or an anonymous reviewer download. The
+   last successful anonymous ENA check, 4 October, returned no run/file
+   rows. The 5 October repeat returned HTTP 500, so it does not establish
+   a change in accession availability.
+4. Archive the broader analytical tables and source data in a suitable
+   persistent repository with a data citation. The KG has a Zenodo DOI;
+   the broader data currently have the GitHub access described in the paper.
+   Do not imply that the KG deposit includes files outside its manifest.
+5. Missing upstream sequence-processing provenance and acquisition details
+   remain explicitly stated. They constrain raw-read/experimental replay;
+   downstream consistency tests cannot supply those missing records.
+The review packet includes standalone LaTeX submission sources with embedded
+bibliographies and separate artwork. Both flattened documents compile. The
+normal Overleaf sources remain modular for coauthor editing.
+
+The manuscript revision is complete within the available evidence. These
+remaining author/access requirements prevent an unconditional claim that the
+submission package is complete or every experiment is reproducible.
+
+Validation: 29 manuscript checks and 56 package/workflow checks pass.
+The main article, supplement and compatibility entry point build without
+unresolved references or overfull boxes. Changed figure/table and formal-
+pattern pages were visually inspected. The biological data are unchanged.

@@ -7,7 +7,7 @@ The Scientific Data submission is built only from these roots:
   `03_knowledge_representation.tex`, `04_data_records.tex`,
   `05_validation.tex`, and `06_usage.tex`.
 - `supplement.tex` for the supplement. It includes `kr_supplement.tex`,
-  `env_table.tex`, and `xrf_table.tex`.
+  `xrf_table.tex`. The full environmental observations are distributed as data.
 
 `03_knowledge_representation.tex` is a Methods subsection, not a top-level
 section: Scientific Data prescribes a fixed section set, so the knowledge

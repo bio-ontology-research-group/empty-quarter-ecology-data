@@ -1,12 +1,12 @@
 \section{Data records}\label{records}
 
 The source and derived-data package contains graph modules, curated
-tables, source and correction ledgers, validation evidence and workflow
+tables, specimen and assay provenance, validation evidence and workflow
 code. The machine-readable manifest
 \path{PRE_RELEASE_MANIFEST.tsv} identifies payload sizes, checksums,
 categories and release/licence status. Separately retrieved bulk
 payloads are listed in the bulk manifest. Data Availability reports
-the current access routes and outstanding sequence-release gate.
+access routes and raw-sequence availability.
 
 KG v3.0.1 contains 45,707,660 asserted triples from 16 manifested
 modules and is archived at Zenodo \cite{rubalkhali_kg301}.
@@ -60,35 +60,37 @@ shared terminology and linked site, specimen or process modules.
 
 \subsection{Tabular data products}
 
-Alongside the graph, the reproducibility repository distributes the curated tabular data
-products from which the modules are generated: the versioned source
-ledger linking site and trip to specimen, extraction, library,
-sequence run, quality-control decision and derived community; the
-canonical Trips~1--5 amplicon feature table and its taxonomy mapping;
-the correction and alias ledgers that record every deterministic
-metadata repair without overwriting source values (the alias ledger
-maps the 36 genuine Trip-1-only records of numeric sites 61--64 to the
-four existing named site individuals); the curated field
-environmental table; the field and laboratory XRF tables together with
-the audited chemical-mapping ledger; and the versioned archived-soil
-pH dataset \texttt{EQ-PH-SHARED-v1.0.1}. The canonical feature table
-holds 1,271 profiles, of which the ecological analysis retains 1,237
-(1,227 profiles from the primary frame of sites~1--60); the 34 excluded
-profiles are the 24 controls and ten biological profiles with fewer than
-1,000 reads, including one \texttt{T1Dr1} run with 934 reads. The four derived
-companion-analysis inputs are distributed as records for downstream
-statistical re-execution: the paired PMA
-table (\path{metadata/relic-dna/PMA_ASV_table.tsv}; 18 analytical
-columns from nine aliquot pairs, PMA-treated and untreated, with
-controls kept separately), the 150 CoverM profiles
-(\path{metadata/metagenome/coverm_profiles.tar.gz}), the eggNOG
-annotations (\path{metadata/metagenome/eq.emapper.annotations.gz})
-behind the 990-genome analytical subset, and the measured-function
-input archive (\path{metadata/metagenome/measured_function_inputs.tar.gz})
-with the six exact source tables of the genome-derived versus PICRUSt2
-comparison. These are fixed inputs for downstream analyses. Methods identifies
-the additional raw reads, upstream workflows and acquisition metadata
-needed for end-to-end reproduction.
+The specimen catalogue links site and campaign to specimen, extraction,
+library, sequence run, quality-control decision and derived community.
+Identifiers 61--64 denote four named sites sampled only in Trip~1 and
+account for 36 source specimens. Assay tables provide the canonical amplicon
+profiles, taxonomic mappings, field environmental observations, laboratory
+and field XRF measurements, and archived-soil pH values.
+
+The canonical feature table contains 1,271 profiles. The ecology analysis
+retains 1,237 (1,227 profiles from sites~1--60), after excluding 24 controls and ten
+biological profiles with fewer than 1,000 reads, including one
+\texttt{T1Dr1} run with 934 reads. The pH release
+\texttt{EQ-PH-SHARED-v1.0.1} provides 712 measurements and their
+specimen and session links.
+
+Four additional products support downstream ecology analyses: the paired
+PMA table (\path{metadata/relic-dna/PMA_ASV_table.tsv}; 18 analytical
+columns from nine treated/untreated pairs, with controls kept separately),
+150 CoverM profiles (\path{metadata/metagenome/coverm_profiles.tar.gz}),
+eggNOG annotations (\path{metadata/metagenome/eq.emapper.annotations.gz})
+for the 990-genome analytical subset, and six source tables for the
+MAG-derived versus PICRUSt2 comparison
+(\path{metadata/metagenome/measured_function_inputs.tar.gz}).
+The daily climate inputs are selected by
+\path{metadata/climate/current_analysis_inputs.json}; the monthly acquisition
+is documented in \path{metadata/climate/climate_acquisition_frozen.json}.
+The complete field environmental observations are provided in
+\path{metadata/environmental/environmental_measurements_curated.tsv}.
+The sequence inventory and functional-prediction provenance are distributed
+under \path{metadata/amplicon/} and \path{metadata/functional/}.
+Methods identifies the upstream resources required for reproduction from
+raw reads.
 
 \subsection{Validation schemas, queries and evidence}
 
