@@ -30,8 +30,7 @@ AUTHORITATIVE = (
     "04_data_records.tex",
     "05_validation.tex",
     "06_usage.tex",
-    "supplement.tex",
-    "kr_supplement.tex",
+    "knowledge_examples.tex",
     "env_table.tex",
     "xrf_table.tex",
 )

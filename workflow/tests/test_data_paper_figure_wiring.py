@@ -35,12 +35,12 @@ def test_staged_transect_png_is_not_mislabelled_as_source() -> None:
     assert "transect_altitude.png" not in authoritative_block
 
 
-def test_knowledge_representation_supplement_is_staged_and_snapshotted() -> None:
-    assert '"$project_root/data-paper/kr_supplement.tex"' in BUILDER
+def test_knowledge_representation_examples_is_staged_and_snapshotted() -> None:
+    assert '"$project_root/data-paper/knowledge_examples.tex"' in BUILDER
     authoritative_block = SNAPSHOT.split(
         "DATA_PAPER_AUTHORITATIVE_FILES = (", 1
     )[1].split(")", 1)[0]
-    assert '"kr_supplement.tex"' in authoritative_block
+    assert '"knowledge_examples.tex"' in authoritative_block
     assert "08_declarations.tex" not in BUILDER
     assert "08_declarations.tex" not in authoritative_block
 
@@ -86,14 +86,12 @@ def test_ecology_supplement_inputs_are_staged_and_snapshotted() -> None:
         assert f'"{name}"' in authoritative_block
 
 
-def test_data_supplement_runs_the_full_bibliography_build() -> None:
-    assert 'build_tex "$task_root/data-paper" supplement' in BUILDER
-    assert 'cp "$task_root/data-paper/supplement.blg"' in BUILDER
-    assert 'data-paper-supplement.blg' in BUILDER
-    assert (
-        'pdflatex -interaction=nonstopmode -halt-on-error supplement.tex'
-        not in BUILDER
-    )
+def test_data_article_is_the_only_data_paper_build() -> None:
+    assert 'build_tex "$task_root/data-paper" sn-article' in BUILDER
+    assert 'build_tex "$task_root/data-paper" supplement' not in BUILDER
+    assert '"$output_dir/data_paper/supplement.pdf"' not in BUILDER
+    assert '"$project_root/data-paper/supplement.tex"' not in BUILDER
+    assert 'build_tex "$task_root/ecology-paper" supplement' in BUILDER
 
 
 def test_release_staging_removes_transient_build_noise() -> None:
@@ -102,7 +100,7 @@ def test_release_staging_removes_transient_build_noise() -> None:
     assert '".pytest_cache"' in STAGER
 
 
-def test_data_supplement_listing_overflows_fail_the_build() -> None:
-    assert "data_supplement_listing_overflows" in BUILDER
-    assert "data_supplement_listing_overflow_count.txt" in BUILDER
-    assert "data supplement contains" in BUILDER
+def test_data_article_listing_overflows_fail_the_build() -> None:
+    assert "data_article_listing_overflows" in BUILDER
+    assert "data_article_listing_overflow_count.txt" in BUILDER
+    assert "data article contains" in BUILDER

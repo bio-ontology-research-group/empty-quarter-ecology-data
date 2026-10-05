@@ -31,7 +31,7 @@ DATA_SOURCES = (
     "05_validation.tex",
     "06_usage.tex",
     "sn-article.tex",
-    "kr_supplement.tex",
+    "knowledge_examples.tex",
 )
 ECOLOGY_SOURCES = ("main.tex", "supplement.tex")
 
@@ -78,12 +78,12 @@ SHARED_COUNTS = (
 )
 TERMINOLOGY = (
     (
-        r"\b64 sites\b",
-        "'64 sites' should be '64 numeric site labels': four are Trip-1-only aliases",
+        r"\b64 primary sites\b",
+        "the repeated-campaign frame has 60 primary sites; Trip 1 also visited four named locations",
     ),
     (
-        r"(?<!``)Deep Soil Sample(?!'')",
-        "'Deep Soil Sample' should appear only as a quoted historical graph label",
+        r"(?<!``)(?<!class )Deep Soil Sample(?!'')",
+        "Deep Soil Sample must be identified as an ontology class or quoted class label",
     ),
 )
 
@@ -119,7 +119,7 @@ def scan(
                     continue
             if line.lstrip().startswith("%"):
                 continue
-            if not compiled.search(line):
+            if not compiled.search(line.replace("{,}", ",")):
                 continue
             if excuse_supersession:
                 window = "\n".join(
@@ -259,9 +259,9 @@ def main() -> int:
         if ecology
         else None,
         "note": (
-            "Both companion bibliography entries need a resolvable identifier "
-            "(preprint or DOI) before either manuscript is submitted; a circular "
-            "citation with no identifier is a common desk-reject trigger."
+            "Disclose both related manuscripts and provide copies to the journals. "
+            "Use a public identifier when available; an unpublished related "
+            "manuscript need not have a DOI before submission."
         ),
     }
 

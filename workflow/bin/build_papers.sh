@@ -138,9 +138,7 @@ cp \
   "$project_root/data-paper/04_data_records.tex" \
   "$project_root/data-paper/05_validation.tex" \
   "$project_root/data-paper/06_usage.tex" \
-  "$project_root/data-paper/supplement.tex" \
-  "$project_root/data-paper/kr_supplement.tex" \
-  "$project_root/data-paper/xrf_table.tex" \
+  "$project_root/data-paper/knowledge_examples.tex" \
   "$project_root/data-paper/sample_coverage_table.tex" \
   "$project_root/data-paper/sn-bibliography.bib" \
   "$project_root/data-paper/sn-jnl.cls" \
@@ -252,19 +250,16 @@ build_tex() {
 }
 
 build_tex "$task_root/data-paper" sn-article
-build_tex "$task_root/data-paper" supplement
 build_tex "$task_root/ecology-paper" main
 build_tex "$task_root/ecology-paper" supplement
 
 cp "$task_root/data-paper/sn-article.pdf" "$output_dir/data_paper/"
-cp "$task_root/data-paper/supplement.pdf" "$output_dir/data_paper/"
 cp "$task_root/ecology-paper/main.pdf" "$output_dir/ecology_paper/"
 cp "$task_root/ecology-paper/supplement.pdf" "$output_dir/ecology_paper/"
 
 if grep -En \
   'undefined references|Citation .* undefined|There were undefined|undefined citations' \
   "$task_root/data-paper/sn-article.log" \
-  "$task_root/data-paper/supplement.log" \
   "$task_root/ecology-paper/main.log" \
   "$task_root/ecology-paper/supplement.log"
 then
@@ -274,7 +269,6 @@ fi
 
 python3 "$project_root/workflow/bin/pdf_metadata.py" \
   "$output_dir/data_paper/sn-article.pdf" \
-  "$output_dir/data_paper/supplement.pdf" \
   "$output_dir/ecology_paper/main.pdf" \
   "$output_dir/ecology_paper/supplement.pdf" \
   > "$output_dir/logs/pdf_metadata.tsv"
@@ -290,10 +284,6 @@ cp "$task_root/data-paper/sn-article.log" \
   "$output_dir/logs/data-paper-sn-article.log"
 cp "$task_root/data-paper/sn-article.blg" \
   "$output_dir/logs/data-paper-sn-article.blg"
-cp "$task_root/data-paper/supplement.log" \
-  "$output_dir/logs/data-paper-supplement.log"
-cp "$task_root/data-paper/supplement.blg" \
-  "$output_dir/logs/data-paper-supplement.blg"
 cp "$task_root/ecology-paper/main.log" \
   "$output_dir/logs/ecology-main.log"
 cp "$task_root/ecology-paper/main.blg" \
@@ -303,15 +293,15 @@ cp "$task_root/ecology-paper/supplement.log" \
 cp "$task_root/ecology-paper/supplement.blg" \
   "$output_dir/logs/ecology-supplement.blg"
 
-data_supplement_listing_overflows=$(
+data_article_listing_overflows=$(
   grep -cE 'Overfull \\hbox .*in paragraph at lines' \
-    "$output_dir/logs/data-paper-supplement.log" || true
+    "$output_dir/logs/data-paper-sn-article.log" || true
 )
-printf '%s\n' "$data_supplement_listing_overflows" \
-  > "$output_dir/logs/data_supplement_listing_overflow_count.txt"
-if [[ "$data_supplement_listing_overflows" -ne 0 ]]; then
+printf '%s\n' "$data_article_listing_overflows" \
+  > "$output_dir/logs/data_article_listing_overflow_count.txt"
+if [[ "$data_article_listing_overflows" -ne 0 ]]; then
   printf '%s\n' \
-    "data supplement contains $data_supplement_listing_overflows paragraph/listing overfull box(es)" \
+    "data article contains $data_article_listing_overflows paragraph/listing overfull box(es)" \
     >&2
   exit 1
 fi

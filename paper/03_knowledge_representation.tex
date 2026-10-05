@@ -62,7 +62,7 @@ execution is a process. Extraction consumes soil and produces DNA;
 library preparation consumes DNA and produces an amplicon library;
 sequencing consumes the library and produces a digital FASTQ dataset.
 Quality-control processes consume FASTQ datasets and produce
-direction-specific metrics. Suppl. Sections~S1.2--S1.7 give the
+direction-specific metrics. Section~\ref{methods:graph_examples} gives
 corresponding graph examples.
 
 Site annotations use existential restrictions to relate a site to
@@ -79,7 +79,9 @@ Occurrence-specific identifiers and the identity metadata distinguish
 reused control labels. Confirmed, provisional, unresolved and
 inapplicable dispositions retain their supporting evidence. The
 D6300 whole-cell and D6322 purified-DNA standards enter the process
-chain at extraction and PCR, respectively.
+chain at extraction and PCR, respectively. The composition specification
+links each standard to its expected taxa; reified assertions preserve
+the subject, relation, taxon, validation status and source.
 
 \subsubsection{Taxonomic and chemical observations}
 
@@ -118,8 +120,8 @@ entity relationships used by the resource. The notation uses
 $\sqsubseteq$ for subclass inclusion, $\sqcap$ for conjunction,
 $\exists R.C$ for at least one relation $R$ to a member of class $C$,
 and $\forall R.C$ to restrict all $R$ fillers to $C$. Structural
-validation checks the corresponding data constraints. Suppl.
-Sections~S1.2--S1.7 provide concrete RDF examples.
+validation checks the corresponding data constraints.
+Section~\ref{methods:graph_examples} provides concrete RDF examples.
 
 The sampling pattern links a process to its target site and output collection,
 whose members are physical samples.
@@ -239,6 +241,8 @@ source sequence dataset.
 	    \end{aligned}
 \end{align}
 \end{small}
+
+\input{knowledge_examples.tex}
 
 \subsubsection{OWL and RDF implementation}\label{subsec:owl_rdf}
 

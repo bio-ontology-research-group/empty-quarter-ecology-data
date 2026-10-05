@@ -38,10 +38,8 @@ def write_fixture(root: Path) -> tuple[Path, Path]:
         "04_data_records.tex",
         "05_validation.tex",
         "06_usage.tex",
-        "supplement.tex",
-        "kr_supplement.tex",
+        "knowledge_examples.tex",
         "env_table.tex",
-        "xrf_table.tex",
         "sample_coverage_table.tex",
         "sn-bibliography.bib",
         "sn-jnl.cls",
@@ -129,7 +127,7 @@ def test_exported_tree_uses_current_bytes_not_stale_patch(tmp_path: Path):
         first / "data_paper_source_snapshot.tar.gz", "r:gz"
     ) as tar:
         members = set(tar.getnames())
-        assert "kr_supplement.tex" in members
+        assert "knowledge_examples.tex" in members
         assert "zenodo/sparql/field_xrf_site10.rq" in members
         assert "zenodo/large-release/excluded.ttl" not in members
         assert "retired-main.tex" not in members

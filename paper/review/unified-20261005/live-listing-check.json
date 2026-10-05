@@ -1,0 +1,41 @@
+{
+  "graph": "https://rubalkhali.science/graph/asserted/3.0.1",
+  "checks": [
+    {
+      "label": "lst:ttl_temp",
+      "triples": 12,
+      "passed": true
+    },
+    {
+      "label": "lst:ttl_sampling",
+      "triples": 7,
+      "passed": true
+    },
+    {
+      "label": "lst:ttl_protocol",
+      "triples": 6,
+      "passed": true
+    },
+    {
+      "label": "lst:ttl_tax",
+      "triples": 15,
+      "passed": true
+    },
+    {
+      "label": "lst:ttl_xrf",
+      "triples": 10,
+      "passed": true
+    },
+    {
+      "label": "lst:ttl_sequencing",
+      "triples": 13,
+      "passed": true
+    },
+    {
+      "label": "lst:ttl_qc",
+      "triples": 10,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

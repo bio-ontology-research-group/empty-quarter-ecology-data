@@ -1,0 +1,101 @@
+Unified Scientific Data manuscript: merge and review, 5 October 2026
+
+The submission is now one 34-page article. The preceding article and
+supplement totalled 43 pages. This review supersedes the two-document
+submission-review-20261005 package. No journal submission has been made.
+
+Venue rationale
+Scientific Data discourages separate supplementary text and recommends
+including it in the article wherever practical. Its allowance for substantial
+additional length made the former 12-page supplement permissible, but did
+not require it. Main-article tables must fit one printed page; the complete
+93-row chemical mapping is therefore linked as repository data rather than
+reproduced as a multi-page table.
+https://www.nature.com/sdata/submission-guidelines
+
+Merge
+- Integrated pooling calculation and the remaining indexing metadata limits
+  into DNA extraction and sequencing Methods.
+- Integrated the additional field/laboratory XRF settings, Trip 5 compartment
+  counts and observation-selection details into XRF Methods.
+- Retained PCR, PMA and pH information already present in Methods once;
+  duplicate supplementary paragraphs were removed.
+- Integrated the graph examples and namespace table into Knowledge
+  representation. Shortened the repeated explanation of each serialization,
+  retaining the scientific purpose and provenance relationships.
+- Preserved all seven Turtle listing blocks exactly, including comments,
+  identifiers and values. Preserved formal equations and SPARQL queries.
+- Removed the standalone supplement sources and PDF from the active project.
+  Previous versions remain in Git history and dated review packets.
+- Updated source capture, paper build, checks and source documentation to
+  produce one data-paper article. Ecology still has its own supplement.
+
+Full-manuscript rereview
+The Background and summary retains the data-management problem and the role
+of specimen/process links. Methods describes sampling, assays, sequence
+processing, data integration and validation. Graph examples follow the
+formal patterns they instantiate. Data Records remains an inventory of data,
+formats and definitions. Technical Validation retains assay diagnostics,
+source reconciliation, query comparisons and the stated scope of the logical
+checks. Usage and availability retain the conditions necessary for reuse.
+No ecological findings were added to the Data Descriptor.
+
+The unified text was checked for repeated protocol statements, duplicated
+formalism explanations, stale supplementary references, manuscript-editing
+history, Site 52 correction narratives, workbook terminology and local paths.
+The merger removes repeated prose without changing scientific observations.
+All now-internal references use the unified numbering. File names remain
+confined to the Data Records module table; its data inventories use descriptive
+links. Code examples retain public ontology identifiers and namespaces.
+
+Data and ecology consistency
+Checked against the current ecology main text and supplement and the shared
+release evidence. Profile counts remain 1,271 canonical profiles, 1,247
+biological profiles, 24 controls, 1,237 passing profiles and 1,227 profiles at
+primary sites 1–60. The 351,472-ASV count and ten low-depth exclusions agree.
+Nominal bulk subsurface depth remains 5–10 cm, with exact individual depths
+unrecorded. The ontology's Deep Soil Sample is its current class label.
+Trip 1's 64 visited locations comprise 60 primary sites plus four named sites.
+
+The pH counts refer to different stages: 1,168 specimen-assay entries contain
+767 numeric measurements, of which 712 meet admission criteria; 356 entries
+lack a measurement and 45 are depleted. All 156 Trip 4 accepted measurements
+use field replicate 2. The ecology paper's 767 and 712 counts agree with this
+accounting. XRF remains 547 plus 178 laboratory records (725 total) and 71
+complete field sessions at 58 sites. Vanta/Fast Mode and the field/laboratory
+separation remain consistent. PMA has nine pairs from three parent specimens.
+
+Shotgun data remain 150 libraries and 991 catalogue genomes; whole-profile
+comparison uses the 990-genome annotation subset and 125 matched libraries;
+marker comparison uses 975 genomes and 119 matched libraries. Daily-climate
+selection and environmental values are unchanged. KG v3.0.1 still contains
+45,707,660 asserted triples, 16 modules and 342 defined project terms.
+No biological analysis, raw data or immutable KG deposit changed.
+
+Validation
+- 29 manuscript checks and 58 package/workflow checks pass (87 total).
+- Cross-paper scan reports zero findings. Fixed its handling of LaTeX
+  thousands separators and two obsolete terminology rules: actual visited
+  locations differ from the primary frame, and a current ontology class name
+  must not be forced into historical-correction language. Regression checks
+  cover these cases. Related-manuscript disclosure guidance no longer falsely
+  requires a DOI for an unpublished manuscript at initial submission.
+- All seven Turtle examples, totalling 73 triples, match the live asserted
+  KG v3.0.1 graph. The saved per-example responses are included. The local
+  listing parser was also fixed to preserve '#' within IRIs; rdflib handles
+  Turtle comments directly. Tests cover the actual examples and datatype IRI.
+- Main and compatibility PDFs build with no undefined references or overfull
+  boxes. The namespace table and integrated example opening were visually
+  inspected. Standalone packaged article sources compile.
+- The full taxonomy module was not loaded locally during this review; live
+  KG checks verified the printed taxonomy example. No whole-graph rebuild
+  or raw-read rerun is claimed.
+
+Still required before submission
+Author contributions and final author approval; anonymous reviewer access
+to sequence reads; a durable deposit and data citation for the broader tables;
+and disclosure/copies of the related manuscripts for both journals. Missing
+upstream sequence-processing and acquisition records remain stated in Methods.
+The successful 5 October ENA check in the preceding review returned zero
+public run/download rows. The manuscript retains that dated access statement.
+These are substantive access/author requirements, not further prose edits.

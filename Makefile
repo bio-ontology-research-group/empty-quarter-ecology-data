@@ -41,8 +41,6 @@ test: bootstrap
 paper:
 	cd paper && SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) FORCE_SOURCE_DATE=1 \
 		latexmk -pdf -interaction=nonstopmode -halt-on-error sn-article.tex
-	cd paper && SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) FORCE_SOURCE_DATE=1 \
-		latexmk -pdf -interaction=nonstopmode -halt-on-error supplement.tex
 
 evidence-stub: bootstrap
 	@echo "Stub only: run every real KG build on ws or Ontolinator."
@@ -54,4 +52,4 @@ evidence-stub: bootstrap
 		--outdir "$(CURDIR)/results/evidence-stub"
 
 clean:
-	cd paper && latexmk -C sn-article.tex && latexmk -C supplement.tex
+	cd paper && latexmk -C sn-article.tex

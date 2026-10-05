@@ -101,8 +101,8 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             source,
         )
 
-    def test_supplement_listings_can_wrap_long_iris(self) -> None:
-        supplement = self.text("supplement.tex")
+    def test_article_listings_can_wrap_long_iris(self) -> None:
+        supplement = self.text("sn-article.tex")
         self.assertIn("columns=fullflexible", supplement)
 
     def test_staged_amplicon_protocol_matches_corrected_canonical_record(self) -> None:
@@ -140,8 +140,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             "04_data_records.tex",
             "05_validation.tex",
             "06_usage.tex",
-            "supplement.tex",
-            "kr_supplement.tex",
+            "knowledge_examples.tex",
             "env_table.tex",
             "xrf_table.tex",
         ):
@@ -719,10 +718,10 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertIn("metadata/DATA_DICTIONARY.tsv", records)
 
     def test_field_xrf_does_not_claim_a_specimen_link(self) -> None:
-        # The XRF pattern lives in the supplement since the knowledge
+        # The XRF pattern is included in Methods; the knowledge
         # representation was folded into Methods for the venue's section set.
         representation = self.text("03_knowledge_representation.tex") + self.text(
-            "kr_supplement.tex"
+            "knowledge_examples.tex"
         )
         validation = self.text("05_validation.tex")
         # Only the field-XRF listing is in scope: later listings legitimately

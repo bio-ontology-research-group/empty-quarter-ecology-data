@@ -101,7 +101,7 @@ def main() -> int:
         "metadata/DATA_DICTIONARY.tsv",
         "ontology/rubalkhali_kb.owl",
         "paper/sn-article.tex",
-        "paper/supplement.tex",
+        "paper/knowledge_examples.tex",
         "workflow/analysis_manifest.tsv",
         "workflow/main.nf",
     ):

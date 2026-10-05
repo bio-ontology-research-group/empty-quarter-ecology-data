@@ -102,25 +102,10 @@ def read_listings(source: str) -> list[tuple[str, str]]:
     return listings
 
 
-def strip_comments(body: str) -> str:
-    lines = []
-    for line in body.splitlines():
-        in_string = False
-        cut = len(line)
-        for index, character in enumerate(line):
-            if character == '"':
-                in_string = not in_string
-            elif character == "#" and not in_string:
-                cut = index
-                break
-        lines.append(line[:cut].rstrip())
-    return "\n".join(lines)
-
-
 def parse_listing(body: str, prefixes: dict[str, str]) -> Graph:
     header = "".join(f"@prefix {name}: <{iri}> .\n" for name, iri in prefixes.items())
     graph = Graph()
-    graph.parse(data=header + strip_comments(body), format="turtle")
+    graph.parse(data=header + body, format="turtle")
     return graph
 
 
@@ -242,7 +227,7 @@ def main() -> int:
 
     sections = [
         args.paper_root / "03_knowledge_representation.tex",
-        args.paper_root / "kr_supplement.tex",
+        args.paper_root / "knowledge_examples.tex",
     ]
     for section in sections:
         if not section.is_file():

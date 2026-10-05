@@ -74,8 +74,8 @@ def test_submission_prose_describes_final_data_and_confines_paths_to_data_record
     import re
     names = ['sn-article.tex', '01_introduction.tex', '02_methods.tex',
              '02_methods_taxonomy.tex', '03_knowledge_representation.tex',
-             '05_validation.tex', '06_usage.tex', 'kr_supplement.tex',
-             'supplement.tex', 'env_table.tex']
+             '05_validation.tex', '06_usage.tex', 'knowledge_examples.tex',
+             'env_table.tex']
     for name in names:
         text = (ROOT/'paper'/name).read_text()
         text = re.sub(r'(?<!\\)%[^\n]*', '', text)
@@ -86,6 +86,43 @@ def test_submission_prose_describes_final_data_and_confines_paths_to_data_record
     title = re.search(r'\\title\[[^]]*\]\{([^}]+)\}', main).group(1)
     abstract = re.search(r'\\abstract\{(.*?)\}\n', main, re.S).group(1)
     assert len(title) <= 110 and len(abstract.split()) <= 170
-    assert r'\input{env_table.tex}' not in (ROOT/'paper/supplement.tex').read_text()
+    assert not (ROOT/'paper/supplement.tex').exists()
+    assert r'\input{knowledge_examples.tex}' in (ROOT/'paper/03_knowledge_representation.tex').read_text()
     field_data = ROOT/'metadata/environmental/environmental_measurements_curated.tsv'
     assert hashlib.sha256(field_data.read_bytes()).hexdigest() == '51177fb6b21e4b10712daaa731cdf3783d0fc351c536f562851efd233386573f'
+
+
+def test_integrated_turtle_examples_parse_with_fragment_iris_and_comments():
+    import importlib.util
+    source = "\n".join((ROOT/'paper'/name).read_text() for name in
+                       ['03_knowledge_representation.tex', 'knowledge_examples.tex'])
+    for relative in ['scripts/validation/verify_manuscript_listings.py',
+                     'scripts/manuscript/verify_manuscript_listings.py']:
+        spec = importlib.util.spec_from_file_location('listing_validator', ROOT/relative)
+        validator = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(validator)
+        prefixes = validator.read_prefixes(source)
+        listings = validator.read_listings(source)
+        graphs = {label: validator.parse_listing(body, prefixes)
+                  for label, body in listings if label.startswith('lst:ttl_')}
+        assert len(graphs) == 7
+        for graph in graphs.values():
+            assert len(graph) > 0
+        value = URIRef('https://rubalkhali.science/kb/RAK_4000001')
+        predicate = URIRef('https://rubalkhali.science/kb/RAK_2000003')
+        result = graphs['lst:ttl_temp'].value(value, predicate)
+        assert str(result.datatype) == 'http://www.w3.org/2001/XMLSchema#double'
+        assert float(result) == 20.7
+
+
+def test_cross_paper_scan_handles_tex_numbers_and_ontology_labels():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('cross_paper', ROOT/'scripts/manuscript/check_cross_paper_consistency.py')
+    checker = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(checker)
+    text = {'methods': ['We retained $1{,}237$ profiles.',
+                        'Trip 1, 64 sites visited',
+                        'The ontology class Deep Soil Sample denotes the bulk compartment.']}
+    assert checker.scan(text, '1,237')
+    assert not any(checker.scan(text, pattern) for pattern, _ in checker.TERMINOLOGY)
+    assert checker.scan({'bad': ['64 primary sites']}, checker.TERMINOLOGY[0][0])

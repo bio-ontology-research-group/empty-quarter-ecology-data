@@ -1,0 +1,708 @@
+diff --git a/02_methods.tex b/02_methods.tex
+index 8ec8649..2a22a25 100644
+--- a/02_methods.tex
++++ b/02_methods.tex
+@@ -271,8 +271,13 @@ quantified using the Qubit dsDNA High Sensitivity assay, and assessed
+ for fragment size using an Agilent 4200 TapeStation with the D5000
+ ScreenTape assay. Libraries were pooled by molarity calculated from
+ concentration and fragment size in the Core Lab pooling calculation.
+-Supplementary Section~S2 specifies the
+-pooling calculation and the remaining run-specific metadata gaps.
++Aliquot volumes were calculated using the factor $VC/N$, where $V$
++is the target pool volume, $C$ is the target molarity and $N$ is the
++number of libraries. Dividing this factor by each library's molarity
++gives its aliquot volume. Run-specific target volumes, target molarities
++and individual library measurements remain undocumented. The indexing
++protocol specifies the kit and thermal programme; reaction-specific
++reagent volumes remain undocumented.
+ Amplicon pools were sequenced on an Illumina NovaSeq~6000 using
+ an SP flow cell with a 500-cycle reagent kit to generate
+ $2 \times 250$~bp
+@@ -447,7 +452,11 @@ Screening-He8mm with helium and an 8~mm diameter. Element and
+ oxide-equivalent channels are retained separately. The analytical dataset
+ uses the Fast Screening observations for V4Dr3 and V18Dr3. The exact gas
+ and diameter settings for Trips~1--4 remain undocumented.
+-Suppl. Section~S3 describes acquisition and observation selection.
++The Trip~5 specimens comprise 60 shallow-subsurface, 60 surface and
++58 root-adjacent samples. Additional Best Detection measurements for
++V4Dr3 and V18Dr3 are retained as acquisition data. Handheld field
++measurements used Geochem(3-Beam) and NORMAL settings; acquisition
++duration was unrecorded.
+ 
+ The laboratory acquisition metadata lack the exact model variant, serial
+ number, measurement duration, tube settings, sample preparation,
+diff --git a/03_knowledge_representation.tex b/03_knowledge_representation.tex
+index 29ae3e6..b50fb1a 100644
+--- a/03_knowledge_representation.tex
++++ b/03_knowledge_representation.tex
+@@ -62,7 +62,7 @@ execution is a process. Extraction consumes soil and produces DNA;
+ library preparation consumes DNA and produces an amplicon library;
+ sequencing consumes the library and produces a digital FASTQ dataset.
+ Quality-control processes consume FASTQ datasets and produce
+-direction-specific metrics. Suppl. Sections~S1.2--S1.7 give the
++direction-specific metrics. Section~\ref{methods:graph_examples} gives
+ corresponding graph examples.
+ 
+ Site annotations use existential restrictions to relate a site to
+@@ -79,7 +79,9 @@ Occurrence-specific identifiers and the identity metadata distinguish
+ reused control labels. Confirmed, provisional, unresolved and
+ inapplicable dispositions retain their supporting evidence. The
+ D6300 whole-cell and D6322 purified-DNA standards enter the process
+-chain at extraction and PCR, respectively.
++chain at extraction and PCR, respectively. The composition specification
++links each standard to its expected taxa; reified assertions preserve
++the subject, relation, taxon, validation status and source.
+ 
+ \subsubsection{Taxonomic and chemical observations}
+ 
+@@ -118,8 +120,8 @@ entity relationships used by the resource. The notation uses
+ $\sqsubseteq$ for subclass inclusion, $\sqcap$ for conjunction,
+ $\exists R.C$ for at least one relation $R$ to a member of class $C$,
+ and $\forall R.C$ to restrict all $R$ fillers to $C$. Structural
+-validation checks the corresponding data constraints. Suppl.
+-Sections~S1.2--S1.7 provide concrete RDF examples.
++validation checks the corresponding data constraints.
++Section~\ref{methods:graph_examples} provides concrete RDF examples.
+ 
+ The sampling pattern links a process to its target site and output collection,
+ whose members are physical samples.
+@@ -240,6 +242,8 @@ source sequence dataset.
+ \end{align}
+ \end{small}
+ 
++\input{knowledge_examples.tex}
++
+ \subsubsection{OWL and RDF implementation}\label{subsec:owl_rdf}
+ 
+ Groovy scripts using OWL API v5.1.20 \cite{owlapi} generate the modules.
+diff --git a/04_data_records.tex b/04_data_records.tex
+index 1981fe9..acd4e2e 100644
+--- a/04_data_records.tex
++++ b/04_data_records.tex
+@@ -63,4 +63,7 @@ The \href{https://github.com/bio-ontology-research-group/empty-quarter-ecology-d
+ sizes, checksums and licensing status. A separate bulk-data inventory
+ gives retrieval information for larger downloads. The repository also supplies
+ validation schemas, SPARQL queries, expected query outputs and the
+-source comparisons described in Technical Validation.
++source comparisons described in Technical Validation. The
++\href{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data/blob/main/evidence/xrf_chemical_mapping_audit/xrf_chemical_mapping_audit.tsv}{chemical mapping table}
++provides all 93 XRF reporting channels, their ChEBI and PubChem
++cross-references, validation status and source evidence.
+diff --git a/knowledge_examples.tex b/knowledge_examples.tex
+new file mode 100644
+index 0000000..41ba654
+--- /dev/null
++++ b/knowledge_examples.tex
+@@ -0,0 +1,161 @@
++\subsubsection{Graph examples}\label{methods:graph_examples}
++
++The following examples instantiate the formal patterns with observations
++from the resource. Table~\ref{tab:prefixes} defines the namespaces used
++in the Turtle examples and SPARQL queries. Prepend these declarations
++when parsing an example. The listing validator compares each example
++with the corresponding modules and pinned reference terms.
++
++\begin{table}[h]
++\centering
++\caption{Prefix declarations used in all Turtle and SPARQL listings.}
++\label{tab:prefixes}
++\small
++\begin{tabular}{ll}
++\toprule
++\textbf{Prefix} & \textbf{Namespace} \\
++\midrule
++\texttt{rak:}      & \texttt{https://rubalkhali.science/kb/RAK\_} \\
++\texttt{rak\_kb:}  & \texttt{https://rubalkhali.science/kb/} \\
++\texttt{sio:}      & \texttt{http://semanticscience.org/resource/SIO\_} \\
++\texttt{owl:}      & \texttt{http://www.w3.org/2002/07/owl\#} \\
++\texttt{pato:}     & \texttt{http://purl.obolibrary.org/obo/PATO\_} \\
++\texttt{uo:}       & \texttt{http://purl.obolibrary.org/obo/UO\_} \\
++\texttt{envo:}     & \texttt{http://purl.obolibrary.org/obo/ENVO\_} \\
++\texttt{ncbitaxon:}& \texttt{http://purl.obolibrary.org/obo/NCBITaxon\_} \\
++\texttt{obo:}      & \texttt{http://purl.obolibrary.org/obo/} \\
++\texttt{rdf:}      & \texttt{http://www.w3.org/1999/02/22-rdf-syntax-ns\#} \\
++\texttt{rdfs:}     & \texttt{http://www.w3.org/2000/01/rdf-schema\#} \\
++\texttt{xsd:}      & \texttt{http://www.w3.org/2001/XMLSchema\#} \\
++\texttt{geo:}      & \texttt{http://www.opengis.net/ont/geosparql\#} \\
++\texttt{dcterms:}  & \texttt{http://purl.org/dc/terms/} \\
++\bottomrule
++\end{tabular}
++\end{table}
++
++Listing~\ref{lst:ttl_sampling} represents the Trip~1, Site~1
++shallow-subsurface specimen. The sampling process targets a site and
++outputs a collection containing the specimen. The specimen also links
++directly to its source site, allowing queries to recover provenance
++without traversing the sampling event.
++
++\begin{lstlisting}[caption={Turtle representation of a sampling process.}, label={lst:ttl_sampling}, basicstyle=\ttfamily\scriptsize, frame=single]
++rak:P100001 a rak:0000024 ; # Sampling Process
++  sio:000291 rak:1000001 ; # hasTarget
++  sio:000229 rak:7000001 . # hasOutput (Collection)
++
++rak:7000001 a sio:001419 ; # Material sample collection
++  sio:000059 rak:6000001 . # hasMember
++
++rak:6000001 a rak:0000021 ; # Deep Soil Sample
++  sio:000244 rak:1000001 . # isDerivedFrom
++\end{lstlisting}
++
++The same specimen is the input of the extraction process in
++Listing~\ref{lst:ttl_protocol}. A protocol specification identifies the
++procedure, and the output DNA extract carries a concentration quality.
++A separate measurement value quantifies that quality through the
++reciprocal SIO measurement relations.
++
++\begin{lstlisting}[caption={Turtle representation of a DNA extraction protocol.}, label={lst:ttl_protocol}, basicstyle=\ttfamily\scriptsize, frame=single]
++rak:P200001 a sio:000994 ; # Scientific Protocol Execution
++  sio:000339 rak_kb:DNA_ext_powersoil ; # isSpecifiedBy
++  sio:000230 rak:6000001 ; # hasInput (Soil Sample)
++  sio:000229 rak:6800001 . # hasOutput (DNA Extract)
++
++rak:6800001 a rak:0000040 ; # DNA Extract
++  sio:000008 rak:5900001 . # hasAttribute (Concentration Quality)
++\end{lstlisting}
++
++Taxonomic observations bind a count to both a taxon and its source
++sequence dataset (Listing~\ref{lst:ttl_tax}). Here, run
++\texttt{ERR16783308}, profile \texttt{V10Dr1}, has 853,814 reads
++assigned to Bacteria. Each taxonomic dataset contains one rank and
++one abundance basis; count and relative-abundance datasets retain the
++same classifier lineage and source-profile context.
++
++\begin{lstlisting}[caption={Turtle representation of taxonomic abundance formalized from a feature table.}, label={lst:ttl_tax}, basicstyle=\ttfamily\scriptsize, frame=single]
++rak:P290001 a rak:0000071 ; # Bioinformatic Workflow
++  sio:000339 rak:L000012 ; # 16S amplicon processing protocol
++  sio:000230 rak:7791009 ; # hasInput (FASTQ Dataset, ERR16783308)
++  sio:000229 rak:7740001 . # hasOutput (Taxonomic Dataset)
++
++rak:7740001 a rak:0000074 ; # taxon absolute abundance dataset
++  sio:000059 rak:V00000001 . # hasMember (Observation Value)
++
++rak:V00000001 a rak:0000076 ; # Absolute abundance value
++  sio:000215 rak:Q00000001 ; # isMeasurementValueOf
++  rak:2000025 "Domain: Bacteria" ; # classifier lineage
++  rak:2000026 "853814.0"^^xsd:double . # absolute read count
++
++rak:Q00000001 a rak:0000078, pato:0000070 ; # Absolute Abundance Quality
++  sio:000011 ncbitaxon:2, rak:7791009 ; # taxon and FASTQ bearers
++  sio:000216 rak:V00000001 . # hasMeasurementValue
++\end{lstlisting}
++
++Laboratory XRF specializes the measurement pattern by linking the
++process to its archived specimen. Listing~\ref{lst:ttl_xrf} shows the
++aluminium observation for \texttt{V1Sr1}. Its numerical value and
++quality have reciprocal links. The value retains the instrument-reported
++magnitude with undocumented concentration units. Field sessions instead
++identify a target site through \texttt{sio:000291}.
++
++\begin{lstlisting}[caption={Turtle representation of an XRF geochemistry measurement.}, label={lst:ttl_xrf}, basicstyle=\ttfamily\scriptsize, frame=single]
++rak:P300072 a rak:0000025 ; # XRF Measuring Process
++  sio:000230 rak:6001732 ; # hasInput (sample V1Sr1)
++  sio:000339 rak:L_Surface_Lab ; # laboratory protocol
++  sio:000229 rak:4302121 . # hasOutput
++
++rak:4302121 a rak:0000507 ; # Al concentration value
++  sio:000215 rak:5302121 ; # isMeasurementValueOf
++  rak:2000012 "0.78"^^xsd:double . # Concentration
++
++rak:5302121 a rak:0000107 ; # Al concentration quality
++  sio:000011 rak:6001732 ; # isAttributeOf
++  sio:000216 rak:4302121 . # hasMeasurementValue
++\end{lstlisting}
++
++Shared inputs and outputs connect extraction, library preparation and
++sequencing (Listing~\ref{lst:ttl_sequencing}). The final sequence
++dataset links to its ENA accession. A SPARQL traversal can therefore
++recover the recorded provenance from specimen to sequence run.
++
++\begin{lstlisting}[caption={Turtle representation of the sequencing workflow from soil sample T1Dr1 to ENA run ERR16061083.}, label={lst:ttl_sequencing}, basicstyle=\ttfamily\scriptsize, frame=single]
++rak:P200923 a sio:000994 ; # DNA Extraction Process
++  sio:000339 rak_kb:DNA_ext_powersoil ; # isSpecifiedBy
++  sio:000230 rak:6000577 ; # hasInput (T1Dr1 Soil Sample)
++  sio:000229 rak:6800540 . # hasOutput (DNA Extract)
++
++rak:P250001 a rak:0000065 ; # Library Preparation Process
++  sio:000339 rak:L000010 ; # Illumina 16S Prep Guide
++  sio:000230 rak:6800540 ; # hasInput (DNA Extract)
++  sio:000229 rak:6690001 . # hasOutput (Amplicon Library)
++
++rak:P280001 a rak:0000066 ; # Sequencing Process
++  sio:000230 rak:6690001 ; # hasInput (Amplicon Library)
++  sio:000229 rak:7790001 . # hasOutput (FASTQ Dataset)
++
++rak:7790001 a rak:0000063 ; # FASTQ Dataset
++  rdfs:seeAlso <https://identifiers.org/insdc.run/ERR16061083> .
++\end{lstlisting}
++
++Quality-control observations retain the read direction through separate
++forward and reverse metric classes. Listing~\ref{lst:ttl_qc} gives the
++forward-read GC content for run \texttt{ERR16062319}: 58.0\%.
++The quality belongs to the same FASTQ dataset consumed by the
++quality-control process.
++
++\begin{lstlisting}[caption={Turtle representation of forward-read GC content for ENA run ERR16062319.}, label={lst:ttl_qc}, basicstyle=\ttfamily\scriptsize, frame=single]
++rak:P350001 a rak:0000200 ; # Sequencing QC Process
++  sio:000230 rak:7790263 ; # hasInput (FASTQ Dataset)
++  sio:000229 rak:4450001 . # hasOutput (QC Value)
++
++rak:4450001 a rak:0000217 ; # Forward GC Content Value
++  sio:000215 rak:5550001 ; # isMeasurementValueOf
++  sio:000221 uo:0000187 ; # Percent
++  rak:2000074 "58.0"^^xsd:double . # has GC content
++
++rak:5550001 a rak:0000205 ; # Forward GC Content Quality
++  sio:000011 rak:7790263 ; # isAttributeOf (FASTQ Dataset)
++  sio:000216 rak:4450001 . # hasMeasurementValue
++\end{lstlisting}
+diff --git a/kr_supplement.tex b/kr_supplement.tex
+deleted file mode 100644
+index 7d1d7fd..0000000
+--- a/kr_supplement.tex
++++ /dev/null
+@@ -1,322 +0,0 @@
+-\section{Knowledge-representation patterns}\label{supp:kr}
+-
+-The graph examples in this section instantiate the formal patterns
+-in the main article with observations from the resource.
+-
+-Prepend Table~\ref{tab:supp_prefixes}'s declarations when parsing the
+-Turtle snippets. The unprefixed knowledge-base namespace is used by
+-the PowerSoil protocol. The listing validator checks examples against
+-the available module snapshot; full validation additionally requires
+-the corresponding taxonomy payload and pinned reference terms.
+-
+-\begin{table}[h]
+-\centering
+-\caption{Prefix declarations used in all Turtle and SPARQL listings.}
+-\label{tab:supp_prefixes}
+-\small
+-\begin{tabular}{ll}
+-\toprule
+-\textbf{Prefix} & \textbf{Namespace} \\
+-\midrule
+-\texttt{rak:}      & \texttt{https://rubalkhali.science/kb/RAK\_} \\
+-\texttt{rak\_kb:}  & \texttt{https://rubalkhali.science/kb/} \\
+-\texttt{sio:}      & \texttt{http://semanticscience.org/resource/SIO\_} \\
+-\texttt{owl:}      & \texttt{http://www.w3.org/2002/07/owl\#} \\
+-\texttt{pato:}     & \texttt{http://purl.obolibrary.org/obo/PATO\_} \\
+-\texttt{uo:}       & \texttt{http://purl.obolibrary.org/obo/UO\_} \\
+-\texttt{envo:}     & \texttt{http://purl.obolibrary.org/obo/ENVO\_} \\
+-\texttt{ncbitaxon:}& \texttt{http://purl.obolibrary.org/obo/NCBITaxon\_} \\
+-\texttt{obo:}      & \texttt{http://purl.obolibrary.org/obo/} \\
+-\texttt{rdf:}      & \texttt{http://www.w3.org/1999/02/22-rdf-syntax-ns\#} \\
+-\texttt{rdfs:}     & \texttt{http://www.w3.org/2000/01/rdf-schema\#} \\
+-\texttt{xsd:}      & \texttt{http://www.w3.org/2001/XMLSchema\#} \\
+-\texttt{geo:}      & \texttt{http://www.opengis.net/ont/geosparql\#} \\
+-\texttt{dcterms:}  & \texttt{http://purl.org/dc/terms/} \\
+-\bottomrule
+-\end{tabular}
+-\end{table}
+-
+-\subsection{Laboratory-control worked example}
+-
+-The control module represents the whole-cell D6300 product, its
+-composition specification and evidence-bearing expected-taxon
+-assertions as separate entities. The specification links directly to
+-each supported taxon; a reified assertion additionally preserves the
+-subject, relation, taxon, status and source. Manufacturer genomic-DNA
+-mass fractions and control occurrences retain their source provenance.
+-The distributed control module links these materials to their processing
+-roles and expected taxa (main article, Data records).
+-
+-\subsection{Sampling pattern}
+-
+-A sampling event is a process that derives a sample from a feature of
+-interest (the site).
+-
+-
+-
+-Listing~\ref{lst:ttl_sampling} is generated from the Trip~1, Site~1
+-deep-soil observation.
+-
+-\begin{lstlisting}[caption={Turtle representation of a sampling process.}, label={lst:ttl_sampling}, basicstyle=\ttfamily\scriptsize, frame=single]
+-rak:P100001 a rak:0000024 ; # Sampling Process
+-  sio:000291 rak:1000001 ; # hasTarget
+-  sio:000229 rak:7000001 . # hasOutput (Collection)
+-
+-rak:7000001 a sio:001419 ; # Material sample collection
+-  sio:000059 rak:6000001 . # hasMember
+-
+-rak:6000001 a rak:0000021 ; # Deep Soil Sample
+-  sio:000244 rak:1000001 . # isDerivedFrom
+-\end{lstlisting}
+-
+-The instance \texttt{rak:P100001} of a sampling
+-process targets the site \texttt{rak:1000001} and yields a
+-collection \texttt{rak:7000001} as its output. The collection
+-explicitly contains \texttt{rak:6000001}, and this deep-soil sample
+-is asserted to be derived
+-from the same site. The redundancy between \texttt{hasTarget} on the
+-process and \texttt{isDerivedFrom} on the sample is intentional: the
+-former records the action, the latter records the resulting
+-provenance edge directly on the material entity, so queries can
+-traverse from sample to site without joining through the sampling
+-event.
+-
+-\subsection{Experimental protocol pattern}
+-
+-A protocol is a reusable information specification. A protocol
+-execution is a process specified by that protocol. Each process (e.g., DNA extraction, library preparation)
+-consumes inputs and produces outputs, explicitly linking agents and
+-devices. The pattern instantiates SIO's general
+-\emph{Process--hasInput/hasOutput--Object} idiom and adds a
+-specification link to a reusable protocol description.
+-
+-
+-
+-Listing~\ref{lst:ttl_protocol} demonstrates the formalization
+-of a DNA extraction process.
+-
+-\begin{lstlisting}[caption={Turtle representation of a DNA extraction protocol.}, label={lst:ttl_protocol}, basicstyle=\ttfamily\scriptsize, frame=single]
+-rak:P200001 a sio:000994 ; # Scientific Protocol Execution
+-  sio:000339 rak_kb:DNA_ext_powersoil ; # isSpecifiedBy
+-  sio:000230 rak:6000001 ; # hasInput (Soil Sample)
+-  sio:000229 rak:6800001 . # hasOutput (DNA Extract)
+-
+-rak:6800001 a rak:0000040 ; # DNA Extract
+-  sio:000008 rak:5900001 . # hasAttribute (Concentration Quality)
+-\end{lstlisting}
+-
+-The protocol-execution instance \texttt{rak:P200001}
+-is specified by the named extraction protocol
+-\texttt{rak\_kb:DNA\_ext\_powersoil}, takes the soil sample
+-\texttt{rak:6000001} as input, and produces the DNA extract
+-\texttt{rak:6800001} as output; the resulting extract carries a
+-concentration quality (\texttt{rak:5900001}, class
+-\texttt{rak:0000043}) which is itself
+-quantified through a separate measurement process following the
+-measurement pattern in the main article's Knowledge representation subsection. The measurement value that
+-quantifies it is the separate individual \texttt{rak:4900001}
+-(class \texttt{rak:0000044}), which points to the quality with
+-\texttt{sio:000215} and back from it with \texttt{sio:000216}.
+-Separate value and quality individuals preserve the reciprocal
+-measurement links.
+-
+-\subsection{Taxonomic abundance pattern}
+-
+-Taxonomic profiles contain read counts and relative read abundances
+-aggregated by rank. The validated mapping assigns NCBI or project
+-identifiers to each rank-truncated classifier lineage.
+-Listing~\ref{lst:ttl_tax} gives one such observation.
+-
+-For instance, the sequence analysis for a specific profile yields an
+-absolute sequence count associated with an audited taxonomic class. We
+-construct an abundance quality that is an attribute of both that taxon
+-and the source sequence dataset, binding the count back to the
+-biological workflow. The pattern uses SIO's
+-\emph{Collection--hasMember--Thing} and reciprocal
+-\emph{MeasurementValue--isMeasurementValueOf--Quality} idioms.
+-
+-
+-
+-\begin{lstlisting}[caption={Turtle representation of taxonomic abundance formalized from a feature table.}, label={lst:ttl_tax}, basicstyle=\ttfamily\scriptsize, frame=single]
+-rak:P290001 a rak:0000071 ; # Bioinformatic Workflow
+-  sio:000339 rak:L000012 ; # 16S amplicon processing protocol
+-  sio:000230 rak:7791009 ; # hasInput (FASTQ Dataset, ERR16783308)
+-  sio:000229 rak:7740001 . # hasOutput (Taxonomic Dataset)
+-
+-rak:7740001 a rak:0000074 ; # taxon absolute abundance dataset
+-  sio:000059 rak:V00000001 . # hasMember (Observation Value)
+-
+-rak:V00000001 a rak:0000076 ; # Absolute abundance value
+-  sio:000215 rak:Q00000001 ; # isMeasurementValueOf
+-  rak:2000025 "Domain: Bacteria" ; # classifier lineage
+-  rak:2000026 "853814.0"^^xsd:double . # absolute read count
+-
+-rak:Q00000001 a rak:0000078, pato:0000070 ; # Absolute Abundance Quality
+-  sio:000011 ncbitaxon:2, rak:7791009 ; # taxon and FASTQ bearers
+-  sio:000216 rak:V00000001 . # hasMeasurementValue
+-\end{lstlisting}
+-
+-The bioinformatic-workflow instance
+-\texttt{rak:P290001} consumes the FASTQ dataset of run
+-\texttt{ERR16783308} (\texttt{rak:7791009}, profile \texttt{V10Dr1})
+-and produces the absolute taxonomic dataset
+-\texttt{rak:7740001}; that dataset has as one of its members the
+-measurement value \texttt{rak:V00000001}, which records an absolute
+-read count of \texttt{853{,}814} for the domain-rank record
+-\texttt{Domain: Bacteria}. Its reciprocal quality
+-\texttt{rak:Q00000001} is an attribute of both \emph{Bacteria}
+-(\texttt{ncbitaxon:2}) and the source FASTQ dataset. Each of the
+-fourteen datasets produced by one workflow instance holds a single
+-rank at one of the two abundance bases, so a rank-restricted query
+-never has to filter observations by lineage depth. Each taxon--rank entry adds a value and a quality while referencing
+-shared workflow, dataset and taxon objects. Contextual
+-lineages use the same pattern with their audited project IRI.
+-
+-\subsection{XRF geochemistry pattern}
+-
+-We model every XRF session as a process with multiple
+-concentration-value outputs and a workflow-specific protocol. A
+-laboratory session has an archived soil specimen as input. The field
+-instrument log identifies a test and site, and the graph links each
+-session to that site. Field-XRF and laboratory-XRF records remain
+-distinguishable even when they report the same analyte.
+-Analyte cross-references to ChEBI \cite{chebi} and PubChem
+-\cite{pubchem} are maintained in a single mapping. The
+-identifier audit resolves every non-null identifier against pinned
+-ChEBI v247 and a dated PubChem snapshot, checking identifier
+-existence, label, formula, charge and atom-versus-oxide entity type.
+-Of 93 instrument channels, 79 have a supported ChEBI cross-reference
+-and 91 have a formula-matching PubChem cross-reference. Missing external identifiers remain explicitly null. The \texttt{rdfs:seeAlso} annotations identify chemical references
+-for reporting channels. The P$_2$O$_5$ channel reports oxide-equivalent
+-magnitudes; its ChEBI cross-reference P$_4$O$_{10}$ shares the
+-empirical ratio. Light Elements is an instrument-defined aggregate
+-channel with null chemical cross-references.
+-
+-The shared output pattern specializes the measurement pattern
+-(main article, Knowledge representation); only the laboratory specialization
+-requires a soil-sample input.
+-
+-
+-
+-Listing~\ref{lst:ttl_xrf} is generated from the aluminium output of
+-laboratory-XRF process \texttt{rak:P300072} in the XRF module.
+-
+-\begin{lstlisting}[caption={Turtle representation of an XRF geochemistry measurement.}, label={lst:ttl_xrf}, basicstyle=\ttfamily\scriptsize, frame=single]
+-rak:P300072 a rak:0000025 ; # XRF Measuring Process
+-  sio:000230 rak:6001732 ; # hasInput (sample V1Sr1)
+-  sio:000339 rak:L_Surface_Lab ; # laboratory protocol
+-  sio:000229 rak:4302121 . # hasOutput
+-
+-rak:4302121 a rak:0000507 ; # Al concentration value
+-  sio:000215 rak:5302121 ; # isMeasurementValueOf
+-  rak:2000012 "0.78"^^xsd:double . # Concentration
+-
+-rak:5302121 a rak:0000107 ; # Al concentration quality
+-  sio:000011 rak:6001732 ; # isAttributeOf
+-  sio:000216 rak:4302121 . # hasMeasurementValue
+-\end{lstlisting}
+-
+-This laboratory-XRF process consumes archived specimen
+-\texttt{rak:6001732} (sample \texttt{V1Sr1}) and produces an aluminium
+-concentration value.
+-The value points to its aluminium quality using
+-\texttt{sio:000215}; the quality points back using
+-\texttt{sio:000216}. A dedicated scan of every
+-XRF source artifact (the processed laboratory table, the field log
+-and all raw instrument exports)
+-finds no unit
+-declaration attached to any concentration column; the only unit token
+-in the exports is \texttt{PPM}, and it belongs to the
+-lower-limit-of-detection column. The generated module therefore carries
+-no unit assertion for XRF concentrations. These values are
+-instrument-reported magnitudes with undocumented concentration units.
+-Field sessions use \texttt{sio:000291} to identify their site and
+-retain the instrument test identifier; laboratory sessions identify
+-their specimen input. Cross-workflow calibration requires documented
+-units, paired aliquots and reference materials.
+-
+-\subsection{Sequencing workflow pattern}
+-
+-Sequencing data are produced by a chain of laboratory and
+-computational processes that the knowledge graph represents as a
+-sequence of \emph{Process--hasInput/hasOutput--Object} steps: a DNA
+-extraction process consumes a soil sample and produces a DNA extract;
+-a library preparation process consumes the DNA extract and produces
+-an amplicon library; a sequencing process consumes the amplicon
+-library and produces a FASTQ dataset whose members are sequence reads.
+-Each process is specified by a protocol and may carry agents and
+-device participants, reusing the experimental protocol pattern in the main article.
+-
+-
+-
+-Listing~\ref{lst:ttl_sequencing} instantiates the complete sequencing chain.
+-
+-\begin{lstlisting}[caption={Turtle representation of the sequencing workflow from soil sample T1Dr1 to ENA run ERR16061083.}, label={lst:ttl_sequencing}, basicstyle=\ttfamily\scriptsize, frame=single]
+-rak:P200923 a sio:000994 ; # DNA Extraction Process
+-  sio:000339 rak_kb:DNA_ext_powersoil ; # isSpecifiedBy
+-  sio:000230 rak:6000577 ; # hasInput (T1Dr1 Soil Sample)
+-  sio:000229 rak:6800540 . # hasOutput (DNA Extract)
+-
+-rak:P250001 a rak:0000065 ; # Library Preparation Process
+-  sio:000339 rak:L000010 ; # Illumina 16S Prep Guide
+-  sio:000230 rak:6800540 ; # hasInput (DNA Extract)
+-  sio:000229 rak:6690001 . # hasOutput (Amplicon Library)
+-
+-rak:P280001 a rak:0000066 ; # Sequencing Process
+-  sio:000230 rak:6690001 ; # hasInput (Amplicon Library)
+-  sio:000229 rak:7790001 . # hasOutput (FASTQ Dataset)
+-
+-rak:7790001 a rak:0000063 ; # FASTQ Dataset
+-  rdfs:seeAlso <https://identifiers.org/insdc.run/ERR16061083> .
+-\end{lstlisting}
+-
+-The DNA extraction process
+-\texttt{rak:P200923} consumes the soil sample
+-\texttt{rak:6000577} and produces the DNA extract
+-\texttt{rak:6800540}; that extract is the input of the library
+-preparation \texttt{rak:P250001}, which yields the amplicon
+-library \texttt{rak:6690001}; finally the sequencing process
+-\texttt{rak:P280001} consumes the library and produces the FASTQ
+-dataset \texttt{rak:7790001}, which is cross-referenced to its
+-ENA accession via \texttt{rdfs:seeAlso}. Each link in the chain is
+-the same \texttt{hasInput}/\texttt{hasOutput} pattern, so a single
+-SPARQL traversal can recover the recorded provenance from any node in this
+-chain.
+-
+-\subsection{Sequencing quality control pattern}
+-
+-Sequencing quality control is represented as an additional
+-computational process that takes a FASTQ dataset as input and
+-produces multiple measurement values, each instantiating the
+-measurement pattern in the main article's Knowledge representation subsection.
+-Metrics (sequence count, GC content, duplicate rate, read length)
+-are split into forward (R1) and reverse (R2) subclasses so that the
+-provenance of paired-end runs is preserved.
+-
+-
+-
+-Listing~\ref{lst:ttl_qc} shows the corresponding quality-control pattern.
+-
+-\begin{lstlisting}[caption={Turtle representation of forward-read GC content for ENA run ERR16062319.}, label={lst:ttl_qc}, basicstyle=\ttfamily\scriptsize, frame=single]
+-rak:P350001 a rak:0000200 ; # Sequencing QC Process
+-  sio:000230 rak:7790263 ; # hasInput (FASTQ Dataset)
+-  sio:000229 rak:4450001 . # hasOutput (QC Value)
+-
+-rak:4450001 a rak:0000217 ; # Forward GC Content Value
+-  sio:000215 rak:5550001 ; # isMeasurementValueOf
+-  sio:000221 uo:0000187 ; # Percent
+-  rak:2000074 "58.0"^^xsd:double . # has GC content
+-
+-rak:5550001 a rak:0000205 ; # Forward GC Content Quality
+-  sio:000011 rak:7790263 ; # isAttributeOf (FASTQ Dataset)
+-  sio:000216 rak:4450001 . # hasMeasurementValue
+-\end{lstlisting}
+-
+-The QC process \texttt{rak:P350001} takes the FASTQ
+-dataset \texttt{rak:7790263} as input and produces the
+-measurement value \texttt{rak:4450001}, which records a GC
+-content of \texttt{58.0}~percent and is the measurement value of a
+-forward-read GC-content quality \texttt{rak:5550001} that is in turn an
+-attribute of the same FASTQ dataset. Splitting the quality class into
+-forward and reverse subclasses preserves the read direction, so that
+-paired-end QC metrics can be queried independently per orientation.
+diff --git a/supplement.tex b/supplement.tex
+deleted file mode 100644
+index be3f910..0000000
+--- a/supplement.tex
++++ /dev/null
+@@ -1,117 +0,0 @@
+-\documentclass[sn-mathphys-num]{sn-jnl}
+-\usepackage{gensymb}
+-\usepackage{graphicx}
+-\usepackage{multirow}
+-\usepackage{amsmath,amssymb,amsfonts}
+-\usepackage{amsthm}
+-\usepackage[title]{appendix}
+-\usepackage{xcolor}
+-\usepackage{textcomp}
+-\usepackage{manyfoot}
+-\usepackage{booktabs}
+-\usepackage{listings}
+-\lstset{breaklines=true,breakatwhitespace=false,columns=fullflexible,
+-  basicstyle=\ttfamily\scriptsize}
+-\usepackage{longtable}
+-\usepackage{pdflscape}
+-% Longtable repeats its continuation anchor on page breaks in this class.
+-% Disable PDF links in the standalone supplement while retaining numbered
+-% cross-references; this avoids duplicate destinations without hiding tables.
+-\hypersetup{draft,hypertexnames=false}
+-\setlength{\tabcolsep}{3pt}
+-% Inside the rotated landscape environment the text block is as wide as the
+-% portrait text height, but longtable still measures its rows against the
+-% portrait text width. The difference is the amount by which a full-width
+-% longtable would overflow the rotated page; we use it to shift and widen
+-% the longtable rows so they fill the landscape page instead of overflowing.
+-\newlength{\landexcess}
+-\setlength{\landexcess}{\textheight}
+-\addtolength{\landexcess}{-\textwidth}
+-
+-\renewcommand{\thesection}{S\arabic{section}}
+-\renewcommand{\thetable}{S\arabic{table}}
+-\renewcommand{\thefigure}{S\arabic{figure}}
+-\renewcommand{\theequation}{S\arabic{equation}}
+-\AtBeginDocument{\renewcommand{\thelstlisting}{S\arabic{lstlisting}}}
+-\setcitestyle{super,open={},close={}}
+-\begin{document}
+-
+-\title{Supplementary material: A formal knowledge base for amplicon sequencing data and geochemistry of the Rub' al Khali desert}
+-\maketitle
+-
+-\input{kr_supplement.tex}
+-
+-\section{Library preparation and archived-soil pH}
+-\label{supp:laboratory_protocol}
+-
+-First-round PCR used 50~\textmu L reactions with 1$\times$
+-Mg$^{2+}$-containing buffer, 0.2~mM of each dNTP,
+-0.4~\textmu M of each primer and 1.25~U of TaKaRa Ex Taq.
+-The programme comprised 95\degree C for 3~min, followed by
+-35 cycles of 95\degree C for 10~s, 65\degree C for 30~s and
+-72\degree C for 1~min, with a final extension at 75\degree C
+-for 5~min. Initial DNA input was 5~\textmu L; repeat attempts
+-used 8 and 12~\textmu L while retaining the 50~\textmu L total
+-reaction volume. Indexed libraries underwent 0.8:1 AMPure XP cleanup.
+-The retained indexing protocol specifies the kit and thermal
+-programme; its reaction-specific reagent volumes remain undocumented.
+-
+-Pooling used library molarity derived from measured DNA concentration
+-and fragment length. Aliquot volumes were calculated using a pooling-volume factor of the
+-form $VC/N$, where $V$ is target pool volume, $C$ is target molarity
+-and $N$ is the number of libraries; dividing this factor by a library's
+-molarity gives that library's aliquot volume. Run-specific target volumes, target molarities and individual library
+-measurements remain undocumented.
+-
+-Both PMA-treated and untreated aliquots underwent 10~min in darkness
+-and 35~min of illumination at 450~nm. Each of three parent collection
+-tubes supplied three separately prepared slurries, with each slurry
+-split into a treated and an untreated aliquot.
+-
+-Archived-soil pH suspensions were mixed for 30~min on a HulaMixer,
+-then stood for 30~min at room temperature. Measurements used an
+-accumet AB315 meter and Fisher Scientific accumet electrode
+-13-620-112, with the green stability indicator as the reading endpoint.
+-All Trip~4 assays used archived field replicate~2. Each admitted measurement is linked to its physical specimen and
+-retains its original assay identifier and value.
+-
+-\section{XRF acquisition evidence}\label{supp:xrf_acquisition}
+-
+-Laboratory XRF used a Vanta handheld analyser in Fast Mode for 547
+-specimens from Trips~1--4 and 178 from Trip~5. The Trip~5 acquisition
+-settings were Fast Screening-He8mm, helium, an 8~mm diameter and oxide
+-reporting. These specimens comprise 60 shallow-subsurface, 60 surface
+-and 58 root-adjacent samples. For V4Dr3 and V18Dr3, the analytical
+-dataset uses Fast Screening measurements; additional Best Detection
+-measurements are retained as acquisition data.
+-
+-The exact method label, gas and diameter for Trips~1--4 remain
+-undocumented. Handheld field measurements used Geochem(3-Beam) and
+-NORMAL settings on an Olympus Vanta analyser; acquisition duration
+-was unrecorded.
+-
+-The concentration observations retain their instrument-reported magnitudes.
+-Percentages associated with statistical error and units attached to
+-detection limits describe those quantities. Concentration units, the exact
+-laboratory model variant and serial number, exposure settings, sample
+-preparation and calibration results remain undocumented. Acquisition
+-validation checks specimen selection, repeated observations and the
+-unit evidence described in the main article.
+-
+-\section{Supplementary tables}
+-
+-Table~\ref{tab:chebi_mapping} reports the XRF channel cross-references.
+-The complete field environmental observations are distributed as tabular
+-data (main article, Data records).
+-
+-
+-
+-\begin{landscape}
+-\pagestyle{empty}
+-\setlength{\LTcapwidth}{\textheight}
+-\input{xrf_table.tex}
+-\end{landscape}
+-
+-\bibliography{sn-bibliography}
+-
+-\end{document}

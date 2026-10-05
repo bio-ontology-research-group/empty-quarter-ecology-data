@@ -1,0 +1,81 @@
+{
+  "companion_citations": {
+    "data_paper_cites_ecology": true,
+    "ecology_cites_data_paper": true,
+    "note": "Disclose both related manuscripts and provide copies to the journals. Use a public identifier when available; an unpublished related manuscript need not have a DOI before submission."
+  },
+  "data_paper_sources": [
+    "01_introduction.tex",
+    "02_methods.tex",
+    "02_methods_taxonomy.tex",
+    "03_knowledge_representation.tex",
+    "04_data_records.tex",
+    "05_validation.tex",
+    "06_usage.tex",
+    "knowledge_examples.tex",
+    "sn-article.tex"
+  ],
+  "ecology_readable": true,
+  "ecology_sources": [
+    "main.tex",
+    "supplement.tex"
+  ],
+  "findings": [],
+  "shared_counts": [
+    {
+      "count": "1,271",
+      "in_data_paper": true,
+      "in_ecology": true,
+      "meaning": "canonical feature profiles"
+    },
+    {
+      "count": "1,237",
+      "in_data_paper": true,
+      "in_ecology": true,
+      "meaning": "ecology profiles"
+    },
+    {
+      "count": "1,227",
+      "in_data_paper": true,
+      "in_ecology": true,
+      "meaning": "primary-frame profiles"
+    },
+    {
+      "count": "351,472",
+      "in_data_paper": true,
+      "in_ecology": true,
+      "meaning": "ASVs"
+    },
+    {
+      "count": "725",
+      "in_data_paper": true,
+      "in_ecology": true,
+      "meaning": "laboratory XRF records"
+    },
+    {
+      "count": "547",
+      "in_data_paper": true,
+      "in_ecology": true,
+      "meaning": "Trips 1-4 laboratory XRF records"
+    },
+    {
+      "count": "178",
+      "in_data_paper": true,
+      "in_ecology": true,
+      "meaning": "Trip 5 laboratory XRF records"
+    },
+    {
+      "count": "150",
+      "in_data_paper": true,
+      "in_ecology": true,
+      "meaning": "CoverM profiles"
+    },
+    {
+      "count": "990",
+      "in_data_paper": true,
+      "in_ecology": true,
+      "meaning": "matched genomes"
+    }
+  ],
+  "status": "passed"
+}

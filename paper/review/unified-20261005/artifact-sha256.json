@@ -1,0 +1,17 @@
+{
+  "README.txt": "830b5620de43920cb7cec869ddfb9fd8736a61931d987c2267d7453906b9d86f",
+  "REVIEW.txt": "ade531781b5abe81d9950d1d8f0f648b79ba5a7a383d044d222d1d79fc55de35",
+  "baseline.json": "0785e1f982b3adcd70828be46fea6fe5b9923c9de0e398e962748634f9324e5c",
+  "check_live_listings.py": "be051254206754c7921468cb219355f32e9ffdfb87f10e5ceb5cb2713665640a",
+  "cross-paper-check.json": "d04e46e393d1f0d910885f4f7771d90499ace8a93055a591e67a0dbf3554e6aa",
+  "data-paper-rund-redline.pdf": "c18b9158449bee2b4725b284d25bbc29e31dedea5f377edee39857433c2a4368",
+  "live-listing-check.json": "1f68601125b06804b77e4df803532f6faa51f153df9beb0568ec78dcb408f342",
+  "rund-baseline-main.pdf": "2f8b33c8eb688723adf7ee1f4a967a8ff7f4370003cf5a6ddfda97df3a952cfd",
+  "rund-baseline-supplement.pdf": "a30343dd1288eff4f9ea7074fcb8f210172335a5a8a54f292460a785934651a9",
+  "rund-source-changes.patch": "0c4dd049ae831db8fbf40e542f6bfd887a3ea62f34c1e84f8b6f48108c4d1c79",
+  "rund-source-comparison.html": "783a296546f3610b123aa57ec8514f2f8ded8c552b919614a522ec9c41cb0f11",
+  "submission-sources.zip": "e8cb2ba389ccfd22738af1c054b47df87b4ce9791187eb102bc1a336bc52af95",
+  "tests.log": "9fb7e9ac08d6b3181a4bc049ac49b1503babadd8d204c4f155f7cb59e982124b",
+  "this-pass-source-changes.patch": "d102affa90ea08dce4a16f6392f99aaf5e29c7353438eb4b5fc7478c34eb568d",
+  "this-pass-source-comparison.html": "4538d74834c61ec73081b4764dd84e1fed165b95fa98607c17694ad1b9faca1f"
+}
