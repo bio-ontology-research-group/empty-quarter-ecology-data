@@ -1,0 +1,20 @@
+[2026-04-05 22:17:25,910] INFO: Running SemiBin2 version 2.2.1
+[2026-04-05 22:17:25,910] DEBUG: Starting SemiBin2 with arguments: ['single_easy_bin', '-i', '/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/wgs_assemblies/assemblies/10Dr2/10Dr2_contigs.fa', '-b', '/ibex/scratch/projects/c2014/EmptyQuarter_Data/processed/sequencing-results/sites/trip1/site10/10Dr2/wgs/reads/10Dr2.sorted.bam', '-o', '/ibex/scratch/projects/c2014/EmptyQuarter_Data/processed/sequencing-results/sites/trip1/site10/10Dr2/wgs/binning/single_sample', '--environment', 'global', '--sequencing-type', 'short_read', '-t', '16']
+[2026-04-05 22:17:25,910] DEBUG: Parsed arguments as: Namespace(verbose=False, quiet=False, cmd='single_easy_bin', contig_fasta='/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/wgs_assemblies/assemblies/10Dr2/10Dr2_contigs.fa', output='/ibex/scratch/projects/c2014/EmptyQuarter_Data/processed/sequencing-results/sites/trip1/site10/10Dr2/wgs/binning/single_sample', write_pre_reclustering_bins=False, output_tag='SemiBin', output_compression='gz', orf_finder='fast-naive', prodigal_output_faa=None, depth_metabat2=None, tmpdir=None, num_process=16, environment='global', min_len=None, ratio=0.05, bams=['/ibex/scratch/projects/c2014/EmptyQuarter_Data/processed/sequencing-results/sites/trip1/site10/10Dr2/wgs/reads/10Dr2.sorted.bam'], abundances=None, GTDB_reference=None, cannot_name='cannot', taxonomy_results_fname=None, epoches=15, batchsize=2048, minfasta_kb=200, max_edges=200, max_node=1, no_recluster=False, random_seed=None, ml_threshold=None, engine='auto', semi_supervised=False, self_supervised=False, sequencing_type='short_read', is_semibin2=True, recluster=True)
+[2026-04-05 22:17:25,910] INFO: Binning for short_read
+[2026-04-05 22:17:28,778] WARNING: Did not detect GPU or CUDA was not installed/supported, using CPU.
+[2026-04-05 22:17:30,286] INFO: Generating training data...
+[2026-04-05 22:17:31,046] DEBUG: Start generating kmer features from fasta file.
+[2026-04-05 22:18:05,871] INFO: Calculating coverage for every sample.
+[2026-04-05 22:24:03,855] INFO: Processed: /ibex/scratch/projects/c2014/EmptyQuarter_Data/processed/sequencing-results/sites/trip1/site10/10Dr2/wgs/reads/10Dr2.sorted.bam
+[2026-04-05 22:24:09,804] INFO: Start binning.
+[2026-04-05 22:24:12,611] DEBUG: Running command: /sbin/ldconfig (full command line: `/sbin/ldconfig -p`)
+[2026-04-05 22:24:14,185] DEBUG: Calculating depth matrix.
+[2026-04-05 22:24:15,350] DEBUG: Number of edges in clustering graph: 599740
+[2026-04-05 22:24:15,503] DEBUG: Running infomap with 16 processes...
+[2026-04-05 22:24:28,404] INFO: Number of bins prior to reclustering: 31
+[2026-04-05 22:24:28,404] DEBUG: Reclustering...
+[2026-04-05 22:24:28,653] INFO: Running naive ORF finder
+[2026-04-05 22:24:30,250] DEBUG: Running command: hmmsearch (full command line: `hmmsearch --domtblout /tmp/tmpmgj1wicd/markers.hmmout --cut_tc --cpu 16 /ibex/scratch/projects/c2014/rob/miniconda3/envs/semibin2/lib/python3.13/site-packages/SemiBin/marker.hmm /tmp/tmpmgj1wicd/orfs.faa`)
+[2026-04-05 22:27:18,765] INFO: Number of bins after reclustering: 31
+[2026-04-05 22:27:18,778] INFO: Binning finished

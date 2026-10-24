@@ -1,0 +1,38 @@
+DAS Tool 1.1.7 
+2026-06-04 16:03:26.15516 
+
+Parameters: 
+--bins	/ibex/scratch/projects/c2014/rob/metagenomics/05_refine/11PRr3/single.contigs2bin.tsv,/ibex/scratch/projects/c2014/rob/metagenomics/05_refine/11PRr3/self.contigs2bin.tsv
+--contigs	/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/wgs_assemblies/assemblies/11PRr3/11PRr3_contigs.fa
+--outputbasename	/ibex/scratch/projects/c2014/rob/metagenomics/05_refine/11PRr3/11PRr3
+--labels	single,self
+--search_engine	diamond
+--proteins	NULL
+--write_bin_evals	FALSE
+--write_bins	TRUE
+--write_unbinned	FALSE
+--threads	16
+--score_threshold	0.5
+--duplicate_penalty	0.6
+--megabin_penalty	0.5
+--max_iter_post_threshold	10
+--dbDirectory	db
+--resume	FALSE
+--debug	FALSE
+--version	FALSE
+--help	FALSE
+
+Dependencies: 
+prodigal	/ibex/scratch/projects/c2014/rob/miniconda3/envs/das_tool/bin/prodigal
+diamond	/ibex/scratch/projects/c2014/rob/miniconda3/envs/das_tool/bin/diamond
+pullseq	/ibex/scratch/projects/c2014/rob/miniconda3/envs/das_tool/bin/pullseq
+ruby	/ibex/scratch/projects/c2014/rob/miniconda3/envs/das_tool/share/rubygems/bin/ruby
+usearch	
+blastp	/ibex/scratch/projects/c2014/rob/miniconda3/envs/das_tool/bin/blastp
+
+Non-unique bin-ids given. Renaming bin-ids. 
+Analyzing assembly 
+Predicting genes 
+Annotating single copy genes using diamond 
+Dereplicating, aggregating, and scoring bins 
+Writing bins 

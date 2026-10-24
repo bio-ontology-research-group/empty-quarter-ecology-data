@@ -20,6 +20,9 @@
 /metadata/taxonomy/feature_table_filtered_raw_w_reps.tsv
 /metadata/metagenome/eq.emapper.annotations.gz
 /metadata/metagenome/measured_function_inputs.tar.gz
+/metadata/metagenome/canonical/refined_mags.tar.gz
+/metadata/metagenome/canonical/refined_functional_tables.tar.gz
+/metadata/metagenome/canonical/refined_coverm_profiles.tar.gz
 /ontology/rubalkhali_taxonomy_abox.ttl
 
 # Workflow and environment outputs.
@@ -55,6 +58,7 @@
 !/evidence/semantic-validation/control_semantic_validation_20260801.log
 !/evidence/semantic-validation/semantic_validation_20260801.log
 !/evidence/taxonomy-abox/taxonomy_abox_streaming_validation.log
+!/evidence/mag-catalogue-20261024/source/*.log
 
 # Editors and operating systems.
 *.bak

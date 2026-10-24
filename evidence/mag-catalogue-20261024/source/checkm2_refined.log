@@ -1,0 +1,10 @@
+[06/05/2026 05:55:39 AM] INFO: Running CheckM2 version 1.1.0
+[06/05/2026 05:55:39 AM] INFO: Custom database path provided for predict run. Checking database at /ibex/scratch/projects/c2014/rob/metagenomics/databases/checkm2/CheckM2_database/uniref100.KO.1.dmnd...
+[06/05/2026 05:55:48 AM] INFO: Running quality prediction workflow with 32 threads.
+[06/05/2026 06:00:18 AM] INFO: Calling genes in 14351 bins with 32 threads:
+[06/05/2026 08:37:25 AM] INFO: Calculating metadata for 14351 bins with 32 threads:
+[06/05/2026 08:37:59 AM] INFO: Annotating input genomes with DIAMOND using 32 threads
+[06/05/2026 02:25:52 PM] INFO: Processing DIAMOND output
+[06/05/2026 02:28:48 PM] INFO: Predicting completeness and contamination using ML models.
+[06/05/2026 02:38:18 PM] INFO: Parsing all results and constructing final output table.
+[06/05/2026 02:38:22 PM] INFO: CheckM2 finished successfully.

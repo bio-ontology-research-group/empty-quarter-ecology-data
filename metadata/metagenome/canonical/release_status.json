@@ -1,0 +1,78 @@
+{
+  "accession_evidence": "Robert Hoehndorf, 2026-10-24; study not yet public",
+  "annotation_release": false,
+  "blocking_items": [
+    "Verify functional annotations against the chosen sequence content; R232 taxonomy matches refined representative IDs.",
+    "Rebuild recruitment against the actual refined sequences; existing parent-bin-reference coverage is excluded.",
+    "Complete run/sample accession mapping and ENA MAG submission metadata.",
+    "Confirm run-specific versions and parameters across all assembly/binning strategies.",
+    "Publish the verified private-staging archive with an immutable public/reviewer locator."
+  ],
+  "legacy_libraries_per_trip": {
+    "1": 58,
+    "2": 15,
+    "3": 77
+  },
+  "libraries_per_trip": {
+    "1": 210,
+    "2": 37,
+    "3": 128,
+    "4": 85,
+    "5": 91
+  },
+  "public_release": false,
+  "quality_scope": "05_refine/_checkm2_refined; actual dRep representatives, not linked parent bins",
+  "read_bearing_libraries": 551,
+  "recruitment_release": false,
+  "refined_sub_representatives": 1010,
+  "release_status": "SEQUENCE_CANDIDATE_ANALYSES_PENDING",
+  "representatives": 5438,
+  "secondary_study_accession": "ERP204894",
+  "sequence_archive": {
+    "archive_members_verified": true,
+    "artifact": "refined_mags.tar.gz",
+    "bases": 20490828267,
+    "bytes": 7215750013,
+    "contigs": 2485945,
+    "genome_source": "/ibex/scratch/projects/c2014/rob/metagenomics/05_refine/_drep/out/dereplicated_genomes",
+    "metadata_sha256": "dbe9db11362e77c4274543431ad40ee92ed6b181c2c0f7ddc055c4f5a32971d6",
+    "quality_lengths_verified": true,
+    "representatives": 5438,
+    "sha256": "e7f46a9faee01ad7a723fe2fc4ad2310d19e0d2f1dbc832a787d8749a1303d6c"
+  },
+  "sequence_release": true,
+  "sequence_selection": "actual refined dRep representatives; Robert Hoehndorf, 2026-10-24",
+  "site_codes": 61,
+  "source_sha256": {
+    "evidence/mag-catalogue-20261024/source/02_build_reference.sbatch": "0bcafe2054fdee082dea5e18351bcc357cc2d85312fc90046f1e78137f07f992",
+    "evidence/mag-catalogue-20261024/source/03_map_cov.sbatch": "9c9896572712348465de7967ca7c80b5e86a89e7d757541d2d1e0d41a553cae2",
+    "evidence/mag-catalogue-20261024/source/build_reference.py": "6012a52b7d3b94309813457f64ef97aa57f0510d8586fe7f092d241d9a982f13",
+    "evidence/mag-catalogue-20261024/source/catalog_membership.tsv": "b74724f4902913ff56a2c9ee96e260cc9525c9caa646ea0b59757060268a1702",
+    "evidence/mag-catalogue-20261024/source/checkm2_refined.log": "618ca40a5a47a223312be4974b6d4c20935faa0d0e13fd75bb7b473ae68671a8",
+    "evidence/mag-catalogue-20261024/source/checkm2_refined_quality_report.tsv": "9cbea621317ed8cd0d780d569b9c8fa2d560ddc9957c2659ba3b13bb2dfdcfe0",
+    "evidence/mag-catalogue-20261024/source/config.sh": "faf118fc57f32401c5be718d30b01497cf469233a5d620ab8d4d4ef71d72f015",
+    "evidence/mag-catalogue-20261024/source/dastool_11PRr3.log": "e4fbf1dd392f9d7a6d3c23ebfbb039c29c944258c11784761c4ff6fc1c2cac55",
+    "evidence/mag-catalogue-20261024/source/drep_cluster_arguments.json": "bb4bd0cda540ea9ab3334abd8d49c7b04d274ae62840f7b75d3748eefb57a08a",
+    "evidence/mag-catalogue-20261024/source/megahit_10Dr2.log": "e398de91457fa5c46296540f2c6c4e414e3fd771fa5bae05e2df050ea8e0fe80",
+    "evidence/mag-catalogue-20261024/source/metagenome_sample_meta.tsv": "ac037416a0e131c911a03724050610a8d603080c5bd6a3f2d7df7c859fa2b041",
+    "evidence/mag-catalogue-20261024/source/metagenome_sample_meta_150.tsv": "f20f721ee3c9ba1853f9e5cf48f2cca4652b8348a6061cb353eb68e2b23d8d89",
+    "evidence/mag-catalogue-20261024/source/package_54457431.log": "fd7cd6e5b37e6ee640413c387b78fbba7c5cbdbcc18a6751279e49a954ea2e63",
+    "evidence/mag-catalogue-20261024/source/package_refined_mags_run.py": "13e0312eb7e2a500d31bce54b0deabb0c1734bf5cd402c52b9c734f292222fdf",
+    "evidence/mag-catalogue-20261024/source/samples551.tsv": "95feac2ba1a3d6d952b788fcff2ae5a71770fdc43d6192263949b2436f166720",
+    "evidence/mag-catalogue-20261024/source/semibin2_10Dr2.log": "2182dc472631b4f04f0dbd62bc1caca8fa92e726e02565f70788c13e5164ac83",
+    "evidence/mag-catalogue-20261024/source/taxonomy_r232/CHECKSUMS.sha256": "e7563b9c81ba4d8bd58d052e9e885b436e240359f3da2783497e9839f087955e",
+    "evidence/mag-catalogue-20261024/source/taxonomy_r232/README.md": "f3b85bc37487b09a8f7fa01f9b9d8437d64dbf46d5cab9d5ac2c0c089d1eb109",
+    "evidence/mag-catalogue-20261024/source/taxonomy_r232/gtdbtk.ar53.summary.tsv": "1cd2095a1ba733b4df656e23eb6fafba958c09ede7f2c4cab0bcbe7ec9dcdb84",
+    "evidence/mag-catalogue-20261024/source/taxonomy_r232/gtdbtk.bac120.summary.tsv": "b613635f15d816953cfeeb1cf87d175405c69f2a2501ff59a42435cbc97c8960",
+    "evidence/mag-catalogue-20261024/source/taxonomy_r232/make_r232_rep_subset.sh": "46d0f56cb3658a56e2b1bbb54bdee26d2c8c0f00ca741424c4fe33dfd9db54e5",
+    "evidence/mag-catalogue-20261024/source/taxonomy_r232/rep_ids.txt": "39984212e120ee25dc9db27031bbbee73ea6fbe7c6e1b5961cc30d9dd5627b19"
+  },
+  "study_accession": "PRJEB125153",
+  "taxonomy": {
+    "database": "R232",
+    "representatives": 5438,
+    "source_checksums_verified": true,
+    "tool": "GTDB-Tk",
+    "version": "2.7.2"
+  }
+}

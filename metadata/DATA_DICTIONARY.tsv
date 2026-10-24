@@ -608,3 +608,32 @@ ontology/mapped_taxonomy_corrected.tsv	Name	string	not applicable	never blank	Ta
 ontology/mapped_taxonomy_corrected.tsv	Rank	string	not applicable	never blank	One of the seven represented taxonomic ranks.
 ontology/mapped_taxonomy_corrected.tsv	Taxon String	string	not applicable	never blank	Source semicolon-delimited lineage to which this rank-level mapping belongs.
 ontology/rubalkhali_measurements.owl	RAK_2000004	number	pascals (UO:0000110)	absent when source pressure is unrecorded	Field atmospheric pressure converted from the source pressure_mbar value by multiplying by 100.
+metadata/metagenome/canonical/genome_manifest.tsv	mag	string	not applicable	never blank	Identifier of a representative in the actual refined dRep output.
+metadata/metagenome/canonical/genome_manifest.tsv	path	path	not applicable	never blank	Portable member path inside refined_mags.tar.gz.
+metadata/metagenome/canonical/genome_manifest.tsv	bytes	integer	bytes	never blank	Exact uncompressed FASTA size.
+metadata/metagenome/canonical/genome_manifest.tsv	sha256	hexadecimal string	not applicable	never blank	SHA-256 of the exact uncompressed FASTA bytes.
+metadata/metagenome/canonical/genome_manifest.tsv	contigs	integer	contigs	never blank	FASTA sequence count, checked against refined-bin CheckM2.
+metadata/metagenome/canonical/genome_manifest.tsv	bases	integer	bp	never blank	FASTA sequence length sum, checked against refined-bin CheckM2.
+metadata/metagenome/canonical/library_metadata.tsv	sample	string	not applicable	never blank	Source library/sample code; retained verbatim.
+metadata/metagenome/canonical/library_metadata.tsv	trip	integer	not applicable	never blank	Sampling campaign number, 1 through 5.
+metadata/metagenome/canonical/library_metadata.tsv	site	string	not applicable	never blank	Source site code; 61 distinct codes do not establish 61 distinct physical sites.
+metadata/metagenome/canonical/library_metadata.tsv	code	string	not applicable	never blank	Source compartment code from the paired-read inventory.
+metadata/metagenome/canonical/library_metadata.tsv	replicate	integer	not applicable	never blank	Source field-replicate number.
+metadata/metagenome/canonical/library_metadata.tsv	compartment	string	not applicable	never blank	Original compartment label; Rhizosphere denotes root-adjacent soil.
+metadata/metagenome/canonical/library_metadata.tsv	study_accession	string	not applicable	never blank	Author-confirmed ENA shotgun study PRJEB125153; not yet public on 2026-10-24.
+metadata/metagenome/canonical/library_metadata.tsv	secondary_study_accession	string	not applicable	never blank	Secondary ENA study accession ERP204894.
+metadata/metagenome/canonical/library_metadata.tsv	run_accession	string	not applicable	blank: unresolved	ENA run accession; crosswalk remains to be supplied.
+metadata/metagenome/canonical/refined_representatives.tsv	mag	string	not applicable	never blank	Identifier of a representative in the actual refined dRep output.
+metadata/metagenome/canonical/refined_representatives.tsv	sample	string	not applicable	never blank	Source library/sample code; retained verbatim.
+metadata/metagenome/canonical/refined_representatives.tsv	strategy	string	not applicable	never blank	Source binning strategy: single_sample or self_supervised.
+metadata/metagenome/canonical/refined_representatives.tsv	bin	string	not applicable	never blank	Parent bin label retained from the pickup catalogue membership table.
+metadata/metagenome/canonical/refined_representatives.tsv	refined_sub	integer	not applicable	never blank	1 identifies a refined _sub representative; 0 identifies other representatives.
+metadata/metagenome/canonical/refined_representatives.tsv	trip	integer	not applicable	never blank	Sampling campaign number, 1 through 5.
+metadata/metagenome/canonical/refined_representatives.tsv	site	string	not applicable	never blank	Source site code; 61 distinct codes do not establish 61 distinct physical sites.
+metadata/metagenome/canonical/refined_representatives.tsv	drep_fasta_basename	string	not applicable	never blank	FASTA basename in the actual dRep output; sequence delivery is blocked.
+metadata/metagenome/canonical/refined_representatives.tsv	legacy_link_target	string	not applicable	never blank	Pickup link provenance: per_sample_bin or drep_genome. Parent-bin links require sequence reconciliation.
+metadata/metagenome/canonical/refined_representatives.tsv	Completeness	decimal	percent	never blank	CheckM2 completeness estimate for the refined dRep sequence.
+metadata/metagenome/canonical/refined_representatives.tsv	Contamination	decimal	percent	never blank	CheckM2 contamination estimate for the refined dRep sequence.
+metadata/metagenome/canonical/refined_representatives.tsv	Genome_Size	integer	bp	never blank	Refined-bin genome size from CheckM2.
+metadata/metagenome/canonical/refined_representatives.tsv	Total_Contigs	integer	contigs	never blank	Refined-bin contig count from CheckM2.
+metadata/metagenome/canonical/refined_representatives.tsv	gtdb_r232_classification	string	not applicable	never blank	Unmodified GTDB-Tk R232 lineage from the exact representative-ID match.

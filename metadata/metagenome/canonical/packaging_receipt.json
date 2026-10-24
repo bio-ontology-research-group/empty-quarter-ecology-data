@@ -1,0 +1,12 @@
+{
+  "archive_members_verified": true,
+  "artifact": "refined_mags.tar.gz",
+  "bases": 20490828267,
+  "bytes": 7215750013,
+  "contigs": 2485945,
+  "genome_source": "/ibex/scratch/projects/c2014/rob/metagenomics/05_refine/_drep/out/dereplicated_genomes",
+  "metadata_sha256": "dbe9db11362e77c4274543431ad40ee92ed6b181c2c0f7ddc055c4f5a32971d6",
+  "quality_lengths_verified": true,
+  "representatives": 5438,
+  "sha256": "e7f46a9faee01ad7a723fe2fc4ad2310d19e0d2f1dbc832a787d8749a1303d6c"
+}

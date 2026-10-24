@@ -1,0 +1,22 @@
+packaged 250/5438 genomes
+packaged 500/5438 genomes
+packaged 750/5438 genomes
+packaged 1000/5438 genomes
+packaged 1250/5438 genomes
+packaged 1500/5438 genomes
+packaged 1750/5438 genomes
+packaged 2000/5438 genomes
+packaged 2250/5438 genomes
+packaged 2500/5438 genomes
+packaged 2750/5438 genomes
+packaged 3000/5438 genomes
+packaged 3250/5438 genomes
+packaged 3500/5438 genomes
+packaged 3750/5438 genomes
+packaged 4000/5438 genomes
+packaged 4250/5438 genomes
+packaged 4500/5438 genomes
+packaged 4750/5438 genomes
+packaged 5000/5438 genomes
+packaged 5250/5438 genomes
+{"artifact": "refined_mags.tar.gz", "bytes": 7215750013, "sha256": "e7f46a9faee01ad7a723fe2fc4ad2310d19e0d2f1dbc832a787d8749a1303d6c", "representatives": 5438, "contigs": 2485945, "bases": 20490828267, "genome_source": "/ibex/scratch/projects/c2014/rob/metagenomics/05_refine/_drep/out/dereplicated_genomes", "metadata_sha256": "dbe9db11362e77c4274543431ad40ee92ed6b181c2c0f7ddc055c4f5a32971d6", "archive_members_verified": true, "quality_lengths_verified": true}

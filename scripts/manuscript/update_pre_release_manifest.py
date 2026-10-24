@@ -88,6 +88,8 @@ THIRD_PARTY_GATE_TEMPLATE = (
 
 # Longest-prefix rules for staged files that redistribute third-party content.
 THIRD_PARTY_SOURCES: tuple[tuple[str, str], ...] = (
+    ("evidence/mag-catalogue-20261024/source/taxonomy_r232/", "the pinned GTDB R232 release"),
+    ("metadata/metagenome/canonical/refined_representatives.tsv", "the pinned GTDB R232 release"),
     ("ontology/ncbitaxon_module.owl", "the pinned NCBI Taxonomy release"),
     ("ontology/rubalkhali_taxonomy_rak.owl", "the pinned NCBI Taxonomy release"),
     ("ontology/mapped_taxonomy_corrected.", "the pinned NCBI Taxonomy release"),
@@ -116,6 +118,12 @@ def license_disposition(relative: str) -> tuple[str, str]:
     return status, template.format(source=best[1])
 
 ADDITIONS = {
+    "scripts/manuscript/update_pre_release_manifest.py": (
+        "release-code", "audit-evidence", "Pre-release manifest classification and checksum maintenance",
+    ),
+    "tests/test_mag_metadata.py": (
+        "validation-fixture", "audit-evidence", "MAG metadata joins, quality thresholds, taxonomy checksums and release-gate tests",
+    ),
     "evidence/controls/source_snapshots/ibex_20250714_qiime2/extracted/feature-table.biom": (
         "control-source",
         "canonical-candidate",
@@ -402,6 +410,16 @@ MANIFEST_OVERRIDES = {
 # above.  Rules are matched longest-prefix first; a trailing "/" matches every
 # file at or below that directory, otherwise the rule matches an exact path.
 DIRECTORY_RULES: tuple[tuple[str, tuple[str, str, str]], ...] = (
+    (
+        "metadata/metagenome/canonical/",
+        ("mag-catalogue-metadata", "audit-evidence",
+         "Tier 1 refined-MAG staging metadata and verified sequence receipt; analysis rebuild and public deposition pending"),
+    ),
+    (
+        "evidence/mag-catalogue-20261024/",
+        ("mag-catalogue-provenance", "audit-evidence",
+         "IBEX metadata, tool logs, taxonomy, sequence verification and analysis-rebuild provenance for Tier 1 MAG staging"),
+    ),
     (
         "README.md",
         (

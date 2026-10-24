@@ -247,6 +247,18 @@ reproduces the five admission dispositions in Section~\ref{methods:ph}.
 It checks specimen identity for every admitted measurement, including
 field replicate~2 for all 156 Trip~4 measurements.
 
+\subsection{MAG catalogue integrity}
+
+We checked the 5,438 refined MAG FASTAs against the representative inventory
+and the refined-bin CheckM2 report. Every genome's contig count and summed
+sequence length matched that report. The archive contains 2,485,945 contigs
+totalling 20,490,828,267~bp. We computed a SHA-256 checksum for each FASTA,
+then reread every archive member and verified its bytes against the
+per-genome manifest. The GTDB R232 classification tables passed their
+upstream checksum checks and contained exactly the same 5,438 genome
+identifiers. Library metadata reconciled all 551 read-bearing libraries
+between the paired-read inventory and the sample-context table.
+
 \subsection{ShEx schema validation}
 
 The archived ShEx run used the shapes described in

@@ -184,26 +184,58 @@ We also retrieved daily prepipitation data from NASA POWER PRECTOTCORR for sites
 
 % \input{02_methods_taxonomy}
 
-% \subsection{Shotgun-derived data}
+\subsection{Shotgun metagenomics and genome catalogue}\label{methods:shotgun}
 
-% We distribute genome-relative-abundance profiles for 150 shotgun libraries
-% and eggNOG-mapper annotations of the genome catalogue for comparison with
-% amplicon-derived functional profiles in the ecology analysis. CoverM
-% \cite{coverm} reports each genome's abundance as a percentage of reads,
-% retaining the unmapped fraction separately. The catalogue contains 991
-% genomes. We annotated the concatenated predicted proteome with eggNOG-mapper
-% v2.1.12 \cite{eggnog} on the KAUST Ibex cluster on 14 June 2026. The
-% intersection of annotation and abundance data yields a 990-genome by KEGG
-% Orthology copy-number matrix.
+Shotgun metagenomic sequencing complements the amplicon profiles with
+genome assemblies and gene annotations from the same sampling campaigns.
+The read-bearing library inventory contains 551 libraries across 61 site
+codes: 210 from Trip~1, 37 from Trip~2, 128 from Trip~3, 85 from Trip~4
+and 91 from Trip~5. Library metadata records the campaign, source site,
+soil compartment and replicate. The shotgun study is registered at ENA
+under \texttt{PRJEB125153} (secondary accession \texttt{ERP204894}).
 
-% The ecology analysis compares whole-profile KO abundances in 125 libraries
-% with matched amplicon profiles. Its marker-gene comparison uses 975 genomes
-% and 119 matched libraries under the marker-specific annotation and
-% abundance requirements. These data support downstream re-execution.
-% Reproduction from raw shotgun reads additionally requires sequence
-% accessions, genome and proteome catalogues, and the assembly, binning,
-% dereplication and profiling workflows. These upstream inputs and parameters
-% remain unavailable in the distributed resource.
+Genome reconstruction combined MEGAHIT assembly \cite{megahit} with single-sample and
+self-supervised SemiBin2 binning \cite{semibin2}, followed by DAS Tool
+refinement \cite{dastool}. CheckM2 \cite{checkm2} estimated completeness and contamination for the
+refined bins. We dereplicated the bins with dRep \cite{drep}, using
+CheckM2 quality estimates, a minimum completeness of 50\%, a maximum
+contamination of 10\%, and a minimum genome length of 50,000~bp.
+The recorded clustering parameters specify 90\% primary ANI and
+95\% secondary ANI, with fastANI for secondary comparisons and a minimum
+alignment coverage of 0.1 using dRep's \texttt{larger} coverage mode.
+The resulting catalogue contains 5,438 representative identifiers.
+The provenance table links each identifier to its source library,
+binning strategy and bin, and records quality estimates from the refined-bin
+CheckM2 report.
+
+Taxonomic assignments for the refined representatives used GTDB-Tk
+v2.7.2 with GTDB release R232 \cite{gtdb}. The two native classification
+tables contain 4,847 bacterial and 591 archaeal representatives, and
+their genome identifiers match the representative catalogue exactly.
+
+% RELEASE GATE: evidence/mag-catalogue-20261024/README.md records the
+% sequence-identity conflict. The pickup catalogue replaces 1,010 refined
+% _sub representatives with parent bins. Robert selected the actual refined
+% dRep sequences. Packaging verifies each FASTA against refined-bin CheckM2.
+% R232 taxonomy is linked to the refined representatives by exact identifiers.
+% Run evidence confirms MEGAHIT 1.2.9 and SemiBin2 2.2.1 for 10Dr2,
+% DAS Tool 1.1.7 for 11PRr3, and CheckM2 1.1.0 for the refined-bin run.
+% Complete the run-wide version/parameter audit, including self-supervised
+% binning and dRep, and supply shotgun library-preparation provenance.
+
+% RELEASE GATE: fresh Bakta/eggNOG annotations and recruitment of all 551
+% libraries against the actual refined sequences are being rebuilt separately.
+% Add their completed methods/results only after per-genome and per-library
+% validation. The parent-bin reference and its coverage remain audit evidence.
+
+The ecology comparison uses a separate 991-genome catalogue and
+150 library profiles from Trips~1--3 (58, 15 and 77 libraries,
+respectively). Its CoverM profiles \cite{coverm} report genome-relative abundance,
+and eggNOG-mapper v2.1.12 \cite{eggnog} annotations yield a
+990-genome KO copy-number matrix after intersecting the annotated genomes
+with the abundance profiles. These inputs and the six source tables for
+the MAG-derived versus PICRUSt2 comparison retain their analytical-subset
+provenance.
 
 
 
