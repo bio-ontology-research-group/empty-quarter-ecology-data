@@ -46,6 +46,7 @@
   "source_sha256": {
     "evidence/mag-catalogue-20261024/source/02_build_reference.sbatch": "0bcafe2054fdee082dea5e18351bcc357cc2d85312fc90046f1e78137f07f992",
     "evidence/mag-catalogue-20261024/source/03_map_cov.sbatch": "9c9896572712348465de7967ca7c80b5e86a89e7d757541d2d1e0d41a553cae2",
+    "evidence/mag-catalogue-20261024/source/bakta_db_version.json": "88fc5e2c946faa314138a9c810a6a883bfa6ffe7914a32d48ae8f5c279957905",
     "evidence/mag-catalogue-20261024/source/build_reference.py": "6012a52b7d3b94309813457f64ef97aa57f0510d8586fe7f092d241d9a982f13",
     "evidence/mag-catalogue-20261024/source/catalog_membership.tsv": "b74724f4902913ff56a2c9ee96e260cc9525c9caa646ea0b59757060268a1702",
     "evidence/mag-catalogue-20261024/source/checkm2_refined.log": "618ca40a5a47a223312be4974b6d4c20935faa0d0e13fd75bb7b473ae68671a8",

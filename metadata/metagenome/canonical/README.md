@@ -32,8 +32,8 @@ against the receipt before use. No public archive locator has been assigned.
 
 Fresh Bakta/eggNOG annotations and CoverM recruitment use these exact refined
 sequences. Current jobs and dependencies are recorded in
-`evidence/mag-catalogue-20261024/analysis_run.json`. Annotation is held while
-requested access to the shared Bakta 6.0 database propagates. Completion requires
+`evidence/mag-catalogue-20261024/analysis_run.json`. Shared Bakta 6.0 database
+access is restored and the annotation pilot has been released. Completion requires
 validated outputs for all 5,438 genomes and all 551 libraries; parent-bin
 annotations and coverage are excluded from this candidate.
 

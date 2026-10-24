@@ -160,8 +160,11 @@ MAGs twenty per task to fit the 2,000-job submission limit; each array permits
 eight concurrent tasks. The finalizer depends on both arrays and checks all 551
 coverage tables and 5,438 annotation receipts before producing archives. These
 jobs being accepted by Slurm is not evidence that the analyses have completed.
-The annotation pilot is held until shared Bakta DB access is readable in a fresh
-IBEX session. No alternative database has been provisioned.
+Shared Bakta DB access was restored and confirmed in a fresh IBEX session on
+24 October 2026; pilot 54460450 was released. The native version metadata is
+preserved in `source/bakta_db_version.json` (6.0 full, dated 2025-02-24).
+The core `bakta.db` and `psc.dmnd` files are readable. Reference indexing was
+running at the time of this check. No alternative database has been provisioned.
 
 Remaining publication gates: run/sample accession crosswalk; run-wide
 assembly/binning versions and parameters; shotgun library-preparation provenance;

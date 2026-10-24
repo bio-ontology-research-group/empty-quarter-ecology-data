@@ -6,13 +6,14 @@
   "partition": "batch",
   "status": "SUBMITTED_NOT_COMPLETE",
   "bakta_database": "/ibex/reference/KSL/bakta/6.0/db",
-  "bakta_access": "permission denied; user requested grant; pilot held pending propagation",
+  "bakta_access": "restored; version.json and core database files readable in fresh IBEX session; pilot released",
+  "bakta_database_version": "6.0 full, 2025-02-24",
   "jobs": [
     {"id": "54457431", "mode": "package", "status": "COMPLETED"},
     {"id": "54458936", "mode": "reference", "cpus": 24, "memory_gb": 320, "hours": 36},
     {"id": "54460442", "mode": "map", "array": "1", "afterok": ["54458936"], "cpus": 12, "memory_gb": 64, "hours": 48},
     {"id": "54460764", "mode": "map-packed", "array": "1-110%8", "libraries_per_task": 5, "afterok": ["54460442"], "cpus": 12, "memory_gb": 64, "hours": 72},
-    {"id": "54460450", "mode": "annotate", "array": "1", "held": true, "afterok": ["54457431"], "cpus": 8, "memory_gb": 48, "hours": 8},
+    {"id": "54460450", "mode": "annotate", "array": "1", "held": false, "afterok": ["54457431"], "cpus": 8, "memory_gb": 48, "hours": 8},
     {"id": "54460765", "mode": "annotate-packed", "array": "1-272%8", "genomes_per_task": 20, "afterok": ["54460450"], "cpus": 8, "memory_gb": 48, "hours": 48},
     {"id": "54460771", "mode": "finish", "afterok": ["54460764", "54460765"], "cpus": 8, "memory_gb": 16, "hours": 24}
   ],
