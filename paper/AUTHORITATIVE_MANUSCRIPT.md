@@ -1,8 +1,8 @@
 # Authoritative submission sources
 
 The Scientific Data submission is a single article built from `sn-article.tex`.
-It includes `01_introduction.tex`, `02_methods.tex`, `02_methods_taxonomy.tex`,
-`03_knowledge_representation.tex`, `knowledge_examples.tex`,
+It includes `01_introduction.tex`, `02_methods.tex`,
+`03_knowledge_representation.tex`, `kg_model.tex`, `knowledge_examples.tex`,
 `04_data_records.tex`, `05_validation.tex`, and `06_usage.tex`.
 `main.tex` is a compatibility wrapper for the same article.
 
@@ -12,7 +12,9 @@ observations are repository data listed in Data Records. `xrf_table.tex`
 and `env_table.tex` are retained generated artifacts, not article inputs.
 
 The article uses `sn-bibliography.bib`, `sn-jnl.cls`, `sn-mathphys-num.bst`,
-`sample_coverage_table.tex`, and the generated transect figure.
+`updated_tables/samples_table.tex`, and the generated transect figure.
+`02_methods_taxonomy.tex` and `sample_coverage_table.tex` are retained source
+artifacts; their content is represented in the current Methods and sample table.
 The paper workflow stages and builds one data-paper PDF; its ecology-paper
 branch still builds that paper's main article and supplement.
 

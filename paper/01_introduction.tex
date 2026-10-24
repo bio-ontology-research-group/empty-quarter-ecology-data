@@ -1,63 +1,14 @@
 \section{Background and summary}\label{intro}
 
-The Rub' al-Khali (Empty Quarter) spans approximately 500,000 km$^2$
-of the southern Arabian Peninsula \cite{mandaville_1986}. Its soils
-experience large temperature fluctuations and irregular rainfall
-\cite{nelli2024wind}, yet support diverse microbial communities
-\cite{makhalanyane2015}. Repeated observations across soil compartments
-and seasons provide a basis for studying these communities together
-with their environmental conditions.
+The Rub' al-Khali (Empty Quarter) is a hyper-arid sand desert that spans approximately 500,000 km$^2$ of the southern Arabian Peninsula \cite{mandaville_1986}. Its landscape is dominated by extensive linear dunes known as \textit{'uruq} (singular \textit{`irq}, Arabic for ``vein''), interspersed with gravel plains, salt flats, and scattered shrub communities \cite{edgell2006arabian,mandaville_1986}. Environmental conditions are characterized by large temperature fluctuations, irregular rainfall, and frequent dust storms \cite{nelli2024wind}. Despite these harsh conditions, soil microbial communities also inhabit this extreme environment \cite{makhalanyane2015}, where spatial variation in soil properties and temporal changes in environmental conditions may influence their composition and distribution. Understanding these communities requires observations that account for both the spatial heterogeneity of the landscape and its changing environmental conditions.
 
-Previous Saudi Arabian surveys examined elevation gradients
-\cite{yasir2015saudi}, rainfall responses across soil compartments
-\cite{aslam2016rainfall}, and bulk and rhizosphere soils across regions
-\cite{khan2020saudi}. Studies of desert plants further connected
-microbial profiles with host-associated habitats \cite{eida2018plants}.
-A repeated transect adds a specific data-management requirement:
-each community profile must remain connected to its field specimen,
-collection visit, laboratory processing and associated measurements.
-Site identity alone is insufficient for temporal comparisons because
-a site can have several visits and assays can use different field
-replicates.
+Previous studies of soils in Saudi Arabia have surveyed microbial communities along elevation gradients \cite{yasir2015saudi}, reponses to rainfall across soil compartments \cite{aslam2016rainfall}, and differences between bulk and rhizosphere soils across regions \cite{khan2020saudi}. A study investigated microbial communities associated with desert plants \cite{eida2018plants}. Repeated sampling across sites, soil compartments, and time points provides an opportunity to extend this work by examining microbial communities across both spatial and temporal scales. Integrating data at such a scale introduces data management requirements as it becomes necessary to preserve the relationship between sampling locations, collection events, laboratory analyses, and environmental measurements.
 
-Multi-campaign resources such as Tara Oceans link campaign, station
-and sampling-event registries to environmental and sequence data
-\cite{taraoceans2015}. MIxS/MIMARKS specify contextual fields for
-environmental sequence data \cite{mixs}, and STREAMS extends reporting
-guidance for environmental microbiomes \cite{streams2025}. The National
-Microbiome Data Collaborative uses persistent identifiers and shared
-schemas to connect environmental microbiome data \cite{nmdc2026}.
-Knowledge graphs such as KG-Microbe \cite{kgmicrobe2026} and
-MetagenomicKG \cite{metagenomickg2026} organize taxonomic, functional and
-environmental information across sources. We apply these principles
-to the specimen and process provenance of a single landscape survey.
+Several resources provide models for organizing environmental and microbiome observations. Multi-campaign initiatives, such as Tara Oceans, link campaigns, stations, and sampling events to environmental and sequence data \cite{taraoceans2015}. MIxS/MIMARKS specify contextual metadata for environmental sequencing data \cite{mixs}. The National Microbiome Data Collaborative promotes the use of persistent identifiers and shared schemas to connect microbiome datasets \cite{nmdc2026}. Knowledge graphs, including KG-Microbe \cite{kgmicrobe2026} and MetagenomicKG \cite{metagenomickg2026}, provide complementary approaches for integrating taxonomic, functional and environmental information. Building on these preinciples, we present a linked representation of field samples, sampling events, laboratory processes, and environmental measurements from a repeated survey of the Rub' al-Khali.
 
-We collected soil and plant material during five campaigns
-(2023--2025) along a 1,043~km transect across the Saudi Rub' al-Khali.
-The catalogue contains 60 primary sites and 10 named locations.
-A 2,550-row specimen catalogue contains 2,516 non-control specimen rows.
-The canonical amplicon table contains 1,271 profiles; the companion
-ecology analysis retains 1,237 after control and read-depth exclusions.
-The resource links these profiles to field environmental observations,
-archived-soil pH, field and laboratory XRF measurements, and climate data.
-The coverage tables distinguish specimens, profiles and assay observations.
+We collected soil samples during five campaigns between 2023 and 2025 along a 1,043~km transect from the west to the east of the Rub' al-Khali in Saudi Arabia. The survey includes 60 primary sites that were repeatedly sampled across campaigns, as well as 10 additional named locations visited in a single campaign. The resulting catalogue contains 2,550 sample records, including 1,271 samples with amplicon sequencing data. Our resource links the samples to field environmental observations, pH measurements, X-ray fluorescence (XRF) measurements, and climate data.
 
-We encoded sites, specimens, processes, qualities and measurement
-values with the Semanticscience Integrated Ontology (SIO) \cite{sio}.
-ChEBI \cite{chebi}, ENVO \cite{envo} and NCBI Taxonomy
-\cite{ncbitaxon} provide chemical cross-references, environmental
-classes and validated taxonomic identifiers. Classifier lineages retain their provenance alongside validated identifiers
-and explicit unresolved mappings.
-The resulting RDF modules support queries across these linked
-observations.
+To improve interoperability and enable integrated queries across heterogeneous data sources, we represent the resource using established ontologies and standardized identifiers. We represnt sites, samples, processes, qualities, and measurement values using the Semanticscience Integrated Ontology (SIO) \cite{sio}. This representation explicitly links sequencing results and environmental measurements to the samples and collection events they derive from, retaining their connections to the underlying data-generation processes. We encode chemical entities with ChEBI \cite{chebi}, environmental classifications with ENVO \cite{envo}, and taxonomic identifiers with NCBI Taxonomy \cite{ncbitaxon}. The resulting linked RDF modules support queries across sampling campaigns, samples, microbial communities, and environmental observations while preserving the context in which each observation was generated.
 
-Technical validation examines source reconciliation, measurement
-admission, identifier mappings, structural constraints and executable
-query examples. We report the scope of each check separately,
-including the constructs and modules processed by ELK.
-The portal at \url{https://rubalkhali.science/} exposes the graph
-through site pages and a SPARQL endpoint. Data Records describes the distributed datasets and Data Availability
-gives their access conditions. The companion ecology manuscript reports the
-community, environmental-association and functional analyses
-\cite{ecology_companion}; this Data Descriptor documents their source
-data, representation and reuse conditions.
+We performed technical validation to assess the consistency and integrity of the resource, including reconcilation with source data, measurement inclusion, identifier mappings, and structural constraints. We also tested executable queries to demonstrate how information can be retrieved across linked datasets. We report the scope of each validation separately, including the ontology constructs and moducles processed by the ELK reasoner \cite{elk}. The portal (\url{https://rubalkhali.science/}) provides site-level pages and a SPARQL endpoint for querying the resource. The Data Records section describes the available datasets, and Data Availability specifies their access conditions. A companion manuscript presents analyses of microbial community composition and environmental associations \cite{ecology_companion}, while this Data Descriptor documents the underlying data, their representation, and the provisions supporting their reuse.
+

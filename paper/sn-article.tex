@@ -19,7 +19,7 @@
 \usepackage{algpseudocode}
 \usepackage{listings}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows.meta,positioning}
+\usetikzlibrary{shapes,arrows.meta,positioning,fit}
 \lstset{breaklines=true,breakatwhitespace=false,columns=fullflexible}
 
 \hypersetup{hypertexnames=false,linktoc=none}
@@ -31,7 +31,7 @@
 
 \title[Empty Quarter Knowledge Base]{A formal knowledge base for amplicon sequencing data and geochemistry of the Rub' al Khali desert}
 
-\author[1]{\fnm{Rund} \sur{Tawfiq}}
+\author[1,9]{\fnm{Rund} \sur{Tawfiq}}
 \author[1]{\fnm{Marwa} \sur{Abdelhakim}}
 \author[2]{\fnm{Sulaiman M.} \sur{Alajel}}
 \author[1]{\fnm{Mohammed} \sur{Alarawi}}
@@ -76,6 +76,7 @@
 \affil[6]{\orgdiv{Biomedical Sciences Division (BioMed)}, \orgname{King Abdullah University of Science and Technology (KAUST)}, \orgaddress{\city{Thuwal}, \country{Saudi Arabia}}}
 \affil[7]{\orgname{NIUM}, \orgaddress{\city{Esch-sur-Alzette}, \country{Luxembourg}}}
 \affil[8]{\orgdiv{Physical Science and Engineering (PSE) Division}, \orgname{King Abdullah University of Science and Technology (KAUST)}, \orgaddress{\city{Thuwal}, \country{Saudi Arabia}}}
+\affil[9]{\orgdiv{Sano Centre for Computational Personalized Medicine}, \orgaddress{\city{Kraków}, \country{Poland}}}
 
 \abstract{We collected soil and plant material during five campaigns across a 1,043~km transect of the Saudi Rub' al-Khali (Empty Quarter). The resource links 2,516 non-control specimen entries with laboratory processing and a canonical amplicon table of 1,271 profiles, of which 1,237 pass control and read-depth exclusions. Associated observations comprise 274 field environmental logs, 712 archived-soil pH measurements, 71 field X-ray fluorescence sessions, 725 laboratory X-ray fluorescence records and 3,234 site-month climate summaries. We represent sites, specimens, processes and measurement values in a modular RDF knowledge base using the Semanticscience Integrated Ontology and validated chemical, environmental and taxonomic references. Shared identifiers preserve specimen identity and assay-specific provenance. Validation checks source reconciliation, measurement admission, identifier mappings, structural constraints and query outputs. The graph supports retrieval across these linked observations through a web portal and SPARQL endpoint. Versioned observations, graph modules and workflow code support comparisons across sites, campaigns and assay types.}
 

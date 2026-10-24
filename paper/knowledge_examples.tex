@@ -2,8 +2,7 @@
 
 The following examples instantiate the formal patterns with observations
 from the resource. Table~\ref{tab:prefixes} defines the namespaces used
-in the Turtle examples and SPARQL queries. Prepend these declarations
-when parsing an example. The listing validator compares each example
+in the Turtle examples and SPARQL queries. These declarations must be prepended when parsing an example. The listing validator compares each example
 with the corresponding modules and pinned reference terms.
 
 \begin{table}[h]
@@ -34,10 +33,9 @@ with the corresponding modules and pinned reference terms.
 \end{table}
 
 Listing~\ref{lst:ttl_sampling} represents the Trip~1, Site~1
-shallow-subsurface specimen. The sampling process targets a site and
-outputs a collection containing the specimen. The specimen also links
-directly to its source site, allowing queries to recover provenance
-without traversing the sampling event.
+shallow-subsurface sample. The sampling process targets a site and
+outputs a collection containing the samples. The sample also links
+directly to its source site, allowing queries to recover provenance without traversing the sampling event.
 
 \begin{lstlisting}[caption={Turtle representation of a sampling process.}, label={lst:ttl_sampling}, basicstyle=\ttfamily\scriptsize, frame=single]
 rak:P100001 a rak:0000024 ; # Sampling Process
@@ -51,7 +49,7 @@ rak:6000001 a rak:0000021 ; # Deep Soil Sample
   sio:000244 rak:1000001 . # isDerivedFrom
 \end{lstlisting}
 
-The same specimen is the input of the extraction process in
+The same sample is the input of the extraction process in
 Listing~\ref{lst:ttl_protocol}. A protocol specification identifies the
 procedure, and the output DNA extract carries a concentration quality.
 A separate measurement value quantifies that quality through the
@@ -68,11 +66,11 @@ rak:6800001 a rak:0000040 ; # DNA Extract
 \end{lstlisting}
 
 Taxonomic observations bind a count to both a taxon and its source
-sequence dataset (Listing~\ref{lst:ttl_tax}). Here, run
-\texttt{ERR16783308}, profile \texttt{V10Dr1}, has 853,814 reads
+sequence dataset (Listing~\ref{lst:ttl_tax}). Here, sequencing run
+\texttt{ERR16783308} from sample \texttt{V10Dr1} has 853,814 reads
 assigned to Bacteria. Each taxonomic dataset contains one rank and
-one abundance basis; count and relative-abundance datasets retain the
-same classifier lineage and source-profile context.
+one abundance basis. Count and relative abundance datasets retain the
+same classifier lineage and source sample context.
 
 \begin{lstlisting}[caption={Turtle representation of taxonomic abundance formalized from a feature table.}, label={lst:ttl_tax}, basicstyle=\ttfamily\scriptsize, frame=single]
 rak:P290001 a rak:0000071 ; # Bioinformatic Workflow
@@ -94,9 +92,9 @@ rak:Q00000001 a rak:0000078, pato:0000070 ; # Absolute Abundance Quality
 \end{lstlisting}
 
 Laboratory XRF specializes the measurement pattern by linking the
-process to its archived specimen. Listing~\ref{lst:ttl_xrf} shows the
+process to the archived sample from which it was measured. Listing~\ref{lst:ttl_xrf} shows the
 aluminium observation for \texttt{V1Sr1}. Its numerical value and
-quality have reciprocal links. The value retains the instrument-reported
+quality have reciprocal links. The value retains the instrument reported
 magnitude with undocumented concentration units. Field sessions instead
 identify a target site through \texttt{sio:000291}.
 
@@ -116,9 +114,9 @@ rak:5302121 a rak:0000107 ; # Al concentration quality
 \end{lstlisting}
 
 Shared inputs and outputs connect extraction, library preparation and
-sequencing (Listing~\ref{lst:ttl_sequencing}). The final sequence
+sequencing (Listing~\ref{lst:ttl_sequencing}). The final sequencing
 dataset links to its ENA accession. A SPARQL traversal can therefore
-recover the recorded provenance from specimen to sequence run.
+recover the recorded provenance from sample to sequencing run.
 
 \begin{lstlisting}[caption={Turtle representation of the sequencing workflow from soil sample T1Dr1 to ENA run ERR16061083.}, label={lst:ttl_sequencing}, basicstyle=\ttfamily\scriptsize, frame=single]
 rak:P200923 a sio:000994 ; # DNA Extraction Process
@@ -139,11 +137,11 @@ rak:7790001 a rak:0000063 ; # FASTQ Dataset
   rdfs:seeAlso <https://identifiers.org/insdc.run/ERR16061083> .
 \end{lstlisting}
 
-Quality-control observations retain the read direction through separate
+Quality control observations retain the read direction through separate
 forward and reverse metric classes. Listing~\ref{lst:ttl_qc} gives the
 forward-read GC content for run \texttt{ERR16062319}: 58.0\%.
 The quality belongs to the same FASTQ dataset consumed by the
-quality-control process.
+quality control process.
 
 \begin{lstlisting}[caption={Turtle representation of forward-read GC content for ENA run ERR16062319.}, label={lst:ttl_qc}, basicstyle=\ttfamily\scriptsize, frame=single]
 rak:P350001 a rak:0000200 ; # Sequencing QC Process

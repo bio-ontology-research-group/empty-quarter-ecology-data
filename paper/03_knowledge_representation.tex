@@ -1,37 +1,54 @@
 \subsection{Knowledge representation}\label{ontology}
 
-We represent the resource as a modular RDF knowledge base. The
-terminology module (TBox) defines classes and relations in OWL
-\cite{owl2}; the domain modules (ABoxes) describe sites, physical
-specimens, processes and data products. Shared identifiers connect
-these modules (Table~\ref{tab:modules}). SIO supplies the upper-level
-classes and relations \cite{sio}. The terminology declares 333
-classes (297 project classes and 36 referenced classes), 20 object
-properties and 35 datatype properties. These counts apply to
-declarations in the terminology module. KG v3.0.1 supplies reviewed English
-definitions for all 342 project terms, recorded as SKOS and IAO definition
-annotations. Claude Sonnet (model identifier \texttt{claude-sonnet-5-5})
-drafted the definitions from term labels, axioms and dataset context;
-OpenAI Codex performed automated review and editing. The terminology identifies
-four reference ontologies as imports; observation modules are linked as
-dataset parts. Definition drafts, model provenance and review dispositions
-are distributed with the release.
+We present the resource as a modular RDF knowledge base that connects sampling sites, physical samples, laboratory measurements, experimental producedures, sequencing datasets, and taxonomic assignments. Rather than representing these data as independent tables, we encode their relationships explicitly. This allows users to trace an observation to the sample, site, or process it describes, and query related data across different stages of the study (Figure~\ref{fig:kg_model}).
 
-\subsubsection{Measurement and provenance}
+\input{kg_model}
 
-We separate a measured quality from the information that quantifies
-it. A temperature quality belongs to a site; a measurement process
-produces a value for that quality. The value contains the numerical
-reading and, where documented, its unit. Counts, dimensional
-measurements and measurements with undocumented units use the
-appropriate datatype and unit constraints in their assigned shapes.
+The graph separates a shared terminology module, which defines the classes and relationships used to describe the data, from modules containing the actual study records. In ontology terminology, these correspond to the Tbox and ABox, respectively. Shared identifiers connect the modules (Table~\ref{tab:modules}), while the Semanticscience Integrated Ontology (SIO) provides general classes and relationships for representing entities, processes, and measurements \cite{sio}. The terminology module declares 333 classes (297 defined for this project and 36 from other ontologies), 20 object properties, and 35 datatype properties written in OWL \cite{owl2}. 
 
-Listing~\ref{lst:ttl_temp} illustrates this distinction for a field
-temperature. The process belongs to a site visit, the visit targets
-the site, and the measured quality is an attribute of that site.
-The process-to-visit path supplies the observation context. SIO's
-value-to-quality relation and its inverse support traversal in both
-directions.
+To support interpretation and reuse, KG v3.0.1 provides English
+definitions for all 342 project terms, recorded using SKOS and IAO
+definition annotations. Claude Sonnet 5.5 drafted the definitions from term labels,
+axioms and dataset context, and OpenAI Codex assisted with automated
+review and editing. We distribute the definitions, model provenance
+and review records with the release. The terminology module imports
+four reference ontologies, and the observation modules are linked as
+parts of the dataset.
+
+
+\subsubsection{Representing provenance}
+
+The data model rests on two distinctions. First, physical materia (a soil sample, a DNA extract), the process applied to it (extraction, sequencing), and the data those processes produce (a FASTQ dataset) are represented as separate entities connected by inputs and outputs. Second, a measured value is kept separate from the property it quantifies and from the entity that has the property. Together, these distinctions record where every value came from.
+
+\textbf{Shared vocabularies and external ontologies.} We reuse established terms that exist in an external ontology where relevant (Table~\ref{tab:external_resources}). Because these identifiers are shared with other resources, the data can be queried and compared alongside other datasets. We retain original labels and values with the mapped identifiers.
+
+\begin{table}[h]
+\centering
+\caption{External ontologies and reference resources used in the
+knowledge graph.}
+\label{tab:external_resources}
+\small
+\begin{tabular}{p{0.2\textwidth}p{0.42\textwidth}}
+\toprule
+Resource & Used to describe \\
+\midrule
+SIO \cite{sio} & Processes, inputs and outputs, values, qualities and
+  the relations between them \\
+PATO & Measured qualities \\
+UO \cite{uo}& Units of measurement \\
+ENVO \cite{envo} & Biomes and environmental features of sites \\
+NCBI Taxonomy \cite{ncbitaxon} & Taxa\\
+ChEBI \cite{chebi}, PubChem \cite{pubchem} & Elements and oxides reported
+  by XRF \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Measurements.} We represent measurements separately from the biological or environmental qualities they describe. For example, the temperature of a site is a property (quality) of that site (Listing~\ref{lst:ttl_temp}). A measurement process carried out during a particular site visit produces a value for that property. The graph links the value to the quality, the quality to the site, and the measurement process to the visit. This separates what was measured from how, where, and when it was measured. It also allows the same quality to be measured repeatedly, for example on different visits, without ambiguity.
+
+Each value holds its numerical reading and, where documented, its unit. The ShEx shape assigned to each type of value specifies its datatype and unit requirements, which differ for counts, measurements with units and measurements whose units were not documented.
+
+% Listing~\ref{lst:ttl_temp} shows this representation for a field temperature measurement. The measurement process is part of a site visit, the visit targets the site, and the process produces a value of 20.7~\degree C, which quantifies the temperature of that site. Because SIO provides relations in both directions between a value and its quality, users can start a query from either and retrieve each measurement together with its sampling context.
 
 \begin{lstlisting}[caption={Field temperature and its visit provenance.},label={lst:ttl_temp},basicstyle=\ttfamily\scriptsize,frame=single]
 @prefix rak: <https://rubalkhali.science/kb/RAK_> .
@@ -40,91 +57,77 @@ directions.
 @prefix uo: <http://purl.obolibrary.org/obo/UO_> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-rak:P000001 a rak:0000006 ;
-  sio:000068 rak:3000001 ;
-  sio:000229 rak:4000001 .
-rak:3000001 a rak:0000003 ;
-  sio:000291 rak:1000001 .
-rak:4000001 a rak:0000010 ;
-  sio:000221 uo:0000027 ;
-  rak:2000003 "20.7"^^xsd:double ;
-  sio:000215 rak:5000001 .
-rak:5000001 a pato:0000146 ;
-  sio:000011 rak:1000001 ;
-  sio:000216 rak:4000001 .
+# Measurement process
+rak:P000001 a rak:0000006 ;            # type: field measurement process
+    sio:000068 rak:3000001 ;           # is part of -> site visit
+    sio:000229 rak:4000001 .           # has output -> measured value
+ 
+# Site visit
+rak:3000001 a rak:0000003 ;            # type: site visit
+    sio:000291 rak:1000001 .           # has target -> sampling site
+ 
+# Measured value
+rak:4000001 a rak:0000010 ;            # type: measurement value
+    sio:000221 uo:0000027 ;            # has unit -> degree Celsius
+    rak:2000003 "20.7"^^xsd:double ;   # numerical value
+    sio:000215 rak:5000001 .           # is measurement value of -> quality
+ 
+# Quality of the site
+rak:5000001 a pato:0000146 ;           # type: temperature (PATO)
+    sio:000011 rak:1000001 ;           # is attribute of -> sampling site
+    sio:000216 rak:4000001 .           # has measurement value -> value
 \end{lstlisting}
+ 
+% \textbf{Sites and sampling.} Each sampling process targets a site and produces a collection of samples. Field replicates are memebers of this collection, which links them to the sampling event, and also directly to the site. Site visits
+% and campaigns are represented explicitly, so that samples and field
+% measurements from repeated visits to the same site remain distinct.
 
-Sampling processes output material-sample collections. Collection
-membership links each physical replicate to the sampling event;
-the specimen's derivation edge also links it directly to its site.
-A protocol is a reusable information specification, and a protocol
-execution is a process. Extraction consumes soil and produces DNA;
-library preparation consumes DNA and produces an amplicon library;
-sequencing consumes the library and produces a digital FASTQ dataset.
-Quality-control processes consume FASTQ datasets and produce
-direction-specific metrics. Section~\ref{methods:graph_examples} gives
-corresponding graph examples.
+% \textbf{Laboratory processing.} Laboratory processing is represented as a chain of linked processes and products. For example, DNA extraction produces a DNA extract from a soil sample, and the extract is subsequently used as input for library preparation. These relationships preserve the provenance of laboratory samples and their links to their source material and downstream analyses. Where available, we also retain protocol, batch, and quality-control information. Section~\ref{methods:graph_examples} gives
+% corresponding graph examples.
 
-Site annotations use existential restrictions to relate a site to
-an ENVO biome or environmental feature. Such a restriction specifies
-a filler of the named class. The source annotation metadata provides
-the recorded assignment and its provenance.
+\textbf{Taxonomy.} A taxonomic label can denote different taxa across databases and releases, and a taxon can be referred to by several labels \cite{balvovciute2017silva}. To ensure consistent identification, we retained SILVA assignments for each ASV and linked it to either a validated NCBI Taxonomy identifier or a project-specific identifier when no suitable NCBI Taxonomy identifier was found.
 
-Laboratory controls are occurrence-specific materials with
-processing roles. A control-processing execution consumes the control,
-realizes its role and belongs to a documented processing group.
-Trips~4--5 use trip-specific extraction-day batches. Trips~1--3 use
-per-kit controls, and Trips~1--2 include shared extraction days.
-Occurrence-specific identifiers and the identity metadata distinguish
-reused control labels. Confirmed, provisional, unresolved and
-inapplicable dispositions retain their supporting evidence. The
-D6300 whole-cell and D6322 purified-DNA standards enter the process
-chain at extraction and PCR, respectively. The composition specification
-links each standard to its expected taxa; reified assertions preserve
-the subject, relation, taxon, validation status and source.
+Each SILVA assignment describes the organism across seven ranks from domain to species, and may include an additional species prediction and a confidence score. We used the species name from the rank assignment in the knowledge graph and kept the additional species assignment as an annotation. Before mapping, we removed prefixes from taxon names and explicitly recorded missing and unclassified ranks.
 
-\subsubsection{Taxonomic and chemical observations}
+For each SILVA assignment, we checked for a candidate NCBI identifier from a fixed NCBI Taxonomy release (OBO Foundry NCBITaxon r2025-03-13 built from NCBI Taxonomy 1 March 2025). A candidate was only accepted if the identifier exists in that release, its rank matches, its name matches the SILVA name or a documented synonym, and its parent taxa in NCBI match identifiers already accepted for the higher ranks of the same assignment. When no candidate met these criteria, the name was given a project-specific identifier, which refers to a unique combination of rank, name, and parent taxa. As a result, users can therefore query each ASV by its original SILVA assignment or by its NCBI or project identifier.
 
-For each profile, the taxonomy generator aggregates ASV counts at
-seven ranks from domain to species, retaining the rank-truncated
-classifier lineage and its validated NCBI or project identifier.
-Each workflow produces fourteen datasets: read counts and relative
-read abundance for each rank. The relative value divides the aggregated
-count by the profile's total reads; explicit unclassified lineages
-retain their contribution to that denominator. A taxon-rank entry adds a value and a
-quality linked to shared dataset, workflow, taxon and FASTQ objects.
-These links preserve the profile context during retrieval.
-The taxon IRI is used as an individual in the abundance graph and as
-a class in the mapping module. OWL~2 punning gives these uses separate
-semantics: observation links identify the measured taxon, while
-class-level axioms supply the reference ancestry. The generator
-performs the rank aggregation explicitly.
 
-XRF processes have several concentration-value outputs. A laboratory
-process takes an archived specimen as input; a field process targets
-a site and retains the instrument test identifier. The chemical
-mapping supplies supported ChEBI and PubChem cross-references for
-reporting channels, including oxide-equivalent channels. Unit
-documentation and acquisition scope are described in
-Section~\ref{methods:xrf}.
 
-Archived-soil pH processes consume and target the assayed specimen,
-produce a pH value linked to its acidity quality and belong to a
-reconstructed measurement session. Measurements from different field replicates retain separate physical
-identities and are matched at campaign, site and compartment level (Section~\ref{methods:ph}).
+
+% \subsubsection{Taxonomic and chemical observations}
+% We represent taxonomic abundances and chemical measurements as
+% observations linked to the taxa, specimens or sites they describe.
+% This distinguishes the measured values from the entities being
+% measured and preserves their context for querying and comparison.
+% For example, we link each ASV abundance to its taxonomic assignment
+% and source community profile, allowing users to retrieve abundance
+% data across taxonomic ranks while retaining the original sequence
+% and classification information.
+
+% We also link observations to external ontologies and reference
+% resources to provide standardized identifiers and definitions.
+% For taxonomy, we map SILVA assignments to NCBI Taxonomy where
+% possible and retain project-specific identifiers when no suitable
+% match is available. For chemical measurements, we link reported
+% elements and compounds to ChEBI and PubChem identifiers where
+% available. These mappings support consistent interpretation and
+% integration with other datasets, while retaining the original
+% labels and measurement values.
 
 \subsubsection{Formal patterns}
 
-The following Description Logic patterns \cite{dlhandbook} specify the
-entity relationships used by the resource. The notation uses
-$\sqsubseteq$ for subclass inclusion, $\sqcap$ for conjunction,
-$\exists R.C$ for at least one relation $R$ to a member of class $C$,
-and $\forall R.C$ to restrict all $R$ fillers to $C$. Structural
-validation checks the corresponding data constraints.
-Section~\ref{methods:graph_examples} provides concrete RDF examples.
+The relationships described above are defined formally as Description
+Logic patterns \cite{dlhandbook}. Each pattern specifies which kinds of entities
+can be related and how, giving a precise description of the graph's
+structure that users can rely on when writing queries. The same patterns
+define the constraints checked during structural validation
+(Section~\ref{subsec:schema_def}). In the notation below, $\sqsubseteq$
+means ``is a subclass of'', $\sqcap$ means ``and'', $\exists R.C$ means
+``has at least one relation $R$ to a member of class $C$'', and
+$\forall R.C$ means ``all relations $R$ point to members of class $C$''.
+Section~\ref{methods:graph_examples} gives the corresponding RDF examples.
 
-The sampling pattern links a process to its target site and output collection,
-whose members are physical samples.
+\textbf{Sampling.} A sampling process targets a site and produces a collection of samples, and each sample is also linked directly to its site.
 
 \begin{small}
 \begin{align}
@@ -141,8 +144,8 @@ whose members are physical samples.
 \end{align}
 \end{small}
 
-A protocol execution links an information specification to the entities
-consumed and produced by the process.
+\textbf{Protocols.} Each field or laboratory step is recorded as the execution of a
+protocol, with the material or data it used and produced.
 
 \begin{small}
 \begin{align}
@@ -157,8 +160,8 @@ consumed and produced by the process.
 \end{align}
 \end{small}
 
-The abundance pattern connects a sequence-analysis workflow to a collection
-of values and to the taxonomic qualities those values quantify.
+\textbf{Taxonomic abundance.} A value quantifies the abundance of a taxon and belongs to a dataset
+produced by a bioinformatic workflow from a sequence dataset.
 
 \begin{small}
 \begin{align}
@@ -179,8 +182,7 @@ of values and to the taxonomic qualities those values quantify.
 \end{align}
 \end{small}
 
-XRF specializes the measurement pattern through a specimen input for
-laboratory measurements and a site target for field measurements.
+\textbf{XRF.} Laboratory XRF measurements take a soil sample as input, whereas field measurements target a sampling site, and both produce concentration values.
 
 \begin{small}
 \begin{align}
@@ -198,8 +200,7 @@ laboratory measurements and a site target for field measurements.
 \end{align}
 \end{small}
 
-The sequencing pattern composes extraction, library preparation and
-sequencing through their shared inputs and outputs.
+\textbf{Sequencing.} DNA extraction, library preparation and sequencing are linked through their shared inputs and outputs, so that each sequence dataset can be traced back to its soil sample.
 
 \begin{small}
 \begin{align}
@@ -222,8 +223,7 @@ sequencing through their shared inputs and outputs.
 \end{align}
 \end{small}
 
-Quality-control processes attach measurement values to qualities of the
-source sequence dataset.
+\textbf{Sequence quality control.} Quality metrics are attached to the FASTQ dataset they describe.
 
 \begin{small}
 \begin{align}
@@ -246,59 +246,73 @@ source sequence dataset.
 
 \subsubsection{OWL and RDF implementation}\label{subsec:owl_rdf}
 
-Groovy scripts using OWL API v5.1.20 \cite{owlapi} generate the modules.
-The modular organization separates domain data from shared terminology
-\cite{cuencagrau2008modular}. OpenLink Virtuoso \cite{virtuoso}
-provides RDF storage and SPARQL query execution.
+The modules are generated with Groovy scripts using OWL API v5.1.20 \cite{owlapi}.
+Keeping the shared terminology separate from the study data allows each to be updated and checked independently
+\cite{cuencagrau2008modular}. The asserted graph is stored in OpenLink Virtuoso \cite{virtuoso} which supports SPARQL queries over the whole resource. Release KG v3.0.1 serves the asserted triples.
 
-KG v3.0.1 serves the asserted union. A separate reasoning workflow
-uses the bundled rule program, v1.5.0, to compute consequences of a
-specified set of positive RDF rules. These rules expand equivalent
-classes and properties, subclass and subproperty hierarchies,
-instance types, domains, resource-valued ranges, inverse and symmetric
-properties, and transitive properties. The schema audit generates
-rules for each nonempty finite property-chain pattern in the loaded
-schema, including inverse operands. Additional rules introduce and
-classify value restrictions, classify existential restrictions from
-existing edges and typed fillers, propagate universal restrictions
-to existing resource fillers, and handle intersections, union
-membership and resource enumerations. All conclusions use existing
-RDF terms. The schema audit lists the loaded imports and the
-constructs outside this rule set.
+Some facts follow from the asserted statements without being stated
+explicitly; for example, a sample of a subclass of soil sample is also a
+soil sample. A separate workflow derives such facts with a rule program v1.5.0 of positive RDF rules and stores them in a separate graph, so that recorded statements can be distinguished from those that are derived. The rules cover equivalent classes and properties, subclass and subproperty hierarchies, instance types, property domains and resource-valued ranges, and inverse, symmetric, and transitive properties. For property chains, one rule is generated for each non-empty finite chain in the loaded schema, including chains with inverse properties. Further rules handle value restrictions, existential restrictions (classified from
+existing links and typed targets), universal restrictions (applied to
+existing targets), intersections, union membership and enumerated classes.
+The rules do not create new RDF terms. The schema audit lists the imported
+ontologies and the OWL constructs not covered by the rules.
 
-The asserted graph contains the deduplicated union of the loaded
-modules. Rules read this graph together with a separate inferred
-graph and insert only conclusions absent from both. Each update
-selects a bounded batch of distinct conclusions; each rule repeats
-until its next batch adds zero triples. The complete schedule repeats
-until every rule adds zero triples in one full pass. This stopping
-criterion defines the least fixed point of the emitted rule program.
+Each rule adds only triples that are absent from both the asserted and the
+inferred graph, working in batches, and is repeated until it adds no new
+triples. The complete set of rules is applied repeatedly until a full pass
+adds no triples; at that point, all consequences of the rule program have
+been computed (its least fixed point). The run records the rule text, the
+lists of data partitions, the number of inferred triples, software
+versions and input identifiers. It stops with a failure if a query result
+is truncated, an SQL error occurs or the maximum number of passes is
+reached. After the run completes, separate checks search for conflicts
+between disjoint or complementary classes, members of \texttt{owl:Nothing}
+and incompatible control roles. The inference therefore covers only this
+rule set and these checks.
 
+\subsubsection{Validation}\label{subsec:schema_def}
+We checked the generated graph for structural integrity with Shape Expressions (ShEx) and for logical consistency with an OWL reasoner. Both checks detect errors in how the data are represented, but they do not establish biological correctness. Results are reported in Section~\ref{valid}.
 
-The controller preserves the rule text, partition inventories,
-derived-triple counts, runtime versions and input identifiers.
-Query truncation, SQL errors and exhaustion of the pass limit
-terminate the run with a failure status. After convergence, separate
-diagnostics test explicit disjoint-class and complement clashes,
-membership in \texttt{owl:Nothing}, and incompatible laboratory-control
-roles. These diagnostics and the finite rule set define the scope
-of operational entailment validation.
+\textbf{Structure.}
+ShEx \cite{shex} is a schema language that checks whether selected
+entities have the required types and properties, how many values each
+property has and whether the values have the correct datatype. We defined
+shapes for all main entity types: sampling sites, soil samples, DNA
+extracts, sequencing datasets, measurements, quality-control records,
+laboratory control materials, control roles, laboratory batches, sequences
+detected in controls, soil pH measurements, values and sessions, and
+taxonomy mappings. For example, the sample shape requires a replicate
+type, a label, a source identifier and a link to the site from which the
+sample was derived, and the DNA concentration shape checks the numerical
+value, the unit (ng/\textmu L) and the links to the measured quality and
+process.
+ 
+The shapes have known limits. The site shape checks that a geometry is
+present, but not that it is valid WKT with correct coordinate syntax. The
+XRF-process shape requires an input or target, but checking that it
+belongs to the correct class requires an additional check. The shapes are
+open, so entities may have properties beyond those declared, and
+additional types are accepted regardless of how they were asserted. Test
+data that deliberately violate the shapes confirm that the failures
+reported in Technical Validation are detected.
+ 
+A Shape Map assigns each set of entities (e.g.\ all sampling sites) to its
+shape. During deployment, each newly generated data module is checked, and
+deployment stops if a required property is missing (e.g.\ the coordinates
+of a site) or a value has the wrong datatype. Validation used the Apache
+Jena ShEx library v4.10.0, called from Groovy scripts. The multi-gigabyte
+taxonomy data are too large for this in-memory check; instead, the file is
+parsed in full with an independent Turtle parser and checked with a
+streaming validator that covers every link between classification
+process, dataset, quality and value.
 
-\subsubsection{Structural constraints}\label{subsec:schema_def}
-
-ShEx shapes \cite{shex} check selected nodes for required types,
-properties, cardinalities and datatypes. The sampling-site shape
-requires a site type, label and geometry predicate. Its unconstrained
-geometry object checks presence; validation of the WKT datatype and
-coordinate syntax is a separate requirement. Additional type
-assertions are accepted independently of how they were obtained.
-
-The sample shape requires a replicate type, a label, a source
-identifier and an IRI-valued derivation edge. The DNA concentration
-shape checks its numeric value, nanograms-per-microlitre unit and
-quality/process links. The XRF-process shape requires a protocol,
-one or more values and an input or target IRI. Checking the class of
-that input or target requires a corresponding target shape or
-scientific-invariant check. These open shapes admit predicates
-outside their declared constraints; the negative fixtures test the
-specific failures reported in Technical Validation.
+\textbf{Logical consistency.}
+We checked logical consistency with the ELK reasoner v0.4.3 \cite{elk}
+through OWL API v4.5.26, after merging the modules that ELK can process
+into a single ontology. ELK supports only part of the OWL language, and
+the modules also contain universal restrictions, inverse properties and
+other constructs that ELK does not handle. The result therefore applies
+only to the supported subset; an OWL profile report and a checked
+projection of the ontology would be needed to define its logical scope
+precisely. The taxonomy data and large reference modules were excluded.

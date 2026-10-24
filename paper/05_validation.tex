@@ -1,11 +1,13 @@
 \section{Technical validation}\label{valid}
 
-Technical validation separates source reconciliation and measurement
-checks from structural constraints, executable queries and the
-operational ELK check. The evidence bundles identify the input
-snapshot and checks executed.
+We validated the resource for agreement between the released data and the source records, including checks on laboratory controls and agreement between measurements. We also validated the structure, logical consistency and integrity of the knowledge graph. Additionally, we checked whether queries on the graph return expected results. For every check, the validation records identify input files by checksum and the software versions used (Section~\ref{records}).
 
-\subsection{Assay validation}
+\subsection{Agreement with source records}
+
+Every eligible record in the source tables is represented once in the graph. This includes 2,516 samples, 1,647 DNA extracts, and 1,242 amplicon libraries and their corresponding FASTQ datasets. All 274 field environmental measurements for temperature, pressure, and relative humidity pass checks for site identity and for plausible ranges. All 93 reported XRF elements were checked against ChEBI and PubChem, and elements without mapped identifiers are included with an empty mapping field. All 1,168 pH records and their acceptance or exclusion conditions were reproduced, and accepted measurements were linked to the correct samples.
+
+\subsubsection{Laboratory controls and measurement agreement}
+
 
 The PowerSoil Pro extraction-control profile contained 1,165 ASVs,
 with 84\% of reads assigned to ASVs shared with biological profiles.
