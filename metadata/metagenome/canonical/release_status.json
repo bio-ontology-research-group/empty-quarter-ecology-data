@@ -1,13 +1,35 @@
 {
-  "accession_evidence": "Robert Hoehndorf, 2026-10-24; study not yet public",
-  "annotation_release": false,
-  "blocking_items": [
-    "Verify functional annotations against the chosen sequence content; R232 taxonomy matches refined representative IDs.",
-    "Rebuild recruitment against the actual refined sequences; existing parent-bin-reference coverage is excluded.",
-    "Complete run/sample accession mapping and ENA MAG submission metadata.",
-    "Confirm run-specific versions and parameters across all assembly/binning strategies.",
-    "Publish the verified private-staging archive with an immutable public/reviewer locator."
+  "accession_evidence": "ENA deposit by Alejandra Lopez Velazquez (empty-quarter-proteome c4b5f1d) and ENA accession notifications of 26-29 October 2026; private until 2026-11-25",
+  "analysis_archives": [
+    {
+      "artifact": "refined_functional_tables.tar.gz",
+      "bytes": 106360827,
+      "sha256": "6eaeefcd31a44101fbb8629c2d7232e01160fe5257fd606f9cb09ac2afee1518"
+    },
+    {
+      "artifact": "refined_coverm_profiles.tar.gz",
+      "bytes": 82900332,
+      "sha256": "fae886478ffa7add340f4892332471951849d959ee1c48ff9738e3a809fe30a5"
+    }
   ],
+  "annotation_release": true,
+  "blocking_items": [
+    "Publish the verified private-staging archives with an immutable public/reviewer locator."
+  ],
+  "ena_deposit": {
+    "binned_metagenomes": 12434,
+    "biosamples": 551,
+    "mags": 5437,
+    "primary_assemblies": 549,
+    "representative_mimag_tiers": {
+      "below-medium": 1,
+      "high": 126,
+      "medium": 5311
+    },
+    "runs": 554,
+    "scheduled_release": "2026-11-25",
+    "study_accession": "PRJEB125153"
+  },
   "legacy_libraries_per_trip": {
     "1": 58,
     "2": 15,
@@ -23,9 +45,9 @@
   "public_release": false,
   "quality_scope": "05_refine/_checkm2_refined; actual dRep representatives, not linked parent bins",
   "read_bearing_libraries": 551,
-  "recruitment_release": false,
+  "recruitment_release": true,
   "refined_sub_representatives": 1010,
-  "release_status": "SEQUENCE_CANDIDATE_ANALYSES_PENDING",
+  "release_status": "SEQUENCE_AND_ANALYSES_CANDIDATE",
   "representatives": 5438,
   "secondary_study_accession": "ERP204894",
   "sequence_archive": {
@@ -54,6 +76,11 @@
     "evidence/mag-catalogue-20261024/source/config.sh": "faf118fc57f32401c5be718d30b01497cf469233a5d620ab8d4d4ef71d72f015",
     "evidence/mag-catalogue-20261024/source/dastool_11PRr3.log": "e4fbf1dd392f9d7a6d3c23ebfbb039c29c944258c11784761c4ff6fc1c2cac55",
     "evidence/mag-catalogue-20261024/source/drep_cluster_arguments.json": "bb4bd0cda540ea9ab3334abd8d49c7b04d274ae62840f7b75d3748eefb57a08a",
+    "evidence/mag-catalogue-20261024/source/ena_deposit/README.md": "870fc4ba4dab66c98bb8b0d2cd96f0d2e1e8daeab6840d785df88ce6dbd3895f",
+    "evidence/mag-catalogue-20261024/source/ena_deposit/ena_mag_accession_emails.tsv": "a7739d3dcb8e5ff414ec13cc898f4062c86157f3a089a6725500631bca97a59f",
+    "evidence/mag-catalogue-20261024/source/ena_deposit/wgs_assemblies.tsv": "5f2cf605c3b7f3fdd904802737f9ec456d54c26404757f8c763fd000b9da0b88",
+    "evidence/mag-catalogue-20261024/source/ena_deposit/wgs_bins.tsv": "233d44a09b5d7101c8fc215f4e70814ef13d250ac3d0198428cff38104189178",
+    "evidence/mag-catalogue-20261024/source/ena_deposit/wgs_runs.tsv": "a728161875b29ceb05a2c532fbd02b0e0c71c57f7facc9d4ba4ba401a33cee06",
     "evidence/mag-catalogue-20261024/source/megahit_10Dr2.log": "e398de91457fa5c46296540f2c6c4e414e3fd771fa5bae05e2df050ea8e0fe80",
     "evidence/mag-catalogue-20261024/source/metagenome_sample_meta.tsv": "ac037416a0e131c911a03724050610a8d603080c5bd6a3f2d7df7c859fa2b041",
     "evidence/mag-catalogue-20261024/source/metagenome_sample_meta_150.tsv": "f20f721ee3c9ba1853f9e5cf48f2cca4652b8348a6061cb353eb68e2b23d8d89",

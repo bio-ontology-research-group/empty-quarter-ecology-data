@@ -47,10 +47,16 @@ observations, daily climate inputs and monthly climate summaries.
 (\texttt{EQ-PH-SHARED-v1.0.1}).
 \item The refined MAG catalogue: 5,438 genome FASTAs with per-genome
 checksums, source-library and binning provenance, CheckM2 quality estimates
-and GTDB R232 classifications. Shotgun library metadata covers 551
-read-bearing libraries (Section~\ref{methods:shotgun}).
-% RELEASE GATE: functional-annotation and recruitment archives are added
-% only after the refined-sequence rebuild passes its completion checks.
+and GTDB R232 classifications, together with MIMAG quality tiers and the
+ENA accessions of each library, assembly, bin and MAG. Shotgun library
+metadata covers 551 read-bearing libraries (Section~\ref{methods:shotgun}).
+\item Functional annotations of the refined MAG catalogue: per-genome
+counts of KOs, CAZy families, Pfam domains and preferred gene names,
+per-genome numbers of predicted and annotated proteins, and the tool
+versions and checksums of each genome's annotation.
+\item Coverage profiles of the 551 shotgun libraries against the refined
+MAG catalogue, with the mapping reference definition that assigns each
+contig to its genome.
 \item The paired PMA profiles and the ecology-analysis inputs: 150
 CoverM profiles from Trips~1--3 against the 991-genome catalogue,
 eggNOG annotations supporting its 990-genome analytical subset, and six

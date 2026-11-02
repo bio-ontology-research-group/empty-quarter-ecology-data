@@ -608,6 +608,16 @@ ontology/mapped_taxonomy_corrected.tsv	Name	string	not applicable	never blank	Ta
 ontology/mapped_taxonomy_corrected.tsv	Rank	string	not applicable	never blank	One of the seven represented taxonomic ranks.
 ontology/mapped_taxonomy_corrected.tsv	Taxon String	string	not applicable	never blank	Source semicolon-delimited lineage to which this rank-level mapping belongs.
 ontology/rubalkhali_measurements.owl	RAK_2000004	number	pascals (UO:0000110)	absent when source pressure is unrecorded	Field atmospheric pressure converted from the source pressure_mbar value by multiplying by 100.
+metadata/metagenome/canonical/ena_genome_accessions.tsv	genome	string	not applicable	never blank	Refined bin identifier; representatives match mag in refined_representatives.tsv.
+metadata/metagenome/canonical/ena_genome_accessions.tsv	sample	string	not applicable	never blank	Source library/sample code; retained verbatim.
+metadata/metagenome/canonical/ena_genome_accessions.tsv	is_representative	integer	not applicable	never blank	1 for one of the 5,438 dRep species representatives; 0 otherwise.
+metadata/metagenome/canonical/ena_genome_accessions.tsv	mimag_tier	string	not applicable	never blank	MIMAG tier: high, medium or below-medium (contamination of exactly 10%).
+metadata/metagenome/canonical/ena_genome_accessions.tsv	binned_sample_accession	string	not applicable	never blank	ENA BioSample of the binned metagenome (checklist ERC000050).
+metadata/metagenome/canonical/ena_genome_accessions.tsv	binned_assembly_accession	string	not applicable	never blank	ENA analysis accession of the binned metagenome.
+metadata/metagenome/canonical/ena_genome_accessions.tsv	mag_sample_accession	string	not applicable	blank: not deposited as a MAG (non-representative bin, or 48Dr2__self_SemiBin_25 at 10% contamination)	ENA BioSample of the MAG (checklist ERC000047), derived from the binned sample.
+metadata/metagenome/canonical/ena_genome_accessions.tsv	mag_assembly_accession	string	not applicable	blank: not deposited as a MAG (non-representative bin, or 48Dr2__self_SemiBin_25 at 10% contamination)	ENA analysis accession of the MAG submission.
+metadata/metagenome/canonical/ena_genome_accessions.tsv	gca_accession	string	not applicable	blank: not deposited as a MAG (non-representative bin, or 48Dr2__self_SemiBin_25 at 10% contamination)	INSDC genome assembly accession of the MAG.
+metadata/metagenome/canonical/ena_genome_accessions.tsv	sequence_accessions	string	not applicable	blank: not deposited as a MAG (non-representative bin, or 48Dr2__self_SemiBin_25 at 10% contamination)	Contig or chromosome accession range of the MAG.
 metadata/metagenome/canonical/genome_manifest.tsv	mag	string	not applicable	never blank	Identifier of a representative in the actual refined dRep output.
 metadata/metagenome/canonical/genome_manifest.tsv	path	path	not applicable	never blank	Portable member path inside refined_mags.tar.gz.
 metadata/metagenome/canonical/genome_manifest.tsv	bytes	integer	bytes	never blank	Exact uncompressed FASTA size.
@@ -622,7 +632,10 @@ metadata/metagenome/canonical/library_metadata.tsv	replicate	integer	not applica
 metadata/metagenome/canonical/library_metadata.tsv	compartment	string	not applicable	never blank	Original compartment label; Rhizosphere denotes root-adjacent soil.
 metadata/metagenome/canonical/library_metadata.tsv	study_accession	string	not applicable	never blank	Author-confirmed ENA shotgun study PRJEB125153; not yet public on 2026-10-24.
 metadata/metagenome/canonical/library_metadata.tsv	secondary_study_accession	string	not applicable	never blank	Secondary ENA study accession ERP204894.
-metadata/metagenome/canonical/library_metadata.tsv	run_accession	string	not applicable	blank: unresolved	ENA run accession; crosswalk remains to be supplied.
+metadata/metagenome/canonical/library_metadata.tsv	run_accession	string	not applicable	never blank	ENA run accession(s); semicolon-separated for the three libraries sequenced in two batches.
+metadata/metagenome/canonical/library_metadata.tsv	biosample_accession	string	not applicable	never blank	ENA BioSample accession of the soil sample (checklist ERC000022).
+metadata/metagenome/canonical/library_metadata.tsv	experiment_accession	string	not applicable	never blank	ENA experiment accession(s), in the order of run_accession.
+metadata/metagenome/canonical/library_metadata.tsv	assembly_accession	string	not applicable	blank: library yielded no contigs (51Sr1, F5Dr1)	ENA analysis accession of the primary metagenome assembly.
 metadata/metagenome/canonical/refined_representatives.tsv	mag	string	not applicable	never blank	Identifier of a representative in the actual refined dRep output.
 metadata/metagenome/canonical/refined_representatives.tsv	sample	string	not applicable	never blank	Source library/sample code; retained verbatim.
 metadata/metagenome/canonical/refined_representatives.tsv	strategy	string	not applicable	never blank	Source binning strategy: single_sample or self_supervised.

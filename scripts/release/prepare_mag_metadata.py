@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepare audited MAG metadata; sequence and analysis release remains gated."""
+"""Prepare audited MAG metadata, ENA accessions and release status for the refined catalogue."""
 
 from __future__ import annotations
 
@@ -14,6 +14,7 @@ from pathlib import Path
 
 
 SOURCE = "evidence/mag-catalogue-20261024/source"
+ENA_SOURCE = SOURCE + "/ena_deposit"
 DEST = "metadata/metagenome/canonical"
 
 FIELDS = {
@@ -25,7 +26,19 @@ FIELDS = {
     "compartment": ("string", "not applicable", "Original compartment label; Rhizosphere denotes root-adjacent soil."),
     "study_accession": ("string", "not applicable", "Author-confirmed ENA shotgun study PRJEB125153; not yet public on 2026-10-24."),
     "secondary_study_accession": ("string", "not applicable", "Secondary ENA study accession ERP204894."),
-    "run_accession": ("string", "not applicable", "ENA run accession; crosswalk remains to be supplied."),
+    "run_accession": ("string", "not applicable", "ENA run accession(s); semicolon-separated for the three libraries sequenced in two batches."),
+    "biosample_accession": ("string", "not applicable", "ENA BioSample accession of the soil sample (checklist ERC000022)."),
+    "experiment_accession": ("string", "not applicable", "ENA experiment accession(s), in the order of run_accession."),
+    "assembly_accession": ("string", "not applicable", "ENA analysis accession of the primary metagenome assembly."),
+    "genome": ("string", "not applicable", "Refined bin identifier; representatives match mag in refined_representatives.tsv."),
+    "is_representative": ("integer", "not applicable", "1 for one of the 5,438 dRep species representatives; 0 otherwise."),
+    "mimag_tier": ("string", "not applicable", "MIMAG tier: high, medium or below-medium (contamination of exactly 10%)."),
+    "binned_sample_accession": ("string", "not applicable", "ENA BioSample of the binned metagenome (checklist ERC000050)."),
+    "binned_assembly_accession": ("string", "not applicable", "ENA analysis accession of the binned metagenome."),
+    "mag_sample_accession": ("string", "not applicable", "ENA BioSample of the MAG (checklist ERC000047), derived from the binned sample."),
+    "mag_assembly_accession": ("string", "not applicable", "ENA analysis accession of the MAG submission."),
+    "gca_accession": ("string", "not applicable", "INSDC genome assembly accession of the MAG."),
+    "sequence_accessions": ("string", "not applicable", "Contig or chromosome accession range of the MAG."),
     "mag": ("string", "not applicable", "Identifier of a representative in the actual refined dRep output."),
     "strategy": ("string", "not applicable", "Source binning strategy: single_sample or self_supervised."),
     "bin": ("string", "not applicable", "Parent bin label retained from the pickup catalogue membership table."),
@@ -127,6 +140,86 @@ def derive(membership, libraries, context, quality, legacy):
     return library_rows, representatives, summary
 
 
+MISSING = {
+    "assembly_accession": "blank: library yielded no contigs (51Sr1, F5Dr1)",
+    **{field: "blank: not deposited as a MAG (non-representative bin, or 48Dr2__self_SemiBin_25 at 10% contamination)"
+       for field in ("mag_sample_accession", "mag_assembly_accession", "gca_accession", "sequence_accessions")},
+}
+
+
+def mimag_tier(row):
+    """Bowers et al. (2017) tiers from CheckM2 estimates, rRNA genes and tRNA amino-acid coverage."""
+    completeness, contamination = float(row["completeness"]), float(row["contamination"])
+    rrna = all(row[key] == "1" for key in ("has_5S", "has_16S", "has_23S"))
+    if completeness > 90 and contamination < 5 and rrna and int(row["n_trna_aa"]) >= 18:
+        return "high"
+    if completeness >= 50 and contamination < 10:
+        return "medium"
+    return "below-medium"
+
+
+def attach_accessions(libraries, representatives, runs, assemblies, bins, emails):
+    """Fold ENA accessions into the library rows; return one accession row per deposited bin."""
+    by_sample = {}
+    for run in runs:
+        by_sample.setdefault(run["sample_id"], []).append(run)
+    if set(by_sample) != {r["sample"] for r in libraries}:
+        raise ValueError("ENA run table and library list differ")
+    assembled = index_rows(assemblies, "sample_id")
+    for row in libraries:
+        sample_runs = sorted(by_sample[row["sample"]], key=lambda r: r["ena_run"])
+        biosamples = {r["biosample_accession"] for r in sample_runs}
+        if len(biosamples) != 1 or not all(r["ena_run"] and r["ena_experiment"] for r in sample_runs):
+            raise ValueError(f"incomplete ENA read accessions: {row['sample']}")
+        row["biosample_accession"] = biosamples.pop()
+        row["experiment_accession"] = ";".join(r["ena_experiment"] for r in sample_runs)
+        row["run_accession"] = ";".join(r["ena_run"] for r in sample_runs)
+        assembly = assembled.get(row["sample"])
+        if assembly and assembly["biosample_accession"] != row["biosample_accession"]:
+            raise ValueError(f"assembly BioSample differs: {row['sample']}")
+        row["assembly_accession"] = assembly["ena_analysis"] if assembly else ""
+    if not set(assembled) <= {r["sample"] for r in libraries}:
+        raise ValueError("assembly for an unknown library")
+    gca = {}
+    for row in emails:
+        if row["study_id"] != "PRJEB125153" or not row["assembly_name"].endswith("_MAG"):
+            raise ValueError(f"unexpected accession notification: {row['assembly_name']}")
+        name = row["assembly_name"][:-len("_MAG")]
+        if name in gca:
+            raise ValueError(f"duplicate GCA notification: {name}")
+        sequences = row["contig_accessions"] or row["chromosome_accessions"]
+        gca[name] = (row["assembly_accession"], row["sample_id"], sequences)
+    reps = {r["mag"] for r in representatives}
+    genome_rows = []
+    for row in sorted(index_rows(bins, "bin").values(), key=lambda r: r["bin"]):
+        representative = row["is_representative"] == "1"
+        if representative != (row["bin"] in reps) or row["sample"] not in assembled:
+            raise ValueError(f"bin disagrees with the representative or assembly inventory: {row['bin']}")
+        if not (row["binned_sample_accession"] and row["ena_analysis_binned"]):
+            raise ValueError(f"binned metagenome lacks accessions: {row['bin']}")
+        tier = mimag_tier(row)
+        mag = {key: "" for key in ("mag_sample_accession", "mag_assembly_accession", "gca_accession", "sequence_accessions")}
+        if row["mag_sample_accession"]:
+            if not representative or row["bin"] not in gca or tier == "below-medium":
+                raise ValueError(f"MAG deposit outside the representative/accession inventory: {row['bin']}")
+            accession, sample, sequences = gca.pop(row["bin"])
+            listed = row["gca_mag"].split(".")[0]
+            if sample != row["mag_sample_accession"] or (listed and listed != accession):
+                raise ValueError(f"MAG accession sources disagree: {row['bin']}")
+            mag = {"mag_sample_accession": row["mag_sample_accession"], "mag_assembly_accession": row["ena_analysis_mag"],
+                   "gca_accession": accession, "sequence_accessions": sequences}
+            if not mag["mag_assembly_accession"]:
+                raise ValueError(f"MAG lacks an analysis accession: {row['bin']}")
+        elif representative and tier != "below-medium":
+            raise ValueError(f"representative missing its MAG deposit: {row['bin']}")
+        genome_rows.append({"genome": row["bin"], "sample": row["sample"], "is_representative": row["is_representative"],
+                            "mimag_tier": tier, "binned_sample_accession": row["binned_sample_accession"],
+                            "binned_assembly_accession": row["ena_analysis_binned"], **mag})
+    if gca:
+        raise ValueError(f"GCA notifications without a MAG deposit: {sorted(gca)[:3]}")
+    return genome_rows
+
+
 def write_table(path, rows):
     with path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]), delimiter="\t", lineterminator="\n")
@@ -163,7 +256,7 @@ def register(root):
             datatype, unit, description = FIELDS[field]
             dictionary.append({"path": str(path.relative_to(root)), "field_or_pattern": field,
                                "data_type": datatype, "unit": unit,
-                               "missing_convention": "blank: unresolved" if field == "run_accession" else "never blank",
+                               "missing_convention": MISSING.get(field, "never blank"),
                                "description": description})
     write_table(dictionary_path, dictionary)
     spec = importlib.util.spec_from_file_location("release_manifest", root / "scripts/manuscript/update_pre_release_manifest.py")
@@ -206,6 +299,20 @@ def register(root):
         bulk[relative] = {"path": relative, "role": "canonical-input", "bytes": str(receipt["bytes"]),
                           "sha256": receipt["sha256"], "distribution": "private-ibex-staging",
                           "required_for": "refined-mag-catalogue;refined-mag-analyses"}
+        analysis_path = root / DEST / "analysis_receipt.json"
+        if analysis_path.exists():
+            for artifact in json.loads(analysis_path.read_text())["artifacts"]:
+                relative = DEST + "/" + artifact["artifact"]
+                licence, gate = module.license_disposition(relative)
+                scope = ("Bakta/eggNOG feature counts and annotation provenance for the 5438 refined representatives"
+                         if "functional" in relative else
+                         "CoverM genome coverage of the 551 shotgun libraries against the 5438 refined representatives")
+                rows[relative] = {"path": relative, "category": "mag-analyses", "release_status": "canonical-candidate",
+                                  "record_scope": scope, "bytes": str(artifact["bytes"]), "sha256": artifact["sha256"],
+                                  "license_status": licence, "license_gate": gate}
+                bulk[relative] = {"path": relative, "role": "canonical-input", "bytes": str(artifact["bytes"]),
+                                  "sha256": artifact["sha256"], "distribution": "private-ibex-staging",
+                                  "required_for": "refined-mag-analyses"}
         write_table(bulk_path, list(bulk.values()))
     module.write_manifest(manifest, list(rows.values()))
 
@@ -221,6 +328,22 @@ def prepare(root):
     summary["taxonomy"] = {"tool": "GTDB-Tk", "version": "2.7.2", "database": "R232",
                            "representatives": len(representatives), "source_checksums_verified": True}
     summary["blocking_items"][1] = "Verify functional annotations against the chosen sequence content; R232 taxonomy matches refined representative IDs."
+    ena = root / ENA_SOURCE
+    genome_rows = attach_accessions(libraries, representatives,
+                                    *(read_table(ena / name) for name in ("wgs_runs.tsv", "wgs_assemblies.tsv",
+                                                                          "wgs_bins.tsv", "ena_mag_accession_emails.tsv")))
+    tiers = Counter(r["mimag_tier"] for r in genome_rows if r["is_representative"] == "1")
+    summary["accession_evidence"] = ("ENA deposit by Alejandra Lopez Velazquez (empty-quarter-proteome c4b5f1d) "
+                                     "and ENA accession notifications of 26-29 October 2026; private until 2026-11-25")
+    summary["ena_deposit"] = {
+        "study_accession": "PRJEB125153", "scheduled_release": "2026-11-25",
+        "biosamples": len({r["biosample_accession"] for r in libraries}),
+        "runs": sum(len(r["run_accession"].split(";")) for r in libraries),
+        "primary_assemblies": sum(bool(r["assembly_accession"]) for r in libraries),
+        "binned_metagenomes": len(genome_rows),
+        "mags": sum(bool(r["gca_accession"]) for r in genome_rows),
+        "representative_mimag_tiers": dict(sorted(tiers.items())),
+    }
     receipt_path = dest / "packaging_receipt.json"
     if receipt_path.exists():
         receipt = json.loads(receipt_path.read_text())
@@ -241,6 +364,17 @@ def prepare(root):
         summary["blocking_items"].pop(0)
         summary["blocking_items"].append("Publish the verified private-staging archive with an immutable public/reviewer locator.")
         summary["sequence_archive"] = receipt
+    analysis_path = dest / "analysis_receipt.json"
+    if analysis_path.exists():
+        analysis = json.loads(analysis_path.read_text())
+        if (analysis["status"], analysis["genomes"], analysis["libraries"]) != ("COMPLETE", len(representatives), len(libraries)):
+            raise ValueError("invalid analysis rebuild receipt")
+        summary["annotation_release"] = summary["recruitment_release"] = True
+        summary["analysis_archives"] = analysis["artifacts"]
+        summary["release_status"] = "SEQUENCE_AND_ANALYSES_CANDIDATE"
+        summary["blocking_items"] = [
+            "Publish the verified private-staging archives with an immutable public/reviewer locator.",
+        ]
     summary["source_sha256"] = {
         str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
         for p in sorted(source.rglob("*")) if p.is_file()
@@ -248,6 +382,7 @@ def prepare(root):
     dest.mkdir(parents=True, exist_ok=True)
     write_table(dest / "library_metadata.tsv", libraries)
     write_table(dest / "refined_representatives.tsv", representatives)
+    write_table(dest / "ena_genome_accessions.tsv", genome_rows)
     if receipt_path.exists() and receipt["metadata_sha256"] != hashlib.sha256((dest / "refined_representatives.tsv").read_bytes()).hexdigest():
         raise ValueError("packaging receipt refers to different representative metadata")
     (dest / "release_status.json").write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n")

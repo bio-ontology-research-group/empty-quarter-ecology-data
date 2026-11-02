@@ -1,13 +1,19 @@
 # Canonical MAG catalogue: Tier 1 staging
 
-Status: **sequence archive verified; annotation and recruitment rebuild queued**.
-These tables describe the 5,438 actual refined dRep representatives and the 551
-read-bearing libraries. Public deposition and accession mapping remain open.
+Status: **sequence archive, functional annotations and recruitment verified;
+ENA deposit private until 25 November 2026**. These tables describe the 5,438
+actual refined dRep representatives and the 551 read-bearing libraries.
 
 - `library_metadata.tsv`: campaign, source site code, compartment and replicate
-  for each library. ENA study PRJEB125153 (secondary ERP204894) was confirmed by
-  Robert Hoehndorf on 24 October 2026 as not yet public. Blank run accessions mean
-  the run-to-library crosswalk has not been provided.
+  for each library, with its ENA BioSample, experiment, run and primary-assembly
+  accessions in study PRJEB125153 (secondary ERP204894). Three libraries carry two
+  runs; 51Sr1 and F5Dr1 yielded no contigs and have no assembly accession.
+- `ena_genome_accessions.tsv`: the 12,434 refined bins deposited as binned
+  metagenomes, their MIMAG tier, and for 5,437 representatives the MAG BioSample,
+  analysis, GCA and sequence accessions. `48Dr2__self_SemiBin_25` (contamination
+  exactly 10%) is deposited as a binned metagenome only. Sources and the GCA
+  cross-check are described in
+  `evidence/mag-catalogue-20261024/source/ena_deposit/README.md`.
 - `refined_representatives.tsv`: representative-to-library/bin provenance and
   CheckM2 estimates and GTDB R232 lineages for the **actual refined dRep representatives**. The FASTA
   basename refers to `05_refine/_drep/out/dereplicated_genomes/` on IBEX.
@@ -16,10 +22,13 @@ read-bearing libraries. Public deposition and accession mapping remain open.
   Taxonomy comes from the checksummed native GTDB-Tk v2.7.2 / R232 summaries;
   both their identifier sets and the upstream file checksums are checked.
 - `release_status.json`: source checksums, reconciled counts and open gates.
-  `sequence_release` denotes a verified staging candidate; `public_release`,
-  `annotation_release` and `recruitment_release` remain false.
+  `sequence_release`, `annotation_release` and `recruitment_release` denote
+  verified staging candidates; `public_release` remains false.
 - `genome_manifest.tsv`: per-FASTA size, SHA-256, contig count and base count.
 - `packaging_receipt.json`: verified archive checksum, size and integrity checks.
+- `analysis_receipt.json`: completion receipt of the annotation and recruitment
+  rebuild, with the size and SHA-256 of `refined_functional_tables.tar.gz` and
+  `refined_coverm_profiles.tar.gz`.
 
 The private archive is on IBEX at
 `/ibex/project/c2014/rob/data-paper-mag-tier1-20261024/release/refined_mags.tar.gz`.
@@ -30,12 +39,14 @@ Authorized IBEX users can retrieve this file with `scp`; verify its checksum
 against the receipt before use. No public archive locator has been assigned.
 `BULK_ARTIFACTS.tsv` records this private staging location explicitly.
 
-Fresh Bakta/eggNOG annotations and CoverM recruitment use these exact refined
-sequences. Current jobs and dependencies are recorded in
-`evidence/mag-catalogue-20261024/analysis_run.json`. Shared Bakta 6.0 database
-access is restored and the annotation pilot has been released. Completion requires
-validated outputs for all 5,438 genomes and all 551 libraries; parent-bin
-annotations and coverage are excluded from this candidate.
+The two analysis archives sit next to the sequence archive in the same IBEX
+`release/` directory and are recorded in `BULK_ARTIFACTS.tsv`. Bakta v1.12.0
+(database v6.0 full) and eggNOG-mapper v2.1.13 (eggNOG v5.0.2) annotated the exact
+refined sequences; Bowtie2 v2.5.1, SAMtools v1.16.1 and CoverM v0.6.1 mapped all
+551 libraries against a reference containing every refined contig. Jobs, resources
+and the completion receipt are recorded in
+`evidence/mag-catalogue-20261024/analysis_run.json`; all jobs completed on
+30 October 2026. Parent-bin annotations and coverage are excluded.
 
 Rebuild from the checked-in evidence snapshot with:
 

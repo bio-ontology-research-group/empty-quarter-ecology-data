@@ -4,20 +4,123 @@
   "work": "/ibex/project/c2014/rob/data-paper-mag-tier1-20261024",
   "account": "pi-hohndor",
   "partition": "batch",
-  "status": "SUBMITTED_NOT_COMPLETE",
+  "status": "COMPLETE",
   "bakta_database": "/ibex/reference/KSL/bakta/6.0/db",
   "bakta_access": "restored; version.json and core database files readable in fresh IBEX session; pilot released",
   "bakta_database_version": "6.0 full, 2025-02-24",
   "jobs": [
-    {"id": "54457431", "mode": "package", "status": "COMPLETED"},
-    {"id": "54458936", "mode": "reference", "cpus": 24, "memory_gb": 320, "hours": 36},
-    {"id": "54460442", "mode": "map", "array": "1", "afterok": ["54458936"], "cpus": 12, "memory_gb": 64, "hours": 48},
-    {"id": "54460764", "mode": "map-packed", "array": "1-110%8", "libraries_per_task": 5, "afterok": ["54460442"], "cpus": 12, "memory_gb": 64, "hours": 72},
-    {"id": "54460450", "mode": "annotate", "array": "1", "held": false, "afterok": ["54457431"], "cpus": 8, "memory_gb": 48, "hours": 8},
-    {"id": "54460765", "mode": "annotate-packed", "array": "1-272%8", "genomes_per_task": 20, "afterok": ["54460450"], "cpus": 8, "memory_gb": 48, "hours": 48},
-    {"id": "54460771", "mode": "finish", "afterok": ["54460764", "54460765"], "cpus": 8, "memory_gb": 16, "hours": 24}
+    {
+      "id": "54457431",
+      "mode": "package",
+      "status": "COMPLETED"
+    },
+    {
+      "id": "54458936",
+      "mode": "reference",
+      "cpus": 24,
+      "memory_gb": 320,
+      "hours": 36,
+      "status": "COMPLETED"
+    },
+    {
+      "id": "54460442",
+      "mode": "map",
+      "array": "1",
+      "afterok": [
+        "54458936"
+      ],
+      "cpus": 12,
+      "memory_gb": 64,
+      "hours": 48,
+      "status": "COMPLETED"
+    },
+    {
+      "id": "54460764",
+      "mode": "map-packed",
+      "array": "1-110%8",
+      "libraries_per_task": 5,
+      "afterok": [
+        "54460442"
+      ],
+      "cpus": 12,
+      "memory_gb": 64,
+      "hours": 72,
+      "status": "COMPLETED"
+    },
+    {
+      "id": "54460450",
+      "mode": "annotate",
+      "array": "1",
+      "held": false,
+      "afterok": [
+        "54457431"
+      ],
+      "cpus": 8,
+      "memory_gb": 48,
+      "hours": 8,
+      "status": "COMPLETED"
+    },
+    {
+      "id": "54460765",
+      "mode": "annotate-packed",
+      "array": "1-272%8",
+      "genomes_per_task": 20,
+      "afterok": [
+        "54460450"
+      ],
+      "cpus": 8,
+      "memory_gb": 48,
+      "hours": 48,
+      "status": "COMPLETED"
+    },
+    {
+      "id": "54460771",
+      "mode": "finish",
+      "afterok": [
+        "54460764",
+        "54460765"
+      ],
+      "cpus": 8,
+      "memory_gb": 16,
+      "hours": 24,
+      "status": "COMPLETED"
+    }
   ],
-  "superseded_cancelled_jobs": ["54459030", "54459053", "54460449"],
+  "superseded_cancelled_jobs": [
+    "54459030",
+    "54459053",
+    "54460449"
+  ],
   "completion_receipt": "release/analysis_receipt.json",
-  "completion_required": {"genomes": 5438, "libraries": 551}
+  "completion_required": {
+    "genomes": 5438,
+    "libraries": 551
+  },
+  "completed_date": "2026-10-30",
+  "array_throttle": "removed on 2026-10-29 at Robert Hoehndorf's request",
+  "tool_versions": {
+    "bakta": "1.12.0",
+    "bakta_database": "6.0 full, 2025-02-24",
+    "eggnog_mapper": "2.1.13",
+    "eggnog_database": "5.0.2",
+    "diamond": "2.0.15",
+    "bowtie2": "2.5.1",
+    "samtools": "1.16.1",
+    "coverm": "0.6.1"
+  },
+  "completion_summary": {
+    "genomes": 5438,
+    "libraries": 551,
+    "proteins_predicted": 19186792,
+    "proteins_eggnog_annotated": 16119759,
+    "proteins_with_ko": 8516493,
+    "distinct_ko": 11386,
+    "distinct_pfam": 9703,
+    "distinct_cazy": 141,
+    "median_overall_alignment_percent": 45.9,
+    "min_overall_alignment_percent": 3.93,
+    "max_overall_alignment_percent": 83.84,
+    "libraries_at_200M_pair_cap": 7,
+    "failed_tasks": 0
+  }
 }

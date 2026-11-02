@@ -259,6 +259,25 @@ upstream checksum checks and contained exactly the same 5,438 genome
 identifiers. Library metadata reconciled all 551 read-bearing libraries
 between the paired-read inventory and the sample-context table.
 
+The gene annotations were checked against the same sequences. Before
+annotating a genome, we verified its FASTA against the catalogue checksum.
+We accepted an annotation only when every eggNOG query was a protein that
+Bakta had predicted for that genome and each query occurred once. All
+5,438 genomes passed, and the release step reread every annotation file
+against its recorded checksum. Bakta predicted 19,186,792 proteins, a
+median of 3,325 per genome. eggNOG-mapper annotated 84.0\% of these
+proteins and assigned a KO to 44.4\%, and every genome has at least one
+annotated protein. Across the catalogue, the annotations contain 11,386
+distinct KOs, 9,703 Pfam domains and 141 CAZy families.
+
+Each of the 551 coverage tables lists exactly the 5,438 catalogue genomes.
+All values are finite and non-negative, covered fractions are at most one,
+read counts are integers, and the reported length of each genome equals its
+total sequence length in the catalogue. The median library aligned 45.9\%
+of its reads to the catalogue (range 3.9--83.8\%). Seven libraries reached
+the limit of 200 million read pairs. Library F5Dr1, which yielded no
+assembly, contributed 616 read pairs.
+
 \subsection{ShEx schema validation}
 
 The archived ShEx run used the shapes described in

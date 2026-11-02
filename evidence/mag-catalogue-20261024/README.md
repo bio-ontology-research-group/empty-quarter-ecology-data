@@ -187,3 +187,22 @@ https://ena-docs.readthedocs.io/en/latest/submit/assembly/metagenome/mag.html
 
 No ENA submission, public release or modification of upstream sequences has been
 performed by this task. The new sequence archive is a private staging artifact.
+
+## Completion, 2 November 2026
+
+The annotation and recruitment rebuild completed on 30 October 2026 (receipt
+`metadata/metagenome/canonical/analysis_receipt.json`; summary statistics and
+tool versions in `analysis_run.json`). All 5,438 annotation receipts and all 551
+coverage tables passed the per-genome and per-library checks in
+`scripts/release/rebuild_refined_mag_analyses.py`.
+
+Alejandra Lopez Velazquez deposited the reads, 549 primary assemblies, 12,434
+binned metagenomes and 5,437 MAGs under PRJEB125153 (26 to 29 October 2026);
+release is scheduled for 25 November 2026. The deposit tables and ENA accession
+notifications are snapshotted in `source/ena_deposit/` and folded into
+`metadata/metagenome/canonical/` by `scripts/release/prepare_mag_metadata.py`.
+Her deposit metadata declares MEGAHIT 1.2.9, SemiBin2 2.2.1, DAS Tool 1.1.7 and
+CheckM2 1.1.0 for every bin. Robert Hoehndorf decided on 2 November 2026 that the
+functional annotation tables are hosted by the project rather than deposited at
+ENA. The remaining gate is an immutable public or reviewer locator for the three
+project-hosted archives; the sections above record the 24 October state.

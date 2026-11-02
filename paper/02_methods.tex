@@ -191,13 +191,21 @@ genome assemblies and gene annotations from the same sampling campaigns.
 The read-bearing library inventory contains 551 libraries across 61 site
 codes: 210 from Trip~1, 37 from Trip~2, 128 from Trip~3, 85 from Trip~4
 and 91 from Trip~5. Library metadata records the campaign, source site,
-soil compartment and replicate. The shotgun study is registered at ENA
+soil compartment and replicate. The libraries were sequenced as 554
+paired-end runs, 221 on an Illumina NovaSeq 6000 and 333 on an Illumina
+NovaSeq X; three libraries were sequenced on both instruments. Index
+sequences identify the library preparation kit for 484 runs: 81 used the
+NEBNext Ultra II DNA Library Prep Kit and 403 the QIAseq FX DNA Library
+UDI Kit. The shotgun study is registered at ENA
 under \texttt{PRJEB125153} (secondary accession \texttt{ERP204894}).
 
-Genome reconstruction combined MEGAHIT assembly \cite{megahit} with single-sample and
-self-supervised SemiBin2 binning \cite{semibin2}, followed by DAS Tool
-refinement \cite{dastool}. CheckM2 \cite{checkm2} estimated completeness and contamination for the
-refined bins. We dereplicated the bins with dRep \cite{drep}, using
+Genome reconstruction combined MEGAHIT v1.2.9 assembly \cite{megahit} with single-sample and
+self-supervised SemiBin2 v2.2.1 binning \cite{semibin2}, followed by DAS Tool
+v1.1.7 refinement \cite{dastool}. MEGAHIT produced contigs of at least
+500~bp for 549 of the 551 libraries; libraries 51Sr1 and F5Dr1 yielded no
+contigs. CheckM2 v1.1.0 \cite{checkm2} estimated completeness and contamination for the
+refined bins, and 12,434 refined bins reached at least 50\% completeness
+with at most 10\% contamination. We dereplicated the bins with dRep \cite{drep}, using
 CheckM2 quality estimates, a minimum completeness of 50\%, a maximum
 contamination of 10\%, and a minimum genome length of 50,000~bp.
 The recorded clustering parameters specify 90\% primary ANI and
@@ -212,21 +220,40 @@ Taxonomic assignments for the refined representatives used GTDB-Tk
 v2.7.2 with GTDB release R232 \cite{gtdb}. The two native classification
 tables contain 4,847 bacterial and 591 archaeal representatives, and
 their genome identifiers match the representative catalogue exactly.
+We detected rRNA genes with barrnap v0.9 and tRNA genes with tRNAscan-SE
+v2.0.12 \cite{trnascan}, and assigned each representative a quality tier
+following the MIMAG standard \cite{mimag}. Of the 5,438 representatives,
+126 meet the high-quality criteria, which require more than 90\%
+completeness, less than 5\% contamination, the 23S, 16S and 5S rRNA genes
+and tRNAs for at least 18 of the 20 amino acids. Another 5,311 meet the
+medium-quality criteria of at least 50\% completeness and less than 10\%
+contamination. The remaining representative,
+\texttt{48Dr2\_\_self\_SemiBin\_25}, has 10\% contamination.
 
-% RELEASE GATE: evidence/mag-catalogue-20261024/README.md records the
-% sequence-identity conflict. The pickup catalogue replaces 1,010 refined
-% _sub representatives with parent bins. Robert selected the actual refined
-% dRep sequences. Packaging verifies each FASTA against refined-bin CheckM2.
-% R232 taxonomy is linked to the refined representatives by exact identifiers.
-% Run evidence confirms MEGAHIT 1.2.9 and SemiBin2 2.2.1 for 10Dr2,
-% DAS Tool 1.1.7 for 11PRr3, and CheckM2 1.1.0 for the refined-bin run.
-% Complete the run-wide version/parameter audit, including self-supervised
-% binning and dRep, and supply shotgun library-preparation provenance.
+We annotated the genes of each representative with Bakta v1.12.0
+\cite{bakta} and its full database v6.0. Bakta predicts coding sequences,
+rRNA and tRNA genes and translates the coding sequences into proteins.
+eggNOG-mapper v2.1.13 \cite{eggnog} then searched these proteins against
+the eggNOG v5.0.2 database with DIAMOND v2.0.15 and assigned KEGG
+orthologs (KOs), CAZy families, Pfam domains and preferred gene names.
+For each genome, we counted the predicted proteins, the proteins with an
+eggNOG assignment and the proteins with at least one KO. We also counted,
+for each genome, the proteins that carry each KO, CAZy family, Pfam domain
+and preferred name. These feature tables list only the genome--feature
+pairs that occur in the annotations.
 
-% RELEASE GATE: fresh Bakta/eggNOG annotations and recruitment of all 551
-% libraries against the actual refined sequences are being rebuilt separately.
-% Add their completed methods/results only after per-genome and per-library
-% validation. The parent-bin reference and its coverage remain audit evidence.
+To estimate the coverage of each representative in each library, we
+mapped the reads of all 551 libraries to a single reference that contains
+every contig of the 5,438 representatives. We prefixed each contig
+identifier with its genome identifier, so that contigs with the same
+assembler-assigned name in different genomes remain distinct. Bowtie2
+v2.5.1 \cite{bowtie2} aligned the first 200 million read pairs of each
+library in \texttt{--very-sensitive} mode and retained aligned reads only;
+SAMtools v1.16.1 \cite{samtools} sorted the alignments. CoverM v0.6.1
+\cite{coverm} in genome mode counted reads aligned with at least 95\%
+identity and reported, for every genome, the mean depth, the covered
+fraction, the trimmed mean depth, the number of mapped reads and the
+genome length.
 
 The ecology comparison uses a separate 991-genome catalogue and
 150 library profiles from Trips~1--3 (58, 15 and 77 libraries,

@@ -1,0 +1,17 @@
+{
+  "status": "COMPLETE",
+  "genomes": 5438,
+  "libraries": 551,
+  "artifacts": [
+    {
+      "artifact": "refined_functional_tables.tar.gz",
+      "bytes": 106360827,
+      "sha256": "6eaeefcd31a44101fbb8629c2d7232e01160fe5257fd606f9cb09ac2afee1518"
+    },
+    {
+      "artifact": "refined_coverm_profiles.tar.gz",
+      "bytes": 82900332,
+      "sha256": "fae886478ffa7add340f4892332471951849d959ee1c48ff9738e3a809fe30a5"
+    }
+  ]
+}

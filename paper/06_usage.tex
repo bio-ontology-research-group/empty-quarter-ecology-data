@@ -85,16 +85,20 @@ suited to those constructs.
 \section{Data availability}\label{data_availability}
 
 The project uses ENA umbrella study \texttt{PRJEB104209}; its submitted
-amplicon run records are associated with \texttt{PRJEB106069}. On
-5~October 2026, the anonymous ENA read-run file report for
-\texttt{PRJEB106069} returned no public run/file rows. Release of the
-raw reads or a complete anonymous reviewer download remains required.
-Shotgun reads are registered under ENA study \texttt{PRJEB125153}
-(secondary accession \texttt{ERP204894}); this study was awaiting public
-release on 24~October 2026. Individual shotgun run and sample accessions
-and MAG assembly accessions remain to be added to the data inventory.
-The checksum-verified MAG sequence archive is staged for deposition;
-its public archive locator remains to be assigned.
+amplicon run records are associated with \texttt{PRJEB106069}.
+ENA study \texttt{PRJEB125153} (secondary accession \texttt{ERP204894})
+holds the shotgun data: 554 read runs from 551 soil BioSamples, 549
+primary metagenome assemblies, the 12,434 refined bins as binned
+metagenomes, and 5,437 of the 5,438 representatives as MAGs with GCA
+accessions. ENA admits a genome as a MAG only below 10\% contamination,
+so \texttt{48Dr2\_\_self\_SemiBin\_25} is deposited as a binned
+metagenome. Both studies are scheduled for public release on
+25~November 2026. The data repository lists the BioSample, run,
+assembly and genome accessions of every shotgun library, bin and MAG.
+The complete refined MAG sequence archive, its functional annotation
+tables and the coverage profiles are distributed as bulk payloads of the
+data repository, listed with their sizes and checksums in its bulk-data
+manifest.
 The source and derived-data package is maintained at
 \url{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data}.
 Its manifests distinguish included files, separately retrieved bulk
