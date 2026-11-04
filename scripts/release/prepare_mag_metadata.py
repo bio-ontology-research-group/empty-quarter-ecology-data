@@ -271,6 +271,7 @@ def register(root):
               root / "scripts/release/package_refined_mags.py", root / "tests/test_package_refined_mags.py",
               root / "scripts/release/rebuild_refined_mag_analyses.py",
               root / "scripts/release/rebuild_refined_mag_analyses.sbatch",
+              root / "scripts/release/stage_mag_zenodo.py", root / "tests/test_stage_mag_zenodo.py",
               root / "tests/test_rebuild_refined_mag_analyses.py",
               root / "scripts/manuscript/update_pre_release_manifest.py"]
     for path in paths:

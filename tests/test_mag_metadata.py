@@ -91,6 +91,7 @@ def test_scoped_registration_is_idempotent_and_describes_every_field(tmp_path):
                  "scripts/release/package_refined_mags.py", "tests/test_package_refined_mags.py",
                  "scripts/release/rebuild_refined_mag_analyses.py", "scripts/release/rebuild_refined_mag_analyses.sbatch",
                  "tests/test_rebuild_refined_mag_analyses.py",
+                 "scripts/release/stage_mag_zenodo.py", "tests/test_stage_mag_zenodo.py",
                  "scripts/manuscript/update_pre_release_manifest.py"):
         target = tmp_path / name
         target.parent.mkdir(parents=True, exist_ok=True)

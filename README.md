@@ -250,6 +250,18 @@ PH_PYTHON=/path/to/that/environment/bin/python \
 The driver writes its regenerated manuscript macros under the pH analysis
 directory when the companion manuscript source tree is not present.
 
+## Refined MAG catalogue v1.0.0
+
+The shotgun metagenomes of 551 libraries yield 5,438 refined species-representative
+MAGs with CheckM2 quality, MIMAG tiers, GTDB R232 taxonomy, Bakta/eggNOG-mapper
+gene annotations and CoverM coverage in every library. Reads, primary assemblies,
+12,434 binned metagenomes and 5,437 MAGs are deposited at ENA under PRJEB125153
+(public from 25 November 2026). The metadata and accession tables are in
+`metadata/metagenome/canonical/` (see its README); the sequence, annotation and
+coverage archives form the Zenodo deposit staged by
+`scripts/release/stage_mag_zenodo.py` and linked from https://rubalkhali.science/.
+Provenance and validation records are in `evidence/mag-catalogue-20261024/`.
+
 ## Companion ecology-analysis inputs
 
 The statistical inputs needed for the ecology paper's genome-resolved

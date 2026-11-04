@@ -206,3 +206,12 @@ CheckM2 1.1.0 for every bin. Robert Hoehndorf decided on 2 November 2026 that th
 functional annotation tables are hosted by the project rather than deposited at
 ENA. The remaining gate is an immutable public or reviewer locator for the three
 project-hosted archives; the sections above record the 24 October state.
+
+## Library kits and public archive, 4 November 2026
+
+Robert Hoehndorf confirmed on 4 November 2026 that Alejandra's kit assignment,
+which Marwa Abdelhakim confirmed, applies to all runs: the 70 runs without an
+index code used the QIAseq FX DNA Library UDI Kit (473 QIAseq FX runs and 81
+NEBNext Ultra II runs in total). He also decided that the three project-hosted
+archives are published as a Zenodo deposit linked from https://rubalkhali.science/;
+he uploads the staged set (`metadata/metagenome/canonical/README.md`).

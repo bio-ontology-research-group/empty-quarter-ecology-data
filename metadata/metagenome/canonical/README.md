@@ -36,8 +36,20 @@ It contains 2,485,945 contigs and 20,490,828,267 bases; its compressed size is
 7,215,750,013 bytes and SHA-256 is
 `e7f46a9faee01ad7a723fe2fc4ad2310d19e0d2f1dbc832a787d8749a1303d6c`.
 Authorized IBEX users can retrieve this file with `scp`; verify its checksum
-against the receipt before use. No public archive locator has been assigned.
-`BULK_ARTIFACTS.tsv` records this private staging location explicitly.
+against the receipt before use. `BULK_ARTIFACTS.tsv` records this private staging
+location explicitly.
+
+The public copy is the Zenodo deposit "Metagenome-assembled genome catalogue of
+Rub' al-Khali (Empty Quarter) desert soils", v1.0.0, linked from
+https://rubalkhali.science/. `scripts/release/stage_mag_zenodo.py --out DIR` writes
+its metadata tables, scoped data dictionary, README, Zenodo record metadata and
+upload helper; `DIR/finish_on_ibex.sh` then hard-links the three archives from the
+IBEX `release/` directory, checks them against the receipts and writes
+`SHA256SUMS`. The staged upload set is
+`/ibex/project/c2014/rob/data-paper-mag-tier1-20261024/zenodo-v1.0.0/`;
+`upload_to_zenodo.sh` creates an unpublished draft with a reserved DOI and
+uploads every file in `SHA256SUMS`. Record the DOI in `BULK_ARTIFACTS.tsv`, the
+manuscript bibliography (`rubalkhali_mags_v1`) and the portal after publication.
 
 The two analysis archives sit next to the sequence archive in the same IBEX
 `release/` directory and are recorded in `BULK_ARTIFACTS.tsv`. Bakta v1.12.0
