@@ -24,7 +24,7 @@ To capture temporal variability, we conducted campaigns across
 different seasons: late winter 2023 (Trip 1), summer
 2023 (Trip 2, truncated to 8 sites due to extreme temperatures), winter 2024 (Trip 3), summer 2024 (Trip 4), and autumn 2025 (Trip 5). Table~\ref{tab:env_summary} summarizes sites visited during each campaign.
 
-At each site, we sampled three soil compartments: bulk surface soil, bulk subsurface soil (5--10 cm deep), and subsurface soil collected near roots (5--10 cm deep, hereafter ``root-adjacent''). We collected three field replicates per compartment using sterile tubes and sterile plastic spoons, or three tubes taped together. We stored samples at $-20$\degree C in the field
+At each site, we sampled three soil compartments: bulk surface soil, bulk subsurface soil (nominal 5--10 cm depth), and subsurface soil collected near roots (nominal 5--10 cm depth, hereafter ``root-adjacent''). We collected three field replicates per compartment using sterile tubes and sterile plastic spoons, or three tubes taped together. Exact tube diameters, surface sampling depth, individual bulk subsurface depths and distance from roots were unrecorded. We stored samples at $-20$\degree C in the field
 in an Engel MR040F portable freezer, and transferred samples to an $-80$\degree C freezer in the laboratory at the end of each campaign. Table~\ref{tab:sample_coverage} summarizes soil samples collected by campaign and compartment.
 
 \begin{table}[h]
@@ -38,7 +38,7 @@ and compartment. Control samples are excluded.}
 \end{table}
 
 \subsubsection{Field observations}
-We recorded air temperature, atmospheric pressure, and relative humidity during site visits, although coverage varied between campaigns (Table~\ref{tab:env_summary}. Temperature is reported in degrees Celsius, pressure in pascals, and relative humidity in percent. Additionally, field researchers classified each site by an observed environmental feature (\textit{e.g.} sand dune, saline pan, gravel), and we mapped these features to ENVO \cite{envo}.
+We recorded air temperature, atmospheric pressure, and relative humidity during site visits, although coverage varied between campaigns (Table~\ref{tab:env_summary}. Temperature is reported in degrees Celsius, pressure in pascals, and relative humidity in percent. The field logs record pressure in hectopascals (millibars); we multiplied these values by 100 and assert them in pascals (\texttt{obo:UO\_0000110}) in the graph. Trip~2 recorded only temperature, with eight measurements spanning 34.5--41.9\degree C. Field observations entered the dataset only when their site identity and measurement range could be established. Additionally, field researchers classified each site by an observed environmental feature (\textit{e.g.} sand dune, saline pan, gravel), and we mapped these features to ENVO \cite{envo}.
 
 
 \begin{table}[h]
@@ -51,13 +51,14 @@ We recorded air temperature, atmospheric pressure, and relative humidity during 
     \toprule
     Campaign & Season & Sites visited & Field measurements \\
     \midrule
-    Trip 1 & Late Winter 2023 & 1--60; 4 named & Temp, Press, Hum. \\
+    Trip 1 & Late Winter 2023 & 1--60; 4 named; 15 auxiliary$^\ast$ & Temp, Press, Hum. \\
     Trip 2 & Summer 2023 & 1--8 & Temp. \\
     Trip 3 & Winter 2024 & 1--60; 5 named & Temp, Press, Hum. \\
     Trip 4 & Summer 2024 & 1--60 & Temp, Hum. \\
     Trip 5 & Autumn 2025 & 1--60; 2 named & Temp, Press, Hum. \\
     \bottomrule
-  \end{tabular}
+  \end{tabular}\par
+  \smallskip{\footnotesize $^\ast$The 15 observations dated March 2023 represent Trip~1 auxiliary/revisit observations.\par}
 \end{table}
 
 %%%%%%%%%%%%%%%
@@ -101,7 +102,7 @@ for 30~s and 72\degree C for 30~s; final extension at 72\degree C for
 We purified indexed libraries using Agencourt AMPure XP beads (0.8:1 bead to sample volume), quantified with the Qubit dsDNA High Sensitivity assay, and checked for fragment size on an Agilent 4200 TapeStation (D5000 ScreenTape). We pooled libraries in equimolar amounts, calculating molarity from concentration and fragment size. Pools were sequenced on an Ollumina NovaSeq~6000 with an SP flow cell and a 500-cycle kit ($2 \times 250$~bp paired-end reads). Library preparation was performed in the PI's laboratory and sequencing at the KAUST Bioscience Core Lab.
 
 \subsubsection{Control samples}
-We followed recommended guidelines for reporting contamination in low biomass samples by having controls for differnent study stages \cite{fierer2025controls} (Table~\ref{tab:controls}). To control for contamination introduced during DNA extraction, we included extraction blanks with nuclease-free water as input instead of soil, and processed them the same way as soil samples. We included an extraction blank for each extraction kit. Coverage varied by extraction batch, and we sequenced nine extraction blanks linked to Trip~4 samples, and 17 extraction blanks linked to Trip~5 samples.
+We followed recommended guidelines for reporting contamination in low biomass samples by having controls for differnent study stages \cite{fierer2025controls} (Table~\ref{tab:controls}). To control for contamination introduced during DNA extraction, we included extraction blanks with nuclease-free water as input instead of soil, and processed them the same way as soil samples. Trips~1--3 used one extraction blank per extraction kit, and Trips~1--2 included shared extraction days; Trips~4--5 used one blank per trip-specific extraction-day batch. For Trip~4, we sequenced six extraction blanks (SEB, EB1--EB5); the blanks of three of the nine extraction batches were not sequenced. For Trip~5, we sequenced 18 extraction blanks (EB1--EB18), 17 of which have confirmed batch links to 217 biological profiles.
 
 We included two types of PCR negative controls. No-template controls (NTCs) contained PCR reagents and nuclease-free water instead of DNA, and reagent-only controls per amplification plate that contained reagents but neither water nor DNA. Reagent-only controls had low or undetectable DNA concentrations and TapeStation profiles of only adapter dimers, so they were not sequenced. We sequenced six NTCs that were prepared with Trip~5 samples.
 
@@ -131,7 +132,7 @@ Trip & Extraction blanks & PCR negative controls & Positive standards \\
 \subsubsection{PMA-treated samples}
 DNA extracted from soil includes DNA from intact cells as well as extracellular DNA and DNA from dead or damaged cells \cite{carini2016relic}. Propidium monoazide (PMA) is a dye that enters only cells with damaged membranes and binds to free DNA, and prevents amplification by PCR when exposed to light. We compare PMA-treated and untreated aliquots of the same soil samples to estimate how much of the 16S rRNA gene signal comes from cells with intact membranes. We applied this treatment to a subset of Trip~5 samples.
 
-The PMA dataset includes three soil samples collected from campsites during Trip~5. We collected root-adjacent soil from campsite C1, and root-adjacent and surface soil from campsite C2. From each collection tube, we took three samples and suspended each in phosphate-buffered saline (PBS, pH~7.4) at a soil-to-buffer ratio of 1:10 (w/v). The three samples from each collection tube are technical replicates of the treament and not independent field samples. We split each sample into a treated aliquot that included 50~\textmu M PMAxx, and an untreated aliquot.
+The PMA dataset includes three soil samples collected from campsites during Trip~5. We collected root-adjacent soil from campsite C1, and root-adjacent and surface soil from campsite C2. From each collection tube, we took three samples and suspended each in phosphate-buffered saline (PBS, pH~7.4) at a soil-to-buffer ratio of 1:10 (w/v). The three samples from each collection tube are technical replicates of the treament and not independent field samples. We split each sample into a treated aliquot that included 50~\textmu M PMAxx, and an untreated aliquot, giving nine treated/untreated pairs.
 
 We subjected both aliquots to the same procedure. We kept the aliquots in the dark for 10~min to allow the dye to enter the cells, and then exposed them to 450 nm light for 35~min at a distance of 15--20~cm from the light source, and turned them every 15~min to ensure even exposure. We stored aliquots at $-20$\degree C, and extracted DNA from 860~\textmu L of each aliquots with the PowerSoil Pro kit.
 
@@ -139,13 +140,13 @@ We subjected both aliquots to the same procedure. We kept the aliquots in the da
 \subsubsection{Data processing}
 We processed raw amplicon reads with nf-core/ampliseq (v2.14.0)
 \cite{nfcore, ampliseq}, using DADA2 \cite{dada2} for error
-correction and denoising, and SILVA (v138.2) \cite{silva} for taxonomic assignment. This resulted in 351,472 amplicon sequence variants (ASVs), and included 1,247 biological samples and 24 control samples. The container digest and full denoising parameters are included in the repository.
+correction and denoising, and SILVA (v138.2) \cite{silva} for taxonomic assignment. This resulted in 351,472 amplicon sequence variants (ASVs), and included 1,247 biological samples and 24 control samples. Quality filtering excludes the 24 control profiles and ten biological profiles with fewer than 1,000 reads, including one \texttt{T1Dr1} run with 934 reads. This leaves 1,237 profiles, including 1,227 profiles from sites~1--60, for the companion ecology analysis; the complete table is distributed unfiltered. The container digest and full denoising parameters are included in the repository.
 
-We predicted gene family and pathway abundances from the 16S rRNA data with PICRUSt2 v2.4.1 \cite{picrust2}. KEGG Orthology (KO) prediction used the phylogenetic independent contrasts method, edge exponent 0.5, and random seed 100. Enzyme Comission (EC) and KO abundances required 100 reads, and pathway abundances were inferred from the EC predictions.
+We predicted gene family and pathway abundances from the 16S rRNA data with PICRUSt2 v2.4.1 \cite{picrust2}. Two executions used the Trips~1--4 ampliseq output and the Trip~5 output (330,830 ASVs). KEGG Orthology (KO) prediction used the phylogenetic independent contrasts method, edge exponent 0.5, and random seed 100. Enzyme Comission (EC) and KO abundances required 100 reads, and pathway abundances were inferred from the EC predictions.
 
 \subsection{Soil Measurements}
 \subsubsection{Soil composition (XRF)}\label{methods:xrf}
-We measured soil elemental composition by X-ray fluorescence (XRF) using an Olympus Vanta VMR-XXX-G3-E handheld analyser (serial no.\ 841307), both in the field during Trip~5 and in the laborator on archived soil samples from all campaigns. For field measurements, we used the instrument in Geochem (3-Beam) mode with NORMAL settings, and retained 71 complete measurement sessions from 58 sites, including repeated sessions at nine sites. In the laboratory, we analyzed 725 samples with the instrument in Fast Mode with the Fast Screening-He8mm setting.  Elemental concentrations and their oxide equivalents are recorded as separate variables and are not asssigned units.
+We measured soil elemental composition by X-ray fluorescence (XRF) using an Olympus Vanta VMR-XXX-G3-E handheld analyser (serial no.\ 841307), both in the field during Trip~5 and in the laborator on archived soil samples from all campaigns. The field log contains 106 entries across 59 sites. For field measurements, we used the instrument in Geochem (3-Beam) mode with NORMAL settings, and retained 71 complete measurement sessions from 58 sites, including repeated sessions at nine sites. In the laboratory, we analyzed 725 samples with the instrument in Fast Mode with the Fast Screening-He8mm setting.  Elemental concentrations and their oxide equivalents are recorded as separate variables and are not asssigned units.
 
 To assess agreement between field and laboratory measurements, we compared the median of repeated field sessions at each site with the corresponding Trip~5 laboratory measurements at the 58 sites measured using both methods. This comparison assesses agreement in rankings rather than absolute concentrations, and we report the correlations in Technical Validation.
 
@@ -154,7 +155,7 @@ We cross-referenced the 93 reported elements against ChEBI r247 (3 December 2025
 \subsubsection{Soil pH}\label{methods:ph}
 We measured the pH of archived soil samples from all five campaigns. We sieved dried soil to below 2~mm and mixed 1~g of soil with 2.5~mL of 0.01~M CaCl$_2$. We mixed each suspension for 30~min in a HulaMixer and let it stand for another 30~min at room temperature before measuring pH.
 
-We measured pH using an accumet AB315 meter with a Fisher Scientific electrode (cat. no.~13-620-112) which we calibrated at the start of each session, and we recorded the electrode slop and the reading of the pH~10 buffer for every session. We rinsed the electrode with Milli-Q water between measurements. We oretained 712 measurements with a reocrded electrode slop between 95\% and 102\% and a pH~10 buffer reading within 0.1 units of its nominal value (Table~\ref{tab:ph_coverage}).
+We measured pH using an accumet AB315 meter with a Fisher Scientific electrode (cat. no.~13-620-112) which we calibrated at the start of each session, and we recorded the electrode slop and the reading of the pH~10 buffer for every session. We rinsed the electrode with Milli-Q water between measurements. We oretained 712 measurements with a reocrded electrode slop between 95\% and 102\% and a pH~10 buffer reading within 0.1 units of its nominal value (Table~\ref{tab:ph_coverage}). All 156 admitted Trip~4 pH measurements used archived field replicate~2. Each admitted measurement is linked to its physical specimen and retains its original assay identifier. The ecology analysis uses the same measurement values.
 
 \begin{table}[h]
 \centering
@@ -177,7 +178,7 @@ Total & 191 & 221 & 300 & 712 \\
 \end{table}
 
 \subsection{Climate data}
-We retrieved historical climate data for each sampling site from the Open-Meteo archive API \cite{openmeteo} using geographic coordinates. We obtained both monthly and daily climate observations. The monthly dataset contains 12,936 values that cover temperature, total precipitation, rainfall, and mean relative humiditiy from January 2022 to January 2026. The daily dataset covers 1~January 2022 to 1~February 2026 and covers temperature, total precipitation, and rainfall.
+We retrieved historical climate data for each sampling site from the Open-Meteo archive API \cite{openmeteo} using geographic coordinates. We obtained both monthly and daily climate observations. The monthly dataset contains 12,936 values that cover temperature, total precipitation, rainfall, and mean relative humiditiy from January 2022 to January 2026. The daily dataset covers 1~January 2022 to 1~February 2026 and covers temperature, total precipitation, and rainfall. The monthly and daily products come from two separately configured acquisitions; the monthly acquisition ends on 20~January 2026, so January 2026 is a partial month in the monthly data.
 
 We also retrieved daily prepipitation data from NASA POWER PRECTOTCORR for sites 1--60 from 1 January 2022 to 31 December 2025, which yielded 87,660 records.
 

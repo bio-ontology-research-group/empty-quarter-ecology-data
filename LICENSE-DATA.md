@@ -17,7 +17,3 @@ hosted at ENA, photographs, recordings, third-party software, manuscript
 publisher files, or other separately licensed resources. Project software
 retains MIT under LICENSE-SOFTWARE; bundled third-party software retains its
 own notices. Existing 3.0.0 release archives are not altered by this release.
-
-Ontology definitions were drafted with Claude Code using the Sonnet model
-alias and reviewed and edited by Codex. Exact model provenance, drafts,
-review dispositions and final wording accompany the release.

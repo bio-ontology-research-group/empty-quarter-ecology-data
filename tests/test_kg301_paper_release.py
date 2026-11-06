@@ -19,7 +19,7 @@ def test_release_metadata_and_paper_counts_agree():
     assert public['manifest_sha256'] == hashlib.sha256(raw).hexdigest()
     assert manifest['input_manifest_sha256'] == hashlib.sha256((EVIDENCE/'input-modules-manifest.json').read_bytes()).hexdigest()
     records = ' '.join((ROOT/'paper/04_data_records.tex').read_text().split())
-    assert '45,707,660 asserted triples from 16 manifested modules' in records
+    assert '45,707,660 asserted triples from 16 modules' in records
     usage = (ROOT/'paper/06_usage.tex').read_text()
     assert '10.5281/zenodo.23134168' in usage
     assert 'graph/asserted/3.0.1' in usage
@@ -67,7 +67,7 @@ def test_batch_claims_match_corrected_coordinate_replay():
     assert f"$p={t3['p_adjacent_more_similar']:.2f}$" in text
     provenance = json.loads((EVIDENCE/'definition-provenance.json').read_text())
     assert provenance['requested_generator'] == 'Claude Code --model sonnet'
-    methods = (ROOT/'paper/03_knowledge_representation.tex').read_text()
+    methods = ' '.join((ROOT/'paper/03_knowledge_representation.tex').read_text().split())
     assert 'Claude Sonnet' in methods and 'automated review' in methods
 
 def test_submission_prose_describes_final_data_and_confines_paths_to_data_records():
