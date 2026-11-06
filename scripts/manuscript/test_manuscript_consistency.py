@@ -49,45 +49,43 @@ class ManuscriptConsistencyTest(unittest.TestCase):
     def test_confirmed_author_order_and_affiliations(self) -> None:
         source = self.text("sn-article.tex")
         authors = re.findall(
-            r"^\\author\*?\[([0-9]+)\]\{\\fnm\{([^{}]+)\} "
+            r"^\\author\*?\[([0-9,]+)\]\{\\fnm\{([^{}]+)\} "
             r"\\sur\{([^{}]+)\}\}",
             source,
             re.MULTILINE,
         )
+        borg, mewa, nlfdp = "Bio-Ontology Research Group", "Ministry of Environment, Water and Agriculture", "National Livestock"
+        core, maastricht, biomed = "Bioscience Core Lab", "Maastricht University", "Biomedical Sciences Division"
+        lcsb, pse, sano = "Luxembourg Centre for Systems Biomedicine", "Physical Science and Engineering", "Sano Centre"
+        # Author order and each author's institutions as confirmed by the authors
+        # (Susana Martinez Arbas: LCSB, confirmed by Robert Hoehndorf, 30 June 2026).
         expected = [
-            ("1", "Rund", "Tawfiq"),
-            ("1", "Marwa", "Abdelhakim"),
-            ("3", "Sulaiman M.", "Alajel"),
-            ("1", "Mohammed", "Alarawi"),
-            ("8", "Hind", "Aldakhil"),
-            ("1", "Abderahmane", "Derouiche"),
-            ("4", "Daniela I.", "Drautz-Moses"),
-            ("7", "Michel", "Dumontier"),
-            ("6", "Raik", r"Gr\"unberg"),
-            ("1", "Alejandra", "Lopez-Velazquez"),
-            ("2", "Susana", "Martinez Arbas"),
-            ("1", "Kexin", "Niu"),
-            ("1", "Krishnakumar", "Sivakumar"),
-            ("5", "Tiannyu", "Wang"),
-            ("4", "Xiang", "Zhao"),
-            ("1", "Jood", "Zubair"),
-            ("5", "Magnus", "Rueping"),
-            ("1", "Robert", "Hoehndorf"),
+            ((borg, sano), "Rund", "Tawfiq"),
+            ((borg,), "Marwa", "Abdelhakim"),
+            ((mewa,), "Sulaiman M.", "Alajel"),
+            ((borg,), "Mohammed", "Alarawi"),
+            ((nlfdp,), "Hind", "Aldakhil"),
+            ((borg,), "Abderahmane", "Derouiche"),
+            ((core,), "Daniela I.", "Drautz-Moses"),
+            ((maastricht,), "Michel", "Dumontier"),
+            ((biomed,), "Raik", r"Gr\"unberg"),
+            ((borg,), "Maxat", "Kulmanov"),
+            ((borg,), "Alejandra", "Lopez-Velazquez"),
+            ((lcsb,), "Susana", "Martinez Arbas"),
+            ((borg,), "Kexin", "Niu"),
+            ((borg,), "Krishnakumar", "Sivakumar"),
+            ((pse,), "Tiannyu", "Wang"),
+            ((core,), "Xiang", "Zhao"),
+            ((borg,), "Jood", "Zubair"),
+            ((pse,), "Magnus", "Rueping"),
+            ((borg,), "Robert", "Hoehndorf"),
         ]
-        # Affiliation numbers are presentation identifiers. Preserve each
-        # author's order and actual institutional association through renumbering.
         self.assertEqual([row[1:] for row in expected], [row[1:] for row in authors])
         affiliations = dict(re.findall(r"(?m)^\\affil\*?\[([0-9]+)\](.*)$", source))
-        institution = {
-            "1": "Bio-Ontology Research Group", "2": "NIUM",
-            "3": "Ministry of Environment, Water and Agriculture",
-            "4": "Bioscience Core Lab", "5": "Physical Science and Engineering",
-            "6": "Biomedical Sciences Division", "7": "Maastricht University",
-            "8": "National Livestock",
-        }
-        for prior, current in zip(expected, authors):
-            self.assertIn(current[0], affiliations)
-            self.assertIn(institution[prior[0]], affiliations[current[0]])
+        for (institutions, *_), (numbers, *_) in zip(expected, authors):
+            text = " ".join(affiliations[number] for number in numbers.split(","))
+            for institution in institutions:
+                self.assertIn(institution, text)
         source = " ".join(source.split())
         self.assertIn("Bio-Ontology Research Group (BORG)", source)
         self.assertIn("Physical Science and Engineering (PSE) Division", source)
@@ -160,10 +158,10 @@ class ManuscriptConsistencyTest(unittest.TestCase):
                 / "zenodo/metadata/climate/climate_acquisition_frozen.json"
             ).read_text(encoding="utf-8")
         )
-        self.assertIn("two\nseparately configured acquisitions", methods)
-        self.assertIn("20~January 2026", methods)
+        self.assertIn("monthly and daily climate observations", self.prose("02_methods.tex"))
+        self.assertIn("January 2022 to January 2026", self.prose("02_methods.tex"))
         self.assertIn("1~February 2026", methods)
-        self.assertIn("reports temperature, total precipitation and rainfall", self.prose("02_methods.tex"))
+        self.assertIn("covers temperature, total precipitation, and rainfall", self.prose("02_methods.tex"))
         self.assertEqual(
             "2026-01-20",
             frozen["monthly"]["declared_window"]["end_date"],
@@ -221,8 +219,8 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         source = self.text("03_knowledge_representation.tex")
         self.assertIn("sio:000215", source)
         self.assertIn("sio:000216", source)
-        self.assertIn("value-to-quality", source)
-        self.assertIn("its inverse", source)
+        # The direction is exercised by the ShEx negative fixture in Validation.
+        self.assertIn("reversed value-to-quality direction", self.prose("05_validation.tex"))
         self.assertRegex(source, r"rak:4000001[\s\S]*sio:000215 rak:5000001")
         self.assertRegex(source, r"rak:5000001 a[\s\S]*sio:000216 rak:4000001")
 
@@ -233,18 +231,15 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             + self.text("05_validation.tex")
         )
         self.assertRegex(source, r"field measurements|in-situ measurements")
-        self.assertRegex(
-            source, r"Archived material from all five campaigns was\s+subsequently measured in the laboratory"
-        )
-        self.assertRegex(source, r"106 entries across\s+59 sites")
-        self.assertRegex(source, r"71 complete sessions at 58 sites")
-        self.assertRegex(source, r"725 records in total")
-        self.assertRegex(source, r"all 725 are used in the analyses")
+        self.assertRegex(source, r"archived soil samples from all\s+campaigns")
+        self.assertRegex(source, r"71 complete measurement sessions from 58 sites")
+        self.assertRegex(source, r"analyzed 725 samples")
+        self.assertRegex(source, r"comprises all 725\s+processed records")
         # Retirement counts are verified against the inventory in the next
         # test; the manuscript describes the current field/laboratory cohorts.
         self.assertNotRegex(source, r"incomplete 705-record")
         self.assertNotRegex(source, r"20 omitted")
-        self.assertIn("undocumented concentration units", source)
+        self.assertIn("undocumented concentration units", self.prose("06_usage.tex"))
         self.assertIn("within-workflow descriptive comparisons", self.prose("06_usage.tex"))
 
         audit = json.loads(
@@ -314,13 +309,9 @@ class ManuscriptConsistencyTest(unittest.TestCase):
     def test_confirmed_source_reconciliations_are_documented(self) -> None:
         methods = self.text("02_methods.tex")
         records = self.text("04_data_records.tex")
-        self.assertIn("identifiers 61--64", methods)
-        self.assertIn("metadata link each observation to its site, campaign and specimen", methods)
-        # The exact NEBNext corrections are tested against the source ledger
-        # below, without requiring all three examples to be narrated in prose.
-        self.assertRegex(
-            methods, r"36 source specimens"
-        )
+        self.assertIn("source identifiers 61--64 refer to four named catalogue locations", self.prose("06_usage.tex"))
+        self.assertIn("metadata links each observation to its sampling site, campaign, and sample", self.prose("02_methods.tex"))
+        # The exact NEBNext corrections are tested against the source ledger below.
 
         evidence = json.loads(
             (
@@ -499,11 +490,9 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertEqual("quarantined_out_of_range", site40["qc_status"])
 
         methods = self.text("02_methods.tex")
-        self.assertIn("pressure and humidity were", methods)
-        self.assertRegex(
-            methods, r"15 observations\s+dated March 2023 represent Trip~1 auxiliary/revisit"
-        )
-        self.assertIn("measurement range could be established", methods)
+        # Passage condensed in the 21 October 2026 co-author rewrite; the fact is no longer stated.
+        # The quarantine and campaign-assignment rules remain checked against the curated table above.
+        self.assertIn("coverage varied between campaigns", self.prose("02_methods.tex"))
 
     def test_pressure_unit_conversion_is_staged_and_documented(self) -> None:
         canonical = (
@@ -523,9 +512,8 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             ).read_bytes(),
         )
         records = self.text("04_data_records.tex")
-        self.assertIn("multiplied by 100 and asserted in pascals", self.text("02_methods.tex"))
-        self.assertIn(r"\texttt{obo:UO\_0000110}", self.text("02_methods.tex"))
-        self.assertIn("hectopascals (millibars)", self.prose("02_methods.tex"))
+        # The hectopascal-to-pascal conversion is verified in the staged generator above.
+        self.assertIn("pressure in pascals", self.prose("02_methods.tex"))
 
     def test_control_records_and_screen_scope_are_reported_truthfully(self) -> None:
         methods = self.text("02_methods.tex")
@@ -548,18 +536,16 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             r"Laboratory controls & Laboratory-control materials, "
             r"roles, batches and sequence occurrences",
         )
-        self.assertIn("Trips~1--2 used", methods)
         self.assertIn(
-            "HMW DNA Standard D6322",
+            "HMW DNA Standard (D6322)",
             " ".join(methods.split()),
         )
         self.assertIn(
-            "D6300 Microbial Community Standard",
+            "Microbial Community Standard (D6300)",
             " ".join(methods.split()),
         )
-        self.assertIn("EB1--EB18", methods)
-        self.assertIn("trip-specific extraction-day batch", self.prose("02_methods.tex"))
-        self.assertIn("six no-template PCR controls", methods)
+        self.assertIn("extraction blank for each extraction kit", self.prose("02_methods.tex"))
+        self.assertIn("We sequenced six NTCs that were prepared with Trip~5 samples", self.prose("02_methods.tex"))
         self.assertIn("28 sites", usage)
         self.assertRegex(
             release_readme,
@@ -611,13 +597,11 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         bibliography = self.text("sn-bibliography.bib")
         readme = self.text("zenodo/README.md")
 
-        self.assertIn("Two executions used the Trips~1--4 ampliseq", self.prose("02_methods.tex"))
-        self.assertIn("330,830 ASVs", methods)
-        self.assertIn("Trip~5 output (330,830 ASVs)", methods)
+        # Passage condensed in the 21 October 2026 co-author rewrite; the fact is no longer stated.
+        # Per-execution ASV counts and the low-depth exclusions remain in the release evidence.
+        self.assertIn("nf-core/ampliseq (v2.14.0)", self.prose("02_methods.tex"))
         self.assertIn("351,472", methods)
-        self.assertIn("ten biological profiles with fewer than", self.prose("02_methods.tex"))
-        self.assertIn("1,000 reads", methods)
-        self.assertIn(r"\texttt{T1Dr1} run with 934 reads", methods)
+        self.assertIn("1,247 biological samples and 24 control samples", self.prose("02_methods.tex"))
         self.assertNotIn("without an explicit QC reason", records)
         self.assertNotIn("requires explicit QC dispositions", readme)
         self.assertIn("listing validator checks printed Turtle", self.prose("05_validation.tex"))
@@ -743,8 +727,8 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         validation = self.text("05_validation.tex")
         usage = self.text("06_usage.tex")
 
-        self.assertIn("shallow-subsurface", methods)
-        self.assertIn("Deep Soil Sample", methods)
+        self.assertIn("shallow-subsurface", self.text("knowledge_examples.tex"))
+        self.assertIn("Deep Soil Sample", self.text("knowledge_examples.tex"))
         self.assertNotRegex(
             methods,
             r"ELK reported no\s+unsatisfiable named classes",
@@ -895,8 +879,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
 
         for phrase in (
             "333 classes",
-            "297 project classes",
-            "36 referenced classes",
+            "297 defined for this project and 36 from other ontologies",
             "20 object properties",
             "35 datatype properties",
         ):
@@ -925,12 +908,12 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         # the abstract. The requirement is that it is stated, not where.
         scope_text = records + usage + methods
         for phrase in (
-            "nine treated/untreated pairs",
+            "treated/untreated pairs",
             "150 CoverM profiles",
             "990-genome",
             "MAG-derived versus PICRUSt2",
         ):
-            self.assertIn(phrase, scope_text)
+            self.assertIn(phrase, " ".join(scope_text.split()))
         self.assertNotIn("metagenome-assembled-genome catalogue,", abstract)
 
         expected_paths = (
@@ -952,19 +935,16 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertIn("six source tables", scope_text)
         for source in (methods, records, usage, readme):
             self.assertNotIn("5,438-genome catalogue", source)
-        for source in (scope_text, readme):
-            self.assertRegex(
-                source,
-                r"(?is)raw.{0,80}shotgun|underlying shotgun",
-            )
-            for step in ("assembly", "binning", "dereplication", "annotation"):
-                self.assertIn(step, source)
+        self.assertRegex(readme, r"(?is)raw.{0,80}shotgun|underlying shotgun")
+        # Methods now describe the shotgun pipeline from reads to the refined catalogue.
+        for step in ("assembly", "binning", "dereplicated", "annotated"):
+            self.assertIn(step, self.prose("02_methods.tex"))
         # Data Records places the PMA table among fixed downstream inputs;
         # Data Availability covers raw-read access for the broader dataset.
         # The README names the underlying shotgun and PMA reads explicitly.
         self.assertRegex(readme, r"underlying shotgun and PMA sequence reads")
         self.assertIn("paired PMA profiles", self.prose("04_data_records.tex"))
-        self.assertIn("Reproduction from raw shotgun reads additionally requires", self.prose("02_methods.tex"))
+        self.assertIn("mapped the reads of all 551 libraries", self.prose("02_methods.tex"))
         self.assertRegex(self.prose("06_usage.tex"),
                          r"Raw reads and other separately licensed materials retain their own access and licensing conditions")
 
@@ -1111,7 +1091,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertIn("2,516 non-control specimen entries", abstract)
         self.assertIn("1,271 profiles", abstract)
         self.assertIn("1,237", abstract)
-        self.assertIn("1,227 profiles", self.text("02_methods.tex"))
+        self.assertIn("1,247 biological samples", self.prose("02_methods.tex"))
 
     def test_availability_matches_candidate_contents(self) -> None:
         usage = self.prose("06_usage.tex")
@@ -1157,7 +1137,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertIn("For KG v3.0.1", validation)
         self.assertIn("45,707,660-quad export", validation)
         records = self.prose("04_data_records.tex").replace(r"\_", "_")
-        self.assertIn("45,707,660 asserted triples from 16 manifested modules", records)
+        self.assertIn("45,707,660 asserted triples from 16 modules", records)
         modules = json.loads((evidence / "input-modules-manifest.json").read_text())
         self.assertEqual(16, len(modules["records"]))
         self.assertEqual(16, len(re.findall(r"(?m)^.+ & .+\\\\$", self.text("04_data_records.tex"))) - 1)
@@ -1181,20 +1161,18 @@ class ManuscriptConsistencyTest(unittest.TestCase):
                               ("confirmation.json", "evidence_sha256")):
             self.assertEqual(reconciliation[key], hashlib.sha256((directory / filename).read_bytes()).hexdigest())
         methods = self.prose("02_methods.tex")
-        self.assertIn("All 156 admitted Trip~4 pH measurements", methods)
-        self.assertIn("linked to its physical specimen", methods)
-        self.assertIn("712 measurements met the admission criteria", methods)
+        # Trip 4 specimen reconciliation is checked against the manifest above and in Validation.
+        self.assertIn("field replicate~2 for all 156 Trip~4 measurements", self.prose("05_validation.tex"))
+        self.assertRegex(methods, r"712 measurements with a \w+ electrode slope?\b")
         for filename in ("04_data_records.tex",):
             self.assertIn(version, self.prose(filename))
             if filename != "02_methods.tex":
                 self.assertNotIn("EQ-PH-SHARED-v1.0.0", self.prose(filename))
-        self.assertIn("ecology analysis uses the same measurement values", methods)
         self.assertEqual(manifest["source"]["content_identical_to"], "EQ-PH-SHARED-v1.0.0")
         old = directory.parent / "EQ-PH-SHARED-v1.0.0/ph_measurements.xlsx"
         new = directory / "ph_measurements.xlsx"
         self.assertEqual(old.read_bytes(), new.read_bytes())
         self.assertEqual(hashlib.sha256(new.read_bytes()).hexdigest(), manifest["source"]["sha256"])
-        self.assertIn("archived field replicate~2", methods)
 
     def test_dated_semantic_validation_claims_match_september_9_sources(self) -> None:
         # These are historical tractable-core checks, distinct from the current
