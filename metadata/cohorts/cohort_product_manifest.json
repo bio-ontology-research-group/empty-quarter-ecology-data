@@ -1,0 +1,719 @@
+{
+  "cohort_tables_sha256": {
+    "metadata/cohorts/mimag_quality_boundary.tsv": "1831d209e0a677356c84e69ff6e2f6465eab24099f355b566990d670019ce7d6",
+    "metadata/cohorts/shotgun_cohort_accounting.tsv": "6938a2d48f59bf13bd052bacc085904571ab8c927670bd9b571f8ecfbd2e6b38",
+    "metadata/cohorts/taxonomy_snapshot_reconciliation.tsv": "ec8674787123185fe3288a7ca1bd9854ef18cd1059eafd386c0727807a5fa66d"
+  },
+  "cohorts": {
+    "EQ-AMP-CANONICAL-1271": {
+      "asv_count": 351472,
+      "biological_profiles": 1247,
+      "bulk_feature_table_path": "metadata/taxonomy/feature-table-trips1-5.tsv",
+      "control_profiles": 24,
+      "count": 1271,
+      "description": "Unfiltered canonical nf-core/ampliseq v2.14.0 DADA2 feature table across Trips 1-5.",
+      "entity_type": "amplicon_profiles",
+      "source_path": "evidence/release/release_evidence.json",
+      "source_sha256": "d9817b6f92a0040ae5841928268d8b60c81e4fb642edc6ee48670f73942642f2",
+      "unique_field_specimen_ids": 1242,
+      "used_by_papers": [
+        "data",
+        "ecology"
+      ],
+      "verification_status": "VERIFIED_LOCAL"
+    },
+    "EQ-AMP-DEDUP-1186": {
+      "count": 1186,
+      "description": "Deduplicated primary-transect 16S amplicon specimen cohort used in the companion ecology statistical models.",
+      "entity_type": "amplicon_profiles",
+      "site_dune_table_path": "metadata/cohorts/source/site_dune_zones.tsv",
+      "site_dune_table_sha256": "705e8ce81c8cb993e38678c7c6180a3940ad86b89259bc4ef739faf28aaefc9a",
+      "sites": 60,
+      "source_bytes": 181374,
+      "source_path": "metadata/cohorts/source/included_samples_1186.tsv",
+      "source_sha256": "134333330fe590cd781ab61c7314ebd0d583000894d50b40c1371075df55a7b9",
+      "used_by_papers": [
+        "data",
+        "ecology"
+      ],
+      "verification_status": "VERIFIED_LOCAL"
+    },
+    "EQ-AMP-PRIMARY-1227": {
+      "count": 1227,
+      "description": "Quality-filtered biological amplicon profiles restricted to the 60 primary transect sites (excluding 10 Trip 1 profiles at named sites 61-64).",
+      "entity_type": "amplicon_profiles",
+      "sites": 60,
+      "source_path": "evidence/release/sample_ledger.tsv",
+      "source_sha256": "cf7affd4d58803417fc5cf03ab71e6455e7fe190db449b0eb7ebaedfb4d1c99f",
+      "used_by_papers": [
+        "data",
+        "ecology"
+      ],
+      "verification_status": "VERIFIED_LOCAL"
+    },
+    "EQ-AMP-QC-1237": {
+      "count": 1237,
+      "description": "Quality-filtered biological amplicon profiles after excluding 24 control profiles and 10 biological profiles with <1,000 reads (including one T1Dr1 run with 934 reads).",
+      "entity_type": "amplicon_profiles",
+      "source_path": "evidence/release/sample_ledger.tsv",
+      "source_sha256": "cf7affd4d58803417fc5cf03ab71e6455e7fe190db449b0eb7ebaedfb4d1c99f",
+      "unique_field_specimen_ids": 1209,
+      "used_by_papers": [
+        "data",
+        "ecology"
+      ],
+      "verification_status": "VERIFIED_LOCAL"
+    },
+    "EQ-MATCHED-AMP-WGS-442": {
+      "count": 442,
+      "derived_table_path": "metadata/cohorts/shotgun_cohort_accounting.tsv",
+      "description": "Exact specimen-matched intersection of the 546 core shotgun metagenomes and the 1,186 deduplicated primary-transect 16S profiles, verified on site, campaign, compartment, replicate, and dune-field classification.",
+      "entity_type": "paired_amplicon_shotgun_specimens",
+      "picrust2_mag_ko_overlap": {
+        "full_ko_matrices_verification_status": "UNVERIFIED_REMOTE",
+        "integration_summary_sha256": "ec8ff4322df2cf8fb8c92ebdd78b2e26802b7b1f19a95cf5e018bc678d025120",
+        "shared_ko_count": 8860
+      },
+      "sites": 58,
+      "source_paths": [
+        "metadata/cohorts/source/shotgun_mapping_qc_source.tsv",
+        "metadata/cohorts/source/included_samples_1186.tsv",
+        "metadata/cohorts/source/site_dune_zones.tsv"
+      ],
+      "source_sha256": {
+        "included_samples_1186.tsv": "134333330fe590cd781ab61c7314ebd0d583000894d50b40c1371075df55a7b9",
+        "shotgun_mapping_qc_source.tsv": "4a67ec42aafe7f1e9a05ff3264bf11c436abebc6c9f2c62402c1e0739c55d523",
+        "site_dune_zones.tsv": "705e8ce81c8cb993e38678c7c6180a3940ad86b89259bc4ef739faf28aaefc9a"
+      },
+      "used_by_papers": [
+        "data",
+        "ecology"
+      ],
+      "verification_status": "VERIFIED_LOCAL"
+    },
+    "EQ-MATCHED-MODEL-441": {
+      "count": 441,
+      "derived_table_path": "metadata/cohorts/shotgun_cohort_accounting.tsv",
+      "description": "Exact specimen-matched amplicon-shotgun cohort with post-QC read-depth metadata used in read-depth-adjusted spatial models.",
+      "entity_type": "paired_amplicon_shotgun_specimens",
+      "excluded_missing_post_qc_reads": [
+        "F45PRr3"
+      ],
+      "sites": 58,
+      "source_paths": [
+        "metadata/cohorts/source/shotgun_mapping_qc_source.tsv",
+        "metadata/cohorts/source/included_samples_1186.tsv"
+      ],
+      "source_sha256": {
+        "included_samples_1186.tsv": "134333330fe590cd781ab61c7314ebd0d583000894d50b40c1371075df55a7b9",
+        "shotgun_mapping_qc_source.tsv": "4a67ec42aafe7f1e9a05ff3264bf11c436abebc6c9f2c62402c1e0739c55d523"
+      },
+      "used_by_papers": [
+        "data",
+        "ecology"
+      ],
+      "verification_status": "VERIFIED_LOCAL"
+    },
+    "EQ-SPECIMEN-KG-2516": {
+      "count": 2516,
+      "description": "Non-control specimen entries eligible for the RDF knowledge graph across 60 primary sites and 10 named locations.",
+      "entity_type": "non_control_specimens",
+      "source_path": "evidence/release/sample_ledger.tsv",
+      "source_sha256": "cf7affd4d58803417fc5cf03ab71e6455e7fe190db449b0eb7ebaedfb4d1c99f",
+      "used_by_papers": [
+        "data",
+        "ecology",
+        "proteome"
+      ],
+      "verification_status": "VERIFIED_LOCAL"
+    },
+    "EQ-SPECIMEN-SOURCE-2550": {
+      "count": 2550,
+      "description": "All source specimen and control rows across Trips 1-5 (2,302 master rows including 34 controls, plus 248 plant rows).",
+      "entity_type": "source_ledger_rows",
+      "source_path": "evidence/release/sample_ledger.tsv",
+      "source_sha256": "cf7affd4d58803417fc5cf03ab71e6455e7fe190db449b0eb7ebaedfb4d1c99f",
+      "used_by_papers": [
+        "data"
+      ],
+      "verification_status": "VERIFIED_LOCAL"
+    },
+    "EQ-WGS-ARCHAEA-PAIRED-193": {
+      "count": 193,
+      "description": "Paired surface/subsurface/root-adjacent shotgun profiles across 68 site-campaign visits (36 sites) used in competitive archaeal read mapping.",
+      "entity_type": "paired_compartment_shotgun_profiles",
+      "paired_visits": 68,
+      "per_profile_bam_verification_status": "UNVERIFIED_REMOTE",
+      "sites": 36,
+      "summary_table_path": "metadata/cohorts/source/archaeal_competitive_mapping_summary.tsv",
+      "summary_table_sha256": "dcdb60f4f6d11343917cbcc0b97021589fcb12b3817ef22ad1e612986cbc6689",
+      "used_by_papers": [
+        "proteome"
+      ],
+      "verification_status": "FROZEN_EVIDENCE_SUMMARY_ONLY"
+    },
+    "EQ-WGS-CORE-546": {
+      "count": 546,
+      "derived_table_path": "metadata/cohorts/shotgun_cohort_accounting.tsv",
+      "description": "Core-transect non-zero shotgun metagenome cohort (sites 1-60) used for genome-resolved ecological and functional integration.",
+      "entity_type": "shotgun_profiles",
+      "excluded_samples": {
+        "auxiliary_location": [
+          "62PRr2",
+          "64Dr3",
+          "64PRr2",
+          "64Sr2"
+        ],
+        "zero_mapped": [
+          "F5Dr1"
+        ]
+      },
+      "sites": 59,
+      "source_path": "metadata/cohorts/source/shotgun_mapping_qc_source.tsv",
+      "source_sha256": "4a67ec42aafe7f1e9a05ff3264bf11c436abebc6c9f2c62402c1e0739c55d523",
+      "used_by_papers": [
+        "data",
+        "ecology",
+        "proteome"
+      ],
+      "verification_status": "VERIFIED_LOCAL"
+    },
+    "EQ-WGS-CORE-MODEL-545": {
+      "count": 545,
+      "derived_table_path": "metadata/cohorts/shotgun_cohort_accounting.tsv",
+      "description": "Core-transect shotgun cohort with post-QC read-depth metadata used in read-depth-adjusted INLA spatial models.",
+      "entity_type": "shotgun_profiles",
+      "excluded_missing_post_qc_reads": [
+        "F45PRr3"
+      ],
+      "sites": 59,
+      "source_path": "metadata/cohorts/source/shotgun_mapping_qc_source.tsv",
+      "source_sha256": "4a67ec42aafe7f1e9a05ff3264bf11c436abebc6c9f2c62402c1e0739c55d523",
+      "used_by_papers": [
+        "data",
+        "ecology"
+      ],
+      "verification_status": "VERIFIED_LOCAL"
+    },
+    "EQ-WGS-LEGACY-150": {
+      "count": 150,
+      "description": "Historical Trips 1-3 CoverM relative-abundance subset against the superseded 991-genome pre-release catalogue; retained strictly for provenance.",
+      "entity_type": "historical_shotgun_profiles",
+      "legacy_annotated_ko_genomes": 990,
+      "legacy_genome_catalogue_count": 991,
+      "per_trip_counts": {
+        "1": 58,
+        "2": 15,
+        "3": 77
+      },
+      "source_path": "evidence/mag-catalogue-20261024/source/metagenome_sample_meta_150.tsv",
+      "source_sha256": "f20f721ee3c9ba1853f9e5cf48f2cca4652b8348a6061cb353eb68e2b23d8d89",
+      "used_by_papers": [
+        "data"
+      ],
+      "verification_status": "VERIFIED_LOCAL"
+    },
+    "EQ-WGS-LIBS-551": {
+      "count": 551,
+      "description": "Canonical read-bearing shotgun metagenomic libraries registered under ENA study PRJEB125153.",
+      "entity_type": "shotgun_libraries",
+      "named_sites": 2,
+      "per_trip_counts": {
+        "1": 210,
+        "2": 37,
+        "3": 128,
+        "4": 85,
+        "5": 91
+      },
+      "primary_sites": 59,
+      "runs": 554,
+      "site_codes": 61,
+      "source_path": "metadata/metagenome/canonical/library_metadata.tsv",
+      "source_sha256": "d3d471d09d6602d91957471208cf589b60d0e3009f9bff137b2b0f1a3add27e1",
+      "used_by_papers": [
+        "data",
+        "ecology",
+        "proteome"
+      ],
+      "verification_status": "VERIFIED_LOCAL"
+    },
+    "EQ-WGS-NONZERO-550": {
+      "count": 550,
+      "derived_table_path": "metadata/cohorts/shotgun_cohort_accounting.tsv",
+      "description": "Read-bearing shotgun study libraries with non-zero mapped read abundance against the 5,438-representative catalogue.",
+      "entity_type": "shotgun_profiles",
+      "excluded_zero_mapped": [
+        "F5Dr1"
+      ],
+      "source_path": "metadata/cohorts/source/shotgun_mapping_qc_source.tsv",
+      "source_sha256": "4a67ec42aafe7f1e9a05ff3264bf11c436abebc6c9f2c62402c1e0739c55d523",
+      "used_by_papers": [
+        "data",
+        "proteome"
+      ],
+      "verification_status": "VERIFIED_LOCAL"
+    }
+  },
+  "companion_manuscripts": {
+    "data": {
+      "role": "foundational_resource",
+      "status": "working_manuscript_in_preparation",
+      "title": "A linked resource of microbial genomes, community profiles and environmental data from the Rub' al-Khali"
+    },
+    "ecology": {
+      "citation_key": "ecology_companion",
+      "legacy_title": "Landscape-scale bacterial biogeography across the Rub' al-Khali",
+      "role": "companion_ecology_study",
+      "status": "unpublished_manuscript_in_preparation",
+      "title": "Microbial biogeography and functional differentiation across the Rub' al-Khali"
+    },
+    "proteome": {
+      "citation_key": "proteome_companion",
+      "role": "companion_proteome_study",
+      "status": "unpublished_manuscript_in_preparation",
+      "title": "Widespread desert archaea harbour an export-enriched unknown protein repertoire"
+    }
+  },
+  "generated_date": "2026-11-08",
+  "mimag_quality_accounting": {
+    "archaea_representatives": 591,
+    "authoritative_catalogue_representatives": 5438,
+    "bacteria_representatives": 4847,
+    "drep_operational_tiers_le10_contamination": {
+      "high": 126,
+      "non_hq_operational_le10": 5312,
+      "total_drep_representatives": 5438
+    },
+    "refined_bins_passing_checkm2_50_10": 12434,
+    "source_tables": {
+      "ena_genome_accessions": {
+        "path": "metadata/metagenome/canonical/ena_genome_accessions.tsv",
+        "sha256": "37097349374654cdbebdb6ec3732b12ac0813444bdbdf72c7c408560ee621823"
+      },
+      "refined_representatives": {
+        "path": "metadata/metagenome/canonical/refined_representatives.tsv",
+        "sha256": "dbe9db11362e77c4274543431ad40ee92ed6b181c2c0f7ddc055c4f5a32971d6"
+      }
+    },
+    "strict_mimag_tiers_lt10_contamination": {
+      "below-medium": 1,
+      "boundary_genome_at_10pct": {
+        "binned_assembly_accession": "ERZ29258845",
+        "binned_sample_accession": "ERS32494391",
+        "completeness": 64.61,
+        "contamination": 10.0,
+        "deposited_as_gca_mag": false,
+        "mag": "48Dr2__self_SemiBin_25"
+      },
+      "ena_deposited_gca_mags": 5437,
+      "high": 126,
+      "medium": 5311
+    },
+    "verification_status": "VERIFIED_LOCAL"
+  },
+  "products": {
+    "EQ-COVERM-ARCHAEA-COMP-v1.0.0": {
+      "mapq20_sensitivity_mode": "Separate sensitivity analysis restricting alignments to MAPQ >= 20 (evaluated at 0% and 10% breadth); not applied as a filter to every primary breadth-gated result",
+      "paired_profiles": 193,
+      "paired_visits": 68,
+      "per_profile_bam_verification_status": "UNVERIFIED_REMOTE",
+      "primary_quantifier": "Competitive read mapping (>=95% identity, >=75% aligned length) evaluated across primary covered-fraction breadth gates (0%, 10%, 20%, and 50%)",
+      "product_family": "coverm_mapping",
+      "reference_composition": "5,438 Rub' al-Khali representatives + 301 external Thermoplasmatota reference genomes",
+      "reference_genomes": 5739,
+      "sites": 36,
+      "summary_table_path": "metadata/cohorts/source/archaeal_competitive_mapping_summary.tsv",
+      "summary_table_sha256": "dcdb60f4f6d11343917cbcc0b97021589fcb12b3817ef22ad1e612986cbc6689",
+      "used_by_papers": [
+        "proteome"
+      ],
+      "verification_status": "FROZEN_EVIDENCE_SUMMARY_ONLY",
+      "version_id": "EQ-COVERM-ARCHAEA-COMP-v1.0.0"
+    },
+    "EQ-COVERM-LEGACY-991-v0": {
+      "annotated_ko_genomes": 990,
+      "annotations_path": "metadata/metagenome/eq.emapper.annotations.gz",
+      "annotations_sha256": "b79dc4827d1908af7aef724dbf6904187aa119890d10fe3abd313dee36ed77d6",
+      "archive_path": "metadata/metagenome/coverm_profiles.tar.gz",
+      "archive_sha256": "a33923313f0d648a092259848a21b1951b7fdee7678414b03d7913f58b4f9aba",
+      "libraries": 150,
+      "measured_function_inputs_path": "metadata/metagenome/measured_function_inputs.tar.gz",
+      "measured_function_inputs_sha256": "08d8b84ab7331e8bcc62fa6cf0539e4008e6399a39c4bb4f9da5fde3b29bd46a",
+      "product_family": "coverm_mapping",
+      "provenance_note": "Historical Trips 1-3 subset against the superseded 991-genome pre-release catalogue; never combine with the 5,438-representative catalogue.",
+      "reference_genomes": 991,
+      "used_by_papers": [
+        "data"
+      ],
+      "verification_status": "VERIFIED_LOCAL",
+      "version_id": "EQ-COVERM-LEGACY-991-v0"
+    },
+    "EQ-COVERM-REFINED-v1.0.0": {
+      "aligner": "Bowtie2 v2.5.1 (--very-sensitive, first 200M read pairs cap); SAMtools v1.16.1",
+      "archive_bytes": 82900332,
+      "archive_path": "metadata/metagenome/canonical/refined_coverm_profiles.tar.gz",
+      "archive_sha256": "fae886478ffa7add340f4892332471951849d959ee1c48ff9738e3a809fe30a5",
+      "libraries": 551,
+      "metrics_reported": [
+        "Mean",
+        "Covered Fraction",
+        "Trimmed Mean",
+        "Read Count",
+        "Length"
+      ],
+      "product_family": "coverm_mapping",
+      "quantifier": "CoverM v0.6.1 (--min-read-percent-identity 95, --min-covered-fraction 0)",
+      "reference_contigs": 2485945,
+      "reference_genomes": 5438,
+      "used_by_papers": [
+        "data"
+      ],
+      "verification_status": "VERIFIED_LOCAL",
+      "version_id": "EQ-COVERM-REFINED-v1.0.0"
+    },
+    "EQ-COVERM-REL-ABUND-v1.0.0": {
+      "canonical_study_libraries": 551,
+      "core_read_depth_model_profiles": 545,
+      "core_transect_profiles": 546,
+      "full_matrix_verification_status": "UNVERIFIED_REMOTE",
+      "matched_amplicon_profiles": 442,
+      "matched_read_depth_model_profiles": 441,
+      "matrix_bytes": 4097175,
+      "matrix_logical_uri": "shaheen://k10018/eq-ecology-mag-20261105/rebuild_20260729/picrust2_current_20260803/mag_ko/sample_by_mag_coverm_relative_abundance.npz",
+      "matrix_profiles": 573,
+      "matrix_sha256": "7878362692a1fc008077e605cb1cc6ea191b85efb1d1cf590a191dd435336110",
+      "nonzero_study_libraries": 550,
+      "product_family": "coverm_mapping",
+      "quantifier": "CoverM v0.7.0 genome relative abundance with unmapped fraction",
+      "reference_genomes": 5438,
+      "sample_index_sha256": "7d8e6e3e29dca5640f345f1fd8e8770d3536694551062e6089a27b6286265f60",
+      "staged_qc_table_path": "metadata/cohorts/source/shotgun_mapping_qc_source.tsv",
+      "staged_qc_table_sha256": "4a67ec42aafe7f1e9a05ff3264bf11c436abebc6c9f2c62402c1e0739c55d523",
+      "used_by_papers": [
+        "data",
+        "ecology",
+        "proteome"
+      ],
+      "verification_status": "VERIFIED_LOCAL_TABLE_REMOTE_MATRIX",
+      "version_id": "EQ-COVERM-REL-ABUND-v1.0.0"
+    },
+    "EQ-KG-ASSERTED-v3.0.1": {
+      "asserted_triples": 45707660,
+      "modules": 16,
+      "product_family": "knowledge_graph",
+      "source_path": "evidence/kg-v3.0.1/manifest.json",
+      "source_sha256": "bcffcf9991b6a505153bcd46e1858046f39f707492a3954858b75ab19e79b606",
+      "used_by_papers": [
+        "data"
+      ],
+      "verification_status": "VERIFIED_LOCAL",
+      "version_id": "3.0.1",
+      "zenodo_doi": "10.5281/zenodo.23134168"
+    },
+    "EQ-KO-LEGACY-ANALYTICAL-v0": {
+      "distinct_kos": 11386,
+      "product_family": "functional_ko_matrix",
+      "provenance_note": "Frozen analytical KO matrix (rep_ko_v2.tsv) used for genome-resolved KO richness/Shannon and PICRUSt2 concordance projections in the companion ecology and proteome studies. Upstream caller and database versions are not asserted equivalent to the canonical 19,186,792-protein Bakta v1.12.0 / eggNOG-mapper v2.1.13 release product (EQ-PROT-BAKTA-v1.0.0) without byte- and locus-level reconciliation.",
+      "sequence_equivalence_with_bakta": "UNVERIFIED_SEPARATE_PRODUCTS",
+      "shared_kos_with_picrust2": 8860,
+      "source_genomes": 5438,
+      "sparse_matrix_logical_uri": "shaheen://k10018/eq-ecology-mag-20261105/rebuild_20260729/picrust2_current_20260803/mag_ko/mag_by_ko_presence_or_copy.npz",
+      "upstream_logical_uri": "ibex://c2014/rob/metagenomics/04_functional/repko_clean/results/rep_ko_v2.tsv",
+      "used_by_papers": [
+        "data",
+        "ecology",
+        "proteome"
+      ],
+      "verification_status": "UNVERIFIED_REMOTE",
+      "version_id": "EQ-KO-LEGACY-ANALYTICAL-v0"
+    },
+    "EQ-MAG-REFINED-v1.0.0": {
+      "archive_bytes": 7215750013,
+      "archive_path": "metadata/metagenome/canonical/refined_mags.tar.gz",
+      "archive_sha256": "e7f46a9faee01ad7a723fe2fc4ad2310d19e0d2f1dbc832a787d8749a1303d6c",
+      "manifest_path": "metadata/metagenome/canonical/genome_manifest.tsv",
+      "manifest_sha256": "835ded5ac9aee7e50be1405ebf5e9794a4382157b07d30a157d593e94b004bb5",
+      "product_family": "genome_catalogue",
+      "representatives": 5438,
+      "total_bases": 20490828267,
+      "total_contigs": 2485945,
+      "used_by_papers": [
+        "data",
+        "ecology",
+        "proteome"
+      ],
+      "verification_status": "VERIFIED_LOCAL",
+      "version_id": "EQ-MAG-REFINED-v1.0.0"
+    },
+    "EQ-MICROTRAIT-REP-v1.0.0": {
+      "gene_caller": "Prodigal v2.6.3 (-p meta, fresh upstream extract.traits invocation)",
+      "granularity1_matrix_path": "analysis/microtrait_20261110/results/trait_matrixatgranularity1.tsv.gz",
+      "granularity1_matrix_sha256": "b990402eca2e20be030217ca4a6ceed70db02825c268a3e0a3b0561afb2a076b",
+      "granularity2_matrix_path": "analysis/microtrait_20261110/results/trait_matrixatgranularity2.tsv.gz",
+      "granularity2_matrix_sha256": "624f6bbede8af55c2e749a266a3c48573f6e4897b357257582b20526aef71104",
+      "granularity3_matrix_path": "analysis/microtrait_20261110/results/trait_matrixatgranularity3.tsv.gz",
+      "granularity3_matrix_sha256": "d5c64c33342c1cc707b37927f4cba8f17e9a2b89e40d8b72ce784ac620d716ea",
+      "growth_and_ogt_predictions_path": "analysis/microtrait_20261110/results/growth_and_ogt_predictions_5438.tsv",
+      "growth_and_ogt_predictions_sha256": "cf6ac936dc2360ed1128047ba05cd8421c652591f3b560973df20bedbec1567a",
+      "hmm_matrix_path": "analysis/microtrait_20261110/results/hmm_matrix.tsv.gz",
+      "hmm_matrix_sha256": "1a164927f8e2fbb5e29510542ebaa5a84623820d00b69835dd295f9f640b6260",
+      "model_coverage_ledger": {
+        "dbcan_pressed_sha256": "0bcd0ab0c06baebc2b3960e38e1b2f4c5a2c8357780a094be79d641ecf720070",
+        "dbcan_sha256": "396c791fb13defab152864d8046687ef03b492937ec6f9bbab008bc77cbaa7a5",
+        "dbcan_v14_gh_models": 41,
+        "dbcan_version": "V14",
+        "hmmer_version": "3.3.2",
+        "installed_hmms_not_in_rules": [
+          "phbB"
+        ],
+        "installed_microtrait_hmms": 1830,
+        "microtrait_db_models": 1789,
+        "phosphatase_confirmed_positive": 2986,
+        "phosphatase_false_zeros": 0,
+        "phosphatase_unconfirmed_safe_na": 2452,
+        "rule_referenced_hmms_assayed": 1829,
+        "rule_referenced_hmms_total": 1831,
+        "rule_referenced_hmms_unassayed": [
+          "aphA",
+          "phoN"
+        ]
+      },
+      "package_dir": "analysis/microtrait_20261110",
+      "phosphatase_coverage_path": "analysis/microtrait_20261110/results/phosphatase_and_model_coverage_5438.tsv",
+      "phosphatase_coverage_sha256": "5351db838ca8eb96b14ef714e8ce50d684baf0715b964265c5f2a40dbef843d2",
+      "product_family": "trait_matrices_and_predictors",
+      "protein_count": 20379930,
+      "provenance_note": "Full-catalogue microTrait v1.0.0 trait/rule/HMM matrices and gRodon/optimalT continuous predictors across all 5,438 canonical representatives, computed on Shaheen III using dbCAN-HMMdb-V14. Upstream microtrait::extract.traits invokes fresh Prodigal v2.6.3 (-p meta) yielding 20,379,930 predicted ORFs, which is distinct from both the 19,186,792 Bakta v1.12.0 CDS product (EQ-PROT-BAKTA-v1.0.0) and the 20,451,986 Pyrodigal representative protein product (EQ-PROT-PYRODIGAL-REP-v1.0.0). Because aphA and phoN HMMs are absent from the upstream Zenodo microTrait HMM archive, 2,986 MAGs with phoA/phoD/phoX hits are recorded as confirmed phosphatase-positive (1) and 2,452 MAGs without phoA/phoD/phoX hits are recorded as safe NA (never coerced to 0).",
+      "rule_matrix_path": "analysis/microtrait_20261110/results/rule_matrix.tsv.gz",
+      "rule_matrix_sha256": "ac4992a8d937950ea3a43afdb02154b6f7f53cd5f53ce7728fbd6586a631d0b8",
+      "sequence_equivalence_with_bakta": "UNVERIFIED_SEPARATE_PRODUCTS",
+      "sequence_equivalence_with_pyrodigal": "UNVERIFIED_SEPARATE_PRODUCTS",
+      "source_genomes": 5438,
+      "total_bases": 20490828267,
+      "used_by_papers": [
+        "data",
+        "ecology",
+        "proteome"
+      ],
+      "verification_status": "VERIFIED_LOCAL",
+      "version_id": "EQ-MICROTRAIT-REP-v1.0.0"
+    },
+    "EQ-PH-SHARED-v1.0.1": {
+      "admitted_measurements": 712,
+      "product_family": "soil_chemistry",
+      "quarantined_date_provenance": 36,
+      "quarantined_qc": 19,
+      "recorded_measurements": 767,
+      "source_path": "metadata/samples/ph/versions/EQ-PH-SHARED-v1.0.1/manifest.json",
+      "source_sha256": "0902bfbd58b3a65469bebbe535f31fa9487ae0ccb4b9330c8b2d001bb9353602",
+      "trip4_replicate2_reconciled": 156,
+      "used_by_papers": [
+        "data",
+        "ecology"
+      ],
+      "verification_status": "VERIFIED_LOCAL",
+      "version_id": "EQ-PH-SHARED-v1.0.1",
+      "workbook_sha256": "701db2a771b257da09bb276c8ca29df4408ba5986bd515821ccea275a8c692c1"
+    },
+    "EQ-PROT-BAKTA-v1.0.0": {
+      "archive_bytes": 106360827,
+      "archive_path": "metadata/metagenome/canonical/refined_functional_tables.tar.gz",
+      "archive_sha256": "6eaeefcd31a44101fbb8629c2d7232e01160fe5257fd606f9cb09ac2afee1518",
+      "distinct_cazy": 141,
+      "distinct_kos": 11386,
+      "distinct_pfams": 9703,
+      "eggnog_annotated_proteins": 16119759,
+      "functional_annotator": "eggNOG-mapper v2.1.13 (eggNOG v5.0.2, DIAMOND v2.0.15)",
+      "gene_caller": "Bakta v1.12.0 (database v6.0, 2025-02-24)",
+      "product_family": "protein_annotations",
+      "protein_count": 19186792,
+      "proteins_with_ko": 8516493,
+      "provenance_note": "Predicted by Bakta v1.12.0 on the 5,438 refined representative FASTAs (refined_mags.tar.gz). Distinct from the 20,451,986 Pyrodigal representative protein set associated with the same 5,438 representative genome identifiers; matching genome identifiers do not establish identical underlying FASTA sequence contents or retained contig coordinates, and sequence equivalence must not be asserted without per-locus reconciliation.",
+      "sequence_equivalence_with_pyrodigal": "UNVERIFIED_SEPARATE_PRODUCTS",
+      "source_genomes": 5438,
+      "used_by_papers": [
+        "data",
+        "ecology"
+      ],
+      "verification_status": "VERIFIED_LOCAL",
+      "version_id": "EQ-PROT-BAKTA-v1.0.0"
+    },
+    "EQ-PROT-PYRODIGAL-REP-v1.0.0": {
+      "concatenated_faa_bytes": 9269718729,
+      "concatenated_faa_logical_uri": "ibex://c2014/rob/metagenomics/06_darkmatter/orthogroups/all_rep_proteins.faa",
+      "concatenated_faa_sha256": "32f776acca82e1e4c48a0f3f8f2d950cbd2d75e48518d754655baba3520e6cf2",
+      "gene_caller": "Pyrodigal (single-genome mode with meta fallback on fragmented bins)",
+      "product_family": "protein_sequences",
+      "protein_count": 20451986,
+      "provenance_note": "Per-representative Pyrodigal protein calls associated with the same 5,438 representative genome identifiers, used for MMseqs2 50/80 orthogroups, the 106-profile microTrait HMM functional screen, and protein-family discovery screens. Matching genome identifiers do not establish identical underlying FASTA sequence contents or retained contig coordinates, and this product is maintained separately from EQ-PROT-BAKTA-v1.0.0.",
+      "reconciliation_with_assembly_catalogue": {
+        "assembly_catalogue_bin_mapped_proteins": 20379930,
+        "assembly_catalogue_total_proteins": 753305533,
+        "dark_fraction_primary": 0.071022,
+        "dark_fraction_strict": 0.069264,
+        "exact_sequence_elsewhere": 147640,
+        "identical_locus_and_sequence": 18831742,
+        "locus_variants": 1236920,
+        "unmapped_to_assembly_catalogue": 235684
+      },
+      "sequence_equivalence_with_bakta": "UNVERIFIED_SEPARATE_PRODUCTS",
+      "source_genomes": 5438,
+      "used_by_papers": [
+        "ecology",
+        "proteome"
+      ],
+      "verification_status": "UNVERIFIED_REMOTE",
+      "version_id": "EQ-PROT-PYRODIGAL-REP-v1.0.0"
+    },
+    "EQ-TAX-LEGACY-ANALYTICAL-v0": {
+      "equivalence_with_canonical_gtdb_r232": "FROZEN_HISTORICAL_SNAPSHOT_NOT_IDENTICAL",
+      "product_family": "genome_taxonomy_snapshot",
+      "provenance_note": "Frozen analytical taxonomy snapshot used in the historical genome-resolved genus/order turnover and proteome scripts across the same 5,438 representative genome identifiers and identical CheckM2 quality metrics. Differs from canonical GTDB-Tk v2.7.2 / GTDB R232 strings on 1,898 of 5,438 genomes (0 domain, 247 phylum, 34 class, 220 order, 511 family, 1,124 genus, 46 species); maintained strictly as an analytical provenance record and never substituted for canonical gtdb_r232_classification.",
+      "reconciliation_table_path": "metadata/cohorts/taxonomy_snapshot_reconciliation.tsv",
+      "reconciliation_table_sha256": "ec8674787123185fe3288a7ca1bd9854ef18cd1059eafd386c0727807a5fa66d",
+      "reconciliation_with_canonical_gtdb_r232": {
+        "identical_genome_ids_and_checkm2_quality": true,
+        "rank_differences": {
+          "class": 34,
+          "domain": 0,
+          "family": 511,
+          "genus": 1124,
+          "order": 220,
+          "phylum": 247,
+          "species": 46
+        },
+        "thermoplasmatota_reconciliation": {
+          "canonical_classes": {
+            "E2": 51,
+            "SW-10-69-26": 185,
+            "Thermoplasmata": 1
+          },
+          "canonical_named_genera": 19,
+          "canonical_named_orders": 4,
+          "canonical_unassigned_genera": 135,
+          "canonical_unassigned_orders": 2,
+          "count": 237,
+          "identical_membership_and_quality": true,
+          "legacy_named_genera": 14,
+          "legacy_named_orders": 4,
+          "legacy_unassigned_genera": 139,
+          "legacy_unassigned_orders": 0,
+          "whole_taxonomy_strings_differing": 42
+        },
+        "total_representatives": 5438,
+        "whole_taxonomy_strings_differing": 1898
+      },
+      "source_genomes": 5438,
+      "staged_source_path": "metadata/cohorts/source/legacy_analytical_genome_quality.tsv",
+      "staged_source_sha256": "eaa687d9fed4e4062ea6655bf24194edd0514926b42cafe04c3ad4bfe034a7f5",
+      "used_by_papers": [
+        "data",
+        "ecology",
+        "proteome"
+      ],
+      "verification_status": "VERIFIED_LOCAL",
+      "version_id": "EQ-TAX-LEGACY-ANALYTICAL-v0"
+    },
+    "EQ-XRF-CANONICAL-v1.0.0": {
+      "chebi_mapped_channels": 79,
+      "field_complete_sessions": 71,
+      "field_log_rows": 106,
+      "field_log_sites": 59,
+      "field_sites": 58,
+      "lab_canonical_records": 725,
+      "product_family": "soil_geochemistry",
+      "pubchem_mapped_channels": 91,
+      "reporting_channels": 93,
+      "source_path": "analysis/xrf_audit/xrf_audit_summary.json",
+      "source_sha256": "0d2338973f52914a6ff7ca5f0145b7d08268896adbb723102d97844b1001fb99",
+      "used_by_papers": [
+        "data",
+        "ecology"
+      ],
+      "verification_status": "VERIFIED_LOCAL",
+      "version_id": "EQ-XRF-CANONICAL-v1.0.0"
+    }
+  },
+  "schema_version": "1.1.0",
+  "scope_boundary_note": "This shared foundation manifest covers cross-paper physical specimens, amplicon and shotgun sequencing libraries, the 5,438-representative genome catalogue, caller-specific genome protein sets, CoverM read-mapping products, and environmental/geochemical records. Newly assigned product IDs (e.g., EQ-PROT-BAKTA-v1.0.0, EQ-PROT-PYRODIGAL-REP-v1.0.0, EQ-COVERM-*) serve as manuscript and reproducibility snapshot identifiers until formal repository deposition. Downstream protein-family discovery and structural-model cohorts (106,042 recurrent dark families, 105,867 all-family ESM models with 19,620 qualified models, and the 9,644-family AlphaFold2 rescue cohort) are maintained in the companion proteome package's own analysis-cohort registry.",
+  "sequencing_platforms_and_kits": {
+    "amplicon_16S_V3_V4": {
+      "canonical_profiles": 1271,
+      "flowcell_and_chemistry": "SP flow cell, 500-cycle kit (2x250 bp paired-end)",
+      "instrument": "Illumina NovaSeq 6000",
+      "primers": "Bakt_341F (CCTACGGGNGGCWGCAG) / Bakt_785R (GACTACHVGGGTATCTAATCC)"
+    },
+    "shotgun_metagenomics": {
+      "libraries_sequenced_on_both_instruments": 3,
+      "libraries_with_zero_assembled_contigs": [
+        "51Sr1",
+        "F5Dr1"
+      ],
+      "paired_end_runs": 554,
+      "primary_megahit_assemblies": 549,
+      "read_bearing_libraries": 551,
+      "runs_by_instrument": {
+        "Illumina NovaSeq 6000": 221,
+        "Illumina NovaSeq X": 333
+      },
+      "runs_by_library_kit": {
+        "NEBNext Ultra II DNA Library Prep Kit (NEB)": 81,
+        "QIAseq FX DNA Library UDI Kit (QIAGEN)": 473
+      },
+      "source_sha256": "a728161875b29ceb05a2c532fbd02b0e0c71c57f7facc9d4ba4ba401a33cee06",
+      "source_table": "evidence/mag-catalogue-20261024/source/ena_deposit/wgs_runs.tsv",
+      "verification_status": "VERIFIED_LOCAL"
+    }
+  },
+  "survey_geography_and_campaigns": {
+    "amplicon_quality_filtered_numeric_site_codes": 64,
+    "campaign_years": "2023-2025",
+    "campaigns": 5,
+    "named_single_campaign_locations": 10,
+    "primary_repeated_sites": 60,
+    "shotgun_named_location_codes_present": [
+      "62",
+      "64"
+    ],
+    "shotgun_primary_sites_absent": [
+      "56"
+    ],
+    "shotgun_primary_sites_present": 59,
+    "shotgun_site_codes_total": 61,
+    "straight_line_distance_km": 1015,
+    "transect_distance_km": 1043,
+    "trip1_numeric_aliases_for_named_locations": [
+      "61",
+      "62",
+      "63",
+      "64"
+    ]
+  },
+  "unresolved_and_pending_items": [
+    {
+      "description": "Direct locus-by-locus sequence reconciliation between the 19,186,792 Bakta v1.12.0 proteins (EQ-PROT-BAKTA-v1.0.0) and the 20,451,986 Pyrodigal per-representative proteins (EQ-PROT-PYRODIGAL-REP-v1.0.0) associated with the same 5,438 representative genome identifiers has not been executed; matching genome identifiers do not establish identical underlying FASTA sequence contents or retained contig coordinates, and both products remain strictly separate.",
+      "id": "UNRESOLVED-PROT-CALLER-RECONCILIATION",
+      "status": "UNVERIFIED_SEPARATE_PRODUCTS"
+    },
+    {
+      "description": "Canonical GTDB-Tk v2.7.2 / GTDB R232 taxonomy (refined_representatives.tsv) and the frozen analytical taxonomy snapshot (EQ-TAX-LEGACY-ANALYTICAL-v0) share the same 5,438 genome identifiers, identical CheckM2 quality metrics, and the exact same 237 Thermoplasmatota genomes, but differ on 1,898 whole strings (1,124 genus, 220 order). Re-running genus/order turnover decompositions and lineage summaries under canonical gtdb_r232_classification is tracked as a pending sensitivity audit.",
+      "id": "TAXONOMY-SNAPSHOT-SENSITIVITY",
+      "status": "PENDING_CANONICAL_REPLAY"
+    },
+    {
+      "description": "The 9.27 GB concatenated Pyrodigal representative FASTA, the sparse .npz relative-abundance/KO matrices on Shaheen, and the per-profile competitive archaeal BAMs reside on remote HPC storage and are represented locally by their recorded SHA-256 digests and staged summary tables.",
+      "id": "UNVERIFIED-REMOTE-FULL-NPZ-AND-COMPETITIVE-BAMS",
+      "status": "UNVERIFIED_REMOTE"
+    },
+    {
+      "description": "ENA shotgun study PRJEB125153 (551 libraries, 554 runs, 549 primary assemblies, 12,434 binned metagenomes, 5,437 GCA MAGs) is accessioned and scheduled for public release on 2026-11-25.",
+      "id": "PENDING-ENA-STUDY-PUBLIC-RELEASE",
+      "status": "PENDING_PUBLIC_RELEASE"
+    },
+    {
+      "description": "Private-staging bulk archives (refined_mags.tar.gz, refined_functional_tables.tar.gz, refined_coverm_profiles.tar.gz) are checksum-verified and staged for Zenodo deposition prior to publication.",
+      "id": "PENDING-BULK-ZENODO-DOI-MINTING",
+      "status": "PENDING_PUBLIC_RELEASE"
+    }
+  ]
+}

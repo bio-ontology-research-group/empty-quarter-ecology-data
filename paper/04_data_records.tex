@@ -1,3 +1,4 @@
+\begin{revision}
 \section{Data records}\label{records}
 
 KG v3.0.1 contains 45,707,660 asserted triples from 16
@@ -36,35 +37,54 @@ Units Ontology & Units Ontology, 25 May 2023 \\
 \end{tabular}
 \end{table}
 
-The accompanying data repository described in Data Availability contains:
-\begin{itemize}
-\item A sample catalogue linking collection visits, samples,
-extractions, libraries and sequence runs.
-\item Amplicon counts and taxonomic mappings, field environmental
-observations, daily climate inputs and monthly climate summaries.
-\item Laboratory and field XRF values, the chemical mapping table for
-93 reporting channels, and archived-soil pH measurements
-(\texttt{EQ-PH-SHARED-v1.0.1}).
-\item The refined MAG catalogue: 5,438 genome FASTAs with per-genome
-checksums, source-library and binning provenance, CheckM2 quality estimates
-and GTDB R232 classifications, together with MIMAG quality tiers and the
-ENA accessions of each library, assembly, bin and MAG. Shotgun library
-metadata covers 551 read-bearing libraries (Section~\ref{methods:shotgun}).
-\item Functional annotations of the refined MAG catalogue: per-genome
-counts of KOs, CAZy families, Pfam domains and preferred gene names,
-per-genome numbers of predicted and annotated proteins, and the tool
-versions and checksums of each genome's annotation.
-\item Coverage profiles of the 551 shotgun libraries against the refined
-MAG catalogue, with the mapping reference definition that assigns each
-contig to its genome.
-\item The paired PMA profiles and the ecology-analysis inputs: 150
-CoverM profiles from Trips~1--3 against the 991-genome catalogue,
-eggNOG annotations supporting its 990-genome analytical subset, and six
-source tables for the MAG-derived versus PICRUSt2 comparison.
-\item A data dictionary defining fields, data types, units and missing-value
-conventions; a climate inventory with acquisition metadata; and a file inventory
-with sizes, checksums, licensing status and bulk-data retrieval information.
-\item Validation schemas, SPARQL queries, expected query outputs and
-source comparisons.
-\end{itemize}
+Table~\ref{tab:products} distinguishes the biological products from their graph metadata.
+The sample catalogue links collection visits, specimens, extractions, libraries and runs;
+these entities retain separate identifiers because a specimen can yield several assays or runs.
+The data dictionary specifies types, units and missing-value conventions; the climate inventory
+records acquisition windows and variables; and the file inventory records sizes, checksums,
+licensing and retrieval information. Archived-soil pH measurements and their Trip~4 replicate-2
+specimen reconciliation are distributed under version identifier \texttt{EQ-PH-SHARED-v1.0.1}.
+A machine-readable cohort and product manifest assigns manuscript and reproducibility snapshot
+identifiers to distinguish the canonical released resource from companion analytical products
+and historical pilots until formal repository deposition. These snapshot identifiers link the
+canonical 5,438-representative genome catalogue, the separate Bakta
+(\texttt{EQ-PROT-BAKTA-v1.0.0}) and Pyrodigal (\texttt{EQ-PROT-PYRODIGAL-REP-v1.0.0})
+gene-calling products, and the four CoverM read-mapping products
+(\texttt{EQ-COVERM-REFINED-v1.0.0}, \texttt{EQ-COVERM-REL-ABUND-v1.0.0},
+\texttt{EQ-COVERM-ARCHAEA-COMP-v1.0.0} and \texttt{EQ-COVERM-LEGACY-991-v0}) to the exact
+specimen and library cohorts reused by the companion studies
+\cite{ecology_companion,proteome_companion}. The paired PMA profiles and the historical
+Trips~1--3 991-genome pilot analysis (150 CoverM profiles, a 990-genome KO matrix and
+six source tables for the initial MAG-derived versus PICRUSt2 comparison) retain their own
+reference definitions and analysis provenance.
+The microTrait trait profile (\texttt{EQ-MICROTRAIT-\allowbreak REP-\allowbreak v1.0.0}) provides genome-resolved trait matrices and continuous predictions as a separate annotation product, with compact tables and provenance in the reproducibility package and larger intermediates retained on institutional storage. This annotation product is separate from the archived KG v3.0.1; its bulk deposit is included in the pending archive described in Data Availability.
+
+\begin{table}[h]\centering\small
+\caption{Principal products and their representation. Assigned product identifiers denote manuscript and reproducibility snapshot versions distinguishing the canonical resource from companion analytical products and historical pilots. Counts refer to the indicated entity for each product. Archive locations and access conditions are given
+in Data Availability.}\label{tab:products}
+\begin{tabular}{p{.23\textwidth}p{.25\textwidth}p{.40\textwidth}}\toprule
+Product & Entity count & Format and graph coverage \tabularnewline\midrule
+Specimen catalogue & 2,516 non-control entries & Tables and RDF specimen/process links \tabularnewline
+Amplicon profiles & 1,271 profiles (1,186 deduplicated primary-transect specimens) & Count tables; taxonomic observations and provenance in RDF \tabularnewline
+Shotgun reads & 551 libraries; 554 runs & ENA reads and accession tables; sequence metadata in RDF \tabularnewline
+Primary assemblies & 549 assemblies & ENA sequences and provenance tables \tabularnewline
+Representative genomes & 5,438 genomes (126 HQ, 5,311 strict MQ, 1 at 10.0\% contamination) & FASTA and quality/taxonomy tables; separate from the 16 RDF modules \tabularnewline
+Bakta/eggNOG annotations & 19,186,792 proteins (16,119,759 annotated; 8,516,493 KO across 11,386 KOs, 9,703 Pfam, 141 CAZy) & Gene and genome feature tables, tool versions and checksums (\texttt{EQ-PROT-BAKTA-v1.0.0}) \tabularnewline
+Companion Pyrodigal proteins & 20,451,986 representative proteins (20,379,930 bin-mapped) & Protein sequences and reconciliation summaries (\texttt{EQ-PROT-PYRODIGAL-REP-v1.0.0}) \tabularnewline
+microTrait genome traits & 5,438 genomes; 37, 100, 189 categories & Compressed model, rule, trait and continuous-prediction tables (\texttt{EQ-MICROTRAIT-\allowbreak REP-\allowbreak v1.0.0}); separate from KG v3.0.1 \tabularnewline
+Coverage and cohort matrices & 551 depth/breadth; 550, 546, 545, 442 and 441 cohorts; 193 archaeal; 150 pilot & Snapshot CoverM products (\texttt{EQ-COVERM-REFINED-v1.0.0}, \texttt{REL-ABUND-v1.0.0}, \texttt{ARCHAEA-COMP-v1.0.0}, \texttt{LEGACY-991-v0}) \tabularnewline
+Soil pH & 712 admitted measurements & Tables and RDF, with excluded-row dispositions and Trip~4 specimen links (\texttt{EQ-PH-SHARED-v1.0.1}) \tabularnewline
+XRF & 725 laboratory records; 71 field sessions & Tables and RDF; acquisition workflows kept separate \tabularnewline
+Cohort/product manifest & 5,438 genomes; 551 shotgun and 1,186 amplicon cohort flags & Machine-readable provenance manifest, per-library accounting and MIMAG boundary table \tabularnewline
+Asserted knowledge graph & 16 modules (45,707,660 triples) & RDF/XML, Turtle and combined compressed N-Quads \tabularnewline
+\bottomrule\end{tabular}\end{table}
+
 Tabular data use delimited text formats while larger collections are compressed.
+
+
+
+\subsection{FAIR identifiers and reuse metadata}
+The version-specific Zenodo DOI, ENA accessions and project-domain IRIs support discovery and identification of the resource~\cite{fair}. The archived modules provide fixed inputs for local access, while the public endpoint provides query access to the deployed asserted graph. The release manifest identifies files by checksum and the data dictionary defines fields, units and missing-value conventions. Data Availability records the access conditions for sequences and associated products.
+
+Interoperability is supported by RDF and shared SIO, ENVO, ChEBI, PATO, UO and validated taxonomic identifiers. Original labels and classifier lineages remain linked to their mapped identifiers, preserving the evidence used to interpret mappings. Specimen, process and measurement provenance, term definitions, validation evidence and scoped licences support reuse. Imported vocabularies retain their own licences; project-authored metadata and software have the licences stated in Data Availability.
+\end{revision}

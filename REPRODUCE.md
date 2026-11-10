@@ -73,15 +73,17 @@ the environment files alone are not treated as proof of execution.
 
 ```bash
 make bootstrap
+uv run python scripts/release/build_cohort_product_manifest.py
+PYTHONPATH=. uv run pytest -q tests/test_cohort_product_manifest.py tests/test_mag_metadata.py tests/test_kg301_paper_release.py scripts/manuscript/test_manuscript_consistency.py
 make test
 make paper
 ```
 
-`make paper` builds both `paper/sn-article.tex` and `paper/supplement.tex`.
-The manuscript roots are explicit; retired drafts and local TeX products are
+`make paper` builds `paper/sn-article.tex`.
+The manuscript root is explicit; retired drafts and local TeX products are
 not inputs. The build fixes `SOURCE_DATE_EPOCH` and `FORCE_SOURCE_DATE` so its
 PDF bytes repeat in the pinned TeX environment. `make test` runs manuscript,
-package, and workflow-wiring checks
+cohort/product manifest, package, and workflow-wiring checks
 that do not generate a KG. The complete generator and semantic-validation suite
 runs on `ws` or Ontolinator in the next step.
 

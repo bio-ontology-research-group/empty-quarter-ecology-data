@@ -1,0 +1,9 @@
+trait_family	specification	raw_column	denominator	contrast	n_sites	n_visits	point_estimate_pp	ci95_low_pp	ci95_high_pp	se_pp	excludes_zero	delta_from_legacy_pp
+BetL (betaine uptake)	legacy_HMM	legacy_HMM_glycine_betaine_transporter	original_reads	Surface-minus-Deep	36	68	3.302473	2.023768	4.560354	0.658953	True	0.0
+BetL (betaine uptake)	legacy_HMM	legacy_HMM_glycine_betaine_transporter	mapped_community	Surface-minus-Deep	36	68	7.551493	4.724321	10.334114	1.428955	True	0.0
+AhpCF (peroxide defence)	legacy_HMM	legacy_HMM_ahpCF	original_reads	Surface-minus-Deep	36	68	3.232487	1.367102	4.825049	0.901018	True	0.0
+AhpCF (peroxide defence)	legacy_HMM	legacy_HMM_ahpCF	mapped_community	Surface-minus-Deep	36	68	6.949125	3.342769	9.713747	1.626819	True	0.0
+BetL (betaine uptake)	new_microtrait_full_rule	microtrait_rule_betL	original_reads	Surface-minus-Deep	36	68	3.002153	1.844122	4.137172	0.599619	True	-0.30032
+BetL (betaine uptake)	new_microtrait_full_rule	microtrait_rule_betL	mapped_community	Surface-minus-Deep	36	68	6.906226	4.331971	9.446648	1.303711	True	-0.645267
+AhpCF (peroxide defence)	new_microtrait_full_rule	microtrait_rule_ahpCF	original_reads	Surface-minus-Deep	36	68	3.221271	1.365894	4.805838	0.895498	True	-0.011216
+AhpCF (peroxide defence)	new_microtrait_full_rule	microtrait_rule_ahpCF	mapped_community	Surface-minus-Deep	36	68	6.93005	3.344474	9.675368	1.618918	True	-0.019075

@@ -1,19 +1,47 @@
+\begin{revision}
+
 \section{Technical validation}\label{valid}
 
-We validated the resource for agreement between the released data and the source records, including checks on laboratory controls and agreement between measurements. We also validated the structure, logical consistency and integrity of the knowledge graph. Additionally, we checked whether queries on the graph return expected results. For every check, the validation records identify input files by checksum and the software versions used (Section~\ref{records}).
+Validation assesses source-to-release reconciliation, assay controls, sequence-file integrity and the accuracy of represented links. Structural constraints and logical checks assess the graph within their stated coverage. Expected query results provide an independent comparison with source observations. For every check, the validation records identify input files by checksum and the software versions used (Section~\ref{records}).
 
-\subsection{Agreement with source records}
+\subsection{Source reconciliation and measurement validation}
 
-Every eligible record in the source tables is represented once in the graph. This includes 2,516 samples, 1,647 DNA extracts, and 1,242 amplicon libraries and their corresponding FASTQ datasets. All 274 field environmental measurements for temperature, pressure, and relative humidity pass checks for site identity and for plausible ranges. All 93 reported XRF elements were checked against ChEBI and PubChem, and elements without mapped identifiers are included with an empty mapping field. All 1,168 pH records and their acceptance or exclusion conditions were reproduced, and accepted measurements were linked to the correct samples.
+The archived evidence workflow produced a specimen catalogue and
+reconciliation summaries for specimens, extracts, libraries, runs and
+community profiles. The 2,516 eligible source rows reconcile exactly
+to 2,516 generated sample individuals; the 1,647 extraction-eligible
+rows reconcile to 1,647 DNA extracts; and 1,242 resolved sequence rows
+reconcile to 1,242 amplicon libraries and 1,242 FASTQ datasets. A
+site-identity check independently matches each Trip~1 numeric identifier
+61--64 to a named catalogue individual by exact coordinates and
+rejects coordinate or IRI disagreement, accounting for all 36 corresponding
+source specimens.
 
-\subsubsection{Laboratory controls and measurement agreement}
+Environmental validation accounts for 274 field observations and checks
+site identity, temperature, pressure and relative humidity. Values enter
+the curated environmental dataset only when they satisfy the measurement
+range and identity criteria. The XRF provenance audit reproduced all
+13,390 reported Trips~1--4 cells under the maximum-positive rule and
+all 4,293 reported Trip~5 cells under the last-reported rule, with no
+mismatched reported cells, and verified that the canonical laboratory
+input comprises all 725 processed records. An independent
+chemical-identifier validation evaluated all 93 instrument channels against
+the pinned ChEBI release 247 and the checksummed PubChem snapshot of
+23 July 2026 (Section~\ref{methods:xrf}); all
+rows passed the declared rules, with explicit nulls for the aggregate
+LE channel and unsupported oxides. The pH validation accounts for 1,168 specimen-assay entries and
+reproduces the recorded admission and exclusion dispositions.
+It checks specimen identity for every admitted measurement, including
+field replicate~2 for all 156 Trip~4 measurements.
+
+
+\subsection{Laboratory controls and measurement agreement}
 
 
 The PowerSoil Pro extraction-control profile contained 1,165 ASVs,
 with 84\% of reads assigned to ASVs shared with biological profiles.
 Its nearest canonical profile was 46Dr1, with Bray--Curtis
-dissimilarity 0.39. We excluded this control from the contaminant
-screen. A library-order test compared nearby library numbers with
+dissimilarity 0.39. The frozen control adjudication interpreted this profile as contamination of the blank with soil template. Its recorded extraction-blank role and sequence record are retained, with a characterisation-only disposition; it is excluded from the extraction-blank prevalence screen to avoid treating the shared soil signal as reagent contamination. A library-order test compared nearby library numbers with
 different-site pairs matched by geographic-distance decile and
 compartment, using 999 library-order permutations. The Trip~1 and
 Trip~3 Bray--Curtis contrasts were $-0.003$ ($p=0.15$) and
@@ -75,139 +103,7 @@ CQ7 & What are the complete genus-level read counts and relative read abundance 
 \end{tabular}
 \end{table}
 
-Listing~\ref{lst:sparql_xrf} retrieves XRF measurements for a specific site, requiring traversal of
-the measurement process, quality, and value entities.
-
-\begin{lstlisting}[caption={SPARQL query to retrieve field XRF
-    measurements for Site 10. The query starts from the field-XRF
-    measuring processes whose target is the site and walks to the
-    individual analyte concentrations.},
-  label={lst:sparql_xrf}, basicstyle=\ttfamily\scriptsize,
-  frame=single]
-PREFIX rak: <https://rubalkhali.science/kb/RAK_>
-PREFIX sio: <http://semanticscience.org/resource/SIO_>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-SELECT ?processLabel ?siteLabel ?analyte ?concentration
-WHERE {
-  ?process a rak:0000025 ;
-           rdfs:label ?processLabel ;
-           sio:000291 ?site ;
-           sio:000229 ?value .
-  FILTER(CONTAINS(LCASE(STR(?processLabel)), "field xrf"))
-  ?site rdfs:label ?siteLabel .
-  FILTER(?siteLabel = "Site 10")
-  ?value sio:000215 ?quality ;
-         rak:2000012 ?concentration .
-  ?quality a ?qualityClass .
-  ?qualityClass rdfs:label ?analyte .
-  FILTER(?qualityClass != rak:0000032)
-}
-ORDER BY ?processLabel ?analyte
-\end{lstlisting}
-
-The query selects field-XRF processes targeting Site~10, then
-retrieves each output and its analyte quality. It returns one row
-per process/analyte combination, excluding the aggregate Light
-Elements channel. The concentration units are undocumented.
-
-The query returned 46 analyte-value rows for Site~10: 24 from Test~5847
-and 22 from Test~5848. Validation compares the returned identifiers and
-values with the expected observations from the site and XRF data.
-
-Listing~\ref{lst:sparql_taxon} retrieves the complete genus profile for
-run \texttt{ERR16061083},
-joining across bioinformatic workflows, FASTQ datasets, and taxon
-observations.
-
-\begin{lstlisting}[caption={Complete genus-level profile for run ERR16061083, ordered by descending read count and lineage.},label={lst:sparql_taxon},basicstyle=\ttfamily\scriptsize,frame=single]
-PREFIX rak: <https://rubalkhali.science/kb/RAK_>
-PREFIX sio: <http://semanticscience.org/resource/SIO_>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
-SELECT ?proc ?fastq ?runLabel ?lineage ?taxon ?taxonLabel
-       ?count ?relativeAbundance
-WHERE {
-  VALUES ?runLabel { "FASTQ dataset for ERR16061083" }
-  ?proc a rak:0000071 ;
-        sio:000230 ?fastq ;
-        sio:000229 ?dsAbs, ?dsRel .
-  ?fastq rdfs:label ?runLabel .
-  ?dsAbs a rak:0000074 ; rdfs:label ?absLabel ;
-         sio:000059 ?valAbs .
-  ?dsRel a rak:0000075 ; rdfs:label ?relLabel ;
-         sio:000059 ?valRel .
-  FILTER(STRENDS(STR(?absLabel), "(Genus)"))
-  FILTER(STRENDS(STR(?relLabel), "(Genus)"))
-  ?valAbs rak:2000026 ?count ;
-          rak:2000025 ?lineage ;
-          sio:000215 ?qualAbs .
-  ?valRel rak:2000020 ?relativeAbundance ;
-          rak:2000025 ?lineage ;
-          sio:000215 ?qualRel .
-  ?qualAbs sio:000011 ?taxon, ?fastq .
-  ?qualRel sio:000011 ?taxon, ?fastq .
-  ?taxon rdfs:label ?taxonLabel .
-  FILTER(?taxon != ?fastq)
-}
-ORDER BY ?runLabel DESC(xsd:double(?count)) ?lineage ?proc
-\end{lstlisting}
-
-The query binds both count and relative-abundance values to the same
-workflow, source FASTQ dataset, taxon and classifier lineage. Dataset
-labels encode rank through the suffix \texttt{(Genus)}.
-The query uses that emitted convention explicitly and returns all
-48 observations for the named run. The source-derived expected table
-contains the complete profile, including each classifier lineage.
-The all-run query retrieves profiles from a locally loaded snapshot. That unrestricted export
-is a long-running operation. The environmental example below additionally binds
-field temperature and specimen collection to the same site visit.
-
-\begin{lstlisting}[caption={SPARQL query to retrieve Pseudomonas relative abundance at sites with high temperature.}, label={lst:sparql_env_tax}, basicstyle=\ttfamily\scriptsize, frame=single]
-PREFIX rak: <https://rubalkhali.science/kb/RAK_>
-PREFIX sio: <http://semanticscience.org/resource/SIO_>
-PREFIX pato: <http://purl.obolibrary.org/obo/PATO_>
-PREFIX ncbitaxon: <http://purl.obolibrary.org/obo/NCBITaxon_>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?visit ?visitLabel ?site ?siteLabel ?sample ?fastq
-       ?temperatureProcess ?tempVal ?temp ?lineage ?relAbundance
-WHERE {
-  ?visit a rak:0000003 ; rdfs:label ?visitLabel ;
-         sio:000291 ?site .
-  ?site rdfs:label ?siteLabel .
-  ?temperatureProcess sio:000068 ?visit ;
-                      sio:000229 ?tempVal .
-  ?tempVal rak:2000003 ?temp ; sio:000215 ?tempQual .
-  ?tempQual a pato:0000146 ; sio:000011 ?site .
-  FILTER(?temp > 35.0)
-  ?sampling a rak:0000024 ; sio:000068 ?visit ;
-            sio:000291 ?site ; sio:000229 ?collection .
-  ?collection sio:000059 ?sample .
-  ?ext sio:000230 ?sample ; sio:000229 ?dna .
-  ?libPrep a rak:0000065 ; sio:000230 ?dna ;
-           sio:000229 ?lib .
-  ?seq a rak:0000066 ; sio:000230 ?lib ;
-       sio:000229 ?fastq .
-  ?bioinf a rak:0000071 ; sio:000230 ?fastq ;
-          sio:000229 ?dsRel .
-  ?dsRel a rak:0000075 ; rdfs:label ?datasetLabel ;
-         sio:000059 ?valRel .
-  FILTER(STRENDS(STR(?datasetLabel), "(Genus)"))
-  ?valRel rak:2000020 ?relAbundance ;
-          rak:2000025 ?lineage ; sio:000215 ?qualRel .
-  ?qualRel sio:000011 ncbitaxon:286, ?fastq .
-}
-ORDER BY ?visit ?sample ?fastq ?tempVal ?lineage
-\end{lstlisting}
-
-Each result retains the collection visit, specimen, sequence dataset,
-temperature observation and genus lineage. A site's visits are joined
-through their process provenance. This provides an environmental
-temperature associated with the collection visit of each returned
-microbial profile.
-
-Regression fixtures execute both queries on deliberately confusable
+Regression fixtures execute the taxonomic and environmental queries in Usage Notes on deliberately confusable
 inputs. The taxonomy fixture assigns the same genus different
 abundances in two profiles and adds a species-rank observation; the
 query returns exactly the two matching genus observations. The visit
@@ -217,43 +113,13 @@ the 40\degree C visit. These tests check the implemented joins;
 release-level validation additionally requires expected result tables
 for the complete modules.
 
-\subsection{Source reconciliation and measurement validation}
-
-The archived evidence workflow produced a specimen catalogue and
-reconciliation summaries for specimens, extracts, libraries, runs and
-community profiles. The 2,516 eligible source rows reconcile exactly
-to 2,516 generated sample individuals; the 1,647 extraction-eligible
-rows reconcile to 1,647 DNA extracts; and 1,242 resolved sequence rows
-reconcile to 1,242 amplicon libraries and 1,242 FASTQ datasets. A
-site-identity check independently matches each Trip~1 numeric identifier
-61--64 to a named catalogue individual by exact coordinates and
-rejects coordinate or IRI disagreement, accounting for all 36 corresponding
-source specimens.
-
-Environmental validation accounts for 274 field observations and checks
-site identity, temperature, pressure and relative humidity. Values enter
-the curated environmental dataset only when they satisfy the measurement
-range and identity criteria. The XRF provenance audit reproduced all
-13,390 reported Trips~1--4 cells under the maximum-positive rule and
-all 4,293 reported Trip~5 cells under the last-reported rule, with no
-mismatched reported cells, and verified that the canonical laboratory
-input comprises all 725 processed records. An independent
-chemical-identifier validation evaluated all 93 instrument channels against
-the pinned ChEBI release 247 and the checksummed PubChem snapshot of
-23 July 2026 (Section~\ref{methods:xrf}); all
-rows passed the declared rules, with explicit nulls for the aggregate
-LE channel and unsupported oxides. The pH validation accounts for 1,168 specimen-assay entries and
-reproduces the five admission dispositions in Section~\ref{methods:ph}.
-It checks specimen identity for every admitted measurement, including
-field replicate~2 for all 156 Trip~4 measurements.
-
 \subsection{MAG catalogue integrity}
 
-We checked the 5,438 refined MAG FASTAs against the representative inventory
+The integrity check compared the 5,438 refined MAG FASTAs against the representative inventory
 and the refined-bin CheckM2 report. Every genome's contig count and summed
 sequence length matched that report. The archive contains 2,485,945 contigs
-totalling 20,490,828,267~bp. We computed a SHA-256 checksum for each FASTA,
-then reread every archive member and verified its bytes against the
+totalling 20,490,828,267~bp. A SHA-256 checksum was computed for each FASTA,
+and every archive member was reread and its bytes verified against the
 per-genome manifest. The GTDB R232 classification tables passed their
 upstream checksum checks and contained exactly the same 5,438 genome
 identifiers. Library metadata reconciled all 551 read-bearing libraries
@@ -276,7 +142,25 @@ read counts are integers, and the reported length of each genome equals its
 total sequence length in the catalogue. The median library aligned 45.9\%
 of its reads to the catalogue (range 3.9--83.8\%). Seven libraries reached
 the limit of 200 million read pairs. Library F5Dr1, which yielded no
-assembly, contributed 616 read pairs.
+assembly, contributed 616 read pairs and had zero mapped reads in the
+relative-abundance cohort matrix (\texttt{EQ-COVERM-REL-ABUND-v1.0.0}).
+Cohort reconciliation verified exact specimen, site, campaign, compartment
+and dune-zone joins across the 550 non-zero mapped libraries, the 546
+core-transect libraries across 59 primary sites, the 545 read-depth-modeled
+core libraries, the 442 amplicon-matched libraries across 58 primary sites
+and the 441 matched read-depth-modeled libraries, together with the strict
+MIMAG contamination boundary separating the 5,437 ENA MAGs (126 high-quality
+and 5,311 strict medium-quality representatives) from
+\texttt{48Dr2\_\_self\_SemiBin\_25} (10.0\% contamination) and the separate
+product provenance of the 20,451,986 Pyrodigal representative proteins
+(\texttt{EQ-PROT-PYRODIGAL-REP-v1.0.0}), the frozen analytical KO matrix
+(\texttt{EQ-KO-LEGACY-ANALYTICAL-v0}), and the frozen analytical taxonomy
+snapshot (\texttt{EQ-TAX-LEGACY-ANALYTICAL-v0}, reconciled 1:1 against
+canonical GTDB R232 strings across all 5,438 representatives with 1,898
+differing strings) associated with the same 5,438
+representative genome identifiers.
+
+All 5,438 genomes completed gene calling, profile searches, rule evaluation and continuous-trait prediction. The aggregate tables contain each canonical genome identifier exactly once and retain its GTDB release 232 taxonomy and CheckM2 metrics. The three trait matrices contain 37, 100 and 189 trait categories, respectively, in addition to genome length and continuous predictions. A six-genome smoke test reproduced the official microTrait extraction outputs exactly before the complete cohort was processed. Separate coverage tests verify the missing phosphatase models and prevent unassayed alternatives from being interpreted as absent genes. These checks establish execution and identifier consistency; the biological accuracy of individual trait predictions remains dependent on the underlying models and recovered genome sequence.
 
 \subsection{ShEx schema validation}
 
@@ -325,21 +209,4 @@ Label validation checks that each labelled project entity has exactly one
 label. The evidence identifies the input modules, their hashes and validator
 versions (Section~\ref{records}).
 
-\subsection{Portal access}
-
-The portal (\url{https://rubalkhali.science/}) retrieves data through
-SPARQL queries and renders site and specimen views. Validation
-compares query results with source-derived expected values.
-
-\subsection{Identifiers and reuse metadata}
-
-Each named entity has a project-domain IRI. The manifest identifies
-payload files, and the data dictionary specifies curated fields,
-units and missing-value conventions. RDF provenance links travel
-with the modules and support reuse through SIO, ENVO, ChEBI, PATO,
-UO and validated taxonomic identifiers \cite{fair}.
-
-The public endpoint provides read access to the deployed graph.
-The v3.0.1 Zenodo deposit fixes the released graph, module files and
-rebuild kit, with checksums, scoped licences and a version-specific DOI.
-Data Availability identifies the separate sequence-access requirement.
+\end{revision}

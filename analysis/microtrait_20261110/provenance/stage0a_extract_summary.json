@@ -1,0 +1,21 @@
+{
+  "stage": "stage0a_extract_genomes",
+  "status": "completed",
+  "timestamp": "2026-11-10T09:06:09Z",
+  "elapsed_seconds": 212.85,
+  "n_canonical_mags_verified": 5438,
+  "n_bacteria": 4847,
+  "n_archaea": 591,
+  "n_thermoplasmatota": 237,
+  "n_has_sub_suffix": 1010,
+  "n_chunks": 34,
+  "smoke_mags": [
+    "10Dr2__single_SemiBin_0",
+    "10Dr2__single_SemiBin_6",
+    "22PRr1__self_SemiBin_358_sub",
+    "22PRr1__self_SemiBin_502_sub",
+    "15Dr1__self_SemiBin_160_sub",
+    "15Dr1__single_SemiBin_32"
+  ],
+  "cohort_manifest_sha256": "f358b121399411717a6d6b643a208f8aa3887dfd8a7e31c3f473ed2fe21b9b5d"
+}

@@ -1,0 +1,57 @@
+{
+  "analysis": "Ecology 41-Rule Protein HMM vs microTrait Concordance Audit",
+  "cohort_size": 5438,
+  "betl_comparison": {
+    "published_ecology_panel": "HMM:glycine betaine transporter",
+    "published_logical_rule": "(('betL'))",
+    "target_hmm_model": "betL (TIGR02293)",
+    "microtrait_rule_names": [
+      "betL",
+      "glycine betaine transporter"
+    ],
+    "microtrait_logical_rule": "('betL')",
+    "microtrait_identical_rules_check": true,
+    "ecology_positive_count": 415,
+    "microtrait_positive_count": 341,
+    "concordant_positive_count": 341,
+    "concordant_negative_count": 5023,
+    "discordant_count": 74,
+    "ecology_pos_microtrait_neg": 74,
+    "microtrait_pos_ecology_neg": 0,
+    "concordance_rate_percent": 98.6392
+  },
+  "ahpcf_comparison": {
+    "published_ecology_panel": "HMM:ahpCF",
+    "published_logical_rule": "((('ahpC_1') | ('ahpC_2') | ('ahpC_3')) & (('ahpF')))",
+    "target_hmm_models": [
+      "ahpC_1",
+      "ahpC_2",
+      "ahpC_3",
+      "ahpF"
+    ],
+    "microtrait_rule_name": "ahpCF",
+    "microtrait_logical_rule": "(('ahpC_1' | 'ahpC_2' | 'ahpC_3') & ('ahpF'))",
+    "ecology_positive_count": 525,
+    "microtrait_positive_count": 522,
+    "concordant_positive_count": 522,
+    "concordant_negative_count": 4913,
+    "discordant_count": 3,
+    "ecology_pos_microtrait_neg": 3,
+    "microtrait_pos_ecology_neg": 0,
+    "concordance_rate_percent": 99.9448
+  },
+  "schema_and_methodology_findings": {
+    "ecology_pipeline": "Evaluated in proteome-integration-20261106 via hmmsearch --cut_tc --tblout against panels-release.hmm, mapping best-hit domain scores directly without full microtrait domain coordinate overlap and length filtering.",
+    "microtrait_official_pipeline": "Evaluated in microtrait-20261110 via microtrait::extract.traits() with hmmsearch --domtblout, microtrait trusted cutoffs, and domain overlap resolution.",
+    "scientific_disposition": "Per MICROTRAIT-TASK protocol, exact file and schema findings are reported, and concordance is left unresolved rather than forcing ad-hoc equivalence."
+  },
+  "phosphatase_and_unassayed_models": {
+    "aphA_status": "unassayed_model_missing_from_release",
+    "phoN_status": "unassayed_model_missing_from_release",
+    "unassayed_models_count_in_cohort": 5438,
+    "phosphatase_safe_na_count": 2452,
+    "phosphatase_confirmed_present_count": 2986,
+    "phosphatase_total_evaluated": 5438,
+    "note": "microTrait rule phosphatase = ('phoA' | 'phoD' | 'phoN' | 'aphA'). Upstream official release lacks models for aphA and phoN. A zero call across phoA and phoD is indeterminate (safe-NA=2,452), whereas any positive call in phoA or phoD is confirmed present (2,986)."
+  }
+}

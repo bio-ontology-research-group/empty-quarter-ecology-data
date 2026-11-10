@@ -124,6 +124,61 @@ ADDITIONS = {
     "tests/test_mag_metadata.py": (
         "validation-fixture", "audit-evidence", "MAG metadata joins, quality thresholds, taxonomy checksums and release-gate tests",
     ),
+    "scripts/release/build_cohort_product_manifest.py": (
+        "release-code",
+        "audit-evidence",
+        "Deterministic cross-paper cohort and product provenance manifest builder and validator",
+    ),
+    "tests/test_cohort_product_manifest.py": (
+        "validation-fixture",
+        "audit-evidence",
+        "Adversarial cohort join, same-count member swap, MIMAG boundary and product version tests",
+    ),
+    "metadata/cohorts/cohort_product_manifest.json": (
+        "cohort-manifest",
+        "canonical-candidate",
+        "Shared machine-readable product and cohort provenance manifest across the data, ecology and proteome manuscripts",
+    ),
+    "metadata/cohorts/shotgun_cohort_accounting.tsv": (
+        "cohort-manifest",
+        "canonical-candidate",
+        "Per-library shotgun cohort accounting across the 551/549/550/546/545/442/441 and historical 150-library subsets",
+    ),
+    "metadata/cohorts/mimag_quality_boundary.tsv": (
+        "cohort-manifest",
+        "canonical-candidate",
+        "Per-representative strict MIMAG (<10% contamination) versus operational dRep (<=10% contamination) quality boundary table",
+    ),
+    "metadata/cohorts/taxonomy_snapshot_reconciliation.tsv": (
+        "cohort-manifest",
+        "canonical-candidate",
+        "Per-representative 1:1 reconciliation between canonical GTDB R232 strings and the frozen analytical taxonomy snapshot (1,898 differing strings across 5,438 genomes)",
+    ),
+    "metadata/cohorts/source/included_samples_1186.tsv": (
+        "cohort-source",
+        "canonical-candidate",
+        "Deduplicated 1,186-sample primary-transect 16S amplicon cohort table",
+    ),
+    "metadata/cohorts/source/site_dune_zones.tsv": (
+        "cohort-source",
+        "canonical-candidate",
+        "Primary transect site 1-60 Edgell dune-zone classification table",
+    ),
+    "metadata/cohorts/source/shotgun_mapping_qc_source.tsv": (
+        "cohort-source",
+        "canonical-candidate",
+        "CoverM relative-abundance mapping and post-QC read-depth source accounting table",
+    ),
+    "metadata/cohorts/source/archaeal_competitive_mapping_summary.tsv": (
+        "cohort-source",
+        "audit-evidence",
+        "Competitive archaeal mapping summary across 193 paired profiles and breadth/MAPQ gates",
+    ),
+    "metadata/cohorts/source/legacy_analytical_genome_quality.tsv": (
+        "cohort-source",
+        "audit-evidence",
+        "Frozen analytical taxonomy and quality snapshot (EQ-TAX-LEGACY-ANALYTICAL-v0) across the 5,438 representative genome identifiers",
+    ),
     "evidence/controls/source_snapshots/ibex_20250714_qiime2/extracted/feature-table.biom": (
         "control-source",
         "canonical-candidate",
@@ -410,6 +465,14 @@ MANIFEST_OVERRIDES = {
 # above.  Rules are matched longest-prefix first; a trailing "/" matches every
 # file at or below that directory, otherwise the rule matches an exact path.
 DIRECTORY_RULES: tuple[tuple[str, tuple[str, str, str]], ...] = (
+    (
+        "analysis/microtrait_20261110/",
+        (
+            "functional-processing",
+            "canonical-candidate",
+            "Full-catalogue microTrait v1.0.0 V14 pipeline code, provenance, compact gzip trait/rule/HMM matrices, and Thermoplasmatota marker-rule analysis across 5,438 canonical representatives",
+        ),
+    ),
     (
         "metadata/metagenome/canonical/",
         ("mag-catalogue-metadata", "audit-evidence",

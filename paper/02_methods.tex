@@ -1,9 +1,34 @@
+\begin{revision}
+
 \section{Methods}\label{methods}
 
-\subsection{Study description}
+Figure~\ref{fig:resource_workflow} summarizes the data products and their provenance; Table~\ref{tab:software_versions} collects the principal software versions. The sampling and assay protocols below specify how source observations enter those products.
+\input{resource_workflow.tex}
+\begin{table}[ht]
+\centering\small
+\caption{Principal software and reference versions. Version-specific execution settings and validation scope are described with the corresponding methods.}
+\label{tab:software_versions}
+\begin{tabular}{p{0.28\textwidth}p{0.64\textwidth}}
+\toprule
+Stage & Software and references \\
+\midrule
+Amplicon profiles & nf-core/ampliseq v2.14.0; DADA2; SILVA v138.2 \\
+Predicted functions & PICRUSt2 v2.4.1 \\
+MAG generation & MEGAHIT v1.2.9; SemiBin2 v2.2.1; DAS Tool v1.1.7; CheckM2 v1.1.0 \\
+MAG taxonomy & GTDB-Tk v2.7.2; GTDB R232 \\
+MAG annotation & Bakta v1.12.0 / database v6.0; Pyrodigal; eggNOG-mapper v2.1.13 / eggNOG v5.0.2; DIAMOND v2.0.15 \\
+MAG coverage & Bowtie2 v2.5.1; SAMtools v1.16.1; CoverM v0.6.1 and v0.7.0 \\
+Graph generation & OWL API v5.1.20; reference ontologies in Table~\ref{tab:modules} \\
+Graph validation & Jena ShEx v4.10.0; ELK v0.4.3 with OWL API v4.5.26 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-\subsubsection{Study area}
-We conducted five sampling campaigns along a transect across the Rub' al-Khali starting from the western escarpment (19.15\degree N, 45.17\degree
+
+
+\subsection{Sampling design and field observations}
+
+Five sampling campaigns covered a transect across the Rub' al-Khali starting from the western escarpment (19.15\degree N, 45.17\degree
 E) to the eastern Saudi Arabian border with Oman (20.71\degree N,
 54.73\degree E). The 60 primary sampling sites span 1,015~km in a straight line and 1,043-km along the transect, calculated by summing great-circle distances between successive sites using an Earth radius of 6,371~km.
 Figure~\ref{fig:transect} shows the site coordinates and their altitudes.
@@ -19,9 +44,7 @@ Figure~\ref{fig:transect} shows the site coordinates and their altitudes.
 In addition to the 60 primary sites, the survey included 10 named locations such as wells, a hot spring, and an oil-spill site. These locations were not part of the repeated sampling campaign. Comparisons across campaigns therefore focus on the 60 primary sites, and metadata links each observation to its sampling site, campaign, and sample.
 
 
-\subsubsection{Sampling design}
-To capture temporal variability, we conducted campaigns across
-different seasons: late winter 2023 (Trip 1), summer
+The campaigns span different seasons: late winter 2023 (Trip 1), summer
 2023 (Trip 2, truncated to 8 sites due to extreme temperatures), winter 2024 (Trip 3), summer 2024 (Trip 4), and autumn 2025 (Trip 5). Table~\ref{tab:env_summary} summarizes sites visited during each campaign.
 
 At each site, we sampled three soil compartments: bulk surface soil, bulk subsurface soil (nominal 5--10 cm depth), and subsurface soil collected near roots (nominal 5--10 cm depth, hereafter ``root-adjacent''). We collected three field replicates per compartment using sterile tubes and sterile plastic spoons, or three tubes taped together. Exact tube diameters, surface sampling depth, individual bulk subsurface depths and distance from roots were unrecorded. We stored samples at $-20$\degree C in the field
@@ -38,7 +61,7 @@ and compartment. Control samples are excluded.}
 \end{table}
 
 \subsubsection{Field observations}
-We recorded air temperature, atmospheric pressure, and relative humidity during site visits, although coverage varied between campaigns (Table~\ref{tab:env_summary}. Temperature is reported in degrees Celsius, pressure in pascals, and relative humidity in percent. The field logs record pressure in hectopascals (millibars); we multiplied these values by 100 and assert them in pascals (\texttt{obo:UO\_0000110}) in the graph. Trip~2 recorded only temperature, with eight measurements spanning 34.5--41.9\degree C. Field observations entered the dataset only when their site identity and measurement range could be established. Additionally, field researchers classified each site by an observed environmental feature (\textit{e.g.} sand dune, saline pan, gravel), and we mapped these features to ENVO \cite{envo}.
+We recorded air temperature, atmospheric pressure, and relative humidity during site visits, although coverage varied between campaigns (Table~\ref{tab:env_summary}). Temperature is reported in degrees Celsius, pressure in pascals, and relative humidity in percent. The field logs record pressure in hectopascals (millibars); we multiplied these values by 100 and assert them in pascals (\texttt{obo:UO\_0000110}) in the graph. Trip~2 recorded only temperature, with eight measurements spanning 34.5--41.9\degree C. Field observations entered the dataset only when their site identity and measurement range could be established. Additionally, field researchers classified each site by an observed environmental feature (\textit{e.g.} sand dune, saline pan, gravel), and we mapped these features to ENVO \cite{envo}.
 
 
 \begin{table}[h]
@@ -62,24 +85,22 @@ We recorded air temperature, atmospheric pressure, and relative humidity during 
 \end{table}
 
 %%%%%%%%%%%%%%%
-\subsection{Sample processing}
-\subsubsection{DNA extraction}
-We extracted genomic DNA from 0.9--1.2~g of soil using either the
+\subsection{DNA extraction and amplicon sequencing}
+Genomic DNA was extracted from 0.9--1.2~g of soil using either the
 QIAGEN PowerLyzer PowerSoil Kit (catalogue no.\ 12855-50) or the QIAGEN
-DNeasy PowerSoil Pro Kit (catalogue no.\ 47014). The extraction kit and method were recorded for samples when available. Frozen soil samples were thawed on ice and processed immediately. Before homogenization, we incubated samples at 65\degree C for 10~min with agitation at 1,200~rpm, then homogenized using a PowerLyzer 24 Homogenizer at 4,000~rpm for one 45-second cycle. The remaining purification steps were performed either
+DNeasy PowerSoil Pro Kit (catalogue no.\ 47014). The extraction kit and method were recorded for samples when available. Frozen soil samples were thawed on ice and processed immediately. Before homogenization, samples were incubated at 65\degree C for 10~min with agitation at 1,200~rpm, then homogenized using a PowerLyzer 24 Homogenizer at 4,000~rpm for one 45-second cycle. The remaining purification steps were performed either
 manually or using a QIAcube Connect instrument, following the
-manufacturer's protocol. We eluted DNA in 50~\textmu L of the elution
-buffer supplied with each kit, and stored extracted DNA in $-20$\degree C.
+manufacturer's protocol. DNA was eluted in 50~\textmu L of the elution
+buffer supplied with each kit, and stored at $-20$\degree C.
 
-We quantified extracted DNA using the Qubit dsDNA High Sensitivity
+Extracted DNA was quantified using the Qubit dsDNA High Sensitivity
 assay, with fluorescence measured using a Varioskan LUX multimode
-plate reader (Thermo Fisher Scientific). We recorded extract concentrations and processing information for each sample.
+plate reader (Thermo Fisher Scientific). Extract concentrations and processing information were recorded per sample.
 
-\subsubsection{16S rRNA amplification}
-We amplified the V3--V4 region of the bacterial 16S rRNA gene using
+The V3--V4 region of the bacterial 16S rRNA gene was amplified using
 the Bakt\_341F (\texttt{CCTACGGGNGGCWGCAG}) and Bakt\_785R
 (\texttt{GACTACHVGGGTATCTAATCC}) primers \cite{klindworth2013primers},
-both carrying Illumina overhang adapters. We performed first-round PCR using TaKaRa Ex Taq DNA Polymerase (catalogue no.\
+both carrying Illumina overhang adapters. First-round PCR used TaKaRa Ex Taq DNA Polymerase (catalogue no.\
 RR001B). Each 50-\textmu L reaction contained
 5~\textmu L of 10$\times$ buffer with Mg$^{2+}$, 4~\textmu L of dNTP mix
 (2.5~mM each), 2~\textmu L of each primer (10~\textmu M), 0.25~\textmu L of polymerase (5~U/\textmu L), 5~\textmu L of DNA and 31.75~\textmu L of
@@ -88,10 +109,9 @@ primer, 0.2~mM of each dNTP and 1.25~U of polymerase. Cycling conditions
 were 95\degree C for 3~min; 35 cycles of 95\degree C for 10~s, 65\degree C
 for 30~s and 72\degree C for 1~min; and a final extension at 75\degree C for 5~min.
 
-We checked PCR product on a 1\% agarose gel for an expected amplicon size of 500~bp. We re-amplified samples without a visible product with 8~\textmu L and then 12~\textmu L of DNA, and we set DNA input by volume because most extracts had low or undetectable concentrations. Samples that failed all three attempts were recorded as failed.
+PCR products were checked on a 1\% agarose gel for an expected amplicon size of 500~bp. Samples without a visible product were re-amplified with 8~\textmu L and then 12~\textmu L of DNA, with DNA input set by volume because most extracts had low or undetectable concentrations. Samples that failed all three attempts were recorded as failed.
 
-\subsubsection{Indexing and sequencing}
-We added dual indices and Illumina sequencing adapters in a
+Dual indices and Illumina sequencing adapters were added in a
 second-round PCR using the QIAGEN Multiplex PCR Kit (catalogue no.\
 206143), following the Illumina 16S Metagenomic Sequencing Library
 Preparation protocol \cite{illumina16S}: initial activation at
@@ -99,14 +119,16 @@ Preparation protocol \cite{illumina16S}: initial activation at
 for 30~s and 72\degree C for 30~s; final extension at 72\degree C for
 5~min.
 
-We purified indexed libraries using Agencourt AMPure XP beads (0.8:1 bead to sample volume), quantified with the Qubit dsDNA High Sensitivity assay, and checked for fragment size on an Agilent 4200 TapeStation (D5000 ScreenTape). We pooled libraries in equimolar amounts, calculating molarity from concentration and fragment size. Pools were sequenced on an Ollumina NovaSeq~6000 with an SP flow cell and a 500-cycle kit ($2 \times 250$~bp paired-end reads). Library preparation was performed in the PI's laboratory and sequencing at the KAUST Bioscience Core Lab.
+Indexed libraries were purified using Agencourt AMPure XP beads (0.8:1 bead to sample volume), quantified with the Qubit dsDNA High Sensitivity assay, and checked for fragment size on an Agilent 4200 TapeStation (D5000 ScreenTape). Libraries were pooled in equimolar amounts, calculating molarity from concentration and fragment size. Pools were sequenced on an Illumina NovaSeq~6000 with an SP flow cell and a 500-cycle kit ($2 \times 250$~bp paired-end reads). Library preparation was performed in the research laboratory and sequencing at the KAUST Bioscience Core Lab.
 
-\subsubsection{Control samples}
-We followed recommended guidelines for reporting contamination in low biomass samples by having controls for differnent study stages \cite{fierer2025controls} (Table~\ref{tab:controls}). To control for contamination introduced during DNA extraction, we included extraction blanks with nuclease-free water as input instead of soil, and processed them the same way as soil samples. Trips~1--3 used one extraction blank per extraction kit, and Trips~1--2 included shared extraction days; Trips~4--5 used one blank per trip-specific extraction-day batch. For Trip~4, we sequenced six extraction blanks (SEB, EB1--EB5); the blanks of three of the nine extraction batches were not sequenced. For Trip~5, we sequenced 18 extraction blanks (EB1--EB18), 17 of which have confirmed batch links to 217 biological profiles.
+\subsection{Laboratory controls and paired PMA treatments}
 
-We included two types of PCR negative controls. No-template controls (NTCs) contained PCR reagents and nuclease-free water instead of DNA, and reagent-only controls per amplification plate that contained reagents but neither water nor DNA. Reagent-only controls had low or undetectable DNA concentrations and TapeStation profiles of only adapter dimers, so they were not sequenced. We sequenced six NTCs that were prepared with Trip~5 samples.
 
-We also included positive standards to assess how well expected genera were recovered. During Trips 1 and 2 we used the ZymoBIOMICS HMW DNA Standard (D6322), which contained purified DNA and was added at the PCR step. D6322 contains seven bacterial genomes (14\% of genomic DNA each) and one yeast (2\%). During Trip~3 we used the ZymoBIOMICS Microbial Community Standard (D6300) which contains whole cells and was therefore included from the extraction step. D6300 contains eight
+Controls cover different processing stages, following reporting guidance for low-biomass samples \cite{fierer2025controls} (Table~\ref{tab:controls}). To control for contamination introduced during DNA extraction, extraction blanks were included with nuclease-free water as input instead of soil, and processed in the same way as soil samples. Trips~1--3 used one extraction blank per extraction kit, and Trips~1--2 included shared extraction days; Trips~4--5 used one blank per trip-specific extraction-day batch. For Trip~4, we sequenced six extraction blanks (SEB, EB1--EB5); the blanks of three of the nine extraction batches were not sequenced. For Trip~5, we sequenced 18 extraction blanks (EB1--EB18), 17 of which have confirmed batch links to 217 biological profiles, whereas EB18 has no frozen extraction-day or co-extracted-sample mapping and is retained for characterisation only. The mapped blanks cover 95 canonical biological profiles for Trip~4 and 217 for Trip~5. These batch memberships are recorded separately from the campaign labels.
+
+PCR negative controls comprised two types. No-template controls (NTCs) contained PCR reagents and nuclease-free water instead of DNA, and reagent-only controls per amplification plate that contained reagents but neither water nor DNA. Reagent-only controls had low or undetectable DNA concentrations and TapeStation profiles of only adapter dimers, so they were not sequenced. We sequenced six NTCs that were prepared with Trip~5 samples.
+
+Positive standards assess recovery of expected genera. The Trips 1 and 2 protocol used the ZymoBIOMICS HMW DNA Standard (D6322), which contained purified DNA and was added at the PCR step. D6322 contains seven bacterial genomes (14\% of genomic DNA each) and one yeast (2\%). The Trip~3 protocol used the ZymoBIOMICS Microbial Community Standard (D6300) which contains whole cells and was therefore included from the extraction step. D6300 contains eight
 bacteria (12\% of genomic DNA each) and two yeasts (2\% each). These
 proportions are the manufacturer's values. Two of each type of positive standard were amplified and sequenced.
 
@@ -123,39 +145,38 @@ Trip & Extraction blanks & PCR negative controls & Positive standards \\
 1 & One per kit; PowerSoil Pro blank sequenced & Nuclease-free water \\
 2 & One per kit & NTC-2 & Two D6322 (DNA) \\
 3 & One per kit & PCRCtrl (index 728) & Two D6300 (whole cells) \\
-4 & One per batch; 6 of 9 sequenced & Not sequenced & Checked by gel and TapeStation only \\
-5 & One per batch; 18 sequenced & Six NTCs sequenced & D6300, shotgun sequenced \\
+4 & One per batch; 6 of 9 sequenced & Not sequenced & No positive control \\
+5 & 18 sequenced; 17 batch-linked & Six NTCs sequenced & D6300, shotgun sequenced \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsubsection{PMA-treated samples}
-DNA extracted from soil includes DNA from intact cells as well as extracellular DNA and DNA from dead or damaged cells \cite{carini2016relic}. Propidium monoazide (PMA) is a dye that enters only cells with damaged membranes and binds to free DNA, and prevents amplification by PCR when exposed to light. We compare PMA-treated and untreated aliquots of the same soil samples to estimate how much of the 16S rRNA gene signal comes from cells with intact membranes. We applied this treatment to a subset of Trip~5 samples.
 
-The PMA dataset includes three soil samples collected from campsites during Trip~5. We collected root-adjacent soil from campsite C1, and root-adjacent and surface soil from campsite C2. From each collection tube, we took three samples and suspended each in phosphate-buffered saline (PBS, pH~7.4) at a soil-to-buffer ratio of 1:10 (w/v). The three samples from each collection tube are technical replicates of the treament and not independent field samples. We split each sample into a treated aliquot that included 50~\textmu M PMAxx, and an untreated aliquot, giving nine treated/untreated pairs.
+DNA extracted from soil includes DNA from intact cells as well as extracellular DNA and DNA from dead or damaged cells \cite{carini2016relic}. Propidium monoazide (PMA) is a dye that enters only cells with damaged membranes and binds to free DNA, and prevents amplification by PCR when exposed to light. The paired-treatment dataset records 16S rRNA gene profiles from PMA-treated and untreated aliquots of a subset of Trip~5 samples, with shared preparation and exposure conditions.
 
-We subjected both aliquots to the same procedure. We kept the aliquots in the dark for 10~min to allow the dye to enter the cells, and then exposed them to 450 nm light for 35~min at a distance of 15--20~cm from the light source, and turned them every 15~min to ensure even exposure. We stored aliquots at $-20$\degree C, and extracted DNA from 860~\textmu L of each aliquots with the PowerSoil Pro kit.
+The PMA dataset includes three soil samples collected from campsites during Trip~5. The source material comprised root-adjacent soil from campsite C1, and root-adjacent and surface soil from campsite C2. From each collection tube, three subsamples were taken and each suspended in phosphate-buffered saline (PBS, pH~7.4) at a soil-to-buffer ratio of 1:10 (w/v). The three samples from each collection tube are technical replicates of the treatment. Each sample was split into a treated aliquot that included 50~\textmu M PMAxx, and an untreated aliquot, giving nine treated/untreated pairs.
+
+Both aliquots followed the same exposure procedure: they were kept in the dark for 10~min to allow the dye to enter the cells, and then exposed to 450~nm light for 35~min at a distance of 15--20~cm from the light source, and turned every 15~min to ensure even exposure. Aliquots were stored at $-20$\degree C, and DNA was extracted from 860~\textmu L of each aliquot with the PowerSoil Pro kit.
 
 
-\subsubsection{Data processing}
-We processed raw amplicon reads with nf-core/ampliseq (v2.14.0)
+\subsection{Amplicon profiles and predicted functions}
+Raw amplicon reads were processed with nf-core/ampliseq (v2.14.0)
 \cite{nfcore, ampliseq}, using DADA2 \cite{dada2} for error
-correction and denoising, and SILVA (v138.2) \cite{silva} for taxonomic assignment. This resulted in 351,472 amplicon sequence variants (ASVs), and included 1,247 biological samples and 24 control samples. Quality filtering excludes the 24 control profiles and ten biological profiles with fewer than 1,000 reads, including one \texttt{T1Dr1} run with 934 reads. This leaves 1,237 profiles, including 1,227 profiles from sites~1--60, for the companion ecology analysis; the complete table is distributed unfiltered. The container digest and full denoising parameters are included in the repository.
+correction and denoising, and SILVA (v138.2) \cite{silva} for taxonomic assignment. This resulted in 351,472 amplicon sequence variants (ASVs), and included 1,247 biological samples and 24 control samples. Quality filtering excludes the 24 control profiles and ten biological profiles with fewer than 1,000 reads, including one \texttt{T1Dr1} run with 934 reads. This leaves 1,237 profiles, including 1,227 profiles from sites~1--60, and 1,186 deduplicated specimen profiles for the primary transect; the complete table is distributed unfiltered. The container identity and full denoising parameters are included in the repository.
 
-We predicted gene family and pathway abundances from the 16S rRNA data with PICRUSt2 v2.4.1 \cite{picrust2}. Two executions used the Trips~1--4 ampliseq output and the Trip~5 output (330,830 ASVs). KEGG Orthology (KO) prediction used the phylogenetic independent contrasts method, edge exponent 0.5, and random seed 100. Enzyme Comission (EC) and KO abundances required 100 reads, and pathway abundances were inferred from the EC predictions.
+Gene family and pathway abundances were predicted from the 16S rRNA data with PICRUSt2 v2.4.1 \cite{picrust2}. Two executions used the Trips~1--4 ampliseq output and the Trip~5 output (330,830 ASVs). KEGG Orthology (KO) prediction used the phylogenetic independent contrasts method, edge exponent 0.5, and random seed 100. Enzyme Commission (EC) and KO abundances required 100 reads, and pathway abundances were inferred from the EC predictions.
 
-\subsection{Soil Measurements}
-\subsubsection{Soil composition (XRF)}\label{methods:xrf}
-We measured soil elemental composition by X-ray fluorescence (XRF) using an Olympus Vanta VMR-XXX-G3-E handheld analyser (serial no.\ 841307), both in the field during Trip~5 and in the laborator on archived soil samples from all campaigns. The field log contains 106 entries across 59 sites. For field measurements, we used the instrument in Geochem (3-Beam) mode with NORMAL settings, and retained 71 complete measurement sessions from 58 sites, including repeated sessions at nine sites. In the laboratory, we analyzed 725 samples with the instrument in Fast Mode with the Fast Screening-He8mm setting.  Elemental concentrations and their oxide equivalents are recorded as separate variables and are not asssigned units.
+\subsection{Soil chemistry and climate observations}\label{methods:xrf}
+Soil elemental composition was measured by X-ray fluorescence (XRF) using an Olympus Vanta VMR-XXX-G3-E handheld analyser (serial no.\ 841307), both in the field during Trip~5 and in the laboratory on archived soil samples from all campaigns. The field log contains 106 entries across 59 sites. For field measurements, the instrument was used in Geochem (3-Beam) mode with NORMAL settings, and 71 complete measurement sessions from 58 sites were retained, including repeated sessions at nine sites. In the laboratory, we analyzed 725 samples with the instrument in Fast Mode with the Fast Screening-He8mm setting. Instrument-reported elemental and oxide values are stored as separate variables with undocumented units.
 
-To assess agreement between field and laboratory measurements, we compared the median of repeated field sessions at each site with the corresponding Trip~5 laboratory measurements at the 58 sites measured using both methods. This comparison assesses agreement in rankings rather than absolute concentrations, and we report the correlations in Technical Validation.
+To assess agreement between field and laboratory measurements, the comparison paired the median of repeated field sessions at each site with the corresponding Trip~5 laboratory measurements at the 58 sites measured using both methods. This comparison assesses agreement in site-level rankings, with correlations reported in Technical Validation.
 
-We cross-referenced the 93 reported elements against ChEBI r247 (3 December 2025) and PubChem properties (retrieved 23 July 2026) \cite{chebi,pubchem}. We identified corresponding ChEBI entries for 79 variables and PubChem entries for 91 entries. We verified identifier validity, names, chemical formulae, charge, and whether each variable represented an element or an oxide.
+The mapping cross-referenced the 93 instrument reporting channels against ChEBI r247 (3 December 2025) and PubChem properties (retrieved 23 July 2026) \cite{chebi,pubchem}. The mapping identified corresponding ChEBI entries for 79 channels and PubChem entries for 91 channels. Verification covered identifier validity, names, chemical formulae, charge, and whether each variable represented an element or an oxide.
 
-\subsubsection{Soil pH}\label{methods:ph}
-We measured the pH of archived soil samples from all five campaigns. We sieved dried soil to below 2~mm and mixed 1~g of soil with 2.5~mL of 0.01~M CaCl$_2$. We mixed each suspension for 30~min in a HulaMixer and let it stand for another 30~min at room temperature before measuring pH.
+\label{methods:ph}
+Archived-soil pH measurements cover all five campaigns. Dried soil was sieved to below 2~mm; 1~g was mixed with 2.5~mL of 0.01~M CaCl$_2$. Each suspension was mixed for 30~min in a HulaMixer and left to stand for another 30~min at room temperature before measuring pH.
 
-We measured pH using an accumet AB315 meter with a Fisher Scientific electrode (cat. no.~13-620-112) which we calibrated at the start of each session, and we recorded the electrode slop and the reading of the pH~10 buffer for every session. We rinsed the electrode with Milli-Q water between measurements. We oretained 712 measurements with a reocrded electrode slop between 95\% and 102\% and a pH~10 buffer reading within 0.1 units of its nominal value (Table~\ref{tab:ph_coverage}). All 156 admitted Trip~4 pH measurements used archived field replicate~2. Each admitted measurement is linked to its physical specimen and retains its original assay identifier. The ecology analysis uses the same measurement values.
+The pH measurements used an accumet AB315 meter with a Fisher Scientific electrode (cat. no.~13-620-112) calibrated at the start of each session, with the electrode slope and the reading of the pH~10 buffer recorded for every session. The electrode was rinsed with Milli-Q water between measurements. Of 767 recorded measurements, 36 were quarantined because of date provenance and 19 because of quality control. The retained dataset contains 712 measurements with a recorded electrode slope between 95\% and 102\% and a pH~10 buffer reading within 0.1 units of its nominal value (Table~\ref{tab:ph_coverage}). All 156 admitted Trip~4 pH measurements used archived field replicate~2. Each admitted measurement is linked to its physical specimen and retains its original assay identifier. The ecology analysis uses the same measurement values.
 
 \begin{table}[h]
 \centering
@@ -177,10 +198,10 @@ Total & 191 & 221 & 300 & 712 \\
 \end{tabular}
 \end{table}
 
-\subsection{Climate data}
-We retrieved historical climate data for each sampling site from the Open-Meteo archive API \cite{openmeteo} using geographic coordinates. We obtained both monthly and daily climate observations. The monthly dataset contains 12,936 values that cover temperature, total precipitation, rainfall, and mean relative humiditiy from January 2022 to January 2026. The daily dataset covers 1~January 2022 to 1~February 2026 and covers temperature, total precipitation, and rainfall. The monthly and daily products come from two separately configured acquisitions; the monthly acquisition ends on 20~January 2026, so January 2026 is a partial month in the monthly data.
 
-We also retrieved daily prepipitation data from NASA POWER PRECTOTCORR for sites 1--60 from 1 January 2022 to 31 December 2025, which yielded 87,660 records.
+Historical climate data were retrieved for each sampling site from the Open-Meteo archive API \cite{openmeteo} using geographic coordinates, yielding both monthly and daily climate observations. The monthly dataset contains 12,936 values that cover temperature, total precipitation, rainfall, and mean relative humidity from January 2022 to January 2026. The daily dataset covers 1~January 2022 to 1~February 2026 and covers temperature, total precipitation, and rainfall. The monthly and daily products come from two separately configured acquisitions; the monthly acquisition ends on 20~January 2026, so January 2026 is a partial month in the monthly data.
+
+Daily precipitation data were also retrieved from NASA POWER PRECTOTCORR for sites 1--60 from 1 January 2022 to 31 December 2025, which yielded 87,660 records.
 
 
 % \input{02_methods_taxonomy}
@@ -190,9 +211,11 @@ We also retrieved daily prepipitation data from NASA POWER PRECTOTCORR for sites
 Shotgun metagenomic sequencing complements the amplicon profiles with
 genome assemblies and gene annotations from the same sampling campaigns.
 The read-bearing library inventory contains 551 libraries across 61 site
-codes: 210 from Trip~1, 37 from Trip~2, 128 from Trip~3, 85 from Trip~4
-and 91 from Trip~5. Library metadata records the campaign, source site,
-soil compartment and replicate. The libraries were sequenced as 554
+codes (59 primary transect sites, comprising all primary sites except
+site~56, plus two Trip~1 named locations at sites~62 and~64): 210 from
+Trip~1, 37 from Trip~2, 128 from Trip~3, 85 from Trip~4 and 91 from
+Trip~5. Library metadata records the campaign, source site, soil
+compartment and replicate. The libraries were sequenced as 554
 paired-end runs, 221 on an Illumina NovaSeq 6000 and 333 on an Illumina
 NovaSeq X; three libraries were sequenced on both instruments. Libraries
 for 81 runs were prepared with the NEBNext Ultra II DNA Library Prep Kit
@@ -205,7 +228,7 @@ v1.1.7 refinement \cite{dastool}. MEGAHIT produced contigs of at least
 500~bp for 549 of the 551 libraries; libraries 51Sr1 and F5Dr1 yielded no
 contigs. CheckM2 v1.1.0 \cite{checkm2} estimated completeness and contamination for the
 refined bins, and 12,434 refined bins reached at least 50\% completeness
-with at most 10\% contamination. We dereplicated the bins with dRep \cite{drep}, using
+with at most 10\% contamination. The bins were dereplicated with dRep \cite{drep}, using
 CheckM2 quality estimates, a minimum completeness of 50\%, a maximum
 contamination of 10\%, and a minimum genome length of 50,000~bp.
 The recorded clustering parameters specify 90\% primary ANI and
@@ -220,49 +243,119 @@ Taxonomic assignments for the refined representatives used GTDB-Tk
 v2.7.2 with GTDB release R232 \cite{gtdb}. The two native classification
 tables contain 4,847 bacterial and 591 archaeal representatives, and
 their genome identifiers match the representative catalogue exactly.
-We detected rRNA genes with barrnap v0.9 and tRNA genes with tRNAscan-SE
+A frozen historical analytical taxonomy snapshot
+(\texttt{EQ-TAX-LEGACY-ANALYTICAL-v0}) used by earlier companion
+genus/order turnover and proteome scripts shares the same 5,438 genome
+identifiers and identical CheckM2 quality metrics, as well as the exact
+same 237 Thermoplasmatota genome identifiers, but differs from the
+canonical GTDB R232 strings on 1,898 of the 5,438 genomes (zero at
+domain, 247 at phylum, 34 at class, 220 at order, 511 at family, 1,124
+at genus and 46 at species; 42 differing strings among the 237
+Thermoplasmatota genomes, where canonical GTDB R232 assigns four named
+orders plus two unassigned and 19 named genera plus 135 unassigned versus
+four named orders plus zero unassigned and 14 named genera plus 139
+unassigned in the frozen snapshot). The two taxonomy snapshots are
+linked 1:1 in the packaged reconciliation table and never conflated.
+The annotation workflow detected rRNA genes with barrnap v0.9 and tRNA genes with tRNAscan-SE
 v2.0.12 \cite{trnascan}, and assigned each representative a quality tier
 following the MIMAG standard \cite{mimag}. Of the 5,438 representatives,
 126 meet the high-quality criteria, which require more than 90\%
 completeness, less than 5\% contamination, the 23S, 16S and 5S rRNA genes
 and tRNAs for at least 18 of the 20 amino acids. Another 5,311 meet the
-medium-quality criteria of at least 50\% completeness and less than 10\%
-contamination. The remaining representative,
-\texttt{48Dr2\_\_self\_SemiBin\_25}, has 10\% contamination.
+strict medium-quality criteria of at least 50\% completeness and less than 10\%
+contamination, giving 5,437 strict HQ+MQ representatives deposited as ENA
+MAGs. The remaining representative, \texttt{48Dr2\_\_self\_SemiBin\_25}
+(completeness 64.61\%, contamination 10.0\%), sits at the 10\% contamination
+boundary; it is classified as below-medium under strict MIMAG criteria and
+deposited in ENA as a binned metagenome, while operational dRep analyses
+using the inclusive $\le 10\%$ contamination threshold include all 5,438
+species representatives (126 high-quality and 5,312 non-high-quality
+representatives).
 
-We annotated the genes of each representative with Bakta v1.12.0
-\cite{bakta} and its full database v6.0. Bakta predicts coding sequences,
-rRNA and tRNA genes and translates the coding sequences into proteins.
-eggNOG-mapper v2.1.13 \cite{eggnog} then searched these proteins against
-the eggNOG v5.0.2 database with DIAMOND v2.0.15 and assigned KEGG
-orthologs (KOs), CAZy families, Pfam domains and preferred gene names.
-For each genome, we counted the predicted proteins, the proteins with an
-eggNOG assignment and the proteins with at least one KO. We also counted,
-for each genome, the proteins that carry each KO, CAZy family, Pfam domain
-and preferred name. These feature tables list only the genome--feature
-pairs that occur in the annotations.
+Two distinct gene-calling products are maintained across the 5,438
+representatives (Table~\ref{tab:products}). In the canonical release
+annotation product (snapshot identifier \texttt{EQ-PROT-BAKTA-v1.0.0}),
+the genes of each representative were annotated with Bakta v1.12.0
+\cite{bakta} and its full database v6.0, predicting coding sequences and
+translated proteins alongside rRNA and tRNA genes. eggNOG-mapper v2.1.13
+\cite{eggnog} searched these predicted proteins against the eggNOG v5.0.2
+database with DIAMOND v2.0.15 to assign functional annotations, KEGG
+orthologs (KOs), Pfam domains and CAZy families (counts in
+Table~\ref{tab:products}). Per-genome summaries count the predicted
+proteins, the proteins with an eggNOG assignment and the proteins with at
+least one KO, and list the genome--feature pairs that occur in the
+annotations. In the companion analysis protein product (snapshot
+identifier \texttt{EQ-PROT-PYRODIGAL-REP-v1.0.0}), Pyrodigal predicted
+20,451,986 proteins associated with the same 5,438 representative genome
+identifiers (reconciled against 20,379,930 bin-mapped assembly protein
+calls drawn from 753,305,533 whole-assembly protein predictions),
+supplying the sequence universe for downstream functional and archaeal
+proteome analyses \cite{ecology_companion,proteome_companion}. Direct
+locus-by-locus equivalence between the 19,186,792 Bakta predictions and
+the 20,451,986 Pyrodigal predictions has not been established; matching
+genome identifiers do not establish identical underlying FASTA sequence
+contents or retained contig coordinates, and the two protein sets are
+maintained as separate products. Companion genome-resolved KO projections
+likewise use a frozen analytical KO matrix
+(\texttt{EQ-KO-LEGACY-ANALYTICAL-v0}, 11,386 distinct KOs across the
+5,438 representatives and 8,860 KOs shared with PICRUSt2) that is
+recorded separately from \texttt{EQ-PROT-BAKTA-v1.0.0}.
 
-To estimate the coverage of each representative in each library, we
-mapped the reads of all 551 libraries to a single reference that contains
-every contig of the 5,438 representatives. We prefixed each contig
-identifier with its genome identifier, so that contigs with the same
-assembler-assigned name in different genomes remain distinct. Bowtie2
-v2.5.1 \cite{bowtie2} aligned the first 200 million read pairs of each
-library in \texttt{--very-sensitive} mode and retained aligned reads only;
-SAMtools v1.16.1 \cite{samtools} sorted the alignments. CoverM v0.6.1
+Four read-mapping products with distinct snapshot identifiers record
+representative abundance and detection across shotgun libraries. First, to
+estimate per-library coverage in the canonical depth/breadth product
+(\texttt{EQ-COVERM-REFINED-v1.0.0}), we mapped the reads of all 551
+libraries to a single reference that contains every contig of the 5,438
+representatives. Each contig identifier was prefixed with its genome
+identifier, so that contigs with the same assembler-assigned name in
+different genomes remain distinct. Bowtie2 v2.5.1 \cite{bowtie2} aligned
+the first 200 million read pairs of each library in
+\texttt{--very-sensitive} mode and retained aligned reads only; SAMtools
+v1.16.1 \cite{samtools} sorted the alignments. CoverM v0.6.1
 \cite{coverm} in genome mode counted reads aligned with at least 95\%
 identity and reported, for every genome, the mean depth, the covered
 fraction, the trimmed mean depth, the number of mapped reads and the
-genome length.
+genome length. Second, a CoverM v0.7.0 genome-mode relative-abundance
+matrix (\texttt{EQ-COVERM-REL-ABUND-v1.0.0}, retaining the unmapped read
+fraction across 573 matrix columns including 551 study libraries) defines
+the current genome-resolved ecological cohorts \cite{ecology_companion}.
+Exact specimen joins and post-QC read-depth availability define these
+nested subsets (Table~\ref{tab:shotgun_cohorts}), while per-library
+admission flags and excluded sample identifiers are recorded in the
+packaged cohort accounting table. Third, an
+archaeal competitive-mapping product
+(\texttt{EQ-COVERM-ARCHAEA-COMP-v1.0.0}) maps 193 paired metagenomic
+profiles across 68 site-campaign visits and 36 sites against the 5,438
+catalogue representatives combined with 301 external Thermoplasmatota
+reference genomes across 0\%, 10\%, 20\% and 50\% genome-breadth gates,
+with a \texttt{MAPQ} $\ge 20$ filter evaluated as a separate sensitivity
+analysis \cite{proteome_companion}. Fourth, a historical Trips~1--3 pilot
+dataset (\texttt{EQ-COVERM-LEGACY-991-v0}) retains 150 CoverM profiles
+(58, 15 and 77 libraries from Trips~1--3) mapped against an earlier
+991-genome draft catalogue, eggNOG-mapper v2.1.12 \cite{eggnog}
+annotations yielding a 990-genome KO copy-number matrix, and six source
+tables for an initial MAG-derived versus PICRUSt2 comparison; this pilot
+product is preserved for audit reproducibility and superseded for
+full-transect analyses by the 5,438-representative products.
 
-The ecology comparison uses a separate 991-genome catalogue and
-150 library profiles from Trips~1--3 (58, 15 and 77 libraries,
-respectively). Its CoverM profiles \cite{coverm} report genome-relative abundance,
-and eggNOG-mapper v2.1.12 \cite{eggnog} annotations yield a
-990-genome KO copy-number matrix after intersecting the annotated genomes
-with the abundance profiles. These inputs and the six source tables for
-the MAG-derived versus PICRUSt2 comparison retain their analytical-subset
-provenance.
+\begin{table}[h]
+\centering
+\caption{Nested shotgun metagenomic cohorts derived from the 551 study libraries. Product key: A, canonical Bowtie2/CoverM v0.6.1 depth and breadth profile archive (snapshot identifier \texttt{EQ-COVERM-REFINED-v1.0.0}); B, CoverM v0.7.0 genome relative-abundance cohort matrix (snapshot identifier \texttt{EQ-COVERM-REL-ABUND-v1.0.0}).}
+\label{tab:shotgun_cohorts}
+\small
+\begin{tabular}{p{0.24\textwidth} p{0.08\textwidth} p{0.42\textwidth} p{0.11\textwidth}}
+\toprule
+\textbf{Cohort} & \textbf{Count} & \textbf{Defining exclusion or intersection} & \textbf{Product} \\
+\midrule
+All study libraries & 551 & Read-bearing libraries across all five campaigns & A \\
+Non-zero mapped & 550 & Excludes library with zero mapped reads (\texttt{F5Dr1}) & B \\
+Core-transect & 546 & Excludes four Trip~1 named-site libraries (\texttt{62PRr2}, \texttt{64Dr3}, \texttt{64PRr2}, \texttt{64Sr2}); spans 59 primary sites & B \\
+Core post-QC depth & 545 & Excludes core library lacking post-QC read-depth metadata (\texttt{F45PRr3}) & B \\
+Core matched 16S & 442 & Exact specimen join to the 1,186-sample deduplicated 16S cohort across 58 primary sites (excludes sites~56 and~59; 8,860 shared KOs with PICRUSt2) & B \\
+Matched post-QC depth & 441 & Intersects 442 matched cohort with complete post-QC read-depth metadata (excludes \texttt{F45PRr3}) & B \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 
 
@@ -308,7 +401,16 @@ provenance.
 % reference modules. We report the checked subset and the return value
 % separately from structural validation in Technical Validation.
 
-\subsection{Reproducible workflow}
-A Nextflow \cite{di2017nextflow} workflow generates the knowledge graph modules, runs the validation checks, and computes the statistics reported in this manuscript. Configuration profiles are available for running the workflow locally or a on a computing cluster. Sample processing (Section~\ref{methods}) was run seperately with its own parameters and software environments.
+\subsection{Genome-resolved trait annotation}
+\label{methods:microtrait}
 
-The workflow produces each versioned release of the knowledge graph by generating the data modules, comparing their checksums with those listed in the release manifest, loading them into a new database, and checking the results of test queries against the source data. The public service is switched to the new release only after these checks pass. The lease manifests list the fixed input files and the generated modules along with with their checksums.
+We profiled all 5,438 representative genomes with microTrait \cite{karaoz2022microtrait}, using their checksum-verified nucleotide sequences. This product, \texttt{EQ-MICROTRAIT-\allowbreak REP-\allowbreak v1.0.0}, uses fresh Prodigal v2.6.3 calls in metagenomic mode and retains its own gene identifiers and provenance, separately from the Bakta and companion Pyrodigal protein sets. Profile searches used the pinned microTrait models and the selected dbCAN V14 glycoside-hydrolase models, with the published profile thresholds and logical trait rules. The package records the exact microTrait and gRodon source revisions, database assets, software environment and execution parameters.
+
+The outputs comprise model-hit and rule matrices, trait matrices at three levels of aggregation, and per-genome growth and optimum-temperature predictions with applicability flags. Trait values count satisfied rules within a category, with binary categories capped at one. Predicted growth and temperature values describe model-derived genomic properties; their interpretation retains genome completeness, fragmentation and archaeal applicability information. Of 1,831 model identifiers required by the rules, 1,829 were assayed. The release lacked the \texttt{aphA} and \texttt{phoN} models. For the phosphatase rule combining these models with \texttt{phoA} and \texttt{phoD}, the interpretation-safe table records a positive call when either assayed model supports it and otherwise records an unassessed value. The unmodified software output is retained alongside this coverage-aware table.
+
+\subsection{Reproducible workflow}
+A Nextflow \cite{di2017nextflow} workflow generates the knowledge graph modules, runs the validation checks, and computes the statistics reported in this manuscript. Configuration profiles are available for running the workflow locally or on a computing cluster. Sample processing (Section~\ref{methods}) was run separately with its own parameters and software environments.
+
+The workflow produces each versioned release of the knowledge graph by generating the data modules, comparing their checksums with those listed in the release manifest, loading them into a new database, and checking the results of test queries against the source data. The public service is switched to the new release only after these checks pass. The release manifests list the fixed input files and the generated modules along with their checksums.
+
+\end{revision}

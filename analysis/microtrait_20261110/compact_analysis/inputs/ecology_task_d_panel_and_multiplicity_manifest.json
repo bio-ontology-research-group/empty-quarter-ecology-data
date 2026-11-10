@@ -1,0 +1,260 @@
+{
+  "stage": "stage4_ecology_synthesis",
+  "status": "completed",
+  "date_frozen": "2026-11-09",
+  "exploratory_synthesis_disclaimer": "The H6 and H3 synthesis comparisons and panel groupings were structured after initial fits; they are an auditable exploratory synthesis, not a pre-specified or omnibus confirmatory test. H6 is separated into three distinct biological panels (baseline DNA repair, UV/oxidative protection, and osmolyte/sporulation stress) and never combined into an omnibus claim.",
+  "inla_vs_rund_chemistry_distinction": {
+    "spatial_hierarchy_adaptation": "Reuses the 1,800 INLA Mat\u00e9rn SPDE spatial + site random-effect fits across 207 endpoints (all vs matched cohort, dune-zone covariate FALSE/TRUE, Student-t vs Gaussian likelihood, prior range 50/200/500 km, all MAGs vs completeness>=70/contamination<=5).",
+    "chemistry_models_status": "BLOCKED_UNAUDITED_JOINS",
+    "chemistry_models_note": "Rund's original soil-chemistry regressions are not run on shotgun functional endpoints because audited specimen-to-chemistry joins are unavailable for the full shotgun cohort, and XRF total elements are not measured porewater salinity. Environment/landform/dune-zone classifications are never treated as independent soil chemistry measurements."
+  },
+  "explicit_pathway_flags": {
+    "spoIIGA": "SINGLE_MARKER_NOT_FULL_SPORULATION_PATHWAY",
+    "trehalose_biosynthesis": "HMM_KO_ROUTE_DISAGREEMENT_FLAGGED"
+  },
+  "equivalence_and_interval_policy": "Bayesian INLA posterior credible intervals and frequentist site-block bootstrap confidence intervals are reported in separate columns and never conflated. Asymmetric 95% bootstrap percentile intervals are never back-calculated into synthetic SEs or 90% TOST bounds. With no externally calibrated equivalence margin, primary equivalence status is 'no_equivalence_claim_unjustified_margin' / 'no_equivalence_claim_unjustified_rope', and any interval crossing zero is never claimed as evidence of equivalence.",
+  "exploratory_post_fit_hypothesis_families": {
+    "H6_baseline_DNA_repair": [
+      "legacy:base_excision_repair",
+      "legacy:mismatch_repair",
+      "legacy:nucleotide_excision_repair",
+      "legacy:SOS_translesion",
+      "legacy:nhej"
+    ],
+    "H6_UV_and_oxidative_protection": [
+      "legacy:photolyase",
+      "legacy:carotenoid",
+      "legacy:dna_protection_oxidative",
+      "HMM:ahpCF",
+      "KO_projection:ahpCF",
+      "HMM:sodA",
+      "KO_projection:sodA",
+      "HMM:lycopene biosynthesis",
+      "KO_projection:lycopene biosynthesis",
+      "HMM:TF_redox",
+      "KO_projection:TF_redox"
+    ],
+    "H6_osmolyte_and_sporulation_stress": [
+      "curated:trehalose_strict",
+      "curated:ectoine_marker",
+      "curated:glucosylglycerol_strict",
+      "curated:mannosylglycerate_strict",
+      "HMM:trehalose_biosynthesis",
+      "KO_projection:trehalose_biosynthesis",
+      "HMM:betaine_biosynthesis",
+      "KO_projection:betaine_biosynthesis",
+      "HMM:mannosylglycerate_biosynthesis",
+      "KO_projection:mannosylglycerate_biosynthesis",
+      "HMM:proline_biosynthesis",
+      "KO_projection:proline_biosynthesis",
+      "HMM:glycine betaine/proline transport system",
+      "KO_projection:glycine betaine/proline transport system",
+      "HMM:glycine betaine transporter",
+      "KO_projection:glycine betaine transporter",
+      "HMM:choline/glycine/proline betaine transport",
+      "KO_projection:choline/glycine/proline betaine transport",
+      "HMM:proline transport",
+      "KO_projection:proline transport",
+      "HMM:opu_and",
+      "KO_projection:opu_and",
+      "HMM:mechanosensitive channel",
+      "KO_projection:mechanosensitive channel",
+      "HMM:spoIIGA",
+      "KO_projection:spoIIGA"
+    ],
+    "H3_root_trace_gas_and_uptake": [
+      "typed:[NiFe]_Group_1l",
+      "typed:[NiFe]_Group_1h",
+      "typed:[NiFe]_Group_2a",
+      "reads:hydB_1l",
+      "reads_excess:hydB_1l",
+      "reads:hydB_1h",
+      "reads_excess:hydB_1h",
+      "reads:hydB_2a",
+      "reads_excess:hydB_2a",
+      "reads:coxL_formI",
+      "reads_excess:coxL_formI",
+      "HMM:dpp-1_full",
+      "KO_projection:dpp-1_full",
+      "HMM:dpp-1_key",
+      "KO_projection:dpp-1_key",
+      "HMM:dpp-2_full",
+      "KO_projection:dpp-2_full",
+      "HMM:dpp-2_key",
+      "KO_projection:dpp-2_key",
+      "HMM:opp-1_full",
+      "KO_projection:opp-1_full",
+      "HMM:opp-1_key",
+      "KO_projection:opp-1_key",
+      "HMM:aap_full",
+      "KO_projection:aap_full",
+      "HMM:aap_key",
+      "KO_projection:aap_key",
+      "HMM:gln_full",
+      "KO_projection:gln_full",
+      "HMM:glt_full",
+      "KO_projection:glt_full",
+      "HMM:amt",
+      "KO_projection:amt",
+      "HMM:urease",
+      "KO_projection:urease",
+      "HMM:ammonia assimilation to glutamate",
+      "KO_projection:ammonia assimilation to glutamate",
+      "HMM:ammonia assimilation to glutamine-GS",
+      "KO_projection:ammonia assimilation to glutamine-GS",
+      "HMM:nitrogen fixation_key",
+      "KO_projection:nitrogen fixation_key",
+      "HMM:ammonia oxidation to nitrite_full",
+      "KO_projection:ammonia oxidation to nitrite_full"
+    ],
+    "requested_unavailable_legacy_aliases": {
+      "curated:betaine_uptake": [
+        "H6_osmolyte_and_sporulation_stress",
+        "requested_name_unavailable_in_endpoints_see_HMM_and_KO_glycine_betaine_transport_and_opu_and"
+      ],
+      "curated:betaine_synthesis": [
+        "H6_osmolyte_and_sporulation_stress",
+        "requested_name_unavailable_in_endpoints_see_HMM_and_KO_betaine_biosynthesis"
+      ],
+      "curated:ectoine_biosynthesis": [
+        "H6_osmolyte_and_sporulation_stress",
+        "requested_name_unavailable_in_endpoints_actual_endpoint_is_curated:ectoine_marker"
+      ],
+      "HMM:proVWX": [
+        "H6_osmolyte_and_sporulation_stress",
+        "requested_name_unavailable_in_endpoints_actual_endpoint_is_HMM:glycine betaine/proline transport system"
+      ],
+      "KO_projection:proVWX": [
+        "H6_osmolyte_and_sporulation_stress",
+        "requested_name_unavailable_in_endpoints_actual_endpoint_is_KO_projection:glycine betaine/proline transport system"
+      ],
+      "HMM:opuD_betL": [
+        "H6_osmolyte_and_sporulation_stress",
+        "requested_name_unavailable_in_endpoints_actual_endpoints_are_HMM:glycine betaine transporter_and_HMM:opu_and"
+      ],
+      "KO_projection:opuD_betL": [
+        "H6_osmolyte_and_sporulation_stress",
+        "requested_name_unavailable_in_endpoints_actual_endpoints_are_KO_projection:glycine betaine transporter_and_KO_projection:opu_and"
+      ],
+      "HMM:dpp": [
+        "H3_root_trace_gas_and_uptake",
+        "requested_shorthand_unavailable_actual_endpoints_are_HMM:dpp-1_full_dpp-1_key_dpp-2_full_dpp-2_key"
+      ],
+      "KO_projection:dpp": [
+        "H3_root_trace_gas_and_uptake",
+        "requested_shorthand_unavailable_actual_endpoints_are_KO_projection:dpp-1_full_dpp-1_key_dpp-2_full_dpp-2_key"
+      ],
+      "HMM:opp": [
+        "H3_root_trace_gas_and_uptake",
+        "requested_shorthand_unavailable_actual_endpoints_are_HMM:opp-1_full_and_opp-1_key"
+      ],
+      "KO_projection:opp": [
+        "H3_root_trace_gas_and_uptake",
+        "requested_shorthand_unavailable_actual_endpoints_are_KO_projection:opp-1_full_and_opp-1_key"
+      ],
+      "HMM:aap": [
+        "H3_root_trace_gas_and_uptake",
+        "requested_shorthand_unavailable_actual_endpoints_are_HMM:aap_full_and_aap_key"
+      ],
+      "KO_projection:aap": [
+        "H3_root_trace_gas_and_uptake",
+        "requested_shorthand_unavailable_actual_endpoints_are_KO_projection:aap_full_and_aap_key"
+      ]
+    },
+    "full_microtrait_41_panel": [
+      "hsp10",
+      "hsp24",
+      "hsp40",
+      "hsp60",
+      "hsp70",
+      "hsp100_key",
+      "hsp100_or",
+      "lon_or",
+      "heatinducibleTF",
+      "sodA",
+      "ahpCF",
+      "TF_redox",
+      "trehalose_biosynthesis",
+      "betaine_biosynthesis",
+      "mannosylglycerate_biosynthesis",
+      "proline_biosynthesis",
+      "glycine betaine/proline transport system",
+      "glycine betaine transporter",
+      "choline/glycine/proline betaine transport",
+      "proline transport",
+      "opu_and",
+      "mechanosensitive channel",
+      "dpp-1_full",
+      "dpp-1_key",
+      "dpp-2_full",
+      "dpp-2_key",
+      "opp-1_full",
+      "opp-1_key",
+      "aap_full",
+      "aap_key",
+      "gln_full",
+      "glt_full",
+      "amt",
+      "urease",
+      "ammonia assimilation to glutamate",
+      "ammonia assimilation to glutamine-GS",
+      "nitrogen fixation_full",
+      "nitrogen fixation_key",
+      "ammonia oxidation to nitrite_full",
+      "lycopene biosynthesis",
+      "spoIIGA"
+    ]
+  },
+  "panels_definition": {
+    "source_repo": "ukaraoz/microtrait",
+    "rules_commit": "b4344ebd4e0cdc6f7f37f10e25a947a839d61eaa",
+    "hmm_commit": "3a068b86d7170e8264ae5f048dc89b324b7392ca",
+    "rules": {
+      "hsp10": "(('groES'))",
+      "hsp24": "(('grpE'))",
+      "hsp40": "(('dnaJ'))",
+      "hsp60": "(('groEL') | ('cct'))",
+      "hsp70": "(('dnaK'))",
+      "hsp100_key": "(('hslU'))",
+      "hsp100_or": "(('clpA') | ('clpB') | ('clpC') | ('clpE') | ('clpL') | ('clpX') | ('hslU'))",
+      "lon_or": "((('lon')) | (('lonB')))",
+      "heatinducibleTF": "(('hrcA'))",
+      "sodA": "'sodA'",
+      "ahpCF": "((('ahpC_1') | ('ahpC_2') | ('ahpC_3')) & (('ahpF')))",
+      "TF_redox": "((('oxyR')) | (('soxR')) | (('perR')) | (('ohrR')))",
+      "trehalose_biosynthesis": "((((('otsA')))) & ((((('otsB')) | (('tps'))))))",
+      "betaine_biosynthesis": "((((('betA') | ('gbsB') | ('codA')))) & (((('betB') | ('codA')))))",
+      "mannosylglycerate_biosynthesis": "((('mngA') & ('mngB')) | (('mgs')))",
+      "proline_biosynthesis": "((((((((((('proB')))) & (((('proA'))))))) & (((('proC'))))))) | ((((('ocd')) | ((('rocD')) & (('proC')))))))",
+      "glycine betaine/proline transport system": "((('proV')) | (('proW')) | (('proX')))",
+      "glycine betaine transporter": "(('betL'))",
+      "choline/glycine/proline betaine transport": "(('betT'))",
+      "proline transport": "(('proP'))",
+      "opu_and": "(('opuBD') & ('opuA') & ('opuC'))",
+      "mechanosensitive channel": "((('mscS')) | (('mscL')))",
+      "dpp-1_full": "(('dppA1') & ('dppB1') & ('dppC1') & ('dppD1') & ('dppF1'))",
+      "dpp-1_key": "(('dppA1'))",
+      "dpp-2_full": "(('dppB2') & ('dppC2') & ('dppD2') & ('dppE'))",
+      "dpp-2_key": "(('dppE'))",
+      "opp-1_full": "(('oppA1') & ('oppB1') & ('oppC1') & ('oppD1') & ('oppF1'))",
+      "opp-1_key": "(('oppA1'))",
+      "aap_full": "(('aapJ') & ('aapQ') & ('aapM') & ('aapP'))",
+      "aap_key": "(('aapJ'))",
+      "gln_full": "(('glnH') & ('glnP') & ('glnQ'))",
+      "glt_full": "(('gltI') & ('gltK') & ('gltJ') & ('gltL'))",
+      "amt": "'amt'",
+      "urease": "((('ureA')) | (('ureB')) | (('ureC')) | (('ureAB')))",
+      "ammonia assimilation to glutamate": "(((('gudB') | ('gdh2') | ('gdhA_1') | ('gdhA_2')))) | ((((('gltB') | ('gltD') | ('gltS1')) & ('glnA'))))",
+      "ammonia assimilation to glutamine-GS": "(('glnA'))",
+      "nitrogen fixation_full": "(((((('nifD') & ('nifK') & ('nifH') & ('anfG')) | (((('vnfD') & ('vnfG') & ('vnfK') & ('vnfH'))))))))",
+      "nitrogen fixation_key": "((((('nifH') | ('vnfH')))))",
+      "ammonia oxidation to nitrite_full": "((((((('pmoA-amoA') & ('pmoB-amoB') & ('pmoC-amoC')))))) & (((('hao')))))",
+      "lycopene biosynthesis": "(((((((('crtB')))) & (((('crtI') | ('crtP')))) & (((('crtI') | ('crtP')))) & (((('crtI') | ('crtQ'))))))) & (((('crtI') | ('crtQ')))))",
+      "spoIIGA": "'spoIIGA'"
+    },
+    "notes": "Published rule-level endpoints; urease is any-subunit evidence, spoIIGA is a single marker, transporter substrates can overlap. No broad stress tolerance or completed sporulation inference."
+  },
+  "n_total_endpoints_inla": 207,
+  "n_total_inla_fits": 1800,
+  "n_numerical_review_inla_fits": 6
+}

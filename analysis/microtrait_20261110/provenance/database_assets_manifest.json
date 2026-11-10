@@ -1,0 +1,162 @@
+{
+  "microtrait_git_commit": "b4344ebd4e0cdc6f7f37f10e25a947a839d61eaa",
+  "grodon_git_commit": "0b7e32e667580e2890b56009de8af208c9029f8b",
+  "microtrait_package_extdata": "/scratch/project/k10018/eq-microtrait-20261110/env/microtrait-r/lib/R/library/microtrait/extdata",
+  "hmmpress_dir": "/scratch/project/k10018/eq-microtrait-20261110/env/microtrait-r/lib/R/library/microtrait/extdata/hmm/hmmpress",
+  "dbcan_version_used": "V14 (official pinned commit b4344eb dbCAN-HMMdb-V14.txt -> dbcan.select.v14.hmmdb)",
+  "dbcan_selectids_count": 41,
+  "dbcan_selectids_verified_models": [
+    "GH10.hmm",
+    "GH110.hmm",
+    "GH113.hmm",
+    "GH116.hmm",
+    "GH11.hmm",
+    "GH120.hmm",
+    "GH124.hmm",
+    "GH12.hmm",
+    "GH16.hmm",
+    "GH18.hmm",
+    "GH19.hmm",
+    "GH1.hmm",
+    "GH20.hmm",
+    "GH23.hmm",
+    "GH26.hmm",
+    "GH2.hmm",
+    "GH30.hmm",
+    "GH31.hmm",
+    "GH36.hmm",
+    "GH39.hmm",
+    "GH3.hmm",
+    "GH43.hmm",
+    "GH44.hmm",
+    "GH45.hmm",
+    "GH4.hmm",
+    "GH51.hmm",
+    "GH52.hmm",
+    "GH54.hmm",
+    "GH5.hmm",
+    "GH62.hmm",
+    "GH6.hmm",
+    "GH74.hmm",
+    "GH79.hmm",
+    "GH7.hmm",
+    "GH8.hmm",
+    "GH97.hmm",
+    "GH98.hmm",
+    "GH9.hmm",
+    "GH134.hmm",
+    "GH27.hmm",
+    "GH48.hmm"
+  ],
+  "dbcan_selectids_sha256": "78462c7e3245c199c3b3e1b3511dbfc7df97c522bb3aed2347974a3fd56eea86",
+  "model_counts": {
+    "microtrait.hmmdb": {
+      "n_models": 1789,
+      "n_with_tc": 1789
+    },
+    "dbcan.select.v14.hmmdb": {
+      "n_models": 41,
+      "n_with_tc": 0
+    },
+    "arcbacribosomal.hmmdb": {
+      "n_models": 56,
+      "n_with_tc": 56
+    }
+  },
+  "downloads": {
+    "microtrait.hmmdb.gz": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/downloads/microtrait.hmmdb.gz",
+      "bytes": 63937067,
+      "sha256": "98d106ce0ad84c916c489ecb7b9f4576b4034a7cb4ab111d02c09a6df1ccd690"
+    },
+    "arcbacribosomal.hmmdb.gz": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/downloads/arcbacribosomal.hmmdb.gz",
+      "bytes": 633843,
+      "sha256": "1efab5824ef004408be8eb76e63ea8abd7c6a594957c4484e5bceb56b0c4bff9"
+    },
+    "dbCAN-HMMdb-V14.txt": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/downloads/dbCAN-HMMdb-V14.txt",
+      "bytes": 129842960,
+      "sha256": "396c791fb13defab152864d8046687ef03b492937ec6f9bbab008bc77cbaa7a5"
+    }
+  },
+  "pressed_files": {
+    "dbcan.select.v14.hmmdb": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/hmmpress/dbcan.select.v14.hmmdb",
+      "bytes": 6678077,
+      "sha256": "0bcd0ab0c06baebc2b3960e38e1b2f4c5a2c8357780a094be79d641ecf720070"
+    },
+    "dbcan.select.v14.hmmdb.h3f": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/hmmpress/dbcan.select.v14.hmmdb.h3f",
+      "bytes": 1175783,
+      "sha256": "f9f9363279ce480742a1e8c79ae17a61343ef92f4cb6f7e53b7b4ddc25c510ee"
+    },
+    "dbcan.select.v14.hmmdb.h3i": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/hmmpress/dbcan.select.v14.hmmdb.h3i",
+      "bytes": 1652,
+      "sha256": "1d0b56ed57cf2d0ee963aedc6431f8cd9ac121bdf4c9fbf94b29e7bd1684e5a6"
+    },
+    "dbcan.select.v14.hmmdb.h3m": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/hmmpress/dbcan.select.v14.hmmdb.h3m",
+      "bytes": 2767613,
+      "sha256": "b5d685a2f2efb051cd7f8adcc8d0cba1efbe3e2dfaa0c06120898d2d4348671b"
+    },
+    "dbcan.select.v14.hmmdb.h3p": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/hmmpress/dbcan.select.v14.hmmdb.h3p",
+      "bytes": 3247826,
+      "sha256": "599ab616e387d14a3e3b16618884a6559105d29fd3e687704310a4fcd4440eac"
+    },
+    "arcbacribosomal.hmmdb": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/hmmpress/arcbacribosomal.hmmdb",
+      "bytes": 2953795,
+      "sha256": "bb6ead55a998907f5e626c237819716fbefe427c7b520de4ceceee66ab3f428c"
+    },
+    "arcbacribosomal.hmmdb.h3f": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/hmmpress/arcbacribosomal.hmmdb.h3f",
+      "bytes": 834805,
+      "sha256": "6fac5d2f3404b29ff7a4e67627f495d777e0092768736352831372ef84beb57e"
+    },
+    "arcbacribosomal.hmmdb.h3i": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/hmmpress/arcbacribosomal.hmmdb.h3i",
+      "bytes": 4039,
+      "sha256": "99a321961a09943704d73b7b4a63697b500402b81ca5630263835e64172f5a79"
+    },
+    "arcbacribosomal.hmmdb.h3m": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/hmmpress/arcbacribosomal.hmmdb.h3m",
+      "bytes": 1225871,
+      "sha256": "4806aec40149ff1171246ce22e3b0852f5729c2df5c051bcfd5082b835259d26"
+    },
+    "arcbacribosomal.hmmdb.h3p": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/hmmpress/arcbacribosomal.hmmdb.h3p",
+      "bytes": 1444138,
+      "sha256": "9c909a55c243a2b761f23f78ee0b905b9e4362948fbca73dc4c3f8eb579869d8"
+    },
+    "microtrait.hmmdb": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/hmmpress/microtrait.hmmdb",
+      "bytes": 323459398,
+      "sha256": "00b6fbfe4681a6054edefce0c1c415aa8f559ce94d9c1c098a1306b65411a953"
+    },
+    "microtrait.hmmdb.h3f": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/hmmpress/microtrait.hmmdb.h3f",
+      "bytes": 55271008,
+      "sha256": "4928500fe0c9635081cd63ac6286748e3f27c4e84c08c87743f2ffb904e4845a"
+    },
+    "microtrait.hmmdb.h3i": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/hmmpress/microtrait.hmmdb.h3i",
+      "bytes": 146868,
+      "sha256": "83f4512b98c465985047a332eccb518f0b58a4110c1131b110beea401854807b"
+    },
+    "microtrait.hmmdb.h3m": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/hmmpress/microtrait.hmmdb.h3m",
+      "bytes": 134197991,
+      "sha256": "64449110c65af282ee2187618fd8249f4fb1689bbdb6ceba2220b1c545a2016a"
+    },
+    "microtrait.hmmdb.h3p": {
+      "path": "/scratch/project/k10018/eq-microtrait-20261110/db/hmmpress/microtrait.hmmdb.h3p",
+      "bytes": 157518619,
+      "sha256": "293956f22bbf5bb3f7b0f5cd9d9e067b04b814d99c7a39149e9814f91a85330b"
+    }
+  },
+  "elapsed_seconds": 8.12,
+  "timestamp": "2026-11-10T09:33:30Z"
+}

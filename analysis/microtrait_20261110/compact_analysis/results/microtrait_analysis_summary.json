@@ -1,0 +1,93 @@
+{
+  "analysis_name": "Empty Quarter 5,438-MAG MicroTrait Compact Analysis",
+  "cohort_mag_count": 5438,
+  "hq_mag_count_comp90_cont5": 2259,
+  "domain_counts": {
+    "d__Bacteria": 4847,
+    "d__Archaea": 591
+  },
+  "thermoplasmatota_counts": {
+    "total": 237,
+    "c__SW-10-69-26": 185,
+    "c__E2": 51,
+    "c__Thermoplasmata": 1
+  },
+  "predefined_g2_traits_positivity": {
+    "g2_peptide_transport": {
+      "all_count": 2516,
+      "all_pct": 46.267,
+      "hq_count": 1198,
+      "hq_pct": 53.0323
+    },
+    "g2_free_amino_acid_transport": {
+      "all_count": 5244,
+      "all_pct": 96.4325,
+      "hq_count": 2170,
+      "hq_pct": 96.0602
+    },
+    "g2_protein_degradation": {
+      "all_count": 5438,
+      "all_pct": 100.0,
+      "hq_count": 2259,
+      "hq_pct": 100.0
+    },
+    "g2_co2_fixation": {
+      "all_count": 647,
+      "all_pct": 11.8978,
+      "hq_count": 295,
+      "hq_pct": 13.0589
+    }
+  },
+  "g3_explicit_co2_fixation_pathways_positivity": {
+    "g3_co2_calvin_cycle": {
+      "all_count": 343,
+      "all_pct": 6.3075,
+      "hq_count": 211,
+      "hq_pct": 9.3404
+    },
+    "g3_co2_3_hydroxypropionate": {
+      "all_count": 0,
+      "all_pct": 0.0,
+      "hq_count": 0,
+      "hq_pct": 0.0
+    },
+    "g3_co2_3_hydroxypropionate_4_hydroxybutyrate": {
+      "all_count": 2,
+      "all_pct": 0.0368,
+      "hq_count": 1,
+      "hq_pct": 0.0443
+    },
+    "g3_co2_dicarboxylate_hydroxybutyrate": {
+      "all_count": 213,
+      "all_pct": 3.9169,
+      "hq_count": 38,
+      "hq_pct": 1.6822
+    },
+    "g3_co2_reductive_acetyl_coa": {
+      "all_count": 0,
+      "all_pct": 0.0,
+      "hq_count": 0,
+      "hq_pct": 0.0
+    },
+    "g3_co2_reductive_citric_acid": {
+      "all_count": 9,
+      "all_pct": 0.1655,
+      "hq_count": 4,
+      "hq_pct": 0.1771
+    },
+    "g3_co2_carboxysome": {
+      "all_count": 90,
+      "all_pct": 1.655,
+      "hq_count": 46,
+      "hq_pct": 2.0363
+    }
+  },
+  "ecology_concordance_summary": {
+    "betl_concordance_rate_pct": 98.6392,
+    "betl_discordant_count": 74,
+    "ahpcf_concordance_rate_pct": 99.9448,
+    "ahpcf_discordant_count": 3,
+    "phosphatase_safe_na_count": 2452,
+    "phosphatase_confirmed_present_count": 2986
+  }
+}

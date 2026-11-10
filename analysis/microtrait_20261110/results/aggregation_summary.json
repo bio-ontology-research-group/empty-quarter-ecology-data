@@ -1,0 +1,17 @@
+{
+  "stage": "stage3_aggregate_and_validate",
+  "status": "completed",
+  "timestamp": "2026-11-10T10:03:25Z",
+  "elapsed_seconds": 511.56,
+  "n_canonical_mags": 5438,
+  "n_complete_all_components": 5438,
+  "n_complete_traits_partial_continuous": 0,
+  "n_failed": 0,
+  "n_prodigal_ok": 5438,
+  "n_microtrait_hmm_ok": 5438,
+  "n_dbcan_hmm_ok": 5438,
+  "n_rules_traits_ok": 5438,
+  "n_growth_ok": 5438,
+  "n_growth_na_zero_ribosomal": 0,
+  "n_ogt_ok": 5438
+}

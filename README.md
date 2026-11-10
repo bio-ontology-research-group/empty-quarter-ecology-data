@@ -87,6 +87,17 @@ released union, use the v3.0.0 module inventory and public validation report.
 | Canonical Trips 1–5 feature table | 1,271 | Profiles; 1,242 normalized field identifiers |
 | Ecology analysis table | 1,237 | Retained profiles; 1,209 normalized field identifiers |
 | Primary ecology frame (sites 1--60) | 1,227 | Retained profiles used for repeated-campaign inference |
+| Deduplicated primary-transect 16S cohort | 1,186 | Unique specimen profiles across sites 1--60 (`metadata/cohorts/source/included_samples_1186.tsv`) |
+| Shotgun metagenomic libraries | 551 | Read-bearing libraries across 61 site codes (59 primary + sites 62, 64); 554 runs (221 NovaSeq 6000, 333 NovaSeq X; 81 NEBNext Ultra II, 473 QIAseq FX); 549 primary assemblies |
+| Non-zero mapped shotgun libraries | 550 | Excludes `F5Dr1` (zero mapped reads in `EQ-COVERM-REL-ABUND-v1.0.0`) |
+| Core-transect shotgun cohort | 546 | Non-zero mapped libraries at primary sites 1--60 (59 sites; additionally excludes Trip 1 named-site libraries `62PRr2`, `64Dr3`, `64PRr2`, `64Sr2`) |
+| Core-transect read-depth-modeled cohort | 545 | Core-transect libraries with complete post-QC read-depth metadata (excludes `F45PRr3`) |
+| Amplicon-matched shotgun cohort | 442 | Exact specimen-ID intersection of the 546 core shotgun libraries and 1,186 deduplicated 16S profiles across 58 primary sites (8,860 shared KOs) |
+| Matched read-depth-modeled cohort | 441 | Amplicon-matched shotgun libraries with complete post-QC read-depth metadata (excludes `F45PRr3`) |
+| Competitive archaeal mapping cohort | 193 | Paired compartment shotgun profiles across 68 visits and 36 sites (`EQ-COVERM-ARCHAEA-COMP-v1.0.0`) |
+| Refined species-representative MAGs | 5,438 | 4,847 bacterial and 591 archaeal representatives (126 HQ, 5,311 strict MQ `<10%` contamination, and `48Dr2__self_SemiBin_25` at `10.0%` contamination) |
+| Bakta/eggNOG release proteins (`EQ-PROT-BAKTA-v1.0.0`) | 19,186,792 | Bakta v1.12.0 proteins across the 5,438 representatives (16,119,759 eggNOG-annotated; 8,516,493 KO-assigned across 11,386 KOs) |
+| Pyrodigal representative proteins (`EQ-PROT-PYRODIGAL-REP-v1.0.0`) | 20,451,986 | Per-representative Pyrodigal protein calls (reconciled with 20,379,930 bin-mapped assembly calls) used in companion functional and proteome analyses |
 | Field XRF | 71 | Complete in-situ sessions at 58 Trip 5 sites |
 | Laboratory XRF, Trips 1–4 | 547 | Processed selected-sample records |
 | Laboratory XRF, Trip 5 | 178 | Processed selected-sample records |
@@ -94,9 +105,9 @@ released union, use the v3.0.0 module inventory and public validation report.
 | XRF measurement values | 19,763 | Generated values, each with a value-to-quality link |
 | Annual climate measurements | 582 | 194 site--campaign records by three variables; 54 source values quarantined |
 | Monthly climate measurements | 12,936 | 3,234 site--month records by four variables |
-| Archived-soil pH | 712 | Admitted specimen measurements in 29 reconstructed sessions; 456 additional source rows remain unavailable or quarantined |
-| Genome-abundance profiles | 150 | CoverM tables used by the encoded-function null |
-| Annotated genome subset | 990 | Genomes shared by CoverM and eggNOG inputs |
+| Archived-soil pH (`EQ-PH-SHARED-v1.0.1`) | 712 | Admitted specimen measurements in 29 reconstructed sessions (156 Trip 4 replicate-2 specimen reconciliations); 456 additional source rows remain unavailable or quarantined |
+| Historical Trips 1–3 pilot CoverM profiles (`EQ-COVERM-LEGACY-991-v0`) | 150 | Legacy CoverM tables against the superseded 991-genome draft set |
+| Historical Trips 1–3 annotated genome subset | 990 | Legacy genomes shared by the 150 CoverM profiles and eggNOG v2.1.12 inputs |
 | Paired PMA aliquots | 9 | Treated-versus-untreated Trip 5 pairs |
 
 The generated sample, DNA, SRA, and XRF modules reconcile to those eligible
@@ -262,14 +273,50 @@ coverage archives form the Zenodo deposit staged by
 `scripts/release/stage_mag_zenodo.py` and linked from https://rubalkhali.science/.
 Provenance and validation records are in `evidence/mag-catalogue-20261024/`.
 
-## Companion ecology-analysis inputs
+## Companion ecology and proteome cohort provenance
 
-The statistical inputs needed for the ecology paper's genome-resolved
-encoded-function, PICRUSt2 comparison, metabolic-marker summary, and paired
-PMA analyses are staged separately from the amplicon and ontology layers:
+The shared machine-readable cohort and product provenance manifest in
+`metadata/cohorts/cohort_product_manifest.json` (with per-library accounting in
+`metadata/cohorts/shotgun_cohort_accounting.tsv`, MIMAG boundary records in
+`metadata/cohorts/mimag_quality_boundary.tsv`, and compact staged source tables in
+`metadata/cohorts/source/`) links the foundational resource to the companion
+ecology and proteome analyses:
+
+- Current full-transect genome-resolved ecological integration uses the 5,438
+  refined species representatives (`EQ-MAG-REFINED-v1.0.0`), the CoverM v0.7.0
+  relative-abundance matrix (`EQ-COVERM-REL-ABUND-v1.0.0`; 550 non-zero mapped
+  libraries, 546 core-transect libraries across 59 primary sites, 545
+  read-depth-modeled core libraries, 442 amplicon-matched libraries across 58
+  primary sites sharing 8,860 KOs with PICRUSt2, and 441 matched
+  read-depth-modeled libraries), and the deduplicated 1,186-sample primary-transect
+  16S cohort (`metadata/cohorts/source/included_samples_1186.tsv`).
+- Companion archaeal competitive read mapping (`EQ-COVERM-ARCHAEA-COMP-v1.0.0`;
+  summary in `metadata/cohorts/source/archaeal_competitive_mapping_summary.tsv`)
+  evaluates 193 paired shotgun profiles across 68 visits and 36 sites against
+  the 5,438 representatives plus 301 external Thermoplasmatota reference genomes
+  across 0%, 10%, 20% and 50% breadth gates, with `MAPQ >= 20` evaluated as a
+  separate sensitivity analysis.
+- Protein products associated with the 5,438 representative genome identifiers
+  are explicitly distinguished between the canonical release Bakta/eggNOG product
+  (snapshot identifier `EQ-PROT-BAKTA-v1.0.0`; 19,186,792 proteins) and the
+  companion Pyrodigal per-representative protein calls (snapshot identifier
+  `EQ-PROT-PYRODIGAL-REP-v1.0.0`; 20,451,986 proteins, reconciled with
+  20,379,930 bin-mapped assembly calls). Matching genome identifiers do not
+  establish identical underlying FASTA sequence contents or retained contig
+  coordinates, and direct locus-by-locus Bakta-to-Pyrodigal equivalence is
+  unverified (`UNVERIFIED_SEPARATE_PRODUCTS`).
+- Cross-paper shared foundation and mechanistic studies status: The shared
+  genome manifest, canonical GTDB release 232 taxonomy reconciliation, and metabolic
+  cohort join across the three packages are linked in
+  [`docs/SHARED_FOUNDATION.md`](docs/SHARED_FOUNDATION.md). Mechanistic results in
+  the companion proteome package are under independent scientific review, pending
+  manuscript integration; ongoing metabolic and viral results remain pending.
+
+The historical Trips 1–3 pilot inputs and paired PMA dataset remain staged for
+audit reproducibility:
 
 - `metadata/metagenome/coverm_profiles.tar.gz` contains the 150 CoverM
-  genome-relative-abundance tables;
+  genome-relative-abundance tables (`EQ-COVERM-LEGACY-991-v0`);
 - `metadata/metagenome/eq.emapper.annotations.gz` is the eggNOG annotation
   table from which the 990-genome KO matrix is constructed;
 - `metadata/metagenome/measured_function_inputs.tar.gz` contains the six

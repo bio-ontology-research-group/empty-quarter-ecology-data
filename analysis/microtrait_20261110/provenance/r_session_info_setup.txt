@@ -1,0 +1,53 @@
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: SUSE Linux Enterprise Server 15 SP7
+
+Matrix products: default
+BLAS/LAPACK: /scratch/project/k10018/eq-microtrait-20261110/env/microtrait-r/lib/libopenblasp-r0.3.34.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF8       LC_NUMERIC=C             
+ [3] LC_TIME=en_US.UTF8        LC_COLLATE=en_US.UTF8    
+ [5] LC_MONETARY=en_US.UTF8    LC_MESSAGES=en_US.UTF8   
+ [7] LC_PAPER=en_US.UTF8       LC_NAME=C                
+ [9] LC_ADDRESS=C              LC_TELEPHONE=C           
+[11] LC_MEASUREMENT=en_US.UTF8 LC_IDENTIFICATION=C      
+
+time zone: Asia/Riyadh
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] testthat_3.2.3   gRodon_1.0.0     microtrait_1.0.0
+
+loaded via a namespace (and not attached):
+ [1] ade4_1.7-23             tidyselect_1.2.1        dplyr_1.1.4            
+ [4] farver_2.1.2            R.utils_2.13.0          Biostrings_2.70.1      
+ [7] bitops_1.0-9            RCurl_1.98-1.17         lazyeval_0.2.2         
+[10] digest_0.6.37           lifecycle_1.0.4         coRdon_1.20.0          
+[13] cluster_2.1.8.1         magrittr_2.0.3          compiler_4.3.3         
+[16] rlang_1.1.6             tools_4.3.3             corrplot_0.95          
+[19] data.table_1.17.8       lambda.r_1.2.4          RColorBrewer_1.1-3     
+[22] purrr_1.1.0             BiocGenerics_0.48.1     R.oo_1.27.1            
+[25] grid_4.3.3              stats4_4.3.3            colorspace_2.1-1       
+[28] ggplot2_3.5.2           scales_1.4.0            gtools_3.9.5           
+[31] iterators_1.0.14        MASS_7.3-60.0.1         cli_3.6.5              
+[34] vegan_2.7-1             crayon_1.5.3            generics_0.1.4         
+[37] tzdb_0.5.0              ape_5.8-1               stringr_1.5.2          
+[40] zlibbioc_1.48.0         splines_4.3.3           assertthat_0.2.1       
+[43] parallel_4.3.3          formatR_1.14            XVector_0.42.0         
+[46] matrixStats_1.5.0       vctrs_0.6.5             Matrix_1.6-5           
+[49] IRanges_2.36.0          hms_1.1.3               S4Vectors_0.40.2       
+[52] seqinr_4.2-36           foreach_1.5.2           tidyr_1.3.1            
+[55] glue_1.8.0              codetools_0.2-20        stringi_1.8.7          
+[58] gtable_0.3.6            futile.logger_1.4.3     GenomeInfoDb_1.38.1    
+[61] kmed_0.4.2              tibble_3.3.0            pillar_1.11.0          
+[64] brio_1.1.5              GenomeInfoDbData_1.2.11 R6_2.6.1               
+[67] doParallel_1.0.17       lattice_0.22-7          Biobase_2.62.0         
+[70] readr_2.1.5             futile.options_1.0.1    R.methodsS3_1.8.2      
+[73] backports_1.5.0         tictoc_1.2.1            pheatmap_1.0.13        
+[76] Rcpp_1.1.0              nlme_3.1-168            permute_0.9-8          
+[79] checkmate_2.3.3         mgcv_1.9-3              fs_1.6.6               
+[82] pkgconfig_2.0.3        

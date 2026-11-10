@@ -1,0 +1,40 @@
+{
+  "total_required_rule_hmms": 1831,
+  "assayed_required_rule_hmms": 1829,
+  "missing_required_rule_hmms": [
+    "aphA",
+    "phoN"
+  ],
+  "extra_database_models_not_in_rules": [
+    "phbB"
+  ],
+  "microtrait_database_models": 1789,
+  "microtrait_database_required_rule_models": 1788,
+  "dbcan_v14_database_models": 41,
+  "total_assayed_database_models": 1830,
+  "model_accounting_note": "Total assayed models in database (1,830) includes extra phbB (not in microtrait rules), so assayed required-rule HMMs are 1,829 of 1,831; raw outputs unchanged.",
+  "unassayed_model_details": {
+    "aphA": {
+      "kegg_id": "K03788",
+      "ec": "3.1.3.2",
+      "tc_cutoff": 101.3,
+      "description": "acid phosphatase (class B) [EC:3.1.3.2]",
+      "status": "unassayed_upstream_model_missing_from_release",
+      "impacted_rule": "phosphatase = ('phoA' | 'phoD' | 'phoN' | 'aphA')"
+    },
+    "phoN": {
+      "kegg_id": "K09474",
+      "ec": "3.1.3.2",
+      "tc_cutoff": 90.4,
+      "description": "acid phosphatase (class A) [EC:3.1.3.2]",
+      "status": "unassayed_upstream_model_missing_from_release",
+      "impacted_rule": "phosphatase = ('phoA' | 'phoD' | 'phoN' | 'aphA')"
+    }
+  },
+  "scientific_decision": {
+    "policy": "retain_official_raw_outputs_unchanged",
+    "justification": "Upstream microtrait.hmmdb.gz release omits aphA and phoN, but includes extra model phbB. Total assayed 1,830 database models includes extra phbB, so assayed required-rule HMMs are 1,829 of 1,831; raw outputs unchanged. Exactly 1,829 of 1,831 required rule HMMs are assayed. Total unique HMM models in combined databases is 1,830. No invented or non-official models are substituted. Official raw tables are retained verbatim.",
+    "separate_coverage_table": "results/phosphatase_and_model_coverage_5438.tsv",
+    "interpretation_safe_rule": "Absence of phosphatase cannot be definitively asserted when phoA and phoD are 0, because aphA and phoN were unassayed. When phoA or phoD is positive (>0), presence is confirmed."
+  }
+}

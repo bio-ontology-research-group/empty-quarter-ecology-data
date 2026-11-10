@@ -215,3 +215,41 @@ index code used the QIAseq FX DNA Library UDI Kit (473 QIAseq FX runs and 81
 NEBNext Ultra II runs in total). He also decided that the three project-hosted
 archives are published as a Zenodo deposit linked from https://rubalkhali.science/;
 he uploads the staged set (`metadata/metagenome/canonical/README.md`).
+
+## Cross-paper cohort and product manifest, 8 November 2026
+
+`scripts/release/build_cohort_product_manifest.py` generates
+`metadata/cohorts/cohort_product_manifest.json`,
+`metadata/cohorts/shotgun_cohort_accounting.tsv` and
+`metadata/cohorts/mimag_quality_boundary.tsv` from the staged source tables in
+`metadata/cohorts/source/` and `metadata/metagenome/canonical/`:
+
+- Reconciles the 551 read-bearing shotgun libraries (554 paired-end runs across
+  221 NovaSeq 6000 and 333 NovaSeq X runs; 61 site codes = 59 primary sites plus
+  Trip 1 named sites 62 and 64; 549 primary MEGAHIT assemblies) to the current
+  downstream cohorts: 550 non-zero mapped libraries (excluding `F5Dr1`), 546
+  core-transect libraries across 59 primary sites (excluding `62PRr2`, `64Dr3`,
+  `64PRr2`, `64Sr2`), 545 core read-depth-modeled libraries (excluding
+  `F45PRr3`), 442 amplicon-matched libraries across 58 primary sites joined to
+  the 1,186 deduplicated 16S profiles, and 441 matched read-depth-modeled
+  libraries.
+- Records the strict MIMAG boundary (`126` HQ, `5,311` strict MQ `<10%`
+  contamination deposited as `5,437` ENA GCA MAGs, and `48Dr2__self_SemiBin_25`
+  at `10.0%` contamination deposited as binned metagenome `ERZ29258845` while
+  included in the `5,438` operational dRep set under `<=10%` contamination).
+- Distinguishes the `19,186,792` Bakta v1.12.0 release proteins
+  (snapshot identifier `EQ-PROT-BAKTA-v1.0.0`) from the `20,451,986` Pyrodigal
+  per-representative proteins (snapshot identifier `EQ-PROT-PYRODIGAL-REP-v1.0.0`,
+  associated with the same `5,438` representative genome identifiers and
+  reconciled with `20,379,930` bin-mapped assembly proteins); matching genome
+  identifiers do not establish identical underlying FASTA sequence contents or
+  retained contig coordinates, keeping cross-caller sequence equivalence as
+  `UNVERIFIED_SEPARATE_PRODUCTS`.
+- Assigns distinct snapshot version identities to the four CoverM read-mapping products:
+  `EQ-COVERM-REFINED-v1.0.0` (551-library Bowtie2/CoverM v0.6.1 depth/breadth),
+  `EQ-COVERM-REL-ABUND-v1.0.0` (CoverM v0.7.0 relative-abundance cohort matrix),
+  `EQ-COVERM-ARCHAEA-COMP-v1.0.0` (193-profile competitive archaeal mapping
+  across 68 visits and 36 sites with 301 external Thermoplasmatota references,
+  where `MAPQ >= 20` is a separate sensitivity analysis), and
+  `EQ-COVERM-LEGACY-991-v0` (historical Trips 1–3 150-library / 991-genome /
+  990-KO-genome pilot).

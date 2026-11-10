@@ -39,8 +39,9 @@ Authorized IBEX users can retrieve this file with `scp`; verify its checksum
 against the receipt before use. `BULK_ARTIFACTS.tsv` records this private staging
 location explicitly.
 
-The public copy is the Zenodo deposit "Metagenome-assembled genome catalogue of
-Rub' al-Khali (Empty Quarter) desert soils", v1.0.0, linked from
+The planned public copy is the Zenodo deposit "Metagenome-assembled genome
+catalogue of Rub' al-Khali (Empty Quarter) desert soils", v1.0.0 (pending DOI
+placeholder `DATA-BULK-ARCHIVE-DOI`), to be linked from
 https://rubalkhali.science/. `scripts/release/stage_mag_zenodo.py --out DIR` writes
 its metadata tables, scoped data dictionary, README, Zenodo record metadata and
 upload helper; `DIR/finish_on_ibex.sh` then hard-links the three archives from the
@@ -63,9 +64,21 @@ and the completion receipt are recorded in
 Rebuild from the checked-in evidence snapshot with:
 
 ```bash
-python3 scripts/release/prepare_mag_metadata.py
-python3 -m pytest -q tests/test_mag_metadata.py
+uv run python scripts/release/prepare_mag_metadata.py
+uv run python scripts/release/build_cohort_product_manifest.py
+PYTHONPATH=. uv run pytest -q tests/test_mag_metadata.py tests/test_cohort_product_manifest.py
 ```
+
+Cross-paper cohort membership (`551 -> 550 -> 546 -> 545 -> 442 -> 441` shotgun
+libraries, `1,271 -> 1,237 -> 1,227 -> 1,186` amplicon profiles, and `193`
+archaeal competitive-mapping profiles), the strict vs operational MIMAG boundary
+on `48Dr2__self_SemiBin_25` (`10.0%` contamination), the distinction between the
+`19,186,792` Bakta release proteins (snapshot identifier `EQ-PROT-BAKTA-v1.0.0`)
+and the `20,451,986` Pyrodigal representative proteins (snapshot identifier
+`EQ-PROT-PYRODIGAL-REP-v1.0.0`, associated with the same `5,438` representative
+genome identifiers; matching identifiers do not establish identical underlying
+FASTA sequence contents or coordinates), and the four snapshot CoverM mapping
+products are recorded in `metadata/cohorts/`.
 
 The original source paths and unresolved issues are documented in
 `evidence/mag-catalogue-20261024/README.md`. MAGs remain tabular/bulk data at

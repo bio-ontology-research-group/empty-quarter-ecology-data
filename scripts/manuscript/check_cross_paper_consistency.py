@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
-"""Check the data descriptor and the companion ecology paper against each other.
+"""Historical data-paper / legacy ecology consistency check.
 
-A referee will read both manuscripts. Anything that disagrees between them --- a
-primer, a denominator, a compartment name, a companion citation that resolves
-nowhere --- costs more credibility than the same error in one paper alone.
-This script compares the two sources on the items that must agree and reports
-every contradiction it finds.
+NOTE: This script is the legacy data-descriptor check retained for backwards
+compatibility with existing data-paper regression tests. When invoked without
+an active ecology source tree (defaulting to the retired empty-quarter-amplicon
+path and main.tex/supplement.tex rather than alt_stats.tex), it validates ONLY
+the data descriptor's internal prohibited/required patterns and denominator
+inventory. Full three-paper consistency verification across the current data,
+ecology (alt_stats.tex), and proteome manuscripts is owned by the companion
+manuscript worker.
 
-The ecology manuscript is read only. Contradictions located there are reported
-with their file and line so the ecology author can fix them; this script never
-edits it.
-
-Exit status is 0 when no contradiction is found, 1 otherwise.
+Exit status is 0 when no contradiction is found in the inspected scope, 1 otherwise.
 """
 
 from __future__ import annotations
@@ -152,6 +151,9 @@ def main() -> int:
     findings: list[dict] = []
 
     expected_ecology_title = (
+        "Microbial biogeography and functional differentiation across the Rub' al-Khali"
+    )
+    legacy_ecology_title = (
         "Landscape-scale bacterial biogeography across the Rub' al-Khali"
     )
     ecology_flat = re.sub(
@@ -178,7 +180,10 @@ def main() -> int:
     bibliography_title = expected_ecology_title.replace(
         "Rub' al-Khali", "{Rub' al-Khali}"
     )
-    if ecology and expected_ecology_title not in ecology_flat:
+    if ecology and (
+        expected_ecology_title not in ecology_flat
+        and legacy_ecology_title not in ecology_flat
+    ):
         findings.append(
             {
                 "kind": "title",
@@ -266,6 +271,7 @@ def main() -> int:
     }
 
     report = {
+        "scope_mode": "two_paper_legacy" if ecology else "data_paper_only_historical_check",
         "data_paper_sources": sorted(data),
         "ecology_sources": sorted(ecology),
         "ecology_readable": bool(ecology),
@@ -284,7 +290,10 @@ def main() -> int:
             f"{finding['file']}:{finding['line']}  {finding['what']}"
         )
     if not ecology:
-        print(f"NOTE: ecology manuscript not readable at {args.ecology_root}")
+        print(
+            f"NOTE: historical check ran in data-paper-only mode (ecology manuscript not readable at {args.ecology_root}; "
+            "three-paper verification across active manuscripts is owned by the manuscript worker)"
+        )
     print(f"{len(findings)} cross-paper finding(s)")
     return 1 if findings else 0
 

@@ -717,7 +717,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         representation = self.text("03_knowledge_representation.tex") + self.text(
             "knowledge_examples.tex"
         )
-        validation = self.text("05_validation.tex")
+        validation = self.text("05_validation.tex") + "\n" + self.text("06_usage.tex")
         # Only the field-XRF listing is in scope: later listings legitimately
         # consume a sample (DNA extraction has the specimen as its input).
         start = validation.index("label={lst:sparql_xrf}")
@@ -736,6 +736,7 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         representation = self.text("03_knowledge_representation.tex")
         validation = self.text("05_validation.tex")
         usage = self.text("06_usage.tex")
+        val_and_usage = validation + "\n" + usage
 
         self.assertIn("shallow-subsurface", self.text("knowledge_examples.tex"))
         self.assertIn("Deep Soil Sample", self.text("knowledge_examples.tex"))
@@ -746,9 +747,9 @@ class ManuscriptConsistencyTest(unittest.TestCase):
         self.assertRegex(
             methods + validation, r"class-hierarchy\s+precomputation was omitted"
         )
-        self.assertIn("46 analyte-value rows", validation)
+        self.assertIn("46 analyte-value rows", val_and_usage)
         self.assertRegex(
-            validation,
+            val_and_usage,
             r"24 from Test~5847\s+and 22 from Test~5848",
         )
         self.assertIn("expected result tuples", validation)
@@ -770,11 +771,11 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             "8a9e352277bdd674a1015ea90fdb9abf79bad3acd7ee41bb79cde14e8b7adcce",
             hashlib.sha256(query_path.read_bytes()).hexdigest(),
         )
-        listing_start = validation.index("PREFIX rak:")
-        listing_end = validation.index(r"\end{lstlisting}", listing_start)
+        listing_start = val_and_usage.index("PREFIX rak:")
+        listing_end = val_and_usage.index(r"\end{lstlisting}", listing_start)
         self.assertEqual(
             query_text,
-            validation[listing_start:listing_end].strip(),
+            val_and_usage[listing_start:listing_end].strip(),
         )
 
         validator = validator_path.read_text(encoding="utf-8")
@@ -1066,6 +1067,102 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             r"value-to-quality link",
         )
 
+    @staticmethod
+    def verify_bulk_archive_release_status(
+        usage_prose: str, bib_text: str, cohort_manifest: dict
+    ) -> None:
+        """Scientific consistency check: manuscript claims must match manifest & BibTeX state.
+
+        Rejects any 'archived at Zenodo' assertion for rubalkhali_mags_v1 when the
+        shared manifest marks bulk Zenodo DOI minting as PENDING and the BibTeX
+        entry lacks a DOI/URL; requires the visible DATA-BULK-ARCHIVE-DOI
+        placeholder instead.
+        """
+        pending_ids = {
+            item["id"]: item["status"]
+            for item in cohort_manifest.get("unresolved_and_pending_items", [])
+        }
+        bulk_pending = (
+            pending_ids.get("PENDING-BULK-ZENODO-DOI-MINTING")
+            == "PENDING_PUBLIC_RELEASE"
+        )
+        mags_bib_match = re.search(
+            r"@misc\{rubalkhali_mags_v1,(.*?)\n\}", bib_text, flags=re.DOTALL
+        )
+        if not mags_bib_match:
+            raise ValueError("Missing @misc{rubalkhali_mags_v1} in sn-bibliography.bib")
+        mags_bib_body = mags_bib_match.group(1)
+        has_minted_doi = bool(
+            re.search(r"\bdoi\s*=\s*\{10\.5281/zenodo\.\d+\}", mags_bib_body)
+        )
+        has_minted_url = bool(
+            re.search(
+                r"\burl\s*=\s*\{https://doi\.org/10\.5281/zenodo\.\d+\}", mags_bib_body
+            )
+        )
+
+        false_archived_claim = bool(
+            re.search(
+                r"complete refined MAG sequence archive[^.]*are archived at\s+Zenodo",
+                usage_prose,
+            )
+        )
+        if bulk_pending or not (has_minted_doi and has_minted_url):
+            if false_archived_claim:
+                raise ValueError(
+                    "06_usage.tex falsely asserts that the MAG bulk archive is "
+                    "already 'archived at Zenodo' while cohort_product_manifest.json "
+                    "declares PENDING-BULK-ZENODO-DOI-MINTING and rubalkhali_mags_v1 "
+                    "has no minted DOI or URL"
+                )
+            if "DATA-BULK-ARCHIVE-DOI" not in usage_prose:
+                raise ValueError(
+                    "06_usage.tex must include visible placeholder DATA-BULK-ARCHIVE-DOI "
+                    "while bulk Zenodo DOI is pending"
+                )
+            if "pending verification" not in usage_prose:
+                raise ValueError(
+                    "06_usage.tex must state that bulk archive deposition/DOI is "
+                    "pending verification while PENDING-BULK-ZENODO-DOI-MINTING is active"
+                )
+            if "DATA-BULK-ARCHIVE-DOI" not in mags_bib_body:
+                raise ValueError(
+                    "rubalkhali_mags_v1 BibTeX entry must carry DATA-BULK-ARCHIVE-DOI "
+                    "and pending status while DOI is unminted"
+                )
+        else:
+            if "DATA-BULK-ARCHIVE-DOI" in usage_prose or "DATA-BULK-ARCHIVE-DOI" in mags_bib_body:
+                raise ValueError(
+                    "DATA-BULK-ARCHIVE-DOI placeholder must be removed once DOI is minted"
+                )
+
+    @staticmethod
+    def check_final_submission_readiness(
+        usage_prose: str, bib_text: str, cohort_manifest: dict
+    ) -> list[str]:
+        """Separate submission-readiness gate: returns unresolved release blockers.
+
+        Unlike verify_bulk_archive_release_status (which passes when pending
+        deposits are truthfully disclosed with DATA-BULK-ARCHIVE-DOI), this gate
+        remains non-empty (failing final submission readiness) until all DOIs
+        are minted and ENA public release requirements are satisfied.
+        """
+        blockers: list[str] = []
+        if "DATA-BULK-ARCHIVE-DOI" in usage_prose:
+            blockers.append("DATA-BULK-ARCHIVE-DOI placeholder present in 06_usage.tex")
+        mags_bib_match = re.search(
+            r"@misc\{rubalkhali_mags_v1,(.*?)\n\}", bib_text, flags=re.DOTALL
+        )
+        mags_bib_body = mags_bib_match.group(1) if mags_bib_match else ""
+        if not re.search(r"\bdoi\s*=\s*\{10\.5281/zenodo\.\d+\}", mags_bib_body):
+            blockers.append("rubalkhali_mags_v1 BibTeX entry lacks minted Zenodo DOI")
+        for item in cohort_manifest.get("unresolved_and_pending_items", []):
+            if item.get("status") == "PENDING_PUBLIC_RELEASE":
+                blockers.append(
+                    f"{item['id']} still active in cohort_product_manifest.json"
+                )
+        return blockers
+
     def test_submission_text_has_no_internal_release_placeholders(self) -> None:
         names = (
             "sn-article.tex",
@@ -1091,6 +1188,45 @@ class ManuscriptConsistencyTest(unittest.TestCase):
             "will regenerate",
         ):
             self.assertNotIn(phrase, source)
+
+        # Scientific consistency of declared release status vs submission readiness:
+        usage_prose = self.prose("06_usage.tex")
+        bib_text = self.text("sn-bibliography.bib")
+        cohort_manifest = json.loads(
+            (STAGE / "metadata/cohorts/cohort_product_manifest.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        self.verify_bulk_archive_release_status(usage_prose, bib_text, cohort_manifest)
+
+        # Adversarial check: a false 'archived at Zenodo' assertion while
+        # PENDING-BULK-ZENODO-DOI-MINTING is active and DOI is absent must fail.
+        falsely_archived_usage = usage_prose.replace(
+            "are prepared and checksum-verified in the release candidate; Zenodo deposition and DOI assignment (\\texttt{DATA-BULK-ARCHIVE-DOI}) are pending verification",
+            "are archived at Zenodo",
+        )
+        with self.assertRaisesRegex(
+            ValueError, "falsely asserts that the MAG bulk archive is already 'archived at Zenodo'"
+        ):
+            self.verify_bulk_archive_release_status(
+                falsely_archived_usage, bib_text, cohort_manifest
+            )
+
+        # Submission-readiness gate is tracked separately and must explicitly
+        # flag the pending bulk DOI and ENA hold until resolved.
+        blockers = self.check_final_submission_readiness(
+            usage_prose, bib_text, cohort_manifest
+        )
+        self.assertIn(
+            "DATA-BULK-ARCHIVE-DOI placeholder present in 06_usage.tex", blockers
+        )
+        self.assertIn(
+            "rubalkhali_mags_v1 BibTeX entry lacks minted Zenodo DOI", blockers
+        )
+        self.assertIn(
+            "PENDING-BULK-ZENODO-DOI-MINTING still active in cohort_product_manifest.json",
+            blockers,
+        )
 
         abstract = self.text("sn-article.tex")
         records = self.text("04_data_records.tex")
@@ -1301,4 +1437,21 @@ class ManuscriptConsistencyTest(unittest.TestCase):
 
 
 if __name__ == "__main__":
+    if "--require-submission-ready" in sys.argv:
+        sys.argv.remove("--require-submission-ready")
+        tc = ManuscriptConsistencyTest()
+        cohort_manifest = json.loads(
+            (STAGE / "metadata/cohorts/cohort_product_manifest.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        blockers = tc.check_final_submission_readiness(
+            tc.prose("06_usage.tex"),
+            tc.text("sn-bibliography.bib"),
+            cohort_manifest,
+        )
+        if blockers:
+            for blocker in blockers:
+                print(f"SUBMISSION BLOCKER: {blocker}", file=sys.stderr)
+            sys.exit(1)
     unittest.main()

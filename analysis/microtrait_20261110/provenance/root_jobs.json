@@ -1,0 +1,25 @@
+{
+  "updated_at": "2026-11-10T09:39:50.826386+00:00",
+  "submitter": "root",
+  "stage0a_extract_job_id": "15922779",
+  "stage0a_status": "COMPLETED_VERIFIED_5438",
+  "stage0b_db_job_id": "15924705",
+  "stage1_smoke_job_id": "15924724",
+  "stage2_production_array_job_id": "15924726",
+  "stage3_aggregate_job_id": "15924728",
+  "remote_root": "/scratch/project/k10018/eq-microtrait-20261110",
+  "local_root": "/home/leechuck/Documents/papers/empty-quarter/microtrait-20261110",
+  "stage0b_superseded_failed_job_id": "15924695",
+  "stage0b_status": "COMPLETED_VERIFIED",
+  "stage2_array_spec": "0-33",
+  "runtime_repair": "r-testthat installed with r-base4.3 pinned, library loading verified; smoke relaunched",
+  "superseded_jobs": [
+    "15924695",
+    "15924712",
+    "15924714",
+    "15924716"
+  ],
+  "stage1_status": "COMPLETED_EXACT_OFFICIAL_PARITY_ALL_SIX",
+  "stage2_status_at_launch_verification": "ALL_34_RUNNING",
+  "launch_verification_at": "2026-11-10T09:52:34.107746+00:00"
+}

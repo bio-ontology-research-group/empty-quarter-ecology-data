@@ -1,3 +1,5 @@
+\begin{revision}
+
 \section{Usage notes}\label{usage}
 
 The portal at \url{https://rubalkhali.science/} provides site pages and
@@ -18,11 +20,46 @@ checksum, environment and execution details (Section~\ref{records}).
 Use specimen, collection-visit and assay identifiers when joining
 observations. The primary repeated-campaign frame comprises sites
 1--60; the source identifiers 61--64 refer to four named catalogue
-locations sampled in Trip~1.
-Coordinate matching established these aliases, which account for 36 source
-specimens. Several feature profiles share a source
-specimen identifier. Analyses should group these profiles by their
-documented specimen and processing relationships.
+locations sampled in Trip~1. Coordinate matching established these
+aliases, which account for 36 source specimens. Several feature
+profiles share a source specimen identifier. Analyses should group
+these profiles by their documented specimen and processing relationships.
+
+The shared cohort and product manifest documents how downstream ecological
+and proteome analyses subset the resource \cite{ecology_companion,proteome_companion}.
+For 16S amplicon data, excluding the 24 laboratory controls and 10
+low-depth biological profiles leaves 1,237 biological profiles, 1,227
+primary-transect profiles across sites~1--60, and 1,186 deduplicated
+primary-transect specimen profiles. For shotgun metagenomics, the 551
+read-bearing libraries across 61 site codes (59 primary sites plus
+Trip~1 named sites~62 and~64) yield 550 non-zero mapped libraries after
+excluding \texttt{F5Dr1}, 546 core-transect libraries across the 59
+shotgun-sampled primary sites after excluding the four Trip~1 named-site
+libraries (\texttt{62PRr2}, \texttt{64Dr3}, \texttt{64PRr2} and
+\texttt{64Sr2}), and 545 core-transect libraries with complete post-QC
+read-depth covariates after excluding \texttt{F45PRr3}. Joining the 546
+core-transect shotgun libraries to the 1,186 deduplicated 16S specimen
+profiles by exact specimen identifier yields 442 matched
+amplicon--metagenome profiles across 58 primary sites (all primary sites
+except sites~56 and~59, supporting the 8,860-KO direct comparison with
+PICRUSt2) and 441 matched profiles with complete post-QC read-depth
+metadata (\texttt{EQ-COVERM-REL-ABUND-v1.0.0}). Competitive archaeal
+mapping (\texttt{EQ-COVERM-ARCHAEA-COMP-v1.0.0}) covers 193 paired
+shotgun profiles across 68 site-campaign visits and 36 sites against the
+5,438 representatives and 301 external Thermoplasmatota genomes across
+0\%, 10\%, 20\% and 50\% breadth gates, with \texttt{MAPQ} $\ge 20$
+evaluated as a separate sensitivity analysis. Users reusing protein
+annotations or taxonomic labels should select the canonical 19,186,792
+Bakta/eggNOG release product (\texttt{EQ-PROT-BAKTA-v1.0.0}) and the
+canonical GTDB R232 taxonomy for new analyses, whereas reproducing
+frozen companion projections uses the 20,451,986 Pyrodigal representative
+protein product (\texttt{EQ-PROT-PYRODIGAL-REP-v1.0.0}), the frozen
+analytical KO matrix (\texttt{EQ-KO-LEGACY-ANALYTICAL-v0}), or the frozen
+analytical taxonomy snapshot (\texttt{EQ-TAX-LEGACY-ANALYTICAL-v0}) as
+documented in the shared manifest. The earlier Trips~1--3 pilot dataset (150 CoverM profiles across
+the 991-genome draft catalogue and its 990-genome KO matrix,
+\texttt{EQ-COVERM-LEGACY-991-v0}) is retained solely for historical
+reproducibility.
 
 The control registry distinguishes assay, processing stage,
 extraction group and identity evidence. The Trip~5 candidate screen
@@ -58,6 +95,143 @@ slurries supplied treated/untreated pairs. Descriptive paired summaries
 retain this preparation structure and compare dye treatment under
 matched dark and light exposure.
 
+
+\input{knowledge_examples.tex}
+
+\subsection{Retrieving measurements and community profiles}
+Listing~\ref{lst:sparql_xrf} retrieves XRF measurements for a specific site, requiring traversal of
+the measurement process, quality, and value entities.
+
+\begin{lstlisting}[caption={SPARQL query to retrieve field XRF
+    measurements for Site 10. The query starts from the field-XRF
+    measuring processes whose target is the site and walks to the
+    individual analyte concentrations.},
+  label={lst:sparql_xrf}, basicstyle=\ttfamily\scriptsize,
+  frame=single]
+PREFIX rak: <https://rubalkhali.science/kb/RAK_>
+PREFIX sio: <http://semanticscience.org/resource/SIO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?processLabel ?siteLabel ?analyte ?concentration
+WHERE {
+  ?process a rak:0000025 ;
+           rdfs:label ?processLabel ;
+           sio:000291 ?site ;
+           sio:000229 ?value .
+  FILTER(CONTAINS(LCASE(STR(?processLabel)), "field xrf"))
+  ?site rdfs:label ?siteLabel .
+  FILTER(?siteLabel = "Site 10")
+  ?value sio:000215 ?quality ;
+         rak:2000012 ?concentration .
+  ?quality a ?qualityClass .
+  ?qualityClass rdfs:label ?analyte .
+  FILTER(?qualityClass != rak:0000032)
+}
+ORDER BY ?processLabel ?analyte
+\end{lstlisting}
+
+The query selects field-XRF processes targeting Site~10, then
+retrieves each output and its analyte quality. It returns one row
+per process/analyte combination, excluding the aggregate Light
+Elements channel. The instrument-reported values have undocumented units.
+
+The query returned 46 analyte-value rows for Site~10: 24 from Test~5847
+and 22 from Test~5848. Validation compares the returned identifiers and
+values with the expected observations from the site and XRF data.
+
+Listing~\ref{lst:sparql_taxon} retrieves the complete genus profile for
+run \texttt{ERR16061083},
+joining across bioinformatic workflows, FASTQ datasets, and taxon
+observations.
+
+\begin{lstlisting}[caption={Complete genus-level profile for run ERR16061083, ordered by descending read count and lineage.},label={lst:sparql_taxon},basicstyle=\ttfamily\scriptsize,frame=single]
+PREFIX rak: <https://rubalkhali.science/kb/RAK_>
+PREFIX sio: <http://semanticscience.org/resource/SIO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?proc ?fastq ?runLabel ?lineage ?taxon ?taxonLabel
+       ?count ?relativeAbundance
+WHERE {
+  VALUES ?runLabel { "FASTQ dataset for ERR16061083" }
+  ?proc a rak:0000071 ;
+        sio:000230 ?fastq ;
+        sio:000229 ?dsAbs, ?dsRel .
+  ?fastq rdfs:label ?runLabel .
+  ?dsAbs a rak:0000074 ; rdfs:label ?absLabel ;
+         sio:000059 ?valAbs .
+  ?dsRel a rak:0000075 ; rdfs:label ?relLabel ;
+         sio:000059 ?valRel .
+  FILTER(STRENDS(STR(?absLabel), "(Genus)"))
+  FILTER(STRENDS(STR(?relLabel), "(Genus)"))
+  ?valAbs rak:2000026 ?count ;
+          rak:2000025 ?lineage ;
+          sio:000215 ?qualAbs .
+  ?valRel rak:2000020 ?relativeAbundance ;
+          rak:2000025 ?lineage ;
+          sio:000215 ?qualRel .
+  ?qualAbs sio:000011 ?taxon, ?fastq .
+  ?qualRel sio:000011 ?taxon, ?fastq .
+  ?taxon rdfs:label ?taxonLabel .
+  FILTER(?taxon != ?fastq)
+}
+ORDER BY ?runLabel DESC(xsd:double(?count)) ?lineage ?proc
+\end{lstlisting}
+
+The query binds both count and relative-abundance values to the same
+workflow, source FASTQ dataset, taxon and classifier lineage. Dataset
+labels encode rank through the suffix \texttt{(Genus)}.
+The query uses that emitted convention explicitly and returns all
+48 observations for the named run. The source-derived expected table
+contains the complete profile, including each classifier lineage.
+The all-run query retrieves profiles from a locally loaded snapshot. That unrestricted export
+is a long-running operation. The environmental example additionally binds
+field temperature and specimen collection to the same site visit.
+
+\begin{lstlisting}[caption={SPARQL query to retrieve Pseudomonas relative abundance at sites with high temperature.}, label={lst:sparql_env_tax}, basicstyle=\ttfamily\scriptsize, frame=single]
+PREFIX rak: <https://rubalkhali.science/kb/RAK_>
+PREFIX sio: <http://semanticscience.org/resource/SIO_>
+PREFIX pato: <http://purl.obolibrary.org/obo/PATO_>
+PREFIX ncbitaxon: <http://purl.obolibrary.org/obo/NCBITaxon_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?visit ?visitLabel ?site ?siteLabel ?sample ?fastq
+       ?temperatureProcess ?tempVal ?temp ?lineage ?relAbundance
+WHERE {
+  ?visit a rak:0000003 ; rdfs:label ?visitLabel ;
+         sio:000291 ?site .
+  ?site rdfs:label ?siteLabel .
+  ?temperatureProcess sio:000068 ?visit ;
+                      sio:000229 ?tempVal .
+  ?tempVal rak:2000003 ?temp ; sio:000215 ?tempQual .
+  ?tempQual a pato:0000146 ; sio:000011 ?site .
+  FILTER(?temp > 35.0)
+  ?sampling a rak:0000024 ; sio:000068 ?visit ;
+            sio:000291 ?site ; sio:000229 ?collection .
+  ?collection sio:000059 ?sample .
+  ?ext sio:000230 ?sample ; sio:000229 ?dna .
+  ?libPrep a rak:0000065 ; sio:000230 ?dna ;
+           sio:000229 ?lib .
+  ?seq a rak:0000066 ; sio:000230 ?lib ;
+       sio:000229 ?fastq .
+  ?bioinf a rak:0000071 ; sio:000230 ?fastq ;
+          sio:000229 ?dsRel .
+  ?dsRel a rak:0000075 ; rdfs:label ?datasetLabel ;
+         sio:000059 ?valRel .
+  FILTER(STRENDS(STR(?datasetLabel), "(Genus)"))
+  ?valRel rak:2000020 ?relAbundance ;
+          rak:2000025 ?lineage ; sio:000215 ?qualRel .
+  ?qualRel sio:000011 ncbitaxon:286, ?fastq .
+}
+ORDER BY ?visit ?sample ?fastq ?tempVal ?lineage
+\end{lstlisting}
+
+Each result retains the collection visit, specimen, sequence dataset,
+temperature observation and genus lineage. A site's visits are joined
+through their process provenance. This provides an environmental
+temperature associated with the collection visit of each returned
+microbial profile.
+
+
 \subsection{Versioning and supported operations}
 
 Use the versioned modules and their reference ontologies to reproduce
@@ -84,6 +258,7 @@ data and code described in Section~\ref{records}. Analyses requiring
 additional OWL consequences need a reasoner and validation workload
 suited to those constructs.
 
+
 \section{Data availability}\label{data_availability}
 
 The project uses ENA umbrella study \texttt{PRJEB104209}; its submitted
@@ -94,13 +269,15 @@ primary metagenome assemblies, the 12,434 refined bins as binned
 metagenomes, and 5,437 of the 5,438 representatives as MAGs with GCA
 accessions. ENA admits a genome as a MAG only below 10\% contamination,
 so \texttt{48Dr2\_\_self\_SemiBin\_25} is deposited as a binned
-metagenome. Both studies are scheduled for public release on
-25~November 2026. The data repository lists the BioSample, run,
+metagenome. Both ENA studies have assigned accessions, with public release scheduled
+for 25~November 2026. The data repository lists the BioSample, run,
 assembly and genome accessions of every shotgun library, bin and MAG.
 The complete refined MAG sequence archive, its functional annotation
-tables, the coverage profiles and the accession tables are archived at
-Zenodo \cite{rubalkhali_mags_v1} and linked from
-\url{https://rubalkhali.science/}.
+tables, the coverage profiles and the accession tables are prepared and
+checksum-verified in the release candidate; Zenodo deposition and DOI
+assignment (\texttt{DATA-BULK-ARCHIVE-DOI}) are pending verification
+\cite{rubalkhali_mags_v1}, after which the completed archive link will
+be published at \url{https://rubalkhali.science/}.
 The source and derived-data package is maintained at
 \url{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data}.
 Its manifests distinguish included files, separately retrieved bulk
@@ -117,13 +294,6 @@ reproducibility repository; the KG deposit contains the files enumerated
 in its manifest.
 
 \section{Code availability}\label{code}
+The archived KG v3.0.1 release includes the rebuild kit and its version-specific manifest~\cite{rubalkhali_kg301}. The web application and ontology-development sources are maintained at \url{https://github.com/bio-ontology-research-group/empty-quarter}, and the data-processing sources at \url{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data}, which contains the manuscript sources, RDF generators, metadata and Nextflow workflow. RDF generation uses Groovy scripts with OWL API v5.1.20 \cite{owlapi}; the ELK validation wrapper uses OWL API v4.5.26. The repository supplies execution profiles, workflow tests, a pinned Conda recipe and a hash-locked Python environment. Project software is MIT-licensed. The release manifest identifies the archived rebuild files; the accompanying repositories document their execution environments.
 
-The web application and ontology-development code are available at
-\url{https://github.com/bio-ontology-research-group/empty-quarter}.
-The data repository
-\url{https://github.com/bio-ontology-research-group/empty-quarter-ecology-data}
-contains the manuscript sources, RDF generators, metadata and
-Nextflow workflow. RDF generation uses Groovy scripts with
-OWL API v5.1.20 \cite{owlapi}; the ELK validation wrapper uses
-OWL API v4.5.26. The repository supplies execution profiles, workflow
-tests, a pinned Conda recipe and a hash-locked Python environment.
+\end{revision}

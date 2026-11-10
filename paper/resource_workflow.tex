@@ -1,0 +1,14 @@
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[node distance=6mm,box/.style={draw,rounded corners,text width=10cm,align=center,font=\small},>=Stealth]
+\node[box] (s) {Five campaigns: sites, collection visits and specimens};
+\node[box,below=of s] (m) {Amplicon profiles; shotgun libraries and MAGs; field observations, XRF, pH and climate records};
+\node[box,below=of m] (p) {Source identifiers, assay provenance and controlled vocabulary mappings};
+\node[box,below=of p] (d) {Versioned observation tables and sequence products; 16 released RDF modules with an asserted graph};
+\node[box,below=of d] (v) {Source reconciliation, assay and sequence checks, structural validation and expected query results};
+\node[box,below=of v] (a) {Archived files for local reuse; portal and SPARQL access to the asserted graph};
+\foreach \x/\y in {s/m,m/p,p/d,d/v,v/a}\draw[->] (\x)--(\y);
+\end{tikzpicture}
+\caption{Resource-generation and validation workflow. Associated sequence products and analytical tables retain their own provenance and accession requirements. The graph release contains the 16 modules enumerated in Data Records.}
+\label{fig:resource_workflow}
+\end{figure}

@@ -1,0 +1,260 @@
+trait_granularity	target_trait_name	target_trait_short	rule_name	rule_boolean	rule_unwrapped_boolean	rule_type	rule_substrate	constituent_hmms	n_constituent_hmms
+G2	Resource Acquisition:Substrate uptake:peptide transport	g2_peptide_transport	dpp-1_key	('dppA1')	('dppA1')	count_by_substrate	dipeptide	dppA1	1
+G2	Resource Acquisition:Substrate uptake:peptide transport	g2_peptide_transport	dpp-2_key	('dppE')	('dppE')	count_by_substrate	dipeptide	dppE	1
+G2	Resource Acquisition:Substrate uptake:peptide transport	g2_peptide_transport	gsi_key	('gsiB')	('gsiB')	count_by_substrate	glutathione	gsiB	1
+G2	Resource Acquisition:Substrate uptake:peptide transport	g2_peptide_transport	opp-1_key	('oppA1')	('oppA1')	count_by_substrate	oligopeptide	oppA1	1
+G2	Resource Acquisition:Substrate uptake:peptide transport	g2_peptide_transport	sap_key	('sapA')	('sapA')	count_by_substrate	peptide	sapA	1
+G2	Resource Acquisition:Substrate uptake:peptide transport	g2_peptide_transport	tc.pot	('tc.pot')	((((((('tc.pot')))))))	count_by_substrate	peptide	tc.pot	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	aap_key	('aapJ')	('aapJ')	count_by_substrate	amino acid	aapJ	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	adiC	('adiC')	((((((('adiC')))))))	count_by_substrate	arginine	adiC	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	ansP	('ansP')	((((((('ansP')))))))	count_by_substrate	asparagine	ansP	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	aot_key	('aotJ')	('aotJ')	count_by_substrate	arginine	aotJ	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	aot_key	('aotJ')	('aotJ')	count_by_substrate	ornithine	aotJ	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	arcD	('arcD')	((((((('arcD')))))))	count_by_substrate	arginine	arcD	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	arg_key	('arg1')	('arg1')	count_by_substrate	valine	arg1	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	arg_key	('arg1')	('arg1')	count_by_substrate	alanine	arg1	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	arg_key	('arg1')	('arg1')	count_by_substrate	histidine	arg1	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	arg_key	('arg1')	('arg1')	count_by_substrate	arginine	arg1	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	arg_key	('arg1')	('arg1')	count_by_substrate	lysine	arg1	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	argT	('argT')	((((((('argT')))))))	count_by_substrate	arginine	argT	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	argT	('argT')	((((((('argT')))))))	count_by_substrate	histidine	argT	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	argT	('argT')	((((((('argT')))))))	count_by_substrate	lysine	argT	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	argT	('argT')	((((((('argT')))))))	count_by_substrate	ornithine	argT	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	art-1_partial	('artJ' | 'artI')	('artJ' | 'artI')	count_by_substrate	arginine	artI, artJ	2
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	art-2_key	('artP2')	('artP2')	count_by_substrate	arginine	artP2	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	art-2_key	('artP2')	('artP2')	count_by_substrate	lysine	artP2	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	art-2_key	('artP2')	('artP2')	count_by_substrate	histidine	artP2	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	betT	('betT')	((((((('betT')))))))	count_by_substrate	glycine	betT	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	bgt_key	('bgtB')	('bgtB')	count_by_substrate	arginine	bgtB	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	bgt_key	('bgtB')	('bgtB')	count_by_substrate	lysine	bgtB	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	bgt_key	('bgtB')	('bgtB')	count_by_substrate	histidine	bgtB	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	bgt_key	('bgtB')	('bgtB')	count_by_substrate	glutamine	bgtB	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	cycA	('cycA')	((((((('cycA')))))))	count_by_substrate	serine	cycA	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	cycA	('cycA')	((((((('cycA')))))))	count_by_substrate	alanine	cycA	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	cycA	('cycA')	((((((('cycA')))))))	count_by_substrate	glycine	cycA	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	dltB	('dltB')	((((((('dltB')))))))	count_by_substrate	alanine	dltB	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	dsdX	('dsdX')	((((((('dsdX')))))))	count_by_substrate	serine	dsdX	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	gln_key	('glnH')	('glnH')	count_by_substrate	glutamine	glnH	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	glt_key	('gltI')	('gltI')	count_by_substrate	glutamate	gltI	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	glt_key	('gltI')	('gltI')	count_by_substrate	aspartate	gltI	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	gltP	('gltP')	((((((('gltP')))))))	count_by_substrate	glutamate	gltP	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	gltP	('gltP')	((((((('gltP')))))))	count_by_substrate	aspartate	gltP	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	glu_key	('gluB')	('gluB')	count_by_substrate	glutamate	gluB	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	his_key	('hisJ')	('hisJ')	count_by_substrate	ornithine	hisJ	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	his_key	('hisJ')	('hisJ')	count_by_substrate	arginine	hisJ	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	his_key	('hisJ')	('hisJ')	count_by_substrate	lysine	hisJ	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	his_key	('hisJ')	('hisJ')	count_by_substrate	histidine	hisJ	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	hutM	('hutM')	((((((('hutM')))))))	count_by_substrate	histidine	hutM	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	hutT	('hutT')	((((((('hutT')))))))	count_by_substrate	histidine	hutT	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	lhp_key	('lhpP')	('lhpP')	count_by_substrate	hydroxyproline	lhpP	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	liv_key	('livK')	('livK')	count_by_substrate	amino acid	livK	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	lys_key	('lysX1')	('lysX1')	count_by_substrate	lysine	lysX1	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	lysP	('lysP')	((((((('lysP')))))))	count_by_substrate	lysine	lysP	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	marC	('marC')	((((((('marC')))))))	count_by_substrate	amino acid	marC	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	met_key	('metQ')	('metQ')	count_by_substrate	methionine	metQ	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	mmuP	('mmuP')	((((((('mmuP')))))))	count_by_substrate	methylmethionine	mmuP	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	mtr-2	('mtr')	('mtr')	count_by_substrate	tryptophan	mtr	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	nat-2_key	('natB1')	('natB1')	count_by_substrate	amino acid	natB1	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	occ_key	('occT')	('occT')	count_by_substrate	octopine	occT	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	occ_key	('occT')	('occT')	count_by_substrate	nopaline	occT	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	ompA	('ompA')	((((((('ompA')))))))	count_by_substrate	amino acid	ompA	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	oprD	('oprD')	((((((('oprD')))))))	count_by_substrate	lysine	oprD	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	oprD	('oprD')	((((((('oprD')))))))	count_by_substrate	arginine	oprD	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	oprD	('oprD')	((((((('oprD')))))))	count_by_substrate	histidine	oprD	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	oprD	('oprD')	((((((('oprD')))))))	count_by_substrate	proline	oprD	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	oprD	('oprD')	((((((('oprD')))))))	count_by_substrate	tyrosine	oprD	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	pa_partial	('pap' | 'pas')	('pap' | 'pas')	count_by_substrate	amino acid	pap, pas	2
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	paa	('paa')	((((((('paa')))))))	count_by_substrate	amino acid	paa	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	peb_key	('peb1A')	('peb1A')	count_by_substrate	aspartate	peb1A	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	peb_key	('peb1A')	('peb1A')	count_by_substrate	glutamate	peb1A	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	peb_key	('peb1A')	('peb1A')	count_by_substrate	glutamine	peb1A	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	pheP	('pheP')	((((((('pheP')))))))	count_by_substrate	phenylalanine	pheP	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	proP	('proP')	((((((('proP')))))))	count_by_substrate	proline	proP	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	proY	('proY')	((((((('proY')))))))	count_by_substrate	proline	proY	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	putP	('putP')	((((((('putP')))))))	count_by_substrate	proline	putP	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	puuP	('puuP')	((((((('puuP')))))))	count_by_substrate	putrescine	puuP	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	rocE	('rocE')	((((((('rocE')))))))	count_by_substrate	arginine	rocE	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	rocE	('rocE')	((((((('rocE')))))))	count_by_substrate	ornithine	rocE	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	sdaC	('sdaC')	((((((('sdaC')))))))	count_by_substrate	serine	sdaC	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	sstT	('sstT')	((((((('sstT')))))))	count_by_substrate	serine	sstT	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	sstT	('sstT')	((((((('sstT')))))))	count_by_substrate	threonine	sstT	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	tc.aat	('tc.aat')	((((((('tc.aat')))))))	count_by_substrate	alanine	tc.aat	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	tc.aat	('tc.aat')	((((((('tc.aat')))))))	count_by_substrate	serine	tc.aat	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	tc.aat	('tc.aat')	((((((('tc.aat')))))))	count_by_substrate	glycine	tc.aat	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	tc.agcs	('tc.agcs')	((((((('tc.agcs')))))))	count_by_substrate	alanine	tc.agcs	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	tc.agcs	('tc.agcs')	((((((('tc.agcs')))))))	count_by_substrate	glycine	tc.agcs	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	tc.apa	('tc.apa')	((((((('tc.apa')))))))	count_by_substrate	amino acid	tc.apa	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	tc.livcs	('tc.livcs')	((((((('tc.livcs')))))))	count_by_substrate	amino acid	tc.livcs	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	tc.nss	('tc.nss')	((((((('tc.nss')))))))	count_by_substrate	tryptophan	tc.nss	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	tc.sss	('tc.sss')	((((((('tc.sss')))))))	count_by_substrate	proline	tc.sss	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	tcy-1_key	('tcyA')	('tcyA')	count_by_substrate	amino acid	tcyA	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	tcy-2_partial	('tcyJ' | 'tcyK')	('tcyJ' | 'tcyK')	count_by_substrate	amino acid	tcyJ, tcyK	2
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	tdcC	('tdcC')	((((((('tdcC')))))))	count_by_substrate	threonine	tdcC	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	tnaB	('tnaB')	((((((('tnaB')))))))	count_by_substrate	tryptophan	tnaB	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	trp_key	('trpS')	('trpS')	count_by_substrate	tryptophan	trpS	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	tutB	('tutB')	((((((('tutB')))))))	count_by_substrate	tyrosine	tutB	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	tyrP	('tyrP')	((((((('tyrP')))))))	count_by_substrate	tyrosine	tyrP	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	yqgE	('yqgE')	((((((('yqgE')))))))	count_by_substrate	alanine	yqgE	1
+G2	Resource Acquisition:Substrate uptake:free amino acids transport	g2_free_amino_acid_transport	yuiF	('yuiF')	((((((('yuiF')))))))	count_by_substrate	histidine	yuiF	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ggt	('ggt')	((((((('ggt')))))))	count		ggt	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pepA_M17	('pepA_M17')	((((((('pepA_M17')))))))	count		pepA_M17	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pepN	('pepN')	((((((('pepN')))))))	count		pepN	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pepT	('pepT')	((((((('pepT')))))))	count		pepT	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pip	('pip')	((((((('pip')))))))	count		pip	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pepA_M42	('pepA_M42')	((((((('pepA_M42')))))))	count		pepA_M42	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pepP	('pepP')	((((((('pepP')))))))	count		pepP	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	map	('map')	((((((('map')))))))	count		map	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	dmpA	('dmpA')	((((((('dmpA')))))))	count		dmpA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pepD_M20	('pepD_M20')	((((((('pepD_M20')))))))	count		pepD_M20	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pepD_S1	('pepD_S1')	((((((('pepD_S1')))))))	count		pepD_S1	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pepQ	('pepQ')	((((((('pepQ')))))))	count		pepQ	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pepX	('pepX')	((((((('pepX')))))))	count		pepX	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	dcp	('dcp')	((((((('dcp')))))))	count		dcp	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	cpg	('cpg')	((((((('cpg')))))))	count		cpg	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ldcA	('ldcA')	((((((('ldcA')))))))	count		ldcA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	E3.4.17.19	('E3.4.17.19')	((((((('E3.4.17.19')))))))	count		E3.4.17.19	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pcp	('pcp')	((((((('pcp')))))))	count		pcp	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	iadA	('iadA')	((((((('iadA')))))))	count		iadA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	yqgT	('yqgT')	((((((('yqgT')))))))	count		yqgT	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	sspA	('sspA')	((((((('sspA')))))))	count		sspA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	E3.4.21.50	('E3.4.21.50')	((((((('E3.4.21.50')))))))	count		E3.4.21.50	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	lon	('lon')	((((((('lon')))))))	count		lon	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	iga_hap	('iga_hap')	((((((('iga_hap')))))))	count		iga_hap	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ptrB	('ptrB')	((((((('ptrB')))))))	count		ptrB	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	clpP	('clpP')	((((((('clpP')))))))	count		clpP	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	iga_zmpA	('iga_zmpA')	((((((('iga_zmpA')))))))	count		iga_zmpA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ptrA	('ptrA')	((((((('ptrA')))))))	count		ptrA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	prlC	('prlC')	((((((('prlC')))))))	count		prlC	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	hslV	('hslV')	((((((('hslV')))))))	count		hslV	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	bepA	('bepA')	((((((('bepA')))))))	count		bepA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	cpaA	('cpaA')	((((((('cpaA')))))))	count		cpaA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	hofD	('hofD')	((((((('hofD')))))))	count		hofD	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pilD	('pilD')	((((((('pilD')))))))	count		pilD	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	lepB	('lepB')	((((((('lepB')))))))	count		lepB	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	lspA	('lspA')	((((((('lspA')))))))	count		lspA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	psmA	('psmA')	((((((('psmA')))))))	count		psmA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	psmB	('psmB')	((((((('psmB')))))))	count		psmB	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	hyaD	('hyaD')	((((((('hyaD')))))))	count		hyaD	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	prc	('prc')	((((((('prc')))))))	count		prc	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	hflB	('hflB')	((((((('hflB')))))))	count		hflB	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	lonB	('lonB')	((((((('lonB')))))))	count		lonB	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	hhoB	('hhoB')	((((((('hhoB')))))))	count		hhoB	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	lonH	('lonH')	((((((('lonH')))))))	count		lonH	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	degP	('degP')	((((((('degP')))))))	count		degP	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	degQ	('degQ')	((((((('degQ')))))))	count		degQ	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	sppA	('sppA')	((((((('sppA')))))))	count		sppA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	sohB	('sohB')	((((((('sohB')))))))	count		sohB	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ydgD	('ydgD')	((((((('ydgD')))))))	count		ydgD	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pfpI	('pfpI')	((((((('pfpI')))))))	count		pfpI	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	E3.4.11.10	('E3.4.11.10')	((((((('E3.4.11.10')))))))	count		E3.4.11.10	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pepE	('pepE')	((((((('pepE')))))))	count		pepE	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	cpt	('cpt')	((((((('cpt')))))))	count		cpt	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	gpr	('gpr')	((((((('gpr')))))))	count		gpr	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	spoIIGA	('spoIIGA')	((((((('spoIIGA')))))))	count		spoIIGA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	preP	('preP')	((((((('preP')))))))	count		preP	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	dacC	('dacC')	((((((('dacC')))))))	count		dacC	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	dacB	('dacB')	((((((('dacB')))))))	count		dacB	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	vanY	('vanY')	((((((('vanY')))))))	count		vanY	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	mepA	('mepA')	((((((('mepA')))))))	count		mepA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pbpG	('pbpG')	((((((('pbpG')))))))	count		pbpG	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pqqL	('pqqL')	((((((('pqqL')))))))	count		pqqL	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pepO	('pepO')	((((((('pepO')))))))	count		pepO	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	loiP	('loiP')	((((((('loiP')))))))	count		loiP	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pepB	('pepB')	((((((('pepB')))))))	count		pepB	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	flaK	('flaK')	((((((('flaK')))))))	count		flaK	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	prtC_M10	('prtC_M10')	((((((('prtC_M10')))))))	count		prtC_M10	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	prtC_U32	('prtC_U32')	((((((('prtC_U32')))))))	count		prtC_U32	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	hycI	('hycI')	((((((('hycI')))))))	count		hycI	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ypdF	('ypdF')	((((((('ypdF')))))))	count		ypdF	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pgtE	('pgtE')	((((((('pgtE')))))))	count		pgtE	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	tpr	('tpr')	((((((('tpr')))))))	count		tpr	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	yopJ	('yopJ')	((((((('yopJ')))))))	count		yopJ	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	yopT	('yopT')	((((((('yopT')))))))	count		yopT	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pepF	('pepF')	((((((('pepF')))))))	count		pepF	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	E3.4.17.14	('E3.4.17.14')	((((((('E3.4.17.14')))))))	count		E3.4.17.14	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	vanX	('vanX')	((((((('vanX')))))))	count		vanX	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	lasA	('lasA')	((((((('lasA')))))))	count		lasA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	zmpB_M26	('zmpB_M26')	((((((('zmpB_M26')))))))	count		zmpB_M26	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	zmpB_M4	('zmpB_M4')	((((((('zmpB_M4')))))))	count		zmpB_M4	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	lef	('lef')	((((((('lef')))))))	count		lef	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	scpA	('scpA')	((((((('scpA')))))))	count		scpA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pepDA	('pepDA')	((((((('pepDA')))))))	count		pepDA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	tri	('tri')	((((((('tri')))))))	count		tri	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	nprB	('nprB')	((((((('nprB')))))))	count		nprB	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	mtfA	('mtfA')	((((((('mtfA')))))))	count		mtfA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	rseP	('rseP')	((((((('rseP')))))))	count		rseP	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	cps	('cps')	((((((('cps')))))))	count		cps	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	iaaA	('iaaA')	((((((('iaaA')))))))	count		iaaA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	wprA	('wprA')	((((((('wprA')))))))	count		wprA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	isp	('isp')	((((((('isp')))))))	count		isp	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	bpr	('bpr')	((((((('bpr')))))))	count		bpr	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	epr	('epr')	((((((('epr')))))))	count		epr	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	sipW	('sipW')	((((((('sipW')))))))	count		sipW	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	avrRpt2	('avrRpt2')	((((((('avrRpt2')))))))	count		avrRpt2	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	avrPphB	('avrPphB')	((((((('avrPphB')))))))	count		avrPphB	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	icsP	('icsP')	((((((('icsP')))))))	count		icsP	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	mepS	('mepS')	((((((('mepS')))))))	count		mepS	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	trf2_3	('trf2_3')	((((((('trf2_3')))))))	count		trf2_3	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	aprE1	('aprE1')	((((((('aprE1')))))))	count		aprE1	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	aprE2	('aprE2')	((((((('aprE2')))))))	count		aprE2	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	vpr	('vpr')	((((((('vpr')))))))	count		vpr	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	dppA	('dppA')	((((((('dppA')))))))	count		dppA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	erfK	('erfK')	((((((('erfK')))))))	count		erfK	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	yydH	('yydH')	((((((('yydH')))))))	count		yydH	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	cwlK	('cwlK')	((((((('cwlK')))))))	count		cwlK	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	aprX	('aprX')	((((((('aprX')))))))	count		aprX	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	frvX	('frvX')	((((((('frvX')))))))	count		frvX	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	sprE	('sprE')	((((((('sprE')))))))	count		sprE	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ptpA	('ptpA')	((((((('ptpA')))))))	count		ptpA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	vanXY	('vanXY')	((((((('vanXY')))))))	count		vanXY	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ampH	('ampH')	((((((('ampH')))))))	count		ampH	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	cwlS	('cwlS')	((((((('cwlS')))))))	count		cwlS	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	lytF	('lytF')	((((((('lytF')))))))	count		lytF	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	lytE	('lytE')	((((((('lytE')))))))	count		lytE	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	gluP	('gluP')	((((((('gluP')))))))	count		gluP	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ynhG	('ynhG')	((((((('ynhG')))))))	count		ynhG	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ybiS	('ybiS')	((((((('ybiS')))))))	count		ybiS	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ycfS	('ycfS')	((((((('ycfS')))))))	count		ycfS	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	mepH	('mepH')	((((((('mepH')))))))	count		mepH	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	mepM	('mepM')	((((((('mepM')))))))	count		mepM	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	mpl	('mpl')	((((((('mpl')))))))	count		mpl	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ampS	('ampS')	((((((('ampS')))))))	count		ampS	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ywaD	('ywaD')	((((((('ywaD')))))))	count		ywaD	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	E3.4.11.24	('E3.4.11.24')	((((((('E3.4.11.24')))))))	count		E3.4.11.24	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	zmp1	('zmp1')	((((((('zmp1')))))))	count		zmp1	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	alpha-LP	('alpha-LP')	((((((('alpha-LP')))))))	count		alpha-LP	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	zmpA	('zmpA')	((((((('zmpA')))))))	count		zmpA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	nisP	('nisP')	((((((('nisP')))))))	count		nisP	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	tet	('tet')	((((((('tet')))))))	count		tet	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	sgcX	('sgcX')	((((((('sgcX')))))))	count		sgcX	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ykfC	('ykfC')	((((((('ykfC')))))))	count		ykfC	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	E3.4.24.32	('E3.4.24.32')	((((((('E3.4.24.32')))))))	count		E3.4.24.32	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	bapA	('bapA')	((((((('bapA')))))))	count		bapA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	E3.4.21.121	('E3.4.21.121')	((((((('E3.4.21.121')))))))	count		E3.4.21.121	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	impA	('impA')	((((((('impA')))))))	count		impA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pbp4b	('pbp4b')	((((((('pbp4b')))))))	count		pbp4b	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ycbB	('ycbB')	((((((('ycbB')))))))	count		ycbB	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	cwlO	('cwlO')	((((((('cwlO')))))))	count		cwlO	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	lytH	('lytH')	((((((('lytH')))))))	count		lytH	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ripA	('ripA')	((((((('ripA')))))))	count		ripA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	ripB	('ripB')	((((((('ripB')))))))	count		ripB	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	hpxW	('hpxW')	((((((('hpxW')))))))	count		hpxW	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	E3.4.24.33	('E3.4.24.33')	((((((('E3.4.24.33')))))))	count		E3.4.24.33	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	pipA	('pipA')	((((((('pipA')))))))	count		pipA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	tpdA	('tpdA')	((((((('tpdA')))))))	count		tpdA	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	prsW	('prsW')	((((((('prsW')))))))	count		prsW	1
+G2	Resource Acquisition:Substrate degradation:simple compound degradation:protein degradation	g2_protein_degradation	patG	('patG')	((((((('patG')))))))	count		patG	1
+G2	Resource Acquisition:Substrate assimilation:C1 compounds:CO2 fixation	g2_co2_fixation	cc_key	(('R5P->RuBP') & ('RuBP+CO2->3PG'))	((('prk')) & (('rbcS' | 'rbcL')))	binary		prk, rbcL, rbcS	3
+G2	Resource Acquisition:Substrate assimilation:C1 compounds:CO2 fixation	g2_co2_fixation	3hpb1_key1	(('malonyl-CoA->malonate semialdehyde') & ('acryloyl-CoA->propionyl-CoA'))	((('mcr' | 'asd1')) & (('acr' | 'acr-hydt')))	binary		acr, acr-hydt, asd1, mcr	4
+G2	Resource Acquisition:Substrate assimilation:C1 compounds:CO2 fixation	g2_co2_fixation	3hp4hb_key1	((('4-hydroxybutyryl-CoA->crotonoyl-CoA') & ('crotonoyl-CoA->3-hydroxybutyryl-CoA') & ('3-hydroxybutyryl-CoA->acetoacetyl-CoA') & ('acetoacetyl-CoA->acetyl-CoA')) | (('succinyl-CoA->succinate semialdehyde') & ('succinate semialdehyde->4-hydroxybutyrate') & ('acetyl-CoA+HCO3->malonyl-CoA') & ('acryloyl-CoA->propionyl-CoA')))	(((('abfD')) & (('cch-hbcd')) & (('cch-hbcd')) & (('atoB'))) | ((('asd1' | 'asd2')) & (('ssadh')) & (('bccP' | 'accC' | 'accA' | 'accD' | 'pcc1' | 'pcc2' | 'pcc3' | 'pcc4' | 'pcc5' | 'pcc6')) & (('acr' | 'acr-hydt'))))	binary		abfD, accA, accC, accD, acr, acr-hydt, asd1, asd2, atoB, bccP, cch-hbcd, pcc1, pcc2, pcc3, pcc4, pcc5, pcc6, ssadh	18
+G2	Resource Acquisition:Substrate assimilation:C1 compounds:CO2 fixation	g2_co2_fixation	dicarb-4hb_CO2fixation	(('pyruvate<->acetyl-CoA+CO2_or') & ('PEP+HCO3->oxaloacetate'))	((('porA' | 'porB' | 'porD' | 'porG')) & (('ppc')))	binary		porA, porB, porD, porG, ppc	5
+G2	Resource Acquisition:Substrate assimilation:C1 compounds:CO2 fixation	g2_co2_fixation	rac_key1	(('CO2->formate_or') & ('CO2->CO'))	((('fdh.NADP+A' | 'fdh.NADP+B')) & (('cooF' | 'cooS')))	binary		cooF, cooS, fdh.NADP+A, fdh.NADP+B	4
+G2	Resource Acquisition:Substrate assimilation:C1 compounds:CO2 fixation	g2_co2_fixation	rca_key1	('citrate->oxaloacetate+acetyl-CoA_or')	(('aclA' | 'aclB'))	binary		aclA, aclB	2
+G2	Resource Acquisition:Substrate assimilation:C1 compounds:CO2 fixation	g2_co2_fixation	carboxysome	('ethanolamine-utilization_and' | 'CO2concentratingmechanism_or')	(('eutK' & 'eutL' & 'eutM' & 'eutN' & 'eutS') | ('ccmK' | 'ccmL' | 'ccmM' | 'ccmN' | 'ccmO'))	binary		ccmK, ccmL, ccmM, ccmN, ccmO, eutK, eutL, eutM, eutN, eutS	10
+G3	Resource Acquisition:Substrate assimilation:C1 compounds:CO2 fixation:Calvin Cycle	g3_co2_calvin_cycle	cc_key	(('R5P->RuBP') & ('RuBP+CO2->3PG'))	((('prk')) & (('rbcS' | 'rbcL')))	binary		prk, rbcL, rbcS	3
+G3	Resource Acquisition:Substrate assimilation:C1 compounds:CO2 fixation:3-hydroxypropionate pathway	g3_co2_3_hydroxypropionate	3hpb1_key1	(('malonyl-CoA->malonate semialdehyde') & ('acryloyl-CoA->propionyl-CoA'))	((('mcr' | 'asd1')) & (('acr' | 'acr-hydt')))	binary		acr, acr-hydt, asd1, mcr	4
+G3	Resource Acquisition:Substrate assimilation:C1 compounds:CO2 fixation:3-hydroxypropionate/4-hydroxybutyrate pathway	g3_co2_3_hydroxypropionate_4_hydroxybutyrate	3hp4hb_key1	((('4-hydroxybutyryl-CoA->crotonoyl-CoA') & ('crotonoyl-CoA->3-hydroxybutyryl-CoA') & ('3-hydroxybutyryl-CoA->acetoacetyl-CoA') & ('acetoacetyl-CoA->acetyl-CoA')) | (('succinyl-CoA->succinate semialdehyde') & ('succinate semialdehyde->4-hydroxybutyrate') & ('acetyl-CoA+HCO3->malonyl-CoA') & ('acryloyl-CoA->propionyl-CoA')))	(((('abfD')) & (('cch-hbcd')) & (('cch-hbcd')) & (('atoB'))) | ((('asd1' | 'asd2')) & (('ssadh')) & (('bccP' | 'accC' | 'accA' | 'accD' | 'pcc1' | 'pcc2' | 'pcc3' | 'pcc4' | 'pcc5' | 'pcc6')) & (('acr' | 'acr-hydt'))))	binary		abfD, accA, accC, accD, acr, acr-hydt, asd1, asd2, atoB, bccP, cch-hbcd, pcc1, pcc2, pcc3, pcc4, pcc5, pcc6, ssadh	18
+G3	Resource Acquisition:Substrate assimilation:C1 compounds:CO2 fixation:dicarboxylate-hydroxybutyrate pathway	g3_co2_dicarboxylate_hydroxybutyrate	dicarb-4hb_CO2fixation	(('pyruvate<->acetyl-CoA+CO2_or') & ('PEP+HCO3->oxaloacetate'))	((('porA' | 'porB' | 'porD' | 'porG')) & (('ppc')))	binary		porA, porB, porD, porG, ppc	5
+G3	Resource Acquisition:Substrate assimilation:C1 compounds:CO2 fixation:reductive acetyl-CoA pathway	g3_co2_reductive_acetyl_coa	rac_key1	(('CO2->formate_or') & ('CO2->CO'))	((('fdh.NADP+A' | 'fdh.NADP+B')) & (('cooF' | 'cooS')))	binary		cooF, cooS, fdh.NADP+A, fdh.NADP+B	4
+G3	Resource Acquisition:Substrate assimilation:C1 compounds:CO2 fixation:reductive citric acid pathway	g3_co2_reductive_citric_acid	rca_key1	('citrate->oxaloacetate+acetyl-CoA_or')	(('aclA' | 'aclB'))	binary		aclA, aclB	2
+G3	Resource Acquisition:Substrate assimilation:C1 compounds:CO2 fixation:carboxysome	g3_co2_carboxysome	carboxysome	('ethanolamine-utilization_and' | 'CO2concentratingmechanism_or')	(('eutK' & 'eutL' & 'eutM' & 'eutN' & 'eutS') | ('ccmK' | 'ccmL' | 'ccmM' | 'ccmN' | 'ccmO'))	binary		ccmK, ccmL, ccmM, ccmN, ccmO, eutK, eutL, eutM, eutN, eutS	10

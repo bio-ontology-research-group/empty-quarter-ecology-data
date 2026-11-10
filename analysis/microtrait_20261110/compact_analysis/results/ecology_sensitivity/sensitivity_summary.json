@@ -1,0 +1,95 @@
+{
+  "analysis": "Ecology microTrait Community-Weighted Effect Sensitivity",
+  "cohort_mag_count": 5438,
+  "n_samples": 546,
+  "n_paired_visits": 68,
+  "n_paired_sites": 36,
+  "bootstrap_parameters": {
+    "n_blocks": 10,
+    "block_definition": "10 contiguous spatial blocks ordered by mean transect_km",
+    "n_boot": 1000,
+    "seed": 20261108,
+    "weighting": "equal-site weighting across sampled blocks"
+  },
+  "legacy_reproduction_check": "PASS (matched published point estimates and 95% CIs)",
+  "results": {
+    "betl_betaine_uptake": {
+      "legacy_mapped": {
+        "mean_pp": 7.551493467459442,
+        "ci95_pp": [
+          4.724320541635346,
+          10.334113658248512
+        ],
+        "se_pp": 1.4289554278820382
+      },
+      "new_microtrait_mapped": {
+        "mean_pp": 6.906226114990887,
+        "ci95_pp": [
+          4.331970672160233,
+          9.446648167549675
+        ],
+        "se_pp": 1.3037114317899352,
+        "delta_pp": -0.6452673524685544
+      },
+      "legacy_whole_reads": {
+        "mean_pp": 3.3024734264661584,
+        "ci95_pp": [
+          2.023767748493309,
+          4.560354325960315
+        ],
+        "se_pp": 0.6589529203591715
+      },
+      "new_microtrait_whole_reads": {
+        "mean_pp": 3.0021526541640977,
+        "ci95_pp": [
+          1.8441224904188118,
+          4.137172239196388
+        ],
+        "se_pp": 0.5996186395342297,
+        "delta_pp": -0.30032077230206067
+      }
+    },
+    "ahpcf_peroxide_defence": {
+      "legacy_mapped": {
+        "mean_pp": 6.949125375870979,
+        "ci95_pp": [
+          3.3427691137007334,
+          9.713746785308686
+        ],
+        "se_pp": 1.626818778304697
+      },
+      "new_microtrait_mapped": {
+        "mean_pp": 6.930050455753774,
+        "ci95_pp": [
+          3.3444741045873294,
+          9.675368316163828
+        ],
+        "se_pp": 1.6189183118262325,
+        "delta_pp": -0.019074920117205352
+      },
+      "legacy_whole_reads": {
+        "mean_pp": 3.23248670197392,
+        "ci95_pp": [
+          1.3671015182546233,
+          4.825049368465586
+        ],
+        "se_pp": 0.901018492319816
+      },
+      "new_microtrait_whole_reads": {
+        "mean_pp": 3.2212709583553396,
+        "ci95_pp": [
+          1.365893674358931,
+          4.805838435834001
+        ],
+        "se_pp": 0.8954979907945328,
+        "delta_pp": -0.011215743618580465
+      }
+    }
+  },
+  "input_hashes": {
+    "mag_index": "73beac74e732db8059830e61bdaed8938030d24a81fc9643b6f56fe4b4f5ebf5",
+    "coverm_npz": "7878362692a1fc008077e605cb1cc6ea191b85efb1d1cf590a191dd435336110",
+    "design": "5817bc351aa1bfafcc1ad45defee0774d2a57200eb6bcdfc7e7830bea2a35b91",
+    "traits": "176a299d63eb4a08093810d73ca917bfb31ea49cd0ceb6ea380d77297e85a347"
+  }
+}

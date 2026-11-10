@@ -90,7 +90,10 @@ def test_submission_prose_describes_final_data_and_confines_paths_to_data_record
     abstract = re.search(r'\\abstract\{(.*?)\}\n', main, re.S).group(1)
     assert len(title) <= 110 and len(abstract.split()) <= 170
     assert not (ROOT/'paper/supplement.tex').exists()
-    assert r'\input{knowledge_examples.tex}' in (ROOT/'paper/03_knowledge_representation.tex').read_text()
+    assert r'\input{knowledge_examples.tex}' in (
+        (ROOT/'paper/03_knowledge_representation.tex').read_text()
+        + (ROOT/'paper/06_usage.tex').read_text()
+    )
     field_data = ROOT/'metadata/environmental/environmental_measurements_curated.tsv'
     assert hashlib.sha256(field_data.read_bytes()).hexdigest() == '51177fb6b21e4b10712daaa731cdf3783d0fc351c536f562851efd233386573f'
 

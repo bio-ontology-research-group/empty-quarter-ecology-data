@@ -1,0 +1,9 @@
+canonical_phylum	canonical_class	subset	n_genomes	g2_peptide_transport_n_pos	g2_peptide_transport_pos_pct	g2_free_amino_acid_transport_n_pos	g2_free_amino_acid_transport_pos_pct	g2_protein_degradation_n_pos	g2_protein_degradation_pos_pct	g2_co2_fixation_n_pos	g2_co2_fixation_pos_pct	g3_co2_calvin_cycle_n_pos	g3_co2_calvin_cycle_pos_pct	g3_co2_3_hydroxypropionate_n_pos	g3_co2_3_hydroxypropionate_pos_pct	g3_co2_3_hydroxypropionate_4_hydroxybutyrate_n_pos	g3_co2_3_hydroxypropionate_4_hydroxybutyrate_pos_pct	g3_co2_dicarboxylate_hydroxybutyrate_n_pos	g3_co2_dicarboxylate_hydroxybutyrate_pos_pct	g3_co2_reductive_acetyl_coa_n_pos	g3_co2_reductive_acetyl_coa_pos_pct	g3_co2_reductive_citric_acid_n_pos	g3_co2_reductive_citric_acid_pos_pct	g3_co2_carboxysome_n_pos	g3_co2_carboxysome_pos_pct
+p__Thermoplasmatota	p__Thermoplasmatota_total	all	237	10	4.2194	237	100.0	237	100.0	2	0.8439	0	0.0	0	0.0	2	0.8439	0	0.0	0	0.0	0	0.0	0	0.0
+p__Thermoplasmatota	c__SW-10-69-26	all	185	10	5.4054	185	100.0	185	100.0	2	1.0811	0	0.0	0	0.0	2	1.0811	0	0.0	0	0.0	0	0.0	0	0.0
+p__Thermoplasmatota	c__E2	all	51	0	0.0	51	100.0	51	100.0	0	0.0	0	0.0	0	0.0	0	0.0	0	0.0	0	0.0	0	0.0	0	0.0
+p__Thermoplasmatota	c__Thermoplasmata	all	1	0	0.0	1	100.0	1	100.0	0	0.0	0	0.0	0	0.0	0	0.0	0	0.0	0	0.0	0	0.0	0	0.0
+p__Thermoplasmatota	p__Thermoplasmatota_total	hq_comp90_cont5	59	1	1.6949	59	100.0	59	100.0	1	1.6949	0	0.0	0	0.0	1	1.6949	0	0.0	0	0.0	0	0.0	0	0.0
+p__Thermoplasmatota	c__SW-10-69-26	hq_comp90_cont5	43	1	2.3256	43	100.0	43	100.0	1	2.3256	0	0.0	0	0.0	1	2.3256	0	0.0	0	0.0	0	0.0	0	0.0
+p__Thermoplasmatota	c__E2	hq_comp90_cont5	15	0	0.0	15	100.0	15	100.0	0	0.0	0	0.0	0	0.0	0	0.0	0	0.0	0	0.0	0	0.0	0	0.0
+p__Thermoplasmatota	c__Thermoplasmata	hq_comp90_cont5	1	0	0.0	1	100.0	1	100.0	0	0.0	0	0.0	0	0.0	0	0.0	0	0.0	0	0.0	0	0.0	0	0.0

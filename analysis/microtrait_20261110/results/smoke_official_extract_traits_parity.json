@@ -1,0 +1,25 @@
+{
+  "stage": "stage1_smoke_official_parity",
+  "status": "exact_match_all_smoke_mags",
+  "timestamp": "2026-11-10T09:47:35Z",
+  "compared_fields": [
+    "norfs",
+    "genome_length",
+    "genes_detected",
+    "domains_detected",
+    "rules_asserted",
+    "trait_counts_atgranularity1",
+    "trait_counts_atgranularity2",
+    "trait_counts_atgranularity3",
+    "growthrate_d",
+    "ogt"
+  ],
+  "parity_matches": [
+    "PARITY_EXACT_MATCH: 10Dr2__single_SemiBin_0 genes= 232 domains= 51",
+    "PARITY_EXACT_MATCH: 10Dr2__single_SemiBin_6 genes= 288 domains= 84",
+    "PARITY_EXACT_MATCH: 22PRr1__self_SemiBin_358_sub genes= 105 domains= 6",
+    "PARITY_EXACT_MATCH: 22PRr1__self_SemiBin_502_sub genes= 128 domains= 12",
+    "PARITY_EXACT_MATCH: 15Dr1__self_SemiBin_160_sub genes= 102 domains= 3",
+    "PARITY_EXACT_MATCH: 15Dr1__single_SemiBin_32 genes= 111 domains= 6"
+  ]
+}
