@@ -21,6 +21,12 @@ actual refined dRep representatives and the 551 read-bearing libraries.
   It must not be used to assign refined-bin quality to a parent-bin FASTA.
   Taxonomy comes from the checksummed native GTDB-Tk v2.7.2 / R232 summaries;
   both their identifier sets and the upstream file checksums are checked.
+- `gunc_progenomes3.tsv`: GUNC v1.1.1 chimerism screen of the 12,434 refined bins
+  against proGenomes 3, with GUNC's scores and default verdict. `gunc_status` is
+  `unscored` when the reference representation score is below 0.3 and otherwise
+  `pass` or `flagged`: 9,597 / 2,300 / 537 bins and 4,319 / 837 / 282
+  representatives. The unmodified GUNC output is
+  `evidence/mag-catalogue-20261024/source/gunc/GUNC.progenomes_3.maxCSS_level.tsv`.
 - `release_status.json`: source checksums, reconciled counts and open gates.
   `sequence_release`, `annotation_release` and `recruitment_release` denote
   verified staging candidates; `public_release` remains false.

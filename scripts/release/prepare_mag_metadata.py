@@ -55,7 +55,23 @@ FIELDS = {
     "sha256": ("hexadecimal string", "not applicable", "SHA-256 of the exact uncompressed FASTA bytes."),
     "contigs": ("integer", "contigs", "FASTA sequence count, checked against refined-bin CheckM2."),
     "bases": ("integer", "bp", "FASTA sequence length sum, checked against refined-bin CheckM2."),
+    "n_genes_called": ("integer", "genes", "Genes called by GUNC in the refined bin."),
+    "n_genes_mapped": ("integer", "genes", "Called genes mapped to the proGenomes 3 reference."),
+    "n_contigs": ("integer", "contigs", "Contigs carrying at least one mapped gene."),
+    "taxonomic_level": ("string", "not applicable", "Taxonomic level with the maximal clade separation score."),
+    "proportion_genes_retained_in_major_clades": ("decimal", "proportion", "GUNC proportion of genes retained in major clades."),
+    "genes_retained_index": ("decimal", "proportion", "GUNC genes retained index."),
+    "clade_separation_score": ("decimal", "score from 0 to 1", "GUNC clade separation score at taxonomic_level."),
+    "contamination_portion": ("decimal", "proportion", "GUNC portion of genes assigned to surplus clades."),
+    "n_effective_surplus_clades": ("decimal", "clades", "GUNC effective number of surplus clades."),
+    "mean_hit_identity": ("decimal", "proportion", "Mean identity of the gene hits to the reference."),
+    "reference_representation_score": ("decimal", "score from 0 to 1", "GUNC reference representation score."),
+    "pass.GUNC": ("boolean string", "not applicable", "GUNC v1.1.1 default verdict (clade separation score at most 0.45): True or False."),
+    "gunc_status": ("string", "not applicable", "unscored when reference_representation_score is below 0.3; otherwise pass or flagged following pass.GUNC."),
 }
+
+GUNC_SOURCE = SOURCE + "/gunc/GUNC.progenomes_3.maxCSS_level.tsv"
+GUNC_MIN_REFERENCE_REPRESENTATION = 0.3
 
 
 def read_table(path):
@@ -227,6 +243,26 @@ def write_table(path, rows):
         writer.writerows(rows)
 
 
+def derive_gunc(raw, genome_rows):
+    """Join the GUNC maxCSS table to the deposited bins and assign pass, flagged or unscored."""
+    scores = index_rows(raw, "genome")
+    if set(scores) != {r["genome"] for r in genome_rows}:
+        raise ValueError("GUNC and deposited-bin identifier sets differ")
+    rows = []
+    for genome in genome_rows:
+        score = scores[genome["genome"]]
+        if score["pass.GUNC"] not in ("True", "False"):
+            raise ValueError(f"unexpected GUNC verdict: {genome['genome']}")
+        if float(score["reference_representation_score"]) < GUNC_MIN_REFERENCE_REPRESENTATION:
+            status = "unscored"
+        else:
+            status = "pass" if score["pass.GUNC"] == "True" else "flagged"
+        rows.append({"genome": genome["genome"], "sample": genome["sample"],
+                     "is_representative": genome["is_representative"],
+                     **{k: v for k, v in score.items() if k != "genome"}, "gunc_status": status})
+    return rows
+
+
 def attach_taxonomy(representatives, source):
     taxonomy_dir = source / "taxonomy_r232"
     checksums = {}
@@ -345,6 +381,14 @@ def prepare(root):
         "mags": sum(bool(r["gca_accession"]) for r in genome_rows),
         "representative_mimag_tiers": dict(sorted(tiers.items())),
     }
+    gunc_rows = derive_gunc(read_table(root / GUNC_SOURCE), genome_rows)
+    summary["gunc"] = {
+        "tool": "GUNC", "version": "1.1.1", "database": "proGenomes 3",
+        "minimum_reference_representation_score": GUNC_MIN_REFERENCE_REPRESENTATION,
+        "bins": dict(sorted(Counter(r["gunc_status"] for r in gunc_rows).items())),
+        "representatives": dict(sorted(Counter(r["gunc_status"] for r in gunc_rows
+                                               if r["is_representative"] == "1").items())),
+    }
     receipt_path = dest / "packaging_receipt.json"
     if receipt_path.exists():
         receipt = json.loads(receipt_path.read_text())
@@ -384,6 +428,7 @@ def prepare(root):
     write_table(dest / "library_metadata.tsv", libraries)
     write_table(dest / "refined_representatives.tsv", representatives)
     write_table(dest / "ena_genome_accessions.tsv", genome_rows)
+    write_table(dest / "gunc_progenomes3.tsv", gunc_rows)
     if receipt_path.exists() and receipt["metadata_sha256"] != hashlib.sha256((dest / "refined_representatives.tsv").read_bytes()).hexdigest():
         raise ValueError("packaging receipt refers to different representative metadata")
     (dest / "release_status.json").write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n")

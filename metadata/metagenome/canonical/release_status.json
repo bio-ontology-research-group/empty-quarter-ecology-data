@@ -30,6 +30,22 @@
     "scheduled_release": "2026-11-25",
     "study_accession": "PRJEB125153"
   },
+  "gunc": {
+    "bins": {
+      "flagged": 2300,
+      "pass": 9597,
+      "unscored": 537
+    },
+    "database": "proGenomes 3",
+    "minimum_reference_representation_score": 0.3,
+    "representatives": {
+      "flagged": 837,
+      "pass": 4319,
+      "unscored": 282
+    },
+    "tool": "GUNC",
+    "version": "1.1.1"
+  },
   "legacy_libraries_per_trip": {
     "1": 58,
     "2": 15,
@@ -81,6 +97,7 @@
     "evidence/mag-catalogue-20261024/source/ena_deposit/wgs_assemblies.tsv": "5f2cf605c3b7f3fdd904802737f9ec456d54c26404757f8c763fd000b9da0b88",
     "evidence/mag-catalogue-20261024/source/ena_deposit/wgs_bins.tsv": "233d44a09b5d7101c8fc215f4e70814ef13d250ac3d0198428cff38104189178",
     "evidence/mag-catalogue-20261024/source/ena_deposit/wgs_runs.tsv": "a728161875b29ceb05a2c532fbd02b0e0c71c57f7facc9d4ba4ba401a33cee06",
+    "evidence/mag-catalogue-20261024/source/gunc/GUNC.progenomes_3.maxCSS_level.tsv": "f4791feb9846ae90f727e65f730e41b4c20a0f6abe382fcb19073daaa3a432a3",
     "evidence/mag-catalogue-20261024/source/megahit_10Dr2.log": "e398de91457fa5c46296540f2c6c4e414e3fd771fa5bae05e2df050ea8e0fe80",
     "evidence/mag-catalogue-20261024/source/metagenome_sample_meta.tsv": "ac037416a0e131c911a03724050610a8d603080c5bd6a3f2d7df7c859fa2b041",
     "evidence/mag-catalogue-20261024/source/metagenome_sample_meta_150.tsv": "f20f721ee3c9ba1853f9e5cf48f2cca4652b8348a6061cb353eb68e2b23d8d89",

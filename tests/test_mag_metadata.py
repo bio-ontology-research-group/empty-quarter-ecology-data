@@ -176,3 +176,23 @@ def test_real_deposit_snapshot_accounts_for_every_object():
     assert sum(bool(g["gca_accession"]) for g in genomes) == 5437
     tiers = [g["mimag_tier"] for g in genomes if g["is_representative"] == "1"]
     assert (tiers.count("high"), tiers.count("medium"), tiers.count("below-medium")) == (126, 5311, 1)
+
+
+def test_gunc_status_requires_reference_representation_and_closed_identifiers():
+    bins = [{"genome": g, "sample": "S", "is_representative": "1"} for g in ("A", "B", "C")]
+    raw = [
+        {"genome": "A", "reference_representation_score": "0.56", "pass.GUNC": "True"},
+        {"genome": "B", "reference_representation_score": "0.3", "pass.GUNC": "False"},
+        {"genome": "C", "reference_representation_score": "0.29", "pass.GUNC": "True"},
+    ]
+    assert [r["gunc_status"] for r in MODULE.derive_gunc(raw, bins)] == ["pass", "flagged", "unscored"]
+    with pytest.raises(ValueError, match="identifier sets differ"):
+        MODULE.derive_gunc(raw[:2], bins)
+
+
+def test_released_gunc_table_matches_reported_counts():
+    from collections import Counter
+    rows = MODULE.read_table(ROOT / MODULE.DEST / "gunc_progenomes3.tsv")
+    assert Counter(r["gunc_status"] for r in rows) == {"pass": 9597, "flagged": 2300, "unscored": 537}
+    assert Counter(r["gunc_status"] for r in rows if r["is_representative"] == "1") == {
+        "pass": 4319, "flagged": 837, "unscored": 282}

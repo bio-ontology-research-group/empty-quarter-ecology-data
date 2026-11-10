@@ -30,6 +30,11 @@ All paths below are on IBEX unless a local checkout is named.
 - `source/semibin2_10Dr2.log`: pickup-tree `sites/trip1/site10/10Dr2/wgs/binning/single_sample/SemiBinRun.log`.
 - `source/dastool_11PRr3.log`: refined-output `11PRr3/11PRr3_DASTool.log`.
 - `source/checkm2_refined.log`: refined-output `_checkm2_refined/checkm2.log`.
+- `source/gunc/GUNC.progenomes_3.maxCSS_level.tsv`: GUNC v1.1.1 / proGenomes 3
+  `maxCSS_level` output for the 12,434 refined bins, concatenated in sample order
+  from the 539 per-library runs under
+  `rebuild_20260729/defensome_v2/current_cellularity_r232/gunc_by_sample/` on IBEX
+  (`gunc run --detailed_output --contig_taxonomy_output`, default thresholds).
 - `source/taxonomy_r232/`: native summaries, upstream checksums, representative
   IDs, builder and README copied from refined-output `_gtdbtk_r232/`.
 
