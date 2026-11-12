@@ -699,6 +699,25 @@ def build_cohorts(root: Path) -> tuple[list[dict[str, str]], list[dict[str, str]
             }
         )
 
+    # The strict-MIMAG boundary genome is read from the source tables, never typed in.
+    rep_by_mag = {r["mag"]: r for r in representatives}
+    boundary_mags = [r["mag"] for r in mimag_rows if r["mimag_strict_tier"] == "below-medium"]
+    if len(boundary_mags) != 1:
+        raise ValueError(f"expected exactly one below-medium representative, got {boundary_mags}")
+    boundary_mag = boundary_mags[0]
+    boundary_rep = rep_by_mag[boundary_mag]
+    boundary_ena = rep_ena[boundary_mag]
+    boundary_genome = {
+        "mag": boundary_mag,
+        "completeness": float(boundary_rep["Completeness"]),
+        "contamination": float(boundary_rep["Contamination"]),
+        "binned_assembly_accession": boundary_ena["binned_assembly_accession"],
+        "binned_sample_accession": boundary_ena["binned_sample_accession"],
+        "deposited_as_gca_mag": bool(boundary_ena["gca_accession"]),
+        "source": "metadata/metagenome/canonical/refined_representatives.tsv; "
+        "metadata/metagenome/canonical/ena_genome_accessions.tsv",
+    }
+
     pkg_receipt = json.loads(
         (root / "metadata/metagenome/canonical/packaging_receipt.json").read_text()
     )
@@ -706,6 +725,21 @@ def build_cohorts(root: Path) -> tuple[list[dict[str, str]], list[dict[str, str]
         (root / "metadata/metagenome/canonical/analysis_receipt.json").read_text()
     )
     ana_by_name = {a["artifact"]: a for a in ana_receipt["artifacts"]}
+    # Functional feature counts come from count_functional_features.py run on the
+    # released archives (on Shaheen), never typed in. The archive checksum must
+    # match the analysis receipt so the counts describe the released file.
+    func_counts = json.loads(
+        (root / "metadata/metagenome/canonical/functional_feature_counts.json").read_text()
+    )
+    if (
+        func_counts["inputs"]["refined_functional_tables.tar.gz"]
+        != ana_by_name["refined_functional_tables.tar.gz"]["sha256"]
+    ):
+        raise ValueError("functional_feature_counts.json was not computed on the released archive")
+    bakta_counts = func_counts["bakta_eggnog"]
+    legacy_counts = func_counts["legacy_rep_ko_v2"]
+    if bakta_counts["genomes"] != 5438 or legacy_counts["genomes"] != 5438:
+        raise ValueError("functional counts do not cover the 5,438 representatives")
     rel_evidence = json.loads((root / "evidence/release/release_evidence.json").read_text())
     kg_manifest = json.loads((root / "evidence/kg-v3.0.1/manifest.json").read_text())
     ph_manifest = json.loads(
@@ -802,14 +836,7 @@ def build_cohorts(root: Path) -> tuple[list[dict[str, str]], list[dict[str, str]
                 "medium": 5311,
                 "below-medium": 1,
                 "ena_deposited_gca_mags": 5437,
-                "boundary_genome_at_10pct": {
-                    "mag": "48Dr2__self_SemiBin_25",
-                    "completeness": 64.61,
-                    "contamination": 10.0,
-                    "binned_assembly_accession": "ERZ29258845",
-                    "binned_sample_accession": "ERS32494391",
-                    "deposited_as_gca_mag": False,
-                },
+                "boundary_genome_at_10pct": boundary_genome,
             },
             "drep_operational_tiers_le10_contamination": {
                 "high": 126,
@@ -969,7 +996,7 @@ def build_cohorts(root: Path) -> tuple[list[dict[str, str]], list[dict[str, str]
                 },
                 "derived_table_path": "metadata/cohorts/shotgun_cohort_accounting.tsv",
                 "picrust2_mag_ko_overlap": {
-                    "shared_ko_count": 8860,
+                    "shared_ko_count": legacy_counts["shared_with_picrust2_rows"],
                     "integration_summary_sha256": "ec8ff4322df2cf8fb8c92ebdd78b2e26802b7b1f19a95cf5e018bc678d025120",
                     "full_ko_matrices_verification_status": "UNVERIFIED_REMOTE",
                 },
@@ -1055,12 +1082,13 @@ def build_cohorts(root: Path) -> tuple[list[dict[str, str]], list[dict[str, str]
                 "source_genomes": 5438,
                 "gene_caller": "Bakta v1.12.0 (database v6.0, 2025-02-24)",
                 "functional_annotator": "eggNOG-mapper v2.1.13 (eggNOG v5.0.2, DIAMOND v2.0.15)",
-                "protein_count": 19186792,
-                "eggnog_annotated_proteins": 16119759,
-                "proteins_with_ko": 8516493,
-                "distinct_kos": 11386,
-                "distinct_pfams": 9703,
-                "distinct_cazy": 141,
+                "protein_count": bakta_counts["sum_n_genes_predicted"],
+                "eggnog_annotated_proteins": bakta_counts["sum_n_genes_annotated"],
+                "proteins_with_ko": bakta_counts["sum_n_with_ko"],
+                "distinct_kos": bakta_counts["distinct_kos"],
+                "distinct_pfams": bakta_counts["distinct_pfams"],
+                "distinct_cazy": bakta_counts["distinct_cazy"],
+                "counts_source": "metadata/metagenome/canonical/functional_feature_counts.json",
                 "archive_path": "metadata/metagenome/canonical/refined_functional_tables.tar.gz",
                 "archive_bytes": ana_by_name["refined_functional_tables.tar.gz"]["bytes"],
                 "archive_sha256": ana_by_name["refined_functional_tables.tar.gz"]["sha256"],
@@ -1221,8 +1249,10 @@ def build_cohorts(root: Path) -> tuple[list[dict[str, str]], list[dict[str, str]
                 "product_family": "functional_ko_matrix",
                 "version_id": "EQ-KO-LEGACY-ANALYTICAL-v0",
                 "source_genomes": 5438,
-                "distinct_kos": 11386,
-                "shared_kos_with_picrust2": 8860,
+                "distinct_kos": legacy_counts["distinct_kos"],
+                "shared_kos_with_picrust2": legacy_counts["shared_with_picrust2_rows"],
+                "rep_ko_v2_sha256": func_counts["inputs"]["rep_ko_v2.tsv"],
+                "counts_source": "metadata/metagenome/canonical/functional_feature_counts.json",
                 "upstream_logical_uri": "ibex://c2014/rob/metagenomics/04_functional/repko_clean/results/rep_ko_v2.tsv",
                 "sparse_matrix_logical_uri": "shaheen://k10018/eq-ecology-mag-20261105/rebuild_20260729/picrust2_current_20260803/mag_ko/mag_by_ko_presence_or_copy.npz",
                 "sequence_equivalence_with_bakta": "UNVERIFIED_SEPARATE_PRODUCTS",

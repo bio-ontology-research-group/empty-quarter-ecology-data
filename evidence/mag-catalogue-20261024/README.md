@@ -240,7 +240,7 @@ he uploads the staged set (`metadata/metagenome/canonical/README.md`).
   libraries.
 - Records the strict MIMAG boundary (`126` HQ, `5,311` strict MQ `<10%`
   contamination deposited as `5,437` ENA GCA MAGs, and `48Dr2__self_SemiBin_25`
-  at `10.0%` contamination deposited as binned metagenome `ERZ29258845` while
+  at `10.0%` contamination deposited as binned metagenome `ERZ30578563` while
   included in the `5,438` operational dRep set under `<=10%` contamination).
 - Distinguishes the `19,186,792` Bakta v1.12.0 release proteins
   (snapshot identifier `EQ-PROT-BAKTA-v1.0.0`) from the `20,451,986` Pyrodigal

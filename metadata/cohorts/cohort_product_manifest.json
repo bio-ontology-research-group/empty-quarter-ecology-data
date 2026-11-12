@@ -298,12 +298,13 @@
     "strict_mimag_tiers_lt10_contamination": {
       "below-medium": 1,
       "boundary_genome_at_10pct": {
-        "binned_assembly_accession": "ERZ29258845",
-        "binned_sample_accession": "ERS32494391",
-        "completeness": 64.61,
+        "binned_assembly_accession": "ERZ30578563",
+        "binned_sample_accession": "ERS32173129",
+        "completeness": 94.22,
         "contamination": 10.0,
         "deposited_as_gca_mag": false,
-        "mag": "48Dr2__self_SemiBin_25"
+        "mag": "48Dr2__self_SemiBin_25",
+        "source": "metadata/metagenome/canonical/refined_representatives.tsv; metadata/metagenome/canonical/ena_genome_accessions.tsv"
       },
       "ena_deposited_gca_mags": 5437,
       "high": 126,
@@ -411,9 +412,11 @@
       "zenodo_doi": "10.5281/zenodo.23134168"
     },
     "EQ-KO-LEGACY-ANALYTICAL-v0": {
-      "distinct_kos": 11386,
+      "counts_source": "metadata/metagenome/canonical/functional_feature_counts.json",
+      "distinct_kos": 11395,
       "product_family": "functional_ko_matrix",
       "provenance_note": "Frozen analytical KO matrix (rep_ko_v2.tsv) used for genome-resolved KO richness/Shannon and PICRUSt2 concordance projections in the companion ecology and proteome studies. Upstream caller and database versions are not asserted equivalent to the canonical 19,186,792-protein Bakta v1.12.0 / eggNOG-mapper v2.1.13 release product (EQ-PROT-BAKTA-v1.0.0) without byte- and locus-level reconciliation.",
+      "rep_ko_v2_sha256": "af1b7761527691d587a49d005816d8c5eba44df2f28d154b10d3bcb130e721f8",
       "sequence_equivalence_with_bakta": "UNVERIFIED_SEPARATE_PRODUCTS",
       "shared_kos_with_picrust2": 8860,
       "source_genomes": 5438,
@@ -519,6 +522,7 @@
       "archive_bytes": 106360827,
       "archive_path": "metadata/metagenome/canonical/refined_functional_tables.tar.gz",
       "archive_sha256": "6eaeefcd31a44101fbb8629c2d7232e01160fe5257fd606f9cb09ac2afee1518",
+      "counts_source": "metadata/metagenome/canonical/functional_feature_counts.json",
       "distinct_cazy": 141,
       "distinct_kos": 11386,
       "distinct_pfams": 9703,

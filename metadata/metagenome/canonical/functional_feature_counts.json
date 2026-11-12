@@ -1,0 +1,33 @@
+{
+  "bakta_eggnog": {
+    "distinct_cazy": 141,
+    "distinct_kos": 11386,
+    "distinct_pfams": 9703,
+    "genomes": 5438,
+    "ngenes_genomes": 5438,
+    "sum_n_genes_annotated": 16119759,
+    "sum_n_genes_predicted": 19186792,
+    "sum_n_with_ko": 8516493
+  },
+  "bakta_vs_legacy": {
+    "bakta_only": 0,
+    "bakta_shared_with_picrust2_rows": 8859,
+    "legacy_only": 9,
+    "shared": 11386
+  },
+  "inputs": {
+    "picrust2_ko_metagenome_unstrat.tsv": "c71c22560ef0b96a58b7f227c7bb781b1c22fa517c000ac75dcb6da5ddd11254",
+    "refined_functional_tables.tar.gz": "6eaeefcd31a44101fbb8629c2d7232e01160fe5257fd606f9cb09ac2afee1518",
+    "rep_ko_v2.tsv": "af1b7761527691d587a49d005816d8c5eba44df2f28d154b10d3bcb130e721f8"
+  },
+  "legacy_rep_ko_v2": {
+    "distinct_kos": 11395,
+    "genomes": 5438,
+    "shared_with_picrust2_nonzero": 8860,
+    "shared_with_picrust2_rows": 8860
+  },
+  "picrust2": {
+    "ko_nonzero": 10543,
+    "ko_rows": 10543
+  }
+}

@@ -17,6 +17,7 @@ Tests both real canonical tables and adversarial fixtures for:
 
 from __future__ import annotations
 
+import csv
 import copy
 import json
 from pathlib import Path
@@ -151,8 +152,36 @@ def test_real_cohort_product_manifest_matches_canonical_sources() -> None:
 
     ko_prod = on_disk["products"]["EQ-KO-LEGACY-ANALYTICAL-v0"]
     assert ko_prod["sequence_equivalence_with_bakta"] == "UNVERIFIED_SEPARATE_PRODUCTS"
-    assert ko_prod["distinct_kos"] == 11386
-    assert ko_prod["shared_kos_with_picrust2"] == 8860
+    # Counts must equal the recount of the released files, not a typed-in number.
+    func_counts = json.loads(
+        (PROJECT_ROOT / "metadata/metagenome/canonical/functional_feature_counts.json").read_text()
+    )
+    assert ko_prod["distinct_kos"] == func_counts["legacy_rep_ko_v2"]["distinct_kos"]
+    assert ko_prod["shared_kos_with_picrust2"] == func_counts["legacy_rep_ko_v2"]["shared_with_picrust2_rows"]
+    assert ko_prod["rep_ko_v2_sha256"] == func_counts["inputs"]["rep_ko_v2.tsv"]
+    bakta_prod = on_disk["products"]["EQ-PROT-BAKTA-v1.0.0"]
+    bc = func_counts["bakta_eggnog"]
+    assert bakta_prod["distinct_kos"] == bc["distinct_kos"]
+    assert bakta_prod["distinct_pfams"] == bc["distinct_pfams"]
+    assert bakta_prod["distinct_cazy"] == bc["distinct_cazy"]
+    assert bakta_prod["protein_count"] == bc["sum_n_genes_predicted"]
+    assert bakta_prod["eggnog_annotated_proteins"] == bc["sum_n_genes_annotated"]
+    assert bakta_prod["proteins_with_ko"] == bc["sum_n_with_ko"]
+    assert bakta_prod["archive_sha256"] == func_counts["inputs"]["refined_functional_tables.tar.gz"]
+
+    # The boundary genome must match the CheckM2 table and the ENA deposit table.
+    boundary = on_disk["mimag_quality_accounting"]["strict_mimag_tiers_lt10_contamination"][
+        "boundary_genome_at_10pct"
+    ]
+    canon = PROJECT_ROOT / "metadata/metagenome/canonical"
+    with open(canon / "refined_representatives.tsv") as f:
+        rep = {r["mag"]: r for r in csv.DictReader(f, delimiter="\t")}[boundary["mag"]]
+    with open(canon / "ena_genome_accessions.tsv") as f:
+        ena = {r["genome"]: r for r in csv.DictReader(f, delimiter="\t")}[boundary["mag"]]
+    assert boundary["completeness"] == float(rep["Completeness"])
+    assert boundary["contamination"] == float(rep["Contamination"])
+    assert boundary["binned_assembly_accession"] == ena["binned_assembly_accession"]
+    assert boundary["binned_sample_accession"] == ena["binned_sample_accession"]
 
     mt_prod = on_disk["products"]["EQ-MICROTRAIT-REP-v1.0.0"]
     assert mt_prod["source_genomes"] == 5438
@@ -414,10 +443,10 @@ def test_adversarial_mimag_strict_vs_inclusive_boundary_fails() -> None:
         manifest,
     ) = _load_real_inputs()
 
-    assert classify_mimag_strict(64.61, 10.0, False, False, False, 12) == "below-medium"
-    assert classify_mimag_strict(64.61, 9.99, False, False, False, 12) == "medium"
-    assert classify_drep_operational(64.61, 10.0) == "drep_included_le10"
-    assert classify_drep_operational(64.61, 10.01) == "drep_excluded"
+    assert classify_mimag_strict(94.22, 10.0, False, False, False, 12) == "below-medium"
+    assert classify_mimag_strict(94.22, 9.99, False, False, False, 12) == "medium"
+    assert classify_drep_operational(94.22, 10.0) == "drep_included_le10"
+    assert classify_drep_operational(94.22, 10.01) == "drep_excluded"
 
     bad_ena = copy.deepcopy(ena_genomes)
     for row in bad_ena:
