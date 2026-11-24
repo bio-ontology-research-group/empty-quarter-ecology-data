@@ -1,0 +1,64 @@
+== SPositive pairs: 2000000
+== SNTC pairs: 167595
+== P34 pairs: 2000000
+== T5pos pairs: 2000000
+== T5pos
+69.40% overall alignment rate
+unmapped	NA	NA
+Bacillus_subtilis	0	0
+Cryptococcus_neoformans	16271	0.0000055181818
+Enterococcus_faecalis	2	0.000057988495
+Escherichia_coli	2396319	0.8783279
+Lactobacillus_fermentum	0	0
+Listeria_monocytogenes	0	0
+Pseudomonas_aeruginosa	12	0.00007655694
+Saccharomyces_cerevisiae	0	0
+Salmonella_enterica	2477	0.007303322
+Staphylococcus_aureus	0	0
+66.03% overall alignment rate
+reps reads>=95%: 2258845
+== SPositive
+2.25% overall alignment rate
+unmapped	NA	NA
+Bacillus_subtilis	0	0
+Cryptococcus_neoformans	26	0.000008157313
+Enterococcus_faecalis	0	0
+Escherichia_coli	19294	0.016284887
+Lactobacillus_fermentum	0	0
+Listeria_monocytogenes	0	0
+Pseudomonas_aeruginosa	102	0.00037704292
+Saccharomyces_cerevisiae	0	0
+Salmonella_enterica	9889	0.010292935
+Staphylococcus_aureus	2	0.00002930053
+2.95% overall alignment rate
+reps reads>=95%: 32758
+== SNTC
+15.19% overall alignment rate
+unmapped	NA	NA
+Bacillus_subtilis	13	0.00012655483
+Cryptococcus_neoformans	76	0.000016348898
+Enterococcus_faecalis	21	0.00042911485
+Escherichia_coli	18564	0.11165554
+Lactobacillus_fermentum	5	0.00012123865
+Listeria_monocytogenes	1	0.000033752825
+Pseudomonas_aeruginosa	113	0.00052279554
+Saccharomyces_cerevisiae	211	0.00010098608
+Salmonella_enterica	2287	0.0046091774
+Staphylococcus_aureus	62	0.0010691031
+17.17% overall alignment rate
+reps reads>=95%: 38681
+== P34
+0.97% overall alignment rate
+unmapped	NA	NA
+Bacillus_subtilis	4	0.00003163871
+Cryptococcus_neoformans	35221	0.0000055181818
+Enterococcus_faecalis	7	0.0001075423
+Escherichia_coli	421	0.010010786
+Lactobacillus_fermentum	0	0
+Listeria_monocytogenes	1	0.000050462146
+Pseudomonas_aeruginosa	0	0
+Saccharomyces_cerevisiae	0	0
+Salmonella_enterica	0	0
+Staphylococcus_aureus	0	0
+38.74% overall alignment rate
+reps reads>=95%: 451911

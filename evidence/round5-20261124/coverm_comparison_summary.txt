@@ -1,0 +1,13 @@
+551: n=551 bowtie2 overall 45.9 (IQR 36.9-53.4); refined >=95% id 37.0 (IQR 27.8-45.3); CoverM0.7.0 mapped 48.5 (IQR 40.3-56.6)
+546 core: n=546 bowtie2 overall 46.0 (IQR 37.1-53.5); refined >=95% id 37.2 (IQR 28.1-45.4); CoverM0.7.0 mapped 48.7 (IQR 40.4-56.7)
+545: n=545 bowtie2 overall 46.0 (IQR 37.1-53.5); refined >=95% id 37.2 (IQR 28.1-45.4); CoverM0.7.0 mapped 48.7 (IQR 40.5-56.7)
+550 nonzero: n=550 bowtie2 overall 45.9 (IQR 37.0-53.4); refined >=95% id 37.1 (IQR 27.9-45.3); CoverM0.7.0 mapped 48.6 (IQR 40.4-56.7)
+long table vs QC table mapped% max abs diff: 0.0000
+genome agreement over 550 libraries: Spearman (union of detected) median 0.824 (IQR 0.760-0.859); Pearson log abundance among genomes detected by both median 0.915; Bray-Curtis of mapped-read composition median 0.213 (IQR 0.185-0.261); detection Jaccard median 0.634; same top genome in 324 of 550
+detected genomes per library: refined cf>=0.10 median 499; CoverM0.7.0 >0 median 844
+recruitment: CoverM0.7.0 minus bowtie2 overall: median 3.61 pp (IQR 0.13 to 6.22); higher in 414 of 551; Spearman 0.927
+recruitment: CoverM0.7.0 minus refined>=95%: median 11.34 pp; Spearman 0.927
+capped libraries (200M pairs): 7; their bowtie2 overall 32.5 (IQR 16.2-38.4)
+platform NovaSeq 6000: n=218 diff median 1.58 pp; bowtie2 47.7; cm070 48.5
+platform NovaSeq 6000;NovaSeq X: n=3 diff median 9.21 pp; bowtie2 15.3; cm070 24.4
+platform NovaSeq X: n=330 diff median 4.44 pp; bowtie2 45.0; cm070 48.7

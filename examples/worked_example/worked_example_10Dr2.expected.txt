@@ -1,0 +1,25 @@
+== 1. Specimen 10Dr2
+trip Trip1, site 10 (https://rubalkhali.science/kb/RAK_1000010), compartment Deep (shallow subsurface soil), DNA kit Pro, DNA 0.02 ng/ul
+== 2. 16S amplicon profile
+BioSample ERS28393005, run ERR16062320; profile e0325_10Dr2: 503,679 reads, Shannon 6.66
+check, repeated preparation: F15PRr1 has 2 amplicon runs ['ERR16062815', 'ERR16063145']; retained profiles ['e0775_F15PRr1', 'e8427_F15PRr1']
+check, control: EB1 is a retained profile: False
+== 3. Shotgun library
+run ERR17796560, BioSample ERS28393005, assembly ERZ30552869; NovaSeq X, QIAseq FX; 164,526,954 reads after QC; core-transect cohort 1, amplicon-matched 1
+== 4. Genome abundance profile of the library
+relative-abundance product (CoverM 0.7.0): 36.0% of reads assigned to 682 genomes
+depth/breadth product (Bowtie2, CoverM 0.6.1, >=95% identity): 22.7% of reads; 347 genomes with at least 10% covered
+  10Dr2__single_SemiBin_6: 1.92% of reads, mean depth 87.2, covered 99.9%
+  10Dr2__single_SemiBin_0: 0.60% of reads, mean depth 30.3, covered 99.8%
+  V4Sr1__single_SemiBin_4_sub: 0.54% of reads, mean depth 37.3, covered 98.0%
+== 5. Genome
+10Dr2__single_SemiBin_6: assembled from library 10Dr2; ['f__Micromonosporaceae', 'g__', 's__']; completeness 97.1%, contamination 3.4%; chimerism screen pass; MIMAG medium; GCA_990080536
+release annotation (Bakta/eggNOG): 1,577 distinct KOs in this genome; K01673 in 1 protein(s)
+== 6. Gene and annotation
+4,875 Pyrodigal genes in 10Dr2__single_SemiBin_6; 4,670 carry a transferred Bakta/eggNOG annotation; genes with K01673: 1
+  10Dr2__single_SemiBin_6::10Dr2_296453_13 10Dr2_296453:13525-14157 (+), match exact, Bakta OPDCOJ_03486 'carbonic anhydrase', eggNOG COG0288, COG P, KO ko:K01673
+== 7. Soil pH of the same tube
+10Dr2: pH 7.70 in CaCl2, electrode slope 96.1%
+check, missing measurement: 10Dr1 pH not admitted (no value is borrowed from another tube)
+check, missing measurement: 10Dr3 pH not admitted (no value is borrowed from another tube)
+OK
