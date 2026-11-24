@@ -1,7 +1,7 @@
 # How to deposit this folder at Zenodo
 
 The complete upload set is on Shaheen III: `/project/k10018/empty-quarter-zenodo-v1.0.0/`
-(32 files, 8.6 GB; the genome archive `refined_mags.tar.gz` is 7.2 GB). This repository folder
+(31 files to upload, 8.0 GB; the genome archive `refined_mags.tar.gz` is 7.2 GB). This repository folder
 holds only the documentation and helper files of that set.
 
 1. On a machine with internet access and the folder (a Shaheen login node works), run
