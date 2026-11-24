@@ -1,0 +1,125 @@
+path	field_or_pattern	data_type	unit	missing_convention	description
+ena_genome_accessions.tsv	genome	string	not applicable	never blank	Refined bin identifier; representatives match mag in refined_representatives.tsv.
+ena_genome_accessions.tsv	sample	string	not applicable	never blank	Source library/sample code; retained verbatim.
+ena_genome_accessions.tsv	is_representative	integer	not applicable	never blank	1 for one of the 5,438 dRep species representatives; 0 otherwise.
+ena_genome_accessions.tsv	mimag_tier	string	not applicable	never blank	MIMAG tier: high, medium or below-medium (contamination of exactly 10%).
+ena_genome_accessions.tsv	binned_sample_accession	string	not applicable	never blank	ENA BioSample of the binned metagenome (checklist ERC000050).
+ena_genome_accessions.tsv	binned_assembly_accession	string	not applicable	never blank	ENA analysis accession of the binned metagenome.
+ena_genome_accessions.tsv	mag_sample_accession	string	not applicable	blank: not deposited as a MAG (non-representative bin, or 48Dr2__self_SemiBin_25 at 10% contamination)	ENA BioSample of the MAG (checklist ERC000047), derived from the binned sample.
+ena_genome_accessions.tsv	mag_assembly_accession	string	not applicable	blank: not deposited as a MAG (non-representative bin, or 48Dr2__self_SemiBin_25 at 10% contamination)	ENA analysis accession of the MAG submission.
+ena_genome_accessions.tsv	gca_accession	string	not applicable	blank: not deposited as a MAG (non-representative bin, or 48Dr2__self_SemiBin_25 at 10% contamination)	INSDC genome assembly accession of the MAG.
+ena_genome_accessions.tsv	sequence_accessions	string	not applicable	blank: not deposited as a MAG (non-representative bin, or 48Dr2__self_SemiBin_25 at 10% contamination)	Contig or chromosome accession range of the MAG.
+genome_manifest.tsv	mag	string	not applicable	never blank	Identifier of a representative in the actual refined dRep output.
+genome_manifest.tsv	path	path	not applicable	never blank	Portable member path inside refined_mags.tar.gz.
+genome_manifest.tsv	bytes	integer	bytes	never blank	Exact uncompressed FASTA size.
+genome_manifest.tsv	sha256	hexadecimal string	not applicable	never blank	SHA-256 of the exact uncompressed FASTA bytes.
+genome_manifest.tsv	contigs	integer	contigs	never blank	FASTA sequence count, checked against refined-bin CheckM2.
+genome_manifest.tsv	bases	integer	bp	never blank	FASTA sequence length sum, checked against refined-bin CheckM2.
+library_metadata.tsv	sample	string	not applicable	never blank	Source library/sample code; retained verbatim.
+library_metadata.tsv	trip	integer	not applicable	never blank	Sampling campaign number, 1 through 5.
+library_metadata.tsv	site	string	not applicable	never blank	Source site code; 61 distinct codes do not establish 61 distinct physical sites.
+library_metadata.tsv	code	string	not applicable	never blank	Source compartment code from the paired-read inventory.
+library_metadata.tsv	replicate	integer	not applicable	never blank	Source field-replicate number.
+library_metadata.tsv	compartment	string	not applicable	never blank	Original compartment label; Rhizosphere denotes root-adjacent soil.
+library_metadata.tsv	study_accession	string	not applicable	never blank	Author-confirmed ENA shotgun study PRJEB125153; not yet public on 2026-10-24.
+library_metadata.tsv	secondary_study_accession	string	not applicable	never blank	Secondary ENA study accession ERP204894.
+library_metadata.tsv	run_accession	string	not applicable	never blank	ENA run accession(s); semicolon-separated for the three libraries sequenced in two batches.
+library_metadata.tsv	biosample_accession	string	not applicable	never blank	ENA BioSample accession of the soil sample (checklist ERC000022).
+library_metadata.tsv	experiment_accession	string	not applicable	never blank	ENA experiment accession(s), in the order of run_accession.
+library_metadata.tsv	assembly_accession	string	not applicable	blank: library yielded no contigs (51Sr1, F5Dr1)	ENA analysis accession of the primary metagenome assembly.
+refined_representatives.tsv	mag	string	not applicable	never blank	Identifier of a representative in the actual refined dRep output.
+refined_representatives.tsv	sample	string	not applicable	never blank	Source library/sample code; retained verbatim.
+refined_representatives.tsv	strategy	string	not applicable	never blank	Source binning strategy: single_sample or self_supervised.
+refined_representatives.tsv	bin	string	not applicable	never blank	Parent bin label retained from the pickup catalogue membership table.
+refined_representatives.tsv	refined_sub	integer	not applicable	never blank	1 identifies a refined _sub representative; 0 identifies other representatives.
+refined_representatives.tsv	trip	integer	not applicable	never blank	Sampling campaign number, 1 through 5.
+refined_representatives.tsv	site	string	not applicable	never blank	Source site code; 61 distinct codes do not establish 61 distinct physical sites.
+refined_representatives.tsv	drep_fasta_basename	string	not applicable	never blank	FASTA basename in the actual dRep output; sequence delivery is blocked.
+refined_representatives.tsv	legacy_link_target	string	not applicable	never blank	Pickup link provenance: per_sample_bin or drep_genome. Parent-bin links require sequence reconciliation.
+refined_representatives.tsv	Completeness	decimal	percent	never blank	CheckM2 completeness estimate for the refined dRep sequence.
+refined_representatives.tsv	Contamination	decimal	percent	never blank	CheckM2 contamination estimate for the refined dRep sequence.
+refined_representatives.tsv	Genome_Size	integer	bp	never blank	Refined-bin genome size from CheckM2.
+refined_representatives.tsv	Total_Contigs	integer	contigs	never blank	Refined-bin contig count from CheckM2.
+refined_representatives.tsv	gtdb_r232_classification	string	not applicable	never blank	Unmodified GTDB-Tk R232 lineage from the exact representative-ID match.
+genome_quality_flags.tsv	mag	string	not applicable	never blank	Representative genome identifier, as in refined_representatives.tsv.
+genome_quality_flags.tsv	gunc_status	string	not applicable	never blank	GUNC v1.1.1 status against proGenomes 3: pass, flagged, or unscored (reference representation score below 0.3).
+genome_quality_flags.tsv	probable_laboratory_contaminant	integer	not applicable	never blank	1 for a genome judged to derive from a laboratory standard and not from soil; 0 otherwise.
+genome_quality_flags.tsv	mimag_boundary_case	integer	not applicable	never blank	1 for the representative with CheckM2 contamination of exactly 10%; 0 otherwise.
+genome_quality_flags.tsv	note	string	not applicable	blank: no remark	Evidence for a flag.
+gene_crosswalk.tar: crosswalk/<library>.tsv.gz	column 1: gene (no header line)	string	not applicable	never blank	Gene identifier: <genome>::<contig>_<gene number>.
+gene_crosswalk.tar: crosswalk/<library>.tsv.gz	column 2: genome (no header line)	string	not applicable	never blank	Genome identifier.
+gene_crosswalk.tar: crosswalk/<library>.tsv.gz	column 3: contig (no header line)	string	not applicable	never blank	Contig identifier.
+gene_crosswalk.tar: crosswalk/<library>.tsv.gz	column 4: start (no header line)	integer	bp	never blank	Start coordinate on the contig (1-based).
+gene_crosswalk.tar: crosswalk/<library>.tsv.gz	column 5: end (no header line)	integer	bp	never blank	End coordinate on the contig.
+gene_crosswalk.tar: crosswalk/<library>.tsv.gz	column 6: strand (no header line)	string	not applicable	never blank	Strand, + or -.
+gene_crosswalk.tar: crosswalk/<library>.tsv.gz	column 7: family_rep (no header line)	string	not applicable	never blank	Representative gene of the protein family the gene belongs to.
+gene_crosswalk.tar: crosswalk/<library>.tsv.gz	column 8: family_flag (no header line)	integer	not applicable	never blank	Flag carried over from the protein-family table (see xwalk.py).
+gene_crosswalk.tar: crosswalk/<library>.tsv.gz	column 9: match_class (no header line)	string	not applicable	never blank	Match to a Bakta coding sequence: exact (same coordinates), same_stop, overlap (at least half of the gene overlaps a Bakta feature, no annotation transferred) or none.
+gene_crosswalk.tar: crosswalk/<library>.tsv.gz	column 10: bakta_locus (no header line)	string	not applicable	never blank	Bakta locus tag; - when none.
+gene_crosswalk.tar: crosswalk/<library>.tsv.gz	column 11: bakta_product (no header line)	string	not applicable	never blank	Bakta product, first 80 characters; - when none.
+gene_crosswalk.tar: crosswalk/<library>.tsv.gz	column 12: eggnog_og (no header line)	string	not applicable	never blank	First eggNOG orthologous group; - when none.
+gene_crosswalk.tar: crosswalk/<library>.tsv.gz	column 13: cog_category (no header line)	string	not applicable	never blank	COG functional category; - when none.
+gene_crosswalk.tar: crosswalk/<library>.tsv.gz	column 14: ko (no header line)	string	not applicable	never blank	KEGG orthologue(s); - when none.
+gene_crosswalk.tar: crosswalk/<library>.tsv.gz	column 15: pfam (no header line)	string	not applicable	never blank	Pfam domains; - when none.
+gene_crosswalk.tar: crosswalk/<library>.tsv.gz	column 16: eggnog_description (no header line)	string	not applicable	never blank	eggNOG description, first 80 characters; - when none.
+crosswalk_by_genome.tsv	genome	string	not applicable	never blank	Genome identifier.
+crosswalk_by_genome.tsv	pyrodigal_genes	integer	genes	never blank	Pyrodigal genes.
+crosswalk_by_genome.tsv	bakta_cds	integer	genes	never blank	Bakta coding sequences.
+crosswalk_by_genome.tsv	bakta_cds_matched	integer	genes	never blank	Bakta coding sequences matched to a Pyrodigal gene.
+crosswalk_by_genome.tsv	eggnog_records	integer	genes	never blank	Genes with an eggNOG record.
+annotation_provenance.corrected.tsv	genome	string	not applicable	never blank	Genome identifier.
+annotation_provenance.corrected.tsv	fasta_sha256	string	not applicable	never blank	SHA-256 of the genome FASTA that was annotated.
+annotation_provenance.corrected.tsv	bakta_version	string	not applicable	never blank	Bakta version.
+annotation_provenance.corrected.tsv	eggnog_version	string	not applicable	never blank	eggNOG-mapper, eggNOG database, DIAMOND and MMseqs2 versions.
+annotation_provenance.corrected.tsv	annotation_sha256	string	not applicable	never blank	SHA-256 of the annotation output.
+specimen_assay_outcomes.tsv	specimen_id	string	not applicable	blank: no record	Specimen (tube) name: campaign prefix (none, T, F, S, V for Trips 1 to 5), site, compartment code, replicate.
+specimen_assay_outcomes.tsv	trip	string	not applicable	blank: no record	Campaign number.
+specimen_assay_outcomes.tsv	site	string	not applicable	blank: no record	Site code.
+specimen_assay_outcomes.tsv	compartment	string	not applicable	blank: no record	Surface, Subsurface (source label Deep) or RootAdjacent (source label Rhizosphere).
+specimen_assay_outcomes.tsv	extract	string	not applicable	blank: no record	Whether a DNA extract is on record.
+specimen_assay_outcomes.tsv	pcr16S	string	not applicable	blank: no record	16S PCR result on record.
+specimen_assay_outcomes.tsv	profile_reads_max	string	not applicable	blank: no record	Reads of the largest 16S profile of the specimen.
+specimen_assay_outcomes.tsv	amplicon_outcome	string	not applicable	blank: no record	Outcome class, as in amplicon_missingness_by_cause.tsv.
+specimen_assay_outcomes.tsv	shotgun_library	string	not applicable	blank: no record	Whether the specimen has a shotgun library.
+amplicon_missingness_by_cause.tsv	trip and outcome columns	integer	specimens	never blank	Specimens of the 2,232 primary-site soil specimens by campaign and 16S outcome: not_extracted, no_material, no_record, extracted_not_processed, extracted_no_PCR_band, PCR_band_no_profile, profile_below_1000_reads, retained_profile.
+library_batches.tsv	assay	string	not applicable	blank: not recorded or not applicable	shotgun or 16S.
+library_batches.tsv	library_id	string	not applicable	blank: not recorded or not applicable	Shotgun sample name or 16S profile identifier.
+library_batches.tsv	run_alias	string	not applicable	blank: not recorded or not applicable	Shotgun run alias.
+library_batches.tsv	specimen_id	string	not applicable	blank: not recorded or not applicable	Specimen name.
+library_batches.tsv	trip	string	not applicable	blank: not recorded or not applicable	Campaign number.
+library_batches.tsv	site	string	not applicable	blank: not recorded or not applicable	Site code.
+library_batches.tsv	compartment	string	not applicable	blank: not recorded or not applicable	Surface, Subsurface or RootAdjacent.
+library_batches.tsv	replicate	string	not applicable	blank: not recorded or not applicable	Field replicate.
+library_batches.tsv	is_control	string	not applicable	blank: not recorded or not applicable	Laboratory control library.
+library_batches.tsv	extraction_kit	string	not applicable	blank: not recorded or not applicable	DNA extraction kit, normalised.
+library_batches.tsv	labbook_extraction_method	string	not applicable	blank: not recorded or not applicable	Extraction method as written in the laboratory book (Trips 1 to 3).
+library_batches.tsv	dna_conc_ng_per_ul	string	ng/uL	blank: not recorded or not applicable	DNA concentration of the extract.
+library_batches.tsv	extraction_date	string	not applicable	blank: not recorded or not applicable	Extraction date (Trip 5).
+library_batches.tsv	extraction_batch	string	not applicable	blank: not recorded or not applicable	Extraction-blank batch (Trips 4 and 5).
+library_batches.tsv	extraction_blank_sequenced	string	not applicable	blank: not recorded or not applicable	Whether the blank of the batch was sequenced.
+library_batches.tsv	repeat_extraction_batches	string	not applicable	blank: not recorded or not applicable	Repeat extractions as batch@date (Trip 5).
+library_batches.tsv	library_kit	string	not applicable	blank: not recorded or not applicable	Library kit of the ENA record (shotgun) or PCR scheme (16S).
+library_batches.tsv	library_kit_master_sheet	string	not applicable	blank: not recorded or not applicable	Shotgun library kit in the laboratory master sheet.
+library_batches.tsv	library_prep_date	string	not applicable	blank: not recorded or not applicable	Shotgun library preparation date (Trips 1 to 3); Trip 3 years are unreliable.
+library_batches.tsv	library_prep_record	string	not applicable	blank: not recorded or not applicable	Source tab of the preparation date.
+library_batches.tsv	sequencing_batch	string	not applicable	blank: not recorded or not applicable	Shotgun sequencing batch of the ENA deposit.
+library_batches.tsv	facility_submission	string	not applicable	blank: not recorded or not applicable	Core-facility submission number (16S).
+library_batches.tsv	index	string	not applicable	blank: not recorded or not applicable	Index code.
+library_batches.tsv	instrument_model	string	not applicable	blank: not recorded or not applicable	Sequencing instrument model.
+library_batches.tsv	instrument_id	string	not applicable	blank: not recorded or not applicable	Instrument identifier.
+library_batches.tsv	run_number	string	not applicable	blank: not recorded or not applicable	Instrument run number.
+library_batches.tsv	flowcell	string	not applicable	blank: not recorded or not applicable	Flow cell identifier.
+library_batches.tsv	lanes	string	not applicable	blank: not recorded or not applicable	Lane or lanes.
+library_batches.tsv	ena_run	string	not applicable	blank: not recorded or not applicable	ENA run accession (shotgun).
+library_batches.tsv	total_reads_profile	string	not applicable	blank: not recorded or not applicable	Reads of the 16S profile.
+library_batches.tsv	in_546_core	string	not applicable	blank: not recorded or not applicable	Shotgun library in the 546-library core transect set.
+library_batches.tsv	source_run	string	not applicable	blank: not recorded or not applicable	Source of the run fields.
+mixs_fill_counts.tsv	mixs_term_or_field	string	not applicable	never blank	MIxS v7.0.1 soil checklist term, or a supporting field of this resource.
+mixs_fill_counts.tsv	specimens_of_2232	integer	specimens	never blank	Primary-site soil specimens with a value.
+sample_ledger.tsv	all fields	see description	not applicable	see description	Specimen ledger; field definitions in the code repository, evidence/release/README.md.
+combined_samplesheet_accessions.tsv	all fields	see description	not applicable	see description	16S profiles and ENA accessions; metadata/amplicon/ in the code repository.
+alpha.tsv	all fields	see description	not applicable	see description	16S read depth and alpha diversity per profile; first column is the profile identifier.
+shotgun_cohort_accounting.tsv	all fields	see description	not applicable	see description	Shotgun analysis-set membership; metadata/cohorts/README.md in the code repository.
+shotgun_mapping_qc_source.tsv	all fields	see description	not applicable	see description	Per-library recruitment of the CoverM v0.7.0 relative-abundance product; metadata/cohorts/ in the code repository.
+ph_accepted_measurements.tsv	all fields	see description	not applicable	see description	Accepted pH measurements; metadata/ph/ in the code repository.
+gunc_progenomes3.tsv	all fields	see description	not applicable	see description	GUNC output columns as defined by GUNC v1.1.1, plus is_representative and gunc_status.

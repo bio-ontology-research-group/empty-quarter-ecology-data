@@ -1,0 +1,136 @@
+{
+ "metadata": {
+  "title": "Metagenome-assembled genome catalogue of Rub' al-Khali (Empty Quarter) desert soils",
+  "version": "1.0.0",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "description": "<p>Species-representative metagenome-assembled genomes (MAGs) from 551 shotgun metagenomes of Rub' al-Khali (Empty Quarter) desert soil, Saudi Arabia: 5,438 refined dRep representatives with CheckM2 quality estimates, MIMAG tiers, GUNC chimerism status, GTDB R232 taxonomy, Bakta and eggNOG-mapper gene annotations, a gene-level crosswalk of 20,451,986 predicted genes to annotations, and CoverM coverage profiles of all 551 libraries. The deposit also holds the specimen ledger, per-library laboratory batch and sequencing-run table, analysis-set membership, accepted soil pH measurements, and a tested worked example that follows one specimen to an annotated gene.</p><p>Reads, assemblies, bins and MAGs are deposited at ENA under PRJEB125153. See README.md for contents, methods, known issues and licence.</p><p>Portal: <a href=\"https://rubalkhali.science/\">https://rubalkhali.science/</a><br>Code: <a href=\"https://github.com/bio-ontology-research-group/empty-quarter-ecology-data\">https://github.com/bio-ontology-research-group/empty-quarter-ecology-data</a></p>",
+  "creators": [
+   {
+    "name": "Tawfiq, Rund",
+    "affiliation": "Bio-Ontology Research Group (BORG), Computer, Electrical and Mathematical Sciences and Engineering (CEMSE) Division, King Abdullah University of Science and Technology (KAUST), Thuwal, Saudi Arabia",
+    "orcid": "0000-0002-7052-573X"
+   },
+   {
+    "name": "Abdelhakim, Marwa",
+    "affiliation": "Bio-Ontology Research Group (BORG), Computer, Electrical and Mathematical Sciences and Engineering (CEMSE) Division, King Abdullah University of Science and Technology (KAUST), Thuwal, Saudi Arabia",
+    "orcid": "0000-0001-6816-2119"
+   },
+   {
+    "name": "Alajel, Sulaiman M.",
+    "affiliation": "Ministry of Environment, Water and Agriculture, Saudi Arabia",
+    "orcid": "0000-0002-8840-6931"
+   },
+   {
+    "name": "Alarawi, Mohammed",
+    "affiliation": "Bio-Ontology Research Group (BORG), Computer, Electrical and Mathematical Sciences and Engineering (CEMSE) Division, King Abdullah University of Science and Technology (KAUST), Thuwal, Saudi Arabia",
+    "orcid": "0000-0001-8986-8209"
+   },
+   {
+    "name": "Aldakhil, Hind",
+    "affiliation": "National Livestock & Fisheries Development Program (NLFDP), Ministry of Environment, Water and Agriculture (MEWA), Riyadh 13413, Saudi Arabia",
+    "orcid": "0000-0001-9491-103X"
+   },
+   {
+    "name": "Derouiche, Abderahmane",
+    "affiliation": "Bio-Ontology Research Group (BORG), Computer, Electrical and Mathematical Sciences and Engineering (CEMSE) Division, King Abdullah University of Science and Technology (KAUST), Thuwal, Saudi Arabia",
+    "orcid": "0000-0002-3241-1424"
+   },
+   {
+    "name": "Drautz-Moses, Daniela I.",
+    "affiliation": "Bioscience Core Lab, King Abdullah University of Science and Technology (KAUST), Thuwal, Saudi Arabia",
+    "orcid": "0000-0002-3739-0917"
+   },
+   {
+    "name": "Dumontier, Michel",
+    "affiliation": "Institute of Data Science, Department of Advanced Computing Sciences, Faculty of Science and Engineering, Maastricht University, Maastricht, The Netherlands",
+    "orcid": "0000-0003-4727-9435"
+   },
+   {
+    "name": "Grünberg, Raik",
+    "affiliation": "Biomedical Sciences Division (BioMed), King Abdullah University of Science and Technology (KAUST), Thuwal, Saudi Arabia",
+    "orcid": "0000-0001-9532-6043"
+   },
+   {
+    "name": "Kulmanov, Maxat",
+    "affiliation": "Bio-Ontology Research Group (BORG), Computer, Electrical and Mathematical Sciences and Engineering (CEMSE) Division, King Abdullah University of Science and Technology (KAUST), Thuwal, Saudi Arabia"
+   },
+   {
+    "name": "Lopez-Velazquez, Alejandra",
+    "affiliation": "Bio-Ontology Research Group (BORG), Computer, Electrical and Mathematical Sciences and Engineering (CEMSE) Division, King Abdullah University of Science and Technology (KAUST), Thuwal, Saudi Arabia",
+    "orcid": "0009-0001-2873-5311"
+   },
+   {
+    "name": "Martinez Arbas, Susana",
+    "affiliation": "NIUM, Esch-sur-Alzette, Luxembourg",
+    "orcid": "0000-0001-7309-8190"
+   },
+   {
+    "name": "Niu, Kexin",
+    "affiliation": "Bio-Ontology Research Group (BORG), Computer, Electrical and Mathematical Sciences and Engineering (CEMSE) Division, King Abdullah University of Science and Technology (KAUST), Thuwal, Saudi Arabia",
+    "orcid": "0000-0002-7302-0462"
+   },
+   {
+    "name": "Sivakumar, Krishnakumar",
+    "affiliation": "Bio-Ontology Research Group (BORG), Computer, Electrical and Mathematical Sciences and Engineering (CEMSE) Division, King Abdullah University of Science and Technology (KAUST), Thuwal, Saudi Arabia",
+    "orcid": "0009-0003-8029-0836"
+   },
+   {
+    "name": "Wang, Tiannyu",
+    "affiliation": "Physical Science and Engineering (PSE) Division, King Abdullah University of Science and Technology (KAUST), Thuwal, Saudi Arabia",
+    "orcid": "0000-0002-9604-7895"
+   },
+   {
+    "name": "Zhao, Xiang",
+    "affiliation": "Bioscience Core Lab, King Abdullah University of Science and Technology (KAUST), Thuwal, Saudi Arabia",
+    "orcid": "0009-0007-8662-9406"
+   },
+   {
+    "name": "Zubair, Jood",
+    "affiliation": "Bio-Ontology Research Group (BORG), Computer, Electrical and Mathematical Sciences and Engineering (CEMSE) Division, King Abdullah University of Science and Technology (KAUST), Thuwal, Saudi Arabia",
+    "orcid": "0009-0005-9532-0801"
+   },
+   {
+    "name": "Rueping, Magnus",
+    "affiliation": "Physical Science and Engineering (PSE) Division, King Abdullah University of Science and Technology (KAUST), Thuwal, Saudi Arabia",
+    "orcid": "0000-0003-4580-5227"
+   },
+   {
+    "name": "Hoehndorf, Robert",
+    "affiliation": "Bio-Ontology Research Group (BORG), Computer, Electrical and Mathematical Sciences and Engineering (CEMSE) Division, King Abdullah University of Science and Technology (KAUST), Thuwal, Saudi Arabia",
+    "orcid": "0000-0001-8149-5890"
+   }
+  ],
+  "keywords": [
+   "metagenome-assembled genomes",
+   "MAG",
+   "shotgun metagenomics",
+   "desert soil",
+   "Rub' al-Khali",
+   "Empty Quarter",
+   "hyperarid",
+   "GTDB",
+   "Bakta",
+   "eggNOG"
+  ],
+  "related_identifiers": [
+   {
+    "identifier": "10.5281/zenodo.23134168",
+    "relation": "isSupplementTo",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "https://www.ebi.ac.uk/ena/browser/view/PRJEB125153",
+    "relation": "isDerivedFrom",
+    "scheme": "url"
+   },
+   {
+    "identifier": "https://github.com/bio-ontology-research-group/empty-quarter-ecology-data",
+    "relation": "isSupplementedBy",
+    "scheme": "url"
+   }
+  ],
+  "prereserve_doi": true
+ }
+}
